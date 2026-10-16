@@ -1,0 +1,38 @@
+{
+  "job_id": 608513,
+  "state": "PENDING",
+  "reason": "Dependency",
+  "dependency": "afterok:608444",
+  "partition": "gpu_a100",
+  "qos": "normal",
+  "requested_node": "gpu-a100-07",
+  "gpu_count": 1,
+  "walltime": "04:00:00",
+  "updates": 2048,
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+  "seed": 17,
+  "block_size": 8,
+  "clean_crystal_ar_weight": 1.0,
+  "K": 2560,
+  "STEPS": 32,
+  "MAXLEN": 8192,
+  "train_n": 32,
+  "heldout_n": 16,
+  "output": "experiments/interleaved_relational_scaled32_20261006/training_full_history_b8_001",
+  "source_hashes": {
+    "train_full_history_b8.py": "c30dc1f495f45f65dbec98d406d3f9273d489fb6916c42035f3e5d0d91395d1e",
+    "train_full_history_b8.slurm": "43f463636645ff76f78b519df55db0c8ca70845214091e6943ad9062ce519558",
+    "test_train_full_history_b8.py": "f1380644eb47addca637e98c6ee3aa7c321a62fcff6751e686fcd2a931e96da3"
+  },
+  "checks": {
+    "root_local_CPU_contract": "passed",
+    "remote_source_metadata": "passed",
+    "independent_review": "no blockers",
+    "slurm_dependency_verified": true
+  },
+  "training_started": false,
+  "evaluation_started": false,
+  "recorded_at_utc": "2026-10-06T22:28:38.657998+00:00",
+  "submission_correction": "Initial gpu-a100-04 request rejected because it belongs to stingy; corrected to gpu_a100 node07 without changing QoS."
+}

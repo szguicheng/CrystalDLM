@@ -1,0 +1,411 @@
+{
+  "audit": "Corrected B8 heldout Q_swap formula diagnosis, first six rows only",
+  "scope": {
+    "evaluation_jsonl": "experiments/interleaved_relational_scaled32_20261006/eval_full_history_b8_fixed_001/heldout16/evaluation.jsonl",
+    "records_jsonl": "experiments/interleaved_relational_scaled32_20261006/data_001/records.jsonl",
+    "manifest_json": "experiments/interleaved_relational_scaled32_20261006/data_001/manifest.json",
+    "evaluation_first6_ids_match_manifest": true,
+    "manifest_heldout_first6": [
+      "mp-1229077",
+      "mp-1019259",
+      "mp-1079976",
+      "mp-1095422",
+      "mp-1173947",
+      "mp-21371"
+    ],
+    "manifest_record_count": 48,
+    "unique_swap_targets_in_first6": [
+      "mp-1019259",
+      "mp-1229077"
+    ],
+    "manifest_sha256": "25f150360f173970895dafd31e390f94b4b01ca174e6ad09b9e288c94b1e48cc",
+    "records_sha256": "231f336234d15a216dc9cb800d8dc1c3f30cf90985184ccc0d3e5c26333e95c6"
+  },
+  "scoring": {
+    "evaluator": "experiments/interleaved_relational_scaled32_20261006/evaluate_full_history_b8.py",
+    "frozen_evaluator_loaded_by_b8_wrapper": "experiments/interleaved_relational_scaled32_20261006/evaluate.py",
+    "swap_grade_callsite": "experiments/interleaved_relational_blocks_20261005/run.py:572",
+    "scorer": "experiments/interleaved_relational_blocks_20261005/score.py",
+    "formula_regex_line": 217,
+    "formula_exact_count_comparison_line": 227,
+    "comparison": "Composition(value).get_el_amt_dict() == expected['counts']; expected counts come from the swap target source plan composition.",
+    "other_grade_fields": "sg, atoms, orbits, and lattice a/b/c are independently graded.",
+    "score_sha256": "3c1760481872726d798dd18ec4fb3557d6940e669e4c4d818a07da276d9c477a",
+    "source_snapshot_score_sha256": "3c1760481872726d798dd18ec4fb3557d6940e669e4c4d818a07da276d9c477a",
+    "score_matches_source_snapshot": true
+  },
+  "summary": {
+    "cases": 6,
+    "q_swap_failures": 6,
+    "formula_failures": 6,
+    "all_non_formula_fields_pass": true,
+    "repeated_formula_outputs": {
+      "AlCuNdO4": 2,
+      "AlCu2In1S8": 2
+    },
+    "assessment": "The six failures are answer-content mismatches, not formula-order or explicit-count-one equivalence false negatives. AlCuNdO4 is absent from the six row design conditions and all 32 training source compositions; the reconstructed prompt has no prior crystal body or earlier assistant answer. AlCu2In1S8 has S8 matching the target's nominal 8g label, while target nominal multiplicities for every element are twice the input composition; this is only a possible count-confusion clue. The ninth-row B8/B32 contrast is descriptive and does not establish a cause."
+  },
+  "cases": [
+    {
+      "heldout_index": 1,
+      "id": "mp-1229077",
+      "swap_id": "mp-1019259",
+      "row_source_composition": {
+        "Al": 1,
+        "Cu": 2,
+        "In": 1,
+        "S": 4
+      },
+      "swap_target_composition": {
+        "Hg": 2,
+        "Sn": 2,
+        "Sr": 2
+      },
+      "swap_target_formula": "Hg2Sn2Sr2",
+      "swap_read_text": " The space group is 186. The composition is H2Sn2Sr2. The input cell contains 6 atoms in 3 independent orbits. The lattice lengths are a=5.01, b=5.01, c=8.31 angstroms.<|im_end|>",
+      "formula_regex_matches": [
+        "H2Sn2Sr2"
+      ],
+      "grade": {
+        "success": false,
+        "fields": {
+          "sg": true,
+          "formula": false,
+          "atoms": true,
+          "orbits": true,
+          "a": true,
+          "b": true,
+          "c": true
+        },
+        "raw_text": " The space group is 186. The composition is H2Sn2Sr2. The input cell contains 6 atoms in 3 independent orbits. The lattice lengths are a=5.01, b=5.01, c=8.31 angstroms.<|im_end|>"
+      },
+      "diagnosis": "Target expects Hg2Sn2Sr2; answer says H2Sn2Sr2, so Hg is read as H. This is not the row source composition."
+    },
+    {
+      "heldout_index": 2,
+      "id": "mp-1019259",
+      "swap_id": "mp-1229077",
+      "row_source_composition": {
+        "Hg": 2,
+        "Sn": 2,
+        "Sr": 2
+      },
+      "swap_target_composition": {
+        "Al": 1,
+        "Cu": 2,
+        "In": 1,
+        "S": 4
+      },
+      "swap_target_formula": "AlCu2InS4",
+      "swap_read_text": " The space group is 82. The composition is AlCuNdO4. The input cell contains 8 atoms in 5 independent orbits. The lattice lengths are a=5.47, b=5.47, c=6.66 angstroms.<|im_end|>",
+      "formula_regex_matches": [
+        "AlCuNdO4"
+      ],
+      "grade": {
+        "success": false,
+        "fields": {
+          "sg": true,
+          "formula": false,
+          "atoms": true,
+          "orbits": true,
+          "a": true,
+          "b": true,
+          "c": true
+        },
+        "raw_text": " The space group is 82. The composition is AlCuNdO4. The input cell contains 8 atoms in 5 independent orbits. The lattice lengths are a=5.47, b=5.47, c=6.66 angstroms.<|im_end|>"
+      },
+      "diagnosis": "Target expects AlCu2InS4; answer AlCuNdO4 has different elements and counts. It is not the row source composition."
+    },
+    {
+      "heldout_index": 3,
+      "id": "mp-1079976",
+      "swap_id": "mp-1229077",
+      "row_source_composition": {
+        "Ge": 4,
+        "Ni": 2,
+        "Tm": 2
+      },
+      "swap_target_composition": {
+        "Al": 1,
+        "Cu": 2,
+        "In": 1,
+        "S": 4
+      },
+      "swap_target_formula": "AlCu2InS4",
+      "swap_read_text": " The space group is 82. The composition is AlCuNdSf4. The input cell contains 8 atoms in 5 independent orbits. The lattice lengths are a=5.47, b=5.47, c=6.66 angstroms.<|im_end|>",
+      "formula_regex_matches": [
+        "AlCuNdSf4"
+      ],
+      "grade": {
+        "success": false,
+        "fields": {
+          "sg": true,
+          "formula": false,
+          "atoms": true,
+          "orbits": true,
+          "a": true,
+          "b": true,
+          "c": true
+        },
+        "raw_text": " The space group is 82. The composition is AlCuNdSf4. The input cell contains 8 atoms in 5 independent orbits. The lattice lengths are a=5.47, b=5.47, c=6.66 angstroms.<|im_end|>"
+      },
+      "diagnosis": "Target expects AlCu2InS4; answer AlCuNdSf4 has different elements/counts and includes the invalid element token Sf. It is not the row source composition."
+    },
+    {
+      "heldout_index": 4,
+      "id": "mp-1095422",
+      "swap_id": "mp-1229077",
+      "row_source_composition": {
+        "B": 3,
+        "Pt": 6,
+        "Yb": 3
+      },
+      "swap_target_composition": {
+        "Al": 1,
+        "Cu": 2,
+        "In": 1,
+        "S": 4
+      },
+      "swap_target_formula": "AlCu2InS4",
+      "swap_read_text": " The space group is 82. The composition is AlCuNdO4. The input cell contains 8 atoms in 5 independent orbits. The lattice lengths are a=5.47, b=5.47, c=6.66 angstroms.<|im_end|>",
+      "formula_regex_matches": [
+        "AlCuNdO4"
+      ],
+      "grade": {
+        "success": false,
+        "fields": {
+          "sg": true,
+          "formula": false,
+          "atoms": true,
+          "orbits": true,
+          "a": true,
+          "b": true,
+          "c": true
+        },
+        "raw_text": " The space group is 82. The composition is AlCuNdO4. The input cell contains 8 atoms in 5 independent orbits. The lattice lengths are a=5.47, b=5.47, c=6.66 angstroms.<|im_end|>"
+      },
+      "diagnosis": "Target expects AlCu2InS4; answer AlCuNdO4 has different elements and counts. It is not the row source composition."
+    },
+    {
+      "heldout_index": 5,
+      "id": "mp-1173947",
+      "swap_id": "mp-1229077",
+      "row_source_composition": {
+        "Li": 6,
+        "Mn": 4,
+        "O": 10
+      },
+      "swap_target_composition": {
+        "Al": 1,
+        "Cu": 2,
+        "In": 1,
+        "S": 4
+      },
+      "swap_target_formula": "AlCu2InS4",
+      "swap_read_text": " The space group is 82. The composition is AlCu2In1S8. The input cell contains 8 atoms in 5 independent orbits. The lattice lengths are a=5.47, b=5.47, c=6.66 angstroms.<|im_end|>",
+      "formula_regex_matches": [
+        "AlCu2In1S8"
+      ],
+      "grade": {
+        "success": false,
+        "fields": {
+          "sg": true,
+          "formula": false,
+          "atoms": true,
+          "orbits": true,
+          "a": true,
+          "b": true,
+          "c": true
+        },
+        "raw_text": " The space group is 82. The composition is AlCu2In1S8. The input cell contains 8 atoms in 5 independent orbits. The lattice lengths are a=5.47, b=5.47, c=6.66 angstroms.<|im_end|>"
+      },
+      "diagnosis": "Target expects AlCu2InS4; answer AlCu2In1S8 differs in sulfur count (8 vs 4); explicit In1 is harmless. It is not the row source composition."
+    },
+    {
+      "heldout_index": 6,
+      "id": "mp-21371",
+      "swap_id": "mp-1229077",
+      "row_source_composition": {
+        "Co": 4,
+        "Si": 4,
+        "V": 4
+      },
+      "swap_target_composition": {
+        "Al": 1,
+        "Cu": 2,
+        "In": 1,
+        "S": 4
+      },
+      "swap_target_formula": "AlCu2InS4",
+      "swap_read_text": " The space group is 82. The composition is AlCu2In1S8. The input cell contains 8 atoms in 5 independent orbits. The lattice lengths are a=5.47, b=5.47, c=6.66 angstroms.<|im_end|>",
+      "formula_regex_matches": [
+        "AlCu2In1S8"
+      ],
+      "grade": {
+        "success": false,
+        "fields": {
+          "sg": true,
+          "formula": false,
+          "atoms": true,
+          "orbits": true,
+          "a": true,
+          "b": true,
+          "c": true
+        },
+        "raw_text": " The space group is 82. The composition is AlCu2In1S8. The input cell contains 8 atoms in 5 independent orbits. The lattice lengths are a=5.47, b=5.47, c=6.66 angstroms.<|im_end|>"
+      },
+      "diagnosis": "Target expects AlCu2InS4; answer AlCu2In1S8 differs in sulfur count (8 vs 4); explicit In1 is harmless. It is not the row source composition."
+    }
+  ],
+  "prompt_and_source_check": {
+    "swap_prompt_construction": {
+      "run_py": "experiments/interleaved_relational_blocks_20261005/run.py:564-569",
+      "prepare_py": "experiments/interleaved_relational_blocks_20261005/prepare.py:44-50,124-141",
+      "design_prefix_template": "User: Generate a crystal whose input cell has composition {condition.formula} in space group {condition.sg}.\\nAssistant: I generated a crystal.\\n",
+      "swap_body_and_question": "<CRYSTAL_START> + other.c1 + <CRYSTAL_END> + User: Read the current replacement crystal, ignoring the earlier design conditions. + the Q1 read question",
+      "note": "run.py constructs the swap input from the current row's g_task prefix (design condition only), the replacement other.c1, and a generic read question preceded by 'Read the current replacement crystal, ignoring the earlier design conditions.' The prefix contains no previous crystal body or prior assistant answer; among human-readable formula strings, the current row's design condition is the direct old-condition candidate."
+    },
+    "first6_design_conditions": [
+      {
+        "id": "mp-1229077",
+        "formula": "AlCu2InS4",
+        "sg": 82
+      },
+      {
+        "id": "mp-1019259",
+        "formula": "Hg2Sn2Sr2",
+        "sg": 186
+      },
+      {
+        "id": "mp-1079976",
+        "formula": "Ge4Ni2Tm2",
+        "sg": 63
+      },
+      {
+        "id": "mp-1095422",
+        "formula": "B3Pt6Yb3",
+        "sg": 180
+      },
+      {
+        "id": "mp-1173947",
+        "formula": "Li6Mn4O10",
+        "sg": 2
+      },
+      {
+        "id": "mp-21371",
+        "formula": "Co4Si4V4",
+        "sg": 62
+      }
+    ],
+    "al_cu_nd_o4_in_first6_design_conditions": false,
+    "training32_original_formula_check": {
+      "train_record_count": 32,
+      "canonical_source_formula_exact_matches": [],
+      "same_element_set_matches": [],
+      "condition_formula_exact_matches": [],
+      "method": "Canonicalized plans.source.composition for each of the 32 train rows and compared element/count maps and condition formulas."
+    },
+    "finding": "AlCuNdO4 is absent from all six current design-condition formulas and from the 32 training source formulas (including any source formula with the same Al/Cu/Nd/O element set); the reconstructed swap prefix contains only each current design condition, not a previous crystal body or prior assistant answer. These checks rule out those direct-copy sources, but do not identify how the model produced the repeated answer from the replacement text."
+  },
+  "target_multiplicity_check": {
+    "target_id": "mp-1229077",
+    "wyckoff_labels_with_nominal_multiplicity": [
+      {
+        "element": "Al",
+        "wyckoff": "2c",
+        "nominal_multiplicity": 2
+      },
+      {
+        "element": "In",
+        "wyckoff": "2b",
+        "nominal_multiplicity": 2
+      },
+      {
+        "element": "Cu",
+        "wyckoff": "2d",
+        "nominal_multiplicity": 2
+      },
+      {
+        "element": "Cu",
+        "wyckoff": "2a",
+        "nominal_multiplicity": 2
+      },
+      {
+        "element": "S",
+        "wyckoff": "8g",
+        "nominal_multiplicity": 8
+      }
+    ],
+    "nominal_multiplicity_by_element": {
+      "Al": 2,
+      "Cu": 4,
+      "In": 2,
+      "S": 8
+    },
+    "source_input_composition": {
+      "Al": 1,
+      "Cu": 2,
+      "In": 1,
+      "S": 4
+    },
+    "source_input_atom_count": 8,
+    "nominal_to_input_count_ratio": {
+      "Al": 2.0,
+      "Cu": 2.0,
+      "In": 2.0,
+      "S": 2.0
+    },
+    "relation_to_repeated_wrong_formula": "The failed AlCu2In1S8 strings use nominal S=8 from label 8g, while Al/Cu/In counts equal half their summed nominal labels (2/4/2) and the target input composition (1/2/1/4). This is consistent with an S-site multiplicity/count confusion as a hypothesis, but it does not prove the model's internal cause."
+  },
+  "ninth_case_contrast": {
+    "heldout_index_in_b8_evaluation": 9,
+    "id": "mp-1219591",
+    "design_condition": {
+      "formula": "Co2F12Ni2Rb2",
+      "sg": 74
+    },
+    "swap_target_source_composition": {
+      "Al": 1,
+      "Cu": 2,
+      "In": 1,
+      "S": 4
+    },
+    "b8": {
+      "evaluation_jsonl": "experiments/interleaved_relational_scaled32_20261006/eval_full_history_b8_fixed_001/heldout16/evaluation.jsonl",
+      "swap_id": "mp-1229077",
+      "Q_swap": true,
+      "formula_regex_match": [
+        "AlCu2In1S4"
+      ],
+      "swap_read_text": " The space group is 82. The composition is AlCu2In1S4. The input cell contains 8 atoms in 5 independent orbits. The lattice lengths are a=5.47, b=5.47, c=6.66 angstroms.<|im_end|>",
+      "grade_fields": {
+        "sg": true,
+        "formula": true,
+        "atoms": true,
+        "orbits": true,
+        "a": true,
+        "b": true,
+        "c": true
+      }
+    },
+    "b32": {
+      "evaluation_jsonl": "experiments/interleaved_relational_scaled32_20261006/eval_full_history_final2048_001/heldout16/evaluation.jsonl",
+      "swap_id": "mp-1229077",
+      "Q_swap": false,
+      "formula_regex_match": [
+        "AlCuS4S8"
+      ],
+      "swap_read_text": " The space group is 82. The composition is AlCuS4S8. The input cell contains 8 atoms in 5 independent orbits. The lattice lengths are a=5.47, b=5.47, c=6.66 angstroms.<|im_end|>",
+      "grade_fields": {
+        "sg": true,
+        "formula": false,
+        "atoms": true,
+        "orbits": true,
+        "a": true,
+        "b": true,
+        "c": true
+      }
+    },
+    "interpretation": "Same swap target is read correctly in the B8 row and fails formula grading in the B32 row; this is a bounded descriptive contrast. Its design condition differs from the first-six rows, but this alone does not establish a context or architecture cause."
+  }
+}

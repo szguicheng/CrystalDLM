@@ -1,0 +1,37 @@
+{
+  "same_next_batch": true,
+  "initial_parameter_difference": 0.0,
+  "optimizer_tensors_exactly_restored": true,
+  "same_rng_after_next_step": true,
+  "loss_a": 9.722551345825195,
+  "loss_b": 9.722551345825195,
+  "largest_differences": [
+    [
+      "composition.0.weight",
+      5.003809928894043e-05
+    ],
+    [
+      "encoder.layers.0.self_attn.in_proj_bias",
+      9.79559263214469e-06
+    ],
+    [
+      "composition.2.weight",
+      7.772818207740784e-06
+    ],
+    [
+      "time_embedding.2.weight",
+      3.334134817123413e-06
+    ],
+    [
+      "encoder.layers.0.self_attn.in_proj_weight",
+      3.1776726245880127e-06
+    ],
+    [
+      "encoder.layers.0.self_attn.out_proj.weight",
+      2.8796494007110596e-06
+    ]
+  ],
+  "max_parameter_difference_after_next_update": 5.003809928894043e-05,
+  "passed": true,
+  "note": "Require exact restored parameters/optimizer/RNG and matching next loss; mixed-precision GPU backward is not claimed bitwise deterministic."
+}

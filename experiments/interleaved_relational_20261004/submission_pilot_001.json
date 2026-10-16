@@ -1,0 +1,69 @@
+{
+  "experiment": "interleaved_relational_20261004/pilot_001",
+  "slurm_job_id": "604554",
+  "slurm_job_name": "rel-cnl-pilot-001",
+  "submitted_at_utc": "2026-10-04 18:52:17 UTC",
+  "submitted_from": "/scratch/chenggui2/CrystalDLM",
+  "initial_sacct": {
+    "state": "PENDING",
+    "elapsed": "00:00:00",
+    "exit_code": "0:0"
+  },
+  "slurm_script_sha256": "6b077b25e5754dfe6988a69486ae53c30a3079b785df6a3f6c23d28715dcf935",
+  "source_sha256": {
+    "run.py": "9f5881028177c3b527ea064198b91ae73600894801960113aec2e8ffcea8ab50",
+    "score.py": "55a66f8794353170aca249de6a6e5f070257ccb528d273998767a13bc1942454",
+    "model.py": "036ac4d4fc08437e2325c31265fceb08a573d8c703a1ca551c4f921541345406",
+    "prepare.py": "07ac45cb3ae5ab086fed460fc957afcc94e1988011161a4d0178b388b1769f14",
+    "test_checks.py": "1c1c388c1baf1a2e6a5907d5fe725df68b27aa1c05fd0e375994cfea75605e54",
+    "data_pilot_001/manifest.json": "e4b67ae8a4e8b831b8c529992b9ea2a83b44603689cdc0b460e1d9d7f9ff5513",
+    "data_pilot_001/records.jsonl": "ef2ec2dcdee1d73c62e48987a9cec86a4db3076f9c48d9ab17b8745b9eca785f"
+  },
+  "synced_provenance_closure": {
+    "files": 135,
+    "bytes": 17467180,
+    "remote_sha256_check": "passed",
+    "records": 24,
+    "selected_source_texts_and_cifs": 24,
+    "excluded_cases_loaded_as_model_data": 0,
+    "test256_used": false
+  },
+  "independent_remote_data_audit": {
+    "status": "passed",
+    "unique_records": 24,
+    "selected_ids_match_manifest": true,
+    "source_file_references_checked": 120,
+    "source_file_hashes_match_records": true,
+    "run100_summary_sha256": "438d019d6dc12a89b3a952761e392c26cabf7035c145d8b61eed8af3cd77ae02",
+    "runtime_snapshots": 11,
+    "runtime_hashes_stable": true,
+    "test256_or_nonselected_text_or_cif_read": false
+  },
+  "runtime": {
+    "python": "/scratch/chenggui2/CrystalDLM/experiments/interleaved_ar_diffusion_20261002/env/bin/python",
+    "python_version": "3.10.18",
+    "torch": "2.2.0+cu121",
+    "transformers": "4.57.6",
+    "pymatgen": "2025.10.7",
+    "spglib": "2.7.0",
+    "numpy": "1.26.4",
+    "scipy": "1.13.1",
+    "hf_home": "/scratch/chenggui2/CrystalDLM/experiments/interleaved_ar_diffusion_20261002/hf_cache",
+    "model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+    "cached_model_safetensors_bytes": 988097824
+  },
+  "design": {
+    "seed": 17,
+    "arms": ["ar", "hybrid_shift"],
+    "training_records": 8,
+    "heldout_records": 16,
+    "updates_per_arm": 512,
+    "microbatch": 1,
+    "gradient_accumulation": 4,
+    "effective_batch": 4,
+    "K": 2560,
+    "MAXLEN": 8192,
+    "test256_used": false
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "observed_at_utc": "2026-10-05T09:43:36Z",
+  "job_id": "605522",
+  "sacct": {
+    "state": "COMPLETED",
+    "elapsed": "00:26:48",
+    "exit_code": "0:0",
+    "node": "gpu-a100-10"
+  },
+  "summary": {
+    "path": "pilot_002/summary.json",
+    "sha256": "d39753512a6847201e1739708d78a794ff307dffeef1751e6d0bf737284c996d",
+    "status": "complete",
+    "test256_used": false,
+    "raw_rows": {
+      "ar_seen8": 8,
+      "ar_heldout16": 16,
+      "hybrid_shift_seen8": 8,
+      "hybrid_shift_heldout16": 16
+    }
+  },
+  "ar_inherited": {
+    "training_repeated": false,
+    "checkpoint_sha256": "9d73aeebc4966efafb6fd2bb03bb448c400d0e20878c1258ec8c8c1321f123e5",
+    "checkpoint_updates": 512,
+    "final_fingerprint": "e466cb281d88e6356f3ed73dc2915a3bf947024abecaa534f25d22a6a0dca5e8",
+    "seen8_sha256": "9101a6a776af5a346a1356d35287c0b5fa942201091e227826b05f6b5617ca5d",
+    "heldout16_replay_comparison": {
+      "path": "pilot_002/ar/heldout16/replay_comparison.json",
+      "sha256": "4b2828d52febbf5e1802b584178e85b96d86e3395893105c499df10beb1feec0",
+      "first_two_scientific_outputs_equal": true,
+      "missing_old_raw_id_replayed_as_new_observation": "mp-1079976"
+    }
+  },
+  "hybrid_shift": {
+    "updates": 512,
+    "mode": "hybrid",
+    "prediction_offset": 1,
+    "initial_fingerprint": "6bffa202d8485a6ee8bce3553044c9657948e25be702a45a9efb860ced9d1429",
+    "final_fingerprint": "01f8ce739f46b7d4ebfa10810940f891f1fea0da37f016acd5788a4b161aabd8",
+    "checkpoint_sha256": "3e1b0e30b5d7edc147e11b1b975959835cad60587f1aa5aafc8ca54b0cdf25a2",
+    "strict_reload_verified": true
+  },
+  "local_sync": {
+    "raws_and_receipts_synced": true,
+    "checkpoint_pt_excluded": true,
+    "remote_and_local_output_hashes_match": true
+  },
+  "training_contract_note": "Q2 had zero training exposure in this pilot; closed-loop zero is not evidence that the relational encoding is infeasible."
+}

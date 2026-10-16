@@ -1,0 +1,317 @@
+{
+  "status": "complete",
+  "scope": "readonly CPU audit of bounded reader-context probe",
+  "source_paths": {
+    "probe": "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/reader_context_probe_001",
+    "evaluation_seen8": "experiments/interleaved_relational_scaled32_20261006/eval_grounded_final2048_001/seen8/evaluation.jsonl",
+    "data_records": "experiments/interleaved_relational_scaled32_20261006/data_001/records.jsonl",
+    "final_pin": "experiments/interleaved_relational_scaled32_20261006/eval_input_pin.json"
+  },
+  "source_gates_from_saved_summaries_only": {
+    "probe_summary_status_complete": true,
+    "source_eval_summary_sha256_matches": true,
+    "source_seen8_sha256_matches": true,
+    "final_pin_sha256_matches_snapshot": true,
+    "data_manifest_sha256_matches_snapshot": true,
+    "data_records_sha256_matches_snapshot": true,
+    "checkpoint_hash_matches_final_pin": true,
+    "final_fingerprint_matches_pin_and_stable": true,
+    "input_snapshots_identical": true,
+    "optimizer_updates_zero": true
+  },
+  "slurm_state": "not queried; source status and fingerprints checked from saved summaries as assigned",
+  "task_denominators_recomputed": {
+    "seen8_evaluation_rows": 8,
+    "Q2_actual_attempted": 5,
+    "Q2_actual_eligible_and_replayed": 5,
+    "Q_swap_attempted": 8,
+    "Q_swap_valid_partner_c1_and_replayed": 8,
+    "denominators_match_summary": true
+  },
+  "raw_replay_exactness": {
+    "cases": 13,
+    "exact_replay_matches": 13,
+    "all_13_match_source_and_saved_flags": true,
+    "mismatches": []
+  },
+  "grade_aggregates_recomputed_from_saved_seven_field_booleans": {
+    "Q2_actual": {
+      "full_history_replay": {
+        "cases": 5,
+        "successes": 0,
+        "success_denominator": 5,
+        "seven_field_denominator": 35,
+        "fields_correct": {
+          "sg": 5,
+          "formula": 5,
+          "atoms": 5,
+          "orbits": 5,
+          "a": 0,
+          "b": 0,
+          "c": 0
+        },
+        "field_correct_total": 20,
+        "grade_field_shapes_valid": true
+      },
+      "grounded_training_neutral": {
+        "cases": 5,
+        "successes": 5,
+        "success_denominator": 5,
+        "seven_field_denominator": 35,
+        "fields_correct": {
+          "sg": 5,
+          "formula": 5,
+          "atoms": 5,
+          "orbits": 5,
+          "a": 5,
+          "b": 5,
+          "c": 5
+        },
+        "field_correct_total": 35,
+        "grade_field_shapes_valid": true
+      },
+      "full_history_with_instruction": {
+        "cases": 5,
+        "successes": 0,
+        "success_denominator": 5,
+        "seven_field_denominator": 35,
+        "fields_correct": {
+          "sg": 5,
+          "formula": 5,
+          "atoms": 5,
+          "orbits": 5,
+          "a": 0,
+          "b": 0,
+          "c": 0
+        },
+        "field_correct_total": 20,
+        "grade_field_shapes_valid": true
+      }
+    },
+    "Q_swap": {
+      "full_history_replay": {
+        "cases": 8,
+        "successes": 0,
+        "success_denominator": 8,
+        "seven_field_denominator": 56,
+        "fields_correct": {
+          "sg": 0,
+          "formula": 0,
+          "atoms": 0,
+          "orbits": 0,
+          "a": 0,
+          "b": 0,
+          "c": 0
+        },
+        "field_correct_total": 0,
+        "grade_field_shapes_valid": true
+      },
+      "grounded_training_neutral": {
+        "cases": 8,
+        "successes": 8,
+        "success_denominator": 8,
+        "seven_field_denominator": 56,
+        "fields_correct": {
+          "sg": 8,
+          "formula": 8,
+          "atoms": 8,
+          "orbits": 8,
+          "a": 8,
+          "b": 8,
+          "c": 8
+        },
+        "field_correct_total": 56,
+        "grade_field_shapes_valid": true
+      },
+      "full_history_with_instruction": {
+        "cases": 8,
+        "successes": 0,
+        "success_denominator": 8,
+        "seven_field_denominator": 56,
+        "fields_correct": {
+          "sg": 0,
+          "formula": 0,
+          "atoms": 0,
+          "orbits": 0,
+          "a": 0,
+          "b": 0,
+          "c": 0
+        },
+        "field_correct_total": 0,
+        "grade_field_shapes_valid": true
+      }
+    }
+  },
+  "grade_reaggregation_integrity": true,
+  "grade_runtime_note": "Per-case seven-field grader outputs were recounted; full grader import was unavailable in system Python because pymatgen is not installed. No dependency installation or model inference was run.",
+  "prompt_contract": {
+    "cases_checked": 13,
+    "all_three_prompts_share_current_C2_or_swap_C1": true,
+    "cue_instruction_contains_only_directive_text": true,
+    "full_history_retained_under_cue": true,
+    "per_case": [
+      {
+        "id": "anchor_Tb8Mg4",
+        "task": "Q2_actual",
+        "target_source": "generated_c2",
+        "same_current_crystal_in_all_three_prompts": true,
+        "current_sha256_matches_receipt": true,
+        "instruction_added_no_target_values": true,
+        "instruction_cue_preserves_full_history": true,
+        "instruction_text": "Read the final crystal block. Earlier answers describe the previous crystal and must not be copied.",
+        "instruction_exact_directive_only": true
+      },
+      {
+        "id": "mp-4047",
+        "task": "Q2_actual",
+        "target_source": "generated_c2",
+        "same_current_crystal_in_all_three_prompts": true,
+        "current_sha256_matches_receipt": true,
+        "instruction_added_no_target_values": true,
+        "instruction_cue_preserves_full_history": true,
+        "instruction_text": "Read the final crystal block. Earlier answers describe the previous crystal and must not be copied.",
+        "instruction_exact_directive_only": true
+      },
+      {
+        "id": "mp-30009",
+        "task": "Q2_actual",
+        "target_source": "generated_c2",
+        "same_current_crystal_in_all_three_prompts": true,
+        "current_sha256_matches_receipt": true,
+        "instruction_added_no_target_values": true,
+        "instruction_cue_preserves_full_history": true,
+        "instruction_text": "Read the final crystal block. Earlier answers describe the previous crystal and must not be copied.",
+        "instruction_exact_directive_only": true
+      },
+      {
+        "id": "mp-1188285",
+        "task": "Q2_actual",
+        "target_source": "generated_c2",
+        "same_current_crystal_in_all_three_prompts": true,
+        "current_sha256_matches_receipt": true,
+        "instruction_added_no_target_values": true,
+        "instruction_cue_preserves_full_history": true,
+        "instruction_text": "Read the final crystal block. Earlier answers describe the previous crystal and must not be copied.",
+        "instruction_exact_directive_only": true
+      },
+      {
+        "id": "mp-1207068",
+        "task": "Q2_actual",
+        "target_source": "generated_c2",
+        "same_current_crystal_in_all_three_prompts": true,
+        "current_sha256_matches_receipt": true,
+        "instruction_added_no_target_values": true,
+        "instruction_cue_preserves_full_history": true,
+        "instruction_text": "Read the final crystal block. Earlier answers describe the previous crystal and must not be copied.",
+        "instruction_exact_directive_only": true
+      },
+      {
+        "id": "anchor_Tb8Mg4",
+        "task": "Q_swap",
+        "target_source": "swap_partner_c1",
+        "same_current_crystal_in_all_three_prompts": true,
+        "current_sha256_matches_receipt": true,
+        "instruction_added_no_target_values": true,
+        "instruction_cue_preserves_full_history": true,
+        "instruction_text": "Read the latest crystal block. Ignore earlier answers and design conditions.",
+        "instruction_exact_directive_only": true
+      },
+      {
+        "id": "anchor_Li8V4Ni4O16",
+        "task": "Q_swap",
+        "target_source": "swap_partner_c1",
+        "same_current_crystal_in_all_three_prompts": true,
+        "current_sha256_matches_receipt": true,
+        "instruction_added_no_target_values": true,
+        "instruction_cue_preserves_full_history": true,
+        "instruction_text": "Read the latest crystal block. Ignore earlier answers and design conditions.",
+        "instruction_exact_directive_only": true
+      },
+      {
+        "id": "mp-4047",
+        "task": "Q_swap",
+        "target_source": "swap_partner_c1",
+        "same_current_crystal_in_all_three_prompts": true,
+        "current_sha256_matches_receipt": true,
+        "instruction_added_no_target_values": true,
+        "instruction_cue_preserves_full_history": true,
+        "instruction_text": "Read the latest crystal block. Ignore earlier answers and design conditions.",
+        "instruction_exact_directive_only": true
+      },
+      {
+        "id": "mp-1205515",
+        "task": "Q_swap",
+        "target_source": "swap_partner_c1",
+        "same_current_crystal_in_all_three_prompts": true,
+        "current_sha256_matches_receipt": true,
+        "instruction_added_no_target_values": true,
+        "instruction_cue_preserves_full_history": true,
+        "instruction_text": "Read the latest crystal block. Ignore earlier answers and design conditions.",
+        "instruction_exact_directive_only": true
+      },
+      {
+        "id": "mp-30009",
+        "task": "Q_swap",
+        "target_source": "swap_partner_c1",
+        "same_current_crystal_in_all_three_prompts": true,
+        "current_sha256_matches_receipt": true,
+        "instruction_added_no_target_values": true,
+        "instruction_cue_preserves_full_history": true,
+        "instruction_text": "Read the latest crystal block. Ignore earlier answers and design conditions.",
+        "instruction_exact_directive_only": true
+      },
+      {
+        "id": "mp-1188285",
+        "task": "Q_swap",
+        "target_source": "swap_partner_c1",
+        "same_current_crystal_in_all_three_prompts": true,
+        "current_sha256_matches_receipt": true,
+        "instruction_added_no_target_values": true,
+        "instruction_cue_preserves_full_history": true,
+        "instruction_text": "Read the latest crystal block. Ignore earlier answers and design conditions.",
+        "instruction_exact_directive_only": true
+      },
+      {
+        "id": "mp-1207068",
+        "task": "Q_swap",
+        "target_source": "swap_partner_c1",
+        "same_current_crystal_in_all_three_prompts": true,
+        "current_sha256_matches_receipt": true,
+        "instruction_added_no_target_values": true,
+        "instruction_cue_preserves_full_history": true,
+        "instruction_text": "Read the latest crystal block. Ignore earlier answers and design conditions.",
+        "instruction_exact_directive_only": true
+      },
+      {
+        "id": "mp-1205902",
+        "task": "Q_swap",
+        "target_source": "swap_partner_c1",
+        "same_current_crystal_in_all_three_prompts": true,
+        "current_sha256_matches_receipt": true,
+        "instruction_added_no_target_values": true,
+        "instruction_cue_preserves_full_history": true,
+        "instruction_text": "Read the latest crystal block. Ignore earlier answers and design conditions.",
+        "instruction_exact_directive_only": true
+      }
+    ],
+    "cue_instruction_contains_only_directives": true
+  },
+  "swap_partner_limit": {
+    "partner_counts": {
+      "anchor_Li8V4Ni4O16": 1,
+      "anchor_Tb8Mg4": 7
+    },
+    "unique_partner_structures": 2,
+    "most_repeated_partner_cases": 7,
+    "interpretation": "7/8 Q_swap cases reuse one partner; results cover two partner structures only."
+  },
+  "neutral_interpretation": "Q2 and replacement-read context diagnostics only; no neutral result is a closed-loop success",
+  "scope_goal_achieved": false,
+  "root_actual_grader_recheck": {
+    "cases": 13,
+    "responses": 39,
+    "same_frozen_grader_results": true,
+    "targetaudit_valid": 13,
+    "model_inference": "not_run"
+  }
+}

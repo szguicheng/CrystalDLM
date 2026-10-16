@@ -1,0 +1,33 @@
+{
+  "id": "2d0d9d7f-ce29-4a46-af0a-bedf6347adbf",
+  "object": "chat.completion",
+  "created": 1791053943,
+  "model": "tokenhub/kimi-k3",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "The structure is described in the monoclinic space group identified by [[param:space_group.number]], with Hall symbol [[param:space_group.hall]], corresponding to P2/m symmetry: a primitive lattice with a twofold axis and mirror plane, so positions are either fixed on special sites or paired by the symmetry operations. The original input cell is specified by the edge lengths [[param:cell.a]], [[param:cell.b]], and [[param:cell.c]] and by the angles [[param:cell.alpha]], [[param:cell.beta]], and [[param:cell.gamma]]; the two right angles contrast with the inclined first angle, while fractional input values are reported to the precision indicated by [[param:round_digits]]. The stated cell contains [[param:input.atom_count]] atoms, with composition given by [[param:composition.Co]], [[param:composition.Dy]], [[param:composition.Fe]], and [[param:composition.Ga]].\n\nThe quoted standard description is reached from that input setting by the axis remapping [[param:frame.matrix]] together with [[param:frame.origin_shift]]. Geometrically this interchanges the roles of the first two input axes and reverses the third, while the very small off-ideal terms in the transform and origin are numerical residue from the change of frame rather than structural relaxations. No separate precision corrections are supplied, so there are no recorded deviations from the idealized symmetry backbone to describe beyond that frame conversion.\n\nWithin the standard P2/m frame, the independent Wyckoff content resolves into five orbits. Dysprosium occupies orbit [[param:orbit.o000.id]], with element assignment [[param:orbit.o000.element]] on Wyckoff site [[param:orbit.o000.wyckoff]], a fixed position at 1/2, 0, 1/2 with no free coordinate. Gallium occupies [[param:orbit.o001.id]], assigned to [[param:orbit.o001.element]] at [[param:orbit.o001.wyckoff]], fixed at 0, 1/2, 1/2. Iron occupies [[param:orbit.o002.id]], assigned to [[param:orbit.o002.element]] at [[param:orbit.o002.wyckoff]], fixed at 1/2, 1/2, 0. These three sites are therefore fully pinned by symmetry rather than refined parameters.\n\nCobalt is split between a symmetry-paired orbit and a second fixed site. The paired cobalt orbit is [[param:orbit.o003.id]], with [[param:orbit.o003.element]] on [[param:orbit.o003.wyckoff]]; it has multiplicity two and coordinate form x, 0, z, leaving x and z as free axes whose values are carried by [[param:orbit.o003.parameters]]. The remaining cobalt is [[param:orbit.o004.id]], assigned to [[param:orbit.o004.element]] at the fixed Wyckoff site [[param:orbit.o004.wyckoff]] at 0, 1/2, 0. Together the two-member cobalt orbit and the single fixed cobalt site account for the cobalt count, while the singly occupied Dy, Ga, and Fe sites complete the stated unit-cell population."
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "reasoning_stream": {
+    "chunks": 432,
+    "characters": 4089
+  },
+  "usage": {
+    "completion_tokens": 1622,
+    "prompt_tokens": 2690,
+    "total_tokens": 4312,
+    "completion_tokens_details": {
+      "reasoning_tokens": 947
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "cache_creation_input_tokens": 0
+    }
+  }
+}

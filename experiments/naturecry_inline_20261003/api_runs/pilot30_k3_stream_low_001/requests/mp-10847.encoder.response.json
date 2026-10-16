@@ -1,0 +1,33 @@
+{
+  "id": "5b6c4aa6-7983-4f43-8df8-8e4e59feeb16",
+  "object": "chat.completion",
+  "created": 1791054597,
+  "model": "tokenhub/kimi-k3",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "The structure is reported in a primitive cubic input cell whose three lattice edges are carried by [[param:cell.a]], [[param:cell.b]], and [[param:cell.c]], with the interaxial angles given by [[param:cell.alpha]], [[param:cell.beta]], and [[param:cell.gamma]]; because the three edges match and the three angles are right angles, the input backbone is metrically cubic. The supplied cell contains [[param:input.atom_count]] atoms in all, distributed as [[param:composition.Ni]], [[param:composition.Sb]], and [[param:composition.Se]], so the input composition has equal counts of the three species within that cell.\n\nThe symmetry is the cubic space group identified by [[param:space_group.number]], with the Hall setting recorded as [[param:space_group.hall]]. In this setting the independent content reduces to three Wyckoff orbits, each labeled 4a and each having four symmetry-related positions generated from one free coordinate along the body-diagonal form x, x, x. The nickel orbit is identified as [[param:orbit.o000.id]], its species is [[param:orbit.o000.element]], its Wyckoff label is [[param:orbit.o000.wyckoff]], and its single positional parameter is [[param:orbit.o000.parameters]]. The antimony orbit is identified as [[param:orbit.o001.id]], with species [[param:orbit.o001.element]], Wyckoff label [[param:orbit.o001.wyckoff]], and free parameter [[param:orbit.o001.parameters]]. The selenium orbit is identified as [[param:orbit.o002.id]], with species [[param:orbit.o002.element]], Wyckoff label [[param:orbit.o002.wyckoff]], and free parameter [[param:orbit.o002.parameters]]. Thus all three independent atoms lie on the same type of threefold-related cubic site, but their free x parameters remain distinct and should not be treated as identical.\n\nNo change of coordinate frame is required between the supplied input and the standard description: the transformation matrix is [[param:frame.matrix]] and the origin shift is [[param:frame.origin_shift]], i.e. the identity rotation with no translation. Fractional input values are considered at the precision indicated by [[param:round_digits]]. No precision corrections were supplied, so there are no additional measured deviations from the idealized cubic P2_13 backbone to report beyond the stated distinct free coordinates and the stated rounding precision."
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "reasoning_stream": {
+    "chunks": 200,
+    "characters": 2352
+  },
+  "usage": {
+    "completion_tokens": 1006,
+    "prompt_tokens": 2209,
+    "total_tokens": 3215,
+    "completion_tokens_details": {
+      "reasoning_tokens": 490
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "cache_creation_input_tokens": 0
+    }
+  }
+}

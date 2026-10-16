@@ -1,0 +1,438 @@
+{
+  "status": "read_only_scaled32_seen8_audit_complete",
+  "scope": {
+    "arm": "joint_ar_diffusion_b32",
+    "model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "split": "train",
+    "case_ids": [
+      "anchor_Tb8Mg4",
+      "anchor_Li8V4Ni4O16",
+      "mp-4047",
+      "mp-1205515",
+      "mp-30009",
+      "mp-1188285",
+      "mp-1207068",
+      "mp-1205902"
+    ],
+    "training_job": 607943,
+    "training_updates": 2048,
+    "heldout16": "Remote job608179 confirmed RUNNING; heldout16 evaluation started and 1/16 record observed by root. This audit inspects only local complete seen8 artifacts.",
+    "overall_final_summary": "absent; seen8 completion does not close evaluation stage"
+  },
+  "artifact_sha256": {
+    "evaluation_jsonl": "9b77043728086d03e3b34eedf370a13142a2f2ac0ffa6e7217beac69dc844cdd",
+    "seen8_summary_json": "66d5c456c7831af12fdecfa2f9663de098664a2e7d1c147528fec4cd12f0d30a",
+    "optimization_gate_json": "71f2f1ed088105dd5d00592e53d5f671baebb09167a7403c935105eca9ac5d7e",
+    "records_jsonl": "231f336234d15a216dc9cb800d8dc1c3f30cf90985184ccc0d3e5c26333e95c6",
+    "manifest_json": "25f150360f173970895dafd31e390f94b4b01ca174e6ad09b9e288c94b1e48cc",
+    "eval_input_pin_json": "dff7306086bc0c94915590a69b1de9564725987c8d5e209cfa53416c1035b488",
+    "training_status_json": "c8de0fe0dd51f7f6381f9e1e8176cb75bdb21929e75fa6b0802e418a79933363",
+    "checkpoint_receipt_json": "4f0a2f33f872d413a2d4c5f97302878bd3e17e4ea2b86e0ee345381b1ea76958",
+    "training_summary_json": "15829191bd77e40fefbbf97fd40f625dc6d5a4eb8b2b5f6c09e0d990afa77937",
+    "evaluate_py": "e0ca48792dfd942022e49b98907b2bb0518c5c9e20e7f6b54b96f627d4c63a73",
+    "protocol_md": "69b2748d188725e2e8f6a92e841d028edf9c97978141cdacbfbdfec9e99f5c73",
+    "relational_codec_py": "365f122905399a73477b92a7af97c05b78483ea5af12347f9a6050b1a3506813",
+    "added_tokens_json": "28dc70f2cb07b1cca239390e21197945125792bfe8ef6c2a7463a4c387e79673"
+  },
+  "recomputed": {
+    "counts": {
+      "G": {
+        "count": 5,
+        "denominator": 8,
+        "rate": 0.625
+      },
+      "Q_reference": {
+        "count": 7,
+        "denominator": 8,
+        "rate": 0.875
+      },
+      "E_reference": {
+        "count": 8,
+        "denominator": 8,
+        "rate": 1.0
+      },
+      "closed_loop": {
+        "count": 0,
+        "denominator": 8,
+        "rate": 0.0
+      },
+      "flow_complete": {
+        "count": 5,
+        "denominator": 8,
+        "rate": 0.625
+      },
+      "Q_swap": {
+        "count": 0,
+        "denominator": 8,
+        "rate": 0.0
+      },
+      "Q_no_crystal": {
+        "count": 0,
+        "denominator": 8,
+        "rate": 0.0
+      }
+    },
+    "matches_summary": true,
+    "failure_histogram": {
+      "G:generation_audit": 2,
+      "G:generation_error": 1,
+      "Q2_actual:answer_mismatch": 5,
+      "Q_no_crystal:read_error": 1,
+      "Q_reference:read_error": 1,
+      "Q_swap:answer_mismatch": 8,
+      "closed_loop:skipped_invalid_generated_c1": 3
+    },
+    "failure_histogram_matches_summary": true,
+    "attempts_retried": 0
+  },
+  "actual_read_field_metrics": {
+    "Q1_actual": {
+      "sg": {
+        "count": 5,
+        "denominator": 5,
+        "rate": 1.0
+      },
+      "formula": {
+        "count": 5,
+        "denominator": 5,
+        "rate": 1.0
+      },
+      "atoms": {
+        "count": 5,
+        "denominator": 5,
+        "rate": 1.0
+      },
+      "orbits": {
+        "count": 5,
+        "denominator": 5,
+        "rate": 1.0
+      },
+      "a": {
+        "count": 5,
+        "denominator": 5,
+        "rate": 1.0
+      },
+      "b": {
+        "count": 5,
+        "denominator": 5,
+        "rate": 1.0
+      },
+      "c": {
+        "count": 5,
+        "denominator": 5,
+        "rate": 1.0
+      }
+    },
+    "Q2_actual": {
+      "sg": {
+        "count": 5,
+        "denominator": 5,
+        "rate": 1.0
+      },
+      "formula": {
+        "count": 5,
+        "denominator": 5,
+        "rate": 1.0
+      },
+      "atoms": {
+        "count": 5,
+        "denominator": 5,
+        "rate": 1.0
+      },
+      "orbits": {
+        "count": 5,
+        "denominator": 5,
+        "rate": 1.0
+      },
+      "a": {
+        "count": 0,
+        "denominator": 5,
+        "rate": 0.0
+      },
+      "b": {
+        "count": 0,
+        "denominator": 5,
+        "rate": 0.0
+      },
+      "c": {
+        "count": 0,
+        "denominator": 5,
+        "rate": 0.0
+      }
+    },
+    "attempt_denominators": {
+      "Q1_actual": 5,
+      "Q2_actual": 5
+    }
+  },
+  "actual_edit_field_metrics": {
+    "lengths_exact": {
+      "count": 5,
+      "denominator": 5,
+      "rate": 1.0
+    },
+    "other_plan_fields_exact": {
+      "count": 5,
+      "denominator": 5,
+      "rate": 1.0
+    },
+    "whole_geometry_scale": {
+      "count": 5,
+      "denominator": 5,
+      "rate": 1.0
+    },
+    "exact_target_plan": {
+      "count": 5,
+      "denominator": 5,
+      "rate": 1.0
+    },
+    "whole_geometry_scale_defined": {
+      "count": 5,
+      "denominator": 5,
+      "rate": 1.0
+    },
+    "edited_physical_audit": {
+      "count": 5,
+      "denominator": 5,
+      "rate": 1.0
+    }
+  },
+  "raw_K_END_PAD": {
+    "K": 2560,
+    "END_id": 151666,
+    "PAD_id": 151668,
+    "all_exact_K": true,
+    "unique_END_rule_pass_count": 7,
+    "cases": {
+      "anchor_Tb8Mg4": {
+        "token_count": 2560,
+        "end_positions_zero_based": [
+          405
+        ],
+        "pad_count": 2154,
+        "no_pad_before_first_end": true,
+        "pad_only_after_last_end": true,
+        "unique_END_rule_passed": true
+      },
+      "anchor_Li8V4Ni4O16": {
+        "token_count": 2560,
+        "end_positions_zero_based": [
+          623,
+          637
+        ],
+        "pad_count": 1925,
+        "no_pad_before_first_end": true,
+        "pad_only_after_last_end": true,
+        "unique_END_rule_passed": false
+      },
+      "mp-4047": {
+        "token_count": 2560,
+        "end_positions_zero_based": [
+          692
+        ],
+        "pad_count": 1867,
+        "no_pad_before_first_end": true,
+        "pad_only_after_last_end": true,
+        "unique_END_rule_passed": true
+      },
+      "mp-1205515": {
+        "token_count": 2560,
+        "end_positions_zero_based": [
+          803
+        ],
+        "pad_count": 1756,
+        "no_pad_before_first_end": true,
+        "pad_only_after_last_end": true,
+        "unique_END_rule_passed": true
+      },
+      "mp-30009": {
+        "token_count": 2560,
+        "end_positions_zero_based": [
+          442
+        ],
+        "pad_count": 2117,
+        "no_pad_before_first_end": true,
+        "pad_only_after_last_end": true,
+        "unique_END_rule_passed": true
+      },
+      "mp-1188285": {
+        "token_count": 2560,
+        "end_positions_zero_based": [
+          489
+        ],
+        "pad_count": 2070,
+        "no_pad_before_first_end": true,
+        "pad_only_after_last_end": true,
+        "unique_END_rule_passed": true
+      },
+      "mp-1207068": {
+        "token_count": 2560,
+        "end_positions_zero_based": [
+          758
+        ],
+        "pad_count": 1801,
+        "no_pad_before_first_end": true,
+        "pad_only_after_last_end": true,
+        "unique_END_rule_passed": true
+      },
+      "mp-1205902": {
+        "token_count": 2560,
+        "end_positions_zero_based": [
+          574
+        ],
+        "pad_count": 1985,
+        "no_pad_before_first_end": true,
+        "pad_only_after_last_end": true,
+        "unique_END_rule_passed": true
+      }
+    }
+  },
+  "valid_G_vs_training_references": {
+    "n": 5,
+    "all_exact_C1_text_and_plan": true,
+    "cases": {
+      "anchor_Tb8Mg4": {
+        "C1_text_equal_training": true,
+        "decoded_plan_equal_training_source": true
+      },
+      "mp-4047": {
+        "C1_text_equal_training": true,
+        "decoded_plan_equal_training_source": true
+      },
+      "mp-30009": {
+        "C1_text_equal_training": true,
+        "decoded_plan_equal_training_source": true
+      },
+      "mp-1188285": {
+        "C1_text_equal_training": true,
+        "decoded_plan_equal_training_source": true
+      },
+      "mp-1207068": {
+        "C1_text_equal_training": true,
+        "decoded_plan_equal_training_source": true
+      }
+    }
+  },
+  "actual_generated_loops": {
+    "n": 5,
+    "all_Q2_byte_equal_Q1": true,
+    "all_actual_C2_match_requested_direction_target": true,
+    "cases": {
+      "anchor_Tb8Mg4": {
+        "Q2_bytes_equal_Q1": true,
+        "actual_C2_plan_equal_direction_target": true,
+        "actual_E_fields": {
+          "lengths_exact": true,
+          "other_plan_fields_exact": true,
+          "whole_geometry_scale": true,
+          "exact_target_plan": true,
+          "whole_geometry_scale_defined": true,
+          "edited_physical_audit": true
+        },
+        "Q2_fields": {
+          "sg": true,
+          "formula": true,
+          "atoms": true,
+          "orbits": true,
+          "a": false,
+          "b": false,
+          "c": false
+        }
+      },
+      "mp-4047": {
+        "Q2_bytes_equal_Q1": true,
+        "actual_C2_plan_equal_direction_target": true,
+        "actual_E_fields": {
+          "lengths_exact": true,
+          "other_plan_fields_exact": true,
+          "whole_geometry_scale": true,
+          "exact_target_plan": true,
+          "whole_geometry_scale_defined": true,
+          "edited_physical_audit": true
+        },
+        "Q2_fields": {
+          "sg": true,
+          "formula": true,
+          "atoms": true,
+          "orbits": true,
+          "a": false,
+          "b": false,
+          "c": false
+        }
+      },
+      "mp-30009": {
+        "Q2_bytes_equal_Q1": true,
+        "actual_C2_plan_equal_direction_target": true,
+        "actual_E_fields": {
+          "lengths_exact": true,
+          "other_plan_fields_exact": true,
+          "whole_geometry_scale": true,
+          "exact_target_plan": true,
+          "whole_geometry_scale_defined": true,
+          "edited_physical_audit": true
+        },
+        "Q2_fields": {
+          "sg": true,
+          "formula": true,
+          "atoms": true,
+          "orbits": true,
+          "a": false,
+          "b": false,
+          "c": false
+        }
+      },
+      "mp-1188285": {
+        "Q2_bytes_equal_Q1": true,
+        "actual_C2_plan_equal_direction_target": true,
+        "actual_E_fields": {
+          "lengths_exact": true,
+          "other_plan_fields_exact": true,
+          "whole_geometry_scale": true,
+          "exact_target_plan": true,
+          "whole_geometry_scale_defined": true,
+          "edited_physical_audit": true
+        },
+        "Q2_fields": {
+          "sg": true,
+          "formula": true,
+          "atoms": true,
+          "orbits": true,
+          "a": false,
+          "b": false,
+          "c": false
+        }
+      },
+      "mp-1207068": {
+        "Q2_bytes_equal_Q1": true,
+        "actual_C2_plan_equal_direction_target": true,
+        "actual_E_fields": {
+          "lengths_exact": true,
+          "other_plan_fields_exact": true,
+          "whole_geometry_scale": true,
+          "exact_target_plan": true,
+          "whole_geometry_scale_defined": true,
+          "edited_physical_audit": true
+        },
+        "Q2_fields": {
+          "sg": true,
+          "formula": true,
+          "atoms": true,
+          "orbits": true,
+          "a": false,
+          "b": false,
+          "c": false
+        }
+      }
+    }
+  },
+  "third_failed_G_syntax": {
+    "id": "mp-1205902",
+    "decoder_reason": "GateError: Public symmetry sentence is missing or malformed",
+    "exact_line_2": " 164, with literal Hall symbol -P 3 2\".",
+    "expected_syntax": "^The public setting is space group ([1-9]\\d*), with literal Hall symbol (.+)\\.$",
+    "first_mismatch": "the line begins with 164 after a leading space; required literal opening is The public setting is space group.",
+    "raw_output_modified": false
+  },
+  "boundary": "Read-only; no checkpoint/model-weight hashing, GPU inference, SSH, scheduler action, or baseline edits."
+}

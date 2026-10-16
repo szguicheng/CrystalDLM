@@ -1,0 +1,119 @@
+{
+  "task": "coverage256 source-only space-group protocol review",
+  "status": "complete_without_numeric_geometry_reproduction",
+  "run": {
+    "slurm_job_id": "609545",
+    "selection_sha256": "82707935dd3d7c71c70cefc2fb7ca6eadc73079d83ed9e0a55cf34147af25988",
+    "selected": 224,
+    "processed": 224,
+    "prepared": 211,
+    "failed": 13,
+    "failure_stage_counts": {
+      "contracts_geometry_physical_capacity": 13
+    },
+    "data_001_written": false,
+    "attempt_summary_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/prepare_attempt_002/summary.json",
+    "attempt_summary_sha256": "4c6280454c18b4e147182b2113c13c4bb0db7bf9544864c5c495a779ee8f465a",
+    "attempt_cases_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/prepare_attempt_002/cases.jsonl",
+    "attempt_cases_sha256": "ed20271e3e26b48ba1416659eb16f00c30f8dbef916289041fb4d8cdaf9df9a3",
+    "selection_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/selection.json"
+  },
+  "scope": {
+    "read_only": true,
+    "ran_cif_geometry": false,
+    "submitted_or_ssh": false,
+    "modified_existing_codec_or_scorer": false,
+    "selection_replaced": false
+  },
+  "failed_cases": [
+    {"id": "mp-1276200", "csv_metadata_sg": 8, "plan_sg": 1, "cif_declared_sg": 1},
+    {"id": "mp-1220448", "csv_metadata_sg": 25, "plan_sg": 6, "cif_declared_sg": 1},
+    {"id": "mp-626088", "csv_metadata_sg": 36, "plan_sg": 1, "cif_declared_sg": 1},
+    {"id": "mp-18785", "csv_metadata_sg": 65, "plan_sg": 10, "cif_declared_sg": 1},
+    {"id": "mp-1101109", "csv_metadata_sg": 84, "plan_sg": 2, "cif_declared_sg": 1},
+    {"id": "mvc-12040", "csv_metadata_sg": 87, "plan_sg": 2, "cif_declared_sg": 1},
+    {"id": "mp-1222205", "csv_metadata_sg": 143, "plan_sg": 1, "cif_declared_sg": 1},
+    {"id": "mp-1188719", "csv_metadata_sg": 163, "plan_sg": 15, "cif_declared_sg": 1},
+    {"id": "mp-1216795", "csv_metadata_sg": 183, "plan_sg": 1, "cif_declared_sg": 1},
+    {"id": "mp-1227245", "csv_metadata_sg": 187, "plan_sg": 6, "cif_declared_sg": 1},
+    {"id": "mp-1076048", "csv_metadata_sg": 46, "plan_sg": 1, "cif_declared_sg": 1},
+    {"id": "mvc-3992", "csv_metadata_sg": 55, "plan_sg": 6, "cif_declared_sg": 1},
+    {"id": "mp-1246596", "csv_metadata_sg": 57, "plan_sg": 29, "cif_declared_sg": 1}
+  ],
+  "direct_observations": [
+    "All 13 cases failed with only redetected_space_group_mismatch in the source physical audit error.",
+    "All 13 CSV metadata SG values differ from plan SG; in every case the numeric CSV SG is higher than the plan SG.",
+    "All 13 selected CIF files declare P 1 and International Tables number 1 in their CIF symmetry header, independently of the CSV spacegroup.number field.",
+    "The current attempt record stores the generic failure reason but not the physical audit's detected SG value, so the exact 13 redetected values are unavailable in this read-only review.",
+    "The attempt summary records runtime_policy.accepted=true; NumPy, SciPy, pymatgen, spglib and transformers match the pinned baseline. The allowed Python patch and Torch differences are not evidence for this SG-only failure."
+  ],
+  "label_definitions_and_source_trace": [
+    {
+      "label": "CSV metadata SG",
+      "meaning": "The MP20 train CSV spacegroup.number metadata used to stratify the new cohort and recorded as dataset_space_group; the preparer does not pass this value to prepare_case or score.audit.",
+      "source": [
+        {"path": "experiments/interleaved_relational_coverage256_20261007/prepare_data.py", "lines": [179, 259, 631]}
+      ]
+    },
+    {
+      "label": "CIF-declared SG",
+      "meaning": "The selected raw CIF header's symmetry label. For these 13 files the literal header says P 1 / IT number 1; this is a CIF declaration, not the CSV metadata field.",
+      "source": [
+        {"path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs", "observation": "Read only the symmetry header lines of the 13 selected CIFs."}
+      ]
+    },
+    {
+      "label": "Encoded plan SG",
+      "meaning": "The geometry-derived SG selected by spglib during CIF encoding and copied from audit.space_group into the plan.",
+      "source": [
+        {"path": "experiments/naturecry_llm_100_20261002/cohort.py", "lines": [21, 34, 36, 58]},
+        {"path": "experiments/naturecry_llm_pilot_20261002/pilot.py", "lines": [21, 22]},
+        {"path": "experiments/naturecry_roundtrip_20261001/naturecry_codec.py", "lines": [19, 23, 27]},
+        {"path": "experiments/explicit_full_mp20_20260923/codec/wyckoff_baseline.py", "lines": [161, 163, 165]},
+        {"path": "experiments/explicit_full_mp20_20260923/codec/test_program.py", "lines": [16]}
+      ],
+      "settings": {
+        "parser": "Pymatgen CifParser with frac_tolerance=0 and primitive=False",
+        "detector": "spglib.get_symmetry_dataset on parsed lattice, fractional positions and atomic numbers",
+        "symprec": 0.001,
+        "angle_tolerance": -1,
+        "plan_field": "audit.space_group"
+      }
+    },
+    {
+      "label": "Physical redetected SG",
+      "meaning": "The scorer decodes the CNL, executes its plan, then independently classifies the executed structure. Its mismatch check compares this result to plan.space_group_number, not to the CSV metadata SG.",
+      "source": [
+        {"path": "experiments/interleaved_relational_blocks_20261005/score.py", "lines": [53, 63, 95, 102, 103, 113, 121, 136, 137]},
+        {"path": "experiments/interleaved_relational_scaled32_20261006/prepare_data.py", "lines": [237, 238]}
+      ],
+      "settings": {
+        "detector": "pymatgen SpacegroupAnalyzer on the executed plan structure",
+        "symprec": 0.01,
+        "angle_tolerance": 5,
+        "comparison": "detected SG == plan SG"
+      }
+    },
+    {
+      "label": "Source geometry gate order",
+      "meaning": "prepare_row first compares the raw CIF structure to the executed plan geometry, then calls score.audit. These cases reached the later source physical audit and failed there, so the preceding CIF-to-plan geometry comparison completed successfully.",
+      "source": [
+        {"path": "experiments/interleaved_relational_scaled32_20261006/prepare_data.py", "lines": [228, 238]}
+      ]
+    }
+  ],
+  "protocol_difference": {
+    "encoder_detector": "Direct spglib symmetry-dataset detection with symprec=1e-3 and angle_tolerance=-1 on the parsed raw CIF.",
+    "physical_audit_detector": "Pymatgen SpacegroupAnalyzer with symprec=0.01 and angle_tolerance=5 on the executed CNL plan structure.",
+    "difference": "The absolute positional tolerance is 10x looser in the physical redetect, and the angle tolerance differs (-1 versus 5); the classified structures also enter through different paths (raw CIF versus decoded plan). The CSV metadata SG is a fourth, separately stored label."
+  },
+  "hypothesis": {
+    "status": "plausible_but_not_numerically_proven",
+    "text": "The raw CIFs are serialized with P1 headers while their MP20 CSV metadata carries higher SG numbers. The encoder's tighter spglib classification produces lower plan SGs for these cases; the scorer's looser, differently configured detector on the reconstructed plan may recover a higher symmetry and therefore reject the plan SG. This fits the observed direction for all 13 cases but does not establish that the redetected SG equals each CSV SG or identify which tolerance change is decisive.",
+    "evidence_missing": "The saved per-case errors contain only redetected_space_group_mismatch, not structure.space_group_redetected. No geometry or SpacegroupAnalyzer rerun was performed here, per instruction."
+  },
+  "minimum_consistency_recommendation": {
+    "next_protocol": "Keep CSV metadata SG as explicit provenance/stratification. In a future protocol, define one pinned SG classifier and use the same detector, symprec and angle-tolerance policy for raw-CIF plan creation and executed-plan validation; record CSV SG, plan SG and physical redetected SG separately.",
+    "current_run": "Keep the 13 fixed cases and plans unchanged. Numerical diagnostics should inspect the already cached plans under the existing scorer settings; any future protocol change must be a separately versioned preparation, without replacing these failures."
+  }
+}

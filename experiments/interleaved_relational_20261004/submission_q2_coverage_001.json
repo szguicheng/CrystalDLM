@@ -1,0 +1,49 @@
+{
+  "job_id": "605786",
+  "submitted_at_utc": "2026-10-05T10:45:47Z",
+  "slurm_script": "experiments/interleaved_relational_20261004/q2_coverage_001.slurm",
+  "initial_state": {
+    "sacct": "PENDING",
+    "elapsed": "00:00:00",
+    "exit_code": "0:0",
+    "node": null,
+    "squeue_reason": "Resources",
+    "scheduled_node_candidate": "gpu-a100-07"
+  },
+  "source_sha256": {
+    "run.py": "2a4b705eba48070b77fc10f68a245dc1a1fec85ce77500485d3b82ee9a6a3183",
+    "test_q2_schedule.py": "391dcef70f528389430a90c91f60645f06d8ec701b7202a2288a5c2e200ad014",
+    "q2_coverage_001.slurm": "9f134ddc4effcac1b1c5f9bb507647b5232a586da0a388c87759dbb08293f6dc",
+    "q2_coverage_preparation/PROTOCOL_Q2.md": "ef2359a24d84a948c64c1ff2d7e1c63241992ee7ca45fe88038afb6db68ec9f0",
+    "q2_coverage_preparation/check_pack.log": "57158cbe14aa0fa7c8711796cee524ae4c10ede50fa36f549fcddd0d76fc6c43",
+    "q2_coverage_preparation/test_q2_schedule.log": "206594975f3c9894a10b2d62be4c81b590eb2936510b49a28b2f24f8b99310b9",
+    "prepare.py": "07ac45cb3ae5ab086fed460fc957afcc94e1988011161a4d0178b388b1769f14",
+    "model.py": "036ac4d4fc08437e2325c31265fceb08a573d8c703a1ca551c4f921541345406",
+    "score.py": "3c1760481872726d798dd18ec4fb3557d6940e669e4c4d818a07da276d9c477a",
+    "data_pilot_001/manifest.json": "b8c290dd64f210dd469b83cbf41ad321ae4d7c5c40303c70e8cda0e4335cd0c3",
+    "data_pilot_001/records.jsonl": "ef2ec2dcdee1d73c62e48987a9cec86a4db3076f9c48d9ab17b8745b9eca785f"
+  },
+  "runtime_environment": {
+    "python_executable": "/gpfs1/scratch/chenggui2/CrystalDLM/experiments/interleaved_ar_diffusion_20261002/env/bin/python",
+    "python_version": "3.10.18",
+    "packages": {
+      "torch": "2.2.0+cu121",
+      "transformers": "4.57.6",
+      "numpy": "1.26.4",
+      "pyxtal": "1.0.8",
+      "pymatgen": "2025.10.7",
+      "spglib": "2.7.0",
+      "scipy": "1.15.3"
+    },
+    "scipy_file": "/home/chenggui2/scratch/anaconda3/envs/matgl/lib/python3.10/site-packages/scipy/__init__.py",
+    "model_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+    "cached_model_file_bytes": 988097824
+  },
+  "preflight": {
+    "remote_output_absent_before_submission": true,
+    "remote_logs_absent_before_submission": true,
+    "remote_source_hashes_match": true,
+    "records_sha256_matches_frozen_value": true,
+    "shared_environment_dependencies_present": true
+  }
+}

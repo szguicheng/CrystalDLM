@@ -1,0 +1,40 @@
+{
+  "status": "COMPLETED",
+  "best_step": 5,
+  "metrics": {
+    "structures": 32,
+    "joint_exact_match": 0.25,
+    "element_accuracy": 0.4536082474226804,
+    "mean_profile_nll": 1.4517643740496684,
+    "raw_word_sequence_exact": 0.0
+  },
+  "config": {
+    "variant": "rlemerge",
+    "data_path": "count_merge_candidates/data.pt",
+    "run_root": "compact_word_runs",
+    "seed": 17,
+    "steps": 5,
+    "batch_size": 32,
+    "val_limit": 32,
+    "eval_every": 5,
+    "smoke": true,
+    "compact": true,
+    "job_id": "533020",
+    "host": "gpu-a100-05",
+    "gpu": "NVIDIA A100-SXM4-80GB",
+    "parameter_count": 499776,
+    "slots_per_element": 6,
+    "position_parameter_slots": 17,
+    "train_structures": 26086,
+    "validation_structures": 32,
+    "hidden_target_leakage_check": "PASS",
+    "candidate_score_gather_check": "PASS",
+    "data_sha256": "ae8d9046e4e58e03a0f2cb0f2eba27e0da2f3973bcbac1a5e6c4d1616d8ef28b",
+    "source_sha256": "8ec754e67884714c160def31714e42a226254e2d6a3555747a0bbd96751c8590",
+    "task": "Direct canonical word masking conditioned on SG and composition; full-mask validation",
+    "no_target_length_given": true,
+    "not_full_diffusion_or_geometry_evaluation": true
+  },
+  "total_seconds": 1.567338990047574,
+  "peak_cuda_memory_bytes": 60185088
+}

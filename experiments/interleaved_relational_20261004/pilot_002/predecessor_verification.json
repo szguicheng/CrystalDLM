@@ -1,0 +1,95 @@
+{
+  "status": "verified",
+  "predecessor": "pilot_001/ar",
+  "predecessor_job_id": "604554",
+  "predecessor_checkpoint_update": 512,
+  "predecessor_initial_fingerprint": "6bffa202d8485a6ee8bce3553044c9657948e25be702a45a9efb860ced9d1429",
+  "predecessor_final_fingerprint": "e466cb281d88e6356f3ed73dc2915a3bf947024abecaa534f25d22a6a0dca5e8",
+  "checkpoint_sha256": "9d73aeebc4966efafb6fd2bb03bb448c400d0e20878c1258ec8c8c1321f123e5",
+  "strict_mode": "ar",
+  "strict_prediction_offset": 0,
+  "checkpoint_reload_verified": true,
+  "data_records_sha256": "ef2ec2dcdee1d73c62e48987a9cec86a4db3076f9c48d9ab17b8745b9eca785f",
+  "old_manifest_sha256": "e4b67ae8a4e8b831b8c529992b9ea2a83b44603689cdc0b460e1d9d7f9ff5513",
+  "current_manifest_sha256": "b8c290dd64f210dd469b83cbf41ad321ae4d7c5c40303c70e8cda0e4335cd0c3",
+  "old_score_sha256": "55a66f8794353170aca249de6a6e5f070257ccb528d273998767a13bc1942454",
+  "current_score_sha256": "3c1760481872726d798dd18ec4fb3557d6940e669e4c4d818a07da276d9c477a",
+  "manifest_changed_fields": [
+    "post_generation_score_refresh.previous_score_sha256",
+    "post_generation_score_refresh.current_score_sha256",
+    "post_generation_score_refresh.reason",
+    "provenance.files.adapter_score"
+  ],
+  "score_pin_migrated": true,
+  "score_migration_note": "Only the adapter score pin may migrate; data records and selected split remain byte-identical.",
+  "seen8_copied_verbatim": true,
+  "seen8_raw_sha256": "9101a6a776af5a346a1356d35287c0b5fa942201091e227826b05f6b5617ca5d",
+  "seen8_summary_sha256": "fd89cc4e321bcbc41e3d27637b0625a00c7ab526627e657a4588b5d01841ecf1",
+  "old_heldout_raw_sha256": "41f6329c10216476251aeca6d67097264a9048082d5fe016fe515ad233695afd",
+  "old_heldout_raw_rows": 2,
+  "failed_row_raw_recovered": false,
+  "failed_row_replay_is_new_observation": "mp-1079976",
+  "checkpoint_present_at_start": true,
+  "new_compute_device": {
+    "device": "NVIDIA A100-SXM4-80GB",
+    "total_memory_GiB": 79.249755859375,
+    "slurm_job": "605522"
+  },
+  "inherited_gpu_preflight": {
+    "status": "passed",
+    "device": "NVIDIA A100-SXM4-80GB",
+    "device_total_GiB": 79.249755859375,
+    "reserved_limit_GiB": 70.0,
+    "optimizer_step_counted_in_pilot": false,
+    "effective_batch": 4,
+    "microbatch": 1,
+    "accumulation": 4,
+    "worst_train_examples": [
+      {
+        "task": "G",
+        "id": "anchor_Li8V4Ni4O16",
+        "direction": "minus",
+        "variant": 0,
+        "packed_tokens": 2598
+      },
+      {
+        "task": "E",
+        "id": "mp-1205515",
+        "direction": "minus",
+        "variant": 0,
+        "packed_tokens": 3625
+      },
+      {
+        "task": "Q1",
+        "id": "mp-1205515",
+        "direction": "minus",
+        "variant": 0,
+        "packed_tokens": 1005
+      }
+    ],
+    "arms": {
+      "ar": {
+        "core_mode": "ar",
+        "prediction_offset": 0,
+        "initial_fingerprint": "6bffa202d8485a6ee8bce3553044c9657948e25be702a45a9efb860ced9d1429",
+        "initial_parameters": "FP32, zero time embedding",
+        "one_effective_batch_optimizer_step": true,
+        "seconds": 2.338395548053086,
+        "peak_allocated_GiB": 12.379798412322998,
+        "peak_reserved_GiB": 14.11328125
+      },
+      "hybrid_shift": {
+        "core_mode": "hybrid",
+        "prediction_offset": 1,
+        "initial_fingerprint": "6bffa202d8485a6ee8bce3553044c9657948e25be702a45a9efb860ced9d1429",
+        "initial_parameters": "FP32, zero time embedding",
+        "one_effective_batch_optimizer_step": true,
+        "seconds": 0.7073910441249609,
+        "peak_allocated_GiB": 11.668152809143066,
+        "peak_reserved_GiB": 13.1953125
+      }
+    },
+    "shared_initial_fingerprint": "6bffa202d8485a6ee8bce3553044c9657948e25be702a45a9efb860ced9d1429"
+  },
+  "test256_used": false
+}

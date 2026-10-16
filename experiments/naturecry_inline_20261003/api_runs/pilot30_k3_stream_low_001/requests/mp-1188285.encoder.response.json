@@ -1,0 +1,33 @@
+{
+  "id": "bcfaf978-3c46-49be-bba3-b736bc81093b",
+  "object": "chat.completion",
+  "created": 1791053360,
+  "model": "tokenhub/kimi-k3",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "The structure is reported in the hexagonal setting associated with space-group number [[param:space_group.number]] and Hall symbol [[param:space_group.hall]]. Its supplied input cell has edge lengths [[param:cell.a]], [[param:cell.b]], and [[param:cell.c]], with interaxial angles [[param:cell.alpha]], [[param:cell.beta]], and [[param:cell.gamma]]; the two basal edges match as entered, while gamma is marginally different from an exact 120-degree value rather than being asserted as identical. The input model contains [[param:input.atom_count]] atoms in total, composed of [[param:composition.Ga]] and [[param:composition.Ho]].\n\nThe symmetry-independent content is organized into four Wyckoff orbits. The first holmium orbit is [[param:orbit.o000.id]], with element [[param:orbit.o000.element]] on Wyckoff site [[param:orbit.o000.wyckoff]]. A second, distinct holmium orbit is [[param:orbit.o001.id]], again element [[param:orbit.o001.element]], but assigned to [[param:orbit.o001.wyckoff]]. The gallium sublattice is split between [[param:orbit.o002.id]], element [[param:orbit.o002.element]] on [[param:orbit.o002.wyckoff]], and [[param:orbit.o003.id]], element [[param:orbit.o003.element]] on [[param:orbit.o003.wyckoff]]. Only the last of these carries a free positional parameter, recorded as [[param:orbit.o003.parameters]]; the other listed orbits are fixed by symmetry in the supplied description.\n\nNo change of coordinate frame is required between input and standard settings: the transformation is the identity matrix [[param:frame.matrix]] with origin shift [[param:frame.origin_shift]]. Fractional input precision is governed by [[param:round_digits]]. No precision corrections are present in the supplied facts, so there are no recorded deviations from the idealized symmetry backbone to describe; the structure should be read as the ideal orbits above, subject only to the entered cell and free-parameter values."
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "reasoning_stream": {
+    "chunks": 262,
+    "characters": 2758
+  },
+  "usage": {
+    "completion_tokens": 1042,
+    "prompt_tokens": 2242,
+    "total_tokens": 3284,
+    "completion_tokens_details": {
+      "reasoning_tokens": 591
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "cache_creation_input_tokens": 0
+    }
+  }
+}

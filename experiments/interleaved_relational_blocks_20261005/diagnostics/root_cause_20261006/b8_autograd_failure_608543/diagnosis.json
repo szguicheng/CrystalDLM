@@ -1,0 +1,20 @@
+{
+  "job_id": 608543,
+  "slurm_exit": "0:0",
+  "assessment": "INVALID_GENERATION_EXPERIMENT_RUNTIME_ERROR",
+  "G_E_crystal_attempts": 16,
+  "all_runtime_error": "Inference tensors cannot be saved for backward",
+  "raw_crystals_generated": 0,
+  "root_cause": "AST extraction omitted original torch.inference_mode decorator; parity external context masked production-path defect",
+  "model_generation_accuracy": "NOT_MEASURED",
+  "old_output": "experiments/interleaved_relational_scaled32_20261006/eval_full_history_b8_001",
+  "old_source_snapshot": "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/b8_autograd_failure_608543/source",
+  "fix": "preserve and verify original inference decorator on dynamically adapted sampler",
+  "training_or_checkpoint_changed": false,
+  "tests": {
+    "before_fix_regression": "RED adapted sampler lost original inference context",
+    "after_fix_local_and_remote_CPU": "GREEN requires_grad parameter calls inference_mode and grad disabled; original B32 outputs unchanged",
+    "remote_actual_runtime_wrapped": "passed",
+    "independent_review": "no blockers"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "f63a3061-5f5e-4232-9dcb-debea2beffec",
+  "object": "chat.completion",
+  "created": 1791053241,
+  "model": "tokenhub/kimi-k3",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "The input specimen is described in its original cell by the edge lengths [[param:cell.a]], [[param:cell.b]], and [[param:cell.c]], with interaxial angles [[param:cell.alpha]], [[param:cell.beta]], and [[param:cell.gamma]]; the first two input edges are listed with the same value, while the third is much shorter and the last angle departs strongly from a right angle. The input cell contains [[param:input.atom_count]] atoms, with composition given by [[param:composition.Co]], [[param:composition.Er]], and [[param:composition.Si]], and input fractional coordinates were rounded according to [[param:round_digits]].\n\nThe symmetry is assigned to space-group number [[param:space_group.number]] with Hall symbol [[param:space_group.hall]], i.e. a C-centered orthorhombic setting in the standard frame. To express the originally supplied geometry in that standard frame, the basis change [[param:frame.matrix]] and the translation [[param:frame.origin_shift]] are applied; the matrix mixes the two long in-plane input axes and leaves the short axis essentially aligned, while the origin displacement is numerically negligible. No precision corrections are supplied, so there are no measured deviations from an idealized backbone to report.\n\nIn the standard C-centered description, the independent content is organized into five fourfold Wyckoff orbits, each with one free coordinate along the in-plane axis and with the remaining coordinates fixed by the site relation. Erbium occupies orbit [[param:orbit.o000.id]] as element [[param:orbit.o000.element]] on Wyckoff label [[param:orbit.o000.wyckoff]], with free parameter [[param:orbit.o000.parameters]] on the z-one-half line. Cobalt occupies [[param:orbit.o001.id]] as [[param:orbit.o001.element]] on [[param:orbit.o001.wyckoff]], with free parameter [[param:orbit.o001.parameters]] on the z-zero line. Silicon is distributed among three independent orbits: [[param:orbit.o002.id]] contains [[param:orbit.o002.element]] on [[param:orbit.o002.wyckoff]] with free parameter [[param:orbit.o002.parameters]] at z one-half; [[param:orbit.o003.id]] contains [[param:orbit.o003.element]] on [[param:orbit.o003.wyckoff]] with free parameter [[param:orbit.o003.parameters]] at z zero; and [[param:orbit.o004.id]] contains [[param:orbit.o004.element]] on [[param:orbit.o004.wyckoff]] with free parameter [[param:orbit.o004.parameters]], also at z zero. Thus the Er and one Si orbit share the j-type axial family, while Co and the other two Si orbits share the i-type family, distinguished by their independent y-parameters rather than by any assumed bonding or coordination."
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "reasoning_stream": {
+    "chunks": 682,
+    "characters": 6755
+  },
+  "usage": {
+    "completion_tokens": 2063,
+    "prompt_tokens": 2918,
+    "total_tokens": 4981,
+    "completion_tokens_details": {
+      "reasoning_tokens": 1451
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "cache_creation_input_tokens": 0
+    }
+  }
+}

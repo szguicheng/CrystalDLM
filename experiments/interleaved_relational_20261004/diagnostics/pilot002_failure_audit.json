@@ -1,0 +1,136 @@
+{
+  "material_passport": {
+    "artifact_id": "pilot002_failure_audit",
+    "representation": "relational_cnl_v1",
+    "phase": "post-run failure diagnosis",
+    "verification_status": "ANALYZED",
+    "scope": "Four pilot_002 evaluation.jsonl files only; no GPU run or new sampling"
+  },
+  "run": {
+    "job_id": "605522",
+    "status": "complete",
+    "hybrid_updates": 512,
+    "initial_fingerprint_shared": true,
+    "initial_fingerprint": "6bffa202d8485a6ee8bce3553044c9657948e25be702a45a9efb860ced9d1429",
+    "hybrid_checkpoint_reload_verified": true,
+    "hybrid_mode": "hybrid",
+    "hybrid_prediction_offset": 1,
+    "ar_mode": "ar",
+    "ar_prediction_offset": 0
+  },
+  "primary_failure_policy": "One primary cause per failed row: END/PAD validator, then CNL parse, decoded condition, geometry, physical audit, then edit-length/plan comparison. Errors raised by unpack_block for invalid model output are expected validation failures, not program exceptions.",
+  "denominator_per_task": 48,
+  "G": {
+    "by_split": {
+      "ar/seen8": {"n": 8, "pass": 8, "failures": {}},
+      "ar/heldout16": {"n": 16, "pass": 0, "failures": {"cnl_parse": 6, "condition": 10}},
+      "hybrid_shift/seen8": {"n": 8, "pass": 0, "failures": {"end_count": 6, "pad_boundary": 2}},
+      "hybrid_shift/heldout16": {"n": 16, "pass": 0, "failures": {"end_count": 13, "pad_boundary": 2, "cnl_parse": 1}}
+    },
+    "total": {
+      "pass": 8,
+      "fail": 40,
+      "end_count": 19,
+      "pad_boundary": 4,
+      "cnl_parse": 7,
+      "condition": 10,
+      "trigger": 0,
+      "length": 0,
+      "geometry": 0,
+      "physical": 0,
+      "program_exception": 0
+    }
+  },
+  "E_reference": {
+    "by_split": {
+      "ar/seen8": {"n": 8, "pass": 8, "failures": {}},
+      "ar/heldout16": {"n": 16, "pass": 0, "failures": {"cnl_parse": 4, "condition": 3, "geometry": 2, "physical": 1, "length_only": 6}},
+      "hybrid_shift/seen8": {"n": 8, "pass": 0, "failures": {"end_count": 5, "pad_boundary": 2, "cnl_parse": 1}},
+      "hybrid_shift/heldout16": {"n": 16, "pass": 0, "failures": {"end_count": 15, "pad_boundary": 1}}
+    },
+    "total": {
+      "pass": 8,
+      "fail": 40,
+      "end_count": 20,
+      "pad_boundary": 3,
+      "cnl_parse": 5,
+      "condition": 3,
+      "geometry": 2,
+      "physical": 1,
+      "length_only": 6,
+      "trigger": 0,
+      "program_exception": 0,
+      "length_secondary_overlap": 2
+    }
+  },
+  "failure_details": {
+    "G_ar_heldout_cnl_parse": {
+      "unknown_or_invalid_element_names": 5,
+      "missing_composition": 1
+    },
+    "G_ar_heldout_condition": {
+      "orbit_relations_do_not_select_one_public_definition": 7,
+      "no_relational_orbit": 1,
+      "hall_symbol_setting_mismatch": 2
+    },
+    "E_ar_heldout_cnl_parse": {
+      "malformed_fractional_correction_sentence": 3,
+      "malformed_input_cell_sentence": 1
+    },
+    "E_ar_heldout_condition": {
+      "orbit_relations_do_not_select_one_public_definition": 2,
+      "other_plan_fields_mismatch": 1
+    },
+    "E_ar_heldout_geometry": {
+      "expanded_composition_mismatch": 2
+    },
+    "E_ar_heldout_physical": {
+      "minimum_pair_distance_below_0.5_A": 1
+    },
+    "E_ar_heldout_length_only": {
+      "lengths_exact_false_with_other_plan_fields_and_physical_audit_true": 6
+    }
+  },
+  "raw_retention": {
+    "hybrid_boundary_failures": "23 G and 23 E rows store only an error object, without a structured value.tokens ID array. Counts above use the stored error classification; no exact token-ID sequence is claimed.",
+    "hybrid_parse_failures": "One G and one E row pass generation/unpack and retain a 2560-ID tokens array, then fail CNL decoding.",
+    "ar_heldout_replay": "pilot_002 contains 16 replay rows with structured generation tokens. The predecessor had only 2 heldout raw rows; mp-1079976 was not recovered, and this replay is a new observation for that row and subsequent rows. Do not attribute it to the missing predecessor output.",
+    "failed_raw_caveat": "Hybrid exception text may carry decoded output text, but the failed result has no structured token sequence; this audit does not reconstruct or quote generated token text."
+  },
+  "training_curve": {
+    "updates": 512,
+    "update_1": {"total_loss": 11.157437, "G": 31.302251, "E": 12.352983, "Q1": 0.974514},
+    "update_512": {"total_loss": 0.253859, "G": 0.967891, "E": 0.047500, "Q1": 0.000043},
+    "interpretation": "The falling mixed training loss is not a generation accuracy metric. The hybrid objective predicts only masked positions; body, END and PAD share the crystal loss, with PAD weighted 0.1. No class-specific teacher-forced accuracy is recorded."
+  },
+  "training_noise_schedule": {
+    "source_snapshot_sha256": "9f5881028177c3b527ea064198b91ae73600894801960113aec2e8ffcea8ab50",
+    "g_e_examples_set_noise_step": false,
+    "default_draw": "torch.randint(1, STEPS+1)",
+    "support": [1, 32],
+    "theoretical_full_mask_probability_per_g_or_e_example": 0.03125,
+    "g_examples": 1024,
+    "expected_full_mask_g_examples": 32,
+    "actual_per_example_k_counts_logged": false
+  },
+  "representative_cases": [
+    {"arm": "hybrid_shift", "split": "seen8", "id": "anchor_Tb8Mg4", "task": "G", "failure": "END-count validator: crystal block requires exactly one END"},
+    {"arm": "hybrid_shift", "split": "seen8", "id": "mp-1205515", "task": "G", "failure": "PAD-boundary validator: invalid crystal PAD boundary"},
+    {"arm": "hybrid_shift", "split": "heldout16", "id": "mp-1095422", "task": "G", "failure": "CNL decode: input cell sentence missing or malformed"},
+    {"arm": "ar", "split": "heldout16", "id": "mp-1019259", "task": "G", "failure": "CNL condition: orbit multiplicity and representative relations do not select one public definition"},
+    {"arm": "ar", "split": "heldout16", "id": "mp-1079976", "task": "E_reference", "failure": "Geometry execution: expanded composition mismatch; current row is a new replay observation"},
+    {"arm": "ar", "split": "heldout16", "id": "mp-1225818", "task": "E_reference", "failure": "Physical audit: minimum pair distance below 0.5 A; length also mismatches"}
+  ],
+  "next_diagnostic": "If approved as a separate GPU diagnostic: use the same hybrid checkpoint and same 8 seen cases, with no optimizer updates; measure teacher-forced argmax accuracy separately for masked body, END and PAD positions at full-mask and an intermediate mask level, plus per-sequence argmax END count and exact PAD-boundary validity. This distinguishes weak boundary learning from reverse-unmask error propagation. Do not infer the cause from mixed loss alone.",
+  "q2_exposure_note": "The Q2 exposure gap is separate and is not used to explain these G/E outcomes.",
+  "source_lines": [
+    {"file": "experiments/interleaved_relational_20261004/model.py", "lines": "47-53", "claim": "END-count and PAD-boundary checks; order of rejection"},
+    {"file": "experiments/interleaved_relational_20261004/model.py", "lines": "109-143", "claim": "END/PAD target construction, PAD weight, hybrid masked positions, prediction offset"},
+    {"file": "experiments/interleaved_relational_20261004/q2_coverage_preparation/source_snapshot/run.py", "lines": "228-239", "claim": "pilot002 G/E training examples omit explicit noise_step"},
+    {"file": "experiments/interleaved_relational_20261004/q2_coverage_preparation/source_snapshot/run.py", "lines": "602-612", "claim": "training loop passes G/E examples to model.loss without noise logging"},
+    {"file": "experiments/interleaved_relational_20261004/model.py", "lines": "187-210", "claim": "trigger and text termination exceptions"},
+    {"file": "experiments/interleaved_relational_20261004/model.py", "lines": "212-250", "claim": "hybrid reverse sampling and final block validation"},
+    {"file": "experiments/interleaved_relational_20261004/score.py", "lines": "63-145", "claim": "decode, geometry and physical audit stages"},
+    {"file": "experiments/interleaved_relational_20261004/score.py", "lines": "263-324", "claim": "edit length, plan, geometry and physical grading"}
+  ]
+}

@@ -1,0 +1,165 @@
+{
+  "mode": "hybrid",
+  "phase": "joint",
+  "feedback": true,
+  "updates": 512,
+  "seed": 17,
+  "status": "validated",
+  "initial_fingerprint": "8a382cd94bedfe7e245cdd82ad1e6d76fcccf5d60c1a215502c30587c7c3a4b4",
+  "warm_fingerprint": null,
+  "slurm_job": "601362",
+  "host": "gpu-a100-03",
+  "gpu": "NVIDIA A100-SXM4-80GB",
+  "noise_policy": "50% full MASK; remaining uniform 1..31",
+  "source_sha256": {
+    "diagnose.py": "04f551667b8e3fd0b6be79b997e9ac4ca0ea11dae76c06c5b3981e42e406b0b9",
+    "model.py": "d7abb6bcc6da9b339408ee928caef4b80a4cf8a40204a0b61b8a68b7c9aca79a",
+    "rescore.py": "254192f4e2482f331fb42d95591f98bccdcc1c65f2bd8c6951faca194560e2ad",
+    "test_checks.py": "af237266a922a188c80c62655f90b5dd574fe4a72d0ac8a43a77a30a62ef5c76",
+    "cohort.py": "43f04026aceb87076f6297412a871de60679b70aa38e87d3fb4a6fadca0ad312",
+    "run.py": "889e8f2a6083bcc4d04c5d0b646212d131f247897f71df7e522d1fd838abc143",
+    "prepare.py": "864927e1c27d3e3baa8107eba2db09d320d6ce3ee17b6c801370d85fd63ba688",
+    "causal_diagnose.py": "ae2ff5c4acaf80d9b745faa330faff89dcb77f01fbf3c4bba9844c32c1671b33",
+    "align.py": "610a1753a02cc81d6811ec4729aed9970cfb078390ac81807086250d825f8cf8",
+    "recover.py": "3538098195518114605f29c3e813ae9917471c5fae92fe5d3ce523d1e20c6644",
+    "score.py": "645184cc388bad2554b4615e63135f27e90e150407335067577375dc41525c0a",
+    "adapt.py": "04acb2d275771acd9ca561730fd0ff11a362879412671eb9b663c14fa1198e38"
+  },
+  "completed_updates": 512,
+  "elapsed_seconds": 395.0113409231417,
+  "noise_counts": {
+    "32": 1527,
+    "24": 54,
+    "18": 57,
+    "4": 46,
+    "22": 48,
+    "28": 40,
+    "5": 48,
+    "30": 63,
+    "13": 57,
+    "27": 54,
+    "31": 55,
+    "26": 60,
+    "25": 53,
+    "17": 45,
+    "2": 55,
+    "8": 39,
+    "12": 42,
+    "3": 40,
+    "11": 54,
+    "19": 54,
+    "23": 52,
+    "15": 47,
+    "16": 51,
+    "9": 49,
+    "10": 39,
+    "20": 46,
+    "6": 46,
+    "21": 67,
+    "7": 37,
+    "14": 57,
+    "1": 47,
+    "29": 43
+  },
+  "training_seconds": 395.0122166099027,
+  "seconds_per_update_median": 0.7751905000768602,
+  "final_fingerprint": "9b5081d45aaebb18e234bc8e5d3d913f9d1c7d443b4a2c1575a5e2385f64664c",
+  "peak_gpu_MB": 11897.08056640625,
+  "validation": {
+    "legacy": {
+      "n": 128,
+      "counts": {
+        "G": 3,
+        "Q_reference": 128,
+        "E_reference": 76,
+        "closed_loop": 2,
+        "flow_complete": 2,
+        "Q_swap": 127,
+        "Q_no_crystal": 0
+      },
+      "rates": {
+        "G": 0.0234375,
+        "Q_reference": 1.0,
+        "E_reference": 0.59375,
+        "closed_loop": 0.015625,
+        "flow_complete": 0.015625,
+        "Q_swap": 0.9921875,
+        "Q_no_crystal": 0.0
+      },
+      "elapsed_seconds": 747.5064730043523,
+      "attempts_retried": 0,
+      "seconds_median": 5.669272459344938,
+      "seconds_p95": 7.239896913780829,
+      "evaluation_split": "val",
+      "training_materials_evaluated": false,
+      "stage0_passed": false
+    },
+    "v2": {
+      "n": 128,
+      "counts": {
+        "G": 3,
+        "Q_reference": 128,
+        "E_reference": 76,
+        "closed_loop": 2,
+        "flow_complete": 2,
+        "Q_swap": 127,
+        "Q_no_crystal": 0
+      }
+    }
+  },
+  "reading": {
+    "n": 128,
+    "success": 127,
+    "correct_by_field": {
+      "sg": 127,
+      "formula": 128,
+      "atoms": 128,
+      "orbits": 128,
+      "a": 128,
+      "b": 128,
+      "c": 128
+    }
+  },
+  "old8_regression": {
+    "legacy": {
+      "n": 8,
+      "counts": {
+        "G": 0,
+        "Q_reference": 8,
+        "E_reference": 6,
+        "closed_loop": 0,
+        "flow_complete": 0,
+        "Q_swap": 8,
+        "Q_no_crystal": 0
+      },
+      "rates": {
+        "G": 0.0,
+        "Q_reference": 1.0,
+        "E_reference": 0.75,
+        "closed_loop": 0.0,
+        "flow_complete": 0.0,
+        "Q_swap": 1.0,
+        "Q_no_crystal": 0.0
+      },
+      "elapsed_seconds": 45.14976740721613,
+      "attempts_retried": 0,
+      "seconds_median": 5.709720939863473,
+      "seconds_p95": 5.839650866179727,
+      "evaluation_split": "train",
+      "training_materials_evaluated": true,
+      "stage0_passed": false
+    },
+    "v2": {
+      "n": 8,
+      "counts": {
+        "G": 0,
+        "Q_reference": 8,
+        "E_reference": 6,
+        "closed_loop": 0,
+        "flow_complete": 0,
+        "Q_swap": 8,
+        "Q_no_crystal": 0
+      }
+    }
+  }
+}

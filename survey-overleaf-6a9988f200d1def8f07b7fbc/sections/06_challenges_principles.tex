@@ -1,0 +1,41 @@
+\section{Tokenizer Design and Evaluation}
+\label{sec:principles}
+\label{sec:benchmarks}
+
+\draftsuggestion{Connect every proposed property to a design choice and a measurable test. Separate properties of the tokenizer from outcomes of the downstream foundation model. Use the companion catalog to select representative systems, and move full record-level statistics to supplementary material after human review.}
+
+% The method taxonomy states how a tokenizer is built, while design principles state what it should preserve or control for a stated use. Evaluation must test the token representation directly and then measure its effect under a controlled foundation-model comparison.
+
+\subsection{Core Properties of a Tokenizer System}
+
+\draftsuggestion{Define a short set of properties that applies across modalities: input coverage, stable encoding, declared reconstruction, token rate, and compatibility with the consuming model. State which properties are required and which depend on task or data. Treat exact reconstruction as a requirement only when the declared representation is reversible. 
+
+\url{https://arxiv.org/pdf/2511.11758\#page=7.48}: GeoBPE compression, reconstruction, generalization, interpretability
+}
+
+% A tokenizer should define the inputs it accepts, the units it returns, and the conditions under which encoding is stable. It should also declare whether decoding is exact, approximate, task-specific, or absent. Token rate measures how many units represent an input, while vocabulary or codebook use measures how capacity is distributed. Compatibility asks whether token identifiers, embeddings, positional rules, and preprocessing remain valid when the tokenizer is reused with another checkpoint or model family.
+
+% These properties are not interchangeable. Full input coverage does not imply useful boundaries. Low reconstruction error does not imply retention of rare task information. A small token count can also shift computation to relation construction, routing, or decoding. Authors should therefore state each property separately and report missing modules rather than infer them from the downstream model.
+
+\subsection{Task and Scientific Design Principles}
+
+\draftsuggestion{Organize this subsection around prediction, generation, unified prediction and generation, and scientific data. For prediction, test discriminative information, generalization, and multiple scales. For generation, test reconstructability, compositional control, validity, and token rate. For science, test units, relations, symmetry, causality, measurement conditions, and response under intervention.}
+
+% Prediction favors units that preserve target information and generalize across valid changes in representation, scale, and data distribution. Generation also requires a declared decoding path and control over composition, sequence length, and valid outputs. A shared tokenizer for both tasks must retain fine information while supporting reusable units at larger scales.
+
+% Scientific tokenizers add constraints that depend on the represented object. Equivalent molecular graphs, coordinate frames, crystal cells, polymer repeat choices, and mesh indices may describe the same system. Measurements also depend on instruments, resolution, normalization, and missing-data processes. A scientific design should state which transformations preserve token identity, which changes should alter it, and which experimental test can reject the proposed representation.
+
+\subsection{Benchmarks and Comparisons}
+
+\draftsuggestion{Evaluate three linked outcomes: representation and system cost, reconstruction and scientific validity, and downstream utility. Match data, backbone, optimization, and compute where the claim concerns tokenization. Report tokenizer-training data separately, include repeated runs for learned tokenizers, and test rare cases, valid transformations, and realistic distribution shifts.}
+
+% A complete-model score cannot identify whether a gain comes from the tokenizer, backbone, training data, or compute budget. Let $F$ denote the foundation-model backbone, $\mathcal{D}$ the data protocol, $B$ the compute budget, and $M$ an evaluation measure. For two tokenizers $\mathcal{T}_a$ and $\mathcal{T}_b$, define
+% \begin{equation}
+% \Delta_{\mathrm{tok}}
+% =M(\mathcal{T}_a,F;\mathcal{D},B)
+% -M(\mathcal{T}_b,F;\mathcal{D},B).
+% \label{eq:tokenizer-effect}
+% \end{equation}
+% This difference supports a tokenizer-specific claim only when the data, backbone, optimization procedure, and resource budget are comparable. A study that changes several components should report a system comparison.
+
+% Evaluation should measure three linked outcomes. The first covers token rate, vocabulary or codebook use, relation count, preprocessing cost, memory, and throughput. The second tests reconstruction and scientific validity against the declared target. The third measures utility for prediction, generation, retrieval, forecasting, simulation, or intervention under standard and shifted data. Molecular graphs provide one useful controlled setting because atom, fragment, motif, grammar, and latent representations can share datasets and backbone families. Protein sequence and structure offer a second setting with longer inputs, conformational variation, and family-level shifts.

@@ -1,0 +1,33 @@
+{
+  "id": "c8bcf7b1-a3b6-46f4-88a3-14f739de3d7b",
+  "object": "chat.completion",
+  "created": 1791054432,
+  "model": "tokenhub/kimi-k3",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "The crystal is described in a primitive monoclinic cell with lattice parameters a = [[param:cell.a]], b = [[param:cell.b]], and c = [[param:cell.c]]. The interaxial angles α = [[param:cell.alpha]] and β = [[param:cell.beta]] are exactly right angles, while γ = [[param:cell.gamma]] departs only slightly from 90°, giving the cell its monoclinic character with the unique axis along b. The input cell contains [[param:input.atom_count]] atoms in total, comprising [[param:composition.Nb]], [[param:composition.O]], [[param:composition.Zn]], and [[param:composition.Zr]].\n\nThe structure is assigned to space group P2, number [[param:space_group.number]], with Hall symbol [[param:space_group.hall]]. This is a primitive monoclinic group whose only symmetry element beyond the identity is a twofold rotation axis parallel to b. Consequently, the asymmetric unit is half the cell, and special positions lie at the fixed combinations of x and z where the twofold operation leaves a site invariant, with y remaining free.\n\nTwelve atoms in the cell resolve into eight independent Wyckoff orbits. Four are single-multiplicity sites, each with one free parameter along the unique axis. Zirconium occupies the 1d orbit [[param:orbit.o000.id]], whose representative position has the form ½, y, ½; as the element [[param:orbit.o000.element]] at Wyckoff label [[param:orbit.o000.wyckoff]], its free coordinate is [[param:orbit.o000.parameters]]. One niobium site, [[param:orbit.o001.id]], is [[param:orbit.o001.element]] on position [[param:orbit.o001.wyckoff]] at 0, y, 0 with free coordinate [[param:orbit.o001.parameters]], while the second niobium site, [[param:orbit.o002.id]], is [[param:orbit.o002.element]] on [[param:orbit.o002.wyckoff]] at 0, y, ½ with [[param:orbit.o002.parameters]]. Zinc, [[param:orbit.o003.element]], occupies the remaining special site [[param:orbit.o003.id]] on [[param:orbit.o003.wyckoff]] at ½, y, 0, with free coordinate [[param:orbit.o003.parameters]]. These four cation sites are thus fixed in the a–c plane at the corners and edge midpoints permitted by the twofold axis, differing from one another only in their heights along b.\n\nAll oxygen atoms lie on the general position 2e, whose representatives have the fully variable form x, y, z and are doubled by the twofold rotation about b. Four such independent oxygen orbits account for the eight oxygen atoms. Orbit [[param:orbit.o004.id]] ([[param:orbit.o004.element]], [[param:orbit.o004.wyckoff]]) sits at [[param:orbit.o004.parameters]]; orbit [[param:orbit.o005.id]] ([[param:orbit.o005.element]], [[param:orbit.o005.wyckoff]]) at [[param:orbit.o005.parameters]]; orbit [[param:orbit.o006.id]] ([[param:orbit.o006.element]], [[param:orbit.o006.wyckoff]]) at [[param:orbit.o006.parameters]]; and orbit [[param:orbit.o007.id]] ([[param:orbit.o007.element]], [[param:orbit.o007.wyckoff]]) at [[param:orbit.o007.parameters]]. Each pair generated from these positions is related by the 2y operation, completing the cell contents.\n\nThe reported standard-frame coordinates are related to the original input cell by a frame transformation whose rotation matrix is [[param:frame.matrix]] and whose origin shift is [[param:frame.origin_shift]]; the matrix is essentially a permutation that redirects axes, with only negligible numerical round-off terms, while the origin is displaced by three quarters of a cell edge along the third standard-frame direction. The fractional coordinates were rounded to [[param:round_digits]] decimal places. No precision corrections beyond this rounding were required: the supplied positional values are treated as the true coordinates of the refined structure, with no residual deviations from an idealized backbone to report."
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "reasoning_stream": {
+    "chunks": 14,
+    "characters": 122
+  },
+  "usage": {
+    "completion_tokens": 938,
+    "prompt_tokens": 3924,
+    "total_tokens": 4862,
+    "completion_tokens_details": {
+      "reasoning_tokens": 30
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "cache_creation_input_tokens": 0
+    }
+  }
+}

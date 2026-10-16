@@ -1,0 +1,186 @@
+{
+  "verified_at_utc": "2026-10-06T03:49:57.918998+00:00",
+  "job_id": "606069",
+  "slurm_state": "COMPLETED",
+  "slurm_elapsed": "06:07:24",
+  "exit_code": "0:0",
+  "summary_status": "complete",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+  "representation": "relational_cnl_v1",
+  "raw_rows_verified": 96,
+  "runtime_source_pins_match": true,
+  "initial_fingerprints_equal": true,
+  "summary_sha256": "a02ebf75f6ffc47df901c684d78f4b713bb3240c0f39bfb121ce92d922bc5c2b",
+  "arms": {
+    "ar": {
+      "updates": 512,
+      "counts": {
+        "seen8": {
+          "G": 8,
+          "Q_reference": 8,
+          "E_reference": 8,
+          "closed_loop": 8,
+          "flow_complete": 8,
+          "Q_swap": 0,
+          "Q_no_crystal": 0
+        },
+        "heldout16": {
+          "G": 0,
+          "Q_reference": 8,
+          "E_reference": 0,
+          "closed_loop": 0,
+          "flow_complete": 0,
+          "Q_swap": 0,
+          "Q_no_crystal": 0
+        }
+      },
+      "mean_G_seconds": 18.171608369622845,
+      "G_boundary_pass_seen8": 8
+    },
+    "diffusion_full": {
+      "updates": 512,
+      "counts": {
+        "seen8": {
+          "G": 0,
+          "Q_reference": 8,
+          "E_reference": 0,
+          "closed_loop": 0,
+          "flow_complete": 0,
+          "Q_swap": 0,
+          "Q_no_crystal": 0
+        },
+        "heldout16": {
+          "G": 0,
+          "Q_reference": 5,
+          "E_reference": 0,
+          "closed_loop": 0,
+          "flow_complete": 0,
+          "Q_swap": 0,
+          "Q_no_crystal": 0
+        }
+      },
+      "mean_G_seconds": 3.1574071760987863,
+      "G_boundary_pass_seen8": 0,
+      "teacher_forced_fullmask": {
+        "body": {
+          "count": 4898,
+          "correct": 793,
+          "nll_sum": 17661.52685546875,
+          "accuracy": 0.16190281747652102,
+          "mean_nll": 3.6058650174497244
+        },
+        "end": {
+          "count": 8,
+          "correct": 0,
+          "nll_sum": 35.88539218902588,
+          "accuracy": 0.0,
+          "mean_nll": 4.485674023628235
+        },
+        "pad": {
+          "count": 15574,
+          "correct": 15168,
+          "nll_sum": 2134.0035905838013,
+          "accuracy": 0.9739309104918454,
+          "mean_nll": 0.1370234744178632
+        }
+      }
+    },
+    "diffusion_b32": {
+      "updates": 512,
+      "counts": {
+        "seen8": {
+          "G": 0,
+          "Q_reference": 8,
+          "E_reference": 0,
+          "closed_loop": 0,
+          "flow_complete": 0,
+          "Q_swap": 0,
+          "Q_no_crystal": 0
+        },
+        "heldout16": {
+          "G": 0,
+          "Q_reference": 10,
+          "E_reference": 0,
+          "closed_loop": 0,
+          "flow_complete": 0,
+          "Q_swap": 0,
+          "Q_no_crystal": 0
+        }
+      },
+      "mean_G_seconds": 120.6404524720856,
+      "G_boundary_pass_seen8": 4,
+      "teacher_forced_fullmask": {
+        "body": {
+          "count": 4898,
+          "correct": 4460,
+          "nll_sum": 1281.0668334960938,
+          "accuracy": 0.9105757452021234,
+          "mean_nll": 0.2615489655974058
+        },
+        "end": {
+          "count": 8,
+          "correct": 7,
+          "nll_sum": 3.875828005373478,
+          "accuracy": 0.875,
+          "mean_nll": 0.48447850067168474
+        },
+        "pad": {
+          "count": 15574,
+          "correct": 15565,
+          "nll_sum": 37.795350074768066,
+          "accuracy": 0.9994221137793758,
+          "mean_nll": 0.0024268235568747957
+        }
+      }
+    },
+    "diffusion_b64": {
+      "updates": 512,
+      "counts": {
+        "seen8": {
+          "G": 0,
+          "Q_reference": 8,
+          "E_reference": 0,
+          "closed_loop": 0,
+          "flow_complete": 0,
+          "Q_swap": 0,
+          "Q_no_crystal": 0
+        },
+        "heldout16": {
+          "G": 0,
+          "Q_reference": 7,
+          "E_reference": 0,
+          "closed_loop": 0,
+          "flow_complete": 0,
+          "Q_swap": 0,
+          "Q_no_crystal": 0
+        }
+      },
+      "mean_G_seconds": 61.12094421236543,
+      "G_boundary_pass_seen8": 1,
+      "teacher_forced_fullmask": {
+        "body": {
+          "count": 4898,
+          "correct": 2966,
+          "nll_sum": 5632.691589355469,
+          "accuracy": 0.6055532870559412,
+          "mean_nll": 1.149998282841051
+        },
+        "end": {
+          "count": 8,
+          "correct": 1,
+          "nll_sum": 12.70115502178669,
+          "accuracy": 0.125,
+          "mean_nll": 1.5876443777233362
+        },
+        "pad": {
+          "count": 15574,
+          "correct": 15569,
+          "nll_sum": 103.77346324920654,
+          "accuracy": 0.9996789520996533,
+          "mean_nll": 0.006663250497573298
+        }
+      }
+    }
+  }
+}

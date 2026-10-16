@@ -1,0 +1,1237 @@
+{
+  "status": "complete",
+  "stage": "scaled32_final_2048_evaluation",
+  "training_reader_mode": "grounded",
+  "training_updates": 2048,
+  "training_checkpoint_sha256": "14ace5533efb5476d5ea7e08156463bfa176c6066173795cff4f3f37b9d85482",
+  "fingerprint_before": "e00f360a3fdfcda7e947aba78736aadee04aad26e9f9b386be124fcfce118ada",
+  "fingerprint_after": "e00f360a3fdfcda7e947aba78736aadee04aad26e9f9b386be124fcfce118ada",
+  "model": {
+    "name": "Qwen/Qwen2.5-1.5B-Instruct",
+    "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "mode": "hybrid",
+    "block_size": 32,
+    "prediction_offset": 0,
+    "clean_crystal_ar_weight": 1.0
+  },
+  "sampling": {
+    "policy": "confidence_one",
+    "token_selection": "greedy_argmax",
+    "raw_tokens_per_crystal": 2560,
+    "ar_fallback": false,
+    "grammar_repair": false,
+    "physical_repair": false,
+    "early_eos": false,
+    "oracle_numbers_at_inference": false
+  },
+  "seen8": {
+    "arm": "joint_ar_diffusion_b32",
+    "core_mode": "hybrid",
+    "block_size": 32,
+    "model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "n": 8,
+    "split": "train",
+    "counts": {
+      "G": 5,
+      "Q_reference": 7,
+      "E_reference": 8,
+      "closed_loop": 0,
+      "flow_complete": 5,
+      "Q_swap": 0,
+      "Q_no_crystal": 0
+    },
+    "rates": {
+      "G": 0.625,
+      "Q_reference": 0.875,
+      "E_reference": 1.0,
+      "closed_loop": 0.0,
+      "flow_complete": 0.625,
+      "Q_swap": 0.0,
+      "Q_no_crystal": 0.0
+    },
+    "attempts_retried": 0,
+    "failure_classes": {
+      "Q2_actual:answer_mismatch": 5,
+      "Q_swap:answer_mismatch": 8,
+      "G:generation_error": 1,
+      "Q_reference:read_error": 1,
+      "closed_loop:skipped_invalid_generated_c1": 3,
+      "Q_no_crystal:read_error": 1,
+      "G:generation_audit": 2
+    },
+    "forward_calls": 55464,
+    "attempt_seconds": 2875.0288047972135,
+    "no_crystal_semantics": "Q_no_crystal is exact target-fact match without a structure; raw response is retained and this is not an abstention/success score."
+  },
+  "heldout16": {
+    "arm": "joint_ar_diffusion_b32",
+    "core_mode": "hybrid",
+    "block_size": 32,
+    "model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "n": 16,
+    "split": "heldout",
+    "counts": {
+      "G": 0,
+      "Q_reference": 12,
+      "E_reference": 0,
+      "closed_loop": 0,
+      "flow_complete": 0,
+      "Q_swap": 0,
+      "Q_no_crystal": 0
+    },
+    "rates": {
+      "G": 0.0,
+      "Q_reference": 0.75,
+      "E_reference": 0.0,
+      "closed_loop": 0.0,
+      "flow_complete": 0.0,
+      "Q_swap": 0.0,
+      "Q_no_crystal": 0.0
+    },
+    "attempts_retried": 0,
+    "failure_classes": {
+      "G:generation_audit": 15,
+      "E_reference:edit_error": 3,
+      "closed_loop:skipped_invalid_generated_c1": 16,
+      "Q_swap:answer_mismatch": 15,
+      "E_reference:edit_mismatch": 13,
+      "Q_reference:answer_mismatch": 2,
+      "Q_no_crystal:read_error": 1,
+      "Q_swap:read_error": 1,
+      "Q_reference:read_error": 2,
+      "G:generation_error": 1
+    },
+    "forward_calls": 84027,
+    "attempt_seconds": 4515.815696411766,
+    "no_crystal_semantics": "Q_no_crystal is exact target-fact match without a structure; raw response is retained and this is not an abstention/success score."
+  },
+  "task_metric_rates": {
+    "G": {
+      "seen8": {
+        "count": 5,
+        "denominator": 8,
+        "rate": 0.625
+      },
+      "heldout16": {
+        "count": 0,
+        "denominator": 16,
+        "rate": 0.0
+      }
+    },
+    "Q_reference": {
+      "seen8": {
+        "count": 7,
+        "denominator": 8,
+        "rate": 0.875
+      },
+      "heldout16": {
+        "count": 12,
+        "denominator": 16,
+        "rate": 0.75
+      }
+    },
+    "E_reference": {
+      "seen8": {
+        "count": 8,
+        "denominator": 8,
+        "rate": 1.0
+      },
+      "heldout16": {
+        "count": 0,
+        "denominator": 16,
+        "rate": 0.0
+      }
+    },
+    "closed_loop": {
+      "seen8": {
+        "count": 0,
+        "denominator": 8,
+        "rate": 0.0
+      },
+      "heldout16": {
+        "count": 0,
+        "denominator": 16,
+        "rate": 0.0
+      }
+    },
+    "flow_complete": {
+      "seen8": {
+        "count": 5,
+        "denominator": 8,
+        "rate": 0.625
+      },
+      "heldout16": {
+        "count": 0,
+        "denominator": 16,
+        "rate": 0.0
+      }
+    },
+    "Q_swap": {
+      "seen8": {
+        "count": 0,
+        "denominator": 8,
+        "rate": 0.0
+      },
+      "heldout16": {
+        "count": 0,
+        "denominator": 16,
+        "rate": 0.0
+      }
+    },
+    "Q_no_crystal": {
+      "seen8": {
+        "count": 0,
+        "denominator": 8,
+        "rate": 0.0
+      },
+      "heldout16": {
+        "count": 0,
+        "denominator": 16,
+        "rate": 0.0
+      }
+    }
+  },
+  "read_fact_fields": {
+    "seen8": {
+      "Q_reference": {
+        "attempted_cases": 8,
+        "cohort_cases": 8,
+        "successful_responses": 7,
+        "field_metrics": {
+          "sg": {
+            "count": 7,
+            "denominator": 8,
+            "rate": 0.875
+          },
+          "formula": {
+            "count": 7,
+            "denominator": 8,
+            "rate": 0.875
+          },
+          "atoms": {
+            "count": 7,
+            "denominator": 8,
+            "rate": 0.875
+          },
+          "orbits": {
+            "count": 7,
+            "denominator": 8,
+            "rate": 0.875
+          },
+          "a": {
+            "count": 7,
+            "denominator": 8,
+            "rate": 0.875
+          },
+          "b": {
+            "count": 7,
+            "denominator": 8,
+            "rate": 0.875
+          },
+          "c": {
+            "count": 7,
+            "denominator": 8,
+            "rate": 0.875
+          }
+        }
+      },
+      "Q_swap": {
+        "attempted_cases": 8,
+        "cohort_cases": 8,
+        "successful_responses": 8,
+        "field_metrics": {
+          "sg": {
+            "count": 0,
+            "denominator": 8,
+            "rate": 0.0
+          },
+          "formula": {
+            "count": 0,
+            "denominator": 8,
+            "rate": 0.0
+          },
+          "atoms": {
+            "count": 0,
+            "denominator": 8,
+            "rate": 0.0
+          },
+          "orbits": {
+            "count": 0,
+            "denominator": 8,
+            "rate": 0.0
+          },
+          "a": {
+            "count": 0,
+            "denominator": 8,
+            "rate": 0.0
+          },
+          "b": {
+            "count": 0,
+            "denominator": 8,
+            "rate": 0.0
+          },
+          "c": {
+            "count": 0,
+            "denominator": 8,
+            "rate": 0.0
+          }
+        }
+      },
+      "Q1_actual": {
+        "attempted_cases": 5,
+        "cohort_cases": 8,
+        "successful_responses": 5,
+        "field_metrics": {
+          "sg": {
+            "count": 5,
+            "denominator": 5,
+            "rate": 1.0
+          },
+          "formula": {
+            "count": 5,
+            "denominator": 5,
+            "rate": 1.0
+          },
+          "atoms": {
+            "count": 5,
+            "denominator": 5,
+            "rate": 1.0
+          },
+          "orbits": {
+            "count": 5,
+            "denominator": 5,
+            "rate": 1.0
+          },
+          "a": {
+            "count": 5,
+            "denominator": 5,
+            "rate": 1.0
+          },
+          "b": {
+            "count": 5,
+            "denominator": 5,
+            "rate": 1.0
+          },
+          "c": {
+            "count": 5,
+            "denominator": 5,
+            "rate": 1.0
+          }
+        }
+      },
+      "Q2_actual": {
+        "attempted_cases": 5,
+        "cohort_cases": 8,
+        "successful_responses": 5,
+        "field_metrics": {
+          "sg": {
+            "count": 5,
+            "denominator": 5,
+            "rate": 1.0
+          },
+          "formula": {
+            "count": 5,
+            "denominator": 5,
+            "rate": 1.0
+          },
+          "atoms": {
+            "count": 5,
+            "denominator": 5,
+            "rate": 1.0
+          },
+          "orbits": {
+            "count": 5,
+            "denominator": 5,
+            "rate": 1.0
+          },
+          "a": {
+            "count": 0,
+            "denominator": 5,
+            "rate": 0.0
+          },
+          "b": {
+            "count": 0,
+            "denominator": 5,
+            "rate": 0.0
+          },
+          "c": {
+            "count": 0,
+            "denominator": 5,
+            "rate": 0.0
+          }
+        }
+      }
+    },
+    "heldout16": {
+      "Q_reference": {
+        "attempted_cases": 16,
+        "cohort_cases": 16,
+        "successful_responses": 14,
+        "field_metrics": {
+          "sg": {
+            "count": 14,
+            "denominator": 16,
+            "rate": 0.875
+          },
+          "formula": {
+            "count": 12,
+            "denominator": 16,
+            "rate": 0.75
+          },
+          "atoms": {
+            "count": 14,
+            "denominator": 16,
+            "rate": 0.875
+          },
+          "orbits": {
+            "count": 14,
+            "denominator": 16,
+            "rate": 0.875
+          },
+          "a": {
+            "count": 14,
+            "denominator": 16,
+            "rate": 0.875
+          },
+          "b": {
+            "count": 14,
+            "denominator": 16,
+            "rate": 0.875
+          },
+          "c": {
+            "count": 14,
+            "denominator": 16,
+            "rate": 0.875
+          }
+        }
+      },
+      "Q_swap": {
+        "attempted_cases": 16,
+        "cohort_cases": 16,
+        "successful_responses": 15,
+        "field_metrics": {
+          "sg": {
+            "count": 0,
+            "denominator": 16,
+            "rate": 0.0
+          },
+          "formula": {
+            "count": 0,
+            "denominator": 16,
+            "rate": 0.0
+          },
+          "atoms": {
+            "count": 0,
+            "denominator": 16,
+            "rate": 0.0
+          },
+          "orbits": {
+            "count": 0,
+            "denominator": 16,
+            "rate": 0.0
+          },
+          "a": {
+            "count": 0,
+            "denominator": 16,
+            "rate": 0.0
+          },
+          "b": {
+            "count": 0,
+            "denominator": 16,
+            "rate": 0.0
+          },
+          "c": {
+            "count": 0,
+            "denominator": 16,
+            "rate": 0.0
+          }
+        }
+      },
+      "Q1_actual": {
+        "attempted_cases": 0,
+        "cohort_cases": 16,
+        "successful_responses": 0,
+        "field_metrics": {
+          "sg": {
+            "count": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "formula": {
+            "count": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "atoms": {
+            "count": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "orbits": {
+            "count": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "a": {
+            "count": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "b": {
+            "count": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "c": {
+            "count": 0,
+            "denominator": 0,
+            "rate": null
+          }
+        }
+      },
+      "Q2_actual": {
+        "attempted_cases": 0,
+        "cohort_cases": 16,
+        "successful_responses": 0,
+        "field_metrics": {
+          "sg": {
+            "count": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "formula": {
+            "count": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "atoms": {
+            "count": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "orbits": {
+            "count": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "a": {
+            "count": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "b": {
+            "count": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "c": {
+            "count": 0,
+            "denominator": 0,
+            "rate": null
+          }
+        }
+      }
+    }
+  },
+  "edit_fields": {
+    "seen8": {
+      "E_reference": {
+        "attempted_cases": 8,
+        "cohort_cases": 8,
+        "successful_responses": 8,
+        "field_metrics": {
+          "lengths_exact": {
+            "count": 8,
+            "denominator": 8,
+            "rate": 1.0
+          },
+          "other_plan_fields_exact": {
+            "count": 8,
+            "denominator": 8,
+            "rate": 1.0
+          },
+          "whole_geometry_scale": {
+            "count": 8,
+            "denominator": 8,
+            "rate": 1.0
+          }
+        }
+      },
+      "E_actual": {
+        "attempted_cases": 5,
+        "cohort_cases": 8,
+        "successful_responses": 5,
+        "field_metrics": {
+          "lengths_exact": {
+            "count": 5,
+            "denominator": 5,
+            "rate": 1.0
+          },
+          "other_plan_fields_exact": {
+            "count": 5,
+            "denominator": 5,
+            "rate": 1.0
+          },
+          "whole_geometry_scale": {
+            "count": 5,
+            "denominator": 5,
+            "rate": 1.0
+          }
+        }
+      }
+    },
+    "heldout16": {
+      "E_reference": {
+        "attempted_cases": 16,
+        "cohort_cases": 16,
+        "successful_responses": 13,
+        "field_metrics": {
+          "lengths_exact": {
+            "count": 0,
+            "denominator": 16,
+            "rate": 0.0
+          },
+          "other_plan_fields_exact": {
+            "count": 6,
+            "denominator": 16,
+            "rate": 0.375
+          },
+          "whole_geometry_scale": {
+            "count": 0,
+            "denominator": 16,
+            "rate": 0.0
+          }
+        }
+      },
+      "E_actual": {
+        "attempted_cases": 0,
+        "cohort_cases": 16,
+        "successful_responses": 0,
+        "field_metrics": {
+          "lengths_exact": {
+            "count": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "other_plan_fields_exact": {
+            "count": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "whole_geometry_scale": {
+            "count": 0,
+            "denominator": 0,
+            "rate": null
+          }
+        }
+      }
+    }
+  },
+  "no_crystal_diagnostic": {
+    "seen8": {
+      "semantics": "diagnostic exact-fact match without a structure; not a grounding or success score",
+      "attempted_cases": 8,
+      "cohort_cases": 8,
+      "exact_fact_matches": 0,
+      "rate_per_attempted_case": 0.0
+    },
+    "heldout16": {
+      "semantics": "diagnostic exact-fact match without a structure; not a grounding or success score",
+      "attempted_cases": 16,
+      "cohort_cases": 16,
+      "exact_fact_matches": 0,
+      "rate_per_attempted_case": 0.0
+    }
+  },
+  "cohort": {
+    "seen8_case_ids": [
+      "anchor_Tb8Mg4",
+      "anchor_Li8V4Ni4O16",
+      "mp-4047",
+      "mp-1205515",
+      "mp-30009",
+      "mp-1188285",
+      "mp-1207068",
+      "mp-1205902"
+    ],
+    "heldout16_case_ids": [
+      "mp-1229077",
+      "mp-1019259",
+      "mp-1079976",
+      "mp-1095422",
+      "mp-1173947",
+      "mp-21371",
+      "mp-5456",
+      "mp-19419",
+      "mp-1219591",
+      "mp-1225818",
+      "mp-757163",
+      "mp-1178612",
+      "mp-1101160",
+      "mp-31460",
+      "mp-646926",
+      "mp-1217967"
+    ],
+    "trained_case_count": 32,
+    "free_evaluated_train_case_count": 8,
+    "trained_but_not_free_evaluated_train_case_count": 24,
+    "trained_but_not_free_evaluated_train_case_ids": [
+      "mp-2582",
+      "mp-18127",
+      "mp-1215249",
+      "mp-754971",
+      "mp-7483",
+      "mp-10847",
+      "mp-1224444",
+      "mp-974400",
+      "mp-775763",
+      "mp-37014",
+      "mp-1105932",
+      "mp-1218490",
+      "mp-1219974",
+      "mp-1099786",
+      "mp-11192",
+      "mp-23856",
+      "mp-1218405",
+      "mp-8189",
+      "mp-764280",
+      "mp-12961",
+      "mp-1189385",
+      "mp-759522",
+      "mp-555984",
+      "mp-1190391"
+    ],
+    "heldout16_status": "evaluated"
+  },
+  "metric_semantics": {
+    "G": "free generation strict audit against the requested source case",
+    "Q_reference": "source-crystal read control; not an actual-history grounding score",
+    "E_reference": "source-crystal edit control; separate from generated-history editing",
+    "closed_loop": "actual generated G, Q1, edit, and Q2 sequence all pass their strict checks",
+    "flow_complete": "actual Q2 response was produced after the generated sequence",
+    "Q_swap": "read control on the original runner's within-split replacement crystal",
+    "Q_no_crystal": "exact-fact match without a crystal; diagnostic only, not grounding or success"
+  },
+  "inference_boundary": "G uses the original condition prompt; actual Q1, E, and Q2 append model outputs in sequence. Q_reference and E_reference are separate source-crystal controls.",
+  "optimizer_updates": 0,
+  "optimization_verification": {
+    "status": "passed",
+    "device": "cuda",
+    "bitwise_equal": {
+      "attention_masks": true,
+      "regions": true,
+      "crystal_prefix_times": true
+    },
+    "reference_binding": "actual originals returned by fast_inference_metadata.install(model)",
+    "check": "test_fast_inference_metadata.check",
+    "checked_mask_comparisons": 360,
+    "checked_integer_vector_comparisons": 390,
+    "checked_tensor_comparisons": 750
+  },
+  "paired_seen8_128_token_parity": {
+    "status": "passed",
+    "method": "legacy_random_greedy_tokens",
+    "prefix_tokens": 128,
+    "seed_source": "header_probe.case_seed(case_id, 32, stream)",
+    "exact_cases": 8,
+    "expected_cases": 8,
+    "compared": [
+      "token_ids",
+      "text",
+      "time_trace",
+      "release_trace",
+      "header"
+    ],
+    "cases": [
+      {
+        "id": "anchor_Tb8Mg4",
+        "split": "train_seen8",
+        "release_seed": 1409260777,
+        "generated_tokens": 128,
+        "token_ids_sha256": "6e5903b91cdfa9e4d6810332c5110e878d2d6742d5a836d066f439242fef27eb",
+        "time_trace_sha256": "ad2e3ff084e7c8617cf79652f211c7a8477cebd8e072ea9ada050297d4a1805d",
+        "release_trace_sha256": "e2244c4ca9d68cffaca481513ed5cacb919e51a0bb132756dc8f56cb3ab6bbaa",
+        "header": {
+          "first_nonempty_line_terminated_by_newline": true,
+          "header_syntax_valid": false,
+          "complete_header_syntax_valid": false,
+          "header_value_strings": null,
+          "header_values": null,
+          "header_numbers_finite": false,
+          "positive_edge_lengths": false,
+          "angles_in_range": false,
+          "cell_geometry_valid": null
+        },
+        "exact_tokens_text_time_release_header": true,
+        "unoptimized_seconds": 3.5413988563232124,
+        "optimized_seconds": 3.2143923942930996
+      },
+      {
+        "id": "anchor_Li8V4Ni4O16",
+        "split": "train_seen8",
+        "release_seed": 1316098678,
+        "generated_tokens": 128,
+        "token_ids_sha256": "0a61a27dd8d059155254fabfa1be9ed46d22ccbf626813f9c96238be12f393b0",
+        "time_trace_sha256": "28bea5a4d20f14de28858695a78e528ac02c04ecee38e5c8a87c715d0caaceaa",
+        "release_trace_sha256": "47f00298a35cbd009aebef0d5eb23754e332a12d74f5f7f8a6922f2e5978cfe3",
+        "header": {
+          "first_nonempty_line_terminated_by_newline": true,
+          "header_syntax_valid": true,
+          "complete_header_syntax_valid": true,
+          "header_value_strings": [
+            "6.03",
+            "6.13",
+            "8.45",
+            "90.0",
+            "90.0",
+            "90.0"
+          ],
+          "header_values": [
+            6.03,
+            6.13,
+            8.45,
+            90.0,
+            90.0,
+            90.0
+          ],
+          "header_numbers_finite": true,
+          "positive_edge_lengths": true,
+          "angles_in_range": true,
+          "cell_geometry_valid": true
+        },
+        "exact_tokens_text_time_release_header": true,
+        "unoptimized_seconds": 3.243087061215192,
+        "optimized_seconds": 3.1651755799539387
+      },
+      {
+        "id": "mp-4047",
+        "split": "train_seen8",
+        "release_seed": 430664076,
+        "generated_tokens": 128,
+        "token_ids_sha256": "94fff479726631bc25eb31a84fb64b80aa106eb124e2a406563767ee31baff50",
+        "time_trace_sha256": "ad2e3ff084e7c8617cf79652f211c7a8477cebd8e072ea9ada050297d4a1805d",
+        "release_trace_sha256": "ba2fa07506b3258bb8082262027ab9f3d38981a5aa345cd534ea595423089002",
+        "header": {
+          "first_nonempty_line_terminated_by_newline": true,
+          "header_syntax_valid": false,
+          "complete_header_syntax_valid": false,
+          "header_value_strings": null,
+          "header_values": null,
+          "header_numbers_finite": false,
+          "positive_edge_lengths": false,
+          "angles_in_range": false,
+          "cell_geometry_valid": null
+        },
+        "exact_tokens_text_time_release_header": true,
+        "unoptimized_seconds": 3.29793578479439,
+        "optimized_seconds": 3.200143644120544
+      },
+      {
+        "id": "mp-1205515",
+        "split": "train_seen8",
+        "release_seed": 3904399733,
+        "generated_tokens": 128,
+        "token_ids_sha256": "47ba10a0c375cc317c5419b4dc8e47ce51c8c2fa878074d7c24dedf36e178746",
+        "time_trace_sha256": "7f9d46ab78139372978390d2a1b3ecfac610288ed226f5b0c44ee5bdeb5e8fe4",
+        "release_trace_sha256": "e74cd8b1d06f5e866e82823c3a04adda1b28200760e6c444f5a11e2e0c68208c",
+        "header": {
+          "first_nonempty_line_terminated_by_newline": true,
+          "header_syntax_valid": true,
+          "complete_header_syntax_valid": true,
+          "header_value_strings": [
+            "10.70105606",
+            "10.70105606",
+            "3.939435",
+            "90.0",
+            "90.0",
+            "158.88876847"
+          ],
+          "header_values": [
+            10.70105606,
+            10.70105606,
+            3.939435,
+            90.0,
+            90.0,
+            158.88876847
+          ],
+          "header_numbers_finite": true,
+          "positive_edge_lengths": true,
+          "angles_in_range": true,
+          "cell_geometry_valid": true
+        },
+        "exact_tokens_text_time_release_header": true,
+        "unoptimized_seconds": 3.309858353342861,
+        "optimized_seconds": 3.1823124047368765
+      },
+      {
+        "id": "mp-30009",
+        "split": "train_seen8",
+        "release_seed": 831170702,
+        "generated_tokens": 128,
+        "token_ids_sha256": "8e190162f45abf4862c843f9e8e37c1c8be19d37b6b781b00c6c674d9506d526",
+        "time_trace_sha256": "de5c944c2363834039f07e5caa9b41f1f15b1a270a686a07629de68362fa76cd",
+        "release_trace_sha256": "b0f04f034946a24805f7b7ac959031d5fa6621b3478800eb1a7d1dee54c12e08",
+        "header": {
+          "first_nonempty_line_terminated_by_newline": true,
+          "header_syntax_valid": true,
+          "complete_header_syntax_valid": true,
+          "header_value_strings": [
+            "4.55223999",
+            "4.55223999",
+            "4.55223999",
+            "122.44045171",
+            "122.44045171",
+            "85.82255785"
+          ],
+          "header_values": [
+            4.55223999,
+            4.55223999,
+            4.55223999,
+            122.44045171,
+            122.44045171,
+            85.82255785
+          ],
+          "header_numbers_finite": true,
+          "positive_edge_lengths": true,
+          "angles_in_range": true,
+          "cell_geometry_valid": true
+        },
+        "exact_tokens_text_time_release_header": true,
+        "unoptimized_seconds": 3.233725774101913,
+        "optimized_seconds": 3.1528625870123506
+      },
+      {
+        "id": "mp-1188285",
+        "split": "train_seen8",
+        "release_seed": 3202784048,
+        "generated_tokens": 128,
+        "token_ids_sha256": "f3fab9720bc85ef797938ff2e04085e630c71841d60948f0cd3d7e534e41415b",
+        "time_trace_sha256": "2102706fa78c7f3b0de6f6cfef29d4b32f6530b07a7da0f4ded07fc01d6d8ac6",
+        "release_trace_sha256": "c81de0f683fd90afc88454ed47e9884d6b70de0e832a1e2fdbf71181d5632559",
+        "header": {
+          "first_nonempty_line_terminated_by_newline": true,
+          "header_syntax_valid": true,
+          "complete_header_syntax_valid": true,
+          "header_value_strings": [
+            "6.15561305",
+            "6.15561305",
+            "9.529944",
+            "90.0",
+            "90.0",
+            "119.99998975999999"
+          ],
+          "header_values": [
+            6.15561305,
+            6.15561305,
+            9.529944,
+            90.0,
+            90.0,
+            119.99998975999999
+          ],
+          "header_numbers_finite": true,
+          "positive_edge_lengths": true,
+          "angles_in_range": true,
+          "cell_geometry_valid": true
+        },
+        "exact_tokens_text_time_release_header": true,
+        "unoptimized_seconds": 3.1310444618575275,
+        "optimized_seconds": 3.0470167989842594
+      },
+      {
+        "id": "mp-1207068",
+        "split": "train_seen8",
+        "release_seed": 3255440635,
+        "generated_tokens": 128,
+        "token_ids_sha256": "b59f244647e0cea2cff6113ddd37d19ec1a17f33cfcc9bc83d8c784a7913542e",
+        "time_trace_sha256": "63e1f75d9586e158d1efca6b9c5a066ba9524c544ada081fa34f11fe1575b735",
+        "release_trace_sha256": "366f9e2e4c3ae45abfbb00f80f42d2357dc668d18016b85a74b43fd161b5e5d6",
+        "header": {
+          "first_nonempty_line_terminated_by_newline": true,
+          "header_syntax_valid": true,
+          "complete_header_syntax_valid": true,
+          "header_value_strings": [
+            "3.894882",
+            "3.894882",
+            "7.96393",
+            "90.0",
+            "90.0",
+            "90.0"
+          ],
+          "header_values": [
+            3.894882,
+            3.894882,
+            7.96393,
+            90.0,
+            90.0,
+            90.0
+          ],
+          "header_numbers_finite": true,
+          "positive_edge_lengths": true,
+          "angles_in_range": true,
+          "cell_geometry_valid": true
+        },
+        "exact_tokens_text_time_release_header": true,
+        "unoptimized_seconds": 3.2718298542313278,
+        "optimized_seconds": 3.1486968249082565
+      },
+      {
+        "id": "mp-1205902",
+        "split": "train_seen8",
+        "release_seed": 1288555119,
+        "generated_tokens": 128,
+        "token_ids_sha256": "7edc66df07e5a1f2241542120ea61fffde5be511ca6452b03d67c30fd6a39e6b",
+        "time_trace_sha256": "ba44f2ee0ca8743f73d40dd09a591d0e2cf9644d221406dc8a04acfacb60a123",
+        "release_trace_sha256": "206c18e56cbc0791b71d16971b768fad644e0925bd7d912f26fdbb01fad2ce62",
+        "header": {
+          "first_nonempty_line_terminated_by_newline": true,
+          "header_syntax_valid": true,
+          "complete_header_syntax_valid": true,
+          "header_value_strings": [
+            "4.22795437",
+            "4.22795437",
+            "8.056072",
+            "90.0",
+            "90.0",
+            "120.00000582999999"
+          ],
+          "header_values": [
+            4.22795437,
+            4.22795437,
+            8.056072,
+            90.0,
+            90.0,
+            120.00000582999999
+          ],
+          "header_numbers_finite": true,
+          "positive_edge_lengths": true,
+          "angles_in_range": true,
+          "cell_geometry_valid": true
+        },
+        "exact_tokens_text_time_release_header": true,
+        "unoptimized_seconds": 3.19044979615137,
+        "optimized_seconds": 3.1057121721096337
+      }
+    ]
+  },
+  "evaluation_rng_seeds": {
+    "anchor_Tb8Mg4": 1953763890,
+    "anchor_Li8V4Ni4O16": 436829049,
+    "mp-4047": 3543844510,
+    "mp-1205515": 2192437608,
+    "mp-30009": 2716548266,
+    "mp-1188285": 481720218,
+    "mp-1207068": 3326829219,
+    "mp-1205902": 80672516,
+    "mp-1229077": 489772329,
+    "mp-1019259": 4111471942,
+    "mp-1079976": 305874749,
+    "mp-1095422": 842417781,
+    "mp-1173947": 3038762499,
+    "mp-21371": 808519624,
+    "mp-5456": 3070846049,
+    "mp-19419": 1669067176,
+    "mp-1219591": 874062138,
+    "mp-1225818": 3998048999,
+    "mp-757163": 3213643335,
+    "mp-1178612": 424201705,
+    "mp-1101160": 4248717434,
+    "mp-31460": 633600568,
+    "mp-646926": 4006466891,
+    "mp-1217967": 3610589371
+  },
+  "runtime": {
+    "slurm_job": "608179",
+    "host": "gpu-a100-04",
+    "python_version": "3.10.18",
+    "device": {
+      "name": "NVIDIA A100-SXM4-80GB",
+      "total_memory_GiB": 79.249755859375
+    },
+    "packages": {
+      "torch": "2.2.0+cu121",
+      "transformers": "4.57.6",
+      "numpy": "1.26.4",
+      "pyxtal": "1.0.8",
+      "pymatgen": "2025.10.7",
+      "spglib": "2.7.0"
+    }
+  },
+  "hashes_before": {
+    "pin_sha256": "dff7306086bc0c94915590a69b1de9564725987c8d5e209cfa53416c1035b488",
+    "training_status_sha256": "c8de0fe0dd51f7f6381f9e1e8176cb75bdb21929e75fa6b0802e418a79933363",
+    "checkpoint_receipt_sha256": "4f0a2f33f872d413a2d4c5f97302878bd3e17e4ea2b86e0ee345381b1ea76958",
+    "training_summary_sha256": "15829191bd77e40fefbbf97fd40f625dc6d5a4eb8b2b5f6c09e0d990afa77937",
+    "checkpoint_sha256": "14ace5533efb5476d5ea7e08156463bfa176c6066173795cff4f3f37b9d85482",
+    "final_fingerprint": "e00f360a3fdfcda7e947aba78736aadee04aad26e9f9b386be124fcfce118ada",
+    "code_hashes": {
+      "parent": {
+        "model.py": "51e547b34d9a30a07f601f7cb2027d6d64f067ce4ce4cfc7027baf26c719d448",
+        "pilot_001.slurm": "47e97c39ee654f2c457e653942f542f17c68725970ab02cc1dfe638afb33442a",
+        "prepare.py": "4889b777e79b15c1761698375f9b1f48316e648129cce4f0439a30714fb1a30b",
+        "run.py": "e40bec18f806456e66dd04169db15d726082394dc0b9670255ad62ba809525b0",
+        "score.py": "3c1760481872726d798dd18ec4fb3557d6940e669e4c4d818a07da276d9c477a",
+        "test_joint_model.py": "38098f2bf4a4c4fd833bf6af780e33f19f6567bd90e7ef96dd91f72f8c58b3da",
+        "test_joint_runner.py": "e9350b403f4c45f085a00b89913e4d19d090170266d79d684c665dfb1af7662a"
+      },
+      "wrapper": {
+        "train.py": "1bb619fb809d71c68813eb07aa162b2b2bfa1b8f2de7cef1a67b60054d4ae816",
+        "train.slurm": "66f494e4def37fec6529883fcdd199ec64e1223c73aa7665fbd3ea6efe60d7bb",
+        "prepare_data.py": "3323b74d93ac7895c9c1233c018d1c58341743eb1bb23d1df1835eaf5573c101"
+      },
+      "data": {
+        "manifest_sha256": "25f150360f173970895dafd31e390f94b4b01ca174e6ad09b9e288c94b1e48cc",
+        "records_sha256": "231f336234d15a216dc9cb800d8dc1c3f30cf90985184ccc0d3e5c26333e95c6"
+      },
+      "evaluation_helpers": {
+        "commit_probe.py": "081ad3a97090651bba4b146e77fcd47807e0942d3ab4f7da450274a1e594b8d3",
+        "full_commit_fast_eval.py": "444e6d1fca8bf7f1de00dca951d64961cec5b3b64e3461034174140742b4bb36",
+        "fast_inference_metadata.py": "0163435947c8d8efa4c8f1455fba8ff22080b4a2969e2b98891f9dc9cfba356d",
+        "test_fast_inference_metadata.py": "c41ea06b2b941ca289f4033bf431958783f494cd0f6d8d88a6aa51991b76b5d2",
+        "joint_confidence_eval.py": "1c739713672ed7530f0b1921cf58d85192c36647faa3b3225718d7d808b974f3"
+      }
+    },
+    "evaluation_sources": {
+      "evaluate.py": "e0ca48792dfd942022e49b98907b2bb0518c5c9e20e7f6b54b96f627d4c63a73",
+      "test_evaluate.py": "307fffd07980060f3c435d04fbc45ced6e2facdbe5cf64a0341a3b9333aef07d",
+      "evaluate.slurm": "1845a7c0f386d6cc762eaf49bd02967a272f5187f031e7d9c0c5513620f43af8"
+    },
+    "data_hashes": {
+      "manifest_sha256": "25f150360f173970895dafd31e390f94b4b01ca174e6ad09b9e288c94b1e48cc",
+      "records_sha256": "231f336234d15a216dc9cb800d8dc1c3f30cf90985184ccc0d3e5c26333e95c6"
+    },
+    "tokenizer_hashes": {
+      "added_tokens.json": "28dc70f2cb07b1cca239390e21197945125792bfe8ef6c2a7463a4c387e79673",
+      "chat_template.jinja": "cd8e9439f0570856fd70470bf8889ebd8b5d1107207f67a5efb46e342330527f",
+      "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+      "special_tokens_map.json": "f863ec62eb91385603a3f882a55401ade618a3621d4ccc2affa3f28a579c9785",
+      "tokenizer.json": "64b64b25afdb5e3e79168467889b4b777778dc17ae29458bcd2c41a51110cca6",
+      "tokenizer_config.json": "1697fb166f8a8b20603b9b8782423599271e2c2e1c4740087ef1b4b8cffa2596",
+      "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    },
+    "codec_pin": {
+      "base_manifest_sha256": "b8c290dd64f210dd469b83cbf41ad321ae4d7c5c40303c70e8cda0e4335cd0c3",
+      "codec_pin": {
+        "summary_sha256": "438d019d6dc12a89b3a952761e392c26cabf7035c145d8b61eed8af3cd77ae02",
+        "selection_sha256": "03527304a32e11c15414e0f368e72c694e754b3add76f660701437b6bf22d54a",
+        "adapter_prepare_sha256": "07ac45cb3ae5ab086fed460fc957afcc94e1988011161a4d0178b388b1769f14",
+        "adapter_score_sha256": "3c1760481872726d798dd18ec4fb3557d6940e669e4c4d818a07da276d9c477a",
+        "data_model": "Qwen/Qwen2.5-0.5B-Instruct",
+        "data_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+        "data_tokenizer_path": "experiments/interleaved_ar_diffusion_20261002/data_002/tokenizer",
+        "data_tokenizer_files": {
+          "added_tokens.json": "28dc70f2cb07b1cca239390e21197945125792bfe8ef6c2a7463a4c387e79673",
+          "chat_template.jinja": "cd8e9439f0570856fd70470bf8889ebd8b5d1107207f67a5efb46e342330527f",
+          "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+          "special_tokens_map.json": "f863ec62eb91385603a3f882a55401ade618a3621d4ccc2affa3f28a579c9785",
+          "tokenizer.json": "64b64b25afdb5e3e79168467889b4b777778dc17ae29458bcd2c41a51110cca6",
+          "tokenizer_config.json": "1697fb166f8a8b20603b9b8782423599271e2c2e1c4740087ef1b4b8cffa2596",
+          "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+        },
+        "runtime_hashes": {
+          "relational_codec.py": "365f122905399a73477b92a7af97c05b78483ea5af12347f9a6050b1a3506813",
+          "run_roundtrip.py": "3d329b9a486bb4a2cddf90e0977468034080db7d03251082836b7d9e9a4c4cdd",
+          "geometry.py": "026d5c882c0e24b8802f9cf0f25415353cd3254e9bde45a6f1693396a72c04a2",
+          "base_cohort.py": "f8b47626030b77592a3e2105544576f1b2103bd77a4f9eb9e7d138416b19a1d8",
+          "oldcodec.py": "8b8a4f11a949000e2c3f29b787676a6147a776946c4f7c9f272c1f33bfa110d9",
+          "api_runner.py": "2973ac9aef70dbd0f98257608227f9ebf645a688d8ce7f90cc8edfcd86e9716d",
+          "prepare.py": "c77ea38b734fe0a1accab663cfa8f1b071ff7c4784513681af0d4bb89a4a6a65",
+          "public_wyckoff_baseline.py": "1ccdc829f301f1279f78751dc5138fcac1e67680dfdaebefdbf72c9ca3ba758a",
+          "public_affine_parser.py": "26675890fb9847d4011153fc3d5a11a29733349d8e74c765b71375cea3ccb3a1",
+          "cif_parser.py": "2c3fb30605c725b0eee8280aed50119544bf42177528ef5339159e36e80e684f",
+          "public_wyckoff_list.csv": "ca56602252b7896121253c910739ef2fccf0ba947f2940358feb941f30c5e13d"
+        },
+        "runtime_hashes_stable": true
+      }
+    }
+  },
+  "hashes_after": {
+    "pin_sha256": "dff7306086bc0c94915590a69b1de9564725987c8d5e209cfa53416c1035b488",
+    "training_status_sha256": "c8de0fe0dd51f7f6381f9e1e8176cb75bdb21929e75fa6b0802e418a79933363",
+    "checkpoint_receipt_sha256": "4f0a2f33f872d413a2d4c5f97302878bd3e17e4ea2b86e0ee345381b1ea76958",
+    "training_summary_sha256": "15829191bd77e40fefbbf97fd40f625dc6d5a4eb8b2b5f6c09e0d990afa77937",
+    "checkpoint_sha256": "14ace5533efb5476d5ea7e08156463bfa176c6066173795cff4f3f37b9d85482",
+    "final_fingerprint": "e00f360a3fdfcda7e947aba78736aadee04aad26e9f9b386be124fcfce118ada",
+    "code_hashes": {
+      "parent": {
+        "model.py": "51e547b34d9a30a07f601f7cb2027d6d64f067ce4ce4cfc7027baf26c719d448",
+        "pilot_001.slurm": "47e97c39ee654f2c457e653942f542f17c68725970ab02cc1dfe638afb33442a",
+        "prepare.py": "4889b777e79b15c1761698375f9b1f48316e648129cce4f0439a30714fb1a30b",
+        "run.py": "e40bec18f806456e66dd04169db15d726082394dc0b9670255ad62ba809525b0",
+        "score.py": "3c1760481872726d798dd18ec4fb3557d6940e669e4c4d818a07da276d9c477a",
+        "test_joint_model.py": "38098f2bf4a4c4fd833bf6af780e33f19f6567bd90e7ef96dd91f72f8c58b3da",
+        "test_joint_runner.py": "e9350b403f4c45f085a00b89913e4d19d090170266d79d684c665dfb1af7662a"
+      },
+      "wrapper": {
+        "train.py": "1bb619fb809d71c68813eb07aa162b2b2bfa1b8f2de7cef1a67b60054d4ae816",
+        "train.slurm": "66f494e4def37fec6529883fcdd199ec64e1223c73aa7665fbd3ea6efe60d7bb",
+        "prepare_data.py": "3323b74d93ac7895c9c1233c018d1c58341743eb1bb23d1df1835eaf5573c101"
+      },
+      "data": {
+        "manifest_sha256": "25f150360f173970895dafd31e390f94b4b01ca174e6ad09b9e288c94b1e48cc",
+        "records_sha256": "231f336234d15a216dc9cb800d8dc1c3f30cf90985184ccc0d3e5c26333e95c6"
+      },
+      "evaluation_helpers": {
+        "commit_probe.py": "081ad3a97090651bba4b146e77fcd47807e0942d3ab4f7da450274a1e594b8d3",
+        "full_commit_fast_eval.py": "444e6d1fca8bf7f1de00dca951d64961cec5b3b64e3461034174140742b4bb36",
+        "fast_inference_metadata.py": "0163435947c8d8efa4c8f1455fba8ff22080b4a2969e2b98891f9dc9cfba356d",
+        "test_fast_inference_metadata.py": "c41ea06b2b941ca289f4033bf431958783f494cd0f6d8d88a6aa51991b76b5d2",
+        "joint_confidence_eval.py": "1c739713672ed7530f0b1921cf58d85192c36647faa3b3225718d7d808b974f3"
+      }
+    },
+    "evaluation_sources": {
+      "evaluate.py": "e0ca48792dfd942022e49b98907b2bb0518c5c9e20e7f6b54b96f627d4c63a73",
+      "test_evaluate.py": "307fffd07980060f3c435d04fbc45ced6e2facdbe5cf64a0341a3b9333aef07d",
+      "evaluate.slurm": "1845a7c0f386d6cc762eaf49bd02967a272f5187f031e7d9c0c5513620f43af8"
+    },
+    "data_hashes": {
+      "manifest_sha256": "25f150360f173970895dafd31e390f94b4b01ca174e6ad09b9e288c94b1e48cc",
+      "records_sha256": "231f336234d15a216dc9cb800d8dc1c3f30cf90985184ccc0d3e5c26333e95c6"
+    },
+    "tokenizer_hashes": {
+      "added_tokens.json": "28dc70f2cb07b1cca239390e21197945125792bfe8ef6c2a7463a4c387e79673",
+      "chat_template.jinja": "cd8e9439f0570856fd70470bf8889ebd8b5d1107207f67a5efb46e342330527f",
+      "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+      "special_tokens_map.json": "f863ec62eb91385603a3f882a55401ade618a3621d4ccc2affa3f28a579c9785",
+      "tokenizer.json": "64b64b25afdb5e3e79168467889b4b777778dc17ae29458bcd2c41a51110cca6",
+      "tokenizer_config.json": "1697fb166f8a8b20603b9b8782423599271e2c2e1c4740087ef1b4b8cffa2596",
+      "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    },
+    "codec_pin": {
+      "base_manifest_sha256": "b8c290dd64f210dd469b83cbf41ad321ae4d7c5c40303c70e8cda0e4335cd0c3",
+      "codec_pin": {
+        "summary_sha256": "438d019d6dc12a89b3a952761e392c26cabf7035c145d8b61eed8af3cd77ae02",
+        "selection_sha256": "03527304a32e11c15414e0f368e72c694e754b3add76f660701437b6bf22d54a",
+        "adapter_prepare_sha256": "07ac45cb3ae5ab086fed460fc957afcc94e1988011161a4d0178b388b1769f14",
+        "adapter_score_sha256": "3c1760481872726d798dd18ec4fb3557d6940e669e4c4d818a07da276d9c477a",
+        "data_model": "Qwen/Qwen2.5-0.5B-Instruct",
+        "data_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+        "data_tokenizer_path": "experiments/interleaved_ar_diffusion_20261002/data_002/tokenizer",
+        "data_tokenizer_files": {
+          "added_tokens.json": "28dc70f2cb07b1cca239390e21197945125792bfe8ef6c2a7463a4c387e79673",
+          "chat_template.jinja": "cd8e9439f0570856fd70470bf8889ebd8b5d1107207f67a5efb46e342330527f",
+          "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+          "special_tokens_map.json": "f863ec62eb91385603a3f882a55401ade618a3621d4ccc2affa3f28a579c9785",
+          "tokenizer.json": "64b64b25afdb5e3e79168467889b4b777778dc17ae29458bcd2c41a51110cca6",
+          "tokenizer_config.json": "1697fb166f8a8b20603b9b8782423599271e2c2e1c4740087ef1b4b8cffa2596",
+          "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+        },
+        "runtime_hashes": {
+          "relational_codec.py": "365f122905399a73477b92a7af97c05b78483ea5af12347f9a6050b1a3506813",
+          "run_roundtrip.py": "3d329b9a486bb4a2cddf90e0977468034080db7d03251082836b7d9e9a4c4cdd",
+          "geometry.py": "026d5c882c0e24b8802f9cf0f25415353cd3254e9bde45a6f1693396a72c04a2",
+          "base_cohort.py": "f8b47626030b77592a3e2105544576f1b2103bd77a4f9eb9e7d138416b19a1d8",
+          "oldcodec.py": "8b8a4f11a949000e2c3f29b787676a6147a776946c4f7c9f272c1f33bfa110d9",
+          "api_runner.py": "2973ac9aef70dbd0f98257608227f9ebf645a688d8ce7f90cc8edfcd86e9716d",
+          "prepare.py": "c77ea38b734fe0a1accab663cfa8f1b071ff7c4784513681af0d4bb89a4a6a65",
+          "public_wyckoff_baseline.py": "1ccdc829f301f1279f78751dc5138fcac1e67680dfdaebefdbf72c9ca3ba758a",
+          "public_affine_parser.py": "26675890fb9847d4011153fc3d5a11a29733349d8e74c765b71375cea3ccb3a1",
+          "cif_parser.py": "2c3fb30605c725b0eee8280aed50119544bf42177528ef5339159e36e80e684f",
+          "public_wyckoff_list.csv": "ca56602252b7896121253c910739ef2fccf0ba947f2940358feb941f30c5e13d"
+        },
+        "runtime_hashes_stable": true
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "job_id": 607943,
+  "submitted_at_utc": "2026-10-06T15:20:00.583534+00:00",
+  "partition": "stingy",
+  "node_requested": "gpu-a100-04",
+  "walltime": "04:00:00",
+  "gpu_count": 1,
+  "entrypoint": "experiments/interleaved_relational_scaled32_20261006/train.slurm",
+  "reader_mode": "grounded",
+  "updates": 2048,
+  "train_cases": 32,
+  "heldout_cases": 16,
+  "heldout_used_in_training": false,
+  "scope": "train-only fresh1.5B/B32/cleanAR1; context-groundedQ only; noARbodyinference/repair/evaluation",
+  "source_hashes": {
+    "train.py": "1bb619fb809d71c68813eb07aa162b2b2bfa1b8f2de7cef1a67b60054d4ae816",
+    "test_train.py": "b718470998216aedcac41f945d0d899075db1eca531d237e4ca9496c1bf2d549",
+    "train.slurm": "66f494e4def37fec6529883fcdd199ec64e1223c73aa7665fbd3ea6efe60d7bb",
+    "prepare_data.py": "3323b74d93ac7895c9c1233c018d1c58341743eb1bb23d1df1835eaf5573c101",
+    "data_001/manifest.json": "25f150360f173970895dafd31e390f94b4b01ca174e6ad09b9e288c94b1e48cc",
+    "data_001/records.jsonl": "231f336234d15a216dc9cb800d8dc1c3f30cf90985184ccc0d3e5c26333e95c6"
+  },
+  "checks": {
+    "native_CPU_contract": "passed",
+    "HPC_stdlib_data_check": "passed",
+    "HPC_load_data_imports": "passed",
+    "remote_local_hashes": "matched",
+    "independent_review": "no blocking findings; Python version nowrecorded"
+  },
+  "required_GPU_gates": [
+    "actualA10080GB allocation",
+    "fresh fp e97aed646b7289c06f10be376b37d67cd7aa6a42ad6214b61da008cd85b8404b",
+    "worst fullmask disposable optimizerstep\u226470GiB",
+    "finite training andactualexposure receipt",
+    "final2048 strictcheckpointreload"
+  ],
+  "training_results": "not_yet_observed"
+}

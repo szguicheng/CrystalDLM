@@ -1,0 +1,112 @@
+{
+  "status": "code_path_review_only",
+  "conclusion": {
+    "same_b8_checkpoint_can_run_clean_ar_body_inference_without_training_or_weight_changes": true,
+    "required_runner_adaptation": "Keep text/header generation on hybrid; call the existing crystal method with mode=ar for the body. The current generate helper passes one mode to both, so split those two calls at the runner layer.",
+    "recommended_control_policy": "Use greedy_argmax for AR body tokens to match the frozen CF evaluator's greedy_argmax token selection. This deliberately changes the stock AR body sampler, which is multinomial at temperature 0.8.",
+    "claim_boundary": "This is a same-checkpoint decoder control. It does not turn the frozen CF result into an AR result or establish a separately trained pure-AR model."
+  },
+  "checkpoint": {
+    "arm": "joint_ar_diffusion_b8",
+    "trained_mode": "hybrid",
+    "training_updates": 2048,
+    "prediction_offset": 0,
+    "block_size": 8,
+    "clean_crystal_ar_weight": 1.0,
+    "checkpoint_sha256": "da812d90566c1e791c776a88358d734a9c7d01832cd084df7466e38e3190981e",
+    "final_and_reload_fingerprint": "ff8d4429032fe96b0232770c3065c71c1e4cd73e690f95522f34238a830620af",
+    "reload_verified": true,
+    "strict_state_load": true,
+    "checkpoint_path_in_receipt": "/gpfs1/scratch/chenggui2/CrystalDLM/experiments/interleaved_relational_scaled32_20261006/training_full_history_b8_001/joint_ar_diffusion_b8/checkpoint.pt",
+    "checkpoint_file_in_current_checkout": false,
+    "checkpoint_access_note": "Receipt and status were read locally; no SSH or remote checkpoint access was performed."
+  },
+  "training_to_inference_alignment": {
+    "clean_ar_training_targets": "On hybrid crystal examples, the auxiliary crystal_ar group predicts clean crystal body tokens plus END, excludes PAD, and uses weight 1.0. AR target queries are at start-1 through the position before each target, so the first body token is predicted from the START token.",
+    "training_time_embedding": "The clean stream receives timestep 0; the shared timestep embedding table is zero-initialized before training and its learned row 0 is used at inference for existing crystal-body context.",
+    "attention_and_positions": "Clean-stream query rows remain causal, with ordinary contiguous position IDs. The AR inference path uses the same causal attention and positions.",
+    "next_token_alignment": "prediction_positions applies an offset of one for mode=ar. crystal(mode=ar) reads the last input position's logits before appending each next token."
+  },
+  "generation_path": {
+    "task_prefixes": "G/E tasks provide a prompt prefix; text(..., trigger=true) greedily generates the lead/header ending with CRYSTAL_START; crystal then receives prefix+lead. E's prefix includes the earlier reference crystal and its END.",
+    "body_decoder": "The existing crystal(mode=ar) branch recomputes logits over context+generated body for each of at most K=2560 tokens. It bans all tokenizer special IDs except END and PAD.",
+    "cache": "hidden() calls the base model with use_cache=false; no KV cache is used.",
+    "termination": "AR body decoding stops on END, appends PAD through K, then unpack_block requires exactly one END, no PAD before END, and only PAD after END. It rejects missing END or malformed PAD boundaries.",
+    "stock_sampler": "The existing AR body branch samples multinomially at temperature 0.8. Replacing that choice with argmax is the only additional decoding-policy change proposed to match the frozen CF token selection."
+  },
+  "reload_requirements": {
+    "model_constructor": "Hybrid.pretrained(tok, prediction_offset=0, block_size=8, clean_crystal_ar_weight=1.0)",
+    "restore_checkpoint_expectations": "expected_mode=hybrid, expected_offset=0, expected_block_size=8, expected_clean_crystal_ar_weight=1.0",
+    "reason": "restore_checkpoint strictly checks checkpoint configuration and strict-loads the state. A default block_size=K constructor would fail the B8 check.",
+    "reuse_note": "The B8 evaluator wrapper configures block size 8. The frozen B32 evaluator loader hard-codes block_size=32 and must not be used unadapted."
+  },
+  "fairness_and_interpretation": [
+    "Use identical G/E task prefixes, direction, and hybrid-generated headers if the intended comparison isolates body decoding; keep Q/text behavior on the frozen hybrid path.",
+    "The body decoder changes from B8 confidence-one diffusion commits to left-to-right causal AR. This is the intended inference-mechanism contrast; the checkpoint weights and input cases remain shared.",
+    "AR appends PAD after END without predicting it, while CF evaluates the END/PAD sequence. Report body validity separately from boundary handling; AR boundary success is not evidence that the clean-AR loss learned PAD.",
+    "For the frozen CF evaluator, confidence-one commits use greedy_argmax token selection and deterministic confidence-based release. Greedy AR matches token selection but not the diffusion order or context."
+  ],
+  "evidence": [
+    {
+      "file": "experiments/interleaved_relational_blocks_20261005/model.py",
+      "lines": "66-74,127-152,260-328",
+      "supports": "AR target offset, no-cache forward, timestep assignment, header trigger, causal next-token body generation, token bans, END/PAD validation."
+    },
+    {
+      "file": "experiments/interleaved_relational_blocks_20261005/run.py",
+      "lines": "382-385",
+      "supports": "Existing generate helper runs text trigger then crystal with the same mode."
+    },
+    {
+      "file": "experiments/interleaved_relational_joint_20261006/model.py",
+      "lines": "92-143,145-170,176-222,288-355",
+      "supports": "B8 and clean-AR configuration, strict reload checks, clean body+END supervision without PAD, and the shared AR inference implementation."
+    },
+    {
+      "file": "experiments/interleaved_relational_joint_20261006/run.py",
+      "lines": "401-404,659-681,724-733,793-837",
+      "supports": "Generation call, B8 trainer configuration, separate clean-AR loss logging, and final checkpoint reload verification."
+    },
+    {
+      "file": "experiments/interleaved_relational_joint_20261006/prepare.py",
+      "lines": "124-139",
+      "supports": "G and E prompt/header structure and E's preceding reference-crystal history."
+    },
+    {
+      "file": "experiments/interleaved_relational_scaled32_20261006/train_full_history_b8.py",
+      "lines": "21-45",
+      "supports": "B8 wrapper overrides the parent runner to hybrid mode and block size 8."
+    },
+    {
+      "file": "experiments/interleaved_relational_scaled32_20261006/evaluate_full_history_b8.py",
+      "lines": "16-33,99-125",
+      "supports": "B8 evaluator adapts the pinned evaluator and configures the runtime to block size 8."
+    },
+    {
+      "file": "experiments/interleaved_relational_scaled32_20261006/evaluate.py",
+      "lines": "475-484",
+      "supports": "Frozen CF sampling metadata identifies confidence_one and greedy_argmax."
+    },
+    {
+      "file": "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/commit_probe.py",
+      "lines": "66-88",
+      "supports": "CF candidate token argmax and deterministic confidence_one position selection."
+    },
+    {
+      "file": "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/joint_inference_source_equality.json",
+      "lines": "1-20",
+      "supports": "AST comparison reports blocks and joint inference methods/helpers identical, including hidden, logits, text, crystal, and unpack_block."
+    },
+    {
+      "file": "experiments/interleaved_relational_scaled32_20261006/training_full_history_b8_001/joint_ar_diffusion_b8/status.json",
+      "lines": "1309-1316",
+      "supports": "B8 checkpoint hash, reload fingerprint, hybrid mode, offset 0, block size 8, and clean-AR weight 1.0."
+    },
+    {
+      "file": "experiments/interleaved_relational_scaled32_20261006/training_full_history_b8_001/joint_ar_diffusion_b8/checkpoint_receipt.json",
+      "lines": "1-19",
+      "supports": "Verified strict reload, remote checkpoint path, B8 config, and training-only stage."
+    }
+  ],
+  "verification_scope": "Read-only source, receipt, and status inspection. No source changes, checkpoint loads, tests, SSH, or GPU work."
+}

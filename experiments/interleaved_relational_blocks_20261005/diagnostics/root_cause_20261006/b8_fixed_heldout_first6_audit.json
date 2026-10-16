@@ -1,0 +1,933 @@
+{
+  "audit_status": "partial_first6_audited_full16_pending",
+  "scope": "Only the first six heldout rows in each JSONL, paired by exact ID and order. This is not a full heldout-16 conclusion.",
+  "paths": {
+    "B8": "experiments/interleaved_relational_scaled32_20261006/eval_full_history_b8_fixed_001/heldout16/evaluation.jsonl",
+    "B32": "experiments/interleaved_relational_scaled32_20261006/eval_full_history_final2048_001/heldout16/evaluation.jsonl"
+  },
+  "cohort_checks": {
+    "B8_total_rows_currently_mirrored": 6,
+    "B32_total_rows_currently_mirrored": 16,
+    "rows_compared_per_cohort": 6,
+    "first6_ids_match_in_order": true,
+    "first6_ids": [
+      "mp-1229077",
+      "mp-1019259",
+      "mp-1079976",
+      "mp-1095422",
+      "mp-1173947",
+      "mp-21371"
+    ],
+    "B8_full16_status": "incomplete; only the requested first six audited in this artifact",
+    "B32_full16_status": "not assessed beyond matched IDs needed for this six-row comparison"
+  },
+  "strict_task_counts": {
+    "B8": {
+      "G": {
+        "passed": 0,
+        "total": 6,
+        "failed": 6
+      },
+      "E_reference": {
+        "passed": 0,
+        "total": 6,
+        "failed": 6
+      },
+      "Q_reference": {
+        "passed": 5,
+        "total": 6,
+        "failed": 1
+      },
+      "closed_loop": {
+        "passed": 0,
+        "total": 6,
+        "failed": 6
+      },
+      "flow_complete": {
+        "passed": 0,
+        "total": 6,
+        "failed": 6
+      },
+      "Q_swap": {
+        "passed": 0,
+        "total": 6,
+        "failed": 6
+      }
+    },
+    "B32": {
+      "G": {
+        "passed": 0,
+        "total": 6,
+        "failed": 6
+      },
+      "E_reference": {
+        "passed": 0,
+        "total": 6,
+        "failed": 6
+      },
+      "Q_reference": {
+        "passed": 5,
+        "total": 6,
+        "failed": 1
+      },
+      "closed_loop": {
+        "passed": 0,
+        "total": 6,
+        "failed": 6
+      },
+      "flow_complete": {
+        "passed": 0,
+        "total": 6,
+        "failed": 6
+      },
+      "Q_swap": {
+        "passed": 0,
+        "total": 6,
+        "failed": 6
+      }
+    }
+  },
+  "failure_histograms": {
+    "B8": [
+      {
+        "stage": "E_reference",
+        "kind": "edit_mismatch",
+        "count": 6
+      },
+      {
+        "stage": "G",
+        "kind": "generation_audit",
+        "reason_class": "ambiguous_orbit_definition",
+        "count": 2
+      },
+      {
+        "stage": "G",
+        "kind": "generation_audit",
+        "reason_class": "missing_input_composition",
+        "count": 1
+      },
+      {
+        "stage": "G",
+        "kind": "generation_audit",
+        "reason_class": "unknown_element_name",
+        "count": 2
+      },
+      {
+        "stage": "G",
+        "kind": "generation_error",
+        "reason_class": "crystal_block_exactly_one_end_error",
+        "count": 1
+      },
+      {
+        "stage": "Q_reference",
+        "kind": "answer_mismatch",
+        "count": 1
+      },
+      {
+        "stage": "Q_swap",
+        "kind": "answer_mismatch",
+        "count": 6
+      },
+      {
+        "stage": "closed_loop",
+        "kind": "skipped_invalid_generated_c1",
+        "count": 6
+      }
+    ],
+    "B32": [
+      {
+        "stage": "E_reference",
+        "kind": "edit_mismatch",
+        "count": 6
+      },
+      {
+        "stage": "G",
+        "kind": "generation_audit",
+        "reason_class": "ambiguous_orbit_definition",
+        "count": 3
+      },
+      {
+        "stage": "G",
+        "kind": "generation_audit",
+        "reason_class": "malformed_input_cell",
+        "count": 1
+      },
+      {
+        "stage": "G",
+        "kind": "generation_audit",
+        "reason_class": "unknown_element_name",
+        "count": 2
+      },
+      {
+        "stage": "Q_reference",
+        "kind": "answer_mismatch",
+        "count": 1
+      },
+      {
+        "stage": "Q_swap",
+        "kind": "answer_mismatch",
+        "count": 6
+      },
+      {
+        "stage": "closed_loop",
+        "kind": "skipped_invalid_generated_c1",
+        "count": 6
+      }
+    ]
+  },
+  "raw_token_boundary_summary": {
+    "B8": {
+      "rows": 6,
+      "rows_with_raw_ids": 6,
+      "successful_generation_rows": 5,
+      "successful_raw_all_K2560": true,
+      "successful_raw_all_exactly_one_END": true,
+      "successful_raw_all_PAD_suffix_after_END": true,
+      "failed_generation_rows_with_raw_ids": 1,
+      "failed_generation_raw_boundary_failures": 1
+    },
+    "B32": {
+      "rows": 6,
+      "rows_with_raw_ids": 6,
+      "successful_generation_rows": 6,
+      "successful_raw_all_K2560": true,
+      "successful_raw_all_exactly_one_END": true,
+      "successful_raw_all_PAD_suffix_after_END": true,
+      "failed_generation_rows_with_raw_ids": 0,
+      "failed_generation_raw_boundary_failures": 0
+    }
+  },
+  "token_contract": {
+    "K": 2560,
+    "END_token_id": 151666,
+    "PAD_token_id": 151668,
+    "raw_ids_source_rule": "Use saved raw_token_ids on failure, otherwise saved generated value tokens; absent IDs are not inferred."
+  },
+  "Q_swap_summary": {
+    "B8_passed": 0,
+    "B32_passed": 0,
+    "matched_cases_with_field_differences": 4,
+    "field_difference_counts": {
+      "orbits": 4
+    }
+  },
+  "per_case": [
+    {
+      "id": "mp-1229077",
+      "B8": {
+        "id": "mp-1229077",
+        "swap_id": "mp-1019259",
+        "strict_task_results": {
+          "G": false,
+          "E_reference": false,
+          "Q_reference": true,
+          "closed_loop": false,
+          "flow_complete": false,
+          "Q_swap": false
+        },
+        "generation_ok": false,
+        "generation_reason_class": "crystal_block_exactly_one_end_error",
+        "failure_classes": [
+          {
+            "stage": "G",
+            "kind": "generation_error",
+            "reason_class": "crystal_block_exactly_one_end_error"
+          },
+          {
+            "stage": "E_reference",
+            "kind": "edit_mismatch"
+          },
+          {
+            "stage": "closed_loop",
+            "kind": "skipped_invalid_generated_c1"
+          },
+          {
+            "stage": "Q_swap",
+            "kind": "answer_mismatch"
+          }
+        ],
+        "raw_tokens": {
+          "available": true,
+          "source": "generation.raw_token_ids",
+          "length": 2560,
+          "K_2560": true,
+          "END_token_id": 151666,
+          "END_count": 0,
+          "END_index": null,
+          "PAD_token_id": 151668,
+          "PAD_count": 0,
+          "PAD_is_only_trailing_suffix_after_END": false,
+          "boundary_check": "fail"
+        },
+        "Q_swap_fields": {
+          "sg": true,
+          "formula": false,
+          "atoms": true,
+          "orbits": true,
+          "a": true,
+          "b": true,
+          "c": true
+        }
+      },
+      "B32": {
+        "id": "mp-1229077",
+        "swap_id": "mp-1019259",
+        "strict_task_results": {
+          "G": false,
+          "E_reference": false,
+          "Q_reference": true,
+          "closed_loop": false,
+          "flow_complete": false,
+          "Q_swap": false
+        },
+        "generation_ok": true,
+        "generation_reason_class": "unknown_element_name",
+        "failure_classes": [
+          {
+            "stage": "G",
+            "kind": "generation_audit",
+            "reason_class": "unknown_element_name"
+          },
+          {
+            "stage": "E_reference",
+            "kind": "edit_mismatch"
+          },
+          {
+            "stage": "closed_loop",
+            "kind": "skipped_invalid_generated_c1"
+          },
+          {
+            "stage": "Q_swap",
+            "kind": "answer_mismatch"
+          }
+        ],
+        "raw_tokens": {
+          "available": true,
+          "source": "generation.value.tokens",
+          "length": 2560,
+          "K_2560": true,
+          "END_token_id": 151666,
+          "END_count": 1,
+          "END_index": 734,
+          "PAD_token_id": 151668,
+          "PAD_count": 1825,
+          "PAD_is_only_trailing_suffix_after_END": true,
+          "boundary_check": "pass"
+        },
+        "Q_swap_fields": {
+          "sg": true,
+          "formula": false,
+          "atoms": true,
+          "orbits": true,
+          "a": true,
+          "b": true,
+          "c": true
+        }
+      },
+      "Q_swap_field_differences": {}
+    },
+    {
+      "id": "mp-1019259",
+      "B8": {
+        "id": "mp-1019259",
+        "swap_id": "mp-1229077",
+        "strict_task_results": {
+          "G": false,
+          "E_reference": false,
+          "Q_reference": true,
+          "closed_loop": false,
+          "flow_complete": false,
+          "Q_swap": false
+        },
+        "generation_ok": true,
+        "generation_reason_class": "ambiguous_orbit_definition",
+        "failure_classes": [
+          {
+            "stage": "G",
+            "kind": "generation_audit",
+            "reason_class": "ambiguous_orbit_definition"
+          },
+          {
+            "stage": "E_reference",
+            "kind": "edit_mismatch"
+          },
+          {
+            "stage": "closed_loop",
+            "kind": "skipped_invalid_generated_c1"
+          },
+          {
+            "stage": "Q_swap",
+            "kind": "answer_mismatch"
+          }
+        ],
+        "raw_tokens": {
+          "available": true,
+          "source": "generation.value.tokens",
+          "length": 2560,
+          "K_2560": true,
+          "END_token_id": 151666,
+          "END_count": 1,
+          "END_index": 581,
+          "PAD_token_id": 151668,
+          "PAD_count": 1978,
+          "PAD_is_only_trailing_suffix_after_END": true,
+          "boundary_check": "pass"
+        },
+        "Q_swap_fields": {
+          "sg": true,
+          "formula": false,
+          "atoms": true,
+          "orbits": true,
+          "a": true,
+          "b": true,
+          "c": true
+        }
+      },
+      "B32": {
+        "id": "mp-1019259",
+        "swap_id": "mp-1229077",
+        "strict_task_results": {
+          "G": false,
+          "E_reference": false,
+          "Q_reference": true,
+          "closed_loop": false,
+          "flow_complete": false,
+          "Q_swap": false
+        },
+        "generation_ok": true,
+        "generation_reason_class": "ambiguous_orbit_definition",
+        "failure_classes": [
+          {
+            "stage": "G",
+            "kind": "generation_audit",
+            "reason_class": "ambiguous_orbit_definition"
+          },
+          {
+            "stage": "E_reference",
+            "kind": "edit_mismatch"
+          },
+          {
+            "stage": "closed_loop",
+            "kind": "skipped_invalid_generated_c1"
+          },
+          {
+            "stage": "Q_swap",
+            "kind": "answer_mismatch"
+          }
+        ],
+        "raw_tokens": {
+          "available": true,
+          "source": "generation.value.tokens",
+          "length": 2560,
+          "K_2560": true,
+          "END_token_id": 151666,
+          "END_count": 1,
+          "END_index": 479,
+          "PAD_token_id": 151668,
+          "PAD_count": 2080,
+          "PAD_is_only_trailing_suffix_after_END": true,
+          "boundary_check": "pass"
+        },
+        "Q_swap_fields": {
+          "sg": true,
+          "formula": false,
+          "atoms": true,
+          "orbits": false,
+          "a": true,
+          "b": true,
+          "c": true
+        }
+      },
+      "Q_swap_field_differences": {
+        "orbits": {
+          "B8": true,
+          "B32": false
+        }
+      }
+    },
+    {
+      "id": "mp-1079976",
+      "B8": {
+        "id": "mp-1079976",
+        "swap_id": "mp-1229077",
+        "strict_task_results": {
+          "G": false,
+          "E_reference": false,
+          "Q_reference": true,
+          "closed_loop": false,
+          "flow_complete": false,
+          "Q_swap": false
+        },
+        "generation_ok": true,
+        "generation_reason_class": "missing_input_composition",
+        "failure_classes": [
+          {
+            "stage": "G",
+            "kind": "generation_audit",
+            "reason_class": "missing_input_composition"
+          },
+          {
+            "stage": "E_reference",
+            "kind": "edit_mismatch"
+          },
+          {
+            "stage": "closed_loop",
+            "kind": "skipped_invalid_generated_c1"
+          },
+          {
+            "stage": "Q_swap",
+            "kind": "answer_mismatch"
+          }
+        ],
+        "raw_tokens": {
+          "available": true,
+          "source": "generation.value.tokens",
+          "length": 2560,
+          "K_2560": true,
+          "END_token_id": 151666,
+          "END_count": 1,
+          "END_index": 400,
+          "PAD_token_id": 151668,
+          "PAD_count": 2159,
+          "PAD_is_only_trailing_suffix_after_END": true,
+          "boundary_check": "pass"
+        },
+        "Q_swap_fields": {
+          "sg": true,
+          "formula": false,
+          "atoms": true,
+          "orbits": true,
+          "a": true,
+          "b": true,
+          "c": true
+        }
+      },
+      "B32": {
+        "id": "mp-1079976",
+        "swap_id": "mp-1229077",
+        "strict_task_results": {
+          "G": false,
+          "E_reference": false,
+          "Q_reference": true,
+          "closed_loop": false,
+          "flow_complete": false,
+          "Q_swap": false
+        },
+        "generation_ok": true,
+        "generation_reason_class": "unknown_element_name",
+        "failure_classes": [
+          {
+            "stage": "G",
+            "kind": "generation_audit",
+            "reason_class": "unknown_element_name"
+          },
+          {
+            "stage": "E_reference",
+            "kind": "edit_mismatch"
+          },
+          {
+            "stage": "closed_loop",
+            "kind": "skipped_invalid_generated_c1"
+          },
+          {
+            "stage": "Q_swap",
+            "kind": "answer_mismatch"
+          }
+        ],
+        "raw_tokens": {
+          "available": true,
+          "source": "generation.value.tokens",
+          "length": 2560,
+          "K_2560": true,
+          "END_token_id": 151666,
+          "END_count": 1,
+          "END_index": 678,
+          "PAD_token_id": 151668,
+          "PAD_count": 1881,
+          "PAD_is_only_trailing_suffix_after_END": true,
+          "boundary_check": "pass"
+        },
+        "Q_swap_fields": {
+          "sg": true,
+          "formula": false,
+          "atoms": true,
+          "orbits": true,
+          "a": true,
+          "b": true,
+          "c": true
+        }
+      },
+      "Q_swap_field_differences": {}
+    },
+    {
+      "id": "mp-1095422",
+      "B8": {
+        "id": "mp-1095422",
+        "swap_id": "mp-1229077",
+        "strict_task_results": {
+          "G": false,
+          "E_reference": false,
+          "Q_reference": false,
+          "closed_loop": false,
+          "flow_complete": false,
+          "Q_swap": false
+        },
+        "generation_ok": true,
+        "generation_reason_class": "unknown_element_name",
+        "failure_classes": [
+          {
+            "stage": "G",
+            "kind": "generation_audit",
+            "reason_class": "unknown_element_name"
+          },
+          {
+            "stage": "Q_reference",
+            "kind": "answer_mismatch"
+          },
+          {
+            "stage": "E_reference",
+            "kind": "edit_mismatch"
+          },
+          {
+            "stage": "closed_loop",
+            "kind": "skipped_invalid_generated_c1"
+          },
+          {
+            "stage": "Q_swap",
+            "kind": "answer_mismatch"
+          }
+        ],
+        "raw_tokens": {
+          "available": true,
+          "source": "generation.value.tokens",
+          "length": 2560,
+          "K_2560": true,
+          "END_token_id": 151666,
+          "END_count": 1,
+          "END_index": 404,
+          "PAD_token_id": 151668,
+          "PAD_count": 2155,
+          "PAD_is_only_trailing_suffix_after_END": true,
+          "boundary_check": "pass"
+        },
+        "Q_swap_fields": {
+          "sg": true,
+          "formula": false,
+          "atoms": true,
+          "orbits": true,
+          "a": true,
+          "b": true,
+          "c": true
+        }
+      },
+      "B32": {
+        "id": "mp-1095422",
+        "swap_id": "mp-1229077",
+        "strict_task_results": {
+          "G": false,
+          "E_reference": false,
+          "Q_reference": false,
+          "closed_loop": false,
+          "flow_complete": false,
+          "Q_swap": false
+        },
+        "generation_ok": true,
+        "generation_reason_class": "malformed_input_cell",
+        "failure_classes": [
+          {
+            "stage": "G",
+            "kind": "generation_audit",
+            "reason_class": "malformed_input_cell"
+          },
+          {
+            "stage": "Q_reference",
+            "kind": "answer_mismatch"
+          },
+          {
+            "stage": "E_reference",
+            "kind": "edit_mismatch"
+          },
+          {
+            "stage": "closed_loop",
+            "kind": "skipped_invalid_generated_c1"
+          },
+          {
+            "stage": "Q_swap",
+            "kind": "answer_mismatch"
+          }
+        ],
+        "raw_tokens": {
+          "available": true,
+          "source": "generation.value.tokens",
+          "length": 2560,
+          "K_2560": true,
+          "END_token_id": 151666,
+          "END_count": 1,
+          "END_index": 423,
+          "PAD_token_id": 151668,
+          "PAD_count": 2136,
+          "PAD_is_only_trailing_suffix_after_END": true,
+          "boundary_check": "pass"
+        },
+        "Q_swap_fields": {
+          "sg": true,
+          "formula": false,
+          "atoms": true,
+          "orbits": false,
+          "a": true,
+          "b": true,
+          "c": true
+        }
+      },
+      "Q_swap_field_differences": {
+        "orbits": {
+          "B8": true,
+          "B32": false
+        }
+      }
+    },
+    {
+      "id": "mp-1173947",
+      "B8": {
+        "id": "mp-1173947",
+        "swap_id": "mp-1229077",
+        "strict_task_results": {
+          "G": false,
+          "E_reference": false,
+          "Q_reference": true,
+          "closed_loop": false,
+          "flow_complete": false,
+          "Q_swap": false
+        },
+        "generation_ok": true,
+        "generation_reason_class": "ambiguous_orbit_definition",
+        "failure_classes": [
+          {
+            "stage": "G",
+            "kind": "generation_audit",
+            "reason_class": "ambiguous_orbit_definition"
+          },
+          {
+            "stage": "E_reference",
+            "kind": "edit_mismatch"
+          },
+          {
+            "stage": "closed_loop",
+            "kind": "skipped_invalid_generated_c1"
+          },
+          {
+            "stage": "Q_swap",
+            "kind": "answer_mismatch"
+          }
+        ],
+        "raw_tokens": {
+          "available": true,
+          "source": "generation.value.tokens",
+          "length": 2560,
+          "K_2560": true,
+          "END_token_id": 151666,
+          "END_count": 1,
+          "END_index": 818,
+          "PAD_token_id": 151668,
+          "PAD_count": 1741,
+          "PAD_is_only_trailing_suffix_after_END": true,
+          "boundary_check": "pass"
+        },
+        "Q_swap_fields": {
+          "sg": true,
+          "formula": false,
+          "atoms": true,
+          "orbits": true,
+          "a": true,
+          "b": true,
+          "c": true
+        }
+      },
+      "B32": {
+        "id": "mp-1173947",
+        "swap_id": "mp-1229077",
+        "strict_task_results": {
+          "G": false,
+          "E_reference": false,
+          "Q_reference": true,
+          "closed_loop": false,
+          "flow_complete": false,
+          "Q_swap": false
+        },
+        "generation_ok": true,
+        "generation_reason_class": "ambiguous_orbit_definition",
+        "failure_classes": [
+          {
+            "stage": "G",
+            "kind": "generation_audit",
+            "reason_class": "ambiguous_orbit_definition"
+          },
+          {
+            "stage": "E_reference",
+            "kind": "edit_mismatch"
+          },
+          {
+            "stage": "closed_loop",
+            "kind": "skipped_invalid_generated_c1"
+          },
+          {
+            "stage": "Q_swap",
+            "kind": "answer_mismatch"
+          }
+        ],
+        "raw_tokens": {
+          "available": true,
+          "source": "generation.value.tokens",
+          "length": 2560,
+          "K_2560": true,
+          "END_token_id": 151666,
+          "END_count": 1,
+          "END_index": 569,
+          "PAD_token_id": 151668,
+          "PAD_count": 1990,
+          "PAD_is_only_trailing_suffix_after_END": true,
+          "boundary_check": "pass"
+        },
+        "Q_swap_fields": {
+          "sg": true,
+          "formula": false,
+          "atoms": true,
+          "orbits": false,
+          "a": true,
+          "b": true,
+          "c": true
+        }
+      },
+      "Q_swap_field_differences": {
+        "orbits": {
+          "B8": true,
+          "B32": false
+        }
+      }
+    },
+    {
+      "id": "mp-21371",
+      "B8": {
+        "id": "mp-21371",
+        "swap_id": "mp-1229077",
+        "strict_task_results": {
+          "G": false,
+          "E_reference": false,
+          "Q_reference": true,
+          "closed_loop": false,
+          "flow_complete": false,
+          "Q_swap": false
+        },
+        "generation_ok": true,
+        "generation_reason_class": "unknown_element_name",
+        "failure_classes": [
+          {
+            "stage": "G",
+            "kind": "generation_audit",
+            "reason_class": "unknown_element_name"
+          },
+          {
+            "stage": "E_reference",
+            "kind": "edit_mismatch"
+          },
+          {
+            "stage": "closed_loop",
+            "kind": "skipped_invalid_generated_c1"
+          },
+          {
+            "stage": "Q_swap",
+            "kind": "answer_mismatch"
+          }
+        ],
+        "raw_tokens": {
+          "available": true,
+          "source": "generation.value.tokens",
+          "length": 2560,
+          "K_2560": true,
+          "END_token_id": 151666,
+          "END_count": 1,
+          "END_index": 400,
+          "PAD_token_id": 151668,
+          "PAD_count": 2159,
+          "PAD_is_only_trailing_suffix_after_END": true,
+          "boundary_check": "pass"
+        },
+        "Q_swap_fields": {
+          "sg": true,
+          "formula": false,
+          "atoms": true,
+          "orbits": true,
+          "a": true,
+          "b": true,
+          "c": true
+        }
+      },
+      "B32": {
+        "id": "mp-21371",
+        "swap_id": "mp-1229077",
+        "strict_task_results": {
+          "G": false,
+          "E_reference": false,
+          "Q_reference": true,
+          "closed_loop": false,
+          "flow_complete": false,
+          "Q_swap": false
+        },
+        "generation_ok": true,
+        "generation_reason_class": "ambiguous_orbit_definition",
+        "failure_classes": [
+          {
+            "stage": "G",
+            "kind": "generation_audit",
+            "reason_class": "ambiguous_orbit_definition"
+          },
+          {
+            "stage": "E_reference",
+            "kind": "edit_mismatch"
+          },
+          {
+            "stage": "closed_loop",
+            "kind": "skipped_invalid_generated_c1"
+          },
+          {
+            "stage": "Q_swap",
+            "kind": "answer_mismatch"
+          }
+        ],
+        "raw_tokens": {
+          "available": true,
+          "source": "generation.value.tokens",
+          "length": 2560,
+          "K_2560": true,
+          "END_token_id": 151666,
+          "END_count": 1,
+          "END_index": 400,
+          "PAD_token_id": 151668,
+          "PAD_count": 2159,
+          "PAD_is_only_trailing_suffix_after_END": true,
+          "boundary_check": "pass"
+        },
+        "Q_swap_fields": {
+          "sg": true,
+          "formula": false,
+          "atoms": true,
+          "orbits": false,
+          "a": true,
+          "b": true,
+          "c": true
+        }
+      },
+      "Q_swap_field_differences": {
+        "orbits": {
+          "B8": true,
+          "B32": false
+        }
+      }
+    }
+  ],
+  "limitations": [
+    "No model/checkpoint access or computation was performed.",
+    "All six B8 generation attempts have saved raw IDs; one failed generation has no END/PAD and is counted as a boundary failure.",
+    "The remaining ten heldout cases and final full-16 summary are not included."
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "selected_at": "2026-09-22T11:29:55.717219+00:00",
+  "selected": "one_step",
+  "selection_data": "512 validation structures x 2 representations x 2 fixed training seeds",
+  "selection_order": [
+    "usable",
+    "composition_match",
+    "decoded"
+  ],
+  "ranking": [
+    {
+      "mode": "one_step",
+      "n": 2048,
+      "usable": 23,
+      "composition_match": 25,
+      "decoded": 130
+    },
+    {
+      "mode": "remask",
+      "n": 2048,
+      "usable": 22,
+      "composition_match": 28,
+      "decoded": 488
+    },
+    {
+      "mode": "random",
+      "n": 2048,
+      "usable": 15,
+      "composition_match": 22,
+      "decoded": 314
+    },
+    {
+      "mode": "content_first",
+      "n": 2048,
+      "usable": 13,
+      "composition_match": 15,
+      "decoded": 146
+    },
+    {
+      "mode": "confidence",
+      "n": 2048,
+      "usable": 0,
+      "composition_match": 0,
+      "decoded": 0
+    }
+  ],
+  "fresh_data": {
+    "selected": 512,
+    "coverage": {
+      "ok": 512,
+      "failed": 0,
+      "overlength": 0
+    },
+    "unknown_tokens": [],
+    "disjoint_from_previous": true
+  },
+  "source_sha256": {
+    "model.py": "ed56525fd72df8b86980295c1bf4d862eea4c8e18785c5128224a1c84a1fb6df",
+    "sampling_followup.py": "9faaf7930693543f650017022e5c34d58eb74d77ccdbcd199925e845457b16eb",
+    "evaluate.py": "cfbe8dc6b5f50483df26835c489ee274ebca663d408453761fa49ee0113d4e81"
+  },
+  "checkpoint_sha256": {
+    "explicit_17": "fda0bf73ef9a026124ffe39859782e4d796d5d7d12cc4b371779d3e2bc5f3a6b",
+    "explicit_29": "e6c4489742208c67f922ae656b5d4897bc71a3f9cbd373a601c120aa03e3a46b",
+    "wyckoff_17": "a045daefee996033c75f5162b05455561b44edca6dc94f6fd36a37f5c321643f",
+    "wyckoff_29": "273a6e375dfe72279edbc02b9fcda60a977fc390310ce44486257800cb6dc376"
+  }
+}

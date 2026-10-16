@@ -1,0 +1,302 @@
+{
+  "audit_status": "source_and_schedule_verified; exact_corruption_replay_deferred_to_root_runtime",
+  "interpretive_boundary": "No observed corruption exposure counts or causal conclusion are recorded here. The script prints exact per-case G/E k=32 and first-block counts when run under the recorded CPU torch version.",
+  "replay_status": {
+    "anchor_metric_definition": "No visible initial-block anchor means first target token masked and all first B target positions masked; this equals the fully-masked-first-block event by definition.",
+    "ran_in_this_agent_environment": false,
+    "reason": "This agent execution context has no experiment .venv and the Slurm script-referenced env/bin/python is absent; system and bundled Python both raise ModuleNotFoundError for torch. Training status records torch 2.2.0+cu121. No install or broad runtime search was performed.",
+    "replay_script": "import hashlib, json\nfrom collections import defaultdict\nfrom pathlib import Path\nimport torch\n\nroot = Path('experiments/interleaved_relational_blocks_20261005')\nreceipt = json.loads((root / 'pilot_001/training_exposure.json').read_text())\nstatus = json.loads((root / 'pilot_001/diffusion_b32/status.json').read_text())\nevents = receipt['events']\ndigest = hashlib.sha256(json.dumps(events, sort_keys=True, separators=(',', ':')).encode()).hexdigest()\nassert digest == receipt['events_sha256'] == status['task_exposure_sha256']\nassert status['packages']['torch'] == '2.2.0+cu121'\ntorch.set_num_threads(1)\ntorch.set_num_interop_threads(1)\ngenerator = torch.Generator().manual_seed(1017)  # train.py seed 17 + 1000; CPU generator\nblocks = (16, 32, 64)\ncounts = defaultdict(lambda: {'examples': 0, 'full_k32': 0,\n                              'first_block_fully_masked': {str(b): 0 for b in blocks},\n                              'first_token_masked_no_visible_first_block_anchor': {str(b): 0 for b in blocks}})\nfor event in events:\n    if event['task'] not in ('G', 'E'):\n        continue  # Q1/Q2 text packing performs no generator draws\n    k = int(torch.randint(1, 33, (1,), generator=generator).item())\n    mask = torch.rand(2560, generator=generator) < (k / 32)\n    key = (event['task'], event['id'], event['direction'], event['variant'])\n    row = counts[key]\n    row['examples'] += 1\n    row['full_k32'] += int(k == 32)\n    for b in blocks:\n        fully = bool(mask[:b].all())\n        row['first_block_fully_masked'][str(b)] += int(fully)\n        # Anchor means any unmasked target position inside this initial block.\n        row['first_token_masked_no_visible_first_block_anchor'][str(b)] += int(bool(mask[0]) and fully)\nsummary = {\n    'torch_version': torch.__version__,\n    'torch_threads': torch.get_num_threads(),\n    'seed': 1017,\n    'events_sha256': digest,\n    'per_case': [dict(task=k[0], id=k[1], direction=k[2], variant=k[3], **v)\n                 for k, v in sorted(counts.items())],\n    'totals': {\n        'G_full_k32': sum(v['full_k32'] for k, v in counts.items() if k[0] == 'G'),\n        'E_full_k32': sum(v['full_k32'] for k, v in counts.items() if k[0] == 'E'),\n        'G_first_block_fully_masked': {str(b): sum(v['first_block_fully_masked'][str(b)] for k, v in counts.items() if k[0] == 'G') for b in blocks},\n        'E_first_block_fully_masked': {str(b): sum(v['first_block_fully_masked'][str(b)] for k, v in counts.items() if k[0] == 'E') for b in blocks},\n        'G_first_token_masked_no_visible_first_block_anchor': {str(b): sum(v['first_token_masked_no_visible_first_block_anchor'][str(b)] for k, v in counts.items() if k[0] == 'G') for b in blocks},\n        'E_first_token_masked_no_visible_first_block_anchor': {str(b): sum(v['first_token_masked_no_visible_first_block_anchor'][str(b)] for k, v in counts.items() if k[0] == 'E') for b in blocks},\n    },\n    'anchor_definition': 'No visible initial-block anchor means mask[0] and all first B target positions masked; this equals the fully-masked-first-block event by definition.'\n}\nprint(json.dumps(summary, indent=2, sort_keys=True))\n"
+  },
+  "schedule_verification": {
+    "case_schedule_counts_by_task_id_direction": [
+      {
+        "direction": "minus",
+        "id": "anchor_Li8V4Ni4O16",
+        "scheduled_examples": 32,
+        "task": "E"
+      },
+      {
+        "direction": "plus",
+        "id": "anchor_Li8V4Ni4O16",
+        "scheduled_examples": 32,
+        "task": "E"
+      },
+      {
+        "direction": "minus",
+        "id": "anchor_Tb8Mg4",
+        "scheduled_examples": 32,
+        "task": "E"
+      },
+      {
+        "direction": "plus",
+        "id": "anchor_Tb8Mg4",
+        "scheduled_examples": 32,
+        "task": "E"
+      },
+      {
+        "direction": "minus",
+        "id": "mp-1188285",
+        "scheduled_examples": 32,
+        "task": "E"
+      },
+      {
+        "direction": "plus",
+        "id": "mp-1188285",
+        "scheduled_examples": 32,
+        "task": "E"
+      },
+      {
+        "direction": "minus",
+        "id": "mp-1205515",
+        "scheduled_examples": 32,
+        "task": "E"
+      },
+      {
+        "direction": "plus",
+        "id": "mp-1205515",
+        "scheduled_examples": 32,
+        "task": "E"
+      },
+      {
+        "direction": "minus",
+        "id": "mp-1205902",
+        "scheduled_examples": 32,
+        "task": "E"
+      },
+      {
+        "direction": "plus",
+        "id": "mp-1205902",
+        "scheduled_examples": 32,
+        "task": "E"
+      },
+      {
+        "direction": "minus",
+        "id": "mp-1207068",
+        "scheduled_examples": 32,
+        "task": "E"
+      },
+      {
+        "direction": "plus",
+        "id": "mp-1207068",
+        "scheduled_examples": 32,
+        "task": "E"
+      },
+      {
+        "direction": "minus",
+        "id": "mp-30009",
+        "scheduled_examples": 32,
+        "task": "E"
+      },
+      {
+        "direction": "plus",
+        "id": "mp-30009",
+        "scheduled_examples": 32,
+        "task": "E"
+      },
+      {
+        "direction": "minus",
+        "id": "mp-4047",
+        "scheduled_examples": 32,
+        "task": "E"
+      },
+      {
+        "direction": "plus",
+        "id": "mp-4047",
+        "scheduled_examples": 32,
+        "task": "E"
+      },
+      {
+        "direction": "minus",
+        "id": "anchor_Li8V4Ni4O16",
+        "scheduled_examples": 64,
+        "task": "G"
+      },
+      {
+        "direction": "plus",
+        "id": "anchor_Li8V4Ni4O16",
+        "scheduled_examples": 64,
+        "task": "G"
+      },
+      {
+        "direction": "minus",
+        "id": "anchor_Tb8Mg4",
+        "scheduled_examples": 64,
+        "task": "G"
+      },
+      {
+        "direction": "plus",
+        "id": "anchor_Tb8Mg4",
+        "scheduled_examples": 64,
+        "task": "G"
+      },
+      {
+        "direction": "minus",
+        "id": "mp-1188285",
+        "scheduled_examples": 64,
+        "task": "G"
+      },
+      {
+        "direction": "plus",
+        "id": "mp-1188285",
+        "scheduled_examples": 64,
+        "task": "G"
+      },
+      {
+        "direction": "minus",
+        "id": "mp-1205515",
+        "scheduled_examples": 64,
+        "task": "G"
+      },
+      {
+        "direction": "plus",
+        "id": "mp-1205515",
+        "scheduled_examples": 64,
+        "task": "G"
+      },
+      {
+        "direction": "minus",
+        "id": "mp-1205902",
+        "scheduled_examples": 64,
+        "task": "G"
+      },
+      {
+        "direction": "plus",
+        "id": "mp-1205902",
+        "scheduled_examples": 64,
+        "task": "G"
+      },
+      {
+        "direction": "minus",
+        "id": "mp-1207068",
+        "scheduled_examples": 64,
+        "task": "G"
+      },
+      {
+        "direction": "plus",
+        "id": "mp-1207068",
+        "scheduled_examples": 64,
+        "task": "G"
+      },
+      {
+        "direction": "minus",
+        "id": "mp-30009",
+        "scheduled_examples": 64,
+        "task": "G"
+      },
+      {
+        "direction": "plus",
+        "id": "mp-30009",
+        "scheduled_examples": 64,
+        "task": "G"
+      },
+      {
+        "direction": "minus",
+        "id": "mp-4047",
+        "scheduled_examples": 64,
+        "task": "G"
+      },
+      {
+        "direction": "plus",
+        "id": "mp-4047",
+        "scheduled_examples": 64,
+        "task": "G"
+      }
+    ],
+    "counts": {
+      "E": 512,
+      "G": 1024,
+      "Q1": 256,
+      "Q2": 256
+    },
+    "events": 2048,
+    "matches_training_exposure_and_b32_status": true,
+    "recomputed_events_sha256": "d9c1f0576a30c62d81a9e00bdcf84cd13412057012b85da34d8c154f8424f560",
+    "rng_call_order": "Per update: G, G, E each draw randint(1,33) then rand(K=2560); Q1/Q2 reader packs draw no corruption RNG. The reader choice does not change generator advancement. The B16/B32/B64 block size does not change mask-vector RNG calls.",
+    "torch_training_version": "2.2.0+cu121",
+    "updates": 512
+  },
+  "scope": "Read-only training-exposure root-cause audit; no model weights loaded; no SSH/GPU/jobs; only this JSON was written.",
+  "source_verification": {
+    "active_snapshot_status_hashes": {
+      "model.py": {
+        "active": "0b27ee6f952ebbdaea599b67da1e7b1061e3dd4b43bbe730bf2291eed0811349",
+        "all_match": true,
+        "source_snapshot": "0b27ee6f952ebbdaea599b67da1e7b1061e3dd4b43bbe730bf2291eed0811349",
+        "training_status": "0b27ee6f952ebbdaea599b67da1e7b1061e3dd4b43bbe730bf2291eed0811349"
+      },
+      "prepare.py": {
+        "active": "4889b777e79b15c1761698375f9b1f48316e648129cce4f0439a30714fb1a30b",
+        "all_match": true,
+        "source_snapshot": "4889b777e79b15c1761698375f9b1f48316e648129cce4f0439a30714fb1a30b",
+        "training_status": "4889b777e79b15c1761698375f9b1f48316e648129cce4f0439a30714fb1a30b"
+      },
+      "run.py": {
+        "active": "1be7999e5d297f3a3129b513be704eef7ec8ad6c5e7f8e1d62a6befe2a542f62",
+        "all_match": true,
+        "source_snapshot": "1be7999e5d297f3a3129b513be704eef7ec8ad6c5e7f8e1d62a6befe2a542f62",
+        "training_status": "1be7999e5d297f3a3129b513be704eef7ec8ad6c5e7f8e1d62a6befe2a542f62"
+      },
+      "score.py": {
+        "active": "3c1760481872726d798dd18ec4fb3557d6940e669e4c4d818a07da276d9c477a",
+        "all_match": true,
+        "source_snapshot": "3c1760481872726d798dd18ec4fb3557d6940e669e4c4d818a07da276d9c477a",
+        "training_status": "3c1760481872726d798dd18ec4fb3557d6940e669e4c4d818a07da276d9c477a"
+      }
+    },
+    "all_relevant_hashes_match": true,
+    "baseline_source_sha256_note": "baseline_source_sha256.json model.py/run.py/prepare.py hashes differ from current training status and source_snapshot; its provenance is not established, so active per-arm training status plus source_snapshot were used as source evidence.",
+    "git_worktree_status": "unavailable: experiment directory is outside a Git worktree",
+    "per_arm_diffusion_statuses": {
+      "diffusion_b32": {
+        "model_hash_matches_active_snapshot": true,
+        "run_hash_matches_active_snapshot": true,
+        "seed": 17,
+        "task_exposure_sha256": "d9c1f0576a30c62d81a9e00bdcf84cd13412057012b85da34d8c154f8424f560",
+        "torch_version": "2.2.0+cu121"
+      },
+      "diffusion_b64": {
+        "model_hash_matches_active_snapshot": true,
+        "run_hash_matches_active_snapshot": true,
+        "seed": 17,
+        "task_exposure_sha256": "d9c1f0576a30c62d81a9e00bdcf84cd13412057012b85da34d8c154f8424f560",
+        "torch_version": "2.2.0+cu121"
+      },
+      "diffusion_full": {
+        "model_hash_matches_active_snapshot": true,
+        "run_hash_matches_active_snapshot": true,
+        "seed": 17,
+        "task_exposure_sha256": "d9c1f0576a30c62d81a9e00bdcf84cd13412057012b85da34d8c154f8424f560",
+        "torch_version": "2.2.0+cu121"
+      }
+    },
+    "result_final_runtime_source_pins_match": true,
+    "source_line_evidence": {
+      "model.py": {
+        "pack_and_uniform_k_mask": "154-202",
+        "weighted_objective_and_pad_factor": "215-258"
+      },
+      "run.py": {
+        "cpu_corruption_generator_seed": "645",
+        "per_update_example_order_and_calls": "688-696",
+        "update_examples": "256-275"
+      },
+      "teacher_forced_seen8.json": {
+        "k16_metrics": "41-68",
+        "k32_metrics": "7-40"
+      }
+    }
+  },
+  "teacher_forced_observation": {
+    "interpretation_boundary": "In this teacher-forced summary, PAD is a small share of normalized k32 loss; that weakens PAD-dominance as an explanation for these diagnostics but does not identify why free headers fail.",
+    "k16_body_accuracy": 0.9946524064171123,
+    "k32_body_accuracy": 0.9105757452021234,
+    "k32_mean_normalized_contribution": {
+      "crystal_body": 0.19817160069942474,
+      "crystal_end": 0.0006481116924987873,
+      "crystal_pad": 0.0006278413275140338,
+      "pad_to_body_ratio": 0.0031681700369686535
+    },
+    "n": 8,
+    "target": "G"
+  }
+}

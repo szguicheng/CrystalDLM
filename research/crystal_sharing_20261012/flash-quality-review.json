@@ -1,0 +1,219 @@
+{
+  "review": "read-only scientific QA of the 30 rendered Flash captions",
+  "date": "2026-10-12",
+  "inputs": [
+    "pilot30-base-v3-sharing-v1.jsonl",
+    "pilot30-flash-annotations.jsonl",
+    "pilot30-flash-rendered.jsonl"
+  ],
+  "summary": {
+    "records_aligned_by_material_id": 30,
+    "raw_scientific_pass": "29/30; raw line 16 assigned an unsupported octahedral-like motif to unclassified W CN6.",
+    "final_scientific_pass": "30/30; that assignment is removed and the other composition, symmetry, count, coordination, sharing, graph, and label claims match the supplied records.",
+    "rendered_paragraphs_within_3_to_5_sentences": 30,
+    "exact_archived_mp_label_suffixes": 30,
+    "raw_and_final_property_labels_equal_base": 30,
+    "captions_with_at_least_one_valid_sharing_pattern": 30,
+    "incorrect_corner_edge_face_type_found": 0,
+    "final_material_ids_remaining": 0,
+    "graph_dimension_mismatches": 0,
+    "final_geometry_basis_qualifier_present": 30,
+    "chemical_bond_or_performance_claims_found": 0,
+    "cube_or_cubocta_polyhedron_names_found": 0,
+    "final_review_note": "The line 6 punctuation defect was corrected; no open punctuation issue remains. Vertex-count omissions remain non-false brevity choices.",
+    "final_punctuation_issues_open": 0
+  },
+  "findings": [
+    {
+      "id": "F1",
+      "class": "unsupported_geometry_label",
+      "severity": "scientific_revision",
+      "caption_line": 16,
+      "quote": "W centers coordinated by six O neighbors in octahedral-like environments",
+      "evidence_quote": "W, coordination_number 6, neighbor_element_counts {O: 6}, recognized_motif null, motif_classification unrecognized",
+      "citations": [
+        "pilot30-flash-annotations.jsonl:16",
+        "pilot30-base-v3-sharing-v1.jsonl:16",
+        "pilot30-flash-final.jsonl:16"
+      ],
+      "assessment": "Raw line 16 promoted an unrecognized motif to octahedral-like. Final line 16 now says W has six O neighbors and preserves 6-vertex wording only for the sharing polyhedron. The raw issue is the sole scientific failure; final has no unsupported motif assignment.",
+      "status": "corrected_in_final",
+      "final_quote": "W centers with six O neighbors",
+      "final_citation": "pilot30-flash-final.jsonl:16"
+    },
+    {
+      "id": "F2",
+      "class": "underspecified_unclassified_polyhedron_type",
+      "severity": "style_precision",
+      "is_false_sharing_claim": false,
+      "assessment": "The sharing types are supported and no false relation was found. Ten final lines still use generic element-only names for one or more unnamed hulls; these non-false vertex-count omissions were retained for brevity. They remain a literal style-precision exception to the supplied preference for vertex-count wording.",
+      "records": [
+        {
+          "line": 2,
+          "caption_quote": "N tetrahedra and F polyhedra ... Ti octahedra and H polyhedra",
+          "selected_types": "F CN5 5-vertex + N CN4 tetrahedral [corner]; H CN4 4-vertex + Ti CN6 octahedral [corner, edge]"
+        },
+        {
+          "line": 6,
+          "caption_quote": "Ag–Ag polyhedra ... Cd–Sm polyhedra",
+          "selected_types": "Ag CN8 + Ag CN8 8-vertex [corner, edge, face]; Cd CN8 8-vertex + Sm CN8 8-vertex [corner, face]"
+        },
+        {
+          "line": 7,
+          "caption_quote": "face-sharing between Cs and Pb polyhedra",
+          "selected_types": "Cs CN12 12-vertex + Pb CN6 octahedral [face]"
+        },
+        {
+          "line": 8,
+          "caption_quote": "corner-sharing with Eu polyhedra",
+          "selected_types": "Cu CN4 tetrahedral + Eu CN12 12-vertex [corner]"
+        },
+        {
+          "line": 9,
+          "caption_quote": "corner-sharing between Co and Dy polyhedra",
+          "selected_types": "Co CN4 tetrahedral + Dy CN16 16-vertex [corner]"
+        },
+        {
+          "line": 13,
+          "caption_quote": "contacts with V, Sc, and Zr polyhedra",
+          "selected_types": "Ni CN12 12-vertex with V CN12 12-vertex, Sc CN16 16-vertex, and Zr CN16 16-vertex [corner and/or face as selected]"
+        },
+        {
+          "line": 14,
+          "caption_quote": "between Ir- and Mo-centered polyhedra",
+          "selected_types": "Ir CN12 12-vertex + Mo CN14 14-vertex [corner, face]"
+        },
+        {
+          "line": 23,
+          "caption_quote": "between Tb and V polyhedra ... between Mg and Tb polyhedra",
+          "selected_types": "Tb CN8 8-vertex + V CN4 4-vertex [corner, edge]; Mg CN6 6-vertex + Tb CN8 8-vertex [corner, edge, face]"
+        },
+        {
+          "line": 24,
+          "caption_quote": "between Pa- and Re-centered polyhedra",
+          "selected_types": "Pa CN12 12-vertex + Re CN12 12-vertex [corner, edge]"
+        },
+        {
+          "line": 25,
+          "caption_quote": "corner-sharing between As and O polyhedra",
+          "selected_types": "As CN8 8-vertex + O CN4 tetrahedral [corner, edge]; As CN12 12-vertex + O CN4 tetrahedral [corner]"
+        }
+      ],
+      "citations": [
+        "pilot30-flash-final.jsonl:2,6,7,8,9,13,14,23,24,25",
+        "pilot30-flash-annotations.jsonl:2,6,7,8,9,13,14,23,24,25"
+      ],
+      "status": "retained_for_brevity"
+    },
+    {
+      "id": "F3",
+      "class": "prompt_style_omission",
+      "severity": "style",
+      "assessment": "The prompt asked to omit material IDs. All three raw leaks were removed from the final file; a punctuation defect remains at final line 6 and is tracked separately.",
+      "records": [
+        {
+          "line": 6,
+          "quote": "material mp-867853"
+        },
+        {
+          "line": 19,
+          "quote": "for mp-11535"
+        },
+        {
+          "line": 25,
+          "quote": "material mp-605060"
+        }
+      ],
+      "instruction_citation": "pilot30-flash-annotations.jsonl:6",
+      "rendered_citations": [
+        "pilot30-flash-final.jsonl:6",
+        "pilot30-flash-final.jsonl:19",
+        "pilot30-flash-final.jsonl:25"
+      ],
+      "status": "corrected_in_final",
+      "final_material_ids_remaining": 0
+    },
+    {
+      "id": "F4",
+      "class": "ambiguous_local_coordination_wording",
+      "severity": "style_clarity",
+      "record_line": 2,
+      "quote": "with F and H also showing higher geometric coordination",
+      "evidence_quote": "F CN5; H CN4; N CN4; Ti CN6",
+      "citations": [
+        "pilot30-flash-final.jsonl:2",
+        "pilot30-base-v3-sharing-v1.jsonl:2"
+      ],
+      "assessment": "Final line 2 gives F CN5 and H CN4 explicitly, matching the supplied environments.",
+      "status": "corrected_in_final",
+      "final_quote": "F and H showing geometric coordination numbers of 5 and 4, respectively."
+    },
+    {
+      "id": "F5",
+      "class": "sharing_to_network_dimension_attribution_ambiguity",
+      "severity": "style_clarity",
+      "is_false_network_claim": false,
+      "assessment": "All five graph claims were already supported by supplied connectivity facts; final wording now attributes dimension to the independent periodic neighbor graph.",
+      "records": [
+        {
+          "line": 5,
+          "quote": "... validated periodic polyhedron analysis, forming a three-dimensional connected neighbor network"
+        },
+        {
+          "line": 16,
+          "quote": "... edge-sharing between Bi and Y 8-vertex polyhedra, yielding a three-dimensional connected network"
+        },
+        {
+          "line": 19,
+          "quote": "... Np 16-vertex and Os 12-vertex polyhedra, forming a three-dimensional connectivity network"
+        },
+        {
+          "line": 26,
+          "quote": "... Be octahedra share faces with the 12-vertex Pm polyhedra, forming a three-dimensional connectivity network"
+        },
+        {
+          "line": 27,
+          "quote": "... O-centered tetrahedra share corners ... forming a three-dimensional periodic neighbor graph"
+        }
+      ],
+      "citations": [
+        "pilot30-flash-final.jsonl:5,16,19,26,27",
+        "pilot30-base-v3-sharing-v1.jsonl:5,16,19,26,27"
+      ],
+      "status": "corrected_in_final"
+    },
+    {
+      "id": "F6",
+      "class": "final_punctuation_error",
+      "severity": "style",
+      "status": "resolved_in_final",
+      "record_line": 6,
+      "quote": "The structure of SmCdAg2 adopts the cubic Fm-3m ...",
+      "citation": "pilot30-flash-final.jsonl:6",
+      "assessment": "Resolved. This punctuation correction does not affect scientific claims.",
+      "resolution": "Root removed the stray comma after SmCdAg2 in pilot30-flash-final.jsonl and the final sharing triples."
+    }
+  ],
+  "limitations": "No geometry was recomputed. The supplied validated sharing and graph records were treated as the geometric authority. This pass read and compared the final JSONL, raw receipts, base facts, and correction log; it wrote only the two QA report files.",
+  "raw_vs_final": {
+    "raw_file": "pilot30-flash-annotations.jsonl",
+    "final_file": "pilot30-flash-final.jsonl",
+    "correction_log": "caption-review-corrections.json",
+    "corrections_verified": [
+      "explicit F/H CN values",
+      "removed unsupported W motif label",
+      "removed three material IDs",
+      "attributed network dimension to the independent neighbor graph in five captions"
+    ],
+    "changed_final_record_lines": [
+      2,
+      5,
+      6,
+      16,
+      19,
+      25,
+      26,
+      27
+    ]
+  }
+}

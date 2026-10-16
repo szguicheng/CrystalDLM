@@ -1,0 +1,63 @@
+{
+  "job": 609995,
+  "scope": "first heldout only; remaining15 unfinished",
+  "id": "mp-1229077",
+  "counts": {
+    "G": 0,
+    "Q_reference": 1,
+    "E_reference": 0,
+    "closed_loop": 0,
+    "flow_complete": 0,
+    "Q_swap": 1,
+    "Q_no_crystal": 0
+  },
+  "raw_arrays": {
+    "generation": {
+      "length": 2560,
+      "END_count": 1,
+      "PAD_count": 1969,
+      "END_PAD_valid": true
+    },
+    "reference_edit": {
+      "length": 2560,
+      "END_count": 1,
+      "PAD_count": 1670,
+      "END_PAD_valid": true
+    }
+  },
+  "failure_classes": [
+    {
+      "stage": "G",
+      "kind": "generation_audit",
+      "reasons": [
+        "GateError: Orbit multiplicity and representative relations do not select one public definition"
+      ]
+    },
+    {
+      "stage": "E_reference",
+      "kind": "edit_mismatch"
+    },
+    {
+      "stage": "closed_loop",
+      "kind": "skipped_invalid_generated_c1"
+    }
+  ],
+  "edit_fields": {
+    "lengths_exact": false,
+    "other_plan_fields_exact": true,
+    "whole_geometry_scale": false,
+    "exact_target_plan": false,
+    "whole_geometry_scale_defined": true,
+    "edited_physical_audit": false
+  },
+  "edit_diagnostics": {
+    "length_max_abs_error_A": 0.09579399999999971,
+    "length_max_relative_error": 0.016665250553554042,
+    "whole_geometry_scale_errors_A": {
+      "lattice_matrix_max_abs": 0.08733212546647007,
+      "coordinate_max": 0.0,
+      "defined": true,
+      "undefined_reason": null
+    }
+  }
+}

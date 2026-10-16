@@ -1,0 +1,85 @@
+{
+  "mode": "ar",
+  "phase": "joint",
+  "feedback": false,
+  "updates": 200,
+  "seed": 17,
+  "status": "evaluated",
+  "initial_fingerprint": "d532fa64463298d45358208f7ef60b25169b393707f8b26ce1b22e5689e90d03",
+  "warm_fingerprint": "d532fa64463298d45358208f7ef60b25169b393707f8b26ce1b22e5689e90d03",
+  "slurm_job": "600420",
+  "host": "gpu-a100-05",
+  "gpu": "NVIDIA A100-SXM4-80GB",
+  "noise_policy": "50% full MASK; remaining uniform 1..31",
+  "source_sha256": {
+    "diagnose.py": "30ebc2b3eabdff23c20814e51d4570709ce5d4f4c5764db02830c713614755af",
+    "model.py": "d7abb6bcc6da9b339408ee928caef4b80a4cf8a40204a0b61b8a68b7c9aca79a",
+    "test_checks.py": "69688c1c8ef0dc1385d481ca1787953891c71dc3a50d35dc72216f929aa6d971",
+    "run.py": "9f0f856357413230acdebf6e9269705e49ccb3be47fc3c8d7ad0a13ce068558f",
+    "prepare.py": "12434c3c231564395a0f7c1c379bb57306f41fe5a38365aa9e81408fa6274925",
+    "score.py": "645184cc388bad2554b4615e63135f27e90e150407335067577375dc41525c0a",
+    "adapt.py": "3e322436f7517f277383cf9538c437569df46d74064bbde84fae782a718935fc"
+  },
+  "completed_updates": 200,
+  "elapsed_seconds": 159.15372234070674,
+  "noise_counts": {},
+  "training_seconds": 159.154482267797,
+  "seconds_per_update_median": 0.7952670501545072,
+  "final_fingerprint": "ff8fc8d1e7542ae588f4a7984a87d13a14c9f91616e700fbc9ae231bd59db504",
+  "original_evaluation": {
+    "n": 8,
+    "counts": {
+      "G": 8,
+      "Q_reference": 8,
+      "E_reference": 8,
+      "closed_loop": 8,
+      "flow_complete": 8,
+      "Q_swap": 1,
+      "Q_no_crystal": 0
+    },
+    "rates": {
+      "G": 1.0,
+      "Q_reference": 1.0,
+      "E_reference": 1.0,
+      "closed_loop": 1.0,
+      "flow_complete": 1.0,
+      "Q_swap": 0.125,
+      "Q_no_crystal": 0.0
+    },
+    "elapsed_seconds": 148.24251171993092,
+    "attempts_retried": 0,
+    "seconds_median": 19.004034087527543,
+    "seconds_p95": 23.139245939534156,
+    "evaluation_split": "train",
+    "training_materials_evaluated": true,
+    "stage0_passed": true
+  },
+  "conflict_evaluation": {
+    "1": {
+      "n": 32,
+      "success": 2,
+      "correct_by_field": {
+        "sg": 2,
+        "formula": 24,
+        "atoms": 32,
+        "orbits": 30,
+        "a": 32,
+        "b": 32,
+        "c": 32
+      }
+    },
+    "1.03": {
+      "n": 32,
+      "success": 2,
+      "correct_by_field": {
+        "sg": 2,
+        "formula": 24,
+        "atoms": 32,
+        "orbits": 30,
+        "a": 32,
+        "b": 32,
+        "c": 32
+      }
+    }
+  }
+}

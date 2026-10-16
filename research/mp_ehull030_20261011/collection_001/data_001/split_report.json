@@ -1,0 +1,19 @@
+{
+  "seed": 17,
+  "rule": "SHA-256(f'{seed}|split|{structure_key}') as an integer: below 80% train, below 90% val, otherwise test",
+  "target_ratio": {
+    "train": 0.8,
+    "val": 0.1,
+    "test": 0.1
+  },
+  "row_counts": {
+    "train": 36491,
+    "val": 4517,
+    "test": 4621
+  },
+  "structure_counts": {
+    "train": 36491,
+    "val": 4517,
+    "test": 4621
+  }
+}

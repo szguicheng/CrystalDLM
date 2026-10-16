@@ -1,0 +1,319 @@
+{
+  "status": "read_only_point_membership_diagnostic",
+  "scope": "Numeric representative-point membership only. Candidate search used generated q, space group, nominal multiplicity, and public affine definitions; original source plans were compared only after the independent candidate search. No decoder, scorer, model, training, sampling, SSH, GPU, or data/code changes.",
+  "frozen_inputs": {
+    "evaluation_jsonl_sha256": "4f4bbc13657cac81a71a24c36f21bc40689f631a8f7be3db3bd099b12d8b2387",
+    "evaluation_path": "experiments/interleaved_relational_scaled32_20261006/eval_grounded_final2048_001/seen8/evaluation.jsonl",
+    "records_jsonl_sha256": "231f336234d15a216dc9cb800d8dc1c3f30cf90985184ccc0d3e5c26333e95c6",
+    "later_live_evaluation_sha256": "e2e3dbcb8e013e6e89da8b8b67fce264ab7a61298f240841032657cc9cd7698d",
+    "snapshot_note": "The live evaluation later grew to six lines. This diagnostic uses only raw point fields from the pinned partial5 snapshot identified by evaluation_jsonl_sha256 above."
+  },
+  "public_definition_source": {
+    "fixture_path": "experiments/explicit_full_mp20_20260923/codec/fixtures/wyckoff_list.csv",
+    "fixture_sha256": "ca56602252b7896121253c910739ef2fccf0ba947f2940358feb941f30c5e13d",
+    "geometry_py_sha256": "026d5c882c0e24b8802f9cf0f25415353cd3254e9bde45a6f1693396a72c04a2",
+    "wyckoff_baseline_py_sha256": "1ccdc829f301f1279f78751dc5138fcac1e67680dfdaebefdbf72c9ca3ba758a",
+    "candidate_affine_definitions_sha256": "6fd2b40f3f43270cb642c9b78f3b7421f193a86284d2a9552f63826bc0fccf8e",
+    "candidate_hash_method": "SHA-256 over compact sorted-key UTF-8 JSON of all same-multiplicity definitions in SG65/multiplicity4 and SG74/multiplicity8, with label, multiplicity, axes, A, and b."
+  },
+  "membership_method": {
+    "equation": "q + n = A[:, free_axes] @ theta + b",
+    "periodic_integer_images": "n in {-1,0,1}^3",
+    "residual": "maximum absolute component of q+n-A[:,free_axes]@theta-b in fractional coordinates",
+    "membership_tolerance": 1e-10,
+    "tolerance_status": "Diagnostic membership tolerance only; it does not loosen or change the scorer/codec contract."
+  },
+  "cases": [
+    {
+      "id": "mp-1205515",
+      "orbit": "o000",
+      "raw_END_position_zero_based": 803,
+      "generated_header": "Erbium forms a nominal 4-site symmetry orbit named o000 in the standard cell.",
+      "generated_point_fields": [
+        "Its representative lies in the plane at fractional a offset 0.0.",
+        "Its representative lies in the plane at fractional b offset 0.33113400000000004.",
+        "Its representative lies in the plane at fractional c offset 0.5."
+      ],
+      "point_fields_sha256": "2cef94b59adf57fc6356d40efb7d4f09fb615b67b93fc1bfe3be5fe64ef4b62f",
+      "q": [
+        0.0,
+        0.33113400000000004,
+        0.5
+      ],
+      "space_group": 65,
+      "nominal_multiplicity": 4,
+      "same_multiplicity_candidates": [
+        {
+          "label": "4j",
+          "residual_max": 0.0,
+          "residual_vector": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "theta_mod1": [
+            0.33113400000000004
+          ],
+          "wrap": [
+            0,
+            0,
+            0
+          ],
+          "member": true
+        },
+        {
+          "label": "4l",
+          "residual_max": 0.16886599999999996,
+          "residual_vector": [
+            0.0,
+            -0.16886599999999996,
+            0.0
+          ],
+          "theta_mod1": [
+            0.5
+          ],
+          "wrap": [
+            0,
+            0,
+            0
+          ],
+          "member": false
+        },
+        {
+          "label": "4f",
+          "residual_max": 0.25,
+          "residual_vector": [
+            -0.25,
+            0.08113400000000004,
+            0.0
+          ],
+          "theta_mod1": [],
+          "wrap": [
+            0,
+            0,
+            0
+          ],
+          "member": false
+        },
+        {
+          "label": "4h",
+          "residual_max": 0.33113400000000004,
+          "residual_vector": [
+            0.0,
+            0.33113400000000004,
+            0.0
+          ],
+          "theta_mod1": [
+            0.0
+          ],
+          "wrap": [
+            0,
+            0,
+            0
+          ],
+          "member": false
+        },
+        {
+          "label": "4k",
+          "residual_max": 0.33113400000000004,
+          "residual_vector": [
+            0.0,
+            0.33113400000000004,
+            0.0
+          ],
+          "theta_mod1": [
+            0.5
+          ],
+          "wrap": [
+            0,
+            0,
+            0
+          ],
+          "member": false
+        },
+        {
+          "label": "4e",
+          "residual_max": 0.5,
+          "residual_vector": [
+            -0.25,
+            0.08113400000000004,
+            0.5
+          ],
+          "theta_mod1": [],
+          "wrap": [
+            0,
+            0,
+            0
+          ],
+          "member": false
+        },
+        {
+          "label": "4g",
+          "residual_max": 0.5,
+          "residual_vector": [
+            0.0,
+            0.33113400000000004,
+            0.5
+          ],
+          "theta_mod1": [
+            0.0
+          ],
+          "wrap": [
+            0,
+            0,
+            0
+          ],
+          "member": false
+        },
+        {
+          "label": "4i",
+          "residual_max": 0.5,
+          "residual_vector": [
+            0.0,
+            0.0,
+            0.5
+          ],
+          "theta_mod1": [
+            0.33113400000000004
+          ],
+          "wrap": [
+            0,
+            0,
+            0
+          ],
+          "member": false
+        }
+      ],
+      "unique_point_membership": "4j",
+      "post_enumeration_source_comparison": {
+        "source_label": "4j",
+        "source_q": [
+          0.0,
+          0.33113400000000004,
+          0.5
+        ],
+        "minimum_image_delta_generated_minus_source": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "interpretation": "The generated numerical point is exactly on public SG65 4j. The b-plane sentence is true as a location of this single point, but strict relational-CNL v1 interprets a plane sentence as fixing b and removing that degree of freedom; public 4j instead leaves b free. This explains the point-membership versus strict-v1 relation-class discrepancy. Point membership alone does not validate the paragraph or full structure."
+    },
+    {
+      "id": "anchor_Li8V4Ni4O16",
+      "orbit": "o005",
+      "raw_END_positions_zero_based": [
+        623,
+        637
+      ],
+      "generated_header": "Oxygen forms a nominal 8-site symmetry orbit named o005 in the standard cell.",
+      "generated_point_fields": [
+        "Along a, its representative has the free fractional offset 0.02690000000000003.",
+        "Along b, its representative has the free fractional offset 0.7659999999999991.",
+        "Along c, its representative has the free fractional offset 0.76."
+      ],
+      "point_fields_sha256": "04ef358bf7febd7f30657c1053c71bb87d38bd4fcb32010b7a72de1310bdb0b7",
+      "q": [
+        0.02690000000000003,
+        0.7659999999999991,
+        0.76
+      ],
+      "space_group": 74,
+      "nominal_multiplicity": 8,
+      "same_multiplicity_candidates": [
+        {
+          "label": "8h",
+          "residual_max": 0.02690000000000003,
+          "residual_vector": [
+            0.02690000000000003,
+            0.0,
+            0.0
+          ],
+          "theta_mod1": [
+            0.7659999999999991,
+            0.76
+          ],
+          "wrap": [
+            0,
+            0,
+            0
+          ],
+          "member": false
+        },
+        {
+          "label": "8f",
+          "residual_max": 0.24,
+          "residual_vector": [
+            0.0,
+            -0.23400000000000087,
+            -0.24
+          ],
+          "theta_mod1": [
+            0.02690000000000003
+          ],
+          "wrap": [
+            0,
+            -1,
+            -1
+          ],
+          "member": false
+        },
+        {
+          "label": "8i",
+          "residual_max": 0.4840000000000009,
+          "residual_vector": [
+            0.0,
+            -0.4840000000000009,
+            0.0
+          ],
+          "theta_mod1": [
+            0.02690000000000003,
+            0.76
+          ],
+          "wrap": [
+            0,
+            -1,
+            0
+          ],
+          "member": false
+        },
+        {
+          "label": "8g",
+          "residual_max": 0.49,
+          "residual_vector": [
+            -0.22309999999999997,
+            0.0,
+            -0.49
+          ],
+          "theta_mod1": [
+            0.7659999999999991
+          ],
+          "wrap": [
+            0,
+            0,
+            -1
+          ],
+          "member": false
+        }
+      ],
+      "unique_point_membership": null,
+      "closest_candidate": "8h",
+      "post_enumeration_source_comparison": {
+        "source_label": "8h",
+        "source_q": [
+          0.0,
+          0.02699999999999997,
+          0.76
+        ],
+        "minimum_image_delta_generated_minus_source": [
+          0.02690000000000003,
+          -0.2610000000000008,
+          0.0
+        ]
+      },
+      "interpretation": "The numeric point matches none of the four public SG74 multiplicity-8 representative sets; the closest is 8h at residual 0.0269 in fractional coordinates. The original 8h point differs from the generated point. A repeated-END boundary failure is separately present in the frozen raw output."
+    }
+  ],
+  "limitations": "A representative-point membership check neither validates all orbit fields nor the full paragraph, crystal, or baseline; it does not relabel, repair, or change the frozen CNL/scorer contract."
+}

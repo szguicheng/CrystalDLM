@@ -1,0 +1,63 @@
+{
+  "status": "static_review_passed",
+  "review_date": "2026-10-07",
+  "scope": [
+    "experiments/interleaved_relational_scaled32_20261006/evaluate.py",
+    "experiments/interleaved_relational_scaled32_20261006/test_evaluate.py",
+    "experiments/interleaved_relational_scaled32_20261006/evaluate.slurm"
+  ],
+  "checks": [
+    {
+      "name": "terminal_training_receipts",
+      "status": "pass_static",
+      "evidence": "evaluate.py:64-124 requires a verified 2048-update status, receipt and summary; exact grounded B32 hybrid recipe; matching final/reload fingerprint and checkpoint SHA; and receipt.source_hashes == status.code_hashes with parent/wrapper/data groups. train.py:_reader_metadata writes this field name onto checkpoint_receipt.json."
+    },
+    {
+      "name": "compute_location_and_checkpoint_order",
+      "status": "pass_static",
+      "evidence": "evaluate.py:411-420 calls require_gpu_allocation before checkpoint content hashing or torch.load. The helper requires Slurm, rejects login nodes, and requires an A100 with at least 79 GiB. No checkpoint was read during this review."
+    },
+    {
+      "name": "source_data_tokenizer_codec_snapshots",
+      "status": "pass_static",
+      "evidence": "evaluate.py:206-234 verifies trainer/helper/data source pins; :259-316 recomputes source checks, dataset check, tokenizer hashes, codec manifest/records pins, receipts, checkpoint SHA and final fingerprint for both snapshots, then requires equality."
+    },
+    {
+      "name": "frozen_cohort_and_evaluation_gate",
+      "status": "pass_static",
+      "evidence": "evaluate.py:127-145 and :237-256 enforce ordered train32/heldout16 data with seen8 first and the remaining train24 excluded from free evaluation; :449-460 evaluates heldout16 only when seen8 G is positive, otherwise records NOT_EVALUATED."
+    },
+    {
+      "name": "sampler_alias_and_generation_boundary",
+      "status": "pass_static",
+      "evidence": "evaluate.py:186-203 resolves Hybrid/run from the joint experiment and the reviewed commit sampler; :422-449 applies the CUDA parity gate then confidence_one. The wrapper uses greedy argmax over raw K=2560 tokens with strict END/PAD unpacking; G receives only formula/space-group conditions, and the actual Q1/E/Q2 prompts append generated outputs in sequence. No AR-body fallback, injected target, trimming, projection, or repair is present."
+    },
+    {
+      "name": "metrics_and_denominators",
+      "status": "pass_static",
+      "evidence": "evaluate.py:35-38 and :365-391 report all seven read facts and edit fields with attempted-case denominators including failed calls; :342-363 keeps task-level rates separate. Runner failures remain in the cohort-level task denominator."
+    },
+    {
+      "name": "terminal_training_config_and_exposure",
+      "status": "pass_static",
+      "evidence": "train.py:145-193 produces the 2048-update exposure schedule; run.py:839-853 writes terminal status and asserts actual per-material and aggregate exposure equal the schedule, including Q2 direction counts. evaluate.py:148-157 checks each of 32 train cases has G=128/E=64/Q1=32/Q2=32 and totals G=4096/E=2048/Q1=1024/Q2=1024. Status, checkpoint receipt and summary fields required by the gate are produced at run.py:810-827 and train.py:327-343."
+    },
+    {
+      "name": "frozen_source_hashes",
+      "status": "pass",
+      "evidence": "Current train.py, prepare_data.py, records.jsonl and manifest.json match the reviewed pins: 1bb619fb809d71c68813eb07aa162b2b2bfa1b8f2de7cef1a67b60054d4ae816, 3323b74d93ac7895c9c1233c018d1c58341743eb1bb23d1df1835eaf5573c101, 231f336234d15a216dc9cb800d8dc1c3f30cf90985184ccc0d3e5c26333e95c6, and 25f150360f173970895dafd31e390f94b4b01ca174e6ad09b9e288c94b1e48cc."
+    }
+  ],
+  "blocking_findings": [],
+  "resolved_findings": [
+    {
+      "name": "checkpoint_receipt_source_hash_field",
+      "status": "fixed_and_independently_verified",
+      "evidence": "The frozen trainer writes source_hashes via _reader_metadata at train.py:228-238 and injects it into checkpoint_receipt.json at :286-289. The final validator now compares status.code_hashes with checkpoint_receipt.source_hashes at evaluate.py:109-110; its CPU fixture derives the metadata schema from train.py::_reader_metadata at test_evaluate.py:11-26 and :51-60. No other receipt-field mismatch found."
+    }
+  ],
+  "limitations": [
+    "The terminal update-2048 receipt and root-created eval_input_pin.json were absent at review time; per handoff, job 607943 was still live at 530/2048. Runtime receipt validation and model evaluation remain gated on terminal completion and the verified pin.",
+    "No tests were rerun, no SSH/Slurm/GPU action was taken, and the checkpoint was neither hashed nor loaded."
+  ]
+}

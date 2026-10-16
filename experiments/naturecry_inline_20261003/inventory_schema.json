@@ -1,0 +1,41 @@
+{
+  "codec_version": "naturecry-inline-v1",
+  "parameter_tag": {
+    "element": "param",
+    "required_attributes": [
+      "name",
+      "type",
+      "unit",
+      "frame"
+    ],
+    "body": "compact JSON scalar/vector; float64 values use shortest-roundtrip decimal repr"
+  },
+  "types": [
+    "string",
+    "int",
+    "null|int",
+    "float64",
+    "float64[n]",
+    "float64[3,3]",
+    "composition_count"
+  ],
+  "required_groups": [
+    "cell.a/b/c/alpha/beta/gamma",
+    "space_group.number",
+    "space_group.hall",
+    "input.atom_count",
+    "composition.<element>",
+    "orbit.<id>.id/element/wyckoff/parameters when nonempty",
+    "frame.matrix",
+    "frame.origin_shift",
+    "round_digits",
+    "correction.<id>.site_id/element/delta"
+  ],
+  "frames": {
+    "cell": "input",
+    "orbit.parameters": "standard",
+    "frame.matrix": "standard_from_input",
+    "frame.origin_shift": "standard",
+    "correction.delta": "input_delta"
+  }
+}

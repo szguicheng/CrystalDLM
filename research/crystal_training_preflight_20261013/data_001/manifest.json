@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "counts": {
+    "train": 7272,
+    "val": 900
+  },
+  "total": 8172,
+  "checks": {
+    "frozen_id_sets_match_facts": true,
+    "split_ids_unique_and_disjoint": true,
+    "all_fact_hashes_match_receipts": true,
+    "property_labels_unchanged": true,
+    "label_unit": "eV/atom",
+    "plaid_consistency_all_true": true,
+    "all_receipts_ok": true,
+    "excluded_samples": 0,
+    "global_caption_scientific_qa": "not performed"
+  },
+  "caption_flag_counts": {},
+  "caption_flagged_samples": [],
+  "caption_flags_disposition": "reported only; all samples retained",
+  "caption_reannotated_ids": [
+    "mp-1113520",
+    "mp-1184824"
+  ],
+  "caption_material_id_cleanup_count": 376,
+  "plaid_encoder_fallback_used": 0,
+  "sources": {
+    "subset_manifest_sha256": "c646a8f4257f194828222e414c2a9269739c2a9087ee995b720395eebbb915ac",
+    "request_manifest_sha256": "b518db8d8a85584f86fbe8acda27f52c74daa86aed15b5a2242a23891bf61017",
+    "successes_sha256": "4c77cb33815337b89e77418fe55c81183177e48562ae26be7afc0a4353ae72df",
+    "annotation_helper_sha256": "5f58c724790f32ac45ba8bd102385e54518e08c30897e03d0d8d51346c960984",
+    "caption_repairs_sha256": "c4b573f09e006159b6ee9399e162e76897f076fb0f6f95a0a71cb4856d30ad09"
+  },
+  "artifacts": {
+    "train-triples.jsonl.gz": {
+      "sha256": "b74afafbca5a52eb1a63c9a7502c9fe1f5055cfef0c25f122de6d140c137080b",
+      "bytes": 3950172
+    },
+    "val-triples.jsonl.gz": {
+      "sha256": "4e97dbe73aa2c4903aa11c4438f3c7c4da05a87eb1028632f121db4e8cd97f12",
+      "bytes": 512909
+    },
+    "token-length-audit.json": {
+      "sha256": "045bad3e4c3ce58b16982c30d9fd3f048703c780102316054c2498ca66500adf",
+      "bytes": 1109
+    }
+  }
+}

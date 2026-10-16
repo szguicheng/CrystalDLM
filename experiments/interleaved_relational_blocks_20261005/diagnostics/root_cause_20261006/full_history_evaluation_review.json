@@ -1,0 +1,24 @@
+{
+  "status": "review_pass_pending_training_artifacts",
+  "scope": "full-history evaluator adapter, CPU receipt test, and Slurm launcher",
+  "source_sha256": {
+    "evaluate_full_history.py": "6108063bf5e84117f828ae34f3b33b152da700e060362b8df65d74a5534237e4",
+    "test_evaluate_full_history.py": "d83f73848a0ef9337ace45fde8af0818d8218220d9d5fbac972d73acc711377d",
+    "evaluate_full_history.slurm": "19abfea8623949ecd9e07ad9d726058873abafefd1e08c04dc01855de90207ba"
+  },
+  "frozen_source_pins": {
+    "evaluate.py": "e0ca48792dfd942022e49b98907b2bb0518c5c9e20e7f6b54b96f627d4c63a73",
+    "train_full_history.py": "e2954cf3eea94639782987596799a772b475d6a3b62eada787ad8a4820633112",
+    "train_full_history.slurm": "3156e9199cf4c04e5d1649ac35f32968641dc0d6a6e9b4f5b31f2fd563f7f439",
+    "test_train_full_history.py": "2183f127a720a51fdb1c8ab79db3bdba1309ea3867e086cca089f22889121783"
+  },
+  "checks": [
+    "Evaluator verifies the frozen base SHA, redirects only full-history train/arm/pin/output paths, and delegates to the frozen BASE.run workflow.",
+    "Recipe is read from the hash-pinned trainer with AST literal_eval; status, summary, checkpoint receipt, and all three parent-relative source pins are checked after base receipt validation.",
+    "Captured base validation and snapshot functions prevent recursive wrappers; the snapshot adds fresh evaluator/test/Slurm hashes and the base before/after comparison checks invariance.",
+    "Frozen CUDA 750-tensor equivalence and paired seen8 128-token parity gates remain; heldout16 runs only after the unchanged seen8 generation gate passes, otherwise it is recorded NOT_EVALUATED.",
+    "Summary augmentation adds only training_variant and reader_recipe via temporary-file replacement; metrics are preserved. Primary agent reports the stdlib CPU fixture test passed and confirms it does not import torch."
+  ],
+  "findings": [],
+  "runtime_gate": "Job 608363 is reported running. The local checkout has no full-history status, checkpoint receipt, checkpoint, or evaluation input pin yet, so model-level evaluation remains pending those artifacts."
+}

@@ -1,0 +1,33 @@
+{
+  "id": "c2bb5e13-2de5-4e6b-a990-d11152c56ad2",
+  "object": "chat.completion",
+  "created": 1791053677,
+  "model": "tokenhub/kimi-k3",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "This crystal is described in the hexagonal space group P6_222, number [[param:space_group.number]], with Hall symbol [[param:space_group.hall]]. The input cell has lattice parameters a and b both equal to 5.47073346 angstroms [[param:cell.a]][[param:cell.b]], with c = 7.552314 angstroms [[param:cell.c]]. The angles α and β are exactly 90.0 degrees [[param:cell.alpha]][[param:cell.beta]], while γ is 119.99999349000001 degrees [[param:cell.gamma]]—a value extremely close to, but not exactly, the idealized 120-degree hexagonal angle, and this small difference is preserved rather than rounded away. The input cell contains 12 atoms [[param:input.atom_count]], comprising 3 ytterbium, 6 platinum, and 3 boron atoms [[param:composition.Yb]][[param:composition.Pt]][[param:composition.B]].\n\nThe transformation from the input frame to the standard crystallographic frame is trivial: the matrix is the identity [[param:frame.matrix]] and the origin shift is zero [[param:frame.origin_shift]], so the input coordinates and the standard setting coincide exactly.\n\nThe symmetry expands the twelve atoms into three independent Wyckoff orbits. The ytterbium atoms occupy the 3d orbit [[param:orbit.o000.id]][[param:orbit.o000.element]][[param:orbit.o000.wyckoff]], a fixed position with no free parameters, its representative site at fractional coordinates (1/2, 0, 1/2) and multiplicity 3. The boron atoms occupy the 3c orbit [[param:orbit.o001.id]][[param:orbit.o001.element]][[param:orbit.o001.wyckoff]], likewise fully fixed at (1/2, 0, 0) with multiplicity 3. These two fixed orbits differ only in their height along c: the Yb sites sit at z = 1/2, while the B sites lie in the z = 0 plane. The platinum atoms occupy the 6j orbit [[param:orbit.o002.id]][[param:orbit.o002.element]][[param:orbit.o002.wyckoff]], which carries a single free coordinate x in the relation (x, 2x, 1/2), with x taking the value 0.14765799999999993 [[param:orbit.o002.parameters]]; this sixfold orbit places the Pt atoms in the same z = 1/2 plane as the ytterbium sites but distributed in a ring-like arrangement governed by the free parameter.\n\nFractional coordinates in the input are rounded to 6 decimal places [[param:round_digits]]. No precision corrections relative to an idealized backbone were required—the structure is represented directly by the ideal symmetry positions and the single free parameter given above."
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "reasoning_stream": {
+    "chunks": 4,
+    "characters": 35
+  },
+  "usage": {
+    "completion_tokens": 629,
+    "prompt_tokens": 2100,
+    "total_tokens": 2729,
+    "completion_tokens_details": {
+      "reasoning_tokens": 8
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "cache_creation_input_tokens": 0
+    }
+  }
+}

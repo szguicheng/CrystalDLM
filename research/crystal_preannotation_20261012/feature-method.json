@@ -1,0 +1,145 @@
+{
+  "feature_method_id": "crystal-preannotation-20261012-v3",
+  "schema_version": "crystal-preannotation-v1",
+  "software_versions": {
+    "pymatgen": "2025.10.7",
+    "pyxtal": "1.0.8",
+    "numpy": "1.26.4",
+    "spglib": "2.7.0",
+    "scipy": "1.15.3",
+    "networkx": "3.4.2"
+  },
+  "plaid": {
+    "implementation": "work/PLaID/utils.py",
+    "implementation_sha256": "bfe832994108cb49d6d56d4e86d6f894c538c85bd9cc94fb8ff86ed1ca263af5",
+    "encode_function": "get_crystal_string_wyckoff_pyx",
+    "encode_arguments": {
+      "tol": 0.01,
+      "translate": false
+    },
+    "encoder_behavior": {
+      "symmetry_refinement_tolerance_angstrom": 0.01,
+      "pyxtal_primary_tolerance": 0.01,
+      "pyxtal_fallback_tolerance": 0.0001,
+      "lattice_lengths_decimal_places": 2,
+      "lattice_angles_decimal_places": 2,
+      "fractional_coordinates_decimal_places": 3
+    },
+    "decode_function": "parse_fn_wyckoff",
+    "decode_arguments": {
+      "to_cif": false
+    }
+  },
+  "core_facts": {
+    "input_structure": "PLaID-decoded pymatgen Structure",
+    "symmetry_analysis": {
+      "symprec_angstrom": 0.01,
+      "angle_tolerance_degrees": 5
+    },
+    "density": "decoded unit-cell mass divided by decoded unit-cell volume; theoretical, not measured"
+  },
+  "local_structure_facts": {
+    "neighbor_method": "pymatgen.analysis.local_env.CrystalNN",
+    "neighbor_settings": {
+      "weighted_cn": false,
+      "cation_anion": false,
+      "distance_cutoffs": null,
+      "x_diff_weight": 0,
+      "porous_adjustment": false,
+      "search_cutoff": 7,
+      "fingerprint_length": null
+    },
+    "neighbor_interpretation": "geometry-only neighbor descriptor; graph edges are not asserted to be chemical bonds",
+    "polyhedron_scores": {
+      "method": "CrystalNN.get_local_order_parameters",
+      "interpretation": "raw local order-parameter scores; not probabilities and not categorical labels"
+    },
+    "recognized_motif": {
+      "method": "pymatgen LocalStructOrderParams with the documented site_is_of_motif_type thresholds",
+      "neighbor_basis": "same geometry-only CrystalNN neighbor list used for coordination and connectivity",
+      "order_parameter_types": ["cn", "tet", "oct", "bcc", "q6", "sq_pyr", "tri_bipyr"],
+      "thresholds": {
+        "qtet": 0.5,
+        "qoct": 0.5,
+        "qbcc": 0.5,
+        "q6": 0.4,
+        "qtribipyr": 0.8,
+        "qsqpyr": 0.8
+      },
+      "rules": [
+        {"label": "tetrahedral", "coordination_number": 4, "score": "qtet", "condition": ">", "threshold": 0.5},
+        {"label": "square pyramidal", "coordination_number": 5, "score": "qsqpyr", "condition": ">", "threshold": 0.8},
+        {"label": "trigonal bipyramidal", "coordination_number": 5, "score": "qtribipyr", "condition": ">", "threshold": 0.8},
+        {"label": "octahedral", "coordination_number": 6, "score": "qoct", "condition": ">", "threshold": 0.5},
+        {"label": "bcc", "coordination_number": 8, "score": "qbcc", "condition": ">", "threshold": 0.5, "additional_condition": "qtet < 0.5"},
+        {"label": "cp", "coordination_number": 12, "score": "q6", "condition": ">", "threshold": 0.4, "additional_condition": "qtet, qoct, and qbcc < 0.4"}
+      ],
+      "labels": [
+        "tetrahedral",
+        "square pyramidal",
+        "trigonal bipyramidal",
+        "octahedral",
+        "bcc",
+        "cp"
+      ],
+      "recognized_score_is_probability": false,
+      "undefined_order_parameter_behavior": "retain undefined scores as JSON null; a threshold rule requiring a null score does not pass, while other defined scores for the same site remain eligible",
+      "unrecognized_results": [
+        "unrecognized",
+        "multiple assignments"
+      ]
+    },
+    "connectivity": {
+      "graph": "pymatgen.analysis.graphs.StructureGraph.from_local_env_strategy with the CrystalNN settings above",
+      "dimensionality": "pymatgen.analysis.dimensionality.get_dimensionality_larsen",
+      "components": "pymatgen.analysis.dimensionality.get_structure_components"
+    },
+    "polyhedra_sharing": {
+      "status": "not_computed",
+      "reason": "corner, edge, and face sharing are not supplied by this frozen neighbor/graph method"
+    }
+  },
+  "consistency_checks": {
+    "header_sites_matches_decoded_atom_count": true,
+    "orbit_multiplicity_sum_matches_header": true,
+    "source_reduced_composition_matches_decoded": true,
+    "source_element_set_matches_decoded": true,
+    "decoded_cell_volume_positive": true,
+    "decoded_sites_unique": {
+      "minimum_periodic_site_distance_angstrom": 0.00001
+    },
+    "encoded_space_group_matches_decoded_analysis": {
+      "encoded_symbol_number_parser": "pyxtal.symmetry.Group, same parser used by PLaID decode",
+      "canonical_symbol_normalizer": "pymatgen.symmetry.groups.SpaceGroup.from_int_number",
+      "symprec_angstrom": 0.01,
+      "angle_tolerance_degrees": 5,
+      "group_number_and_canonical_symbol_must_match": true
+    },
+    "encoded_orbit_count_matches_decoded_analysis": true,
+    "source_structure_matches_decoded": {
+      "ltol": 0.2,
+      "stol": 0.5,
+      "angle_tolerance_degrees": 5,
+      "primitive_cell": true,
+      "scale": true
+    },
+    "failure_behavior": "emit status=error with encoded text, decoded structure, and consistency flags; annotation clients must filter to status=ok"
+  },
+  "source_labels": {
+    "field": "energy_above_hull",
+    "unit_field": "energy_above_hull_unit",
+    "behavior": "preserve the original archived value and provenance; do not recompute from the decoded structure"
+  },
+  "sharding": {
+    "row_index_base": 0,
+    "assignment": "source_row_index modulo shard_count equals shard_index",
+    "limit": "maximum selected source rows after sharding"
+  },
+  "output": {
+    "format": "UTF-8 JSONL",
+    "one_record_per_selected_source_row": true,
+    "atomic_per_shard": true,
+    "existing_output_is_overwritten": false
+  },
+  "revision_note": "v3 resolves encoded Hermann-Mauguin aliases with PyXtal and compares Pymatgen canonical symbols by international group number; v2 preserves undefined order-parameter values as null"
+}

@@ -1,0 +1,243 @@
+{
+  "status": "complete",
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+  "seed": 17,
+  "updates_per_new_arm": 512,
+  "ar_training": "not repeated",
+  "initial_fingerprints_equal": true,
+  "checkpoint_provenance": {
+    "status": "verified",
+    "predecessor": "pilot_001/ar",
+    "predecessor_job_id": "604554",
+    "predecessor_checkpoint_update": 512,
+    "predecessor_initial_fingerprint": "6bffa202d8485a6ee8bce3553044c9657948e25be702a45a9efb860ced9d1429",
+    "predecessor_final_fingerprint": "e466cb281d88e6356f3ed73dc2915a3bf947024abecaa534f25d22a6a0dca5e8",
+    "checkpoint_sha256": "9d73aeebc4966efafb6fd2bb03bb448c400d0e20878c1258ec8c8c1321f123e5",
+    "strict_mode": "ar",
+    "strict_prediction_offset": 0,
+    "checkpoint_reload_verified": true,
+    "data_records_sha256": "ef2ec2dcdee1d73c62e48987a9cec86a4db3076f9c48d9ab17b8745b9eca785f",
+    "old_manifest_sha256": "e4b67ae8a4e8b831b8c529992b9ea2a83b44603689cdc0b460e1d9d7f9ff5513",
+    "current_manifest_sha256": "b8c290dd64f210dd469b83cbf41ad321ae4d7c5c40303c70e8cda0e4335cd0c3",
+    "old_score_sha256": "55a66f8794353170aca249de6a6e5f070257ccb528d273998767a13bc1942454",
+    "current_score_sha256": "3c1760481872726d798dd18ec4fb3557d6940e669e4c4d818a07da276d9c477a",
+    "manifest_changed_fields": [
+      "post_generation_score_refresh.previous_score_sha256",
+      "post_generation_score_refresh.current_score_sha256",
+      "post_generation_score_refresh.reason",
+      "provenance.files.adapter_score"
+    ],
+    "score_pin_migrated": true,
+    "score_migration_note": "Only the adapter score pin may migrate; data records and selected split remain byte-identical.",
+    "seen8_copied_verbatim": true,
+    "seen8_raw_sha256": "9101a6a776af5a346a1356d35287c0b5fa942201091e227826b05f6b5617ca5d",
+    "seen8_summary_sha256": "fd89cc4e321bcbc41e3d27637b0625a00c7ab526627e657a4588b5d01841ecf1",
+    "old_heldout_raw_sha256": "41f6329c10216476251aeca6d67097264a9048082d5fe016fe515ad233695afd",
+    "old_heldout_raw_rows": 2,
+    "failed_row_raw_recovered": false,
+    "failed_row_replay_is_new_observation": "mp-1079976",
+    "checkpoint_present_at_start": true,
+    "new_compute_device": {
+      "device": "NVIDIA A100-SXM4-80GB",
+      "total_memory_GiB": 79.249755859375,
+      "slurm_job": "605522"
+    },
+    "inherited_gpu_preflight": {
+      "status": "passed",
+      "device": "NVIDIA A100-SXM4-80GB",
+      "device_total_GiB": 79.249755859375,
+      "reserved_limit_GiB": 70.0,
+      "optimizer_step_counted_in_pilot": false,
+      "effective_batch": 4,
+      "microbatch": 1,
+      "accumulation": 4,
+      "worst_train_examples": [
+        {
+          "task": "G",
+          "id": "anchor_Li8V4Ni4O16",
+          "direction": "minus",
+          "variant": 0,
+          "packed_tokens": 2598
+        },
+        {
+          "task": "E",
+          "id": "mp-1205515",
+          "direction": "minus",
+          "variant": 0,
+          "packed_tokens": 3625
+        },
+        {
+          "task": "Q1",
+          "id": "mp-1205515",
+          "direction": "minus",
+          "variant": 0,
+          "packed_tokens": 1005
+        }
+      ],
+      "arms": {
+        "ar": {
+          "core_mode": "ar",
+          "prediction_offset": 0,
+          "initial_fingerprint": "6bffa202d8485a6ee8bce3553044c9657948e25be702a45a9efb860ced9d1429",
+          "initial_parameters": "FP32, zero time embedding",
+          "one_effective_batch_optimizer_step": true,
+          "seconds": 2.338395548053086,
+          "peak_allocated_GiB": 12.379798412322998,
+          "peak_reserved_GiB": 14.11328125
+        },
+        "hybrid_shift": {
+          "core_mode": "hybrid",
+          "prediction_offset": 1,
+          "initial_fingerprint": "6bffa202d8485a6ee8bce3553044c9657948e25be702a45a9efb860ced9d1429",
+          "initial_parameters": "FP32, zero time embedding",
+          "one_effective_batch_optimizer_step": true,
+          "seconds": 0.7073910441249609,
+          "peak_allocated_GiB": 11.668152809143066,
+          "peak_reserved_GiB": 13.1953125
+        }
+      },
+      "shared_initial_fingerprint": "6bffa202d8485a6ee8bce3553044c9657948e25be702a45a9efb860ced9d1429"
+    },
+    "test256_used": false
+  },
+  "results": {
+    "ar": {
+      "training": "inherited, no retraining",
+      "initial_fingerprint": "6bffa202d8485a6ee8bce3553044c9657948e25be702a45a9efb860ced9d1429",
+      "final_fingerprint": "e466cb281d88e6356f3ed73dc2915a3bf947024abecaa534f25d22a6a0dca5e8",
+      "checkpoint_sha256": "9d73aeebc4966efafb6fd2bb03bb448c400d0e20878c1258ec8c8c1321f123e5",
+      "seen8": {
+        "n": 8,
+        "split": "train",
+        "counts": {
+          "G": 8,
+          "Q_reference": 8,
+          "E_reference": 8,
+          "closed_loop": 0,
+          "flow_complete": 7,
+          "Q_swap": 0,
+          "Q_no_crystal": 0
+        },
+        "rates": {
+          "G": 1.0,
+          "Q_reference": 1.0,
+          "E_reference": 1.0,
+          "closed_loop": 0.0,
+          "flow_complete": 0.875,
+          "Q_swap": 0.0,
+          "Q_no_crystal": 0.0
+        },
+        "attempts_retried": 0,
+        "failure_classes": {
+          "Q2_actual:answer_mismatch": 7,
+          "Q_swap:answer_mismatch": 8,
+          "Q_no_crystal:read_error": 8,
+          "Q2_actual:read_error": 1
+        },
+        "no_crystal_semantics": "Q_no_crystal is exact target-fact match without a structure; raw response is retained and this is not an abstention/success score."
+      },
+      "heldout16": {
+        "n": 16,
+        "split": "heldout",
+        "counts": {
+          "G": 0,
+          "Q_reference": 4,
+          "E_reference": 0,
+          "closed_loop": 0,
+          "flow_complete": 0,
+          "Q_swap": 0,
+          "Q_no_crystal": 0
+        },
+        "rates": {
+          "G": 0.0,
+          "Q_reference": 0.25,
+          "E_reference": 0.0,
+          "closed_loop": 0.0,
+          "flow_complete": 0.0,
+          "Q_swap": 0.0,
+          "Q_no_crystal": 0.0
+        },
+        "attempts_retried": 0,
+        "failure_classes": {
+          "G:generation_audit": 16,
+          "Q_reference:answer_mismatch": 12,
+          "E_reference:edit_mismatch": 16,
+          "closed_loop:skipped_invalid_generated_c1": 16,
+          "Q_swap:answer_mismatch": 16,
+          "Q_no_crystal:read_error": 16
+        },
+        "no_crystal_semantics": "Q_no_crystal is exact target-fact match without a structure; raw response is retained and this is not an abstention/success score."
+      }
+    },
+    "hybrid_shift": {
+      "initial_fingerprint": "6bffa202d8485a6ee8bce3553044c9657948e25be702a45a9efb860ced9d1429",
+      "final_fingerprint": "01f8ce739f46b7d4ebfa10810940f891f1fea0da37f016acd5788a4b161aabd8",
+      "checkpoint_sha256": "3e1b0e30b5d7edc147e11b1b975959835cad60587f1aa5aafc8ca54b0cdf25a2",
+      "seen8": {
+        "n": 8,
+        "split": "train",
+        "counts": {
+          "G": 0,
+          "Q_reference": 8,
+          "E_reference": 0,
+          "closed_loop": 0,
+          "flow_complete": 0,
+          "Q_swap": 0,
+          "Q_no_crystal": 0
+        },
+        "rates": {
+          "G": 0.0,
+          "Q_reference": 1.0,
+          "E_reference": 0.0,
+          "closed_loop": 0.0,
+          "flow_complete": 0.0,
+          "Q_swap": 0.0,
+          "Q_no_crystal": 0.0
+        },
+        "attempts_retried": 0,
+        "failure_classes": {
+          "G:generation_error": 8,
+          "E_reference:edit_error": 7,
+          "closed_loop:skipped_invalid_generated_c1": 8,
+          "Q_swap:answer_mismatch": 8,
+          "E_reference:edit_mismatch": 1
+        },
+        "no_crystal_semantics": "Q_no_crystal is exact target-fact match without a structure; raw response is retained and this is not an abstention/success score."
+      },
+      "heldout16": {
+        "n": 16,
+        "split": "heldout",
+        "counts": {
+          "G": 0,
+          "Q_reference": 4,
+          "E_reference": 0,
+          "closed_loop": 0,
+          "flow_complete": 0,
+          "Q_swap": 0,
+          "Q_no_crystal": 0
+        },
+        "rates": {
+          "G": 0.0,
+          "Q_reference": 0.25,
+          "E_reference": 0.0,
+          "closed_loop": 0.0,
+          "flow_complete": 0.0,
+          "Q_swap": 0.0,
+          "Q_no_crystal": 0.0
+        },
+        "attempts_retried": 0,
+        "failure_classes": {
+          "G:generation_error": 15,
+          "Q_reference:answer_mismatch": 12,
+          "E_reference:edit_error": 16,
+          "closed_loop:skipped_invalid_generated_c1": 16,
+          "Q_swap:answer_mismatch": 16,
+          "G:generation_audit": 1
+        },
+        "no_crystal_semantics": "Q_no_crystal is exact target-fact match without a structure; raw response is retained and this is not an abstention/success score."
+      }
+    }
+  },
+  "heldout_score_note": "The first two AR raw model outputs match pilot_001; the failed third-row raw was absent, so this full replay is a new observation for that row and the later rows."
+}

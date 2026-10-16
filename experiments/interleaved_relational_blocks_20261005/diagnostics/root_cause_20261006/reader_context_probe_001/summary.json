@@ -1,0 +1,268 @@
+{
+  "status": "complete",
+  "stage": "bounded_reader_context_probe",
+  "source_evaluation": "experiments/interleaved_relational_scaled32_20261006/eval_grounded_final2048_001",
+  "source_evaluation_summary_sha256": "6ae1fd5ccb5ee309e54e93cf6c9e91e5214873a90d6d432fee21776dd47fca94",
+  "source_seen8_evaluation_sha256": "9b77043728086d03e3b34eedf370a13142a2f2ac0ffa6e7217beac69dc844cdd",
+  "checkpoint_sha256": "14ace5533efb5476d5ea7e08156463bfa176c6066173795cff4f3f37b9d85482",
+  "fingerprint_before": "e00f360a3fdfcda7e947aba78736aadee04aad26e9f9b386be124fcfce118ada",
+  "fingerprint_after": "e00f360a3fdfcda7e947aba78736aadee04aad26e9f9b386be124fcfce118ada",
+  "device": {
+    "name": "NVIDIA A100-SXM4-80GB",
+    "total_memory_GiB": 79.249755859375
+  },
+  "text_inference": "model.text autoregressive path; frozen hybrid B32 checkpoint mode",
+  "fast_metadata_equivalence": {
+    "status": "passed",
+    "device": "cuda",
+    "bitwise_equal": {
+      "attention_masks": true,
+      "regions": true,
+      "crystal_prefix_times": true
+    },
+    "reference_binding": "actual originals returned by fast_inference_metadata.install(model)",
+    "check": "test_fast_inference_metadata.check",
+    "checked_mask_comparisons": 360,
+    "checked_integer_vector_comparisons": 390,
+    "checked_tensor_comparisons": 750
+  },
+  "task_denominators": {
+    "Q2_actual": {
+      "seen8_cases": 8,
+      "attempted_actual_q2": 5,
+      "eligible_attempted_q2_with_valid_c2": 5,
+      "replayed": 5
+    },
+    "Q_swap": {
+      "seen8_cases": 8,
+      "attempted_swap_reads": 8,
+      "eligible_valid_partner_c1": 8,
+      "replayed": 8
+    }
+  },
+  "contrasts": [
+    "full_history_replay",
+    "grounded_training_neutral",
+    "full_history_with_instruction"
+  ],
+  "full_history_replay_attempts_match": true,
+  "task_replay_receipts": {
+    "Q2_actual": {
+      "attempts_match": true,
+      "raw_output_denominator": 5,
+      "exact_raw_cases": [
+        "anchor_Tb8Mg4",
+        "mp-4047",
+        "mp-30009",
+        "mp-1188285",
+        "mp-1207068"
+      ],
+      "matched_failed_cases": []
+    },
+    "Q_swap": {
+      "attempts_match": true,
+      "raw_output_denominator": 8,
+      "exact_raw_cases": [
+        "anchor_Tb8Mg4",
+        "anchor_Li8V4Ni4O16",
+        "mp-4047",
+        "mp-1205515",
+        "mp-30009",
+        "mp-1188285",
+        "mp-1207068",
+        "mp-1205902"
+      ],
+      "matched_failed_cases": []
+    }
+  },
+  "grade_target": "Q2 uses score.audit(actual C2); Q_swap uses score.audit(frozen partner C1); no target facts enter prompts",
+  "neutral_interpretation": "Q2 and replacement-read context diagnostics only; no neutral result is a closed-loop success",
+  "optimizer_updates": 0,
+  "scope_goal_achieved": false,
+  "hashes_before": {
+    "evaluation": {
+      "pin_sha256": "dff7306086bc0c94915590a69b1de9564725987c8d5e209cfa53416c1035b488",
+      "training_status_sha256": "c8de0fe0dd51f7f6381f9e1e8176cb75bdb21929e75fa6b0802e418a79933363",
+      "checkpoint_receipt_sha256": "4f0a2f33f872d413a2d4c5f97302878bd3e17e4ea2b86e0ee345381b1ea76958",
+      "training_summary_sha256": "15829191bd77e40fefbbf97fd40f625dc6d5a4eb8b2b5f6c09e0d990afa77937",
+      "checkpoint_sha256": "14ace5533efb5476d5ea7e08156463bfa176c6066173795cff4f3f37b9d85482",
+      "final_fingerprint": "e00f360a3fdfcda7e947aba78736aadee04aad26e9f9b386be124fcfce118ada",
+      "code_hashes": {
+        "parent": {
+          "model.py": "51e547b34d9a30a07f601f7cb2027d6d64f067ce4ce4cfc7027baf26c719d448",
+          "pilot_001.slurm": "47e97c39ee654f2c457e653942f542f17c68725970ab02cc1dfe638afb33442a",
+          "prepare.py": "4889b777e79b15c1761698375f9b1f48316e648129cce4f0439a30714fb1a30b",
+          "run.py": "e40bec18f806456e66dd04169db15d726082394dc0b9670255ad62ba809525b0",
+          "score.py": "3c1760481872726d798dd18ec4fb3557d6940e669e4c4d818a07da276d9c477a",
+          "test_joint_model.py": "38098f2bf4a4c4fd833bf6af780e33f19f6567bd90e7ef96dd91f72f8c58b3da",
+          "test_joint_runner.py": "e9350b403f4c45f085a00b89913e4d19d090170266d79d684c665dfb1af7662a"
+        },
+        "wrapper": {
+          "train.py": "1bb619fb809d71c68813eb07aa162b2b2bfa1b8f2de7cef1a67b60054d4ae816",
+          "train.slurm": "66f494e4def37fec6529883fcdd199ec64e1223c73aa7665fbd3ea6efe60d7bb",
+          "prepare_data.py": "3323b74d93ac7895c9c1233c018d1c58341743eb1bb23d1df1835eaf5573c101"
+        },
+        "data": {
+          "manifest_sha256": "25f150360f173970895dafd31e390f94b4b01ca174e6ad09b9e288c94b1e48cc",
+          "records_sha256": "231f336234d15a216dc9cb800d8dc1c3f30cf90985184ccc0d3e5c26333e95c6"
+        },
+        "evaluation_helpers": {
+          "commit_probe.py": "081ad3a97090651bba4b146e77fcd47807e0942d3ab4f7da450274a1e594b8d3",
+          "full_commit_fast_eval.py": "444e6d1fca8bf7f1de00dca951d64961cec5b3b64e3461034174140742b4bb36",
+          "fast_inference_metadata.py": "0163435947c8d8efa4c8f1455fba8ff22080b4a2969e2b98891f9dc9cfba356d",
+          "test_fast_inference_metadata.py": "c41ea06b2b941ca289f4033bf431958783f494cd0f6d8d88a6aa51991b76b5d2",
+          "joint_confidence_eval.py": "1c739713672ed7530f0b1921cf58d85192c36647faa3b3225718d7d808b974f3"
+        }
+      },
+      "evaluation_sources": {
+        "evaluate.py": "e0ca48792dfd942022e49b98907b2bb0518c5c9e20e7f6b54b96f627d4c63a73",
+        "test_evaluate.py": "307fffd07980060f3c435d04fbc45ced6e2facdbe5cf64a0341a3b9333aef07d",
+        "evaluate.slurm": "1845a7c0f386d6cc762eaf49bd02967a272f5187f031e7d9c0c5513620f43af8"
+      },
+      "data_hashes": {
+        "manifest_sha256": "25f150360f173970895dafd31e390f94b4b01ca174e6ad09b9e288c94b1e48cc",
+        "records_sha256": "231f336234d15a216dc9cb800d8dc1c3f30cf90985184ccc0d3e5c26333e95c6"
+      },
+      "tokenizer_hashes": {
+        "added_tokens.json": "28dc70f2cb07b1cca239390e21197945125792bfe8ef6c2a7463a4c387e79673",
+        "chat_template.jinja": "cd8e9439f0570856fd70470bf8889ebd8b5d1107207f67a5efb46e342330527f",
+        "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+        "special_tokens_map.json": "f863ec62eb91385603a3f882a55401ade618a3621d4ccc2affa3f28a579c9785",
+        "tokenizer.json": "64b64b25afdb5e3e79168467889b4b777778dc17ae29458bcd2c41a51110cca6",
+        "tokenizer_config.json": "1697fb166f8a8b20603b9b8782423599271e2c2e1c4740087ef1b4b8cffa2596",
+        "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+      },
+      "codec_pin": {
+        "base_manifest_sha256": "b8c290dd64f210dd469b83cbf41ad321ae4d7c5c40303c70e8cda0e4335cd0c3",
+        "codec_pin": {
+          "summary_sha256": "438d019d6dc12a89b3a952761e392c26cabf7035c145d8b61eed8af3cd77ae02",
+          "selection_sha256": "03527304a32e11c15414e0f368e72c694e754b3add76f660701437b6bf22d54a",
+          "adapter_prepare_sha256": "07ac45cb3ae5ab086fed460fc957afcc94e1988011161a4d0178b388b1769f14",
+          "adapter_score_sha256": "3c1760481872726d798dd18ec4fb3557d6940e669e4c4d818a07da276d9c477a",
+          "data_model": "Qwen/Qwen2.5-0.5B-Instruct",
+          "data_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+          "data_tokenizer_path": "experiments/interleaved_ar_diffusion_20261002/data_002/tokenizer",
+          "data_tokenizer_files": {
+            "added_tokens.json": "28dc70f2cb07b1cca239390e21197945125792bfe8ef6c2a7463a4c387e79673",
+            "chat_template.jinja": "cd8e9439f0570856fd70470bf8889ebd8b5d1107207f67a5efb46e342330527f",
+            "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+            "special_tokens_map.json": "f863ec62eb91385603a3f882a55401ade618a3621d4ccc2affa3f28a579c9785",
+            "tokenizer.json": "64b64b25afdb5e3e79168467889b4b777778dc17ae29458bcd2c41a51110cca6",
+            "tokenizer_config.json": "1697fb166f8a8b20603b9b8782423599271e2c2e1c4740087ef1b4b8cffa2596",
+            "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+          },
+          "runtime_hashes": {
+            "relational_codec.py": "365f122905399a73477b92a7af97c05b78483ea5af12347f9a6050b1a3506813",
+            "run_roundtrip.py": "3d329b9a486bb4a2cddf90e0977468034080db7d03251082836b7d9e9a4c4cdd",
+            "geometry.py": "026d5c882c0e24b8802f9cf0f25415353cd3254e9bde45a6f1693396a72c04a2",
+            "base_cohort.py": "f8b47626030b77592a3e2105544576f1b2103bd77a4f9eb9e7d138416b19a1d8",
+            "oldcodec.py": "8b8a4f11a949000e2c3f29b787676a6147a776946c4f7c9f272c1f33bfa110d9",
+            "api_runner.py": "2973ac9aef70dbd0f98257608227f9ebf645a688d8ce7f90cc8edfcd86e9716d",
+            "prepare.py": "c77ea38b734fe0a1accab663cfa8f1b071ff7c4784513681af0d4bb89a4a6a65",
+            "public_wyckoff_baseline.py": "1ccdc829f301f1279f78751dc5138fcac1e67680dfdaebefdbf72c9ca3ba758a",
+            "public_affine_parser.py": "26675890fb9847d4011153fc3d5a11a29733349d8e74c765b71375cea3ccb3a1",
+            "cif_parser.py": "2c3fb30605c725b0eee8280aed50119544bf42177528ef5339159e36e80e684f",
+            "public_wyckoff_list.csv": "ca56602252b7896121253c910739ef2fccf0ba947f2940358feb941f30c5e13d"
+          },
+          "runtime_hashes_stable": true
+        }
+      }
+    },
+    "probe_source_sha256": "4308f6cfe4f8eeaa0a84265d3bd39e304ca9e35fa0aa3e9b974119eddee8164a",
+    "completed_evaluation_summary_sha256": "6ae1fd5ccb5ee309e54e93cf6c9e91e5214873a90d6d432fee21776dd47fca94",
+    "completed_evaluation_seen8_sha256": "9b77043728086d03e3b34eedf370a13142a2f2ac0ffa6e7217beac69dc844cdd"
+  },
+  "hashes_after": {
+    "evaluation": {
+      "pin_sha256": "dff7306086bc0c94915590a69b1de9564725987c8d5e209cfa53416c1035b488",
+      "training_status_sha256": "c8de0fe0dd51f7f6381f9e1e8176cb75bdb21929e75fa6b0802e418a79933363",
+      "checkpoint_receipt_sha256": "4f0a2f33f872d413a2d4c5f97302878bd3e17e4ea2b86e0ee345381b1ea76958",
+      "training_summary_sha256": "15829191bd77e40fefbbf97fd40f625dc6d5a4eb8b2b5f6c09e0d990afa77937",
+      "checkpoint_sha256": "14ace5533efb5476d5ea7e08156463bfa176c6066173795cff4f3f37b9d85482",
+      "final_fingerprint": "e00f360a3fdfcda7e947aba78736aadee04aad26e9f9b386be124fcfce118ada",
+      "code_hashes": {
+        "parent": {
+          "model.py": "51e547b34d9a30a07f601f7cb2027d6d64f067ce4ce4cfc7027baf26c719d448",
+          "pilot_001.slurm": "47e97c39ee654f2c457e653942f542f17c68725970ab02cc1dfe638afb33442a",
+          "prepare.py": "4889b777e79b15c1761698375f9b1f48316e648129cce4f0439a30714fb1a30b",
+          "run.py": "e40bec18f806456e66dd04169db15d726082394dc0b9670255ad62ba809525b0",
+          "score.py": "3c1760481872726d798dd18ec4fb3557d6940e669e4c4d818a07da276d9c477a",
+          "test_joint_model.py": "38098f2bf4a4c4fd833bf6af780e33f19f6567bd90e7ef96dd91f72f8c58b3da",
+          "test_joint_runner.py": "e9350b403f4c45f085a00b89913e4d19d090170266d79d684c665dfb1af7662a"
+        },
+        "wrapper": {
+          "train.py": "1bb619fb809d71c68813eb07aa162b2b2bfa1b8f2de7cef1a67b60054d4ae816",
+          "train.slurm": "66f494e4def37fec6529883fcdd199ec64e1223c73aa7665fbd3ea6efe60d7bb",
+          "prepare_data.py": "3323b74d93ac7895c9c1233c018d1c58341743eb1bb23d1df1835eaf5573c101"
+        },
+        "data": {
+          "manifest_sha256": "25f150360f173970895dafd31e390f94b4b01ca174e6ad09b9e288c94b1e48cc",
+          "records_sha256": "231f336234d15a216dc9cb800d8dc1c3f30cf90985184ccc0d3e5c26333e95c6"
+        },
+        "evaluation_helpers": {
+          "commit_probe.py": "081ad3a97090651bba4b146e77fcd47807e0942d3ab4f7da450274a1e594b8d3",
+          "full_commit_fast_eval.py": "444e6d1fca8bf7f1de00dca951d64961cec5b3b64e3461034174140742b4bb36",
+          "fast_inference_metadata.py": "0163435947c8d8efa4c8f1455fba8ff22080b4a2969e2b98891f9dc9cfba356d",
+          "test_fast_inference_metadata.py": "c41ea06b2b941ca289f4033bf431958783f494cd0f6d8d88a6aa51991b76b5d2",
+          "joint_confidence_eval.py": "1c739713672ed7530f0b1921cf58d85192c36647faa3b3225718d7d808b974f3"
+        }
+      },
+      "evaluation_sources": {
+        "evaluate.py": "e0ca48792dfd942022e49b98907b2bb0518c5c9e20e7f6b54b96f627d4c63a73",
+        "test_evaluate.py": "307fffd07980060f3c435d04fbc45ced6e2facdbe5cf64a0341a3b9333aef07d",
+        "evaluate.slurm": "1845a7c0f386d6cc762eaf49bd02967a272f5187f031e7d9c0c5513620f43af8"
+      },
+      "data_hashes": {
+        "manifest_sha256": "25f150360f173970895dafd31e390f94b4b01ca174e6ad09b9e288c94b1e48cc",
+        "records_sha256": "231f336234d15a216dc9cb800d8dc1c3f30cf90985184ccc0d3e5c26333e95c6"
+      },
+      "tokenizer_hashes": {
+        "added_tokens.json": "28dc70f2cb07b1cca239390e21197945125792bfe8ef6c2a7463a4c387e79673",
+        "chat_template.jinja": "cd8e9439f0570856fd70470bf8889ebd8b5d1107207f67a5efb46e342330527f",
+        "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+        "special_tokens_map.json": "f863ec62eb91385603a3f882a55401ade618a3621d4ccc2affa3f28a579c9785",
+        "tokenizer.json": "64b64b25afdb5e3e79168467889b4b777778dc17ae29458bcd2c41a51110cca6",
+        "tokenizer_config.json": "1697fb166f8a8b20603b9b8782423599271e2c2e1c4740087ef1b4b8cffa2596",
+        "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+      },
+      "codec_pin": {
+        "base_manifest_sha256": "b8c290dd64f210dd469b83cbf41ad321ae4d7c5c40303c70e8cda0e4335cd0c3",
+        "codec_pin": {
+          "summary_sha256": "438d019d6dc12a89b3a952761e392c26cabf7035c145d8b61eed8af3cd77ae02",
+          "selection_sha256": "03527304a32e11c15414e0f368e72c694e754b3add76f660701437b6bf22d54a",
+          "adapter_prepare_sha256": "07ac45cb3ae5ab086fed460fc957afcc94e1988011161a4d0178b388b1769f14",
+          "adapter_score_sha256": "3c1760481872726d798dd18ec4fb3557d6940e669e4c4d818a07da276d9c477a",
+          "data_model": "Qwen/Qwen2.5-0.5B-Instruct",
+          "data_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+          "data_tokenizer_path": "experiments/interleaved_ar_diffusion_20261002/data_002/tokenizer",
+          "data_tokenizer_files": {
+            "added_tokens.json": "28dc70f2cb07b1cca239390e21197945125792bfe8ef6c2a7463a4c387e79673",
+            "chat_template.jinja": "cd8e9439f0570856fd70470bf8889ebd8b5d1107207f67a5efb46e342330527f",
+            "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+            "special_tokens_map.json": "f863ec62eb91385603a3f882a55401ade618a3621d4ccc2affa3f28a579c9785",
+            "tokenizer.json": "64b64b25afdb5e3e79168467889b4b777778dc17ae29458bcd2c41a51110cca6",
+            "tokenizer_config.json": "1697fb166f8a8b20603b9b8782423599271e2c2e1c4740087ef1b4b8cffa2596",
+            "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+          },
+          "runtime_hashes": {
+            "relational_codec.py": "365f122905399a73477b92a7af97c05b78483ea5af12347f9a6050b1a3506813",
+            "run_roundtrip.py": "3d329b9a486bb4a2cddf90e0977468034080db7d03251082836b7d9e9a4c4cdd",
+            "geometry.py": "026d5c882c0e24b8802f9cf0f25415353cd3254e9bde45a6f1693396a72c04a2",
+            "base_cohort.py": "f8b47626030b77592a3e2105544576f1b2103bd77a4f9eb9e7d138416b19a1d8",
+            "oldcodec.py": "8b8a4f11a949000e2c3f29b787676a6147a776946c4f7c9f272c1f33bfa110d9",
+            "api_runner.py": "2973ac9aef70dbd0f98257608227f9ebf645a688d8ce7f90cc8edfcd86e9716d",
+            "prepare.py": "c77ea38b734fe0a1accab663cfa8f1b071ff7c4784513681af0d4bb89a4a6a65",
+            "public_wyckoff_baseline.py": "1ccdc829f301f1279f78751dc5138fcac1e67680dfdaebefdbf72c9ca3ba758a",
+            "public_affine_parser.py": "26675890fb9847d4011153fc3d5a11a29733349d8e74c765b71375cea3ccb3a1",
+            "cif_parser.py": "2c3fb30605c725b0eee8280aed50119544bf42177528ef5339159e36e80e684f",
+            "public_wyckoff_list.csv": "ca56602252b7896121253c910739ef2fccf0ba947f2940358feb941f30c5e13d"
+          },
+          "runtime_hashes_stable": true
+        }
+      }
+    },
+    "probe_source_sha256": "4308f6cfe4f8eeaa0a84265d3bd39e304ca9e35fa0aa3e9b974119eddee8164a",
+    "completed_evaluation_summary_sha256": "6ae1fd5ccb5ee309e54e93cf6c9e91e5214873a90d6d432fee21776dd47fca94",
+    "completed_evaluation_seen8_sha256": "9b77043728086d03e3b34eedf370a13142a2f2ac0ffa6e7217beac69dc844cdd"
+  }
+}

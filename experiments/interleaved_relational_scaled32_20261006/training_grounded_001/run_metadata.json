@@ -1,0 +1,91 @@
+{
+  "training_stage": "scaled32_training_only",
+  "python_version": "3.10.18",
+  "terminal_goal_achieved": false,
+  "reader_mode": "grounded",
+  "reader_recipe": "Q1/Q2 and Q2 reader_direction follow the frozen parent schedule; grounded contexts alternate neutral and train-only cyclic-partner history by (epoch//4 + row_index) parity. Neutral Q2 contains no prior Q1 answer. The final START/END block is authoritative.",
+  "reader_direction_note": "Q2 follows the parent reader_direction and receives 16 minus and 16 plus examples per case; each Q2 direction receives 8 neutral and 8 conflicting contexts. Q1 reads unscaled C1.",
+  "data_hashes": {
+    "manifest_sha256": "25f150360f173970895dafd31e390f94b4b01ca174e6ad09b9e288c94b1e48cc",
+    "records_sha256": "231f336234d15a216dc9cb800d8dc1c3f30cf90985184ccc0d3e5c26333e95c6"
+  },
+  "source_hashes": {
+    "parent": {
+      "model.py": "51e547b34d9a30a07f601f7cb2027d6d64f067ce4ce4cfc7027baf26c719d448",
+      "pilot_001.slurm": "47e97c39ee654f2c457e653942f542f17c68725970ab02cc1dfe638afb33442a",
+      "prepare.py": "4889b777e79b15c1761698375f9b1f48316e648129cce4f0439a30714fb1a30b",
+      "run.py": "e40bec18f806456e66dd04169db15d726082394dc0b9670255ad62ba809525b0",
+      "score.py": "3c1760481872726d798dd18ec4fb3557d6940e669e4c4d818a07da276d9c477a",
+      "test_joint_model.py": "38098f2bf4a4c4fd833bf6af780e33f19f6567bd90e7ef96dd91f72f8c58b3da",
+      "test_joint_runner.py": "e9350b403f4c45f085a00b89913e4d19d090170266d79d684c665dfb1af7662a"
+    },
+    "wrapper": {
+      "train.py": "1bb619fb809d71c68813eb07aa162b2b2bfa1b8f2de7cef1a67b60054d4ae816",
+      "train.slurm": "66f494e4def37fec6529883fcdd199ec64e1223c73aa7665fbd3ea6efe60d7bb",
+      "prepare_data.py": "3323b74d93ac7895c9c1233c018d1c58341743eb1bb23d1df1835eaf5573c101"
+    },
+    "data": {
+      "manifest_sha256": "25f150360f173970895dafd31e390f94b4b01ca174e6ad09b9e288c94b1e48cc",
+      "records_sha256": "231f336234d15a216dc9cb800d8dc1c3f30cf90985184ccc0d3e5c26333e95c6"
+    }
+  },
+  "seed": 17,
+  "updates": 2048,
+  "train_ids": [
+    "anchor_Tb8Mg4",
+    "anchor_Li8V4Ni4O16",
+    "mp-4047",
+    "mp-1205515",
+    "mp-30009",
+    "mp-1188285",
+    "mp-1207068",
+    "mp-1205902",
+    "mp-2582",
+    "mp-18127",
+    "mp-1215249",
+    "mp-754971",
+    "mp-7483",
+    "mp-10847",
+    "mp-1224444",
+    "mp-974400",
+    "mp-775763",
+    "mp-37014",
+    "mp-1105932",
+    "mp-1218490",
+    "mp-1219974",
+    "mp-1099786",
+    "mp-11192",
+    "mp-23856",
+    "mp-1218405",
+    "mp-8189",
+    "mp-764280",
+    "mp-12961",
+    "mp-1189385",
+    "mp-759522",
+    "mp-555984",
+    "mp-1190391"
+  ],
+  "heldout_ids_from_manifest_only": [
+    "mp-1229077",
+    "mp-1019259",
+    "mp-1079976",
+    "mp-1095422",
+    "mp-1173947",
+    "mp-21371",
+    "mp-5456",
+    "mp-19419",
+    "mp-1219591",
+    "mp-1225818",
+    "mp-757163",
+    "mp-1178612",
+    "mp-1101160",
+    "mp-31460",
+    "mp-646926",
+    "mp-1217967"
+  ],
+  "evaluation": {
+    "train32": "not_run",
+    "heldout16": "not_run",
+    "AR_crystal_inference": "not_run"
+  }
+}

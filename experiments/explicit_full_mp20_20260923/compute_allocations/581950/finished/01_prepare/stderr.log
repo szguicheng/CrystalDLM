@@ -1,0 +1,10 @@
+spglib: ssm_get_exact_positions failed.
+spglib: get_bravais_exact_positions_and_lattice failed.
+spglib: ssm_get_exact_positions failed.
+spglib: get_bravais_exact_positions_and_lattice failed.
+Traceback (most recent call last):
+  File "/gpfs1/scratch/chenggui2/CrystalDLM/explicit_full_mp20_20260923/prepare.py", line 210, in <module>
+    if __name__ == '__main__': main()
+  File "/gpfs1/scratch/chenggui2/CrystalDLM/explicit_full_mp20_20260923/prepare.py", line 175, in main
+    assert not failures, f'{len(failures)} encoding failures; refusing to call a filtered subset full MP-20'
+AssertionError: 1 encoding failures; refusing to call a filtered subset full MP-20

@@ -1,0 +1,55 @@
+{
+  "seed": 17,
+  "results": {
+    "flat": {
+      "structures": 2048,
+      "joint_exact_match": 0.67138671875,
+      "mean_profile_nll": 0.5588328965112997
+    },
+    "degeneracy": {
+      "structures": 2048,
+      "joint_exact_match": 0.66796875,
+      "mean_profile_nll": 0.5619067629381005
+    },
+    "hierarchical": {
+      "structures": 2048,
+      "joint_exact_match": 0.65966796875,
+      "mean_profile_nll": 0.5751376962011566
+    }
+  },
+  "comparisons": {
+    "hierarchical_minus_flat": {
+      "exact_delta": -0.01171875,
+      "nll_delta": 0.01630479968985684,
+      "paired_structure_exact_95ci": [
+        -0.02490234375,
+        0.00146484375
+      ],
+      "paired_structure_nll_95ci": [
+        0.0028091380474319205,
+        0.030958269986101693
+      ]
+    },
+    "hierarchical_minus_degeneracy": {
+      "exact_delta": -0.00830078125,
+      "nll_delta": 0.013230933263056176,
+      "paired_structure_exact_95ci": [
+        -0.02099609375,
+        0.003918457031249933
+      ],
+      "paired_structure_nll_95ci": [
+        -0.00028041005974173845,
+        0.02764867616914422
+      ]
+    }
+  },
+  "single_training_seed_only": true,
+  "validation_only": true,
+  "training_seconds": {
+    "flat": 375.2675184458494,
+    "degeneracy": 376.3100293248426,
+    "hierarchical": 379.3910237629898
+  },
+  "parameter_count": 555456,
+  "job_id": "533222"
+}

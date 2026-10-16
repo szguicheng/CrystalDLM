@@ -1,0 +1,40 @@
+\section{Review Scope and Literature Coding}
+\label{sec:review-protocol}
+
+\draftsuggestion{Document how the authors search for papers that may not use the word tokenization. Keep the protocol broad enough for a field study and precise enough that a later revision can report a reproducible screening flow. The companion catalog should remain the source of record for inclusion decisions and tokenizer-system extraction.}
+
+\subsection{Search Scope and Inclusion Rule}
+
+\draftsuggestion{State the search cutoff, source types, query families, and inclusion rule. Explain how the search finds tokenizer work published under segmentation, quantization, pooling, discretization, grammar induction, or state abstraction. Report the screening flow only after a second author checks exclusions and duplicate records.}
+
+The search covers work published or publicly posted through September 6, 2026. It begins with compression, segmentation, clustering, quantization, parsing, and scientific representation methods from the twentieth century. Coverage becomes denser after 2016, when subword tokenization and Transformer models made token units a central system choice. The search uses publisher pages, conference proceedings, archival repositories, citation trails from review papers, official technical reports, public model cards, and released tokenizer files.
+
+A record enters the main catalog when it performs at least one of three functions. It forms finite units from a finer representation, maps observations to a finite or addressable latent set, or changes the units used to allocate model computation. This rule includes fixed patches, learned pooling, vector quantization, graph motifs, spectral peaks, ranked genes, and mesh nodes. A record is contextual when it supplies relevant foundation-model information but neither defines nor tests token formation.
+
+Search terms combine each data type in Sections~\ref{sec:ai} and \ref{sec:science} with method terms such as \emph{tokenization}, \emph{segmentation}, \emph{discretization}, \emph{vector quantization}, \emph{codebook}, \emph{patching}, \emph{pooling}, \emph{motif vocabulary}, \emph{grammar induction}, \emph{structure alphabet}, \emph{state abstraction}, and \emph{adaptive mesh}. The authors should preserve query dates and sources in the supplement before submission.
+
+\subsection{Tokenizer-System Extraction}
+
+\draftsuggestion{Extract \texttt{train}, \texttt{encode}, and \texttt{decode} from the primary paper, released code, or official model files. Record which operation determines token identity, which output can be decoded, and which later neural layers belong to the foundation model rather than the tokenizer.}
+
+For every core paper, the review extracts bibliographic identity, data object, input space, token space, relation structure, and the three modules from Section~\ref{sec:tokenizer-definition}. Training fields record data, objective, fitted components, randomness, constraints, and cost. Encoding fields record boundary formation, assignment, output form, relations, and inference randomness. Decoding fields record the target space, exactness, canonicalization, reconstruction method, validity checks, and missing information.
+
+The classification separates a tokenizer from the model that consumes its output. A fixed image partition belongs to the tokenizer because it determines patch units. A learned projection belongs to token formation only if the study defines token identity through the projected vectors. Later self-attention layers belong to the backbone unless they merge, prune, route, or reform addressable units. A molecular generator counts as tokenizer decoding only when it maps tokens to the declared molecular reconstruction target.
+
+Each field receives one of four evidence labels: stated by the source, derived from equations or released code, inferred by the reviewers, or unreported. Inference should remain short and testable. The review must not infer exact reversibility from discrete identifiers or infer stochastic behavior from the presence of a neural network.
+
+\subsection{Taxonomy Assignment and Evidence Limits}
+
+\draftsuggestion{Assign record type, implementation basis, method family, module coverage, AI modality, domain object, and complex-system setting as separate dimensions. Require direct evidence before assigning a complex-system setting; several modality labels alone do not show that the tokenizer combines component token streams.}
+
+The review records distinct questions in separate dimensions. It distinguishes the contribution of a source from the implementation that forms its tokens. Method family refines the implementation basis, while module coverage records whether the source specifies training, encoding, and decoding. AI modality names the representation form, domain object names what is represented, and complex-system setting records how component tokenizers are combined. This structure prevents a paper's scientific topic or model architecture from determining its tokenizer class.
+
+For example, a protein paper may have sequence and geometry modalities and protein as its domain object. SaProt uses composed algorithmic and neural token streams, while a later protein language model remains outside token formation. A theoretical paper receives a record type but no implementation basis.
+
+The paper catalog is intentionally broader than the set used for direct performance comparison. Direct comparison requires compatible data splits, base units, backbone capacity, optimization budget, token budget, and evaluation target. Papers with incompatible settings remain part of the historical and design record, but their reported numbers should not be ranked in one table.
+
+No literature search can establish a literal set of all related papers because method names and indexing differ across fields. The authors should call the catalog \emph{comprehensive within the stated scope}, report the cutoff date, and keep a public route for corrections. This wording makes the search boundary clear while allowing the catalog to grow.
+
+The current catalog, system table, and model profiles are working evidence rather than final study results. Descriptive counts should enter the manuscript only after duplicate removal, a second review of the main systems, and reconciliation between the Markdown and spreadsheet records. A checkpoint that reuses an existing tokenizer should remain a model profile rather than being counted as a new tokenizer method.
+
+\draftsuggestion{Report the final search dates, screening flow, inter-reviewer agreement, and descriptive counts in this section or an appendix. Keep model-card evidence separate from peer-reviewed method evidence. State all missing implementation details as unreported rather than inferring them from the foundation-model architecture.}

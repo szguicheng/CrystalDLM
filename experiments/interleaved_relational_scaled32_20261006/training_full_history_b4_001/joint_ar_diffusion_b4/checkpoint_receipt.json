@@ -1,0 +1,53 @@
+{
+  "status": "verified",
+  "path": "/gpfs1/scratch/chenggui2/CrystalDLM/experiments/interleaved_relational_scaled32_20261006/training_full_history_b4_001/joint_ar_diffusion_b4/checkpoint.pt",
+  "checkpoint_update": 2048,
+  "checkpoint_sha256": "c46077cb2df9239f10560aa33dde7423736e0b0de4fcf229cd4bc0694c49ddea",
+  "reader_schedule": "alternating_q1_q2",
+  "task_exposure_sha256": "722d788fa4cf7e09b1e950a21ee09166d36646b8ffc5b218ae51a7ec2dff4cec",
+  "mode": "hybrid",
+  "arm": "joint_ar_diffusion_b4",
+  "prediction_offset": 0,
+  "block_size": 4,
+  "clean_crystal_ar_weight": 1.0,
+  "final_fingerprint": "e4eee01bbcb31a3e116367ba6ec7247163870fb4c15b4efc008df3abb267ed65",
+  "reload_verified": true,
+  "reload_fingerprint": "e4eee01bbcb31a3e116367ba6ec7247163870fb4c15b4efc008df3abb267ed65",
+  "strict_state_load": true,
+  "training_stage": "scaled32_training_only",
+  "python_version": "3.10.18",
+  "terminal_goal_achieved": false,
+  "reader_mode": "grounded",
+  "reader_recipe": "Fresh grounded run: each train case receives 16 neutral and 16 conflicting contexts per reader task; for Q2, each reader direction receives 8 neutral and 8 full-parent-history contexts. Q1 conflicts replace the parent design conditions with a cyclic training partner's conditions while preserving the current case's C1 and target; Q2 retains its same-case G-C1-Q1-E-C2 history.",
+  "reader_direction_note": "Parent Q1/Q2 task and direction schedule is unchanged. Per train case Q1 has 16 neutral and 16 conflict; each Q2 direction has 8 neutral and 8 full-history conflict examples.",
+  "data_hashes": {
+    "manifest_sha256": "25f150360f173970895dafd31e390f94b4b01ca174e6ad09b9e288c94b1e48cc",
+    "records_sha256": "231f336234d15a216dc9cb800d8dc1c3f30cf90985184ccc0d3e5c26333e95c6"
+  },
+  "source_hashes": {
+    "parent": {
+      "../interleaved_relational_scaled32_20261006/test_train_full_history.py": "2183f127a720a51fdb1c8ab79db3bdba1309ea3867e086cca089f22889121783",
+      "../interleaved_relational_scaled32_20261006/test_train_full_history_b4.py": "c99b631f73c22b86c1f7a82d661f946c573afc16b1d80968d707bbe6b9250553",
+      "../interleaved_relational_scaled32_20261006/train_full_history.py": "e2954cf3eea94639782987596799a772b475d6a3b62eada787ad8a4820633112",
+      "../interleaved_relational_scaled32_20261006/train_full_history.slurm": "3156e9199cf4c04e5d1649ac35f32968641dc0d6a6e9b4f5b31f2fd563f7f439",
+      "../interleaved_relational_scaled32_20261006/train_full_history_b4.py": "eca51ca2a94a218a6904625e3a8075ae6a6228c9a0ff32d340cf266aefe0eb08",
+      "../interleaved_relational_scaled32_20261006/train_full_history_b4.slurm": "6207ea7c964c4657a353d5f01a39f2d94c273d7994cecf80cde449982cf2c835",
+      "model.py": "51e547b34d9a30a07f601f7cb2027d6d64f067ce4ce4cfc7027baf26c719d448",
+      "pilot_001.slurm": "47e97c39ee654f2c457e653942f542f17c68725970ab02cc1dfe638afb33442a",
+      "prepare.py": "4889b777e79b15c1761698375f9b1f48316e648129cce4f0439a30714fb1a30b",
+      "run.py": "e40bec18f806456e66dd04169db15d726082394dc0b9670255ad62ba809525b0",
+      "score.py": "3c1760481872726d798dd18ec4fb3557d6940e669e4c4d818a07da276d9c477a",
+      "test_joint_model.py": "38098f2bf4a4c4fd833bf6af780e33f19f6567bd90e7ef96dd91f72f8c58b3da",
+      "test_joint_runner.py": "e9350b403f4c45f085a00b89913e4d19d090170266d79d684c665dfb1af7662a"
+    },
+    "wrapper": {
+      "train.py": "1bb619fb809d71c68813eb07aa162b2b2bfa1b8f2de7cef1a67b60054d4ae816",
+      "train.slurm": "66f494e4def37fec6529883fcdd199ec64e1223c73aa7665fbd3ea6efe60d7bb",
+      "prepare_data.py": "3323b74d93ac7895c9c1233c018d1c58341743eb1bb23d1df1835eaf5573c101"
+    },
+    "data": {
+      "manifest_sha256": "25f150360f173970895dafd31e390f94b4b01ca174e6ad09b9e288c94b1e48cc",
+      "records_sha256": "231f336234d15a216dc9cb800d8dc1c3f30cf90985184ccc0d3e5c26333e95c6"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "representation": "explicit",
+  "seed": 17,
+  "steps": 4000,
+  "batch_size": 32,
+  "condition": "118 log1p reduced composition counts; no SG, N, length, geometry",
+  "architecture": {
+    "layers": 4,
+    "width": 192,
+    "heads": 6,
+    "ffn": 768,
+    "max_length": 256
+  },
+  "optimizer": "AdamW",
+  "lr": 0.0003,
+  "weight_decay": 0.01,
+  "pad_loss_weight": 0.1,
+  "parameter_count": 2357727,
+  "train_count": 6000,
+  "validation_count": 512,
+  "gpu": "NVIDIA A100-SXM4-80GB",
+  "torch": "2.2.0+cu121",
+  "host": "gpu-a100-04",
+  "slurm_job": "580699",
+  "code_sha256": {
+    "model.py": "ed56525fd72df8b86980295c1bf4d862eea4c8e18785c5128224a1c84a1fb6df",
+    "prepare.py": "de87d060113d7e68b5413b3a66779e1b9bf60701524d72dd4bdb76138adcd387",
+    "evaluate.py": "cfbe8dc6b5f50483df26835c489ee274ebca663d408453761fa49ee0113d4e81",
+    "train.py": "1fc04cea684014f5df0e72d1ebeede7bbcc88dc95eb3affe40aa38a0a9faeb32"
+  },
+  "data_sha256": "18f153289955f12b1dd4460b46fee1cfc7121189e5645589d252bfa55d1a9d5b"
+}

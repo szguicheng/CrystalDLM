@@ -1,0 +1,56 @@
+{
+  "status": "passed",
+  "device": "NVIDIA A100-SXM4-80GB",
+  "device_total_GiB": 79.249755859375,
+  "reserved_limit_GiB": 70.0,
+  "optimizer_step_counted_in_pilot": false,
+  "effective_batch": 4,
+  "microbatch": 1,
+  "accumulation": 4,
+  "worst_train_examples": [
+    {
+      "task": "G",
+      "id": "anchor_Li8V4Ni4O16",
+      "direction": "minus",
+      "variant": 0,
+      "packed_tokens": 2598
+    },
+    {
+      "task": "E",
+      "id": "mp-1205515",
+      "direction": "minus",
+      "variant": 0,
+      "packed_tokens": 3625
+    },
+    {
+      "task": "Q1",
+      "id": "mp-1205515",
+      "direction": "minus",
+      "variant": 0,
+      "packed_tokens": 1005
+    }
+  ],
+  "arms": {
+    "ar": {
+      "core_mode": "ar",
+      "prediction_offset": 0,
+      "initial_fingerprint": "6bffa202d8485a6ee8bce3553044c9657948e25be702a45a9efb860ced9d1429",
+      "initial_parameters": "FP32, zero time embedding",
+      "one_effective_batch_optimizer_step": true,
+      "seconds": 2.338395548053086,
+      "peak_allocated_GiB": 12.379798412322998,
+      "peak_reserved_GiB": 14.11328125
+    },
+    "hybrid_shift": {
+      "core_mode": "hybrid",
+      "prediction_offset": 1,
+      "initial_fingerprint": "6bffa202d8485a6ee8bce3553044c9657948e25be702a45a9efb860ced9d1429",
+      "initial_parameters": "FP32, zero time embedding",
+      "one_effective_batch_optimizer_step": true,
+      "seconds": 0.7073910441249609,
+      "peak_allocated_GiB": 11.668152809143066,
+      "peak_reserved_GiB": 13.1953125
+    }
+  },
+  "shared_initial_fingerprint": "6bffa202d8485a6ee8bce3553044c9657948e25be702a45a9efb860ced9d1429"
+}

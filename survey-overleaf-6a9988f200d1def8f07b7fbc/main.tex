@@ -1,0 +1,42 @@
+\documentclass[10pt]{article}
+\input{preamble}
+
+\title{What Should Count as a Token?\\
+\large A Comprehensive Study of Data Representation for Foundation Models}
+\author{TODO}
+% \date{September 2026}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+
+\draftsuggestion{
+Foundation models operate on finite collections of addressable units, yet the choice of these units often receives less study than the architecture that processes them. Tokenization determines unit boundaries, representation scale, retained information, explicit relations, and computational allocation. These choices are especially important in science, where measurement units may differ from the structural or functional units required by a task. We define a tokenizer as a three-module system that constructs reusable parameters, maps an input to a token representation, and maps that representation to a reconstruction. This definition covers algorithmic, neural, and hybrid tokenizers while separating token formation from the downstream foundation model.
+}
+
+
+\draftsuggestion{We study how these methods define tokens for different AI modalities and scientific domain objects, identifying the component tokenizers used to represent individual data sources or objects. 
+We also study system-level tokenization for complex settings that combine multiple modalities, domain objects, spatial or temporal scales, and coupled observations and actions. }
+
+\draftsuggestion{Across these levels, we examine the trade-offs among coverage, compression, reconstruction, task information, scientific constraints, and model compatibility. We conclude with design principles, evaluation protocols, and a research agenda for adaptive, multiscale, and reusable tokenizers that support future foundation models in prediction, generation, and interaction.}
+
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+\input{sections/01_introduction}
+\input{sections/02_tokenizer_systems}
+% \input{sections/03_review_protocol}
+\input{sections/04_ai_modalities}
+\input{sections/05_scientific_modalities}
+\input{sections/05_cross_modal_objects}
+\input{sections/06_challenges_principles}
+\input{sections/08_future_conclusion}
+
+\bibliographystyle{unsrtnat}
+\bibliography{references}
+
+\end{document}

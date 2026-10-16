@@ -1,0 +1,1247 @@
+{
+  "composition_overlap": {
+    "canonicalization": "structured plans.source.composition sorted by element; reduced stoichiometry divides counts by GCD; chemical system is sorted element set",
+    "heldout_cases_with_training_match": {
+      "chemical_system": {
+        "oldtrain8": 0,
+        "train32": 0
+      },
+      "denominator": 16,
+      "exact_composition": {
+        "oldtrain8": 0,
+        "train32": 0
+      },
+      "reduced_stoichiometry": {
+        "oldtrain8": 0,
+        "train32": 0
+      }
+    },
+    "heldout_unique_counts": {
+      "chemical_systems": 16,
+      "exact_compositions": 16,
+      "reduced_stoichiometries": 16
+    }
+  },
+  "elements": {
+    "heldout_cases_with_any_unseen_element": {
+      "denominator": 16,
+      "oldtrain8": 12,
+      "train32": 4
+    },
+    "heldout_unique_element_types_seen": {
+      "heldout_unique_element_type_denominator": 32,
+      "oldtrain8": 12,
+      "train32": 27
+    },
+    "training_values": {
+      "oldtrain8": [
+        "Ba",
+        "Co",
+        "Cs",
+        "Cu",
+        "Dy",
+        "Er",
+        "F",
+        "Fe",
+        "Ga",
+        "Ge",
+        "Ho",
+        "Kr",
+        "Li",
+        "Mg",
+        "Ni",
+        "O",
+        "Si",
+        "Tb",
+        "V"
+      ],
+      "train32": [
+        "Al",
+        "B",
+        "Ba",
+        "Bi",
+        "Br",
+        "Ca",
+        "Co",
+        "Cs",
+        "Cu",
+        "Dy",
+        "Er",
+        "Eu",
+        "F",
+        "Fe",
+        "Ga",
+        "Gd",
+        "Ge",
+        "H",
+        "Hf",
+        "Hg",
+        "Ho",
+        "In",
+        "K",
+        "Kr",
+        "Li",
+        "Mg",
+        "Mn",
+        "Nb",
+        "Nd",
+        "Ni",
+        "O",
+        "Pa",
+        "Pb",
+        "Pd",
+        "Pr",
+        "Re",
+        "Ru",
+        "S",
+        "Sb",
+        "Se",
+        "Si",
+        "Sn",
+        "Sr",
+        "Ta",
+        "Tb",
+        "Te",
+        "Ti",
+        "Tm",
+        "V",
+        "Y",
+        "Zn",
+        "Zr"
+      ]
+    },
+    "unique_counts": {
+      "heldout16": 32,
+      "oldtrain8": 19,
+      "train32": 52
+    }
+  },
+  "examples": {
+    "element_still_unseen": [
+      {
+        "elements": [
+          "Pt",
+          "Yb"
+        ],
+        "id": "mp-1095422"
+      },
+      {
+        "elements": [
+          "Rb"
+        ],
+        "id": "mp-1219591"
+      },
+      {
+        "elements": [
+          "N"
+        ],
+        "id": "mp-1101160"
+      },
+      {
+        "elements": [
+          "P",
+          "Pt"
+        ],
+        "id": "mp-1217967"
+      }
+    ],
+    "element_unseen_in_old_seen_after_expansion": [
+      "mp-1229077",
+      "mp-1019259",
+      "mp-1079976",
+      "mp-1173947"
+    ],
+    "relation_sentence_examples": [
+      {
+        "class": "orbit_header",
+        "normalized": "<ELEMENT> forms a nominal <NUM>-site symmetry orbit named <ORBIT_ID> in the standard cell.",
+        "source_example": "Terbium forms a nominal 4-site symmetry orbit named o000 in the standard cell."
+      },
+      {
+        "class": "free_axis_offset",
+        "normalized": "Along a, its representative has the free fractional offset <NUM>.",
+        "source_example": "Along a, its representative has the free fractional offset 0.31800000000000006."
+      },
+      {
+        "class": "plane_constraint",
+        "normalized": "Its representative lies in the plane at fractional b offset <NUM>.",
+        "source_example": "Its representative lies in the plane at fractional b offset 0.25."
+      },
+      {
+        "class": "doubled_axis_relation",
+        "normalized": "Along b, its representative doubles the offset along a.",
+        "source_example": "Along b, its representative doubles the offset along a."
+      },
+      {
+        "class": "shared_axis_relation",
+        "normalized": "Along b, its representative shares the offset along a.",
+        "source_example": "Along b, its representative shares the offset along a."
+      },
+      {
+        "class": "shifted_axis_relation",
+        "normalized": "Along b, its representative is shifted by <NUM> from the offset along a.",
+        "source_example": "Along b, its representative is shifted by 0.5 from the offset along a."
+      }
+    ],
+    "space_group_still_unseen": [
+      {
+        "id": "mp-1229077",
+        "sg": 82
+      },
+      {
+        "id": "mp-1019259",
+        "sg": 186
+      },
+      {
+        "id": "mp-1079976",
+        "sg": 63
+      },
+      {
+        "id": "mp-1095422",
+        "sg": 180
+      }
+    ],
+    "space_group_unseen_in_old_seen_after_expansion": [],
+    "template_still_unseen": [],
+    "template_unseen_in_old_seen_after_expansion": []
+  },
+  "input_hashes": {
+    "first24_prefix_matches_manifest": true,
+    "first24_prefix_sha256": "ef2ec2dcdee1d73c62e48987a9cec86a4db3076f9c48d9ab17b8745b9eca785f",
+    "manifest_sha256": "25f150360f173970895dafd31e390f94b4b01ca174e6ad09b9e288c94b1e48cc",
+    "records_sha256": "231f336234d15a216dc9cb800d8dc1c3f30cf90985184ccc0d3e5c26333e95c6",
+    "records_sha256_matches_manifest": true
+  },
+  "interpretation_limits": [
+    "These are descriptive coverage counts, not model outcomes or a causal test.",
+    "Unseen SG, element, composition, template, and length co-occur; a per-case association cannot identify the cause of a later failure in this 16-case sample.",
+    "No generated outputs, task-level failures, checkpoint, or optimization traces were inspected; heldout performance is not inferred.",
+    "Failure attribution would need task-level receipts and controlled comparisons holding training budget, initialization, optimization and decoding fixed."
+  ],
+  "limitations": [
+    "Reused stored token_lengths.c1; the inspected artifacts do not name the tokenizer revision, and no tokenizer was loaded.",
+    "Template classes are limited to six exact source-text forms verified against stored source plans; any unmatched line containing representative/symmetry orbit is counted and shown.",
+    "Composition overlap comes from structured source plans, not formula-string reparsing."
+  ],
+  "orbit_representative_relation_templates": {
+    "coverage_vs_heldout16": {
+      "oldtrain8": {
+        "heldout_relation_sentence_coverage": 1.0,
+        "heldout_relation_sentence_denominator": 316,
+        "heldout_relation_sentences_covered": 316,
+        "heldout_template_type_denominator": 8,
+        "heldout_unique_template_count": 8,
+        "heldout_unique_templates_seen": 8,
+        "train_unique_template_count": 8,
+        "unseen_templates": []
+      },
+      "train32": {
+        "heldout_relation_sentence_coverage": 1.0,
+        "heldout_relation_sentence_denominator": 316,
+        "heldout_relation_sentences_covered": 316,
+        "heldout_template_type_denominator": 8,
+        "heldout_unique_template_count": 8,
+        "heldout_unique_templates_seen": 8,
+        "train_unique_template_count": 11,
+        "unseen_templates": []
+      }
+    },
+    "heldout_cases_with_any_unseen_template": {
+      "denominator": 16,
+      "oldtrain8": 0,
+      "train32": 0
+    },
+    "method": "Scan embedded source c1 sentences, matching six observed orbit-header and representative-relation forms. Replace numeric values and element/orbit identifiers in headers, preserve relation wording and axes. Free and plane offsets, shared/doubled axes, and explicit numeric shifts are separate templates. Coordinate-frame and correction sentences and plus/minus targets are excluded.",
+    "sentence_occurrences_by_class": {
+      "doubled_axis_relation": 3,
+      "free_axis_offset": 309,
+      "orbit_header": 237,
+      "plane_constraint": 385,
+      "shared_axis_relation": 10,
+      "shifted_axis_relation": 4
+    },
+    "templates": {
+      "<ELEMENT> forms a nominal <NUM>-site symmetry orbit named <ORBIT_ID> in the standard cell.": {
+        "case_count": 48,
+        "class": "orbit_header",
+        "sentence_occurrences": 237
+      },
+      "Along a, its representative has the free fractional offset <NUM>.": {
+        "case_count": 31,
+        "class": "free_axis_offset",
+        "sentence_occurrences": 101
+      },
+      "Along b, its representative doubles the offset along a.": {
+        "case_count": 3,
+        "class": "doubled_axis_relation",
+        "sentence_occurrences": 3
+      },
+      "Along b, its representative has the free fractional offset <NUM>.": {
+        "case_count": 20,
+        "class": "free_axis_offset",
+        "sentence_occurrences": 78
+      },
+      "Along b, its representative is shifted by <NUM> from the offset along a.": {
+        "case_count": 2,
+        "class": "shifted_axis_relation",
+        "sentence_occurrences": 4
+      },
+      "Along b, its representative shares the offset along a.": {
+        "case_count": 2,
+        "class": "shared_axis_relation",
+        "sentence_occurrences": 5
+      },
+      "Along c, its representative has the free fractional offset <NUM>.": {
+        "case_count": 28,
+        "class": "free_axis_offset",
+        "sentence_occurrences": 130
+      },
+      "Along c, its representative shares the offset along a.": {
+        "case_count": 2,
+        "class": "shared_axis_relation",
+        "sentence_occurrences": 5
+      },
+      "Its representative lies in the plane at fractional a offset <NUM>.": {
+        "case_count": 42,
+        "class": "plane_constraint",
+        "sentence_occurrences": 136
+      },
+      "Its representative lies in the plane at fractional b offset <NUM>.": {
+        "case_count": 42,
+        "class": "plane_constraint",
+        "sentence_occurrences": 147
+      },
+      "Its representative lies in the plane at fractional c offset <NUM>.": {
+        "case_count": 35,
+        "class": "plane_constraint",
+        "sentence_occurrences": 102
+      }
+    },
+    "unknown_lines_containing_representative_or_symmetry_orbit": {
+      "count": 0,
+      "examples": []
+    }
+  },
+  "per_heldout_case": [
+    {
+      "canonical_composition": "AlCu2InS4",
+      "chemical_system_seen_oldtrain8": false,
+      "chemical_system_seen_train32": false,
+      "elements": [
+        "Al",
+        "Cu",
+        "In",
+        "S"
+      ],
+      "exact_composition_seen_oldtrain8": false,
+      "exact_composition_seen_train32": false,
+      "formula": "AlCu2InS4",
+      "id": "mp-1229077",
+      "reduced_stoichiometry_seen_oldtrain8": false,
+      "reduced_stoichiometry_seen_train32": false,
+      "relation_sentence_count": 20,
+      "source_cif_sha256": "3172b3aa2fbe44a19dd9326c630723059449e8d17ac2d1b1509a201b3eccd4bf",
+      "source_cnl_sha256": "d865303e2c049f3ec9286aabe546599da9ad17e1f60d73213228618c1f9e8e45",
+      "source_cnl_tokens": 886,
+      "space_group": 82,
+      "unseen_elements_oldtrain8": [
+        "Al",
+        "In",
+        "S"
+      ],
+      "unseen_elements_train32": [],
+      "unseen_sg_oldtrain8": true,
+      "unseen_sg_train32": true,
+      "unseen_templates_oldtrain8": [],
+      "unseen_templates_train32": []
+    },
+    {
+      "canonical_composition": "Hg2Sn2Sr2",
+      "chemical_system_seen_oldtrain8": false,
+      "chemical_system_seen_train32": false,
+      "elements": [
+        "Hg",
+        "Sn",
+        "Sr"
+      ],
+      "exact_composition_seen_oldtrain8": false,
+      "exact_composition_seen_train32": false,
+      "formula": "Hg2Sn2Sr2",
+      "id": "mp-1019259",
+      "reduced_stoichiometry_seen_oldtrain8": false,
+      "reduced_stoichiometry_seen_train32": false,
+      "relation_sentence_count": 12,
+      "source_cif_sha256": "7e9d80cd747613754fd0d8763d3140f8c26ddb70d093679ef775ed453452701b",
+      "source_cnl_sha256": "3e6ecb70ee79f79425ce65cc6efbe7f9e182351af46dff178289def72c3f7bbe",
+      "source_cnl_tokens": 498,
+      "space_group": 186,
+      "unseen_elements_oldtrain8": [
+        "Hg",
+        "Sn",
+        "Sr"
+      ],
+      "unseen_elements_train32": [],
+      "unseen_sg_oldtrain8": true,
+      "unseen_sg_train32": true,
+      "unseen_templates_oldtrain8": [],
+      "unseen_templates_train32": []
+    },
+    {
+      "canonical_composition": "Ge4Ni2Tm2",
+      "chemical_system_seen_oldtrain8": false,
+      "chemical_system_seen_train32": false,
+      "elements": [
+        "Ge",
+        "Ni",
+        "Tm"
+      ],
+      "exact_composition_seen_oldtrain8": false,
+      "exact_composition_seen_train32": false,
+      "formula": "Ge4Ni2Tm2",
+      "id": "mp-1079976",
+      "reduced_stoichiometry_seen_oldtrain8": false,
+      "reduced_stoichiometry_seen_train32": false,
+      "relation_sentence_count": 16,
+      "source_cif_sha256": "6559313cce51446087a7cbf7ed839fb3c0f54d159f568dc3926e7da003704023",
+      "source_cnl_sha256": "5df6643250bfdf1dbc03fabc6f0b94929739ecb05c29fbf0f8dff8bbbbfb95ea",
+      "source_cnl_tokens": 691,
+      "space_group": 63,
+      "unseen_elements_oldtrain8": [
+        "Tm"
+      ],
+      "unseen_elements_train32": [],
+      "unseen_sg_oldtrain8": true,
+      "unseen_sg_train32": true,
+      "unseen_templates_oldtrain8": [],
+      "unseen_templates_train32": []
+    },
+    {
+      "canonical_composition": "B3Pt6Yb3",
+      "chemical_system_seen_oldtrain8": false,
+      "chemical_system_seen_train32": false,
+      "elements": [
+        "B",
+        "Pt",
+        "Yb"
+      ],
+      "exact_composition_seen_oldtrain8": false,
+      "exact_composition_seen_train32": false,
+      "formula": "B3Pt6Yb3",
+      "id": "mp-1095422",
+      "reduced_stoichiometry_seen_oldtrain8": false,
+      "reduced_stoichiometry_seen_train32": false,
+      "relation_sentence_count": 12,
+      "source_cif_sha256": "522cb536f91f6c5ca6bb90f9a347966834a98fe519b3c9c9959ab4ff8428f1a7",
+      "source_cnl_sha256": "7410abe383b044dbd15e23e6dfd16fef6acee7fdaf351b7e6066de365b4a281d",
+      "source_cnl_tokens": 411,
+      "space_group": 180,
+      "unseen_elements_oldtrain8": [
+        "B",
+        "Pt",
+        "Yb"
+      ],
+      "unseen_elements_train32": [
+        "Pt",
+        "Yb"
+      ],
+      "unseen_sg_oldtrain8": true,
+      "unseen_sg_train32": true,
+      "unseen_templates_oldtrain8": [],
+      "unseen_templates_train32": []
+    },
+    {
+      "canonical_composition": "Li6Mn4O10",
+      "chemical_system_seen_oldtrain8": false,
+      "chemical_system_seen_train32": false,
+      "elements": [
+        "Li",
+        "Mn",
+        "O"
+      ],
+      "exact_composition_seen_oldtrain8": false,
+      "exact_composition_seen_train32": false,
+      "formula": "Li6Mn4O10",
+      "id": "mp-1173947",
+      "reduced_stoichiometry_seen_oldtrain8": false,
+      "reduced_stoichiometry_seen_train32": false,
+      "relation_sentence_count": 44,
+      "source_cif_sha256": "de44144d3b131b56f26a071901f9249b997b4ff8eab6fe5877879570aea3b901",
+      "source_cnl_sha256": "6aba0acae1dbbca796c562d8d569f829245bd900b9f455ff202afec5537beb14",
+      "source_cnl_tokens": 2371,
+      "space_group": 2,
+      "unseen_elements_oldtrain8": [
+        "Mn"
+      ],
+      "unseen_elements_train32": [],
+      "unseen_sg_oldtrain8": true,
+      "unseen_sg_train32": true,
+      "unseen_templates_oldtrain8": [],
+      "unseen_templates_train32": []
+    },
+    {
+      "canonical_composition": "Co4Si4V4",
+      "chemical_system_seen_oldtrain8": false,
+      "chemical_system_seen_train32": false,
+      "elements": [
+        "Co",
+        "Si",
+        "V"
+      ],
+      "exact_composition_seen_oldtrain8": false,
+      "exact_composition_seen_train32": false,
+      "formula": "Co4Si4V4",
+      "id": "mp-21371",
+      "reduced_stoichiometry_seen_oldtrain8": false,
+      "reduced_stoichiometry_seen_train32": false,
+      "relation_sentence_count": 12,
+      "source_cif_sha256": "9ed0ce845e69896dde7ef2e5d9b7d7df68bf901735a96045cc3efa52fb115a43",
+      "source_cnl_sha256": "7bca85f8b14abcf8eedadf44e606dfa418720a3eb024dd2ae14677cb1f927886",
+      "source_cnl_tokens": 630,
+      "space_group": 62,
+      "unseen_elements_oldtrain8": [],
+      "unseen_elements_train32": [],
+      "unseen_sg_oldtrain8": false,
+      "unseen_sg_train32": false,
+      "unseen_templates_oldtrain8": [],
+      "unseen_templates_train32": []
+    },
+    {
+      "canonical_composition": "CuO3Sr2",
+      "chemical_system_seen_oldtrain8": false,
+      "chemical_system_seen_train32": false,
+      "elements": [
+        "Cu",
+        "O",
+        "Sr"
+      ],
+      "exact_composition_seen_oldtrain8": false,
+      "exact_composition_seen_train32": false,
+      "formula": "CuO3Sr2",
+      "id": "mp-5456",
+      "reduced_stoichiometry_seen_oldtrain8": false,
+      "reduced_stoichiometry_seen_train32": false,
+      "relation_sentence_count": 16,
+      "source_cif_sha256": "dc075076f1a56541af0d3907282652c24a80eaf91d64715e37fad2ccd46037d3",
+      "source_cnl_sha256": "d303132e7fc861e80a913d1c84f13f210948c87acd82df393daba8e689ee14ee",
+      "source_cnl_tokens": 646,
+      "space_group": 71,
+      "unseen_elements_oldtrain8": [
+        "Sr"
+      ],
+      "unseen_elements_train32": [],
+      "unseen_sg_oldtrain8": true,
+      "unseen_sg_train32": true,
+      "unseen_templates_oldtrain8": [],
+      "unseen_templates_train32": []
+    },
+    {
+      "canonical_composition": "FeLiO2",
+      "chemical_system_seen_oldtrain8": false,
+      "chemical_system_seen_train32": false,
+      "elements": [
+        "Fe",
+        "Li",
+        "O"
+      ],
+      "exact_composition_seen_oldtrain8": false,
+      "exact_composition_seen_train32": false,
+      "formula": "FeLiO2",
+      "id": "mp-19419",
+      "reduced_stoichiometry_seen_oldtrain8": false,
+      "reduced_stoichiometry_seen_train32": false,
+      "relation_sentence_count": 12,
+      "source_cif_sha256": "974650c5a618e895185c1557bf55e939a9d8d2f031ed8df07f5f54490f1ec6f4",
+      "source_cnl_sha256": "e4948b548d2eedd5593ad7961766999e0e551352f3686a1ba11c8f2ccbb744fc",
+      "source_cnl_tokens": 671,
+      "space_group": 166,
+      "unseen_elements_oldtrain8": [],
+      "unseen_elements_train32": [],
+      "unseen_sg_oldtrain8": true,
+      "unseen_sg_train32": true,
+      "unseen_templates_oldtrain8": [],
+      "unseen_templates_train32": []
+    },
+    {
+      "canonical_composition": "Co2F12Ni2Rb2",
+      "chemical_system_seen_oldtrain8": false,
+      "chemical_system_seen_train32": false,
+      "elements": [
+        "Co",
+        "F",
+        "Ni",
+        "Rb"
+      ],
+      "exact_composition_seen_oldtrain8": false,
+      "exact_composition_seen_train32": false,
+      "formula": "Co2F12Ni2Rb2",
+      "id": "mp-1219591",
+      "reduced_stoichiometry_seen_oldtrain8": false,
+      "reduced_stoichiometry_seen_train32": false,
+      "relation_sentence_count": 24,
+      "source_cif_sha256": "11faf5824b13cc7c014157f59dd7e4f16024af5cec6b0e0248cff9747605aaa9",
+      "source_cnl_sha256": "b9f5efce9819e49d198d9ffd32d7304310bb577b8516884fdd0903333ad60175",
+      "source_cnl_tokens": 841,
+      "space_group": 74,
+      "unseen_elements_oldtrain8": [
+        "Rb"
+      ],
+      "unseen_elements_train32": [
+        "Rb"
+      ],
+      "unseen_sg_oldtrain8": false,
+      "unseen_sg_train32": false,
+      "unseen_templates_oldtrain8": [],
+      "unseen_templates_train32": []
+    },
+    {
+      "canonical_composition": "Co3DyFeGa",
+      "chemical_system_seen_oldtrain8": false,
+      "chemical_system_seen_train32": false,
+      "elements": [
+        "Co",
+        "Dy",
+        "Fe",
+        "Ga"
+      ],
+      "exact_composition_seen_oldtrain8": false,
+      "exact_composition_seen_train32": false,
+      "formula": "Co3DyFeGa",
+      "id": "mp-1225818",
+      "reduced_stoichiometry_seen_oldtrain8": false,
+      "reduced_stoichiometry_seen_train32": false,
+      "relation_sentence_count": 20,
+      "source_cif_sha256": "ccf3ad90e3cfc28dbc4f0be0fa882e5c4df84de66a15d2728ae2601f4b5723ae",
+      "source_cnl_sha256": "a1157db18309fc6e44bc1cace6ed9202a38ea509e06d4e44f9ea43d5b22b4866",
+      "source_cnl_tokens": 786,
+      "space_group": 10,
+      "unseen_elements_oldtrain8": [],
+      "unseen_elements_train32": [],
+      "unseen_sg_oldtrain8": true,
+      "unseen_sg_train32": true,
+      "unseen_templates_oldtrain8": [],
+      "unseen_templates_train32": []
+    },
+    {
+      "canonical_composition": "F6LiV",
+      "chemical_system_seen_oldtrain8": false,
+      "chemical_system_seen_train32": false,
+      "elements": [
+        "F",
+        "Li",
+        "V"
+      ],
+      "exact_composition_seen_oldtrain8": false,
+      "exact_composition_seen_train32": false,
+      "formula": "F6LiV",
+      "id": "mp-757163",
+      "reduced_stoichiometry_seen_oldtrain8": false,
+      "reduced_stoichiometry_seen_train32": false,
+      "relation_sentence_count": 12,
+      "source_cif_sha256": "b963866fe0d3d3404c323875cf5779fdfc8df8616af33069cb461c23269909c5",
+      "source_cnl_sha256": "5095862551450dafc1786f741d2d20ea1a237712cb93a9b8e7f414cf85db29e7",
+      "source_cnl_tokens": 463,
+      "space_group": 149,
+      "unseen_elements_oldtrain8": [],
+      "unseen_elements_train32": [],
+      "unseen_sg_oldtrain8": true,
+      "unseen_sg_train32": true,
+      "unseen_templates_oldtrain8": [],
+      "unseen_templates_train32": []
+    },
+    {
+      "canonical_composition": "O12Si4Zn4",
+      "chemical_system_seen_oldtrain8": false,
+      "chemical_system_seen_train32": false,
+      "elements": [
+        "O",
+        "Si",
+        "Zn"
+      ],
+      "exact_composition_seen_oldtrain8": false,
+      "exact_composition_seen_train32": false,
+      "formula": "O12Si4Zn4",
+      "id": "mp-1178612",
+      "reduced_stoichiometry_seen_oldtrain8": false,
+      "reduced_stoichiometry_seen_train32": false,
+      "relation_sentence_count": 20,
+      "source_cif_sha256": "d9a298fce59a9f3735b01fcc21d120b48b6c12430e913fe8c5260c19fc0f8b6a",
+      "source_cnl_sha256": "b38eb6c6f904a3ebd474d91398a884cf06f96fc50f0ba2e2b81e360319a5596f",
+      "source_cnl_tokens": 1012,
+      "space_group": 72,
+      "unseen_elements_oldtrain8": [
+        "Zn"
+      ],
+      "unseen_elements_train32": [],
+      "unseen_sg_oldtrain8": true,
+      "unseen_sg_train32": true,
+      "unseen_templates_oldtrain8": [],
+      "unseen_templates_train32": []
+    },
+    {
+      "canonical_composition": "N4O6Zr6",
+      "chemical_system_seen_oldtrain8": false,
+      "chemical_system_seen_train32": false,
+      "elements": [
+        "N",
+        "O",
+        "Zr"
+      ],
+      "exact_composition_seen_oldtrain8": false,
+      "exact_composition_seen_train32": false,
+      "formula": "N4O6Zr6",
+      "id": "mp-1101160",
+      "reduced_stoichiometry_seen_oldtrain8": false,
+      "reduced_stoichiometry_seen_train32": false,
+      "relation_sentence_count": 64,
+      "source_cif_sha256": "1eda31855b848f14dc496a31615ecde3d1a666e1f5b24c3dea38efdd212288d6",
+      "source_cnl_sha256": "8a3a8bce8166d1f202c68981f49b12ee62fadd726cdb44434c6c301c4a6ff42b",
+      "source_cnl_tokens": 1647,
+      "space_group": 8,
+      "unseen_elements_oldtrain8": [
+        "N",
+        "Zr"
+      ],
+      "unseen_elements_train32": [
+        "N"
+      ],
+      "unseen_sg_oldtrain8": true,
+      "unseen_sg_train32": true,
+      "unseen_templates_oldtrain8": [],
+      "unseen_templates_train32": []
+    },
+    {
+      "canonical_composition": "CoNbSb",
+      "chemical_system_seen_oldtrain8": false,
+      "chemical_system_seen_train32": false,
+      "elements": [
+        "Co",
+        "Nb",
+        "Sb"
+      ],
+      "exact_composition_seen_oldtrain8": false,
+      "exact_composition_seen_train32": false,
+      "formula": "CoNbSb",
+      "id": "mp-31460",
+      "reduced_stoichiometry_seen_oldtrain8": false,
+      "reduced_stoichiometry_seen_train32": false,
+      "relation_sentence_count": 12,
+      "source_cif_sha256": "ca679ba39142d90547f07fe5192352df0d8537876305b7ad76a44e2d301a1274",
+      "source_cnl_sha256": "e6e48b5d4ecfec352cb9dc21d19254f34126010bbb51e4466c5e93bb044beaef",
+      "source_cnl_tokens": 627,
+      "space_group": 216,
+      "unseen_elements_oldtrain8": [
+        "Nb",
+        "Sb"
+      ],
+      "unseen_elements_train32": [],
+      "unseen_sg_oldtrain8": true,
+      "unseen_sg_train32": true,
+      "unseen_templates_oldtrain8": [],
+      "unseen_templates_train32": []
+    },
+    {
+      "canonical_composition": "Gd2Ru4",
+      "chemical_system_seen_oldtrain8": false,
+      "chemical_system_seen_train32": false,
+      "elements": [
+        "Gd",
+        "Ru"
+      ],
+      "exact_composition_seen_oldtrain8": false,
+      "exact_composition_seen_train32": false,
+      "formula": "Gd2Ru4",
+      "id": "mp-646926",
+      "reduced_stoichiometry_seen_oldtrain8": false,
+      "reduced_stoichiometry_seen_train32": false,
+      "relation_sentence_count": 8,
+      "source_cif_sha256": "8aedca3f60d1648d6b90113b62b08b952e4c9f7868a430ce7c53a01472e857db",
+      "source_cnl_sha256": "ac561e8276b8653afdd0bcc7dacfe93f93b9220818fd6c7bdb40854829ed0caf",
+      "source_cnl_tokens": 560,
+      "space_group": 227,
+      "unseen_elements_oldtrain8": [
+        "Gd",
+        "Ru"
+      ],
+      "unseen_elements_train32": [],
+      "unseen_sg_oldtrain8": true,
+      "unseen_sg_train32": true,
+      "unseen_templates_oldtrain8": [],
+      "unseen_templates_train32": []
+    },
+    {
+      "canonical_composition": "PPtSr",
+      "chemical_system_seen_oldtrain8": false,
+      "chemical_system_seen_train32": false,
+      "elements": [
+        "P",
+        "Pt",
+        "Sr"
+      ],
+      "exact_composition_seen_oldtrain8": false,
+      "exact_composition_seen_train32": false,
+      "formula": "PPtSr",
+      "id": "mp-1217967",
+      "reduced_stoichiometry_seen_oldtrain8": false,
+      "reduced_stoichiometry_seen_train32": false,
+      "relation_sentence_count": 12,
+      "source_cif_sha256": "cee32f883f1c39341a61c03f7ec0a239424e0869f01ef9ac1c996fe32a8055cf",
+      "source_cnl_sha256": "be6368fbf9f89b53a3614f8276a97e6c9d96705dce8d719f20d0a13b88d04fd9",
+      "source_cnl_tokens": 736,
+      "space_group": 187,
+      "unseen_elements_oldtrain8": [
+        "P",
+        "Pt",
+        "Sr"
+      ],
+      "unseen_elements_train32": [
+        "P",
+        "Pt"
+      ],
+      "unseen_sg_oldtrain8": true,
+      "unseen_sg_train32": true,
+      "unseen_templates_oldtrain8": [],
+      "unseen_templates_train32": []
+    }
+  ],
+  "schema_and_cohorts": {
+    "condition_sg_matches_source_plan": {
+      "denominator": 48,
+      "matches": 48
+    },
+    "denominators": {
+      "heldout16": 16,
+      "oldtrain8": 8,
+      "train32": 32
+    },
+    "embedded_c1_sha_matches_source_text_hash": {
+      "denominator": 48,
+      "matches": 48
+    },
+    "heldout16_ids": [
+      "mp-1229077",
+      "mp-1019259",
+      "mp-1079976",
+      "mp-1095422",
+      "mp-1173947",
+      "mp-21371",
+      "mp-5456",
+      "mp-19419",
+      "mp-1219591",
+      "mp-1225818",
+      "mp-757163",
+      "mp-1178612",
+      "mp-1101160",
+      "mp-31460",
+      "mp-646926",
+      "mp-1217967"
+    ],
+    "heldout_source_cif_hash_overlap": {
+      "oldtrain8": 0,
+      "train32": 0
+    },
+    "manifest_status": "data_prepared_not_trained",
+    "oldtrain8_ids": [
+      "anchor_Tb8Mg4",
+      "anchor_Li8V4Ni4O16",
+      "mp-4047",
+      "mp-1205515",
+      "mp-30009",
+      "mp-1188285",
+      "mp-1207068",
+      "mp-1205902"
+    ],
+    "representation": "relational_cnl_v1",
+    "row_count": 48,
+    "split_and_manifest_ids_verified": true,
+    "train32_ids": [
+      "anchor_Tb8Mg4",
+      "anchor_Li8V4Ni4O16",
+      "mp-4047",
+      "mp-1205515",
+      "mp-30009",
+      "mp-1188285",
+      "mp-1207068",
+      "mp-1205902",
+      "mp-2582",
+      "mp-18127",
+      "mp-1215249",
+      "mp-754971",
+      "mp-7483",
+      "mp-10847",
+      "mp-1224444",
+      "mp-974400",
+      "mp-775763",
+      "mp-37014",
+      "mp-1105932",
+      "mp-1218490",
+      "mp-1219974",
+      "mp-1099786",
+      "mp-11192",
+      "mp-23856",
+      "mp-1218405",
+      "mp-8189",
+      "mp-764280",
+      "mp-12961",
+      "mp-1189385",
+      "mp-759522",
+      "mp-555984",
+      "mp-1190391"
+    ]
+  },
+  "scope": "Read-only data coverage audit. No training, model, checkpoint, GPU, or SSH work.",
+  "source_cnl_token_lengths": {
+    "by_cohort": {
+      "heldout16": {
+        "max": 2371,
+        "median": 681.0,
+        "min": 411,
+        "n": 16,
+        "p95_nearest_rank": 2371
+      },
+      "oldtrain8": {
+        "max": 866,
+        "median": 624.5,
+        "min": 406,
+        "n": 8,
+        "p95_nearest_rank": 866
+      },
+      "train32": {
+        "max": 1882,
+        "median": 660.5,
+        "min": 330,
+        "n": 32,
+        "p95_nearest_rank": 1808
+      }
+    },
+    "heldout_cases_above_training_max": {
+      "denominator": 16,
+      "oldtrain8": 4,
+      "train32": 1
+    },
+    "per_heldout_case": [
+      {
+        "above_oldtrain8_max": true,
+        "above_train32_max": false,
+        "id": "mp-1229077",
+        "tokens": 886
+      },
+      {
+        "above_oldtrain8_max": false,
+        "above_train32_max": false,
+        "id": "mp-1019259",
+        "tokens": 498
+      },
+      {
+        "above_oldtrain8_max": false,
+        "above_train32_max": false,
+        "id": "mp-1079976",
+        "tokens": 691
+      },
+      {
+        "above_oldtrain8_max": false,
+        "above_train32_max": false,
+        "id": "mp-1095422",
+        "tokens": 411
+      },
+      {
+        "above_oldtrain8_max": true,
+        "above_train32_max": true,
+        "id": "mp-1173947",
+        "tokens": 2371
+      },
+      {
+        "above_oldtrain8_max": false,
+        "above_train32_max": false,
+        "id": "mp-21371",
+        "tokens": 630
+      },
+      {
+        "above_oldtrain8_max": false,
+        "above_train32_max": false,
+        "id": "mp-5456",
+        "tokens": 646
+      },
+      {
+        "above_oldtrain8_max": false,
+        "above_train32_max": false,
+        "id": "mp-19419",
+        "tokens": 671
+      },
+      {
+        "above_oldtrain8_max": false,
+        "above_train32_max": false,
+        "id": "mp-1219591",
+        "tokens": 841
+      },
+      {
+        "above_oldtrain8_max": false,
+        "above_train32_max": false,
+        "id": "mp-1225818",
+        "tokens": 786
+      },
+      {
+        "above_oldtrain8_max": false,
+        "above_train32_max": false,
+        "id": "mp-757163",
+        "tokens": 463
+      },
+      {
+        "above_oldtrain8_max": true,
+        "above_train32_max": false,
+        "id": "mp-1178612",
+        "tokens": 1012
+      },
+      {
+        "above_oldtrain8_max": true,
+        "above_train32_max": false,
+        "id": "mp-1101160",
+        "tokens": 1647
+      },
+      {
+        "above_oldtrain8_max": false,
+        "above_train32_max": false,
+        "id": "mp-31460",
+        "tokens": 627
+      },
+      {
+        "above_oldtrain8_max": false,
+        "above_train32_max": false,
+        "id": "mp-646926",
+        "tokens": 560
+      },
+      {
+        "above_oldtrain8_max": false,
+        "above_train32_max": false,
+        "id": "mp-1217967",
+        "tokens": 736
+      }
+    ],
+    "source": "stored token_lengths.c1; tokenizer not rerun",
+    "tokenizer_revision": "not named in inspected manifest/records"
+  },
+  "space_groups": {
+    "heldout_cases_with_unseen_sg": {
+      "denominator": 16,
+      "oldtrain8": 14,
+      "train32": 14
+    },
+    "heldout_unique_sgs_seen": {
+      "heldout_unique_sg_denominator": 16,
+      "oldtrain8": 2,
+      "train32": 2
+    },
+    "training_values": {
+      "oldtrain8": [
+        62,
+        65,
+        74,
+        99,
+        139,
+        164,
+        194,
+        225
+      ],
+      "train32": [
+        1,
+        3,
+        12,
+        14,
+        38,
+        40,
+        46,
+        55,
+        62,
+        65,
+        70,
+        74,
+        99,
+        107,
+        119,
+        127,
+        129,
+        139,
+        140,
+        141,
+        148,
+        161,
+        164,
+        181,
+        189,
+        193,
+        194,
+        198,
+        215,
+        221,
+        225,
+        229
+      ]
+    },
+    "unique_counts": {
+      "heldout16": 16,
+      "oldtrain8": 8,
+      "train32": 32
+    }
+  },
+  "root_definition_coverage_check": {
+    "method": "Compare exact (space group, Wyckoff label) pairs in plans.source.orbits; these are public position definitions, distinct from normalized sentence templates.",
+    "train_definition_count": 92,
+    "heldout_cases": 16,
+    "heldout_cases_with_any_unseen_definition": 15,
+    "per_case": [
+      {
+        "id": "mp-1229077",
+        "sg": 82,
+        "orbits": 5,
+        "unseen_definitions": [
+          "2a",
+          "2b",
+          "2c",
+          "2d",
+          "8g"
+        ]
+      },
+      {
+        "id": "mp-1019259",
+        "sg": 186,
+        "orbits": 3,
+        "unseen_definitions": [
+          "2a",
+          "2b"
+        ]
+      },
+      {
+        "id": "mp-1079976",
+        "sg": 63,
+        "orbits": 4,
+        "unseen_definitions": [
+          "4c"
+        ]
+      },
+      {
+        "id": "mp-1095422",
+        "sg": 180,
+        "orbits": 3,
+        "unseen_definitions": [
+          "3c",
+          "3d",
+          "6j"
+        ]
+      },
+      {
+        "id": "mp-1173947",
+        "sg": 2,
+        "orbits": 11,
+        "unseen_definitions": [
+          "1c",
+          "1h",
+          "2i"
+        ]
+      },
+      {
+        "id": "mp-21371",
+        "sg": 62,
+        "orbits": 3,
+        "unseen_definitions": []
+      },
+      {
+        "id": "mp-5456",
+        "sg": 71,
+        "orbits": 4,
+        "unseen_definitions": [
+          "2a",
+          "2d",
+          "4j"
+        ]
+      },
+      {
+        "id": "mp-19419",
+        "sg": 166,
+        "orbits": 3,
+        "unseen_definitions": [
+          "3a",
+          "3b",
+          "6c"
+        ]
+      },
+      {
+        "id": "mp-1219591",
+        "sg": 74,
+        "orbits": 6,
+        "unseen_definitions": [
+          "16j",
+          "4e"
+        ]
+      },
+      {
+        "id": "mp-1225818",
+        "sg": 10,
+        "orbits": 5,
+        "unseen_definitions": [
+          "1b",
+          "1e",
+          "1f",
+          "1g",
+          "2m"
+        ]
+      },
+      {
+        "id": "mp-757163",
+        "sg": 149,
+        "orbits": 3,
+        "unseen_definitions": [
+          "1b",
+          "1c",
+          "6l"
+        ]
+      },
+      {
+        "id": "mp-1178612",
+        "sg": 72,
+        "orbits": 5,
+        "unseen_definitions": [
+          "8f",
+          "8g",
+          "8j"
+        ]
+      },
+      {
+        "id": "mp-1101160",
+        "sg": 8,
+        "orbits": 16,
+        "unseen_definitions": [
+          "2a"
+        ]
+      },
+      {
+        "id": "mp-31460",
+        "sg": 216,
+        "orbits": 3,
+        "unseen_definitions": [
+          "4a",
+          "4b",
+          "4c"
+        ]
+      },
+      {
+        "id": "mp-646926",
+        "sg": 227,
+        "orbits": 2,
+        "unseen_definitions": [
+          "16c",
+          "8b"
+        ]
+      },
+      {
+        "id": "mp-1217967",
+        "sg": 187,
+        "orbits": 3,
+        "unseen_definitions": [
+          "1b",
+          "1d",
+          "1e"
+        ]
+      }
+    ],
+    "interpretation": "Seen sentence wording does not establish coverage of its combinations with space-group-specific public definitions. Descriptive only; no generated outputs inspected."
+  }
+}

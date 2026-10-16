@@ -1,0 +1,217 @@
+{
+  "status": "verified",
+  "n": 64,
+  "split": "validation",
+  "results": {
+    "hybrid": {
+      "n": 64,
+      "counts": {
+        "G": 0,
+        "Q_reference": 64,
+        "E_reference": 49,
+        "closed_loop": 0,
+        "flow_complete": 0,
+        "Q_swap": 63,
+        "Q_no_crystal": 0
+      },
+      "categories": {
+        "parse_failure": 35,
+        "boundary_or_runtime": 26,
+        "failed_structural_audit": 3
+      },
+      "failure_reasons": {
+        "ValueError: (Fm-3mmabc: 3.65 3.65 3.65) not found in space_group ": 1,
+        "ValueError: invalid cell formula": 8,
+        "invalid crystal PAD boundary": 10,
+        "ValueError: not enough values to unpack (expected 5, got 4)": 2,
+        "ValueError: Wyckoff multiplicity does not match label": 3,
+        "ValueError: invalid lattice header": 1,
+        "formula_header_mismatch": 1,
+        "composition_condition_mismatch": 1,
+        "wyckoff_coordinate_constraint": 3,
+        "duplicate_fixed_orbit": 1,
+        "ValueError: (P63/mmcm) not found in space_group ": 1,
+        "crystal block requires exactly one END": 16,
+        "ValueError: (P63m) not found in space_group ": 1,
+        "ValueError: invalid orbit species or label": 3,
+        "ValueError: (P-22m) not found in space_group ": 1,
+        "ValueError: invalid spacegroup header": 2,
+        "ValueError: (C22) not found in space_group ": 1,
+        "ValueError: could not convert string to float: '3.6113.61'": 1,
+        "ValueError: (P63/amd) not found in space_group ": 1,
+        "ValueError: (P22/m) not found in space_group ": 1,
+        "ValueError: (Cmmmce) not found in space_group ": 1,
+        "ValueError: (P22/c1abc: 4.23 5.20 4.58) not found in space_group ": 1,
+        "ValueError: (P61/m) not found in space_group ": 1,
+        "ValueError: (I F43m) not found in space_group ": 1,
+        "ValueError: (C221) not found in space_group ": 1,
+        "ValueError: (P P62m) not found in space_group ": 1,
+        "ValueError: (P23/c) not found in space_group ": 1,
+        "sites_header_mismatch": 1,
+        "ValueError: (C21/m) not found in space_group ": 1
+      }
+    },
+    "ar": {
+      "n": 64,
+      "counts": {
+        "G": 17,
+        "Q_reference": 63,
+        "E_reference": 61,
+        "closed_loop": 17,
+        "flow_complete": 17,
+        "Q_swap": 63,
+        "Q_no_crystal": 0
+      },
+      "categories": {
+        "valid": 17,
+        "failed_structural_audit": 22,
+        "parse_failure": 25
+      },
+      "failure_reasons": {
+        "sites_header_mismatch": 15,
+        "wyckoff_coordinate_constraint": 9,
+        "ValueError: Wyckoff multiplicity does not match label": 23,
+        "RuntimeError: long time to generate structure, check inputs": 3,
+        "formula_header_mismatch": 11,
+        "composition_condition_mismatch": 11,
+        "space_group_condition_mismatch": 4,
+        "duplicate_fixed_orbit": 1,
+        "ValueError: invalid spacegroup header": 1,
+        "IndexError: list index out of range": 1
+      }
+    }
+  },
+  "paired": {
+    "G": {
+      "hybrid": 0,
+      "ar": 17,
+      "hybrid_wilson95": [
+        0,
+        0.05662405979280534
+      ],
+      "ar_wilson95": [
+        0.17296379074222612,
+        0.38482873728565137
+      ],
+      "difference_h_minus_ar": -0.265625,
+      "paired_bootstrap95": [
+        -0.375,
+        -0.15625
+      ],
+      "both_success": 0,
+      "hybrid_only": 0,
+      "ar_only": 17
+    },
+    "Q_reference": {
+      "hybrid": 64,
+      "ar": 63,
+      "hybrid_wilson95": [
+        0.9433759402071946,
+        1
+      ],
+      "ar_wilson95": [
+        0.9166589839990573,
+        0.9972364580766624
+      ],
+      "difference_h_minus_ar": 0.015625,
+      "paired_bootstrap95": [
+        0.0,
+        0.046875
+      ],
+      "both_success": 63,
+      "hybrid_only": 1,
+      "ar_only": 0
+    },
+    "E_reference": {
+      "hybrid": 49,
+      "ar": 61,
+      "hybrid_wilson95": [
+        0.6486674241743136,
+        0.8525010440607586
+      ],
+      "ar_wilson95": [
+        0.8710034625990631,
+        0.983930983213707
+      ],
+      "difference_h_minus_ar": -0.1875,
+      "paired_bootstrap95": [
+        -0.296875,
+        -0.078125
+      ],
+      "both_success": 47,
+      "hybrid_only": 2,
+      "ar_only": 14
+    },
+    "closed_loop": {
+      "hybrid": 0,
+      "ar": 17,
+      "hybrid_wilson95": [
+        0,
+        0.05662405979280534
+      ],
+      "ar_wilson95": [
+        0.17296379074222612,
+        0.38482873728565137
+      ],
+      "difference_h_minus_ar": -0.265625,
+      "paired_bootstrap95": [
+        -0.375,
+        -0.15625
+      ],
+      "both_success": 0,
+      "hybrid_only": 0,
+      "ar_only": 17
+    },
+    "Q_swap": {
+      "hybrid": 63,
+      "ar": 63,
+      "hybrid_wilson95": [
+        0.9166589839990573,
+        0.9972364580766624
+      ],
+      "ar_wilson95": [
+        0.9166589839990573,
+        0.9972364580766624
+      ],
+      "difference_h_minus_ar": 0.0,
+      "paired_bootstrap95": [
+        0.0,
+        0.0
+      ],
+      "both_success": 63,
+      "hybrid_only": 0,
+      "ar_only": 0
+    },
+    "Q_no_crystal": {
+      "hybrid": 0,
+      "ar": 0,
+      "hybrid_wilson95": [
+        0,
+        0.05662405979280534
+      ],
+      "ar_wilson95": [
+        0,
+        0.05662405979280534
+      ],
+      "difference_h_minus_ar": 0.0,
+      "paired_bootstrap95": [
+        0.0,
+        0.0
+      ],
+      "both_success": 0,
+      "hybrid_only": 0,
+      "ar_only": 0
+    }
+  },
+  "bootstrap_seed": 31415,
+  "bootstrap_replicates": 10000,
+  "raw_sha256": {
+    "hybrid": "d74e29152f601360371329fdd1ba2e8eaaa395400e226cdc7115b43d58a473ff",
+    "ar": "ac4e79b3cded9b68cf1738886ff4b5905f5f33b9cee2ba644964335593277572"
+  },
+  "scorer_sha256": "254192f4e2482f331fb42d95591f98bccdcc1c65f2bd8c6951faca194560e2ad",
+  "slurm_state": "COMPLETED",
+  "exit_code": "0:0",
+  "test_used": false,
+  "note": "One training seed. Sample intervals do not cover training randomness. Training time shared with diagnostic is not compared."
+}

@@ -1,0 +1,23 @@
+{
+  "status": "staged_local_remote_CPU_review_and_actual_runtime_binding_passed",
+  "files": {
+    "evaluate_full_history_b8.py": "dbe0d9d32c179876f305a73d3aa3dfa027539c10f5f728778b8ef24b37acbb47",
+    "evaluate_full_history_b8.slurm": "a258ea4ba0b893df5446311677028d7b3f953dce4cc429b7d76f797c2b493db5",
+    "test_evaluate_full_history_b8.py": "34b0a6b3810a269b64e8d37c0fb691ba8c8bd4b8b230663f47b102d8660192de"
+  },
+  "output": "experiments/interleaved_relational_scaled32_20261006/eval_full_history_b8_001",
+  "input_pin": "not_created_waiting_training_terminal",
+  "GPU_evaluation": "not_submitted",
+  "sampler_block_size": 8,
+  "sampler_time_rule": "confidence_one k=ceil(remaining_masks*STEPS/B); B32 algorithm preserved; legacy_random k schedule unchanged",
+  "local_checks": "actual frozen/adapted sampler on fake CPU model; all B32 token/trace fields same; B8 mask/time proportional; B8 receipts accepted B32 rejected",
+  "independent_review": "no blockers",
+  "remote_runtime_binding": {
+    "sampler_block_size": 8,
+    "arm_block_sizes": {
+      "joint_ar_diffusion_b8": 8
+    },
+    "sampler_source_sha256": "5d3e9ab83c6d2cf6269c1ba424d455564d1f5684d22347448a8a655def62d22e",
+    "model_not_loaded": true
+  }
+}

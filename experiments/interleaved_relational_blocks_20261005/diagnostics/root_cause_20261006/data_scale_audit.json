@@ -1,0 +1,293 @@
+{
+  "audit_date": "2026-10-06",
+  "scope": "Read-only local inventory. No GPU, Slurm, SSH, remote mutation, training, model forward, or codec batch was run. Token lengths below use the pinned local tokenizer only.",
+  "current_cohort": {
+    "selected_total": 100,
+    "adapter_included": 24,
+    "train": 8,
+    "frozen_heldout": 16,
+    "excluded_from_this_pilot": 76,
+    "selection_rule": "The ordered 100-case source selection is two released-generation anchors plus the first-by-SHA256 entry from 98 distinct MP20 dataset space groups, with no replacement on failure. The interleaved adapter takes only selection cases [0:24]; first eight train and next sixteen are held out. The remaining 76 are outside this pilot by fixed-prefix scope, not per-case length, codec, or geometry filtering.",
+    "exclusion_reasons": {
+      "length": 0,
+      "codec_or_geometry": 0,
+      "fixed_prefix_scope": 76,
+      "evidence_limit": "There are no individual rejection reasons: prepare.py slices all_ids[:24], the protocol says remaining IDs are not scanned, filtered, or replaced, and the separate 100-case relational run passed all 100 source-plan, geometry, canonical-text, and second-decode contracts."
+    },
+    "frozen_heldout_ids": [
+      "mp-1229077",
+      "mp-1019259",
+      "mp-1079976",
+      "mp-1095422",
+      "mp-1173947",
+      "mp-21371",
+      "mp-5456",
+      "mp-19419",
+      "mp-1219591",
+      "mp-1225818",
+      "mp-757163",
+      "mp-1178612",
+      "mp-1101160",
+      "mp-31460",
+      "mp-646926",
+      "mp-1217967"
+    ],
+    "adapter_reference_checks": {
+      "source": "24/24",
+      "plus_edit": "24/24",
+      "minus_edit": "24/24",
+      "failures": 0,
+      "truncation": false
+    }
+  },
+  "verified_relational_cnl_v1_pool": {
+    "source_case_count": 100,
+    "source_text_and_plan_path": "experiments/naturecry_relational_20261004/run100_001",
+    "all_four_codec_geometry_contracts": "100/100",
+    "contract_counts": {
+      "exact_plan_match": 100,
+      "geometry_match": 100,
+      "canonical_text_match": 100,
+      "second_decode_match": 100
+    },
+    "source_encoding_reuse_for_additional_76": "All 76 source CNL texts, source plans, and prepared facts already exist in the verified run100_001 cohort. A new adapter can reuse those pinned sources. It still needs to build and check two scaled edit targets per added case; these were not built for the remaining 76 in this audit.",
+    "heldout_separation": {
+      "candidate_ids_overlapping_frozen_heldout": 0,
+      "candidate_source_cif_hashes_overlapping_frozen_heldout": 0
+    }
+  },
+  "existing_raw_datasets": {
+    "mp20_basic": {
+      "train_path": "work/PLaID/data/basic/train.csv",
+      "train_csv_rows": 27136,
+      "train_unique_material_ids": 27136,
+      "train_unique_pretty_formulas": 23540,
+      "train_distinct_space_groups": 169,
+      "train_distinct_elements": 88,
+      "train_sha256": "133bab58dba02d316f9f91174839f17802dce648be4e8659d1a42b32b97fa01d",
+      "matches_frozen_selection_dataset_sha256": true,
+      "validation": {
+        "path": "work/PLaID/data/basic/val.csv",
+        "csv_rows": 9047,
+        "unique_material_ids": 9047,
+        "distinct_space_groups": 157,
+        "sha256": "7b5f4085464b3eac9fd2123acee97ec372214004ce7e983b535b33395abc3e29"
+      },
+      "test": {
+        "path": "work/PLaID/data/basic/test.csv",
+        "csv_rows": 9046,
+        "unique_material_ids": 9046,
+        "distinct_space_groups": 157,
+        "sha256": "dd605c7543cf95a13e150aed630d0915e74edc8dea17e85301ee6fbfeb7f500a"
+      },
+      "selection_coverage": "98 selected MP20 source rows are already represented in the frozen relational cohort; 27038 other unique train.csv material IDs remain in this local raw pool and have not been evaluated in the relational_cnl_v1 100-case cohort. They require fresh fact extraction, encoding, and geometry checks before use."
+    },
+    "existing_corpus_512_inputs": {
+      "paths": [
+        "experiments/explicit_symmetry_20260917/corpus_512",
+        "outputs/explicit_symmetry_program_20260917/corpus_512",
+        "outputs/wyckoff_comparison_20260919/corpus_512"
+      ],
+      "input_cif_count_per_copy": 512,
+      "copies_have_identical_id_sets": true,
+      "unique_input_structures_across_copies": 512,
+      "ids_verified_in_mp20_train_csv": 512,
+      "overlap_with_relational_100": 89,
+      "new_source_ids_outside_relational_100": 423,
+      "use_boundary": "These input CIFs are available source structures for fresh relational_cnl_v1 encoding. The legacy decoded and Wyckoff-decoded files are derived outputs and provide no relational_cnl_v1 generation evidence. The 423 IDs outside the frozen 100 have no relational_cnl_v1 validation in this audit."
+    },
+    "enriched_train_view": {
+      "path": "work/PLaID/data/enriched/train_with_bulk_modulus.csv",
+      "csv_rows": 32289,
+      "unique_material_ids": 27136,
+      "distinct_space_group_values": 185,
+      "sha256": "577384212b1aa598357c8794bcc40b8d9a0e39945b43d74804542c7ec76fa69c",
+      "interpretation": "This is an enriched view with repeated material IDs, not 32289 distinct crystal structures; do not count its extra rows as additional training structures without investigating row-level provenance."
+    }
+  },
+  "capacity_and_token_length": {
+    "tokenizer_path": "experiments/interleaved_ar_diffusion_20261002/data_002/tokenizer",
+    "K": 2560,
+    "MAXLEN": 8192,
+    "method": "Pinned AutoTokenizer, add_special_tokens=false, plus one END token, counted from each existing run100_001 source text. No relational codec or model computation was invoked.",
+    "source_text_tokens_including_END": {
+      "initial_train8": {
+        "n": 8,
+        "min": 406,
+        "median": 624.5,
+        "max": 866,
+        "over_K": 0
+      },
+      "frozen_heldout16": {
+        "n": 16,
+        "min": 411,
+        "median": 681.0,
+        "max": 2371,
+        "over_K": 0
+      },
+      "remaining_76": {
+        "n": 76,
+        "min": 288,
+        "median": 748.5,
+        "p95_nearest_rank": 1727,
+        "max": 2297,
+        "over_K": 0
+      },
+      "all_100": {
+        "n": 100,
+        "min": 288,
+        "median": 729.5,
+        "p95_nearest_rank": 1698,
+        "max": 2371,
+        "over_K": 0
+      }
+    },
+    "already_measured_adapter_subset": {
+      "current24_edited_text_max": 2373,
+      "current24_trajectory_max": 5131,
+      "maxlen_margin_for_current_subset": 3061
+    },
+    "limit": "For the remaining 76, source texts fit K. Their plus/minus edited-text lengths and full task pack lengths were not measured here; exact adapter preparation must confirm K and MAXLEN before training. The current 24-case trajectory result does not itself prove the larger adapter pack fits."
+  },
+  "train_only_expansion_options": [
+    {
+      "option": "Small next step",
+      "additional_ids": [
+        "mp-2582",
+        "mp-18127",
+        "mp-1215249",
+        "mp-754971",
+        "mp-7483",
+        "mp-10847",
+        "mp-1224444",
+        "mp-974400",
+        "mp-775763",
+        "mp-37014",
+        "mp-1105932",
+        "mp-1218490",
+        "mp-1219974",
+        "mp-1099786",
+        "mp-11192",
+        "mp-23856",
+        "mp-1218405",
+        "mp-8189",
+        "mp-764280",
+        "mp-12961",
+        "mp-1189385",
+        "mp-759522",
+        "mp-555984",
+        "mp-1190391"
+      ],
+      "added_cases": 24,
+      "resulting_train_cases": 32,
+      "frozen_heldout_cases": 16,
+      "additional_edit_texts_to_build_and_check": 48,
+      "source_text_tokens_including_END": {
+        "min": 330,
+        "median": 700.5,
+        "max": 1882,
+        "over_K": 0
+      },
+      "distinct_MP20_space_groups_added": 24
+    },
+    {
+      "option": "Use full prevalidated 100-case source pool",
+      "added_cases": 76,
+      "resulting_train_cases": 84,
+      "frozen_heldout_cases": 16,
+      "additional_edit_texts_to_build_and_check": 152,
+      "all_added_source_texts_fit_K": true,
+      "id_and_source_CIF_hash_overlap_with_frozen_heldout": 0
+    }
+  ],
+  "fixed_budget_exposure_arithmetic": {
+    "pilot_002_updates": 512,
+    "effective_batch": 4,
+    "pilot_002_q1_only_task_counts": {
+      "G": 1024,
+      "E": 512,
+      "Q1": 512,
+      "Q2": 0
+    },
+    "per_case_current_train8": {
+      "G": 128,
+      "E": 64,
+      "Q1": 64
+    },
+    "later_alternating_q1_q2_schedule_not_scheduled": {
+      "task_counts_at_512_updates": {
+        "G": 1024,
+        "E": 512,
+        "Q1": 256,
+        "Q2": 256
+      },
+      "average_per_case_at_512_updates_84_train_cases": {
+        "G": 12.19,
+        "E": 6.10,
+        "Q1": 3.05,
+        "Q2": 3.05
+      },
+      "average_per_case_at_512_updates_32_train_cases": {
+        "G": 32,
+        "E": 16,
+        "Q1": 8,
+        "Q2": 8
+      },
+      "updates_for_64_epochs_per_train_case": {
+        "32_train_cases": 2048,
+        "84_train_cases": 5376
+      },
+      "training_status": "not_scheduled"
+    }
+  },
+  "evidence": [
+    {
+      "path": "experiments/naturecry_roundtrip_20261001/run_001/selection.json",
+      "lines": "2-4",
+      "supports": "100-case selection rule, no-replacement rule, and dataset checksum"
+    },
+    {
+      "path": "experiments/interleaved_relational_20261004/prepare.py",
+      "lines": "189-212",
+      "supports": "Fixed first-24 prefix and first-eight versus next-sixteen split"
+    },
+    {
+      "path": "experiments/interleaved_relational_20261004/prepare.py",
+      "lines": "161-168, 198-204",
+      "supports": "Existing prepared plan/facts/text/CIF inputs and the exact ID-prefix equality check"
+    },
+    {
+      "path": "experiments/interleaved_relational_20261004/PROTOCOL.md",
+      "lines": "3-7",
+      "supports": "Remaining 76 out of pilot by scope; no filter/replacement; tokenizer capacity contract"
+    },
+    {
+      "path": "experiments/interleaved_relational_20261004/data_pilot_001/manifest.json",
+      "lines": "7-38, 116-138, 178-203",
+      "supports": "Frozen IDs, K/MAXLEN, current 24-case lengths, split counts, and zero source/plus/minus reference failures"
+    },
+    {
+      "path": "experiments/naturecry_relational_20261004/RESULTS.md",
+      "lines": "13-36",
+      "supports": "Separate offline relational_cnl_v1 run passed all 100 source-plan and geometry cases with zero API/LLM calls"
+    },
+    {
+      "path": "experiments/interleaved_relational_20261004/pilot_002/training_exposure.json",
+      "lines": "1-20",
+      "supports": "512-update task mix and 8-case exposure arithmetic"
+    },
+    {
+      "path": "work/PLaID/data/basic/train.csv",
+      "lines": "1-2",
+      "supports": "Raw MP20 source records; CSV counts were read with Python csv so embedded multiline CIF fields are parsed as records"
+    },
+    {
+      "path": "work/PLaID/data/basic/val.csv and work/PLaID/data/basic/test.csv",
+      "supports": "Existing validation and test CSV source inventories; record counts and checksums were computed locally"
+    },
+    {
+      "path": "experiments/explicit_symmetry_20260917/corpus_512, outputs/explicit_symmetry_program_20260917/corpus_512, outputs/wyckoff_comparison_20260919/corpus_512",
+      "supports": "Three identical material-ID sets with 512 input CIFs each; ID-set counts and intersection with the relational selection were computed locally"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "checks": {
+    "CPU_metadata_equal": "passed fixedfixtures+24randomsequences+spans/modes",
+    "CPU_gate": "passed real-original-binding andabort-beforeeval"
+  },
+  "source_hashes": {
+    "full_commit_fast_eval.py": "444e6d1fca8bf7f1de00dca951d64961cec5b3b64e3461034174140742b4bb36",
+    "test_full_commit_fast_eval.py": "099f438e5227cbdbd2f7a1527ae5019ff537d272ef9fdb8d293cf937f256d471",
+    "fast_inference_metadata.py": "0163435947c8d8efa4c8f1455fba8ff22080b4a2969e2b98891f9dc9cfba356d",
+    "test_fast_inference_metadata.py": "c41ea06b2b941ca289f4033bf431958783f494cd0f6d8d88a6aa51991b76b5d2",
+    "full_commit_fast_eval.slurm": "dec8d70134a8e7d9d2d66e581d8b6cf905c3c468df1e9475f4d429bf51511977",
+    "commit_probe.py": "081ad3a97090651bba4b146e77fcd47807e0942d3ab4f7da450274a1e594b8d3",
+    "full_commit_eval.py": "a9065f34257873d0e7c6cc417054514ed3adc3d97b1f7c69e71232e50a11f596"
+  },
+  "required_GPU_gates": [
+    "bitwise same masks/regions/times againstactualoldfunctions",
+    "legacy8 randomgreedy128 exact tokens/text/time/release/header",
+    "unchangedcheckpointfingerprint"
+  ],
+  "purpose": "speedmetadata only, unchanged sampler/floatmath/scorer/rawK2560",
+  "review": "review found sampler prefix-time import alias; root explicitly patched that alias too, CPU scope check passes; all other reviewed semantic/mask/float/sampler/scoring behavior unchanged"
+}

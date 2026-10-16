@@ -1,0 +1,90 @@
+{
+  "scope": "Frozen first4 trainedseen only; full8 and held16 remain unfinished",
+  "n": 4,
+  "new_counts": {
+    "G": 4,
+    "E_reference": 4,
+    "Q_reference": 4,
+    "closed_loop": 4,
+    "Q_swap": 4
+  },
+  "old_same_ids_counts": {
+    "G": 2,
+    "E_reference": 3,
+    "Q_reference": 4,
+    "closed_loop": 2,
+    "Q_swap": 4
+  },
+  "all_fullK_END_PAD_valid": true,
+  "raw_sha256_at_read": "6af3272d6713580914efacb6e8d4b0cacb13565391f9d6860482af5c00946e1b",
+  "rows": [
+    {
+      "id": "anchor_Tb8Mg4",
+      "C1_exact_reference": true,
+      "newG": true,
+      "oldG": true,
+      "newloop": true,
+      "oldloop": true,
+      "old_failures": [],
+      "native_strict_chain_regrade": true
+    },
+    {
+      "id": "anchor_Li8V4Ni4O16",
+      "C1_exact_reference": true,
+      "newG": true,
+      "oldG": true,
+      "newloop": true,
+      "oldloop": true,
+      "old_failures": [],
+      "native_strict_chain_regrade": true
+    },
+    {
+      "id": "mp-4047",
+      "C1_exact_reference": true,
+      "newG": true,
+      "oldG": false,
+      "newloop": true,
+      "oldloop": false,
+      "old_failures": [
+        {
+          "stage": "G",
+          "kind": "generation_audit",
+          "reasons": [
+            "GateError: Input cell sentence is missing or malformed"
+          ]
+        },
+        {
+          "stage": "closed_loop",
+          "kind": "skipped_invalid_generated_c1"
+        }
+      ],
+      "native_strict_chain_regrade": true
+    },
+    {
+      "id": "mp-1205515",
+      "C1_exact_reference": true,
+      "newG": true,
+      "oldG": false,
+      "newloop": true,
+      "oldloop": false,
+      "old_failures": [
+        {
+          "stage": "G",
+          "kind": "generation_audit",
+          "reasons": [
+            "GateError: Standard-frame coordinate relation is missing or malformed"
+          ]
+        },
+        {
+          "stage": "E_reference",
+          "kind": "edit_mismatch"
+        },
+        {
+          "stage": "closed_loop",
+          "kind": "skipped_invalid_generated_c1"
+        }
+      ],
+      "native_strict_chain_regrade": true
+    }
+  ]
+}

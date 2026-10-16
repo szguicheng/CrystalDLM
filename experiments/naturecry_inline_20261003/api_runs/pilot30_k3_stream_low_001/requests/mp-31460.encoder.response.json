@@ -1,0 +1,33 @@
+{
+  "id": "6503701f-3000-4c63-884b-ed11b679a9bd",
+  "object": "chat.completion",
+  "created": 1791054111,
+  "model": "tokenhub/kimi-k3",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "The structure is given in an input rhombohedral setting whose three edge lengths are represented as identical values, [[param:cell.a]], [[param:cell.b]], and [[param:cell.c]], and whose three interaxial angles are likewise represented as identical near-hexagonal values, [[param:cell.alpha]], [[param:cell.beta]], and [[param:cell.gamma]]. This three-atom input cell, [[param:input.atom_count]], contains one atom each of Co, Nb, and Sb according to [[param:composition.Co]], [[param:composition.Nb]], and [[param:composition.Sb]]. The input fractional coordinates are reported to two decimal places, [[param:round_digits]].\n\nThe public symmetry is the face-centered cubic tetrahedral space group identified by [[param:space_group.number]] and by the Hall symbol [[param:space_group.hall]]. To relate the supplied rhombohedral description to that standard cubic setting, a linear change of basis is applied through [[param:frame.matrix]], with no translation of the origin, [[param:frame.origin_shift]]. Thus the coordinate narrative is one of the same atomic backbone re-expressed from a primitive-like rhombohedral input frame into the conventional face-centered cubic frame, rather than a different arrangement of atoms.\n\nWithin the standard setting there are three independent Wyckoff orbits, each fully fixed with no free positional parameters. The niobium orbit is identified as [[param:orbit.o000.id]], assigned to element [[param:orbit.o000.element]], and placed on Wyckoff label [[param:orbit.o000.wyckoff]]; its representative position is the origin relation 0, 0, 0. The cobalt orbit is identified as [[param:orbit.o001.id]], assigned to element [[param:orbit.o001.element]], and placed on Wyckoff label [[param:orbit.o001.wyckoff]]; its representative position is 1/4, 1/4, 1/4. The antimony orbit is identified as [[param:orbit.o002.id]], assigned to element [[param:orbit.o002.element]], and placed on Wyckoff label [[param:orbit.o002.wyckoff]]; its representative position is 1/2, 1/2, 1/2. Each orbit has multiplicity four in the face-centered cell, so the three independent sites expand into twelve symmetry-related atomic positions in the conventional cubic description.\n\nNo precision corrections are supplied, so there are no listed real deviations from this idealized fixed-site backbone; the small nonzero off-diagonal terms implicit in the stored transformation belong to numerical frame conversion rather than to atomic displacement, and the near-sixty input angles are preserved as supplied rather than idealized away."
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "reasoning_stream": {
+    "chunks": 256,
+    "characters": 2583
+  },
+  "usage": {
+    "completion_tokens": 1154,
+    "prompt_tokens": 2107,
+    "total_tokens": 3261,
+    "completion_tokens_details": {
+      "reasoning_tokens": 579
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "cache_creation_input_tokens": 0
+    }
+  }
+}

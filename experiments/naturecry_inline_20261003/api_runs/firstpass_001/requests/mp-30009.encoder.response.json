@@ -1,0 +1,33 @@
+{
+  "id": "c4a07291-724f-4eee-9db9-225d8061e4ea",
+  "created": 1791047023,
+  "model": "tokenhub/kimi-k3",
+  "object": "chat.completion",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "The crystal is described in space group number [[param:space_group.number]], with the Hall symbol [[param:space_group.hall]]. The input structure contains [[param:input.atom_count]] atoms in total, comprising [[param:composition.Kr]] and [[param:composition.F]].\n\nThe original input cell is specified by lattice parameters [[param:cell.a]], [[param:cell.b]], and [[param:cell.c]], with interaxial angles [[param:cell.alpha]], [[param:cell.beta]], and [[param:cell.gamma]]. This input cell is transformed into the standard crystallographic frame using the matrix [[param:frame.matrix]] together with the origin shift [[param:frame.origin_shift]]. Fractional coordinates in the input description are rounded to [[param:round_digits]] decimal places.\n\nIn the standard frame, the independent atomic content is represented by two Wyckoff orbits. The krypton atoms occupy orbit [[param:orbit.o000.id]], with element [[param:orbit.o000.element]] on Wyckoff position [[param:orbit.o000.wyckoff]]. The fluorine atoms occupy orbit [[param:orbit.o001.id]], with element [[param:orbit.o001.element]] on Wyckoff position [[param:orbit.o001.wyckoff]], and this orbit carries the free coordinate [[param:orbit.o001.parameters]]. No precision corrections are supplied, so the description contains no additional deviations from the idealized backbone beyond the stated structural parameters.",
+        "role": "assistant",
+        "provider_specific_fields": {
+          "refusal": null
+        }
+      },
+      "provider_specific_fields": {}
+    }
+  ],
+  "usage": {
+    "completion_tokens": 306,
+    "prompt_tokens": 1737,
+    "total_tokens": 2043,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "cache_creation_input_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "job_id": "605807",
+  "submitted_at_utc": "2026-10-05T11:08:51Z",
+  "slurm_script": "experiments/interleaved_relational_20261004/diagnostics/probe_denoising.slurm",
+  "initial_state": {
+    "sacct": "PENDING",
+    "elapsed": "00:00:00",
+    "exit_code": "0:0",
+    "node": null,
+    "squeue_reason": "Priority",
+    "scheduled_node_candidate": "gpu-a100-07",
+    "scheduled_start_time_local_estimate": "2026-10-06T04:14:00+08:00",
+    "time_limit": "01:00:00"
+  },
+  "source_sha256": {
+    "diagnostics/probe_denoising.py": "c06e65d55795260ce3012f25301ca07c5911fed4846a4e4daa9361e9a1545f74",
+    "diagnostics/probe_denoising.slurm": "a93df0270ed890677ff7385150cc07dd572ecb58ef67b1c5ad4d2d1744c199e8",
+    "diagnostics/PROTOCOL_DENOISING_DIAGNOSTIC.md": "e5531edaf7ecdc66b31967c0e6e082236d6598afc2332b6b7512c94bafe3bb4b",
+    "q2_coverage_preparation/source_snapshot/run.py": "9f5881028177c3b527ea064198b91ae73600894801960113aec2e8ffcea8ab50",
+    "model.py": "036ac4d4fc08437e2325c31265fceb08a573d8c703a1ca551c4f921541345406",
+    "prepare.py": "07ac45cb3ae5ab086fed460fc957afcc94e1988011161a4d0178b388b1769f14",
+    "score.py": "3c1760481872726d798dd18ec4fb3557d6940e669e4c4d818a07da276d9c477a",
+    "data_pilot_001/manifest.json": "b8c290dd64f210dd469b83cbf41ad321ae4d7c5c40303c70e8cda0e4335cd0c3",
+    "data_pilot_001/records.jsonl": "ef2ec2dcdee1d73c62e48987a9cec86a4db3076f9c48d9ab17b8745b9eca785f",
+    "pilot_002/hybrid_shift/status.json": "886bd137c9b9e93d23c8fa3105243be46a1f6d1e377469b04868427f6aae3cd7",
+    "pilot_002/hybrid_shift/checkpoint_receipt.json": "cf1d89ece702360cfee9b8bf23be26d2758302989a9ac12efa8e9891f21d41a4"
+  },
+  "checkpoint": {
+    "path": "experiments/interleaved_relational_20261004/pilot_002/hybrid_shift/checkpoint.pt",
+    "stat_bytes": 5926264716,
+    "sha256_expected": "3e1b0e30b5d7edc147e11b1b975959835cad60587f1aa5aafc8ca54b0cdf25a2",
+    "sha256_actual": null,
+    "full_sha256_verified_on_compute": false
+  },
+  "runtime_environment": {
+    "python_executable": "/gpfs1/scratch/chenggui2/CrystalDLM/experiments/interleaved_ar_diffusion_20261002/env/bin/python",
+    "python_version": "3.10.18",
+    "torch": "2.2.0+cu121",
+    "transformers": "4.57.6",
+    "numpy": "1.26.4",
+    "pyxtal": "1.0.8",
+    "pymatgen": "2025.10.7",
+    "spglib": "2.7.0",
+    "scipy": "1.15.3",
+    "scipy_file": "/home/chenggui2/scratch/anaconda3/envs/matgl/lib/python3.10/site-packages/scipy/__init__.py"
+  },
+  "preflight": {
+    "diagnostic_output_absent_before_submission": true,
+    "source_hashes_match_on_remote": true,
+    "frozen_helper_present_and_matches": true,
+    "core_and_data_hashes_match": true,
+    "status_and_checkpoint_receipt_match_local": true,
+    "checkpoint_present_for_runtime_guard": true
+  }
+}

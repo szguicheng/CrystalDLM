@@ -1,0 +1,1451 @@
+{
+  "status": "complete",
+  "checkpoint_config": {
+    "mode": "hybrid",
+    "phase": "warmup",
+    "feedback": false,
+    "updates": 600,
+    "seed": 17,
+    "status": "trained",
+    "initial_fingerprint": "6bffa202d8485a6ee8bce3553044c9657948e25be702a45a9efb860ced9d1429",
+    "warm_fingerprint": null,
+    "slurm_job": "600420",
+    "host": "gpu-a100-05",
+    "gpu": "NVIDIA A100-SXM4-80GB",
+    "noise_policy": "50% full MASK; remaining uniform 16..31",
+    "source_sha256": {
+      "diagnose.py": "04f551667b8e3fd0b6be79b997e9ac4ca0ea11dae76c06c5b3981e42e406b0b9",
+      "model.py": "d7abb6bcc6da9b339408ee928caef4b80a4cf8a40204a0b61b8a68b7c9aca79a",
+      "test_checks.py": "69688c1c8ef0dc1385d481ca1787953891c71dc3a50d35dc72216f929aa6d971",
+      "run.py": "9f0f856357413230acdebf6e9269705e49ccb3be47fc3c8d7ad0a13ce068558f",
+      "prepare.py": "12434c3c231564395a0f7c1c379bb57306f41fe5a38365aa9e81408fa6274925",
+      "score.py": "645184cc388bad2554b4615e63135f27e90e150407335067577375dc41525c0a",
+      "adapt.py": "3e322436f7517f277383cf9538c437569df46d74064bbde84fae782a718935fc"
+    },
+    "completed_updates": 600,
+    "elapsed_seconds": 484.84480315074325,
+    "noise_counts": {
+      "32": 4788,
+      "18": 307,
+      "30": 280,
+      "19": 323,
+      "23": 326,
+      "20": 309,
+      "28": 297,
+      "25": 299,
+      "31": 309,
+      "27": 316,
+      "17": 300,
+      "24": 329,
+      "21": 281,
+      "29": 305,
+      "22": 256,
+      "26": 297,
+      "16": 278
+    },
+    "training_seconds": 484.845655599609,
+    "seconds_per_update_median": 0.8138556289486587,
+    "final_fingerprint": "cc32cb8499e36b08c135b804eea94746cf9087c2f215caa7acc4a8a893ca5749"
+  },
+  "checkpoint_model_code_hash": "d7abb6bcc6da9b339408ee928caef4b80a4cf8a40204a0b61b8a68b7c9aca79a",
+  "diagnostic_code_sha256": "04f551667b8e3fd0b6be79b997e9ac4ca0ea11dae76c06c5b3981e42e406b0b9",
+  "summary": {
+    "16": {
+      "content_top1_accuracy": 1.0,
+      "content_correct": 598,
+      "content_count": 598,
+      "condition_valid": 8,
+      "n": 8
+    },
+    "32": {
+      "content_top1_accuracy": 1.0,
+      "content_correct": 1230,
+      "content_count": 1230,
+      "condition_valid": 8,
+      "n": 8
+    }
+  },
+  "records": [
+    {
+      "id": "mp-4047",
+      "k": 16,
+      "masked_content": {
+        "correct": 69,
+        "count": 69,
+        "accuracy": 1.0
+      },
+      "masked_padding": {
+        "correct": 69,
+        "count": 69,
+        "accuracy": 1.0
+      },
+      "predicted_end_count": 1,
+      "raw_completion": "Cs8Si4F24\nSpacegroup: Fm-3m\nabc: 9.07 9.07 9.07\nangles: 90.00 90.00 90.00\nSites (36)\nCs 0.250 0.250 0.250 8c\nSi 0.000 0.000 0.000 4a\nF 0.810 0.000 0.000 24e<CRYSTAL_END><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD>",
+      "audit": {
+        "valid": true,
+        "reasons": [],
+        "facts": {
+          "formula": "Cs8Si4F24",
+          "counts": {
+            "Cs": 8,
+            "Si": 4,
+            "F": 24
+          },
+          "sg": 225,
+          "lengths": [
+            9.07,
+            9.07,
+            9.07
+          ],
+          "angles": [
+            90.0,
+            90.0,
+            90.0
+          ],
+          "atoms": 36,
+          "declared_atoms": 36,
+          "orbits": 3,
+          "sites": [
+            {
+              "element": "Cs",
+              "coords": [
+                0.25,
+                0.25,
+                0.25
+              ],
+              "label": "8c"
+            },
+            {
+              "element": "Si",
+              "coords": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "label": "4a"
+            },
+            {
+              "element": "F",
+              "coords": [
+                0.81,
+                0.0,
+                0.0
+              ],
+              "label": "24e"
+            }
+          ]
+        },
+        "max_fractional_constraint_error": 0.0,
+        "decoded_atoms": 36,
+        "detected_sg": 225,
+        "decoder_max_representative_shift_A": 4.440892098500626e-16
+      },
+      "condition_valid": true
+    },
+    {
+      "id": "mp-4047",
+      "k": 32,
+      "masked_content": {
+        "correct": 130,
+        "count": 130,
+        "accuracy": 1.0
+      },
+      "masked_padding": {
+        "correct": 125,
+        "count": 125,
+        "accuracy": 1.0
+      },
+      "predicted_end_count": 1,
+      "raw_completion": "Cs8Si4F24\nSpacegroup: Fm-3m\nabc: 9.07 9.07 9.07\nangles: 90.00 90.00 90.00\nSites (36)\nCs 0.250 0.250 0.250 8c\nSi 0.000 0.000 0.000 4a\nF 0.810 0.000 0.000 24e<CRYSTAL_END><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD>",
+      "audit": {
+        "valid": true,
+        "reasons": [],
+        "facts": {
+          "formula": "Cs8Si4F24",
+          "counts": {
+            "Cs": 8,
+            "Si": 4,
+            "F": 24
+          },
+          "sg": 225,
+          "lengths": [
+            9.07,
+            9.07,
+            9.07
+          ],
+          "angles": [
+            90.0,
+            90.0,
+            90.0
+          ],
+          "atoms": 36,
+          "declared_atoms": 36,
+          "orbits": 3,
+          "sites": [
+            {
+              "element": "Cs",
+              "coords": [
+                0.25,
+                0.25,
+                0.25
+              ],
+              "label": "8c"
+            },
+            {
+              "element": "Si",
+              "coords": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "label": "4a"
+            },
+            {
+              "element": "F",
+              "coords": [
+                0.81,
+                0.0,
+                0.0
+              ],
+              "label": "24e"
+            }
+          ]
+        },
+        "max_fractional_constraint_error": 0.0,
+        "decoded_atoms": 36,
+        "detected_sg": 225,
+        "decoder_max_representative_shift_A": 4.440892098500626e-16
+      },
+      "condition_valid": true
+    },
+    {
+      "id": "mp-1205515",
+      "k": 16,
+      "masked_content": {
+        "correct": 81,
+        "count": 81,
+        "accuracy": 1.0
+      },
+      "masked_padding": {
+        "correct": 34,
+        "count": 34,
+        "accuracy": 1.0
+      },
+      "predicted_end_count": 1,
+      "raw_completion": "Er4Co4Si12\nSpacegroup: Cmmm\nabc: 3.92 21.04 3.94\nangles: 90.00 90.00 90.00\nSites (20)\nEr 0.000 0.331 0.500 4j\nCo 0.000 0.109 0.000 4i\nSi 0.000 0.056 0.500 4j\nSi 0.000 0.216 0.000 4i\nSi 0.000 0.444 0.000 4i<CRYSTAL_END><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD>",
+      "audit": {
+        "valid": true,
+        "reasons": [],
+        "facts": {
+          "formula": "Er4Co4Si12",
+          "counts": {
+            "Er": 4,
+            "Co": 4,
+            "Si": 12
+          },
+          "sg": 65,
+          "lengths": [
+            3.92,
+            21.04,
+            3.94
+          ],
+          "angles": [
+            90.0,
+            90.0,
+            90.0
+          ],
+          "atoms": 20,
+          "declared_atoms": 20,
+          "orbits": 5,
+          "sites": [
+            {
+              "element": "Er",
+              "coords": [
+                0.0,
+                0.331,
+                0.5
+              ],
+              "label": "4j"
+            },
+            {
+              "element": "Co",
+              "coords": [
+                0.0,
+                0.109,
+                0.0
+              ],
+              "label": "4i"
+            },
+            {
+              "element": "Si",
+              "coords": [
+                0.0,
+                0.056,
+                0.5
+              ],
+              "label": "4j"
+            },
+            {
+              "element": "Si",
+              "coords": [
+                0.0,
+                0.216,
+                0.0
+              ],
+              "label": "4i"
+            },
+            {
+              "element": "Si",
+              "coords": [
+                0.0,
+                0.444,
+                0.0
+              ],
+              "label": "4i"
+            }
+          ]
+        },
+        "max_fractional_constraint_error": 0.0,
+        "decoded_atoms": 20,
+        "detected_sg": 65,
+        "decoder_max_representative_shift_A": 2.220446049250313e-16
+      },
+      "condition_valid": true
+    },
+    {
+      "id": "mp-1205515",
+      "k": 32,
+      "masked_content": {
+        "correct": 173,
+        "count": 173,
+        "accuracy": 1.0
+      },
+      "masked_padding": {
+        "correct": 82,
+        "count": 82,
+        "accuracy": 1.0
+      },
+      "predicted_end_count": 1,
+      "raw_completion": "Er4Co4Si12\nSpacegroup: Cmmm\nabc: 3.92 21.04 3.94\nangles: 90.00 90.00 90.00\nSites (20)\nEr 0.000 0.331 0.500 4j\nCo 0.000 0.109 0.000 4i\nSi 0.000 0.056 0.500 4j\nSi 0.000 0.216 0.000 4i\nSi 0.000 0.444 0.000 4i<CRYSTAL_END><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD>",
+      "audit": {
+        "valid": true,
+        "reasons": [],
+        "facts": {
+          "formula": "Er4Co4Si12",
+          "counts": {
+            "Er": 4,
+            "Co": 4,
+            "Si": 12
+          },
+          "sg": 65,
+          "lengths": [
+            3.92,
+            21.04,
+            3.94
+          ],
+          "angles": [
+            90.0,
+            90.0,
+            90.0
+          ],
+          "atoms": 20,
+          "declared_atoms": 20,
+          "orbits": 5,
+          "sites": [
+            {
+              "element": "Er",
+              "coords": [
+                0.0,
+                0.331,
+                0.5
+              ],
+              "label": "4j"
+            },
+            {
+              "element": "Co",
+              "coords": [
+                0.0,
+                0.109,
+                0.0
+              ],
+              "label": "4i"
+            },
+            {
+              "element": "Si",
+              "coords": [
+                0.0,
+                0.056,
+                0.5
+              ],
+              "label": "4j"
+            },
+            {
+              "element": "Si",
+              "coords": [
+                0.0,
+                0.216,
+                0.0
+              ],
+              "label": "4i"
+            },
+            {
+              "element": "Si",
+              "coords": [
+                0.0,
+                0.444,
+                0.0
+              ],
+              "label": "4i"
+            }
+          ]
+        },
+        "max_fractional_constraint_error": 0.0,
+        "decoded_atoms": 20,
+        "detected_sg": 65,
+        "decoder_max_representative_shift_A": 2.220446049250313e-16
+      },
+      "condition_valid": true
+    },
+    {
+      "id": "mp-30009",
+      "k": 16,
+      "masked_content": {
+        "correct": 59,
+        "count": 59,
+        "accuracy": 1.0
+      },
+      "masked_padding": {
+        "correct": 91,
+        "count": 91,
+        "accuracy": 1.0
+      },
+      "predicted_end_count": 1,
+      "raw_completion": "Kr2F4\nSpacegroup: I4/mmm\nabc: 4.38 4.38 6.67\nangles: 90.00 90.00 90.00\nSites (6)\nKr 0.000 0.000 0.000 2a\nF 0.000 0.000 0.290 4e<CRYSTAL_END><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD>",
+      "audit": {
+        "valid": true,
+        "reasons": [],
+        "facts": {
+          "formula": "Kr2F4",
+          "counts": {
+            "Kr": 2,
+            "F": 4
+          },
+          "sg": 139,
+          "lengths": [
+            4.38,
+            4.38,
+            6.67
+          ],
+          "angles": [
+            90.0,
+            90.0,
+            90.0
+          ],
+          "atoms": 6,
+          "declared_atoms": 6,
+          "orbits": 2,
+          "sites": [
+            {
+              "element": "Kr",
+              "coords": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "label": "2a"
+            },
+            {
+              "element": "F",
+              "coords": [
+                0.0,
+                0.0,
+                0.29
+              ],
+              "label": "4e"
+            }
+          ]
+        },
+        "max_fractional_constraint_error": 0.0,
+        "decoded_atoms": 6,
+        "detected_sg": 139,
+        "decoder_max_representative_shift_A": 0.0
+      },
+      "condition_valid": true
+    },
+    {
+      "id": "mp-30009",
+      "k": 32,
+      "masked_content": {
+        "correct": 101,
+        "count": 101,
+        "accuracy": 1.0
+      },
+      "masked_padding": {
+        "correct": 154,
+        "count": 154,
+        "accuracy": 1.0
+      },
+      "predicted_end_count": 1,
+      "raw_completion": "Kr2F4\nSpacegroup: I4/mmm\nabc: 4.38 4.38 6.67\nangles: 90.00 90.00 90.00\nSites (6)\nKr 0.000 0.000 0.000 2a\nF 0.000 0.000 0.290 4e<CRYSTAL_END><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD>",
+      "audit": {
+        "valid": true,
+        "reasons": [],
+        "facts": {
+          "formula": "Kr2F4",
+          "counts": {
+            "Kr": 2,
+            "F": 4
+          },
+          "sg": 139,
+          "lengths": [
+            4.38,
+            4.38,
+            6.67
+          ],
+          "angles": [
+            90.0,
+            90.0,
+            90.0
+          ],
+          "atoms": 6,
+          "declared_atoms": 6,
+          "orbits": 2,
+          "sites": [
+            {
+              "element": "Kr",
+              "coords": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "label": "2a"
+            },
+            {
+              "element": "F",
+              "coords": [
+                0.0,
+                0.0,
+                0.29
+              ],
+              "label": "4e"
+            }
+          ]
+        },
+        "max_fractional_constraint_error": 0.0,
+        "decoded_atoms": 6,
+        "detected_sg": 139,
+        "decoder_max_representative_shift_A": 0.0
+      },
+      "condition_valid": true
+    },
+    {
+      "id": "mp-1188285",
+      "k": 16,
+      "masked_content": {
+        "correct": 73,
+        "count": 73,
+        "accuracy": 1.0
+      },
+      "masked_padding": {
+        "correct": 55,
+        "count": 55,
+        "accuracy": 1.0
+      },
+      "predicted_end_count": 1,
+      "raw_completion": "Ho4Ga12\nSpacegroup: P63/mmc\nabc: 6.16 6.16 9.53\nangles: 90.00 90.00 120.00\nSites (16)\nHo 0.000 0.000 0.000 2a\nHo 0.333 0.667 0.250 2c\nGa 0.500 0.000 0.000 6g\nGa 0.814 1.629 0.250 6h<CRYSTAL_END><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD>",
+      "audit": {
+        "valid": true,
+        "reasons": [],
+        "facts": {
+          "formula": "Ho4Ga12",
+          "counts": {
+            "Ho": 4,
+            "Ga": 12
+          },
+          "sg": 194,
+          "lengths": [
+            6.16,
+            6.16,
+            9.53
+          ],
+          "angles": [
+            90.0,
+            90.0,
+            120.0
+          ],
+          "atoms": 16,
+          "declared_atoms": 16,
+          "orbits": 4,
+          "sites": [
+            {
+              "element": "Ho",
+              "coords": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "label": "2a"
+            },
+            {
+              "element": "Ho",
+              "coords": [
+                0.333,
+                0.667,
+                0.25
+              ],
+              "label": "2c"
+            },
+            {
+              "element": "Ga",
+              "coords": [
+                0.5,
+                0.0,
+                0.0
+              ],
+              "label": "6g"
+            },
+            {
+              "element": "Ga",
+              "coords": [
+                0.814,
+                1.629,
+                0.25
+              ],
+              "label": "6h"
+            }
+          ]
+        },
+        "max_fractional_constraint_error": 0.001000000000000112,
+        "decoded_atoms": 16,
+        "detected_sg": 194,
+        "decoder_max_representative_shift_A": 0.0061600000000008315
+      },
+      "condition_valid": true
+    },
+    {
+      "id": "mp-1188285",
+      "k": 32,
+      "masked_content": {
+        "correct": 151,
+        "count": 151,
+        "accuracy": 1.0
+      },
+      "masked_padding": {
+        "correct": 104,
+        "count": 104,
+        "accuracy": 1.0
+      },
+      "predicted_end_count": 1,
+      "raw_completion": "Ho4Ga12\nSpacegroup: P63/mmc\nabc: 6.16 6.16 9.53\nangles: 90.00 90.00 120.00\nSites (16)\nHo 0.000 0.000 0.000 2a\nHo 0.333 0.667 0.250 2c\nGa 0.500 0.000 0.000 6g\nGa 0.814 1.629 0.250 6h<CRYSTAL_END><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD>",
+      "audit": {
+        "valid": true,
+        "reasons": [],
+        "facts": {
+          "formula": "Ho4Ga12",
+          "counts": {
+            "Ho": 4,
+            "Ga": 12
+          },
+          "sg": 194,
+          "lengths": [
+            6.16,
+            6.16,
+            9.53
+          ],
+          "angles": [
+            90.0,
+            90.0,
+            120.0
+          ],
+          "atoms": 16,
+          "declared_atoms": 16,
+          "orbits": 4,
+          "sites": [
+            {
+              "element": "Ho",
+              "coords": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "label": "2a"
+            },
+            {
+              "element": "Ho",
+              "coords": [
+                0.333,
+                0.667,
+                0.25
+              ],
+              "label": "2c"
+            },
+            {
+              "element": "Ga",
+              "coords": [
+                0.5,
+                0.0,
+                0.0
+              ],
+              "label": "6g"
+            },
+            {
+              "element": "Ga",
+              "coords": [
+                0.814,
+                1.629,
+                0.25
+              ],
+              "label": "6h"
+            }
+          ]
+        },
+        "max_fractional_constraint_error": 0.001000000000000112,
+        "decoded_atoms": 16,
+        "detected_sg": 194,
+        "decoder_max_representative_shift_A": 0.0061600000000008315
+      },
+      "condition_valid": true
+    },
+    {
+      "id": "mp-979266",
+      "k": 16,
+      "masked_content": {
+        "correct": 56,
+        "count": 56,
+        "accuracy": 1.0
+      },
+      "masked_padding": {
+        "correct": 76,
+        "count": 76,
+        "accuracy": 1.0
+      },
+      "predicted_end_count": 1,
+      "raw_completion": "Sm6Al2\nSpacegroup: P63/mmc\nabc: 7.02 7.02 5.37\nangles: 90.00 90.00 120.00\nSites (8)\nSm 0.177 0.354 0.250 6h\nAl 0.333 0.667 0.750 2d<CRYSTAL_END><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD>",
+      "audit": {
+        "valid": true,
+        "reasons": [],
+        "facts": {
+          "formula": "Sm6Al2",
+          "counts": {
+            "Sm": 6,
+            "Al": 2
+          },
+          "sg": 194,
+          "lengths": [
+            7.02,
+            7.02,
+            5.37
+          ],
+          "angles": [
+            90.0,
+            90.0,
+            120.0
+          ],
+          "atoms": 8,
+          "declared_atoms": 8,
+          "orbits": 2,
+          "sites": [
+            {
+              "element": "Sm",
+              "coords": [
+                0.177,
+                0.354,
+                0.25
+              ],
+              "label": "6h"
+            },
+            {
+              "element": "Al",
+              "coords": [
+                0.333,
+                0.667,
+                0.75
+              ],
+              "label": "2d"
+            }
+          ]
+        },
+        "max_fractional_constraint_error": 0.00033333333333340764,
+        "decoded_atoms": 8,
+        "detected_sg": 194,
+        "decoder_max_representative_shift_A": 0.0040529988897110725
+      },
+      "condition_valid": true
+    },
+    {
+      "id": "mp-979266",
+      "k": 32,
+      "masked_content": {
+        "correct": 103,
+        "count": 103,
+        "accuracy": 1.0
+      },
+      "masked_padding": {
+        "correct": 152,
+        "count": 152,
+        "accuracy": 1.0
+      },
+      "predicted_end_count": 1,
+      "raw_completion": "Sm6Al2\nSpacegroup: P63/mmc\nabc: 7.02 7.02 5.37\nangles: 90.00 90.00 120.00\nSites (8)\nSm 0.177 0.354 0.250 6h\nAl 0.333 0.667 0.750 2d<CRYSTAL_END><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD>",
+      "audit": {
+        "valid": true,
+        "reasons": [],
+        "facts": {
+          "formula": "Sm6Al2",
+          "counts": {
+            "Sm": 6,
+            "Al": 2
+          },
+          "sg": 194,
+          "lengths": [
+            7.02,
+            7.02,
+            5.37
+          ],
+          "angles": [
+            90.0,
+            90.0,
+            120.0
+          ],
+          "atoms": 8,
+          "declared_atoms": 8,
+          "orbits": 2,
+          "sites": [
+            {
+              "element": "Sm",
+              "coords": [
+                0.177,
+                0.354,
+                0.25
+              ],
+              "label": "6h"
+            },
+            {
+              "element": "Al",
+              "coords": [
+                0.333,
+                0.667,
+                0.75
+              ],
+              "label": "2d"
+            }
+          ]
+        },
+        "max_fractional_constraint_error": 0.00033333333333340764,
+        "decoded_atoms": 8,
+        "detected_sg": 194,
+        "decoder_max_representative_shift_A": 0.0040529988897110725
+      },
+      "condition_valid": true
+    },
+    {
+      "id": "mp-1207068",
+      "k": 16,
+      "masked_content": {
+        "correct": 118,
+        "count": 118,
+        "accuracy": 1.0
+      },
+      "masked_padding": {
+        "correct": 20,
+        "count": 20,
+        "accuracy": 1.0
+      },
+      "predicted_end_count": 1,
+      "raw_completion": "Ba1Dy1Fe1Cu1O5\nSpacegroup: P4mm\nabc: 3.89 3.89 7.96\nangles: 90.00 90.00 90.00\nSites (9)\nBa 0.500 0.500 0.745 1b\nDy 0.500 0.500 0.209 1b\nFe 0.000 0.000 0.450 1a\nCu 0.000 0.000 0.999 1a\nO 0.500 0.000 0.022 2c\nO 0.500 0.000 0.379 2c\nO 0.000 0.000 0.685 1a<CRYSTAL_END><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD>",
+      "audit": {
+        "valid": true,
+        "reasons": [],
+        "facts": {
+          "formula": "Ba1Dy1Fe1Cu1O5",
+          "counts": {
+            "Ba": 1,
+            "Dy": 1,
+            "Fe": 1,
+            "Cu": 1,
+            "O": 5
+          },
+          "sg": 99,
+          "lengths": [
+            3.89,
+            3.89,
+            7.96
+          ],
+          "angles": [
+            90.0,
+            90.0,
+            90.0
+          ],
+          "atoms": 9,
+          "declared_atoms": 9,
+          "orbits": 7,
+          "sites": [
+            {
+              "element": "Ba",
+              "coords": [
+                0.5,
+                0.5,
+                0.745
+              ],
+              "label": "1b"
+            },
+            {
+              "element": "Dy",
+              "coords": [
+                0.5,
+                0.5,
+                0.209
+              ],
+              "label": "1b"
+            },
+            {
+              "element": "Fe",
+              "coords": [
+                0.0,
+                0.0,
+                0.45
+              ],
+              "label": "1a"
+            },
+            {
+              "element": "Cu",
+              "coords": [
+                0.0,
+                0.0,
+                0.999
+              ],
+              "label": "1a"
+            },
+            {
+              "element": "O",
+              "coords": [
+                0.5,
+                0.0,
+                0.022
+              ],
+              "label": "2c"
+            },
+            {
+              "element": "O",
+              "coords": [
+                0.5,
+                0.0,
+                0.379
+              ],
+              "label": "2c"
+            },
+            {
+              "element": "O",
+              "coords": [
+                0.0,
+                0.0,
+                0.685
+              ],
+              "label": "1a"
+            }
+          ]
+        },
+        "max_fractional_constraint_error": 0.0,
+        "decoded_atoms": 9,
+        "detected_sg": 99,
+        "decoder_max_representative_shift_A": 8.881784197001252e-16
+      },
+      "condition_valid": true
+    },
+    {
+      "id": "mp-1207068",
+      "k": 32,
+      "masked_content": {
+        "correct": 223,
+        "count": 223,
+        "accuracy": 1.0
+      },
+      "masked_padding": {
+        "correct": 32,
+        "count": 32,
+        "accuracy": 1.0
+      },
+      "predicted_end_count": 1,
+      "raw_completion": "Ba1Dy1Fe1Cu1O5\nSpacegroup: P4mm\nabc: 3.89 3.89 7.96\nangles: 90.00 90.00 90.00\nSites (9)\nBa 0.500 0.500 0.745 1b\nDy 0.500 0.500 0.209 1b\nFe 0.000 0.000 0.450 1a\nCu 0.000 0.000 0.999 1a\nO 0.500 0.000 0.022 2c\nO 0.500 0.000 0.379 2c\nO 0.000 0.000 0.685 1a<CRYSTAL_END><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD>",
+      "audit": {
+        "valid": true,
+        "reasons": [],
+        "facts": {
+          "formula": "Ba1Dy1Fe1Cu1O5",
+          "counts": {
+            "Ba": 1,
+            "Dy": 1,
+            "Fe": 1,
+            "Cu": 1,
+            "O": 5
+          },
+          "sg": 99,
+          "lengths": [
+            3.89,
+            3.89,
+            7.96
+          ],
+          "angles": [
+            90.0,
+            90.0,
+            90.0
+          ],
+          "atoms": 9,
+          "declared_atoms": 9,
+          "orbits": 7,
+          "sites": [
+            {
+              "element": "Ba",
+              "coords": [
+                0.5,
+                0.5,
+                0.745
+              ],
+              "label": "1b"
+            },
+            {
+              "element": "Dy",
+              "coords": [
+                0.5,
+                0.5,
+                0.209
+              ],
+              "label": "1b"
+            },
+            {
+              "element": "Fe",
+              "coords": [
+                0.0,
+                0.0,
+                0.45
+              ],
+              "label": "1a"
+            },
+            {
+              "element": "Cu",
+              "coords": [
+                0.0,
+                0.0,
+                0.999
+              ],
+              "label": "1a"
+            },
+            {
+              "element": "O",
+              "coords": [
+                0.5,
+                0.0,
+                0.022
+              ],
+              "label": "2c"
+            },
+            {
+              "element": "O",
+              "coords": [
+                0.5,
+                0.0,
+                0.379
+              ],
+              "label": "2c"
+            },
+            {
+              "element": "O",
+              "coords": [
+                0.0,
+                0.0,
+                0.685
+              ],
+              "label": "1a"
+            }
+          ]
+        },
+        "max_fractional_constraint_error": 0.0,
+        "decoded_atoms": 9,
+        "detected_sg": 99,
+        "decoder_max_representative_shift_A": 8.881784197001252e-16
+      },
+      "condition_valid": true
+    },
+    {
+      "id": "mp-1205902",
+      "k": 16,
+      "masked_content": {
+        "correct": 73,
+        "count": 73,
+        "accuracy": 1.0
+      },
+      "masked_padding": {
+        "correct": 37,
+        "count": 37,
+        "accuracy": 1.0
+      },
+      "predicted_end_count": 1,
+      "raw_completion": "Li5Cu2Ge2\nSpacegroup: P-3m1\nabc: 4.23 4.23 8.06\nangles: 90.00 90.00 120.00\nSites (9)\nLi 0.333 0.667 0.114 2d\nLi 0.333 0.667 0.431 2d\nLi 0.000 0.000 0.000 1a\nCu 0.000 0.000 0.308 2c\nGe 0.333 0.667 0.759 2d<CRYSTAL_END><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD>",
+      "audit": {
+        "valid": true,
+        "reasons": [],
+        "facts": {
+          "formula": "Li5Cu2Ge2",
+          "counts": {
+            "Li": 5,
+            "Cu": 2,
+            "Ge": 2
+          },
+          "sg": 164,
+          "lengths": [
+            4.23,
+            4.23,
+            8.06
+          ],
+          "angles": [
+            90.0,
+            90.0,
+            120.0
+          ],
+          "atoms": 9,
+          "declared_atoms": 9,
+          "orbits": 5,
+          "sites": [
+            {
+              "element": "Li",
+              "coords": [
+                0.333,
+                0.667,
+                0.114
+              ],
+              "label": "2d"
+            },
+            {
+              "element": "Li",
+              "coords": [
+                0.333,
+                0.667,
+                0.431
+              ],
+              "label": "2d"
+            },
+            {
+              "element": "Li",
+              "coords": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "label": "1a"
+            },
+            {
+              "element": "Cu",
+              "coords": [
+                0.0,
+                0.0,
+                0.308
+              ],
+              "label": "2c"
+            },
+            {
+              "element": "Ge",
+              "coords": [
+                0.333,
+                0.667,
+                0.759
+              ],
+              "label": "2d"
+            }
+          ]
+        },
+        "max_fractional_constraint_error": 0.00033333333333340764,
+        "decoded_atoms": 9,
+        "detected_sg": 164,
+        "decoder_max_representative_shift_A": 0.002442191638672326
+      },
+      "condition_valid": true
+    },
+    {
+      "id": "mp-1205902",
+      "k": 32,
+      "masked_content": {
+        "correct": 174,
+        "count": 174,
+        "accuracy": 1.0
+      },
+      "masked_padding": {
+        "correct": 81,
+        "count": 81,
+        "accuracy": 1.0
+      },
+      "predicted_end_count": 1,
+      "raw_completion": "Li5Cu2Ge2\nSpacegroup: P-3m1\nabc: 4.23 4.23 8.06\nangles: 90.00 90.00 120.00\nSites (9)\nLi 0.333 0.667 0.114 2d\nLi 0.333 0.667 0.431 2d\nLi 0.000 0.000 0.000 1a\nCu 0.000 0.000 0.308 2c\nGe 0.333 0.667 0.759 2d<CRYSTAL_END><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD>",
+      "audit": {
+        "valid": true,
+        "reasons": [],
+        "facts": {
+          "formula": "Li5Cu2Ge2",
+          "counts": {
+            "Li": 5,
+            "Cu": 2,
+            "Ge": 2
+          },
+          "sg": 164,
+          "lengths": [
+            4.23,
+            4.23,
+            8.06
+          ],
+          "angles": [
+            90.0,
+            90.0,
+            120.0
+          ],
+          "atoms": 9,
+          "declared_atoms": 9,
+          "orbits": 5,
+          "sites": [
+            {
+              "element": "Li",
+              "coords": [
+                0.333,
+                0.667,
+                0.114
+              ],
+              "label": "2d"
+            },
+            {
+              "element": "Li",
+              "coords": [
+                0.333,
+                0.667,
+                0.431
+              ],
+              "label": "2d"
+            },
+            {
+              "element": "Li",
+              "coords": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "label": "1a"
+            },
+            {
+              "element": "Cu",
+              "coords": [
+                0.0,
+                0.0,
+                0.308
+              ],
+              "label": "2c"
+            },
+            {
+              "element": "Ge",
+              "coords": [
+                0.333,
+                0.667,
+                0.759
+              ],
+              "label": "2d"
+            }
+          ]
+        },
+        "max_fractional_constraint_error": 0.00033333333333340764,
+        "decoded_atoms": 9,
+        "detected_sg": 164,
+        "decoder_max_representative_shift_A": 0.002442191638672326
+      },
+      "condition_valid": true
+    },
+    {
+      "id": "mp-1229077",
+      "k": 16,
+      "masked_content": {
+        "correct": 69,
+        "count": 69,
+        "accuracy": 1.0
+      },
+      "masked_padding": {
+        "correct": 43,
+        "count": 43,
+        "accuracy": 1.0
+      },
+      "predicted_end_count": 1,
+      "raw_completion": "Al2In2Cu4S8\nSpacegroup: I-4\nabc: 5.47 5.47 10.84\nangles: 90.00 90.00 90.00\nSites (16)\nAl 0.000 0.500 0.250 2c\nIn 0.000 0.000 0.500 2b\nCu 0.000 0.500 0.750 2d\nCu 0.000 0.000 0.000 2a\nS 0.743 0.732 0.367 8g<CRYSTAL_END><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD>",
+      "audit": {
+        "valid": true,
+        "reasons": [],
+        "facts": {
+          "formula": "Al2In2Cu4S8",
+          "counts": {
+            "Al": 2,
+            "In": 2,
+            "Cu": 4,
+            "S": 8
+          },
+          "sg": 82,
+          "lengths": [
+            5.47,
+            5.47,
+            10.84
+          ],
+          "angles": [
+            90.0,
+            90.0,
+            90.0
+          ],
+          "atoms": 16,
+          "declared_atoms": 16,
+          "orbits": 5,
+          "sites": [
+            {
+              "element": "Al",
+              "coords": [
+                0.0,
+                0.5,
+                0.25
+              ],
+              "label": "2c"
+            },
+            {
+              "element": "In",
+              "coords": [
+                0.0,
+                0.0,
+                0.5
+              ],
+              "label": "2b"
+            },
+            {
+              "element": "Cu",
+              "coords": [
+                0.0,
+                0.5,
+                0.75
+              ],
+              "label": "2d"
+            },
+            {
+              "element": "Cu",
+              "coords": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "label": "2a"
+            },
+            {
+              "element": "S",
+              "coords": [
+                0.743,
+                0.732,
+                0.367
+              ],
+              "label": "8g"
+            }
+          ]
+        },
+        "max_fractional_constraint_error": 0.0,
+        "decoded_atoms": 16,
+        "detected_sg": 82,
+        "decoder_max_representative_shift_A": 8.881784197001252e-16
+      },
+      "condition_valid": true
+    },
+    {
+      "id": "mp-1229077",
+      "k": 32,
+      "masked_content": {
+        "correct": 175,
+        "count": 175,
+        "accuracy": 1.0
+      },
+      "masked_padding": {
+        "correct": 80,
+        "count": 80,
+        "accuracy": 1.0
+      },
+      "predicted_end_count": 1,
+      "raw_completion": "Al2In2Cu4S8\nSpacegroup: I-4\nabc: 5.47 5.47 10.84\nangles: 90.00 90.00 90.00\nSites (16)\nAl 0.000 0.500 0.250 2c\nIn 0.000 0.000 0.500 2b\nCu 0.000 0.500 0.750 2d\nCu 0.000 0.000 0.000 2a\nS 0.743 0.732 0.367 8g<CRYSTAL_END><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD>",
+      "audit": {
+        "valid": true,
+        "reasons": [],
+        "facts": {
+          "formula": "Al2In2Cu4S8",
+          "counts": {
+            "Al": 2,
+            "In": 2,
+            "Cu": 4,
+            "S": 8
+          },
+          "sg": 82,
+          "lengths": [
+            5.47,
+            5.47,
+            10.84
+          ],
+          "angles": [
+            90.0,
+            90.0,
+            90.0
+          ],
+          "atoms": 16,
+          "declared_atoms": 16,
+          "orbits": 5,
+          "sites": [
+            {
+              "element": "Al",
+              "coords": [
+                0.0,
+                0.5,
+                0.25
+              ],
+              "label": "2c"
+            },
+            {
+              "element": "In",
+              "coords": [
+                0.0,
+                0.0,
+                0.5
+              ],
+              "label": "2b"
+            },
+            {
+              "element": "Cu",
+              "coords": [
+                0.0,
+                0.5,
+                0.75
+              ],
+              "label": "2d"
+            },
+            {
+              "element": "Cu",
+              "coords": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "label": "2a"
+            },
+            {
+              "element": "S",
+              "coords": [
+                0.743,
+                0.732,
+                0.367
+              ],
+              "label": "8g"
+            }
+          ]
+        },
+        "max_fractional_constraint_error": 0.0,
+        "decoded_atoms": 16,
+        "detected_sg": 82,
+        "decoder_max_representative_shift_A": 8.881784197001252e-16
+      },
+      "condition_valid": true
+    }
+  ],
+  "elapsed_seconds": 1.4356535570695996,
+  "slurm_job": "600420",
+  "note": "Teacher reference lead is supplied; k16 includes visible gold tokens. Diagnostic does not replace any official sampling result."
+}

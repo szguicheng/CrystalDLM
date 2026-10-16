@@ -1,0 +1,45 @@
+{
+  "replication": {
+    "selected": 6620,
+    "ready": 5343,
+    "no_internal_dof": 1274,
+    "failed": 3,
+    "details": [
+      {
+        "id": "mp-756095",
+        "reproduced_failure": true,
+        "stage": "standardization_and_graph_codec",
+        "type": "AssertionError",
+        "message": "site matching is not unique",
+        "file": "symmetry_graph_codec.py",
+        "line": 26,
+        "expression": "assert np.all(matching.sum(-1) == 1), 'site matching is not unique'"
+      },
+      {
+        "id": "mp-19303",
+        "reproduced_failure": true,
+        "stage": "standardization_and_graph_codec",
+        "type": "AssertionError",
+        "message": "site matching is not unique",
+        "file": "symmetry_graph_codec.py",
+        "line": 26,
+        "expression": "assert np.all(matching.sum(-1) == 1), 'site matching is not unique'"
+      },
+      {
+        "id": "mp-675376",
+        "reproduced_failure": true,
+        "stage": "standardization_and_graph_codec",
+        "type": "AssertionError",
+        "message": "site matching is not unique",
+        "file": "symmetry_graph_codec.py",
+        "line": 26,
+        "expression": "assert np.all(matching.sum(-1) == 1), 'site matching is not unique'"
+      }
+    ],
+    "failure_groups": {
+      "standardization_and_graph_codec|AssertionError|assert np.all(matching.sum(-1) == 1), 'site matching is not unique'": 3
+    }
+  },
+  "membership_changed": false,
+  "job_id": "534769"
+}

@@ -1,0 +1,269 @@
+{
+  "scope": "Complete seen8 only; heldout and terminal evaluation invariants pending",
+  "raw_sha256": "cc2c205d1db4de9ff6ead06ebfb5f59014774873e055a7682d9aa5546945690b",
+  "n": 8,
+  "root_native_CPU_grader_checks": 47,
+  "counts": {
+    "G": 5,
+    "Q_reference": 8,
+    "E_reference": 7,
+    "closed_loop": 5,
+    "flow_complete": 5,
+    "Q_swap": 8,
+    "Q_no_crystal": 0
+  },
+  "baseline_counts": {
+    "G": 5,
+    "Q_reference": 7,
+    "E_reference": 8,
+    "closed_loop": 0,
+    "flow_complete": 5,
+    "Q_swap": 0,
+    "Q_no_crystal": 0
+  },
+  "replacement_unique_structure_count": 2,
+  "all_valid_C1_exact_training_reference": false,
+  "rows": [
+    {
+      "id": "anchor_Tb8Mg4",
+      "G": true,
+      "loop": true,
+      "Q_swap": true,
+      "failure_classes": [],
+      "generation_raw_boundary": {
+        "K": 2560,
+        "END_count": 1,
+        "END_position": 405
+      },
+      "reference_edit_raw_boundary": {
+        "K": 2560,
+        "END_count": 1,
+        "END_position": 411
+      },
+      "actual_edit_raw_boundary": {
+        "K": 2560,
+        "END_count": 1,
+        "END_position": 411
+      },
+      "C1_exact_training_reference": true,
+      "actual_Q1_E_Q2_regraded": true,
+      "Q2_differs_from_Q1": true
+    },
+    {
+      "id": "anchor_Li8V4Ni4O16",
+      "G": true,
+      "loop": true,
+      "Q_swap": true,
+      "failure_classes": [],
+      "generation_raw_boundary": {
+        "K": 2560,
+        "END_count": 1,
+        "END_position": 607
+      },
+      "reference_edit_raw_boundary": {
+        "K": 2560,
+        "END_count": 1,
+        "END_position": 613
+      },
+      "actual_edit_raw_boundary": {
+        "K": 2560,
+        "END_count": 1,
+        "END_position": 613
+      },
+      "C1_exact_training_reference": true,
+      "actual_Q1_E_Q2_regraded": true,
+      "Q2_differs_from_Q1": true
+    },
+    {
+      "id": "mp-4047",
+      "G": false,
+      "loop": false,
+      "Q_swap": true,
+      "failure_classes": [
+        {
+          "stage": "G",
+          "kind": "generation_audit",
+          "reasons": [
+            "GateError: Input cell sentence is missing or malformed"
+          ]
+        },
+        {
+          "stage": "closed_loop",
+          "kind": "skipped_invalid_generated_c1"
+        }
+      ],
+      "generation_raw_boundary": {
+        "K": 2560,
+        "END_count": 1,
+        "END_position": 688
+      },
+      "reference_edit_raw_boundary": {
+        "K": 2560,
+        "END_count": 1,
+        "END_position": 698
+      }
+    },
+    {
+      "id": "mp-1205515",
+      "G": false,
+      "loop": false,
+      "Q_swap": true,
+      "failure_classes": [
+        {
+          "stage": "G",
+          "kind": "generation_audit",
+          "reasons": [
+            "GateError: Standard-frame coordinate relation is missing or malformed"
+          ]
+        },
+        {
+          "stage": "E_reference",
+          "kind": "edit_mismatch"
+        },
+        {
+          "stage": "closed_loop",
+          "kind": "skipped_invalid_generated_c1"
+        }
+      ],
+      "generation_raw_boundary": {
+        "K": 2560,
+        "END_count": 1,
+        "END_position": 827
+      },
+      "reference_edit_raw_boundary": {
+        "K": 2560,
+        "END_count": 1,
+        "END_position": 871
+      }
+    },
+    {
+      "id": "mp-30009",
+      "G": true,
+      "loop": true,
+      "Q_swap": true,
+      "failure_classes": [],
+      "generation_raw_boundary": {
+        "K": 2560,
+        "END_count": 1,
+        "END_position": 442
+      },
+      "reference_edit_raw_boundary": {
+        "K": 2560,
+        "END_count": 1,
+        "END_position": 448
+      },
+      "actual_edit_raw_boundary": {
+        "K": 2560,
+        "END_count": 1,
+        "END_position": 448
+      },
+      "C1_exact_training_reference": true,
+      "actual_Q1_E_Q2_regraded": true,
+      "Q2_differs_from_Q1": true
+    },
+    {
+      "id": "mp-1188285",
+      "G": false,
+      "loop": false,
+      "Q_swap": true,
+      "failure_classes": [
+        {
+          "stage": "G",
+          "kind": "generation_audit",
+          "reasons": [
+            "GateError: Public symmetry sentence is missing or malformed"
+          ]
+        },
+        {
+          "stage": "closed_loop",
+          "kind": "skipped_invalid_generated_c1"
+        }
+      ],
+      "generation_raw_boundary": {
+        "K": 2560,
+        "END_count": 1,
+        "END_position": 490
+      },
+      "reference_edit_raw_boundary": {
+        "K": 2560,
+        "END_count": 1,
+        "END_position": 494
+      }
+    },
+    {
+      "id": "mp-1207068",
+      "G": true,
+      "loop": true,
+      "Q_swap": true,
+      "failure_classes": [],
+      "generation_raw_boundary": {
+        "K": 2560,
+        "END_count": 1,
+        "END_position": 758
+      },
+      "reference_edit_raw_boundary": {
+        "K": 2560,
+        "END_count": 1,
+        "END_position": 762
+      },
+      "actual_edit_raw_boundary": {
+        "K": 2560,
+        "END_count": 1,
+        "END_position": 762
+      },
+      "C1_exact_training_reference": true,
+      "actual_Q1_E_Q2_regraded": true,
+      "Q2_differs_from_Q1": true
+    },
+    {
+      "id": "mp-1205902",
+      "G": true,
+      "loop": true,
+      "Q_swap": true,
+      "failure_classes": [],
+      "generation_raw_boundary": {
+        "K": 2560,
+        "END_count": 1,
+        "END_position": 634
+      },
+      "reference_edit_raw_boundary": {
+        "K": 2560,
+        "END_count": 1,
+        "END_position": 645
+      },
+      "actual_edit_raw_boundary": {
+        "K": 2560,
+        "END_count": 1,
+        "END_position": 639
+      },
+      "C1_exact_training_reference": false,
+      "actual_Q1_E_Q2_regraded": true,
+      "Q2_differs_from_Q1": true
+    }
+  ],
+  "C1_training_identity_diagnostic": {
+    "exact_reference_texts": 4,
+    "valid_G": 5,
+    "remaining_case": "mp-1205902",
+    "reference_lattice": [
+      4.22795437,
+      4.22795437,
+      8.056072,
+      90.0,
+      90.0,
+      120.00000582999999
+    ],
+    "generated_lattice": [
+      4.22795437,
+      4.22795437,
+      8.056072,
+      90.0,
+      90.0,
+      120.00000582
+    ],
+    "other_plan_fields_exact": true,
+    "coordinate_error_A": 0.0,
+    "lattice_matrix_error_A": 6.390554752044864e-10,
+    "interpretation": "Four exact reference C1 texts; fifth differs only by about 1e-8 degree gamma. No new-material claim."
+  }
+}

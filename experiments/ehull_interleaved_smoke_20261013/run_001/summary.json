@@ -1,0 +1,52 @@
+{
+  "status": "smoke_complete",
+  "seed": 42,
+  "updates": 20,
+  "microbatch": 2,
+  "learning_rate": 2e-05,
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+  "mode": "hybrid",
+  "prediction_offset": 0,
+  "data": {
+    "manifest_sha256": "aa21f3fbb4e9a19a676d1012405575932134675c3684d336d2c41283a281e741",
+    "train_sha256": "b74afafbca5a52eb1a63c9a7502c9fe1f5055cfef0c25f122de6d140c137080b",
+    "val_sha256": "4e97dbe73aa2c4903aa11c4438f3c7c4da05a87eb1028632f121db4e8cd97f12",
+    "rows": {
+      "rows_checked": 8172,
+      "generation_max_tokens": 804,
+      "crystal_max_tokens_including_end": 531,
+      "reading_max_tokens": 814,
+      "truncation": false
+    }
+  },
+  "checkpoint_roundtrip": {
+    "weights_exact": true,
+    "weights_sha256": "57de25c53a0c67b1bb39520cade4c06df4ae0d817008332602f6cefbb2c3c960",
+    "model_config_exact": true,
+    "base_config_sha256": "e730b470bf65d70917443e1b90d876bbd2c339084295d20fab72edcd1e7a4880",
+    "bytes": 6173560702
+  },
+  "training_seconds": 8.213000623043627,
+  "evaluation_seconds": 28.363604615908116,
+  "finite_gradients": true,
+  "last_update": {
+    "step": 20,
+    "loss": 2.3076579570770264,
+    "text_loss": 0.6671197256073356,
+    "crystal_loss": 3.281076669692993,
+    "grad_norm": 23.02782440185547,
+    "finite_gradients": true,
+    "seconds": 0.2881452767178416
+  },
+  "peak_gpu_memory_mb": 29458.0,
+  "gpu": "NVIDIA A100-SXM4-80GB",
+  "val": {
+    "val_generation_attempts": 3,
+    "lead_trigger_failures": 3,
+    "crystal_block_failures": 0,
+    "parse_valid_crystals": 0,
+    "tail_read_attempts": 0,
+    "tail_read_completed": 0
+  }
+}

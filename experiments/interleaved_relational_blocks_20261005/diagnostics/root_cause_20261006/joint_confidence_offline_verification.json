@@ -1,0 +1,26 @@
+{
+  "source_hashes": {
+    "joint_confidence_eval.py": "1c739713672ed7530f0b1921cf58d85192c36647faa3b3225718d7d808b974f3",
+    "test_joint_confidence_eval.py": "dee39688a6e4c998d37f2e3f7d8d34ed282d8a679aad7c6b8578d446d1eb9ecf",
+    "joint_confidence_eval.slurm": "d698da666cc33535088317a6daeee40c37aaeb0a2030726ce0681fff5c5b5c0f",
+    "joint_inference_source_equality.json": "d29ba6ba3d928c737bb04aa850dc8e89bec0bac48dc8beb499675d599cd3a6b9"
+  },
+  "checks": {
+    "synthetic_receipt_guard": "passed",
+    "actual_frozen_receipt": "passed",
+    "native_runtime_imports": "passed",
+    "equality_receipt": "passed",
+    "bash_syntax": "passed",
+    "Python_AST": "passed"
+  },
+  "scope": "frozenjoint512/B32/weight1, confidencefullKseen8 actualflow plusreference/groundingcontrols; noheldout/optimizer/fallback/repair",
+  "required_GPU_gates": [
+    "750tensor equality againstactualjoint originals",
+    "paired8jointlegacy unoptimized/optimized raw128 token/text/time/release/header",
+    "frozencheckpoint/config/fingerprint beforeafter"
+  ],
+  "GPU": "not_run",
+  "independent_review": "No blocking findings; seen8 reference/grounding controls are intended, actualC1C2 flow retained; heldout disabled",
+  "remote_source_hashes_match": true,
+  "HPC_CPU_receipt_check": "passed"
+}

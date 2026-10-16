@@ -1,0 +1,3578 @@
+{
+  "rule": {
+    "name": "coverage256_metadata_round_robin_v1",
+    "source": "MP20 train CSV public metadata only",
+    "exclude": [
+      "all old100 IDs",
+      "all old100 source CIF SHA-256 values",
+      "element-set matches to any heldout plan composition"
+    ],
+    "bucket": "ascending CSV spacegroup.number",
+    "within_bucket": "ascending SHA256(material_id + seed), then material_id and source row",
+    "round_robin": "one item per ascending space-group bucket per round",
+    "seed": 17,
+    "selection_failures_replaced": false
+  },
+  "source_dataset": "work/PLaID/data/basic/train.csv",
+  "source_dataset_sha256": "133bab58dba02d316f9f91174839f17802dce648be4e8659d1a42b32b97fa01d",
+  "source_rows": 27136,
+  "previous_selection": {
+    "path": "experiments/naturecry_roundtrip_20261001/run_001/selection.json",
+    "sha256": "03527304a32e11c15414e0f368e72c694e754b3add76f660701437b6bf22d54a",
+    "selected": 100
+  },
+  "selected": 224,
+  "exclusions": {
+    "input_rows": 27136,
+    "excluded_rows": 221,
+    "excluded_by_reason": {
+      "old_selection_id": 98,
+      "old_selection_cif_sha256": 98,
+      "heldout_element_set": 139,
+      "duplicate_candidate_id": 0,
+      "duplicate_candidate_cif_sha256": 0
+    },
+    "eligible_unique_rows": 26915,
+    "selected": 224,
+    "unselected_eligible_rows": 26691,
+    "eligible_space_group_count": 169,
+    "eligible_space_groups": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      28,
+      29,
+      31,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      46,
+      47,
+      49,
+      51,
+      52,
+      53,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      74,
+      75,
+      76,
+      77,
+      79,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      92,
+      96,
+      97,
+      98,
+      99,
+      100,
+      102,
+      105,
+      107,
+      108,
+      109,
+      111,
+      112,
+      113,
+      114,
+      115,
+      116,
+      118,
+      119,
+      121,
+      122,
+      123,
+      124,
+      125,
+      127,
+      128,
+      129,
+      130,
+      131,
+      132,
+      136,
+      137,
+      138,
+      139,
+      140,
+      141,
+      142,
+      143,
+      144,
+      146,
+      147,
+      148,
+      149,
+      150,
+      152,
+      153,
+      154,
+      155,
+      156,
+      157,
+      159,
+      160,
+      161,
+      162,
+      163,
+      164,
+      166,
+      167,
+      173,
+      174,
+      176,
+      179,
+      180,
+      181,
+      182,
+      183,
+      186,
+      187,
+      189,
+      190,
+      191,
+      193,
+      194,
+      198,
+      199,
+      200,
+      204,
+      205,
+      212,
+      213,
+      215,
+      216,
+      217,
+      218,
+      220,
+      221,
+      223,
+      224,
+      225,
+      227,
+      229
+    ]
+  },
+  "cases": [
+    {
+      "id": "mp-850876",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 33962,
+      "kind": "MP20_train",
+      "dataset_space_group": 1,
+      "dataset_formula": "VOF3",
+      "composition_elements": [
+        "F",
+        "O",
+        "V"
+      ],
+      "input_cif_sha256": "d6c60cc6ede319135480839ce30e61784b876828010b80f8970ddcbfcd22cbd1",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-850876.cif"
+    },
+    {
+      "id": "mp-24620",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 10767,
+      "kind": "MP20_train",
+      "dataset_space_group": 2,
+      "dataset_formula": "MgMoH2O5",
+      "composition_elements": [
+        "H",
+        "Mg",
+        "Mo",
+        "O"
+      ],
+      "input_cif_sha256": "ec71df299b49fc6fd831181f495601f359b6b5c2d87b787c0c28cae3b8a0bbeb",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-24620.cif"
+    },
+    {
+      "id": "mp-850249",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 41962,
+      "kind": "MP20_train",
+      "dataset_space_group": 3,
+      "dataset_formula": "Fe4S5",
+      "composition_elements": [
+        "Fe",
+        "S"
+      ],
+      "input_cif_sha256": "175df9c8ea144fde578c006ba9a6b5214e18e2792c93c0d70ca19f030879f435",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-850249.cif"
+    },
+    {
+      "id": "mp-1105136",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 7070,
+      "kind": "MP20_train",
+      "dataset_space_group": 4,
+      "dataset_formula": "YTl(PSe3)2",
+      "composition_elements": [
+        "P",
+        "Se",
+        "Tl",
+        "Y"
+      ],
+      "input_cif_sha256": "47669949db412ade88b89cf460389008e70ab1e583f7bb415630ca0fa227a04c",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1105136.cif"
+    },
+    {
+      "id": "mp-1229156",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 23764,
+      "kind": "MP20_train",
+      "dataset_space_group": 5,
+      "dataset_formula": "Cs3(SeO4)2",
+      "composition_elements": [
+        "Cs",
+        "O",
+        "Se"
+      ],
+      "input_cif_sha256": "9607ab853225d383093975b7510d73cb5edbe8df3dfea62906e74fef2a506c24",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1229156.cif"
+    },
+    {
+      "id": "mp-1220260",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 35216,
+      "kind": "MP20_train",
+      "dataset_space_group": 6,
+      "dataset_formula": "Nd3Sm(GaO3)4",
+      "composition_elements": [
+        "Ga",
+        "Nd",
+        "O",
+        "Sm"
+      ],
+      "input_cif_sha256": "4d9348845ab43c2f2e53c0a0e91c94fd26a40b8fe0b18b302daeb75656be5537",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1220260.cif"
+    },
+    {
+      "id": "mp-1568567",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 40810,
+      "kind": "MP20_train",
+      "dataset_space_group": 7,
+      "dataset_formula": "CaLaFeBiO6",
+      "composition_elements": [
+        "Bi",
+        "Ca",
+        "Fe",
+        "La",
+        "O"
+      ],
+      "input_cif_sha256": "32dc29a33169642e908da9fb5ac2fb2eed1b8c5028e9eadb3f9e43b59190893e",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1568567.cif"
+    },
+    {
+      "id": "mp-1276200",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 43758,
+      "kind": "MP20_train",
+      "dataset_space_group": 8,
+      "dataset_formula": "Li3MnOF4",
+      "composition_elements": [
+        "F",
+        "Li",
+        "Mn",
+        "O"
+      ],
+      "input_cif_sha256": "a6ff023791f325c26229a75b3d3be21258633a5c8702a08c7138af6de687a18d",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1276200.cif"
+    },
+    {
+      "id": "mp-38970",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 1834,
+      "kind": "MP20_train",
+      "dataset_space_group": 9,
+      "dataset_formula": "Ga2Te3",
+      "composition_elements": [
+        "Ga",
+        "Te"
+      ],
+      "input_cif_sha256": "29eed542c8e6e95636c47051784cb54818dfe68ec56389beaf8ea6231d0a3f07",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-38970.cif"
+    },
+    {
+      "id": "mp-1251148",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 35786,
+      "kind": "MP20_train",
+      "dataset_space_group": 10,
+      "dataset_formula": "AlF3",
+      "composition_elements": [
+        "Al",
+        "F"
+      ],
+      "input_cif_sha256": "a1be6e802a20de406d329243af817c7996f1ee0abb06759575380164a57dc047",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1251148.cif"
+    },
+    {
+      "id": "mp-625403",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 20381,
+      "kind": "MP20_train",
+      "dataset_space_group": 11,
+      "dataset_formula": "Nd(HO)3",
+      "composition_elements": [
+        "H",
+        "Nd",
+        "O"
+      ],
+      "input_cif_sha256": "106179cb199326e30da42db983f69eab0d8b6fabe54673113e470bf4faa47953",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-625403.cif"
+    },
+    {
+      "id": "mp-1096898",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 42043,
+      "kind": "MP20_train",
+      "dataset_space_group": 12,
+      "dataset_formula": "Cr3N2",
+      "composition_elements": [
+        "Cr",
+        "N"
+      ],
+      "input_cif_sha256": "be2b22cdd9b474a3b139f2569b9f262adbd0a89aa01b632dbb5bc301fce1f330",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1096898.cif"
+    },
+    {
+      "id": "mp-19019",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 25824,
+      "kind": "MP20_train",
+      "dataset_space_group": 13,
+      "dataset_formula": "NiMoO4",
+      "composition_elements": [
+        "Mo",
+        "Ni",
+        "O"
+      ],
+      "input_cif_sha256": "8f6c0d75c17dd604966e99cf32a519d064947ce5e0098d76fc0264682a7f2fde",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-19019.cif"
+    },
+    {
+      "id": "mp-11790",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 14103,
+      "kind": "MP20_train",
+      "dataset_space_group": 14,
+      "dataset_formula": "LaCuSe2",
+      "composition_elements": [
+        "Cu",
+        "La",
+        "Se"
+      ],
+      "input_cif_sha256": "e5d098ec01b39438c64fde03f41355ade628a9f16e05eba306ab18115fe8da6e",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-11790.cif"
+    },
+    {
+      "id": "mp-1188946",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 19127,
+      "kind": "MP20_train",
+      "dataset_space_group": 15,
+      "dataset_formula": "Re2BiO6",
+      "composition_elements": [
+        "Bi",
+        "O",
+        "Re"
+      ],
+      "input_cif_sha256": "79000a377c9790cd27886bc4a5da4ce2da5c026a04b8fa9a6657095e9fd39d1b",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1188946.cif"
+    },
+    {
+      "id": "mp-27462",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 23328,
+      "kind": "MP20_train",
+      "dataset_space_group": 16,
+      "dataset_formula": "AlPS4",
+      "composition_elements": [
+        "Al",
+        "P",
+        "S"
+      ],
+      "input_cif_sha256": "0783cd461f20abb72bb52f4fc3d51d64a1ba198843af633efe0889468effc828",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-27462.cif"
+    },
+    {
+      "id": "mp-19090",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 25306,
+      "kind": "MP20_train",
+      "dataset_space_group": 18,
+      "dataset_formula": "MnTeMoO6",
+      "composition_elements": [
+        "Mn",
+        "Mo",
+        "O",
+        "Te"
+      ],
+      "input_cif_sha256": "53ea4f278099034cc38e7445599e28e36545d9079cc4b547b7f4de9dcec38806",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-19090.cif"
+    },
+    {
+      "id": "mp-625837",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 36880,
+      "kind": "MP20_train",
+      "dataset_space_group": 19,
+      "dataset_formula": "Be(HO)2",
+      "composition_elements": [
+        "Be",
+        "H",
+        "O"
+      ],
+      "input_cif_sha256": "d3b6b12279d5c1d1a5b319ef1fe16e26cddcfc5a58665e3c99650c34bff378d5",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-625837.cif"
+    },
+    {
+      "id": "mp-763240",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 42932,
+      "kind": "MP20_train",
+      "dataset_space_group": 20,
+      "dataset_formula": "LiCoSiO4",
+      "composition_elements": [
+        "Co",
+        "Li",
+        "O",
+        "Si"
+      ],
+      "input_cif_sha256": "5bf9d1c1dc84b764f168d941371124f68e68a559757c5fabd3f891f82ead3acd",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-763240.cif"
+    },
+    {
+      "id": "mp-1223901",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 42731,
+      "kind": "MP20_train",
+      "dataset_space_group": 21,
+      "dataset_formula": "InBi3",
+      "composition_elements": [
+        "Bi",
+        "In"
+      ],
+      "input_cif_sha256": "23e8d0def759da000f10b37f55b336a0fdb9f3fed08dd7e76a60b6996de856f3",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1223901.cif"
+    },
+    {
+      "id": "mp-1225859",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 35254,
+      "kind": "MP20_train",
+      "dataset_space_group": 22,
+      "dataset_formula": "CsTi2(OF)3",
+      "composition_elements": [
+        "Cs",
+        "F",
+        "O",
+        "Ti"
+      ],
+      "input_cif_sha256": "4dbf578326d5ab908727e55a2a2342bf66d14a60be214adcee68fb17a4d4f780",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1225859.cif"
+    },
+    {
+      "id": "mp-1216619",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 38176,
+      "kind": "MP20_train",
+      "dataset_space_group": 23,
+      "dataset_formula": "TlIn2GaSe4",
+      "composition_elements": [
+        "Ga",
+        "In",
+        "Se",
+        "Tl"
+      ],
+      "input_cif_sha256": "eb240c4452c16ef30d77992dba7ff9b09f95b938f8ec2227cf79881433641c48",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1216619.cif"
+    },
+    {
+      "id": "mp-1229065",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 25797,
+      "kind": "MP20_train",
+      "dataset_space_group": 24,
+      "dataset_formula": "AlCuSeS",
+      "composition_elements": [
+        "Al",
+        "Cu",
+        "S",
+        "Se"
+      ],
+      "input_cif_sha256": "542f2c22b1b7dd7fa6611925a614373d2aaa657b851f144a6276762b357cf91c",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1229065.cif"
+    },
+    {
+      "id": "mp-1220448",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 42707,
+      "kind": "MP20_train",
+      "dataset_space_group": 25,
+      "dataset_formula": "Nd2In3Ni",
+      "composition_elements": [
+        "In",
+        "Nd",
+        "Ni"
+      ],
+      "input_cif_sha256": "5387dc2438c5438c20b444283685b281f96922b456c8c5e5849ef58a9164b79c",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1220448.cif"
+    },
+    {
+      "id": "mp-1216032",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 28676,
+      "kind": "MP20_train",
+      "dataset_space_group": 26,
+      "dataset_formula": "YEr(FeO3)2",
+      "composition_elements": [
+        "Er",
+        "Fe",
+        "O",
+        "Y"
+      ],
+      "input_cif_sha256": "3d4a36ce842283c2c12ac21495d061018abde35015cc44328deae958f3a2e9c1",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1216032.cif"
+    },
+    {
+      "id": "mp-1205384",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 21131,
+      "kind": "MP20_train",
+      "dataset_space_group": 28,
+      "dataset_formula": "LaTe2",
+      "composition_elements": [
+        "La",
+        "Te"
+      ],
+      "input_cif_sha256": "9fa244a7101910f6ea09a25a13299e87adfa8dd9f6a4d1067dbc994af50895dd",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1205384.cif"
+    },
+    {
+      "id": "mp-9270",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 23462,
+      "kind": "MP20_train",
+      "dataset_space_group": 29,
+      "dataset_formula": "SbIrS",
+      "composition_elements": [
+        "Ir",
+        "S",
+        "Sb"
+      ],
+      "input_cif_sha256": "e7128efdee25a2c384f4e7f769359fafd34bb459d83a3f0f6b98ba2fef303eee",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-9270.cif"
+    },
+    {
+      "id": "mp-6257",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 1887,
+      "kind": "MP20_train",
+      "dataset_space_group": 31,
+      "dataset_formula": "CsNb(BO3)2",
+      "composition_elements": [
+        "B",
+        "Cs",
+        "Nb",
+        "O"
+      ],
+      "input_cif_sha256": "70233eb053205cfa57248b9b7ed8208dbf40607c547a63a659fa7e312269dd27",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-6257.cif"
+    },
+    {
+      "id": "mp-21060",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 39316,
+      "kind": "MP20_train",
+      "dataset_space_group": 33,
+      "dataset_formula": "NaFeO2",
+      "composition_elements": [
+        "Fe",
+        "Na",
+        "O"
+      ],
+      "input_cif_sha256": "3c73bf19254a5481cc97055bbe62e4b23b1d61f0181d597f5cd9e84705534a47",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-21060.cif"
+    },
+    {
+      "id": "mp-756117",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 9407,
+      "kind": "MP20_train",
+      "dataset_space_group": 34,
+      "dataset_formula": "Li2TiTeO6",
+      "composition_elements": [
+        "Li",
+        "O",
+        "Te",
+        "Ti"
+      ],
+      "input_cif_sha256": "dc64558317925b6ccda64a9e5c60a14f1d2509fed0f585f00396d4af3a8c121f",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-756117.cif"
+    },
+    {
+      "id": "mp-1220411",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 21716,
+      "kind": "MP20_train",
+      "dataset_space_group": 35,
+      "dataset_formula": "NbCu3(TeSe)2",
+      "composition_elements": [
+        "Cu",
+        "Nb",
+        "Se",
+        "Te"
+      ],
+      "input_cif_sha256": "fc44581ec7aaf9c6930b156fb1e7338d2b8f0ace00864ddc374331ba7df456f7",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1220411.cif"
+    },
+    {
+      "id": "mp-626088",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 24419,
+      "kind": "MP20_train",
+      "dataset_space_group": 36,
+      "dataset_formula": "FeHO2",
+      "composition_elements": [
+        "Fe",
+        "H",
+        "O"
+      ],
+      "input_cif_sha256": "6d373141bde670763fc920012401d869b6abce134eef0cdf19d48f5c8f391a80",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-626088.cif"
+    },
+    {
+      "id": "mp-7998",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 20426,
+      "kind": "MP20_train",
+      "dataset_space_group": 37,
+      "dataset_formula": "Li2Ge2O5",
+      "composition_elements": [
+        "Ge",
+        "Li",
+        "O"
+      ],
+      "input_cif_sha256": "a1c057dc8e3fd427ba98ae488d51c751c283140a8d4486956190850870f5c3fe",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-7998.cif"
+    },
+    {
+      "id": "mp-1218450",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 578,
+      "kind": "MP20_train",
+      "dataset_space_group": 38,
+      "dataset_formula": "Sr3La(NiO4)2",
+      "composition_elements": [
+        "La",
+        "Ni",
+        "O",
+        "Sr"
+      ],
+      "input_cif_sha256": "e8f7ec0b96a9956778cf13d30ced390353b57ce42e987b37d11f78b30ec92e6e",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1218450.cif"
+    },
+    {
+      "id": "mp-625998",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 30383,
+      "kind": "MP20_train",
+      "dataset_space_group": 39,
+      "dataset_formula": "LiHO",
+      "composition_elements": [
+        "H",
+        "Li",
+        "O"
+      ],
+      "input_cif_sha256": "ab10ff4ca22867f483110b9c74eedfd697b3197e85684b1fb0452b1d64711fea",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-625998.cif"
+    },
+    {
+      "id": "mp-1225223",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 36751,
+      "kind": "MP20_train",
+      "dataset_space_group": 40,
+      "dataset_formula": "EuBO3",
+      "composition_elements": [
+        "B",
+        "Eu",
+        "O"
+      ],
+      "input_cif_sha256": "973c75e244529879f3e93b148cda548e60fa340e91d7054c30d1437a2f797fa7",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1225223.cif"
+    },
+    {
+      "id": "mp-27988",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 1806,
+      "kind": "MP20_train",
+      "dataset_space_group": 41,
+      "dataset_formula": "IF7",
+      "composition_elements": [
+        "F",
+        "I"
+      ],
+      "input_cif_sha256": "caa235c823f365cb7543570171b2c8c09207c188f9476fd3db5656a733921485",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-27988.cif"
+    },
+    {
+      "id": "mp-1219326",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 42700,
+      "kind": "MP20_train",
+      "dataset_space_group": 42,
+      "dataset_formula": "Si3B3W10",
+      "composition_elements": [
+        "B",
+        "Si",
+        "W"
+      ],
+      "input_cif_sha256": "40babdb43369a309a6d3eac0db98b0b541eca687bd8166023344af8720915bdb",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1219326.cif"
+    },
+    {
+      "id": "mp-546190",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 30351,
+      "kind": "MP20_train",
+      "dataset_space_group": 43,
+      "dataset_formula": "Ag2O3",
+      "composition_elements": [
+        "Ag",
+        "O"
+      ],
+      "input_cif_sha256": "b986752a9165308ec599b3cee66473de1b18a55e6c9bc113e29a02fcb09711c4",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-546190.cif"
+    },
+    {
+      "id": "mp-1225829",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 3700,
+      "kind": "MP20_train",
+      "dataset_space_group": 44,
+      "dataset_formula": "CsTiAlO4",
+      "composition_elements": [
+        "Al",
+        "Cs",
+        "O",
+        "Ti"
+      ],
+      "input_cif_sha256": "e19e4373286d4484e7dbe32603651c86a89e292f44ae190da1f5c22ac2867b7e",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1225829.cif"
+    },
+    {
+      "id": "mp-1217211",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 17686,
+      "kind": "MP20_train",
+      "dataset_space_group": 46,
+      "dataset_formula": "U3SiPt5",
+      "composition_elements": [
+        "Pt",
+        "Si",
+        "U"
+      ],
+      "input_cif_sha256": "f0f44a190c02fd78ae442bb3f2aea7b673bc7997d9cbaf444e47ad507056f05b",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1217211.cif"
+    },
+    {
+      "id": "mp-1217768",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 32198,
+      "kind": "MP20_train",
+      "dataset_space_group": 47,
+      "dataset_formula": "Ta2(PdRu)3",
+      "composition_elements": [
+        "Pd",
+        "Ru",
+        "Ta"
+      ],
+      "input_cif_sha256": "578f404a315036dab878f0ffe0ec6e75e24150a160d5aea3c72c528fdfccb7c3",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1217768.cif"
+    },
+    {
+      "id": "mp-37920",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 6314,
+      "kind": "MP20_train",
+      "dataset_space_group": 49,
+      "dataset_formula": "AgAuS2",
+      "composition_elements": [
+        "Ag",
+        "Au",
+        "S"
+      ],
+      "input_cif_sha256": "e450b866cce8aa86892fa1a1215d87e9b6c249379fe643691962c428a9818760",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-37920.cif"
+    },
+    {
+      "id": "mp-1189615",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 5128,
+      "kind": "MP20_train",
+      "dataset_space_group": 51,
+      "dataset_formula": "CsZrUTe5",
+      "composition_elements": [
+        "Cs",
+        "Te",
+        "U",
+        "Zr"
+      ],
+      "input_cif_sha256": "9d49e83a62a77d85ac4a3d97bbefde629747606905c21aa823c6df495b41f299",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1189615.cif"
+    },
+    {
+      "id": "mp-31150",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 9312,
+      "kind": "MP20_train",
+      "dataset_space_group": 52,
+      "dataset_formula": "Sr2Bi3",
+      "composition_elements": [
+        "Bi",
+        "Sr"
+      ],
+      "input_cif_sha256": "db75133613fdaede4e76f0fcde05b78a9106efc04a8878dd9a05811e1e313068",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-31150.cif"
+    },
+    {
+      "id": "mp-20506",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 9769,
+      "kind": "MP20_train",
+      "dataset_space_group": 53,
+      "dataset_formula": "NbNiTe2",
+      "composition_elements": [
+        "Nb",
+        "Ni",
+        "Te"
+      ],
+      "input_cif_sha256": "f536885b3234f96289570efd7f59b7d2fadbb8ae415c8ba9b7822040bbebb2f3",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-20506.cif"
+    },
+    {
+      "id": "mp-569687",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 22402,
+      "kind": "MP20_train",
+      "dataset_space_group": 55,
+      "dataset_formula": "CuHgSeCl",
+      "composition_elements": [
+        "Cl",
+        "Cu",
+        "Hg",
+        "Se"
+      ],
+      "input_cif_sha256": "2fee9f7eb59766a72987a0203ccf9096cdbe4f7cf4740489a5735fc046d39b8f",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-569687.cif"
+    },
+    {
+      "id": "mp-1106211",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 43564,
+      "kind": "MP20_train",
+      "dataset_space_group": 56,
+      "dataset_formula": "As2O3",
+      "composition_elements": [
+        "As",
+        "O"
+      ],
+      "input_cif_sha256": "1dd621d01c61881748e903be985f7b0107b05d31f9fab2583dec8b1e6a7c5cef",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1106211.cif"
+    },
+    {
+      "id": "mp-28859",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 16291,
+      "kind": "MP20_train",
+      "dataset_space_group": 57,
+      "dataset_formula": "K2HgS2",
+      "composition_elements": [
+        "Hg",
+        "K",
+        "S"
+      ],
+      "input_cif_sha256": "e3b5138441b1b7e862838230b8a1f56792bd784412f00a29253fe34126d89d50",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-28859.cif"
+    },
+    {
+      "id": "mp-555018",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 741,
+      "kind": "MP20_train",
+      "dataset_space_group": 58,
+      "dataset_formula": "RbNa2AuO2",
+      "composition_elements": [
+        "Au",
+        "Na",
+        "O",
+        "Rb"
+      ],
+      "input_cif_sha256": "0d47ef62c74393ec329899a6e7e5d31ba39beec981018e23cea97c9803e9181f",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-555018.cif"
+    },
+    {
+      "id": "mp-27616",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 18303,
+      "kind": "MP20_train",
+      "dataset_space_group": 59,
+      "dataset_formula": "ErSCl",
+      "composition_elements": [
+        "Cl",
+        "Er",
+        "S"
+      ],
+      "input_cif_sha256": "8d89a82694e368627b3dec52c6fdd22743fb9df3324e4db673cde804867a0c6f",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-27616.cif"
+    },
+    {
+      "id": "mp-1105666",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 1080,
+      "kind": "MP20_train",
+      "dataset_space_group": 60,
+      "dataset_formula": "Rh2Se3",
+      "composition_elements": [
+        "Rh",
+        "Se"
+      ],
+      "input_cif_sha256": "8331de66433404e9efe068a61391a5124bb1b56d85b5710765a8108421dde3d2",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1105666.cif"
+    },
+    {
+      "id": "mp-1147712",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 36596,
+      "kind": "MP20_train",
+      "dataset_space_group": 61,
+      "dataset_formula": "CuS2",
+      "composition_elements": [
+        "Cu",
+        "S"
+      ],
+      "input_cif_sha256": "fadcbcaf77d4ecadc16a6bbcdc98c45a616523f1436435bbce1f55874c9a4631",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1147712.cif"
+    },
+    {
+      "id": "mp-752437",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 33904,
+      "kind": "MP20_train",
+      "dataset_space_group": 62,
+      "dataset_formula": "SmInO3",
+      "composition_elements": [
+        "In",
+        "O",
+        "Sm"
+      ],
+      "input_cif_sha256": "04c4bede17baa9bf8bba48cf4ab5efc7a852606f871ed06eb4923dc9e279398d",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-752437.cif"
+    },
+    {
+      "id": "mp-7049",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 2406,
+      "kind": "MP20_train",
+      "dataset_space_group": 63,
+      "dataset_formula": "ZrTlCuS3",
+      "composition_elements": [
+        "Cu",
+        "S",
+        "Tl",
+        "Zr"
+      ],
+      "input_cif_sha256": "9164861e281632974d335aa4e47e3a7251547a658bf5600c6b3edd611a3fd553",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-7049.cif"
+    },
+    {
+      "id": "mp-1212829",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 19658,
+      "kind": "MP20_train",
+      "dataset_space_group": 64,
+      "dataset_formula": "Dy5(SiSb)2",
+      "composition_elements": [
+        "Dy",
+        "Sb",
+        "Si"
+      ],
+      "input_cif_sha256": "a049b534202f2589642a9457bca7b3069469d522ee6e377d08149197cd5915e8",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1212829.cif"
+    },
+    {
+      "id": "mp-18785",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 9751,
+      "kind": "MP20_train",
+      "dataset_space_group": 65,
+      "dataset_formula": "CrWO4",
+      "composition_elements": [
+        "Cr",
+        "O",
+        "W"
+      ],
+      "input_cif_sha256": "10b7e01245ec980e12338864341fdd47133db6b114256afc0ff5a1b9bcd89930",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-18785.cif"
+    },
+    {
+      "id": "mp-1104569",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 28549,
+      "kind": "MP20_train",
+      "dataset_space_group": 66,
+      "dataset_formula": "Yb(GaS2)2",
+      "composition_elements": [
+        "Ga",
+        "S",
+        "Yb"
+      ],
+      "input_cif_sha256": "c6090c9670b37d2d0e26cb469a6c9d801929e19e0a72d4c60312ead884397312",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1104569.cif"
+    },
+    {
+      "id": "mp-568286",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 24400,
+      "kind": "MP20_train",
+      "dataset_space_group": 67,
+      "dataset_formula": "C",
+      "composition_elements": [
+        "C"
+      ],
+      "input_cif_sha256": "ce38af92c435ab17ec9bb3d644518bda73b916bf3f24c766f0a62d5fe0b60e5a",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-568286.cif"
+    },
+    {
+      "id": "mp-2128",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 3276,
+      "kind": "MP20_train",
+      "dataset_space_group": 68,
+      "dataset_formula": "Sn4Pd",
+      "composition_elements": [
+        "Pd",
+        "Sn"
+      ],
+      "input_cif_sha256": "e8a04a908af36d3185b3c409cdde5de627e33e72903cc6f6c914a3b559f6dd7b",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-2128.cif"
+    },
+    {
+      "id": "mp-1216852",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 42181,
+      "kind": "MP20_train",
+      "dataset_space_group": 69,
+      "dataset_formula": "U(Co5Si)2",
+      "composition_elements": [
+        "Co",
+        "Si",
+        "U"
+      ],
+      "input_cif_sha256": "4c5bb0a99a4544c8a69e0a4c921aa0149a25fa3518f9044070dfb49c8f2521d6",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1216852.cif"
+    },
+    {
+      "id": "mp-9003",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 1484,
+      "kind": "MP20_train",
+      "dataset_space_group": 70,
+      "dataset_formula": "K2NbCuSe4",
+      "composition_elements": [
+        "Cu",
+        "K",
+        "Nb",
+        "Se"
+      ],
+      "input_cif_sha256": "6de0bcb95f80ac5b0dc165ec1ae5c633e42dd3cba6bc7747701c2bbcfadffd12",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-9003.cif"
+    },
+    {
+      "id": "mp-1104465",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 33552,
+      "kind": "MP20_train",
+      "dataset_space_group": 71,
+      "dataset_formula": "Lu3Ga8Rh3",
+      "composition_elements": [
+        "Ga",
+        "Lu",
+        "Rh"
+      ],
+      "input_cif_sha256": "326d5cd26c49a20182839f9fdd2a138c952e098f94022e46ed2b372da9245b5b",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1104465.cif"
+    },
+    {
+      "id": "mp-5927",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 8902,
+      "kind": "MP20_train",
+      "dataset_space_group": 72,
+      "dataset_formula": "Cs2Mn3Te4",
+      "composition_elements": [
+        "Cs",
+        "Mn",
+        "Te"
+      ],
+      "input_cif_sha256": "82835d931bff50bfddc3b8b6f3e54a43f0eb1a44222b97748a59e0fb30f15fe3",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-5927.cif"
+    },
+    {
+      "id": "mp-1226566",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 15705,
+      "kind": "MP20_train",
+      "dataset_space_group": 74,
+      "dataset_formula": "CeOsRu",
+      "composition_elements": [
+        "Ce",
+        "Os",
+        "Ru"
+      ],
+      "input_cif_sha256": "ab592a78761eae2d580b6775266e47363de1d8200d74cbbe0bc2bac4a36d77ff",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1226566.cif"
+    },
+    {
+      "id": "mp-850083",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 41961,
+      "kind": "MP20_train",
+      "dataset_space_group": 75,
+      "dataset_formula": "Fe4S5",
+      "composition_elements": [
+        "Fe",
+        "S"
+      ],
+      "input_cif_sha256": "1ca8e9c76a9c0e0f4e0e34e43789667ef53f3fb8ccf5781ca1d21e082fe806f1",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-850083.cif"
+    },
+    {
+      "id": "mp-3380",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 35844,
+      "kind": "MP20_train",
+      "dataset_space_group": 76,
+      "dataset_formula": "LaRhC2",
+      "composition_elements": [
+        "C",
+        "La",
+        "Rh"
+      ],
+      "input_cif_sha256": "21fb46e180b5ce6468b0a3edce38efeb7762301aa726e5f96d035cd33b835d48",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-3380.cif"
+    },
+    {
+      "id": "mp-1223036",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 15188,
+      "kind": "MP20_train",
+      "dataset_space_group": 77,
+      "dataset_formula": "LaB4(IrOs)2",
+      "composition_elements": [
+        "B",
+        "Ir",
+        "La",
+        "Os"
+      ],
+      "input_cif_sha256": "1f922bbcbe2472aec401e75f3dcdd7e87d322926fef9b1fcd2161b5488aec989",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1223036.cif"
+    },
+    {
+      "id": "mp-23565",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 10295,
+      "kind": "MP20_train",
+      "dataset_space_group": 79,
+      "dataset_formula": "Cr4AgBiO14",
+      "composition_elements": [
+        "Ag",
+        "Bi",
+        "Cr",
+        "O"
+      ],
+      "input_cif_sha256": "45fcc10798c7acff8c527e18f00a72b64005c7b78355dadec89f56dfeeddd0d5",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-23565.cif"
+    },
+    {
+      "id": "mp-1215615",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 24190,
+      "kind": "MP20_train",
+      "dataset_space_group": 81,
+      "dataset_formula": "ZnCd(GaS2)4",
+      "composition_elements": [
+        "Cd",
+        "Ga",
+        "S",
+        "Zn"
+      ],
+      "input_cif_sha256": "677e81c65be3907f36e93c952fcc5b93257c730db91a994199e6ff63b9eeca2d",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1215615.cif"
+    },
+    {
+      "id": "mp-568228",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 11877,
+      "kind": "MP20_train",
+      "dataset_space_group": 82,
+      "dataset_formula": "RbLaSi(CN2)4",
+      "composition_elements": [
+        "C",
+        "La",
+        "N",
+        "Rb",
+        "Si"
+      ],
+      "input_cif_sha256": "a88df59fbb168ac77e44402790da575e3c289dba1053d7a7d2a61b23d5518620",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-568228.cif"
+    },
+    {
+      "id": "mp-1105852",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 37064,
+      "kind": "MP20_train",
+      "dataset_space_group": 83,
+      "dataset_formula": "Sc3As2",
+      "composition_elements": [
+        "As",
+        "Sc"
+      ],
+      "input_cif_sha256": "78668f18a9632efb3ead6fdd31df3bffa50e96713051593dd3587b46b36e7b19",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1105852.cif"
+    },
+    {
+      "id": "mp-1101109",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 27544,
+      "kind": "MP20_train",
+      "dataset_space_group": 84,
+      "dataset_formula": "Ti2As4W3",
+      "composition_elements": [
+        "As",
+        "Ti",
+        "W"
+      ],
+      "input_cif_sha256": "dd4c2abee5044d60cf6f756def3b13828b2bee9f91c756f89503ce800b4bcae4",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1101109.cif"
+    },
+    {
+      "id": "mp-763482",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 26430,
+      "kind": "MP20_train",
+      "dataset_space_group": 85,
+      "dataset_formula": "VPO5",
+      "composition_elements": [
+        "O",
+        "P",
+        "V"
+      ],
+      "input_cif_sha256": "8afbd1361de397d2fb1c59240a337bba1134d3e84caf060e0f047135f86b4c65",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-763482.cif"
+    },
+    {
+      "id": "mp-556164",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 29881,
+      "kind": "MP20_train",
+      "dataset_space_group": 86,
+      "dataset_formula": "Si(AgO)4",
+      "composition_elements": [
+        "Ag",
+        "O",
+        "Si"
+      ],
+      "input_cif_sha256": "442350ebdbd4d05bd2f8d45a61733fb7b27b175c8217d00785fad6dc0276ec64",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-556164.cif"
+    },
+    {
+      "id": "mvc-12040",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 42986,
+      "kind": "MP20_train",
+      "dataset_space_group": 87,
+      "dataset_formula": "CrO2",
+      "composition_elements": [
+        "Cr",
+        "O"
+      ],
+      "input_cif_sha256": "71b5b72948c99c0a7e57b675a4c930fb699d5055362d870e4a74e16ceae35763",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mvc-12040.cif"
+    },
+    {
+      "id": "mp-1102526",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 35553,
+      "kind": "MP20_train",
+      "dataset_space_group": 88,
+      "dataset_formula": "YVO4",
+      "composition_elements": [
+        "O",
+        "V",
+        "Y"
+      ],
+      "input_cif_sha256": "ff3bf9e338f30bd4b26a7b648af865309371ce4bc73737b5938aa702b0ab3f4a",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1102526.cif"
+    },
+    {
+      "id": "mp-1216699",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 30677,
+      "kind": "MP20_train",
+      "dataset_space_group": 89,
+      "dataset_formula": "Tl3In5Se8",
+      "composition_elements": [
+        "In",
+        "Se",
+        "Tl"
+      ],
+      "input_cif_sha256": "82cc116c4667f7a704215018ca177d370272df054ad1ee5665f06b75d02b32d2",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1216699.cif"
+    },
+    {
+      "id": "mp-759601",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 33941,
+      "kind": "MP20_train",
+      "dataset_space_group": 92,
+      "dataset_formula": "MnOF",
+      "composition_elements": [
+        "F",
+        "Mn",
+        "O"
+      ],
+      "input_cif_sha256": "b2437eeb6e8bbe136ad5bcd8bc2a2cc42ed0e7f4d5eef643a92177deb8b917c0",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-759601.cif"
+    },
+    {
+      "id": "mp-1190176",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 23130,
+      "kind": "MP20_train",
+      "dataset_space_group": 96,
+      "dataset_formula": "Ba3Sn2",
+      "composition_elements": [
+        "Ba",
+        "Sn"
+      ],
+      "input_cif_sha256": "4f25fdf467cd8641493a95babad620896291fb465696c718e7469342eb02643a",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1190176.cif"
+    },
+    {
+      "id": "mp-37091",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 7333,
+      "kind": "MP20_train",
+      "dataset_space_group": 97,
+      "dataset_formula": "Sr(AlTe2)2",
+      "composition_elements": [
+        "Al",
+        "Sr",
+        "Te"
+      ],
+      "input_cif_sha256": "6014e2fb4b121762a52c4431385f03419de787965f2de93c46c06c5b4e23c86e",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-37091.cif"
+    },
+    {
+      "id": "mp-996977",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 35493,
+      "kind": "MP20_train",
+      "dataset_space_group": 98,
+      "dataset_formula": "AgAuO2",
+      "composition_elements": [
+        "Ag",
+        "Au",
+        "O"
+      ],
+      "input_cif_sha256": "6580f47db203416c418edb0a7b77f461cb76fbcb436b5d4302521543f66f8af0",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-996977.cif"
+    },
+    {
+      "id": "mp-1214324",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 7673,
+      "kind": "MP20_train",
+      "dataset_space_group": 99,
+      "dataset_formula": "BaSmFeCuO5",
+      "composition_elements": [
+        "Ba",
+        "Cu",
+        "Fe",
+        "O",
+        "Sm"
+      ],
+      "input_cif_sha256": "70dade1bddc22084b3e5209d5122c65221e48d3d28781a600442f04afa242fac",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1214324.cif"
+    },
+    {
+      "id": "mp-1214336",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 21675,
+      "kind": "MP20_train",
+      "dataset_space_group": 100,
+      "dataset_formula": "BaSmCuBO5",
+      "composition_elements": [
+        "B",
+        "Ba",
+        "Cu",
+        "O",
+        "Sm"
+      ],
+      "input_cif_sha256": "3a5e226a6e0ba56cd6db8b90ddc84f4210e52f006340a0cb13ff609a4a62bdda",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1214336.cif"
+    },
+    {
+      "id": "mp-1222326",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 37730,
+      "kind": "MP20_train",
+      "dataset_space_group": 102,
+      "dataset_formula": "LiMgCoF6",
+      "composition_elements": [
+        "Co",
+        "F",
+        "Li",
+        "Mg"
+      ],
+      "input_cif_sha256": "389951bb1cf5ea071e427fe778ab1f98b597d149000837147de97ad264a5380c",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1222326.cif"
+    },
+    {
+      "id": "mp-1225576",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 31264,
+      "kind": "MP20_train",
+      "dataset_space_group": 105,
+      "dataset_formula": "ErB4(IrRh)2",
+      "composition_elements": [
+        "B",
+        "Er",
+        "Ir",
+        "Rh"
+      ],
+      "input_cif_sha256": "ba4585e7ce9639e9905f2e40507ac48909c2687356ada329251911bfb769fd2f",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1225576.cif"
+    },
+    {
+      "id": "mp-1226656",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 14708,
+      "kind": "MP20_train",
+      "dataset_space_group": 107,
+      "dataset_formula": "CeCu2SiGe",
+      "composition_elements": [
+        "Ce",
+        "Cu",
+        "Ge",
+        "Si"
+      ],
+      "input_cif_sha256": "69430d404edbab8267b9734ecdd3e9a496d28b7f19fddc5e214a76feccee63d6",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1226656.cif"
+    },
+    {
+      "id": "mp-1188296",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 41640,
+      "kind": "MP20_train",
+      "dataset_space_group": 108,
+      "dataset_formula": "U3Al2Si3",
+      "composition_elements": [
+        "Al",
+        "Si",
+        "U"
+      ],
+      "input_cif_sha256": "ecd4cd35e4c06ee8d562f7ea7302d5246b7d903a09abfe26cb58559a4f150919",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1188296.cif"
+    },
+    {
+      "id": "mp-1077512",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 14524,
+      "kind": "MP20_train",
+      "dataset_space_group": 109,
+      "dataset_formula": "LaGeIr",
+      "composition_elements": [
+        "Ge",
+        "Ir",
+        "La"
+      ],
+      "input_cif_sha256": "5eed929c8d8ab518faaaafa9acf1ca5f712581e2a9377b208ac1a78e7568ff75",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1077512.cif"
+    },
+    {
+      "id": "mp-628568",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 37374,
+      "kind": "MP20_train",
+      "dataset_space_group": 111,
+      "dataset_formula": "FeCu2SnS4",
+      "composition_elements": [
+        "Cu",
+        "Fe",
+        "S",
+        "Sn"
+      ],
+      "input_cif_sha256": "86383edcd11facc9744257923d9e9f2db6e5974f71680db0d9ff9b0c641b0564",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-628568.cif"
+    },
+    {
+      "id": "mp-1212660",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 6681,
+      "kind": "MP20_train",
+      "dataset_space_group": 112,
+      "dataset_formula": "GaCuBr4",
+      "composition_elements": [
+        "Br",
+        "Cu",
+        "Ga"
+      ],
+      "input_cif_sha256": "e4fd36c4c98ffb66ef844cb4105d2fb01bad56c4a0c5959949ca9d93b246a046",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1212660.cif"
+    },
+    {
+      "id": "mp-1281333",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 23776,
+      "kind": "MP20_train",
+      "dataset_space_group": 113,
+      "dataset_formula": "CrO2",
+      "composition_elements": [
+        "Cr",
+        "O"
+      ],
+      "input_cif_sha256": "1edfe5145da413185db7d95c6bb8f1cea84003ac3590b94f345f3b0befec6c6c",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1281333.cif"
+    },
+    {
+      "id": "mp-7818",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 20423,
+      "kind": "MP20_train",
+      "dataset_space_group": 114,
+      "dataset_formula": "Pd4Se",
+      "composition_elements": [
+        "Pd",
+        "Se"
+      ],
+      "input_cif_sha256": "a21fcc6bb290c0453277388543deacdad1572c182efe0f36a1aedd6ae8938fbf",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-7818.cif"
+    },
+    {
+      "id": "mp-1226818",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 16717,
+      "kind": "MP20_train",
+      "dataset_space_group": 115,
+      "dataset_formula": "Ce2ZnBi4",
+      "composition_elements": [
+        "Bi",
+        "Ce",
+        "Zn"
+      ],
+      "input_cif_sha256": "47b8cc9c4d279f39f3f205af62a744d2d4bb42816d128b0860d5cd7610bb0b6f",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1226818.cif"
+    },
+    {
+      "id": "mp-680677",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 21431,
+      "kind": "MP20_train",
+      "dataset_space_group": 116,
+      "dataset_formula": "Sn3Ru2",
+      "composition_elements": [
+        "Ru",
+        "Sn"
+      ],
+      "input_cif_sha256": "fc89180f659fe20ce8ff76206f3fdd65c01facaed634a537a69ccc9b9a471761",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-680677.cif"
+    },
+    {
+      "id": "mp-1518993",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 39791,
+      "kind": "MP20_train",
+      "dataset_space_group": 118,
+      "dataset_formula": "SrCaNdSbO6",
+      "composition_elements": [
+        "Ca",
+        "Nd",
+        "O",
+        "Sb",
+        "Sr"
+      ],
+      "input_cif_sha256": "eb0ec7d6069443aecf92b97ddb4783cbff6be5eb6aaceff3af4f5dce1462d08f",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1518993.cif"
+    },
+    {
+      "id": "mp-1215535",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 22168,
+      "kind": "MP20_train",
+      "dataset_space_group": 119,
+      "dataset_formula": "YbGa3Cu",
+      "composition_elements": [
+        "Cu",
+        "Ga",
+        "Yb"
+      ],
+      "input_cif_sha256": "0a62d4289f836364553e93b4a5818fd76d5d51a60ba8c22451c4779f1a21bc07",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1215535.cif"
+    },
+    {
+      "id": "mp-19414",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 28304,
+      "kind": "MP20_train",
+      "dataset_space_group": 121,
+      "dataset_formula": "K3CrO4",
+      "composition_elements": [
+        "Cr",
+        "K",
+        "O"
+      ],
+      "input_cif_sha256": "56cbdd11acc0b36eb4db3c095cb0c8c0f09dc797aea529c721c9831cd32470ba",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-19414.cif"
+    },
+    {
+      "id": "mp-15703",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 22780,
+      "kind": "MP20_train",
+      "dataset_space_group": 122,
+      "dataset_formula": "BeCN2",
+      "composition_elements": [
+        "Be",
+        "C",
+        "N"
+      ],
+      "input_cif_sha256": "cfb79cadec24447e19d54efd0abb00b8ccfbca7306315d8e537d6e3159593de0",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-15703.cif"
+    },
+    {
+      "id": "mp-1221720",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 37724,
+      "kind": "MP20_train",
+      "dataset_space_group": 123,
+      "dataset_formula": "MnAlIr2",
+      "composition_elements": [
+        "Al",
+        "Ir",
+        "Mn"
+      ],
+      "input_cif_sha256": "eb138fa16afdbeb264e3703417897fc1360bed6557f94e76edc54b36e79618de",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1221720.cif"
+    },
+    {
+      "id": "mp-22817",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 28323,
+      "kind": "MP20_train",
+      "dataset_space_group": 124,
+      "dataset_formula": "TaTe4",
+      "composition_elements": [
+        "Ta",
+        "Te"
+      ],
+      "input_cif_sha256": "bbfbe7013b4d8480a2562514cf7c1e45a6a23a5a086dba379b1d4654227cf14e",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-22817.cif"
+    },
+    {
+      "id": "mp-11011",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 22036,
+      "kind": "MP20_train",
+      "dataset_space_group": 125,
+      "dataset_formula": "RbNdTe4",
+      "composition_elements": [
+        "Nd",
+        "Rb",
+        "Te"
+      ],
+      "input_cif_sha256": "f73902310e150799bf9878aa8f28469434896cf6bf6e04458de6cf05077aea4e",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-11011.cif"
+    },
+    {
+      "id": "mp-10136",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 7502,
+      "kind": "MP20_train",
+      "dataset_space_group": 127,
+      "dataset_formula": "Ti2ReB2",
+      "composition_elements": [
+        "B",
+        "Re",
+        "Ti"
+      ],
+      "input_cif_sha256": "45fa38841c99feb51dcc6eb7a354c9ad3975d2ff37d32b60627c874adba7da23",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-10136.cif"
+    },
+    {
+      "id": "mp-1209282",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 8665,
+      "kind": "MP20_train",
+      "dataset_space_group": 128,
+      "dataset_formula": "Rb3ScF6",
+      "composition_elements": [
+        "F",
+        "Rb",
+        "Sc"
+      ],
+      "input_cif_sha256": "414c624459bdacbcdcd9d57754babceb755927c2905fbf5d2632bef43be1f341",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1209282.cif"
+    },
+    {
+      "id": "mp-1019324",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 35506,
+      "kind": "MP20_train",
+      "dataset_space_group": 129,
+      "dataset_formula": "TbTe2",
+      "composition_elements": [
+        "Tb",
+        "Te"
+      ],
+      "input_cif_sha256": "04aa240e28e165035b896f7b284a81fdf39345c75fbe48a41f65cd9f9da93ba0",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1019324.cif"
+    },
+    {
+      "id": "mp-18773",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 20220,
+      "kind": "MP20_train",
+      "dataset_space_group": 130,
+      "dataset_formula": "WO3",
+      "composition_elements": [
+        "O",
+        "W"
+      ],
+      "input_cif_sha256": "2e1941fab3d656d16759be00cc5a3e2a72e889b0953bf523801ec5e3d51896aa",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-18773.cif"
+    },
+    {
+      "id": "mp-755073",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 23922,
+      "kind": "MP20_train",
+      "dataset_space_group": 131,
+      "dataset_formula": "CrO",
+      "composition_elements": [
+        "Cr",
+        "O"
+      ],
+      "input_cif_sha256": "f5c132fa9c272b000f71708c58a097aae453f7d70575966c9d1a9467d4ca9cbb",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-755073.cif"
+    },
+    {
+      "id": "mp-997394",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 14995,
+      "kind": "MP20_train",
+      "dataset_space_group": 132,
+      "dataset_formula": "NbAgF6",
+      "composition_elements": [
+        "Ag",
+        "F",
+        "Nb"
+      ],
+      "input_cif_sha256": "25dd4dbfd456752f398125c44b48e4417b75655704ddb9804117081730c2d61a",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-997394.cif"
+    },
+    {
+      "id": "mp-560902",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 4376,
+      "kind": "MP20_train",
+      "dataset_space_group": 136,
+      "dataset_formula": "MnF2",
+      "composition_elements": [
+        "F",
+        "Mn"
+      ],
+      "input_cif_sha256": "5ae00c24e0ced4ac8769a688637aa261c513d7b9150582d4cfd770548a9a4520",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-560902.cif"
+    },
+    {
+      "id": "mp-1106347",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 32064,
+      "kind": "MP20_train",
+      "dataset_space_group": 137,
+      "dataset_formula": "Th(BRh)4",
+      "composition_elements": [
+        "B",
+        "Rh",
+        "Th"
+      ],
+      "input_cif_sha256": "0282a8d3642fa791a6e51009c03e729c580d805cc64dee73abf24856edff80bc",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1106347.cif"
+    },
+    {
+      "id": "mp-570778",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 35383,
+      "kind": "MP20_train",
+      "dataset_space_group": 138,
+      "dataset_formula": "Cl2",
+      "composition_elements": [
+        "Cl"
+      ],
+      "input_cif_sha256": "58cad1bee506dbc5396aac8bde55446996a6311b2412d70ff572987a5667110d",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-570778.cif"
+    },
+    {
+      "id": "mp-22026",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 44832,
+      "kind": "MP20_train",
+      "dataset_space_group": 139,
+      "dataset_formula": "Ce(NiSn)2",
+      "composition_elements": [
+        "Ce",
+        "Ni",
+        "Sn"
+      ],
+      "input_cif_sha256": "9eaa50f831facebabbf93fc09c70ef6fc06900577df67769fd21ed11abdbe708",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-22026.cif"
+    },
+    {
+      "id": "mp-22142",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 22802,
+      "kind": "MP20_train",
+      "dataset_space_group": 140,
+      "dataset_formula": "SiSe2",
+      "composition_elements": [
+        "Se",
+        "Si"
+      ],
+      "input_cif_sha256": "87f70a7316eb6b556fb141fb8596a75eb93737b93fb94e9962d4f4813fb7b578",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-22142.cif"
+    },
+    {
+      "id": "mp-19360",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 1754,
+      "kind": "MP20_train",
+      "dataset_space_group": 141,
+      "dataset_formula": "LuCrO4",
+      "composition_elements": [
+        "Cr",
+        "Lu",
+        "O"
+      ],
+      "input_cif_sha256": "19ff7e23276dbbed488c5166a5303333bec404072b7b55a3c3ef6ab0fc217d16",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-19360.cif"
+    },
+    {
+      "id": "mp-31277",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 1357,
+      "kind": "MP20_train",
+      "dataset_space_group": 142,
+      "dataset_formula": "Sn4Ir",
+      "composition_elements": [
+        "Ir",
+        "Sn"
+      ],
+      "input_cif_sha256": "6305249da26e6b7504aa60df66588e7bb6c5d5dc77e5372c2885c55b3104e92f",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-31277.cif"
+    },
+    {
+      "id": "mp-1222205",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 32229,
+      "kind": "MP20_train",
+      "dataset_space_group": 143,
+      "dataset_formula": "Mg(IO3)2",
+      "composition_elements": [
+        "I",
+        "Mg",
+        "O"
+      ],
+      "input_cif_sha256": "6c8f710213baeb6c3117ae70488fcd34c2038b62d8d118a7be748ef234111ba7",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1222205.cif"
+    },
+    {
+      "id": "mp-571195",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 22889,
+      "kind": "MP20_train",
+      "dataset_space_group": 144,
+      "dataset_formula": "ZnTe",
+      "composition_elements": [
+        "Te",
+        "Zn"
+      ],
+      "input_cif_sha256": "9f4a02a96a81b09351a54db33368d12c4fcd4e278429859ca35f4b32b15d4736",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-571195.cif"
+    },
+    {
+      "id": "mp-1221281",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 32713,
+      "kind": "MP20_train",
+      "dataset_space_group": 146,
+      "dataset_formula": "Na2UI6",
+      "composition_elements": [
+        "I",
+        "Na",
+        "U"
+      ],
+      "input_cif_sha256": "c6d72b7eb08d05d249c1ae1db6cb7478b7008ca4b414be88749f5dfde549b357",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1221281.cif"
+    },
+    {
+      "id": "mp-754632",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 750,
+      "kind": "MP20_train",
+      "dataset_space_group": 147,
+      "dataset_formula": "Pr(ReO4)2",
+      "composition_elements": [
+        "O",
+        "Pr",
+        "Re"
+      ],
+      "input_cif_sha256": "684ee867735552d59b0ae19c448772692454230af19e559377fa86dc9bf70e47",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-754632.cif"
+    },
+    {
+      "id": "mp-1176805",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 35602,
+      "kind": "MP20_train",
+      "dataset_space_group": 148,
+      "dataset_formula": "Li8VO6",
+      "composition_elements": [
+        "Li",
+        "O",
+        "V"
+      ],
+      "input_cif_sha256": "aa6dba3308d51a32c5c529dc24efc27999b5dfef4a7e41c70f2bfe49c1fe83f5",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1176805.cif"
+    },
+    {
+      "id": "mp-10341",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 5519,
+      "kind": "MP20_train",
+      "dataset_space_group": 149,
+      "dataset_formula": "SrGeTeO6",
+      "composition_elements": [
+        "Ge",
+        "O",
+        "Sr",
+        "Te"
+      ],
+      "input_cif_sha256": "68550f354b0c6dc26670db3b4cb935512b93c6555cd7eca5957e54baa148eede",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-10341.cif"
+    },
+    {
+      "id": "mp-1209251",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 31170,
+      "kind": "MP20_train",
+      "dataset_space_group": 150,
+      "dataset_formula": "RbAl(SeO4)2",
+      "composition_elements": [
+        "Al",
+        "O",
+        "Rb",
+        "Se"
+      ],
+      "input_cif_sha256": "605b52ae98281cc0888803570241a7151be9f0098ba7fa1c76c06a942d4ce406",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1209251.cif"
+    },
+    {
+      "id": "mp-733",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 10896,
+      "kind": "MP20_train",
+      "dataset_space_group": 152,
+      "dataset_formula": "GeO2",
+      "composition_elements": [
+        "Ge",
+        "O"
+      ],
+      "input_cif_sha256": "eec506201bfe8906bd82bf4a78bddd22d7477088b74ef8fd69bc00da9ceb5010",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-733.cif"
+    },
+    {
+      "id": "mp-1228900",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 18688,
+      "kind": "MP20_train",
+      "dataset_space_group": 153,
+      "dataset_formula": "AlGeMo",
+      "composition_elements": [
+        "Al",
+        "Ge",
+        "Mo"
+      ],
+      "input_cif_sha256": "e445cfee3d98a903212935f54fda15406e4464efbf0612a25fafcc746f023920",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1228900.cif"
+    },
+    {
+      "id": "mp-6930",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 26405,
+      "kind": "MP20_train",
+      "dataset_space_group": 154,
+      "dataset_formula": "SiO2",
+      "composition_elements": [
+        "O",
+        "Si"
+      ],
+      "input_cif_sha256": "b680dd934c708821c5110e3012bd759a91d16409a366487035df7477fbbab955",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-6930.cif"
+    },
+    {
+      "id": "mp-1220587",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 42709,
+      "kind": "MP20_train",
+      "dataset_space_group": 155,
+      "dataset_formula": "Nb3V3Ge2",
+      "composition_elements": [
+        "Ge",
+        "Nb",
+        "V"
+      ],
+      "input_cif_sha256": "c1416d8769c52267aaeab717ba90253a870f5744174e2058d8b403251b622cba",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1220587.cif"
+    },
+    {
+      "id": "mp-1221646",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 11682,
+      "kind": "MP20_train",
+      "dataset_space_group": 156,
+      "dataset_formula": "MnCdSe2",
+      "composition_elements": [
+        "Cd",
+        "Mn",
+        "Se"
+      ],
+      "input_cif_sha256": "769b2f993175aaf4967a50299afcd533ca246eab83282557545a9bd35ddfdb19",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1221646.cif"
+    },
+    {
+      "id": "mp-30300",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 11327,
+      "kind": "MP20_train",
+      "dataset_space_group": 157,
+      "dataset_formula": "Cs3As5O9",
+      "composition_elements": [
+        "As",
+        "Cs",
+        "O"
+      ],
+      "input_cif_sha256": "28f120321d916ac640ea2507d6d05cf72fb637572ce2969e3f2551936f34473b",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-30300.cif"
+    },
+    {
+      "id": "mp-9480",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 21971,
+      "kind": "MP20_train",
+      "dataset_space_group": 159,
+      "dataset_formula": "KAlSiO4",
+      "composition_elements": [
+        "Al",
+        "K",
+        "O",
+        "Si"
+      ],
+      "input_cif_sha256": "5f99013195bde606350a97860e5ab1c63f6c4291e89697a0244cadbcfe7d5cf8",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-9480.cif"
+    },
+    {
+      "id": "mp-1222136",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 33207,
+      "kind": "MP20_train",
+      "dataset_space_group": 160,
+      "dataset_formula": "Mg2TeSe",
+      "composition_elements": [
+        "Mg",
+        "Se",
+        "Te"
+      ],
+      "input_cif_sha256": "ddedbebc961f751d17c7c3cb511e80e7904dda5d860195ebc865ce663d49ad2e",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1222136.cif"
+    },
+    {
+      "id": "mp-998591",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 25496,
+      "kind": "MP20_train",
+      "dataset_space_group": 161,
+      "dataset_formula": "LiSnCl3",
+      "composition_elements": [
+        "Cl",
+        "Li",
+        "Sn"
+      ],
+      "input_cif_sha256": "f5577e4bceea93be21321a6f4394695f4d1d4ddfa38a9023e01d622b9ffb9be3",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-998591.cif"
+    },
+    {
+      "id": "mp-1079438",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 2542,
+      "kind": "MP20_train",
+      "dataset_space_group": 162,
+      "dataset_formula": "Ta2N",
+      "composition_elements": [
+        "N",
+        "Ta"
+      ],
+      "input_cif_sha256": "e6ecc40e0cbd7a07767fd39cdefcbf539e5d5edfe823ce9d5e5b19de97dea8ae",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1079438.cif"
+    },
+    {
+      "id": "mp-1188719",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 6134,
+      "kind": "MP20_train",
+      "dataset_space_group": 163,
+      "dataset_formula": "GdCrTeO6",
+      "composition_elements": [
+        "Cr",
+        "Gd",
+        "O",
+        "Te"
+      ],
+      "input_cif_sha256": "eaf40ea24a7991db9b0a976477d5ba6812afbacf6b5b5ee527ca7456e7d68948",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1188719.cif"
+    },
+    {
+      "id": "mp-5745",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 31391,
+      "kind": "MP20_train",
+      "dataset_space_group": 164,
+      "dataset_formula": "Nb2CS2",
+      "composition_elements": [
+        "C",
+        "Nb",
+        "S"
+      ],
+      "input_cif_sha256": "4c3d21e038a48befd38368ff543fa634fb0728f0f2a17a344551cef217a6c877",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-5745.cif"
+    },
+    {
+      "id": "mp-1188841",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 1127,
+      "kind": "MP20_train",
+      "dataset_space_group": 166,
+      "dataset_formula": "BaNb2V2O11",
+      "composition_elements": [
+        "Ba",
+        "Nb",
+        "O",
+        "V"
+      ],
+      "input_cif_sha256": "87f29268d2a1a429daf65f25c2a15273824e8e379fe16d16dd0192d18b3c881f",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1188841.cif"
+    },
+    {
+      "id": "mp-8773",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 24952,
+      "kind": "MP20_train",
+      "dataset_space_group": 167,
+      "dataset_formula": "K3CO3F",
+      "composition_elements": [
+        "C",
+        "F",
+        "K",
+        "O"
+      ],
+      "input_cif_sha256": "d2147bc69f02ed2941ab2e74e73225439f9d36d7b17310816b0881114b20e9b4",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-8773.cif"
+    },
+    {
+      "id": "mp-6253",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 5405,
+      "kind": "MP20_train",
+      "dataset_space_group": 173,
+      "dataset_formula": "KLiBeF4",
+      "composition_elements": [
+        "Be",
+        "F",
+        "K",
+        "Li"
+      ],
+      "input_cif_sha256": "28a38a77f45ca549787ca47bb64f4f5b05520e191ba916cb41632f2593e693a6",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-6253.cif"
+    },
+    {
+      "id": "mp-1205952",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 5648,
+      "kind": "MP20_train",
+      "dataset_space_group": 174,
+      "dataset_formula": "Er3(In2Co)2",
+      "composition_elements": [
+        "Co",
+        "Er",
+        "In"
+      ],
+      "input_cif_sha256": "355e99d5a754b1bbfbc99223c79ebf71d18f55b2543c9b796254ba246c53b7c2",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1205952.cif"
+    },
+    {
+      "id": "mp-988",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 2992,
+      "kind": "MP20_train",
+      "dataset_space_group": 176,
+      "dataset_formula": "Si3N4",
+      "composition_elements": [
+        "N",
+        "Si"
+      ],
+      "input_cif_sha256": "0d110da72ac6a2da197f1c0adbc2b93d31893b81995482cbb5d1ccabdc096f97",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-988.cif"
+    },
+    {
+      "id": "mp-554243",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 25887,
+      "kind": "MP20_train",
+      "dataset_space_group": 179,
+      "dataset_formula": "SiO2",
+      "composition_elements": [
+        "O",
+        "Si"
+      ],
+      "input_cif_sha256": "8a22b30afca25e416ad7a68deef0a04b97bd773348501d484c81fe798eb05470",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-554243.cif"
+    },
+    {
+      "id": "mp-1103146",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 1563,
+      "kind": "MP20_train",
+      "dataset_space_group": 180,
+      "dataset_formula": "TmBPt2",
+      "composition_elements": [
+        "B",
+        "Pt",
+        "Tm"
+      ],
+      "input_cif_sha256": "0416511787a83a28feb13957a70776a1410bbe2771d4e9c085034ac40d0c4cdc",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1103146.cif"
+    },
+    {
+      "id": "mp-11190",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 8080,
+      "kind": "MP20_train",
+      "dataset_space_group": 181,
+      "dataset_formula": "VSi2",
+      "composition_elements": [
+        "Si",
+        "V"
+      ],
+      "input_cif_sha256": "fff2936bc2911032786f4d762417dfec2fdbf01eae4e6ba9476d0d68479cd21c",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-11190.cif"
+    },
+    {
+      "id": "mp-1017",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 23005,
+      "kind": "MP20_train",
+      "dataset_space_group": 182,
+      "dataset_formula": "Zr3O",
+      "composition_elements": [
+        "O",
+        "Zr"
+      ],
+      "input_cif_sha256": "a2050e663481d1f7d8b65de32245b0a694c95a0ce64781aef7fe1c602d889ec6",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1017.cif"
+    },
+    {
+      "id": "mp-1216795",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 26162,
+      "kind": "MP20_train",
+      "dataset_space_group": 183,
+      "dataset_formula": "TmMn6GaGe5",
+      "composition_elements": [
+        "Ga",
+        "Ge",
+        "Mn",
+        "Tm"
+      ],
+      "input_cif_sha256": "d6d4c270453e439ec8c5953a1a5151b393fd5b579c888e0d8b37089e37b0342b",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1216795.cif"
+    },
+    {
+      "id": "mp-11714",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 20068,
+      "kind": "MP20_train",
+      "dataset_space_group": 186,
+      "dataset_formula": "SiC",
+      "composition_elements": [
+        "C",
+        "Si"
+      ],
+      "input_cif_sha256": "f28c0070435048ab8286b0fa4ba7be9db2311d3ad676bcb89326bcc79da576e9",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-11714.cif"
+    },
+    {
+      "id": "mp-1227245",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 31277,
+      "kind": "MP20_train",
+      "dataset_space_group": 187,
+      "dataset_formula": "CaCuGe",
+      "composition_elements": [
+        "Ca",
+        "Cu",
+        "Ge"
+      ],
+      "input_cif_sha256": "08ec4be76e5d697441ff093d05cbe05758c922606b0a5a17d239db94cc4a9a9c",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1227245.cif"
+    },
+    {
+      "id": "mp-22376",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 23815,
+      "kind": "MP20_train",
+      "dataset_space_group": 189,
+      "dataset_formula": "PrNiSn",
+      "composition_elements": [
+        "Ni",
+        "Pr",
+        "Sn"
+      ],
+      "input_cif_sha256": "45fb9f825c6ad147c3618119af7847fb01ee0c570f2555d76d864041c0487014",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-22376.cif"
+    },
+    {
+      "id": "mp-22315",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 4785,
+      "kind": "MP20_train",
+      "dataset_space_group": 190,
+      "dataset_formula": "HfCoSn",
+      "composition_elements": [
+        "Co",
+        "Hf",
+        "Sn"
+      ],
+      "input_cif_sha256": "8b14eeb8e8b30116deae18bd34c01f7b332cb96e45fb175dbda4416757516c52",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-22315.cif"
+    },
+    {
+      "id": "mp-1514",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 9215,
+      "kind": "MP20_train",
+      "dataset_space_group": 191,
+      "dataset_formula": "UB2",
+      "composition_elements": [
+        "B",
+        "U"
+      ],
+      "input_cif_sha256": "43a36b591623691fa89fbcc4d4799611432729503834597bd36727321e2c4418",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1514.cif"
+    },
+    {
+      "id": "mp-1188697",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 25649,
+      "kind": "MP20_train",
+      "dataset_space_group": 193,
+      "dataset_formula": "Zr5Ir3",
+      "composition_elements": [
+        "Ir",
+        "Zr"
+      ],
+      "input_cif_sha256": "f0b25c40845ecb6b6d805b679f8e6f2f6dd782448676b667cc5e67bca8de423d",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1188697.cif"
+    },
+    {
+      "id": "mp-1185538",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 41133,
+      "kind": "MP20_train",
+      "dataset_space_group": 194,
+      "dataset_formula": "Cs3As",
+      "composition_elements": [
+        "As",
+        "Cs"
+      ],
+      "input_cif_sha256": "a3becbbca42a1c8bd8a4a95c0b601d06fb550332a26099b96543e7718174b4f4",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1185538.cif"
+    },
+    {
+      "id": "mp-1228738",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 39750,
+      "kind": "MP20_train",
+      "dataset_space_group": 198,
+      "dataset_formula": "AsPtS",
+      "composition_elements": [
+        "As",
+        "Pt",
+        "S"
+      ],
+      "input_cif_sha256": "2180c28c10dcc55e8255229bd1983be3e3a7a975416bed830223c625ea3123c6",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1228738.cif"
+    },
+    {
+      "id": "mp-1222904",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 39717,
+      "kind": "MP20_train",
+      "dataset_space_group": 199,
+      "dataset_formula": "LaYC3",
+      "composition_elements": [
+        "C",
+        "La",
+        "Y"
+      ],
+      "input_cif_sha256": "937e9f999d4de15dedc477513bffec0366c921209ef45eaa384e07524df0e7c0",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1222904.cif"
+    },
+    {
+      "id": "mp-1216440",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 21160,
+      "kind": "MP20_train",
+      "dataset_space_group": 200,
+      "dataset_formula": "V6GaSi",
+      "composition_elements": [
+        "Ga",
+        "Si",
+        "V"
+      ],
+      "input_cif_sha256": "2dfb598d5e9881a979eaf0402521202c29e4a1b768e4fe4b399be86d4c2b96ba",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1216440.cif"
+    },
+    {
+      "id": "mp-1189284",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 39154,
+      "kind": "MP20_train",
+      "dataset_space_group": 204,
+      "dataset_formula": "CaV4(CoO4)3",
+      "composition_elements": [
+        "Ca",
+        "Co",
+        "O",
+        "V"
+      ],
+      "input_cif_sha256": "db928c6bef6c9d55123dd6d052fc8e380a61205e906eb3b98ace50fe6a77c75a",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1189284.cif"
+    },
+    {
+      "id": "mp-21873",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 29845,
+      "kind": "MP20_train",
+      "dataset_space_group": 205,
+      "dataset_formula": "NiAs2",
+      "composition_elements": [
+        "As",
+        "Ni"
+      ],
+      "input_cif_sha256": "07aed657fca6c3da7ac35c3256e31edf2fef8ad68b664201ebd0425e69b730d7",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-21873.cif"
+    },
+    {
+      "id": "mp-7275",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 27912,
+      "kind": "MP20_train",
+      "dataset_space_group": 212,
+      "dataset_formula": "BaSi2",
+      "composition_elements": [
+        "Ba",
+        "Si"
+      ],
+      "input_cif_sha256": "6e3a5c49cc4ec5532b2c6cef9cc6c67e59254de4a428453e9ba0ab0dcbc6cb36",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-7275.cif"
+    },
+    {
+      "id": "mp-1184766",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 20598,
+      "kind": "MP20_train",
+      "dataset_space_group": 213,
+      "dataset_formula": "Hg",
+      "composition_elements": [
+        "Hg"
+      ],
+      "input_cif_sha256": "d740c0362c2a9d9cb62f9c2758b2b02ef3cf86fbce35acdf85cee45779f6730e",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1184766.cif"
+    },
+    {
+      "id": "mp-1180319",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 43615,
+      "kind": "MP20_train",
+      "dataset_space_group": 215,
+      "dataset_formula": "MgScCu3Se4",
+      "composition_elements": [
+        "Cu",
+        "Mg",
+        "Sc",
+        "Se"
+      ],
+      "input_cif_sha256": "54624c26bf0ac32ab6d7d7b38be13104ccc3ff949d60e0c65febbe418aadab15",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1180319.cif"
+    },
+    {
+      "id": "mp-985582",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 31485,
+      "kind": "MP20_train",
+      "dataset_space_group": 216,
+      "dataset_formula": "Li6PS5I",
+      "composition_elements": [
+        "I",
+        "Li",
+        "P",
+        "S"
+      ],
+      "input_cif_sha256": "b43af3176ca3421241a427364a3006408b06a0f4df5cbe11d7ea030f1cff791f",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-985582.cif"
+    },
+    {
+      "id": "mp-561543",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 3861,
+      "kind": "MP20_train",
+      "dataset_space_group": 217,
+      "dataset_formula": "BeF2",
+      "composition_elements": [
+        "Be",
+        "F"
+      ],
+      "input_cif_sha256": "63e8fc8c3145e0db40ec22bba602b2f0a5ece7e7d56d4193a5ad664a7f378eae",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-561543.cif"
+    },
+    {
+      "id": "mp-4198",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 20829,
+      "kind": "MP20_train",
+      "dataset_space_group": 218,
+      "dataset_formula": "Ag3PO4",
+      "composition_elements": [
+        "Ag",
+        "O",
+        "P"
+      ],
+      "input_cif_sha256": "1d7c1446fed1bc5adcd5e8516f16ca7a711351495a2e1fe140b7f5062223e547",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-4198.cif"
+    },
+    {
+      "id": "mp-1188599",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 18127,
+      "kind": "MP20_train",
+      "dataset_space_group": 220,
+      "dataset_formula": "Gd3Sb4Au3",
+      "composition_elements": [
+        "Au",
+        "Gd",
+        "Sb"
+      ],
+      "input_cif_sha256": "95335f8f8d6578e08c8ed3c50446133758b09e4301fdbda9ae1b9a4ef5d951e1",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1188599.cif"
+    },
+    {
+      "id": "mp-8557",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 8422,
+      "kind": "MP20_train",
+      "dataset_space_group": 221,
+      "dataset_formula": "BaPaO3",
+      "composition_elements": [
+        "Ba",
+        "O",
+        "Pa"
+      ],
+      "input_cif_sha256": "46420e71af9407bc89d6f0aa08029ce9ac0c2f11e08d6db5ec9feff4db8589f9",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-8557.cif"
+    },
+    {
+      "id": "mp-1373",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 39784,
+      "kind": "MP20_train",
+      "dataset_space_group": 223,
+      "dataset_formula": "Nb3Ge",
+      "composition_elements": [
+        "Ge",
+        "Nb"
+      ],
+      "input_cif_sha256": "ad6b06b0ea24aa07de8fbd59ad34422560eec0a287677754b9efafd2be0d1a41",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1373.cif"
+    },
+    {
+      "id": "mp-1188235",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 26115,
+      "kind": "MP20_train",
+      "dataset_space_group": 224,
+      "dataset_formula": "MnV2Ga2Co3",
+      "composition_elements": [
+        "Co",
+        "Ga",
+        "Mn",
+        "V"
+      ],
+      "input_cif_sha256": "96100aa2a584676f465186d0d8dcac9e169e53c7c1e0e70fc771f6cf6f87a685",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1188235.cif"
+    },
+    {
+      "id": "mp-1111664",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 36058,
+      "kind": "MP20_train",
+      "dataset_space_group": 225,
+      "dataset_formula": "K2LiSbCl6",
+      "composition_elements": [
+        "Cl",
+        "K",
+        "Li",
+        "Sb"
+      ],
+      "input_cif_sha256": "824ce860584e15853c5dfb37a11ae056e06403ba89c2489a4a3fb32062627d0f",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1111664.cif"
+    },
+    {
+      "id": "mp-20084",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 6778,
+      "kind": "MP20_train",
+      "dataset_space_group": 227,
+      "dataset_formula": "GdRh2",
+      "composition_elements": [
+        "Gd",
+        "Rh"
+      ],
+      "input_cif_sha256": "2df84c6e01c3307637c763a7e8e685531e4092c0eb69e66482e5b160c9fa571d",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-20084.cif"
+    },
+    {
+      "id": "mp-41",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 44328,
+      "kind": "MP20_train",
+      "dataset_space_group": 229,
+      "dataset_formula": "Zr",
+      "composition_elements": [
+        "Zr"
+      ],
+      "input_cif_sha256": "55fd8c8a4e4f2ce10c750192bb845cfe038c27896df0f4a1cbde9b6c068a3202",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-41.cif"
+    },
+    {
+      "id": "mp-752632",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 43837,
+      "kind": "MP20_train",
+      "dataset_space_group": 1,
+      "dataset_formula": "LiMn2(CO3)4",
+      "composition_elements": [
+        "C",
+        "Li",
+        "Mn",
+        "O"
+      ],
+      "input_cif_sha256": "787aee1005a03d6d718f446b63eadff77df03e741613a182b732ac01c1e9d6f9",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-752632.cif"
+    },
+    {
+      "id": "mp-1217205",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 25706,
+      "kind": "MP20_train",
+      "dataset_space_group": 2,
+      "dataset_formula": "Ti5CuS10",
+      "composition_elements": [
+        "Cu",
+        "S",
+        "Ti"
+      ],
+      "input_cif_sha256": "2b9163f15960edbe4ca53a956173a92744b01d91bec9efb70969b0f29bce2394",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1217205.cif"
+    },
+    {
+      "id": "mp-1220458",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 32712,
+      "kind": "MP20_train",
+      "dataset_space_group": 3,
+      "dataset_formula": "NbVSi4",
+      "composition_elements": [
+        "Nb",
+        "Si",
+        "V"
+      ],
+      "input_cif_sha256": "b341d73f6b1f4179371d3c39edcc0171cf4c8b0fe7a392fd59329d4f7c66cf55",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1220458.cif"
+    },
+    {
+      "id": "mp-558102",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 10851,
+      "kind": "MP20_train",
+      "dataset_space_group": 4,
+      "dataset_formula": "KLiSi2O5",
+      "composition_elements": [
+        "K",
+        "Li",
+        "O",
+        "Si"
+      ],
+      "input_cif_sha256": "e9a293eb9d5996205240a1341224e82f6c18bb3c381d674a37b4edc2d6bb64cd",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-558102.cif"
+    },
+    {
+      "id": "mp-1235796",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 23769,
+      "kind": "MP20_train",
+      "dataset_space_group": 5,
+      "dataset_formula": "LiO8",
+      "composition_elements": [
+        "Li",
+        "O"
+      ],
+      "input_cif_sha256": "faa1d2bae794c6f862b5787c7ae0cfc50a2b92a0514000035b7d61896e541e7a",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1235796.cif"
+    },
+    {
+      "id": "mp-1219380",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 7179,
+      "kind": "MP20_train",
+      "dataset_space_group": 6,
+      "dataset_formula": "Sc4Co3Sb4",
+      "composition_elements": [
+        "Co",
+        "Sb",
+        "Sc"
+      ],
+      "input_cif_sha256": "d1751efded668048055ac666703798513298c488aad0646e37b05c6636dab221",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1219380.cif"
+    },
+    {
+      "id": "mvc-9656",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 2999,
+      "kind": "MP20_train",
+      "dataset_space_group": 7,
+      "dataset_formula": "CaPr(MoO3)2",
+      "composition_elements": [
+        "Ca",
+        "Mo",
+        "O",
+        "Pr"
+      ],
+      "input_cif_sha256": "61ecc424f07ded8b4fba948a6ef14a4e4211d07af7e37a689dc445f332a459e7",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mvc-9656.cif"
+    },
+    {
+      "id": "mp-1219619",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 33195,
+      "kind": "MP20_train",
+      "dataset_space_group": 8,
+      "dataset_formula": "RbLa2TaTi2O10",
+      "composition_elements": [
+        "La",
+        "O",
+        "Rb",
+        "Ta",
+        "Ti"
+      ],
+      "input_cif_sha256": "32a8c52ad85b6e80a706bd71ef29640e906c472fd4bcf5f7face7ec0ee97e994",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1219619.cif"
+    },
+    {
+      "id": "mp-759738",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 39933,
+      "kind": "MP20_train",
+      "dataset_space_group": 9,
+      "dataset_formula": "LiFeSiO4",
+      "composition_elements": [
+        "Fe",
+        "Li",
+        "O",
+        "Si"
+      ],
+      "input_cif_sha256": "71382ad06d1a90dcf9ec43f38f059f08379d260a08aaf71f4aa849f43d4a4ca0",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-759738.cif"
+    },
+    {
+      "id": "mp-754209",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 29424,
+      "kind": "MP20_train",
+      "dataset_space_group": 10,
+      "dataset_formula": "Li4Cr3NiO8",
+      "composition_elements": [
+        "Cr",
+        "Li",
+        "Ni",
+        "O"
+      ],
+      "input_cif_sha256": "8eaa956e4c2a1ef53d868d73eca07a1216a262dcbef016695e00c566bf4c6f4d",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-754209.cif"
+    },
+    {
+      "id": "mp-29092",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 13781,
+      "kind": "MP20_train",
+      "dataset_space_group": 11,
+      "dataset_formula": "Ba3(GeN)2",
+      "composition_elements": [
+        "Ba",
+        "Ge",
+        "N"
+      ],
+      "input_cif_sha256": "07099a8c399a4f7473788843dc7fcede097672029d135c30c7fd66f87888b654",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-29092.cif"
+    },
+    {
+      "id": "mp-1025224",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 26009,
+      "kind": "MP20_train",
+      "dataset_space_group": 12,
+      "dataset_formula": "V(CrS2)2",
+      "composition_elements": [
+        "Cr",
+        "S",
+        "V"
+      ],
+      "input_cif_sha256": "4347533c1fd1a95909bffcc4da1eda2e5a5794b4b75c05ceacb5c92a62443280",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1025224.cif"
+    },
+    {
+      "id": "mp-572526",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 328,
+      "kind": "MP20_train",
+      "dataset_space_group": 13,
+      "dataset_formula": "SbBr(OF3)2",
+      "composition_elements": [
+        "Br",
+        "F",
+        "O",
+        "Sb"
+      ],
+      "input_cif_sha256": "db0be6bdc871836b5de351156e54ee25e240220739d4bc41dc42061523c1dfe3",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-572526.cif"
+    },
+    {
+      "id": "mp-11992",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 19141,
+      "kind": "MP20_train",
+      "dataset_space_group": 14,
+      "dataset_formula": "LiLa2IrO6",
+      "composition_elements": [
+        "Ir",
+        "La",
+        "Li",
+        "O"
+      ],
+      "input_cif_sha256": "d9bd303a932379c9b5d6e280f2a8eb6fe31b4da98c9d7bb08ca7ed5376d4c707",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-11992.cif"
+    },
+    {
+      "id": "mp-1211301",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 13658,
+      "kind": "MP20_train",
+      "dataset_space_group": 15,
+      "dataset_formula": "KSm(CO3)2",
+      "composition_elements": [
+        "C",
+        "K",
+        "O",
+        "Sm"
+      ],
+      "input_cif_sha256": "4ae72450c8b5fff271aee651380ee274c2b35f804d08872083e52f76ca609102",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1211301.cif"
+    },
+    {
+      "id": "mp-558830",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 27874,
+      "kind": "MP20_train",
+      "dataset_space_group": 18,
+      "dataset_formula": "ZnTeMoO6",
+      "composition_elements": [
+        "Mo",
+        "O",
+        "Te",
+        "Zn"
+      ],
+      "input_cif_sha256": "c44fd825be4b74fe0e8769ed4e0b956babc1a6f70f20bb43ac1eeed850d7dc79",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-558830.cif"
+    },
+    {
+      "id": "mp-7440",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 12402,
+      "kind": "MP20_train",
+      "dataset_space_group": 19,
+      "dataset_formula": "NaP",
+      "composition_elements": [
+        "Na",
+        "P"
+      ],
+      "input_cif_sha256": "7985cf543c04abb49dc11cc846e0c0df576d55986f4885d2ce58f76689782398",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-7440.cif"
+    },
+    {
+      "id": "mp-1176698",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 35601,
+      "kind": "MP20_train",
+      "dataset_space_group": 20,
+      "dataset_formula": "LiFeF3",
+      "composition_elements": [
+        "F",
+        "Fe",
+        "Li"
+      ],
+      "input_cif_sha256": "729bd34d7a44e16d80916b729b738711a6a1cfcd18f4929c239d34a4f4f80d0f",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1176698.cif"
+    },
+    {
+      "id": "mp-755289",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 37913,
+      "kind": "MP20_train",
+      "dataset_space_group": 21,
+      "dataset_formula": "Li3Y3ZrO8",
+      "composition_elements": [
+        "Li",
+        "O",
+        "Y",
+        "Zr"
+      ],
+      "input_cif_sha256": "a8608a1d3d1c8384beb2070a1742aa59d2ce7248310dd7c045bc4ec2fe7211bd",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-755289.cif"
+    },
+    {
+      "id": "mp-1221607",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 44211,
+      "kind": "MP20_train",
+      "dataset_space_group": 22,
+      "dataset_formula": "MnRe3B2",
+      "composition_elements": [
+        "B",
+        "Mn",
+        "Re"
+      ],
+      "input_cif_sha256": "54439df32cd9a14bd8f6e35045ef8df420399adeaa00e1b7143e45aceef3ec30",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1221607.cif"
+    },
+    {
+      "id": "mp-555166",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 4880,
+      "kind": "MP20_train",
+      "dataset_space_group": 23,
+      "dataset_formula": "BaAg2SnS4",
+      "composition_elements": [
+        "Ag",
+        "Ba",
+        "S",
+        "Sn"
+      ],
+      "input_cif_sha256": "743749615836f44c19808c1347bf3fcf5f128082098f9ed225a7b5bd1e583c7c",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-555166.cif"
+    },
+    {
+      "id": "mp-753671",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 3417,
+      "kind": "MP20_train",
+      "dataset_space_group": 24,
+      "dataset_formula": "PNO",
+      "composition_elements": [
+        "N",
+        "O",
+        "P"
+      ],
+      "input_cif_sha256": "ce6230e83b9372514133ac7421b8f989c2380d7231c94fdc2433424c29a50f9c",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-753671.cif"
+    },
+    {
+      "id": "mp-1220778",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 36723,
+      "kind": "MP20_train",
+      "dataset_space_group": 25,
+      "dataset_formula": "Nd4MnSn8",
+      "composition_elements": [
+        "Mn",
+        "Nd",
+        "Sn"
+      ],
+      "input_cif_sha256": "dab1043d7ef411273c953fc4095ebaaa1a6ce242af68643adf71ce99dfce3e31",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1220778.cif"
+    },
+    {
+      "id": "mp-1218951",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 28203,
+      "kind": "MP20_train",
+      "dataset_space_group": 26,
+      "dataset_formula": "SnPbS2",
+      "composition_elements": [
+        "Pb",
+        "S",
+        "Sn"
+      ],
+      "input_cif_sha256": "87c15b2a504e09ca27ecea4a6f41d3a62f5086930cbdf5d74efc4c7182ef9e5c",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1218951.cif"
+    },
+    {
+      "id": "mp-29510",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 25339,
+      "kind": "MP20_train",
+      "dataset_space_group": 28,
+      "dataset_formula": "Hg2TeO3",
+      "composition_elements": [
+        "Hg",
+        "O",
+        "Te"
+      ],
+      "input_cif_sha256": "9714bab79fdd8d42f44d863ba86cff0dbadf3ac04185d6246dd7260b410b3df2",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-29510.cif"
+    },
+    {
+      "id": "mp-550714",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 30857,
+      "kind": "MP20_train",
+      "dataset_space_group": 29,
+      "dataset_formula": "PbO",
+      "composition_elements": [
+        "O",
+        "Pb"
+      ],
+      "input_cif_sha256": "ac12e5f6e6c9058867546fd560dc9b4a694e6493f131f41c89bc4cdecabb1a6c",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-550714.cif"
+    },
+    {
+      "id": "mp-9066",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 12473,
+      "kind": "MP20_train",
+      "dataset_space_group": 31,
+      "dataset_formula": "NaLi2AsO4",
+      "composition_elements": [
+        "As",
+        "Li",
+        "Na",
+        "O"
+      ],
+      "input_cif_sha256": "a338141166593eef611848730d6d5a9040e6cf763325e8dd9651214c4bc51217",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-9066.cif"
+    },
+    {
+      "id": "mp-1105293",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 42560,
+      "kind": "MP20_train",
+      "dataset_space_group": 33,
+      "dataset_formula": "GaAgO2",
+      "composition_elements": [
+        "Ag",
+        "Ga",
+        "O"
+      ],
+      "input_cif_sha256": "5c22e139f5ea19f1a49ed9455c36d596926adb32768b5daa7365c8dec99207cd",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1105293.cif"
+    },
+    {
+      "id": "mp-1208553",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 41169,
+      "kind": "MP20_train",
+      "dataset_space_group": 34,
+      "dataset_formula": "Sr2YbTaO6",
+      "composition_elements": [
+        "O",
+        "Sr",
+        "Ta",
+        "Yb"
+      ],
+      "input_cif_sha256": "ccc77ae0351f9bbcd0cb872db8c4a1e886d93cadb8459e10ccf51d10493ac8d6",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1208553.cif"
+    },
+    {
+      "id": "mp-1220452",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 7681,
+      "kind": "MP20_train",
+      "dataset_space_group": 35,
+      "dataset_formula": "NbCu3(SeS)2",
+      "composition_elements": [
+        "Cu",
+        "Nb",
+        "S",
+        "Se"
+      ],
+      "input_cif_sha256": "c94cd9941128050b0dc0268767e4d381ce1bc6f6918bd6a90b6db55cd73eb691",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1220452.cif"
+    },
+    {
+      "id": "mp-1227147",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 39261,
+      "kind": "MP20_train",
+      "dataset_space_group": 36,
+      "dataset_formula": "CaSmCoO4",
+      "composition_elements": [
+        "Ca",
+        "Co",
+        "O",
+        "Sm"
+      ],
+      "input_cif_sha256": "cce2f0048f1bfa680aa5a5d8db73b1957a6614ce9428e6d2596db6b2ad253e97",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1227147.cif"
+    },
+    {
+      "id": "mp-1001022",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 23000,
+      "kind": "MP20_train",
+      "dataset_space_group": 37,
+      "dataset_formula": "Cu2PPd2",
+      "composition_elements": [
+        "Cu",
+        "P",
+        "Pd"
+      ],
+      "input_cif_sha256": "d2768a25c314d8268922305b3abfd3c80c3cdccb5399fedd157e30dc72aee8f6",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1001022.cif"
+    },
+    {
+      "id": "mp-1094637",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 44576,
+      "kind": "MP20_train",
+      "dataset_space_group": 38,
+      "dataset_formula": "MgGa",
+      "composition_elements": [
+        "Ga",
+        "Mg"
+      ],
+      "input_cif_sha256": "46d075c7a71005ccd4b44049abe0600e427d848bfe9b7f10030ed2467880c77a",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1094637.cif"
+    },
+    {
+      "id": "mp-1224153",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 30737,
+      "kind": "MP20_train",
+      "dataset_space_group": 39,
+      "dataset_formula": "HoNO4",
+      "composition_elements": [
+        "Ho",
+        "N",
+        "O"
+      ],
+      "input_cif_sha256": "b565d9d07b68cce8a4a737a7e567c4814c02249a515828c54f939350e6cc5efd",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1224153.cif"
+    },
+    {
+      "id": "mp-1217607",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 5182,
+      "kind": "MP20_train",
+      "dataset_space_group": 40,
+      "dataset_formula": "TbBO3",
+      "composition_elements": [
+        "B",
+        "O",
+        "Tb"
+      ],
+      "input_cif_sha256": "300a35a8dd926e27df97bf34b2c3ff354c6a86664f1778de31e629f6a4c8fb06",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1217607.cif"
+    },
+    {
+      "id": "mp-1184928",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 24129,
+      "kind": "MP20_train",
+      "dataset_space_group": 41,
+      "dataset_formula": "IF7",
+      "composition_elements": [
+        "F",
+        "I"
+      ],
+      "input_cif_sha256": "0e7171a10f7d9c95531825eeeb345f9f9dd11e176c720bc4d846fc3a771e9a3a",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1184928.cif"
+    },
+    {
+      "id": "mp-8954",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 3973,
+      "kind": "MP20_train",
+      "dataset_space_group": 42,
+      "dataset_formula": "TaSe2",
+      "composition_elements": [
+        "Se",
+        "Ta"
+      ],
+      "input_cif_sha256": "e185257fae18a3d610d871454644503f4907fe3d1acb4538b6c8377600c6f2f5",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-8954.cif"
+    },
+    {
+      "id": "mp-13868",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 3722,
+      "kind": "MP20_train",
+      "dataset_space_group": 43,
+      "dataset_formula": "PdF4",
+      "composition_elements": [
+        "F",
+        "Pd"
+      ],
+      "input_cif_sha256": "ab8463792677f48f3eed8b6f1d91b447278277f9c4b548cffb589edba11ed045",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-13868.cif"
+    },
+    {
+      "id": "mp-1206192",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 41652,
+      "kind": "MP20_train",
+      "dataset_space_group": 44,
+      "dataset_formula": "Y7(TeAu)2",
+      "composition_elements": [
+        "Au",
+        "Te",
+        "Y"
+      ],
+      "input_cif_sha256": "60e17a4df00f745bc7bc8be82e913ac90eec34d33a7b80c640e663e5330bfde2",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1206192.cif"
+    },
+    {
+      "id": "mp-1076048",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 43533,
+      "kind": "MP20_train",
+      "dataset_space_group": 46,
+      "dataset_formula": "Na2V2O5",
+      "composition_elements": [
+        "Na",
+        "O",
+        "V"
+      ],
+      "input_cif_sha256": "b14f41f3a3a971f228103f80a6ac5e7e23be98d9cc9399307c5f23de8b17bc90",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1076048.cif"
+    },
+    {
+      "id": "mp-985569",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 31484,
+      "kind": "MP20_train",
+      "dataset_space_group": 47,
+      "dataset_formula": "Sr2YCu3O7",
+      "composition_elements": [
+        "Cu",
+        "O",
+        "Sr",
+        "Y"
+      ],
+      "input_cif_sha256": "06264bf0e392d049fbf18cac1e26f3fc9b0c815d872e5b581a0b9a249e750add",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-985569.cif"
+    },
+    {
+      "id": "mp-1177070",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 39609,
+      "kind": "MP20_train",
+      "dataset_space_group": 51,
+      "dataset_formula": "Li5SbS",
+      "composition_elements": [
+        "Li",
+        "S",
+        "Sb"
+      ],
+      "input_cif_sha256": "1dc1790444dc366bbe1c598a1a527d3e8efa4cda4b8ba042c287129058be8f1d",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1177070.cif"
+    },
+    {
+      "id": "mp-1214332",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 5174,
+      "kind": "MP20_train",
+      "dataset_space_group": 52,
+      "dataset_formula": "BaSrBi3",
+      "composition_elements": [
+        "Ba",
+        "Bi",
+        "Sr"
+      ],
+      "input_cif_sha256": "4caa11a6dcb01b3746d2e67c01750ae2841bc3ddb12317fb4693051b655e31fb",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1214332.cif"
+    },
+    {
+      "id": "mp-28741",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 379,
+      "kind": "MP20_train",
+      "dataset_space_group": 53,
+      "dataset_formula": "CuSe3Br",
+      "composition_elements": [
+        "Br",
+        "Cu",
+        "Se"
+      ],
+      "input_cif_sha256": "b5dcaa2ec4423938a7551953139a3a560756c0179e867129f83d70e6bb1d2035",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-28741.cif"
+    },
+    {
+      "id": "mvc-3992",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 44495,
+      "kind": "MP20_train",
+      "dataset_space_group": 55,
+      "dataset_formula": "Ca2Ni2O5",
+      "composition_elements": [
+        "Ca",
+        "Ni",
+        "O"
+      ],
+      "input_cif_sha256": "3ff89a567c3acfa416a48fc6b49b4bc82e7dc992ff646a3406e60c8e06679e46",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mvc-3992.cif"
+    },
+    {
+      "id": "mp-1246596",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 27283,
+      "kind": "MP20_train",
+      "dataset_space_group": 57,
+      "dataset_formula": "Li2CuN",
+      "composition_elements": [
+        "Cu",
+        "Li",
+        "N"
+      ],
+      "input_cif_sha256": "0e4710a58ccc34569a7ed7ec00590ff3aa4097c44a1b79f5bad355f1714be109",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1246596.cif"
+    },
+    {
+      "id": "mp-754218",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 37398,
+      "kind": "MP20_train",
+      "dataset_space_group": 58,
+      "dataset_formula": "Tb2SeO2",
+      "composition_elements": [
+        "O",
+        "Se",
+        "Tb"
+      ],
+      "input_cif_sha256": "fae346bbe201b44e98663ddaca0fa83c52109d5f5285f9ba927390c194d059df",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-754218.cif"
+    },
+    {
+      "id": "mp-1080590",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 1043,
+      "kind": "MP20_train",
+      "dataset_space_group": 59,
+      "dataset_formula": "DyAu3",
+      "composition_elements": [
+        "Au",
+        "Dy"
+      ],
+      "input_cif_sha256": "8ab6dc1b79e19f48af695740bdace64c35d828e383edee2de13d97f041ccbfcc",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1080590.cif"
+    },
+    {
+      "id": "mp-2034",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 42312,
+      "kind": "MP20_train",
+      "dataset_space_group": 60,
+      "dataset_formula": "W2C",
+      "composition_elements": [
+        "C",
+        "W"
+      ],
+      "input_cif_sha256": "4b3f2a6737d53035fbf701e67c4b80bb81c5b275edb146e4917e93290c63ed22",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-2034.cif"
+    },
+    {
+      "id": "mp-13682",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 234,
+      "kind": "MP20_train",
+      "dataset_space_group": 61,
+      "dataset_formula": "PdS2",
+      "composition_elements": [
+        "Pd",
+        "S"
+      ],
+      "input_cif_sha256": "6629d6b3ad1d87625893035fe71b758fc5cd7434370ced15e59097e47d487eab",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-13682.cif"
+    },
+    {
+      "id": "mp-30456",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 19329,
+      "kind": "MP20_train",
+      "dataset_space_group": 62,
+      "dataset_formula": "SrLiBi",
+      "composition_elements": [
+        "Bi",
+        "Li",
+        "Sr"
+      ],
+      "input_cif_sha256": "ca2891dcbfdb2db24e9f6eac27aeed19217d46b0ae76eca36c300d91433731d4",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-30456.cif"
+    },
+    {
+      "id": "mp-571189",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 18876,
+      "kind": "MP20_train",
+      "dataset_space_group": 63,
+      "dataset_formula": "NaHf2CuSe5",
+      "composition_elements": [
+        "Cu",
+        "Hf",
+        "Na",
+        "Se"
+      ],
+      "input_cif_sha256": "f15123aea8e5f178061dcda39bc0847c93fb27760d1503bdaeda5cab8a4eeaed",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-571189.cif"
+    },
+    {
+      "id": "mp-573579",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 40357,
+      "kind": "MP20_train",
+      "dataset_space_group": 64,
+      "dataset_formula": "Cs",
+      "composition_elements": [
+        "Cs"
+      ],
+      "input_cif_sha256": "9f9c9180d4878849d93943bf099ce4b07e95d5c937540ad6fef0f0c89dc78b69",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-573579.cif"
+    },
+    {
+      "id": "mp-1077126",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 5533,
+      "kind": "MP20_train",
+      "dataset_space_group": 65,
+      "dataset_formula": "DySiNi4",
+      "composition_elements": [
+        "Dy",
+        "Ni",
+        "Si"
+      ],
+      "input_cif_sha256": "44f21826bfac446f614d5f1f599be4e3dfe0faeedbaefda0c45edcfa0acb2e22",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1077126.cif"
+    },
+    {
+      "id": "mp-1104810",
+      "source": "work/PLaID/data/basic/train.csv",
+      "source_row_zero_based": 27553,
+      "kind": "MP20_train",
+      "dataset_space_group": 66,
+      "dataset_formula": "Sr(GaS2)2",
+      "composition_elements": [
+        "Ga",
+        "S",
+        "Sr"
+      ],
+      "input_cif_sha256": "c288f92f728ab6e19e6372c6dde9b5666cbca2a8f08a83c50d14251bf97f6c34",
+      "input_cif_path": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1104810.cif"
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "status": "selected_archive_structure_label_data",
+  "records": 45629,
+  "split_counts": {
+    "train": 36491,
+    "val": 4517,
+    "test": 4621
+  },
+  "database_versions": {
+    "2025.06.09": 45629
+  },
+  "theoretical_counts": {
+    "False": 12835,
+    "True": 32794
+  },
+  "filters": {
+    "ehull_eV_per_atom": [
+      0,
+      0.3
+    ],
+    "nsites": [
+      1,
+      20
+    ],
+    "nelements": [
+      1,
+      4
+    ],
+    "deprecated": false,
+    "ordered_full_occupancy": true
+  },
+  "label": "original continuous energy_above_hull; no recalculation, no prediction-field substitution",
+  "seed": 17,
+  "per_bin_max": 10000,
+  "bins": {
+    "0": {
+      "input_count": 19214,
+      "candidate_count": 19214,
+      "selected_count": 10000
+    },
+    "(0,0.05]": {
+      "input_count": 18388,
+      "candidate_count": 18388,
+      "selected_count": 10000
+    },
+    "(0.05,0.1]": {
+      "input_count": 10181,
+      "candidate_count": 10181,
+      "selected_count": 10000
+    },
+    "(0.1,0.2]": {
+      "input_count": 10630,
+      "candidate_count": 10630,
+      "selected_count": 10000
+    },
+    "(0.2,0.3]": {
+      "input_count": 5630,
+      "candidate_count": 5629,
+      "selected_count": 5629
+    }
+  },
+  "duplicate_protocol": "same lattice and sites to 8 decimal places, origin/site-order invariant; site properties retained; cross-cell symmetry equivalence not grouped",
+  "structure_task_entry_matches": {
+    "GGA": 23576,
+    "GGA_U": 7942,
+    "R2SCAN": 13902,
+    "no_task_match": 209
+  },
+  "official_spotcheck": {
+    "path": "/Volumes/Extention/Users/guicheng/Code/helloWorld/CrystalDLM/research/mp_ehull030_20261011/mp_official_three_check_001.json",
+    "sha256": "5bb2189aa6596600b346f65329b1e6d51f2f98d2b49da216b74ebcb93b95f9bf",
+    "status": "three_label_values_match",
+    "n": 3
+  },
+  "source_hashes": {
+    "collect.py": "7efa9dd0714e3eaeeb2a49a14f8f6f665a87f55049d86dc6565dd9ed61926993",
+    "sampling.py": "fc45cadcbe7ec50cf8959784feae0e269d068f0dcce942a33b683baa41d1d28a",
+    "finish.py": "e2e64bdf0e12bb524679b8dc3c3eaaccbc9ff181d541e6ed702ad3c8260878e1"
+  },
+  "upstream_artifacts": {
+    "metadata.jsonl.gz": "e9a52455e3f003a40c69225d5bf1e349a121000542034d0aa7c298367bc557ef",
+    "raw_candidates.jsonl.gz": "6c0e14f6d7d297cb0c09abff6659e8c19601fd03fbca2f2afd1580b0d25ba0c7",
+    "valid_candidates.jsonl.gz": "2983175fd9fb21f080b6d841c2238580e7ab5f0dad07905a69a088bfaeccecda",
+    "inventory_receipt.json": "cd809ea076711ee2a04882d269019371b9f3426c18b969b81fc66a17aae38c8d",
+    "download_receipt.json": "53d7a64fd1d61027da49ec801f68a2823d1e84834059e5271aaf9ffc898ed0c0"
+  },
+  "artifacts": {
+    "split_report.json": {
+      "bytes": 368,
+      "sha256": "98153f9ccc5668b662b1b52daec7c2f217ce6c7b6b8a50eef698b4bc9fcf9bd5"
+    },
+    "sampling_report.json": {
+      "bytes": 4589721,
+      "sha256": "368ef6d10905fa150f9b11ad6343017f5765280ac46790c0249b5775888af494"
+    },
+    "train.jsonl.gz": {
+      "bytes": 22119909,
+      "sha256": "2c9203381beacefc70a70e4d87f7070c33efcc2f69936b43b306ba40c1bdb04f"
+    },
+    "val.jsonl.gz": {
+      "bytes": 2801336,
+      "sha256": "1bdd0ba733309abc806ac0e5421fd98d97fdb82ed078448c2658e0c12231e4b8"
+    },
+    "test.jsonl.gz": {
+      "bytes": 2865178,
+      "sha256": "c04789319e071fd6b953b781eed20e5da299d6ef7d0db419c90bc3872f1ca973"
+    },
+    "records.jsonl.gz": {
+      "bytes": 27622123,
+      "sha256": "821b942d948ab893b4e7c90def9123a16a74547edb52c9cf58c021f54367e16b"
+    },
+    "selection.csv": {
+      "bytes": 4847451,
+      "sha256": "472e33de1dadb73ec2d9dbae88925e3050f0a82ea69952a9890a360b33bcf2df"
+    }
+  },
+  "server_writes": 0,
+  "training_run": false,
+  "limitations": [
+    "archived thermo_type is not explicit; three official-label spotchecks do not establish all-row calculation provenance",
+    "no PLaID encoding or generated-crystal evaluation performed"
+  ]
+}

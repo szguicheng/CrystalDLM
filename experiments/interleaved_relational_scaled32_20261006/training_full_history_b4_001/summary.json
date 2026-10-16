@@ -1,0 +1,826 @@
+{
+  "status": "training_only_checkpoint_verified",
+  "stage": "scaled32_training_only",
+  "terminal_goal_achieved": false,
+  "reader_mode": "grounded",
+  "reader_recipe": "Fresh grounded run: each train case receives 16 neutral and 16 conflicting contexts per reader task; for Q2, each reader direction receives 8 neutral and 8 full-parent-history contexts. Q1 conflicts replace the parent design conditions with a cyclic training partner's conditions while preserving the current case's C1 and target; Q2 retains its same-case G-C1-Q1-E-C2 history.",
+  "reader_direction_note": "Parent Q1/Q2 task and direction schedule is unchanged. Per train case Q1 has 16 neutral and 16 conflict; each Q2 direction has 8 neutral and 8 full-history conflict examples.",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+  "seed": 17,
+  "updates": 2048,
+  "epochs_per_train_case": 64,
+  "K": 2560,
+  "MAXLEN": 8192,
+  "clean_crystal_ar_weight": 1.0,
+  "initial_fingerprint": "e97aed646b7289c06f10be376b37d67cd7aa6a42ad6214b61da008cd85b8404b",
+  "final_fingerprint": "e4eee01bbcb31a3e116367ba6ec7247163870fb4c15b4efc008df3abb267ed65",
+  "checkpoint_reload_verified": true,
+  "actual_task_exposure_counts": {
+    "per_material": {
+      "anchor_Li8V4Ni4O16": {
+        "tasks": {
+          "E": 64,
+          "G": 128,
+          "Q1": 32,
+          "Q2": 32
+        },
+        "E_factors": {
+          "minus": 32,
+          "plus": 32
+        },
+        "Q2_factors": {
+          "minus": 16,
+          "plus": 16
+        }
+      },
+      "anchor_Tb8Mg4": {
+        "tasks": {
+          "E": 64,
+          "G": 128,
+          "Q1": 32,
+          "Q2": 32
+        },
+        "E_factors": {
+          "minus": 32,
+          "plus": 32
+        },
+        "Q2_factors": {
+          "minus": 16,
+          "plus": 16
+        }
+      },
+      "mp-10847": {
+        "tasks": {
+          "E": 64,
+          "G": 128,
+          "Q1": 32,
+          "Q2": 32
+        },
+        "E_factors": {
+          "minus": 32,
+          "plus": 32
+        },
+        "Q2_factors": {
+          "minus": 16,
+          "plus": 16
+        }
+      },
+      "mp-1099786": {
+        "tasks": {
+          "E": 64,
+          "G": 128,
+          "Q1": 32,
+          "Q2": 32
+        },
+        "E_factors": {
+          "minus": 32,
+          "plus": 32
+        },
+        "Q2_factors": {
+          "minus": 16,
+          "plus": 16
+        }
+      },
+      "mp-1105932": {
+        "tasks": {
+          "E": 64,
+          "G": 128,
+          "Q1": 32,
+          "Q2": 32
+        },
+        "E_factors": {
+          "minus": 32,
+          "plus": 32
+        },
+        "Q2_factors": {
+          "minus": 16,
+          "plus": 16
+        }
+      },
+      "mp-11192": {
+        "tasks": {
+          "E": 64,
+          "G": 128,
+          "Q1": 32,
+          "Q2": 32
+        },
+        "E_factors": {
+          "minus": 32,
+          "plus": 32
+        },
+        "Q2_factors": {
+          "minus": 16,
+          "plus": 16
+        }
+      },
+      "mp-1188285": {
+        "tasks": {
+          "E": 64,
+          "G": 128,
+          "Q1": 32,
+          "Q2": 32
+        },
+        "E_factors": {
+          "minus": 32,
+          "plus": 32
+        },
+        "Q2_factors": {
+          "minus": 16,
+          "plus": 16
+        }
+      },
+      "mp-1189385": {
+        "tasks": {
+          "E": 64,
+          "G": 128,
+          "Q1": 32,
+          "Q2": 32
+        },
+        "E_factors": {
+          "minus": 32,
+          "plus": 32
+        },
+        "Q2_factors": {
+          "minus": 16,
+          "plus": 16
+        }
+      },
+      "mp-1190391": {
+        "tasks": {
+          "E": 64,
+          "G": 128,
+          "Q1": 32,
+          "Q2": 32
+        },
+        "E_factors": {
+          "minus": 32,
+          "plus": 32
+        },
+        "Q2_factors": {
+          "minus": 16,
+          "plus": 16
+        }
+      },
+      "mp-1205515": {
+        "tasks": {
+          "E": 64,
+          "G": 128,
+          "Q1": 32,
+          "Q2": 32
+        },
+        "E_factors": {
+          "minus": 32,
+          "plus": 32
+        },
+        "Q2_factors": {
+          "minus": 16,
+          "plus": 16
+        }
+      },
+      "mp-1205902": {
+        "tasks": {
+          "E": 64,
+          "G": 128,
+          "Q1": 32,
+          "Q2": 32
+        },
+        "E_factors": {
+          "minus": 32,
+          "plus": 32
+        },
+        "Q2_factors": {
+          "minus": 16,
+          "plus": 16
+        }
+      },
+      "mp-1207068": {
+        "tasks": {
+          "E": 64,
+          "G": 128,
+          "Q1": 32,
+          "Q2": 32
+        },
+        "E_factors": {
+          "minus": 32,
+          "plus": 32
+        },
+        "Q2_factors": {
+          "minus": 16,
+          "plus": 16
+        }
+      },
+      "mp-1215249": {
+        "tasks": {
+          "E": 64,
+          "G": 128,
+          "Q1": 32,
+          "Q2": 32
+        },
+        "E_factors": {
+          "minus": 32,
+          "plus": 32
+        },
+        "Q2_factors": {
+          "minus": 16,
+          "plus": 16
+        }
+      },
+      "mp-1218405": {
+        "tasks": {
+          "E": 64,
+          "G": 128,
+          "Q1": 32,
+          "Q2": 32
+        },
+        "E_factors": {
+          "minus": 32,
+          "plus": 32
+        },
+        "Q2_factors": {
+          "minus": 16,
+          "plus": 16
+        }
+      },
+      "mp-1218490": {
+        "tasks": {
+          "E": 64,
+          "G": 128,
+          "Q1": 32,
+          "Q2": 32
+        },
+        "E_factors": {
+          "minus": 32,
+          "plus": 32
+        },
+        "Q2_factors": {
+          "minus": 16,
+          "plus": 16
+        }
+      },
+      "mp-1219974": {
+        "tasks": {
+          "E": 64,
+          "G": 128,
+          "Q1": 32,
+          "Q2": 32
+        },
+        "E_factors": {
+          "minus": 32,
+          "plus": 32
+        },
+        "Q2_factors": {
+          "minus": 16,
+          "plus": 16
+        }
+      },
+      "mp-1224444": {
+        "tasks": {
+          "E": 64,
+          "G": 128,
+          "Q1": 32,
+          "Q2": 32
+        },
+        "E_factors": {
+          "minus": 32,
+          "plus": 32
+        },
+        "Q2_factors": {
+          "minus": 16,
+          "plus": 16
+        }
+      },
+      "mp-12961": {
+        "tasks": {
+          "E": 64,
+          "G": 128,
+          "Q1": 32,
+          "Q2": 32
+        },
+        "E_factors": {
+          "minus": 32,
+          "plus": 32
+        },
+        "Q2_factors": {
+          "minus": 16,
+          "plus": 16
+        }
+      },
+      "mp-18127": {
+        "tasks": {
+          "E": 64,
+          "G": 128,
+          "Q1": 32,
+          "Q2": 32
+        },
+        "E_factors": {
+          "minus": 32,
+          "plus": 32
+        },
+        "Q2_factors": {
+          "minus": 16,
+          "plus": 16
+        }
+      },
+      "mp-23856": {
+        "tasks": {
+          "E": 64,
+          "G": 128,
+          "Q1": 32,
+          "Q2": 32
+        },
+        "E_factors": {
+          "minus": 32,
+          "plus": 32
+        },
+        "Q2_factors": {
+          "minus": 16,
+          "plus": 16
+        }
+      },
+      "mp-2582": {
+        "tasks": {
+          "E": 64,
+          "G": 128,
+          "Q1": 32,
+          "Q2": 32
+        },
+        "E_factors": {
+          "minus": 32,
+          "plus": 32
+        },
+        "Q2_factors": {
+          "minus": 16,
+          "plus": 16
+        }
+      },
+      "mp-30009": {
+        "tasks": {
+          "E": 64,
+          "G": 128,
+          "Q1": 32,
+          "Q2": 32
+        },
+        "E_factors": {
+          "minus": 32,
+          "plus": 32
+        },
+        "Q2_factors": {
+          "minus": 16,
+          "plus": 16
+        }
+      },
+      "mp-37014": {
+        "tasks": {
+          "E": 64,
+          "G": 128,
+          "Q1": 32,
+          "Q2": 32
+        },
+        "E_factors": {
+          "minus": 32,
+          "plus": 32
+        },
+        "Q2_factors": {
+          "minus": 16,
+          "plus": 16
+        }
+      },
+      "mp-4047": {
+        "tasks": {
+          "E": 64,
+          "G": 128,
+          "Q1": 32,
+          "Q2": 32
+        },
+        "E_factors": {
+          "minus": 32,
+          "plus": 32
+        },
+        "Q2_factors": {
+          "minus": 16,
+          "plus": 16
+        }
+      },
+      "mp-555984": {
+        "tasks": {
+          "E": 64,
+          "G": 128,
+          "Q1": 32,
+          "Q2": 32
+        },
+        "E_factors": {
+          "minus": 32,
+          "plus": 32
+        },
+        "Q2_factors": {
+          "minus": 16,
+          "plus": 16
+        }
+      },
+      "mp-7483": {
+        "tasks": {
+          "E": 64,
+          "G": 128,
+          "Q1": 32,
+          "Q2": 32
+        },
+        "E_factors": {
+          "minus": 32,
+          "plus": 32
+        },
+        "Q2_factors": {
+          "minus": 16,
+          "plus": 16
+        }
+      },
+      "mp-754971": {
+        "tasks": {
+          "E": 64,
+          "G": 128,
+          "Q1": 32,
+          "Q2": 32
+        },
+        "E_factors": {
+          "minus": 32,
+          "plus": 32
+        },
+        "Q2_factors": {
+          "minus": 16,
+          "plus": 16
+        }
+      },
+      "mp-759522": {
+        "tasks": {
+          "E": 64,
+          "G": 128,
+          "Q1": 32,
+          "Q2": 32
+        },
+        "E_factors": {
+          "minus": 32,
+          "plus": 32
+        },
+        "Q2_factors": {
+          "minus": 16,
+          "plus": 16
+        }
+      },
+      "mp-764280": {
+        "tasks": {
+          "E": 64,
+          "G": 128,
+          "Q1": 32,
+          "Q2": 32
+        },
+        "E_factors": {
+          "minus": 32,
+          "plus": 32
+        },
+        "Q2_factors": {
+          "minus": 16,
+          "plus": 16
+        }
+      },
+      "mp-775763": {
+        "tasks": {
+          "E": 64,
+          "G": 128,
+          "Q1": 32,
+          "Q2": 32
+        },
+        "E_factors": {
+          "minus": 32,
+          "plus": 32
+        },
+        "Q2_factors": {
+          "minus": 16,
+          "plus": 16
+        }
+      },
+      "mp-8189": {
+        "tasks": {
+          "E": 64,
+          "G": 128,
+          "Q1": 32,
+          "Q2": 32
+        },
+        "E_factors": {
+          "minus": 32,
+          "plus": 32
+        },
+        "Q2_factors": {
+          "minus": 16,
+          "plus": 16
+        }
+      },
+      "mp-974400": {
+        "tasks": {
+          "E": 64,
+          "G": 128,
+          "Q1": 32,
+          "Q2": 32
+        },
+        "E_factors": {
+          "minus": 32,
+          "plus": 32
+        },
+        "Q2_factors": {
+          "minus": 16,
+          "plus": 16
+        }
+      }
+    },
+    "total": {
+      "E": 2048,
+      "G": 4096,
+      "Q1": 1024,
+      "Q2": 1024
+    }
+  },
+  "actual_noise_step_exposure": {
+    "available": true,
+    "n": 6144,
+    "by_k": {
+      "1": 198,
+      "10": 198,
+      "11": 199,
+      "12": 207,
+      "13": 178,
+      "14": 191,
+      "15": 186,
+      "16": 190,
+      "17": 192,
+      "18": 173,
+      "19": 223,
+      "2": 193,
+      "20": 197,
+      "21": 187,
+      "22": 187,
+      "23": 174,
+      "24": 167,
+      "25": 218,
+      "26": 191,
+      "27": 210,
+      "28": 191,
+      "29": 190,
+      "3": 182,
+      "30": 203,
+      "31": 200,
+      "32": 190,
+      "4": 183,
+      "5": 177,
+      "6": 198,
+      "7": 180,
+      "8": 202,
+      "9": 189
+    },
+    "by_task": {
+      "E": {
+        "1": 63,
+        "10": 66,
+        "11": 57,
+        "12": 68,
+        "13": 65,
+        "14": 70,
+        "15": 63,
+        "16": 53,
+        "17": 64,
+        "18": 50,
+        "19": 84,
+        "2": 68,
+        "20": 64,
+        "21": 61,
+        "22": 60,
+        "23": 57,
+        "24": 55,
+        "25": 74,
+        "26": 63,
+        "27": 68,
+        "28": 56,
+        "29": 63,
+        "3": 59,
+        "30": 87,
+        "31": 62,
+        "32": 63,
+        "4": 64,
+        "5": 56,
+        "6": 75,
+        "7": 56,
+        "8": 65,
+        "9": 69
+      },
+      "G": {
+        "1": 135,
+        "10": 132,
+        "11": 142,
+        "12": 139,
+        "13": 113,
+        "14": 121,
+        "15": 123,
+        "16": 137,
+        "17": 128,
+        "18": 123,
+        "19": 139,
+        "2": 125,
+        "20": 133,
+        "21": 126,
+        "22": 127,
+        "23": 117,
+        "24": 112,
+        "25": 144,
+        "26": 128,
+        "27": 142,
+        "28": 135,
+        "29": 127,
+        "3": 123,
+        "30": 116,
+        "31": 138,
+        "32": 127,
+        "4": 119,
+        "5": 121,
+        "6": 123,
+        "7": 124,
+        "8": 137,
+        "9": 120
+      }
+    },
+    "events_sha256": "dc8e63553cbd4b1e4e8fc08a32ab71dd972eaf2d4558aa1af1c0285977561670"
+  },
+  "source_pin": {
+    "data_check": {
+      "status": "check_passed_data_only",
+      "rows": 48,
+      "train": 32,
+      "heldout": 16,
+      "training_run": "not_run"
+    },
+    "manifest_sha256": "25f150360f173970895dafd31e390f94b4b01ca174e6ad09b9e288c94b1e48cc",
+    "records_sha256": "231f336234d15a216dc9cb800d8dc1c3f30cf90985184ccc0d3e5c26333e95c6",
+    "representation": "relational_cnl_v1",
+    "model": {
+      "name": "Qwen/Qwen2.5-1.5B-Instruct",
+      "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306"
+    },
+    "old24_prefix": {
+      "source_manifest_sha256": "b8c290dd64f210dd469b83cbf41ad321ae4d7c5c40303c70e8cda0e4335cd0c3",
+      "records_sha256": "ef2ec2dcdee1d73c62e48987a9cec86a4db3076f9c48d9ab17b8745b9eca785f",
+      "prefix_byte_identical": true
+    },
+    "blockrunner_code_sha256": {
+      "prepare.py": "4889b777e79b15c1761698375f9b1f48316e648129cce4f0439a30714fb1a30b",
+      "score.py": "3c1760481872726d798dd18ec4fb3557d6940e669e4c4d818a07da276d9c477a",
+      "run.py": "1be7999e5d297f3a3129b513be704eef7ec8ad6c5e7f8e1d62a6befe2a542f62",
+      "model.py": "0b27ee6f952ebbdaea599b67da1e7b1061e3dd4b43bbe730bf2291eed0811349"
+    },
+    "runtime_versions": {
+      "numpy": "1.26.4",
+      "scipy": "1.15.3",
+      "pymatgen": "2025.10.7",
+      "spglib": "2.7.0",
+      "torch": "2.8.0",
+      "transformers": "4.57.6"
+    },
+    "tokenizer_files": {
+      "added_tokens.json": "28dc70f2cb07b1cca239390e21197945125792bfe8ef6c2a7463a4c387e79673",
+      "chat_template.jinja": "cd8e9439f0570856fd70470bf8889ebd8b5d1107207f67a5efb46e342330527f",
+      "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+      "special_tokens_map.json": "f863ec62eb91385603a3f882a55401ade618a3621d4ccc2affa3f28a579c9785",
+      "tokenizer.json": "64b64b25afdb5e3e79168467889b4b777778dc17ae29458bcd2c41a51110cca6",
+      "tokenizer_config.json": "1697fb166f8a8b20603b9b8782423599271e2c2e1c4740087ef1b4b8cffa2596",
+      "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    },
+    "initial_fingerprint": "e97aed646b7289c06f10be376b37d67cd7aa6a42ad6214b61da008cd85b8404b"
+  },
+  "gpu_preflight": {
+    "status": "passed",
+    "device": "NVIDIA A100-SXM4-80GB",
+    "device_total_GiB": 79.249755859375,
+    "reserved_limit_GiB": 70.0,
+    "optimizer_step_counted_in_pilot": false,
+    "effective_batch": 4,
+    "microbatch": 1,
+    "accumulation": 4,
+    "clean_crystal_ar_weight": 1.0,
+    "reader_schedule": "alternating_q1_q2",
+    "preflight_noise_step": 32,
+    "worst_train_examples": [
+      {
+        "task": "G",
+        "id": "mp-1190391",
+        "direction": "plus",
+        "variant": 0,
+        "sequence_kind": "dual_stream",
+        "worst_actual_packed_tokens": 5159,
+        "actual_sequence_tokens_by_arm": {
+          "joint_ar_diffusion_b4": 5159
+        }
+      },
+      {
+        "task": "E",
+        "id": "mp-1099786",
+        "direction": "plus",
+        "variant": 0,
+        "sequence_kind": "dual_stream",
+        "worst_actual_packed_tokens": 7201,
+        "actual_sequence_tokens_by_arm": {
+          "joint_ar_diffusion_b4": 7201
+        }
+      },
+      {
+        "task": "Q2",
+        "id": "mp-1099786",
+        "direction": "minus",
+        "variant": 0,
+        "sequence_kind": "text",
+        "worst_actual_packed_tokens": 4069,
+        "actual_sequence_tokens_by_arm": {
+          "joint_ar_diffusion_b4": 4069
+        }
+      }
+    ],
+    "worst_actual_dual_stream_tokens": 7201,
+    "arms": {
+      "joint_ar_diffusion_b4": {
+        "core_mode": "hybrid",
+        "prediction_offset": 0,
+        "block_size": 4,
+        "gradient_checkpointing": true,
+        "preflight_noise_step": 32,
+        "initial_fingerprint": "e97aed646b7289c06f10be376b37d67cd7aa6a42ad6214b61da008cd85b8404b",
+        "initial_parameters": "FP32, zero time embedding",
+        "clean_crystal_ar_weight": 1.0,
+        "clean_crystal_ar_preflight": [
+          {
+            "task": "G",
+            "loss": 1.4311141967773438
+          },
+          {
+            "task": "G",
+            "loss": 1.4311141967773438
+          },
+          {
+            "task": "E",
+            "loss": 0.028974145650863647
+          }
+        ],
+        "one_effective_batch_optimizer_step": true,
+        "forward_calls": 4,
+        "actual_sequence_tokens": [
+          5159,
+          5159,
+          7201,
+          4069
+        ],
+        "max_dual_stream_tokens": 7201,
+        "seconds": 4.0299140200950205,
+        "peak_allocated_GiB": 28.852113723754883,
+        "peak_reserved_GiB": 29.23828125
+      }
+    },
+    "training_stage": "scaled32_training_only",
+    "python_version": "3.10.18",
+    "terminal_goal_achieved": false,
+    "reader_mode": "grounded",
+    "reader_recipe": "Fresh grounded run: each train case receives 16 neutral and 16 conflicting contexts per reader task; for Q2, each reader direction receives 8 neutral and 8 full-parent-history contexts. Q1 conflicts replace the parent design conditions with a cyclic training partner's conditions while preserving the current case's C1 and target; Q2 retains its same-case G-C1-Q1-E-C2 history.",
+    "reader_direction_note": "Parent Q1/Q2 task and direction schedule is unchanged. Per train case Q1 has 16 neutral and 16 conflict; each Q2 direction has 8 neutral and 8 full-history conflict examples.",
+    "data_hashes": {
+      "manifest_sha256": "25f150360f173970895dafd31e390f94b4b01ca174e6ad09b9e288c94b1e48cc",
+      "records_sha256": "231f336234d15a216dc9cb800d8dc1c3f30cf90985184ccc0d3e5c26333e95c6"
+    },
+    "source_hashes": {
+      "parent": {
+        "../interleaved_relational_scaled32_20261006/test_train_full_history.py": "2183f127a720a51fdb1c8ab79db3bdba1309ea3867e086cca089f22889121783",
+        "../interleaved_relational_scaled32_20261006/test_train_full_history_b4.py": "c99b631f73c22b86c1f7a82d661f946c573afc16b1d80968d707bbe6b9250553",
+        "../interleaved_relational_scaled32_20261006/train_full_history.py": "e2954cf3eea94639782987596799a772b475d6a3b62eada787ad8a4820633112",
+        "../interleaved_relational_scaled32_20261006/train_full_history.slurm": "3156e9199cf4c04e5d1649ac35f32968641dc0d6a6e9b4f5b31f2fd563f7f439",
+        "../interleaved_relational_scaled32_20261006/train_full_history_b4.py": "eca51ca2a94a218a6904625e3a8075ae6a6228c9a0ff32d340cf266aefe0eb08",
+        "../interleaved_relational_scaled32_20261006/train_full_history_b4.slurm": "6207ea7c964c4657a353d5f01a39f2d94c273d7994cecf80cde449982cf2c835",
+        "model.py": "51e547b34d9a30a07f601f7cb2027d6d64f067ce4ce4cfc7027baf26c719d448",
+        "pilot_001.slurm": "47e97c39ee654f2c457e653942f542f17c68725970ab02cc1dfe638afb33442a",
+        "prepare.py": "4889b777e79b15c1761698375f9b1f48316e648129cce4f0439a30714fb1a30b",
+        "run.py": "e40bec18f806456e66dd04169db15d726082394dc0b9670255ad62ba809525b0",
+        "score.py": "3c1760481872726d798dd18ec4fb3557d6940e669e4c4d818a07da276d9c477a",
+        "test_joint_model.py": "38098f2bf4a4c4fd833bf6af780e33f19f6567bd90e7ef96dd91f72f8c58b3da",
+        "test_joint_runner.py": "e9350b403f4c45f085a00b89913e4d19d090170266d79d684c665dfb1af7662a"
+      },
+      "wrapper": {
+        "train.py": "1bb619fb809d71c68813eb07aa162b2b2bfa1b8f2de7cef1a67b60054d4ae816",
+        "train.slurm": "66f494e4def37fec6529883fcdd199ec64e1223c73aa7665fbd3ea6efe60d7bb",
+        "prepare_data.py": "3323b74d93ac7895c9c1233c018d1c58341743eb1bb23d1df1835eaf5573c101"
+      },
+      "data": {
+        "manifest_sha256": "25f150360f173970895dafd31e390f94b4b01ca174e6ad09b9e288c94b1e48cc",
+        "records_sha256": "231f336234d15a216dc9cb800d8dc1c3f30cf90985184ccc0d3e5c26333e95c6"
+      }
+    },
+    "shared_initial_fingerprint": "e97aed646b7289c06f10be376b37d67cd7aa6a42ad6214b61da008cd85b8404b",
+    "expected_initial_fingerprint": "e97aed646b7289c06f10be376b37d67cd7aa6a42ad6214b61da008cd85b8404b",
+    "initial_fingerprint_matches_expected": true
+  },
+  "evaluation": {
+    "train32": "not_run",
+    "heldout16": "not_run",
+    "AR_crystal_inference": "not_run"
+  }
+}

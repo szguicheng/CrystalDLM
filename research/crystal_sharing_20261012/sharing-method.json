@@ -1,0 +1,79 @@
+{
+  "sharing_method_id": "crystal-polyhedra-sharing-20261012-v1",
+  "schema_version": "crystal-sharing-v1",
+  "source_feature_method": {
+    "path": "research/crystal_preannotation_20261012/feature-method.json",
+    "method_id": "crystal-preannotation-20261012-v3",
+    "sha256": "a3ce96b7fd97084f4de385f7a1e9e0d868f9945efc7ddf9aa8a4d8982a81fb36"
+  },
+  "software_versions": {
+    "pymatgen": "2025.10.7",
+    "numpy": "1.26.4",
+    "scipy": "1.15.3",
+    "spglib": "2.7.0"
+  },
+  "neighbors": {
+    "method": "pymatgen.analysis.local_env.CrystalNN",
+    "settings_source": "source_feature_method.local_structure_facts.neighbor_settings",
+    "interpretation": "geometry-only periodic coordination neighborhoods; not chemical bonds",
+    "motif_validation": "reuse a stored orbit motif only when recomputed center element, coordination number, and neighbor element counts all match; otherwise mark the motif unsupported"
+  },
+  "eligible_polyhedra": {
+    "minimum_coordination_number": 4,
+    "geometry": "strict three-dimensional convex hull of all unique CrystalNN neighbor sites",
+    "validity_conditions": [
+      "all neighbor sites have distinct periodic identities and Cartesian coordinates",
+      "every neighbor is a convex-hull vertex",
+      "hull volume exceeds tolerance_angstrom cubed",
+      "coordination center is strictly inside every supporting half-space"
+    ],
+    "named_polyhedra": [
+      "tetrahedral",
+      "square pyramidal",
+      "trigonal bipyramidal",
+      "octahedral"
+    ],
+    "unnamed_hulls": "Retain other valid CN >= 4 convex coordination hulls with coordination number and existing motif metadata; do not infer a polyhedron name from bcc or cp motif labels."
+  },
+  "geometry": {
+    "tolerance_angstrom": 0.00001,
+    "hull": "scipy.spatial.ConvexHull in three dimensions",
+    "facet_merge": "merge triangulated Qhull simplices when the same periodic vertex identities lie within tolerance of their supporting plane",
+    "facet_edges": "project each merged facet to two dimensions and retain only consecutive convex-polygon boundary vertices as edges",
+    "center_inside": "strict negative signed distance from the center to every outward Qhull supporting plane, with the declared tolerance",
+    "overlap_check": "corner and edge contacts require a strict separating plane through the shared vertex or edge; edge-plane feasibility is solved by scipy.optimize.linprog",
+    "face_side_check": "the common facet identity set must match in both hulls and the two centers must lie on opposite sides of its plane"
+  },
+  "periodicity": {
+    "vertex_identity": ["site_index", "image"],
+    "candidate_search": "join polyhedra through shared neighbor site-index incidence and derive relative center translations from integer image differences",
+    "pair_counting": "unique undirected pairs of center sites per unit cell; self-orbit translations retain one lexicographic orientation",
+    "examples": "record the relative center image and each shared vertex site index, element, and image"
+  },
+  "classification": {
+    "corner": "exactly one common periodic hull vertex and a strict separating plane through it",
+    "edge": "exactly two common periodic vertices, forming a hull edge in both hulls, and a strict separating plane through the edge",
+    "face": "three or more common periodic vertices equal the same merged hull facet in both hulls, with centers on opposite sides",
+    "ambiguous": "shared vertices fail the hull edge/facet checks, the hulls overlap beyond a corner or edge, or a common face does not have opposite-side centers",
+    "no_contact": "no common periodic vertex identity; omitted from sharing counts"
+  },
+  "record_status": {
+    "computed": "at least one valid convex coordination hull was available; validated zero sharing is distinct from missing data",
+    "not_applicable": "no center has CN >= 4 under the frozen neighbor method",
+    "ambiguous": "one or more CN >= 4 centers exist but none has a strict valid convex hull",
+    "error": "the augmentation pass failed for this row; existing core facts and labels remain intact"
+  },
+  "output_schema": {
+    "path": "local_structure_facts.polyhedra_sharing",
+    "compact_summary": "sharing-type counts, periodic pair count, valid/ambiguous hull counts, motif and element counts, and an English LLM summary",
+    "connectivity": "counts of validated relationships between center symmetry-orbit pairs",
+    "examples": "up to two periodic pair examples per sharing type and orbit pair"
+  },
+  "primary_sources": [
+    "https://hackingmaterials.lbl.gov/robocrystallographer/_modules/robocrys/condense/site.html",
+    "https://pymatgen.org/pymatgen.core.html",
+    "https://github.com/materialsproject/pymatgen/blob/v2025.10.7/src/pymatgen/analysis/local_env.py",
+    "https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.ConvexHull.html",
+    "https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.linprog.html"
+  ]
+}

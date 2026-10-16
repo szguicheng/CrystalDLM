@@ -1,0 +1,240 @@
+{
+  "id": "mp-1189141",
+  "formula": "Ho5Pt3",
+  "raw_sg": 63,
+  "host": "gpu-a100-08",
+  "results": [
+    {
+      "digits": 6,
+      "passed": false,
+      "error": "ValueError: No standard Wyckoff template matches Z=67, orbit=4"
+    },
+    {
+      "digits": 8,
+      "passed": false,
+      "error": "ValueError: No standard Wyckoff template matches Z=67, orbit=4"
+    },
+    {
+      "digits": 12,
+      "passed": false,
+      "error": "ValueError: No standard Wyckoff template matches Z=67, orbit=4"
+    },
+    {
+      "digits": null,
+      "passed": false,
+      "error": "ValueError: No standard Wyckoff template matches Z=67, orbit=4"
+    }
+  ],
+  "canonical_sg": 193,
+  "hall": 487,
+  "orbits": [
+    {
+      "Z": 67,
+      "rep": 0,
+      "members": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "points": [
+        [
+          0.6666666666666666,
+          0.3333851666666666,
+          2.7393482539338e-33
+        ],
+        [
+          0.33333333333333337,
+          0.6666148333333334,
+          -2.7393482539338e-33
+        ],
+        [
+          0.3332815,
+          0.6666666666666666,
+          0.5
+        ],
+        [
+          0.6666666666666666,
+          0.3333851666666666,
+          0.5
+        ]
+      ],
+      "fits": {
+        "4e": {
+          "template": "0, 0, z",
+          "min_linear_residual": 0.33333333333333337,
+          "fit_result": null
+        },
+        "4d": {
+          "template": "1/3, 2/3, 0",
+          "min_linear_residual": 5.183333333325102e-05,
+          "fit_result": null
+        },
+        "4c": {
+          "template": "1/3, 2/3, 1/4",
+          "min_linear_residual": 0.25,
+          "fit_result": null
+        }
+      }
+    },
+    {
+      "Z": 67,
+      "rep": 4,
+      "members": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "points": [
+        [
+          0.24462899999999987,
+          0.24462899999999987,
+          0.25
+        ],
+        [
+          0.0,
+          0.7553710000000001,
+          0.25
+        ],
+        [
+          0.7553710000000001,
+          0.0,
+          0.25
+        ],
+        [
+          0.7553710000000001,
+          0.7553710000000001,
+          0.75
+        ],
+        [
+          0.0,
+          0.24462899999999987,
+          0.75
+        ],
+        [
+          0.24462899999999987,
+          0.0,
+          0.75
+        ]
+      ],
+      "fits": {
+        "6g": {
+          "template": "x, 0, 1/4",
+          "min_linear_residual": 0.0,
+          "fit_result": [
+            0.7553710000000001
+          ]
+        },
+        "6f": {
+          "template": "1/2, 0, 0",
+          "min_linear_residual": 0.2553710000000001,
+          "fit_result": null
+        }
+      }
+    },
+    {
+      "Z": 78,
+      "rep": 10,
+      "members": [
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "points": [
+        [
+          0.6074599999999999,
+          0.6074599999999999,
+          0.25
+        ],
+        [
+          0.0,
+          0.3925400000000001,
+          0.25
+        ],
+        [
+          0.3925400000000001,
+          0.0,
+          0.25
+        ],
+        [
+          0.3925400000000001,
+          0.3925400000000001,
+          0.75
+        ],
+        [
+          0.0,
+          0.6074599999999999,
+          0.75
+        ],
+        [
+          0.6074599999999999,
+          0.0,
+          0.75
+        ]
+      ],
+      "fits": {
+        "6g": {
+          "template": "x, 0, 1/4",
+          "min_linear_residual": 0.0,
+          "fit_result": [
+            0.3925400000000001
+          ]
+        },
+        "6f": {
+          "template": "1/2, 0, 0",
+          "min_linear_residual": 0.25,
+          "fit_result": null
+        }
+      }
+    }
+  ],
+  "tolerance_trials": [
+    {
+      "encoder_symprec": 0.001,
+      "status": "failed",
+      "error": "ValueError: No standard Wyckoff template matches Z=67, orbit=4",
+      "sg": null,
+      "atoms": null,
+      "oracle_errors_A": null
+    },
+    {
+      "encoder_symprec": 0.0005,
+      "status": "ok",
+      "error": null,
+      "sg": 63,
+      "atoms": 32,
+      "oracle_errors_A": {
+        "explicit": 0.0,
+        "wyckoff": 1.837146810282076e-15
+      }
+    },
+    {
+      "encoder_symprec": 0.0001,
+      "status": "ok",
+      "error": null,
+      "sg": 63,
+      "atoms": 32,
+      "oracle_errors_A": {
+        "explicit": 0.0,
+        "wyckoff": 1.837146810282076e-15
+      }
+    },
+    {
+      "encoder_symprec": 1e-05,
+      "status": "ok",
+      "error": null,
+      "sg": 28,
+      "atoms": 32,
+      "oracle_errors_A": {
+        "explicit": 0.0,
+        "wyckoff": 1.913810130761366e-15
+      }
+    }
+  ]
+}

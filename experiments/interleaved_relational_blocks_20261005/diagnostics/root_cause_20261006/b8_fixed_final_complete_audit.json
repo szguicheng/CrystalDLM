@@ -1,0 +1,761 @@
+{
+  "audit_status": "passed",
+  "scope": "Complete B8 fixed evaluation output: 8 seen + 16 heldout rows, with matched B32 comparison. Audit validates local JSON/receipt metadata and raw token boundaries; it does not claim heldout success or broader generalization.",
+  "paths": {
+    "B8_eval": "experiments/interleaved_relational_scaled32_20261006/eval_full_history_b8_fixed_001",
+    "B32_reference": "experiments/interleaved_relational_scaled32_20261006/eval_full_history_final2048_001",
+    "training_receipt": "experiments/interleaved_relational_scaled32_20261006/training_full_history_b8_001/joint_ar_diffusion_b8/checkpoint_receipt.json",
+    "same_run_seen_identity_audit": "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/b8_fixed_seen_complete_audit.json",
+    "root_terminal_invariants": "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/b8_fixed_terminal_root_invariants.json",
+    "root_native_score_replay": "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/b8_fixed_heldout_native_score_replay.json"
+  },
+  "checks": {
+    "B8_summary_consistency": true,
+    "B32_summary_consistency": true,
+    "paired_ID_order_matches_B8_vs_B32": true,
+    "B8_actual_G_Q1_E_Q2_seen8_chain": true,
+    "seen8_same_case_C1_memorization_audit_matches_current_ids": true,
+    "hashes_before_equal_hashes_after": true,
+    "fingerprint_before_equals_after": true,
+    "fingerprint_matches_training_terminal": true,
+    "checkpoint_receipt_hash_metadata_consistent": true,
+    "strict_reload_verified": true,
+    "training_metadata_terminal_contract": true,
+    "model_revision_and_mode_match_training": true,
+    "optimizer_updates_zero_during_eval": true,
+    "optimization_gate_passed_and_same_fingerprint": true,
+    "sampler_metadata_frozen_across_run": true,
+    "evaluation_code_and_source_metadata_frozen": true,
+    "all_attempt_arrays_available": true,
+    "all_attempt_arrays_length_K2560": true,
+    "B8_anomalies_exactly_two_G_and_one_E_boundary": true,
+    "B32_anomaly_exactly_one_E_PAD_boundary": true,
+    "750_CUDA_gate_passed": true,
+    "8_paired_gate_passed": true,
+    "sampler_repair_source_requires_original_inference_mode_decorator": true,
+    "sampler_repair_adapted_source_restores_inference_mode_decorator": true,
+    "sampler_repair_fake_cpu_test_asserts_inference_context_and_disabled_grad": true,
+    "sampler_repair_fake_cpu_test_keeps_k2560_maxlen8192_steps32": true,
+    "8_paired_gate_passed_8_of_8": true
+  },
+  "B8": {
+    "job_id": "608870",
+    "status": "complete",
+    "training_updates": 2048,
+    "optimizer_updates_during_eval": 0,
+    "model": {
+      "name": "Qwen/Qwen2.5-1.5B-Instruct",
+      "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+      "mode": "hybrid",
+      "block_size": 8,
+      "prediction_offset": 0,
+      "clean_crystal_ar_weight": 1.0
+    },
+    "checkpoint_sha256": "da812d90566c1e791c776a88358d734a9c7d01832cd084df7466e38e3190981e",
+    "fingerprint_before": "ff8d4429032fe96b0232770c3065c71c1e4cd73e690f95522f34238a830620af",
+    "fingerprint_after": "ff8d4429032fe96b0232770c3065c71c1e4cd73e690f95522f34238a830620af",
+    "per_cohort": {
+      "seen8": {
+        "n": 8,
+        "counts": {
+          "G": 8,
+          "Q_reference": 8,
+          "E_reference": 8,
+          "closed_loop": 8,
+          "flow_complete": 8,
+          "Q_swap": 8,
+          "Q_no_crystal": 0
+        },
+        "rates": {
+          "G": 1.0,
+          "Q_reference": 1.0,
+          "E_reference": 1.0,
+          "closed_loop": 1.0,
+          "flow_complete": 1.0,
+          "Q_swap": 1.0,
+          "Q_no_crystal": 0.0
+        },
+        "failure_histogram": {}
+      },
+      "heldout16": {
+        "n": 16,
+        "counts": {
+          "G": 0,
+          "Q_reference": 12,
+          "E_reference": 0,
+          "closed_loop": 0,
+          "flow_complete": 0,
+          "Q_swap": 3,
+          "Q_no_crystal": 0
+        },
+        "rates": {
+          "G": 0.0,
+          "Q_reference": 0.75,
+          "E_reference": 0.0,
+          "closed_loop": 0.0,
+          "flow_complete": 0.0,
+          "Q_swap": 0.1875,
+          "Q_no_crystal": 0.0
+        },
+        "failure_histogram": {
+          "E_reference:edit_error": 1,
+          "E_reference:edit_mismatch": 15,
+          "G:generation_audit": 14,
+          "G:generation_error": 2,
+          "Q_reference:answer_mismatch": 4,
+          "Q_swap:answer_mismatch": 13,
+          "closed_loop:skipped_invalid_generated_c1": 16
+        }
+      }
+    },
+    "failure_histograms": {
+      "seen8": {},
+      "heldout16": {
+        "E_reference:edit_error": 1,
+        "E_reference:edit_mismatch": 15,
+        "G:generation_audit": 14,
+        "G:generation_error": 2,
+        "Q_reference:answer_mismatch": 4,
+        "Q_swap:answer_mismatch": 13,
+        "closed_loop:skipped_invalid_generated_c1": 16
+      }
+    },
+    "cohort_ID_checks": {
+      "seen8": true,
+      "heldout16": true
+    },
+    "raw_token_boundaries": {
+      "seen8": {
+        "G": {
+          "attempts": 8,
+          "arrays_available": 8,
+          "K2560_arrays": 8,
+          "boundary_pass": 8,
+          "boundary_fail": 0,
+          "unverifiable": 0,
+          "anomalies": []
+        },
+        "E_reference": {
+          "attempts": 8,
+          "arrays_available": 8,
+          "K2560_arrays": 8,
+          "boundary_pass": 8,
+          "boundary_fail": 0,
+          "unverifiable": 0,
+          "anomalies": []
+        },
+        "E_actual": {
+          "attempts": 8,
+          "arrays_available": 8,
+          "K2560_arrays": 8,
+          "boundary_pass": 8,
+          "boundary_fail": 0,
+          "unverifiable": 0,
+          "anomalies": []
+        }
+      },
+      "heldout16": {
+        "G": {
+          "attempts": 16,
+          "arrays_available": 16,
+          "K2560_arrays": 16,
+          "boundary_pass": 14,
+          "boundary_fail": 2,
+          "unverifiable": 0,
+          "anomalies": [
+            {
+              "id": "mp-1229077",
+              "task": "G",
+              "available": true,
+              "source": "raw_token_ids",
+              "length": 2560,
+              "K2560": true,
+              "END_count": 0,
+              "END_index": null,
+              "PAD_count": 0,
+              "PAD_only_trailing_after_END": false,
+              "attempt_ok": false,
+              "boundary": "fail",
+              "error_class": "CrystalBlockError"
+            },
+            {
+              "id": "mp-757163",
+              "task": "G",
+              "available": true,
+              "source": "raw_token_ids",
+              "length": 2560,
+              "K2560": true,
+              "END_count": 0,
+              "END_index": null,
+              "PAD_count": 0,
+              "PAD_only_trailing_after_END": false,
+              "attempt_ok": false,
+              "boundary": "fail",
+              "error_class": "CrystalBlockError"
+            }
+          ]
+        },
+        "E_reference": {
+          "attempts": 16,
+          "arrays_available": 16,
+          "K2560_arrays": 16,
+          "boundary_pass": 15,
+          "boundary_fail": 1,
+          "unverifiable": 0,
+          "anomalies": [
+            {
+              "id": "mp-1217967",
+              "task": "E_reference",
+              "available": true,
+              "source": "raw_token_ids",
+              "length": 2560,
+              "K2560": true,
+              "END_count": 2,
+              "END_index": null,
+              "PAD_count": 1819,
+              "PAD_only_trailing_after_END": false,
+              "attempt_ok": false,
+              "boundary": "fail",
+              "error_class": "CrystalBlockError"
+            }
+          ]
+        },
+        "E_actual": {
+          "attempts": 0,
+          "arrays_available": 0,
+          "K2560_arrays": 0,
+          "boundary_pass": 0,
+          "boundary_fail": 0,
+          "unverifiable": 0,
+          "anomalies": []
+        }
+      }
+    },
+    "actual_seen8_chain": {
+      "strict_chains": 8,
+      "expected": 8,
+      "cases": [
+        {
+          "id": "anchor_Tb8Mg4",
+          "G": true,
+          "Q1_all_7_fields": true,
+          "E_all_6_fields": true,
+          "Q2_all_7_fields": true,
+          "attempts_ok": true,
+          "closed_loop": true,
+          "flow_complete": true
+        },
+        {
+          "id": "anchor_Li8V4Ni4O16",
+          "G": true,
+          "Q1_all_7_fields": true,
+          "E_all_6_fields": true,
+          "Q2_all_7_fields": true,
+          "attempts_ok": true,
+          "closed_loop": true,
+          "flow_complete": true
+        },
+        {
+          "id": "mp-4047",
+          "G": true,
+          "Q1_all_7_fields": true,
+          "E_all_6_fields": true,
+          "Q2_all_7_fields": true,
+          "attempts_ok": true,
+          "closed_loop": true,
+          "flow_complete": true
+        },
+        {
+          "id": "mp-1205515",
+          "G": true,
+          "Q1_all_7_fields": true,
+          "E_all_6_fields": true,
+          "Q2_all_7_fields": true,
+          "attempts_ok": true,
+          "closed_loop": true,
+          "flow_complete": true
+        },
+        {
+          "id": "mp-30009",
+          "G": true,
+          "Q1_all_7_fields": true,
+          "E_all_6_fields": true,
+          "Q2_all_7_fields": true,
+          "attempts_ok": true,
+          "closed_loop": true,
+          "flow_complete": true
+        },
+        {
+          "id": "mp-1188285",
+          "G": true,
+          "Q1_all_7_fields": true,
+          "E_all_6_fields": true,
+          "Q2_all_7_fields": true,
+          "attempts_ok": true,
+          "closed_loop": true,
+          "flow_complete": true
+        },
+        {
+          "id": "mp-1207068",
+          "G": true,
+          "Q1_all_7_fields": true,
+          "E_all_6_fields": true,
+          "Q2_all_7_fields": true,
+          "attempts_ok": true,
+          "closed_loop": true,
+          "flow_complete": true
+        },
+        {
+          "id": "mp-1205902",
+          "G": true,
+          "Q1_all_7_fields": true,
+          "E_all_6_fields": true,
+          "Q2_all_7_fields": true,
+          "attempts_ok": true,
+          "closed_loop": true,
+          "flow_complete": true
+        }
+      ]
+    },
+    "seen8_memorization_scope": {
+      "same_case_C1_text_exact_matches": 8,
+      "same_case_decoded_plan_hash_exact_matches": 8,
+      "case_ids": [
+        "anchor_Tb8Mg4",
+        "anchor_Li8V4Ni4O16",
+        "mp-4047",
+        "mp-1205515",
+        "mp-30009",
+        "mp-1188285",
+        "mp-1207068",
+        "mp-1205902"
+      ],
+      "interpretation": "All eight evaluated seen8 C1 outputs exactly reproduce their same-case training CNL text and decoded-plan hashes; this is in-sample reconstruction and not novelty evidence."
+    },
+    "swap_target_scope": {
+      "seen8": {
+        "distinct_targets": 2,
+        "target_counts": {
+          "anchor_Li8V4Ni4O16": 1,
+          "anchor_Tb8Mg4": 7
+        },
+        "Q_swap_success_count": 8,
+        "Q_swap_success_target_counts": {
+          "anchor_Li8V4Ni4O16": 1,
+          "anchor_Tb8Mg4": 7
+        }
+      },
+      "heldout16": {
+        "distinct_targets": 2,
+        "target_counts": {
+          "mp-1019259": 1,
+          "mp-1229077": 15
+        },
+        "Q_swap_success_count": 3,
+        "Q_swap_success_target_counts": {
+          "mp-1229077": 3
+        }
+      }
+    },
+    "source_and_receipt_invariants": {
+      "hashes_before_equal_hashes_after": true,
+      "fingerprint_before_equals_after": true,
+      "fingerprint_matches_training_terminal": true,
+      "checkpoint_receipt_hash_metadata_consistent": true,
+      "strict_reload_verified": true,
+      "training_metadata_terminal_contract": true,
+      "model_revision_and_mode_match_training": true,
+      "optimizer_updates_zero_during_eval": true,
+      "optimization_gate_passed_and_same_fingerprint": true,
+      "sampler_metadata_frozen_across_run": true,
+      "evaluation_code_and_source_metadata_frozen": true
+    },
+    "sampler_and_gate": {
+      "sampler_repair_review": {
+        "source_sha256_recorded": "ba3d097912925d5aa6a06b3b1302c4fc5057ebb8d54b5312a30202e1ba6b6c9b",
+        "time_rule": "confidence_one: k=ceil(remaining_masks*STEPS/block_size); legacy_random k schedule unchanged",
+        "source_requires_original_inference_mode_decorator": true,
+        "adapted_source_restores_inference_mode_decorator": true,
+        "fake_cpu_test_asserts_inference_context_and_disabled_grad": true,
+        "fake_cpu_test_keeps_k2560_maxlen8192_steps32": true
+      },
+      "cuda_metadata_gate_passed": true,
+      "cuda_tensor_comparisons": 750,
+      "cuda_mask_comparisons": 360,
+      "cuda_integer_vector_comparisons": 390,
+      "paired_seen8_gate_passed_8_of_8": false,
+      "paired_gate_scope": {
+        "method": "legacy_random_greedy_tokens",
+        "prefix_tokens": 128,
+        "compared": [
+          "token_ids",
+          "text",
+          "time_trace",
+          "release_trace",
+          "header"
+        ],
+        "seed_source": "header_probe.case_seed(case_id, 32, stream)"
+      },
+      "b8_sampler_source": {
+        "block_size": 8,
+        "source_sha256": "ba3d097912925d5aa6a06b3b1302c4fc5057ebb8d54b5312a30202e1ba6b6c9b",
+        "noise_time_rule": "confidence_one: k=ceil(remaining_masks*STEPS/block_size); legacy_random k schedule unchanged"
+      },
+      "8_paired_gate_passed_8_of_8": true
+    }
+  },
+  "B32_matched_comparison": {
+    "IDs_order_match": true,
+    "per_cohort_counts": {
+      "seen8": {
+        "B8": {
+          "G": 8,
+          "Q_reference": 8,
+          "E_reference": 8,
+          "closed_loop": 8,
+          "flow_complete": 8,
+          "Q_swap": 8,
+          "Q_no_crystal": 0
+        },
+        "B32": {
+          "G": 5,
+          "Q_reference": 8,
+          "E_reference": 7,
+          "closed_loop": 5,
+          "flow_complete": 5,
+          "Q_swap": 8,
+          "Q_no_crystal": 0
+        },
+        "B8_minus_B32": {
+          "G": 3,
+          "Q_reference": 0,
+          "E_reference": 1,
+          "closed_loop": 3,
+          "flow_complete": 3,
+          "Q_swap": 0,
+          "Q_no_crystal": 0
+        }
+      },
+      "heldout16": {
+        "B8": {
+          "G": 0,
+          "Q_reference": 12,
+          "E_reference": 0,
+          "closed_loop": 0,
+          "flow_complete": 0,
+          "Q_swap": 3,
+          "Q_no_crystal": 0
+        },
+        "B32": {
+          "G": 0,
+          "Q_reference": 13,
+          "E_reference": 0,
+          "closed_loop": 0,
+          "flow_complete": 0,
+          "Q_swap": 0,
+          "Q_no_crystal": 0
+        },
+        "B8_minus_B32": {
+          "G": 0,
+          "Q_reference": -1,
+          "E_reference": 0,
+          "closed_loop": 0,
+          "flow_complete": 0,
+          "Q_swap": 3,
+          "Q_no_crystal": 0
+        }
+      }
+    },
+    "per_cohort_rates": {
+      "seen8": {
+        "B8": {
+          "G": 1.0,
+          "Q_reference": 1.0,
+          "E_reference": 1.0,
+          "closed_loop": 1.0,
+          "flow_complete": 1.0,
+          "Q_swap": 1.0,
+          "Q_no_crystal": 0.0
+        },
+        "B32": {
+          "G": 0.625,
+          "Q_reference": 1.0,
+          "E_reference": 0.875,
+          "closed_loop": 0.625,
+          "flow_complete": 0.625,
+          "Q_swap": 1.0,
+          "Q_no_crystal": 0.0
+        }
+      },
+      "heldout16": {
+        "B8": {
+          "G": 0.0,
+          "Q_reference": 0.75,
+          "E_reference": 0.0,
+          "closed_loop": 0.0,
+          "flow_complete": 0.0,
+          "Q_swap": 0.1875,
+          "Q_no_crystal": 0.0
+        },
+        "B32": {
+          "G": 0.0,
+          "Q_reference": 0.8125,
+          "E_reference": 0.0,
+          "closed_loop": 0.0,
+          "flow_complete": 0.0,
+          "Q_swap": 0.0,
+          "Q_no_crystal": 0.0
+        }
+      }
+    },
+    "per_case_outcome_changes": {
+      "seen8": [
+        {
+          "id": "mp-4047",
+          "metric_changes": {
+            "G": {
+              "B8": true,
+              "B32": false
+            },
+            "closed_loop": {
+              "B8": true,
+              "B32": false
+            },
+            "flow_complete": {
+              "B8": true,
+              "B32": false
+            }
+          }
+        },
+        {
+          "id": "mp-1205515",
+          "metric_changes": {
+            "G": {
+              "B8": true,
+              "B32": false
+            },
+            "E_reference": {
+              "B8": true,
+              "B32": false
+            },
+            "closed_loop": {
+              "B8": true,
+              "B32": false
+            },
+            "flow_complete": {
+              "B8": true,
+              "B32": false
+            }
+          }
+        },
+        {
+          "id": "mp-1188285",
+          "metric_changes": {
+            "G": {
+              "B8": true,
+              "B32": false
+            },
+            "closed_loop": {
+              "B8": true,
+              "B32": false
+            },
+            "flow_complete": {
+              "B8": true,
+              "B32": false
+            }
+          }
+        }
+      ],
+      "heldout16": [
+        {
+          "id": "mp-1219591",
+          "metric_changes": {
+            "Q_reference": {
+              "B8": false,
+              "B32": true
+            },
+            "Q_swap": {
+              "B8": true,
+              "B32": false
+            }
+          }
+        },
+        {
+          "id": "mp-1225818",
+          "metric_changes": {
+            "Q_swap": {
+              "B8": true,
+              "B32": false
+            }
+          }
+        },
+        {
+          "id": "mp-1217967",
+          "metric_changes": {
+            "Q_swap": {
+              "B8": true,
+              "B32": false
+            }
+          }
+        }
+      ]
+    },
+    "B32_raw_token_boundaries": {
+      "seen8": {
+        "G": {
+          "attempts": 8,
+          "arrays_available": 8,
+          "K2560_arrays": 8,
+          "boundary_pass": 8,
+          "boundary_fail": 0,
+          "unverifiable": 0,
+          "anomalies": []
+        },
+        "E_reference": {
+          "attempts": 8,
+          "arrays_available": 8,
+          "K2560_arrays": 8,
+          "boundary_pass": 8,
+          "boundary_fail": 0,
+          "unverifiable": 0,
+          "anomalies": []
+        },
+        "E_actual": {
+          "attempts": 5,
+          "arrays_available": 5,
+          "K2560_arrays": 5,
+          "boundary_pass": 5,
+          "boundary_fail": 0,
+          "unverifiable": 0,
+          "anomalies": []
+        }
+      },
+      "heldout16": {
+        "G": {
+          "attempts": 16,
+          "arrays_available": 16,
+          "K2560_arrays": 16,
+          "boundary_pass": 16,
+          "boundary_fail": 0,
+          "unverifiable": 0,
+          "anomalies": []
+        },
+        "E_reference": {
+          "attempts": 16,
+          "arrays_available": 16,
+          "K2560_arrays": 16,
+          "boundary_pass": 15,
+          "boundary_fail": 1,
+          "unverifiable": 0,
+          "anomalies": [
+            {
+              "id": "mp-1217967",
+              "task": "E_reference",
+              "available": true,
+              "source": "raw_token_ids",
+              "length": 2560,
+              "K2560": true,
+              "END_count": 1,
+              "END_index": 740,
+              "PAD_count": 0,
+              "PAD_only_trailing_after_END": false,
+              "attempt_ok": false,
+              "boundary": "fail",
+              "error_class": "CrystalBlockError"
+            }
+          ]
+        },
+        "E_actual": {
+          "attempts": 0,
+          "arrays_available": 0,
+          "K2560_arrays": 0,
+          "boundary_pass": 0,
+          "boundary_fail": 0,
+          "unverifiable": 0,
+          "anomalies": []
+        }
+      }
+    },
+    "swap_target_scope": {
+      "seen8": {
+        "distinct_targets": 2,
+        "target_counts": {
+          "anchor_Li8V4Ni4O16": 1,
+          "anchor_Tb8Mg4": 7
+        },
+        "Q_swap_success_count": 8,
+        "Q_swap_success_target_counts": {
+          "anchor_Li8V4Ni4O16": 1,
+          "anchor_Tb8Mg4": 7
+        }
+      },
+      "heldout16": {
+        "distinct_targets": 2,
+        "target_counts": {
+          "mp-1019259": 1,
+          "mp-1229077": 15
+        },
+        "Q_swap_success_count": 0,
+        "Q_swap_success_target_counts": {}
+      }
+    },
+    "comparison_limit": "Paired by exact ID/order. B8 heldout Q_swap successes are 3/16 and all three use the same target mp-1229077; 15/16 heldout rows use this target and one uses mp-1019259. B8 seen8 uses two anchor targets (7 and 1 cases)."
+  },
+  "heldout_failure_findings": {
+    "B8_failure_histogram": {
+      "E_reference:edit_error": 1,
+      "E_reference:edit_mismatch": 15,
+      "G:generation_audit": 14,
+      "G:generation_error": 2,
+      "Q_reference:answer_mismatch": 4,
+      "Q_swap:answer_mismatch": 13,
+      "closed_loop:skipped_invalid_generated_c1": 16
+    },
+    "raw_boundary_failures": [
+      [
+        "heldout16",
+        "G",
+        "mp-1229077",
+        0,
+        0,
+        2560,
+        false
+      ],
+      [
+        "heldout16",
+        "G",
+        "mp-757163",
+        0,
+        0,
+        2560,
+        false
+      ],
+      [
+        "heldout16",
+        "E_reference",
+        "mp-1217967",
+        2,
+        1819,
+        2560,
+        false
+      ]
+    ],
+    "meaning": "All heldout G and E_reference strict tasks fail; two G attempts have no END/PAD and one E_reference attempt has two ENDs. These are recorded outcome failures, not audit mismatches."
+  },
+  "reproducibility_and_gate_evidence": {
+    "hash_snapshots_before_after_identical": true,
+    "training_receipt_checkpoint_and_fingerprint_consistent": true,
+    "checkpoint_bytes_hashed_by_this_auditor": false,
+    "root_reported_slurm_terminal": "COMPLETED 0:0, elapsed 02:16:54; reported by root and not queried in this read-only audit.",
+    "root_artifacts": [
+      "b8_fixed_terminal_root_invariants.json",
+      "b8_fixed_heldout_native_score_replay.json"
+    ]
+  },
+  "failed_checks": [],
+  "limitations": [
+    "No weights were loaded or rehashed, and no model/native score was recomputed by this auditor.",
+    "The seen8 exact C1/source identity is taken from the prior same-run seen8 audit artifact and checked against the current seen8 ID list.",
+    "Conclusions are limited to this B8 fixed run and its matched B32 records."
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "stopped_at_utc": "2026-10-05T11:25:09Z",
+  "reason": "Explicit user request to stop the tasks, relayed by the root agent.",
+  "action": "Cancelled only the two job IDs created for this task; no other jobs were targeted.",
+  "jobs": [
+    {
+      "job_id": "605786",
+      "name": "rel-cnl-q2cov-001",
+      "before_cancel": {
+        "state": "PENDING",
+        "reason": "Resources",
+        "elapsed": "00:00:00",
+        "node": null
+      },
+      "after_cancel_sacct": {
+        "state": "CANCELLED by 90790433",
+        "elapsed": "00:00:00",
+        "exit_code": "0:0",
+        "node": null
+      }
+    },
+    {
+      "job_id": "605807",
+      "name": "rel-cnl-denoise-001",
+      "before_cancel": {
+        "state": "PENDING",
+        "reason": "Priority",
+        "elapsed": "00:00:00",
+        "node": null
+      },
+      "after_cancel_sacct": {
+        "state": "CANCELLED by 90790433",
+        "elapsed": "00:00:00",
+        "exit_code": "0:0",
+        "node": null
+      }
+    }
+  ],
+  "post_cancel_squeue": "No rows for jobs 605786 or 605807.",
+  "artifacts": {
+    "q2_coverage_001_output_directory": "absent; the job did not start",
+    "q2_slurm_stdout_and_stderr": "absent; the job did not start",
+    "diagnostic001_output_directory": "absent; the job did not start",
+    "diagnostic_slurm_stdout_and_stderr": "absent; the job did not start",
+    "existing_pilot_002_raw_and_checkpoint": "preserved; no cleanup or modification was performed"
+  }
+}

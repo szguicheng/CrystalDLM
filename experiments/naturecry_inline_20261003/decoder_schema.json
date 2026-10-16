@@ -1,0 +1,149 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "NatureCry inline decoder plan",
+  "type": "object",
+  "required": [
+    "status",
+    "space_group_number",
+    "hall_symbol",
+    "lattice",
+    "input_atom_count",
+    "composition",
+    "orbits",
+    "frame_transform",
+    "round_digits",
+    "precision_corrections"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "status": {
+      "const": "ok"
+    },
+    "space_group_number": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 230
+    },
+    "hall_symbol": {
+      "type": "string"
+    },
+    "lattice": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": "number"
+      }
+    },
+    "input_atom_count": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "composition": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "integer",
+        "minimum": 1
+      }
+    },
+    "orbits": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "element",
+          "wyckoff",
+          "parameters"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "element": {
+            "type": "string"
+          },
+          "wyckoff": {
+            "type": "string"
+          },
+          "parameters": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          }
+        }
+      }
+    },
+    "frame_transform": {
+      "type": "object",
+      "required": [
+        "matrix",
+        "origin_shift"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "matrix": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "array",
+            "minItems": 3,
+            "maxItems": 3,
+            "items": {
+              "type": "number"
+            }
+          }
+        },
+        "origin_shift": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "round_digits": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 15
+    },
+    "precision_corrections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "site_id",
+          "element",
+          "delta"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "site_id": {
+            "type": "string"
+          },
+          "element": {
+            "type": "string"
+          },
+          "delta": {
+            "type": "array",
+            "minItems": 3,
+            "maxItems": 3,
+            "items": {
+              "type": "number"
+            }
+          }
+        }
+      }
+    }
+  }
+}

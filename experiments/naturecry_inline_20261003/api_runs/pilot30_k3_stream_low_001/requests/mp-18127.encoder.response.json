@@ -1,0 +1,33 @@
+{
+  "id": "de451603-1798-4ffa-b700-c6082a195181",
+  "object": "chat.completion",
+  "created": 1791054362,
+  "model": "tokenhub/kimi-k3",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "The structure is described in a body-centered tetragonal setting assigned to space-group number [[param:space_group.number]] with Hall symbol [[param:space_group.hall]], corresponding to I4/mcm symmetry. The original input cell is given with three equal edge lengths [[param:cell.a]] [[param:cell.b]] [[param:cell.c]], two equal interaxial angles [[param:cell.alpha]] [[param:cell.beta]], and a slightly different third angle [[param:cell.gamma]]; it contains [[param:input.atom_count]] atoms in the input description, distributed as [[param:composition.Ni]], [[param:composition.Sn]], and [[param:composition.Sr]]. Input fractional coordinates were rounded to [[param:round_digits]] decimal places.\n\nA change of frame relates this input description to the standard crystallographic setting through the rotation–reflection matrix [[param:frame.matrix]] and the fractional origin shift [[param:frame.origin_shift]]. In the standard setting, the independent content reduces to three Wyckoff orbits. The strontium orbit [[param:orbit.o000.id]] is occupied by [[param:orbit.o000.element]] on Wyckoff position [[param:orbit.o000.wyckoff]], a fixed fourfold site with public coordinate relation 0, 0, 1/4 and no free positional axes. The nickel orbit [[param:orbit.o001.id]] is occupied by [[param:orbit.o001.element]] on Wyckoff position [[param:orbit.o001.wyckoff]], with independent fractional parameters [[param:orbit.o001.parameters]]; publicly this sixteenfold orbit has the relation x, x+1/2, z and therefore free x and z axes. The tin orbit [[param:orbit.o002.id]] is occupied by [[param:orbit.o002.element]] on Wyckoff position [[param:orbit.o002.wyckoff]], with independent parameter [[param:orbit.o002.parameters]]; publicly this eightfold orbit follows x, x+1/2, 0 and has only x free.\n\nThe reported precision corrections are not part of the idealized backbone but small real deviations applied to expanded input-cell tin sites. One correction concerns site [[param:correction.c000.site_id]], identified as [[param:correction.c000.element]], with fractional displacement [[param:correction.c000.delta]]. The other concerns site [[param:correction.c001.site_id]], also [[param:correction.c001.element]], with fractional displacement [[param:correction.c001.delta]]. These shifts are tiny, oppositely signed z-direction deviations from the idealized Sn positions in the input frame, while leaving the underlying Wyckoff description unchanged."
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "reasoning_stream": {
+    "chunks": 280,
+    "characters": 2892
+  },
+  "usage": {
+    "completion_tokens": 1185,
+    "prompt_tokens": 2657,
+    "total_tokens": 3842,
+    "completion_tokens_details": {
+      "reasoning_tokens": 620
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "cache_creation_input_tokens": 0
+    }
+  }
+}

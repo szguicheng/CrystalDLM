@@ -1,0 +1,43 @@
+{
+  "status": "ready",
+  "tokenizer_path": "experiments/interleaved_ar_diffusion_20261002/data_002/tokenizer/tokenizer.json",
+  "tokenizer_sha256": "64b64b25afdb5e3e79168467889b4b777778dc17ae29458bcd2c41a51110cca6",
+  "tokenizers_version": "0.22.2",
+  "method": "local Tokenizer.from_file; no Hugging Face calls; nearest-rank percentiles",
+  "field_lengths_only": true,
+  "complete_training_context_not_counted": true,
+  "distributions": {
+    "plaid_body_plus_end": {
+      "count": 8172,
+      "p50": 158,
+      "p95": 384,
+      "max": 531,
+      "exceeds_K256": 1303,
+      "exceeds_context_1536": 0
+    },
+    "raw_caption": {
+      "count": 8172,
+      "p50": 153,
+      "p95": 185,
+      "max": 229,
+      "exceeds_K256": 0,
+      "exceeds_context_1536": 0
+    },
+    "clean_caption": {
+      "count": 8172,
+      "p50": 148,
+      "p95": 179,
+      "max": 225,
+      "exceeds_K256": 0,
+      "exceeds_context_1536": 0
+    },
+    "clean_caption_plus_eos": {
+      "count": 8172,
+      "p50": 149,
+      "p95": 180,
+      "max": 226,
+      "exceeds_K256": 0,
+      "exceeds_context_1536": 0
+    }
+  }
+}

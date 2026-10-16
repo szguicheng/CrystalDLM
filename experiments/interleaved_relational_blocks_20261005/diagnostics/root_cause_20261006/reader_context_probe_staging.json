@@ -1,0 +1,32 @@
+{
+  "status": "extended_staged_CPU_verified_review_passed",
+  "staged_at_utc": "2026-10-06T17:46:46.398549+00:00",
+  "sources": {
+    "reader_context_probe.py": "4308f6cfe4f8eeaa0a84265d3bd39e304ca9e35fa0aa3e9b974119eddee8164a",
+    "test_reader_context_probe.py": "345a91ef70541485c5bef4e2eb9bb07ce461df68c0078c966845076e17f18bd0"
+  },
+  "local_remote_hashes_equal": true,
+  "checks": {
+    "local_CPU": "passed",
+    "remote_CPU": "passed",
+    "premature_run": "rejects missingterminalsummarybeforeTorch/model/checkpoint",
+    "GPU_probe": "not_run",
+    "job_submission": "not_performed"
+  },
+  "restaged_at_utc": "2026-10-06T18:27:18.947877+00:00",
+  "task_scope": {
+    "Q2_actual": 5,
+    "Q_swap": 8
+  },
+  "realCPUchecks": [
+    "reader_context_probe_real_prompt_check.json",
+    "reader_context_probe_real_swap_prompt_check.json"
+  ],
+  "review": "reader_context_probe_review.json",
+  "launcher": {
+    "file": "reader_context_probe.slurm",
+    "sha256": "277dfba4f3cd08619636ca2b272840a3d38ea0e7266b20976e11a2f731b3eb39",
+    "local_remote_syntax_and_hash": "passed",
+    "job_submission": "not_performed"
+  }
+}

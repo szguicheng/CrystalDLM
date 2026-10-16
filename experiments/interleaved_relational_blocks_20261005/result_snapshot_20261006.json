@@ -1,0 +1,426 @@
+{
+  "captured_at_utc": "2026-10-05T18:03:06.188959+00:00",
+  "job_id": "606069",
+  "overall_status": "running; partial results",
+  "representation": "relational_cnl_v1",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "arms": {
+    "ar": {
+      "status": "evaluated",
+      "completed_updates": 512,
+      "evaluations": {
+        "seen8": {
+          "arm": "ar",
+          "core_mode": "ar",
+          "block_size": 2560,
+          "model": "Qwen/Qwen2.5-1.5B-Instruct",
+          "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+          "n": 8,
+          "split": "train",
+          "counts": {
+            "G": 8,
+            "Q_reference": 8,
+            "E_reference": 8,
+            "closed_loop": 8,
+            "flow_complete": 8,
+            "Q_swap": 0,
+            "Q_no_crystal": 0
+          },
+          "rates": {
+            "G": 1.0,
+            "Q_reference": 1.0,
+            "E_reference": 1.0,
+            "closed_loop": 1.0,
+            "flow_complete": 1.0,
+            "Q_swap": 0.0,
+            "Q_no_crystal": 0.0
+          },
+          "attempts_retried": 0,
+          "failure_classes": {
+            "Q_swap:answer_mismatch": 8,
+            "Q_no_crystal:read_error": 8
+          },
+          "forward_calls": 18276,
+          "attempt_seconds": 725.7874205042608,
+          "no_crystal_semantics": "Q_no_crystal is exact target-fact match without a structure; raw response is retained and this is not an abstention/success score."
+        },
+        "heldout16": {
+          "arm": "ar",
+          "core_mode": "ar",
+          "block_size": 2560,
+          "model": "Qwen/Qwen2.5-1.5B-Instruct",
+          "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+          "n": 16,
+          "split": "heldout",
+          "counts": {
+            "G": 0,
+            "Q_reference": 8,
+            "E_reference": 0,
+            "closed_loop": 0,
+            "flow_complete": 0,
+            "Q_swap": 0,
+            "Q_no_crystal": 0
+          },
+          "rates": {
+            "G": 0.0,
+            "Q_reference": 0.5,
+            "E_reference": 0.0,
+            "closed_loop": 0.0,
+            "flow_complete": 0.0,
+            "Q_swap": 0.0,
+            "Q_no_crystal": 0.0
+          },
+          "attempts_retried": 0,
+          "failure_classes": {
+            "G:generation_audit": 14,
+            "Q_reference:answer_mismatch": 8,
+            "E_reference:edit_mismatch": 16,
+            "closed_loop:skipped_invalid_generated_c1": 16,
+            "Q_swap:answer_mismatch": 16,
+            "Q_no_crystal:read_error": 16,
+            "G:generation_error": 2
+          },
+          "forward_calls": 30279,
+          "attempt_seconds": 1658.297781443689,
+          "no_crystal_semantics": "Q_no_crystal is exact target-fact match without a structure; raw response is retained and this is not an abstention/success score."
+        }
+      },
+      "seen_generation_seconds_mean": 18.171608369622845,
+      "seen_generation_unpack_success": 8
+    },
+    "diffusion_full": {
+      "status": "evaluated",
+      "completed_updates": 512,
+      "evaluations": {
+        "seen8": {
+          "arm": "diffusion_full",
+          "core_mode": "hybrid",
+          "block_size": 2560,
+          "model": "Qwen/Qwen2.5-1.5B-Instruct",
+          "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+          "n": 8,
+          "split": "train",
+          "counts": {
+            "G": 0,
+            "Q_reference": 8,
+            "E_reference": 0,
+            "closed_loop": 0,
+            "flow_complete": 0,
+            "Q_swap": 0,
+            "Q_no_crystal": 0
+          },
+          "rates": {
+            "G": 0.0,
+            "Q_reference": 1.0,
+            "E_reference": 0.0,
+            "closed_loop": 0.0,
+            "flow_complete": 0.0,
+            "Q_swap": 0.0,
+            "Q_no_crystal": 0.0
+          },
+          "attempts_retried": 0,
+          "failure_classes": {
+            "G:generation_error": 8,
+            "E_reference:edit_error": 7,
+            "closed_loop:skipped_invalid_generated_c1": 8,
+            "Q_swap:answer_mismatch": 8,
+            "Q_no_crystal:read_error": 7,
+            "E_reference:edit_mismatch": 1
+          },
+          "forward_calls": 2841,
+          "attempt_seconds": 129.46876089507714,
+          "no_crystal_semantics": "Q_no_crystal is exact target-fact match without a structure; raw response is retained and this is not an abstention/success score."
+        },
+        "heldout16": {
+          "arm": "diffusion_full",
+          "core_mode": "hybrid",
+          "block_size": 2560,
+          "model": "Qwen/Qwen2.5-1.5B-Instruct",
+          "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+          "n": 16,
+          "split": "heldout",
+          "counts": {
+            "G": 0,
+            "Q_reference": 5,
+            "E_reference": 0,
+            "closed_loop": 0,
+            "flow_complete": 0,
+            "Q_swap": 0,
+            "Q_no_crystal": 0
+          },
+          "rates": {
+            "G": 0.0,
+            "Q_reference": 0.3125,
+            "E_reference": 0.0,
+            "closed_loop": 0.0,
+            "flow_complete": 0.0,
+            "Q_swap": 0.0,
+            "Q_no_crystal": 0.0
+          },
+          "attempts_retried": 0,
+          "failure_classes": {
+            "G:generation_error": 16,
+            "Q_reference:answer_mismatch": 11,
+            "E_reference:edit_error": 16,
+            "closed_loop:skipped_invalid_generated_c1": 16,
+            "Q_swap:answer_mismatch": 16,
+            "Q_no_crystal:read_error": 14
+          },
+          "forward_calls": 5672,
+          "attempt_seconds": 292.6286148033105,
+          "no_crystal_semantics": "Q_no_crystal is exact target-fact match without a structure; raw response is retained and this is not an abstention/success score."
+        }
+      },
+      "teacher_forced_noise_steps": {
+        "32": {
+          "n": 8,
+          "mean_normalized_ce_contributions": {
+            "crystal": 2.718778431415558,
+            "crystal_body": 2.6728590726852417,
+            "crystal_end": 0.005769922165200114,
+            "crystal_pad": 0.04014947687392123
+          },
+          "crystal_metrics": {
+            "body": {
+              "count": 4898,
+              "correct": 793,
+              "nll_sum": 17661.52685546875,
+              "accuracy": 0.16190281747652102,
+              "mean_nll": 3.6058650174497244
+            },
+            "end": {
+              "count": 8,
+              "correct": 0,
+              "nll_sum": 35.88539218902588,
+              "accuracy": 0.0,
+              "mean_nll": 4.485674023628235
+            },
+            "pad": {
+              "count": 15574,
+              "correct": 15168,
+              "nll_sum": 2134.0035905838013,
+              "accuracy": 0.9739309104918454,
+              "mean_nll": 0.1370234744178632
+            }
+          }
+        },
+        "16": {
+          "n": 8,
+          "mean_normalized_ce_contributions": {
+            "crystal": 0.10343727748841047,
+            "crystal_body": 0.1027882625348866,
+            "crystal_end": 8.3813356468454e-05,
+            "crystal_pad": 0.000565202884899918
+          },
+          "crystal_metrics": {
+            "body": {
+              "count": 2431,
+              "correct": 2303,
+              "nll_sum": 360.59081649780273,
+              "accuracy": 0.9473467708761827,
+              "mean_nll": 0.14833024125783742
+            },
+            "end": {
+              "count": 1,
+              "correct": 1,
+              "nll_sum": 0.27923259139060974,
+              "accuracy": 1.0,
+              "mean_nll": 0.27923259139060974
+            },
+            "pad": {
+              "count": 7718,
+              "correct": 7716,
+              "nll_sum": 17.22968864440918,
+              "accuracy": 0.9997408655091993,
+              "mean_nll": 0.002232403296762008
+            }
+          }
+        },
+        "1": {
+          "n": 8,
+          "mean_normalized_ce_contributions": {
+            "crystal": 0.06117606029147282,
+            "crystal_body": 0.05885597330325254,
+            "crystal_end": 0.0019128331914544106,
+            "crystal_pad": 0.00040725176950218156
+          },
+          "crystal_metrics": {
+            "body": {
+              "count": 154,
+              "correct": 148,
+              "nll_sum": 13.816836003679782,
+              "accuracy": 0.961038961038961,
+              "mean_nll": 0.08971971430960897
+            },
+            "end": {
+              "count": 2,
+              "correct": 2,
+              "nll_sum": 0.34589342772960663,
+              "accuracy": 1.0,
+              "mean_nll": 0.17294671386480331
+            },
+            "pad": {
+              "count": 452,
+              "correct": 452,
+              "nll_sum": 0.7962723225355148,
+              "accuracy": 1.0,
+              "mean_nll": 0.001761664430388307
+            }
+          }
+        }
+      },
+      "seen_generation_seconds_mean": 3.1574071760987863,
+      "seen_generation_unpack_success": 0
+    },
+    "diffusion_b32": {
+      "status": "trained",
+      "completed_updates": 512,
+      "evaluations": {
+        "seen8": {
+          "arm": "diffusion_b32",
+          "core_mode": "hybrid",
+          "block_size": 32,
+          "model": "Qwen/Qwen2.5-1.5B-Instruct",
+          "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+          "n": 8,
+          "split": "train",
+          "counts": {
+            "G": 0,
+            "Q_reference": 8,
+            "E_reference": 0,
+            "closed_loop": 0,
+            "flow_complete": 0,
+            "Q_swap": 0,
+            "Q_no_crystal": 0
+          },
+          "rates": {
+            "G": 0.0,
+            "Q_reference": 1.0,
+            "E_reference": 0.0,
+            "closed_loop": 0.0,
+            "flow_complete": 0.0,
+            "Q_swap": 0.0,
+            "Q_no_crystal": 0.0
+          },
+          "attempts_retried": 0,
+          "failure_classes": {
+            "G:generation_audit": 4,
+            "E_reference:edit_error": 3,
+            "closed_loop:skipped_invalid_generated_c1": 8,
+            "Q_swap:answer_mismatch": 8,
+            "E_reference:edit_mismatch": 5,
+            "G:generation_error": 4
+          },
+          "forward_calls": 41865,
+          "attempt_seconds": 2718.798576354049,
+          "no_crystal_semantics": "Q_no_crystal is exact target-fact match without a structure; raw response is retained and this is not an abstention/success score."
+        }
+      },
+      "teacher_forced_noise_steps": {
+        "32": {
+          "n": 8,
+          "mean_normalized_ce_contributions": {
+            "crystal": 0.19944755360484123,
+            "crystal_body": 0.19817160069942474,
+            "crystal_end": 0.0006481116924987873,
+            "crystal_pad": 0.0006278413275140338
+          },
+          "crystal_metrics": {
+            "body": {
+              "count": 4898,
+              "correct": 4460,
+              "nll_sum": 1281.0668334960938,
+              "accuracy": 0.9105757452021234,
+              "mean_nll": 0.2615489655974058
+            },
+            "end": {
+              "count": 8,
+              "correct": 7,
+              "nll_sum": 3.875828005373478,
+              "accuracy": 0.875,
+              "mean_nll": 0.48447850067168474
+            },
+            "pad": {
+              "count": 15574,
+              "correct": 15565,
+              "nll_sum": 37.795350074768066,
+              "accuracy": 0.9994221137793758,
+              "mean_nll": 0.0024268235568747957
+            }
+          }
+        },
+        "16": {
+          "n": 8,
+          "mean_normalized_ce_contributions": {
+            "crystal": 0.01233531224715989,
+            "crystal_body": 0.012032424652716145,
+            "crystal_end": 2.704003782127984e-05,
+            "crystal_pad": 0.00027584735107666347
+          },
+          "crystal_metrics": {
+            "body": {
+              "count": 2431,
+              "correct": 2418,
+              "nll_sum": 40.11153507232666,
+              "accuracy": 0.9946524064171123,
+              "mean_nll": 0.016500014427119153
+            },
+            "end": {
+              "count": 1,
+              "correct": 1,
+              "nll_sum": 0.09008659422397614,
+              "accuracy": 1.0,
+              "mean_nll": 0.09008659422397614
+            },
+            "pad": {
+              "count": 7718,
+              "correct": 7718,
+              "nll_sum": 8.521255850791931,
+              "accuracy": 1.0,
+              "mean_nll": 0.0011040756479388353
+            }
+          }
+        },
+        "1": {
+          "n": 8,
+          "mean_normalized_ce_contributions": {
+            "crystal": 0.002004920550461975,
+            "crystal_body": 0.0009186773984311003,
+            "crystal_end": 0.0008480926335323602,
+            "crystal_pad": 0.0002381505364610348
+          },
+          "crystal_metrics": {
+            "body": {
+              "count": 154,
+              "correct": 154,
+              "nll_sum": 0.2193645607912913,
+              "accuracy": 1.0,
+              "mean_nll": 0.00142444519994345
+            },
+            "end": {
+              "count": 2,
+              "correct": 2,
+              "nll_sum": 0.15382768958806992,
+              "accuracy": 1.0,
+              "mean_nll": 0.07691384479403496
+            },
+            "pad": {
+              "count": 452,
+              "correct": 452,
+              "nll_sum": 0.46545984596014023,
+              "accuracy": 1.0,
+              "mean_nll": 0.001029778420265797
+            }
+          }
+        }
+      },
+      "seen_generation_seconds_mean": 120.6404524720856,
+      "seen_generation_unpack_success": 4
+    },
+    "diffusion_b64": {
+      "status": "not_started",
+      "completed_updates": 0,
+      "evaluations": {}
+    }
+  }
+}

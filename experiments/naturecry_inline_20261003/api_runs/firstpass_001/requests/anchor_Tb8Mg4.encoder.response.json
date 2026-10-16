@@ -1,0 +1,33 @@
+{
+  "id": "73acff2c-97c2-427a-958e-9674bd2d6d88",
+  "created": 1791046930,
+  "model": "tokenhub/kimi-k3",
+  "object": "chat.completion",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "The structure is described in an orthorhombic cell with lattice parameters a = 7.11 Å, b = 5.33 Å, and c = 9.75 Å [[param:cell.a]] [[param:cell.b]] [[param:cell.c]], with all interaxial angles equal to 90° [[param:cell.alpha]] [[param:cell.beta]] [[param:cell.gamma]]. The input cell contains 12 atoms [[param:input.atom_count]], comprising 4 Mg atoms and 8 Tb atoms [[param:composition.Mg]] [[param:composition.Tb]].\n\nThe crystallographic symmetry is that of space group number 62 [[param:space_group.number]], with the Hall symbol \"-P 2ac 2n\" [[param:space_group.hall]], corresponding to the standard setting Pnma. The transformation from the input frame to the standard frame is the identity matrix with no origin shift [[param:frame.matrix]] [[param:frame.origin_shift]], so the input and standard coordinate frames coincide. Fractional coordinates are recorded to three decimal places [[param:round_digits]].\n\nThe 12 atoms are distributed over three independent Wyckoff orbits, each of multiplicity 4 and each occupying the 4c site with the coordinate relation (x, 1/4, z), so that x and z are free parameters while y is fixed at 1/4. Two of these orbits are terbium sites and one is a magnesium site, accounting for the 8 Tb and 4 Mg atoms in the cell.\n\nThe first terbium orbit, o000 [[param:orbit.o000.id]], is a Tb site with Wyckoff label 4c [[param:orbit.o000.element]] [[param:orbit.o000.wyckoff]] and free parameters x = 0.318 and z = 0.416 [[param:orbit.o000.parameters]]. The second terbium orbit, o001 [[param:orbit.o001.id]], is likewise a Tb 4c site [[param:orbit.o001.element]] [[param:orbit.o001.wyckoff]] with x = 0.467 and z = 0.728 [[param:orbit.o001.parameters]]. The magnesium orbit, o002 [[param:orbit.o002.id]], is an Mg 4c site [[param:orbit.o002.element]] [[param:orbit.o002.wyckoff]] with x = 0.247 and z = 0.124 [[param:orbit.o002.parameters]]. No precision corrections are present; the reported coordinates stand as the refined values relative to the idealized Wyckoff positions.",
+        "role": "assistant",
+        "provider_specific_fields": {
+          "refusal": null
+        }
+      },
+      "provider_specific_fields": {}
+    }
+  ],
+  "usage": {
+    "completion_tokens": 553,
+    "prompt_tokens": 2132,
+    "total_tokens": 2685,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "cache_creation_input_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "e6916f61-4257-4e5e-a552-b34288139db2",
+  "object": "chat.completion",
+  "created": 1791053406,
+  "model": "tokenhub/kimi-k3",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "The structure is described in a primitive tetragonal input cell whose basal edges are equal in length, [[param:cell.a]] and [[param:cell.b]], while the perpendicular axis is [[param:cell.c]]; all interaxial angles are right angles, [[param:cell.alpha]], [[param:cell.beta]], and [[param:cell.gamma]]. The reported unit cell contains nine atoms in total, [[param:input.atom_count]], with the input stoichiometry distributed as one barium, [[param:composition.Ba]], one copper, [[param:composition.Cu]], one dysprosium, [[param:composition.Dy]], one iron, [[param:composition.Fe]], and five oxygen atoms, [[param:composition.O]].\n\nThe symmetry assignment places the crystal in space group [[param:space_group.number]], with Hall setting [[param:space_group.hall]]. Consistent with public crystallographic rules for this polar tetragonal setting, the unique fourfold direction is along c, the lattice is primitive, and the independent atoms are arranged on symmetry-fixed lines whose only free coordinate is the height along c. No change of frame is needed between the supplied input description and the standard description: the transformation is the identity matrix, [[param:frame.matrix]], and the origin shift is zero, [[param:frame.origin_shift]], so the fractional heights below can be read directly in the standard frame.\n\nAlong the cell-corner fourfold line, the iron orbit [[param:orbit.o002.id]] is occupied by Fe, [[param:orbit.o002.element]], on the Wyckoff site [[param:orbit.o002.wyckoff]] with free height [[param:orbit.o002.parameters]]. Copper occupies a distinct corner-line orbit, [[param:orbit.o003.id]], with element assignment [[param:orbit.o003.element]], Wyckoff label [[param:orbit.o003.wyckoff]], and height [[param:orbit.o003.parameters]]; one of the oxygen sites also lies on this same corner-line symmetry, identified as orbit [[param:orbit.o006.id]], oxygen species [[param:orbit.o006.element]], Wyckoff position [[param:orbit.o006.wyckoff]], and free parameter [[param:orbit.o006.parameters]]. Thus Fe, Cu, and one O are stacked at different heights along the same high-symmetry corner axis rather than merged into a single idealized level.\n\nA second symmetry-fixed line runs through the cell-center position of the basal plane. Barium is assigned to orbit [[param:orbit.o000.id]] as element [[param:orbit.o000.element]] on Wyckoff site [[param:orbit.o000.wyckoff]], with height [[param:orbit.o000.parameters]]. Dysprosium occupies the analogous center-line orbit [[param:orbit.o001.id]], element [[param:orbit.o001.element]], Wyckoff label [[param:orbit.o001.wyckoff]], and free coordinate [[param:orbit.o001.parameters]]. These two cations therefore share the same lateral symmetry line but sit at different heights along c.\n\nThe remaining oxygen density is carried by two independent two-fold orbits that are related laterally by the fourfold symmetry. The first is orbit [[param:orbit.o004.id]], assigned to O, [[param:orbit.o004.element]], on Wyckoff site [[param:orbit.o004.wyckoff]], with height [[param:orbit.o004.parameters]]. The second is orbit [[param:orbit.o005.id]], also oxygen, [[param:orbit.o005.element]], with Wyckoff label [[param:orbit.o005.wyckoff]] and independent height [[param:orbit.o005.parameters]]. Although these two oxygen orbits have the same Wyckoff multiplicity and the same lateral symmetry relation, their supplied heights are distinct and should be preserved as separate levels.\n\nFractional coordinates are reported after rounding to [[param:round_digits]] decimal places. No precision-correction entries were supplied, so there are no additional measured deviations from the idealized backbone to apply beyond the recorded free heights; the small differences among those heights are real features of the reported model, not evidence of exact degeneracy."
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "reasoning_stream": {
+    "chunks": 471,
+    "characters": 4523
+  },
+  "usage": {
+    "completion_tokens": 1839,
+    "prompt_tokens": 3497,
+    "total_tokens": 5336,
+    "completion_tokens_details": {
+      "reasoning_tokens": 973
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "cache_creation_input_tokens": 0
+    }
+  }
+}

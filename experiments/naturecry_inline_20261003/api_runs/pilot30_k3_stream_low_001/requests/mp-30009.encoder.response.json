@@ -1,0 +1,33 @@
+{
+  "id": "118ed6c0-4c2d-4bb3-bf36-8790b2b27b82",
+  "object": "chat.completion",
+  "created": 1791053332,
+  "model": "tokenhub/kimi-k3",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "The input cell is rhombohedral-like in its raw setting: all three edge lengths coincide at [[param:cell.a]], [[param:cell.b]], and [[param:cell.c]], while the interaxial angles are given by [[param:cell.alpha]], [[param:cell.beta]], and the distinctly smaller [[param:cell.gamma]], so the two larger angles match each other but the third is measurably different. This primitive-looking cell holds three atoms in total ([[param:input.atom_count]]), comprising one krypton ([[param:composition.Kr]]) and two fluorines ([[param:composition.F]]).\n\nThe symmetry assigned to the structure is space group number [[param:space_group.number]] with Hall symbol [[param:space_group.hall]], a body-centered tetragonal group. To express the input cell in that conventional I-centered tetragonal setting, a change of basis is applied: the transformation matrix [[param:frame.matrix]] maps input fractional coordinates into the standard frame, accompanied by the origin shift [[param:frame.origin_shift]], which is zero in all three components, so the two frames share the same origin and differ only in the choice of lattice vectors. Input fractional coordinates were handled at a working precision of [[param:round_digits]] decimal places.\n\nWithin the standard setting, the three input atoms resolve into two independent Wyckoff orbits. The krypton sublattice is represented by orbit [[param:orbit.o000.id]], whose element is [[param:orbit.o000.element]] occupying the Wyckoff site [[param:orbit.o000.wyckoff]]. This site has no free positional parameters: its atoms sit at the fixed special position 0, 0, 0, with the body-centering of the lattice generating the second member of the multiplicity-two orbit.\n\nThe fluorine sublattice forms orbit [[param:orbit.o001.id]], with element [[param:orbit.o001.element]] on the Wyckoff site [[param:orbit.o001.wyckoff]]. This fourfold orbit lies on the coordinate line 0, 0, z and possesses a single free parameter along the c direction, given by [[param:orbit.o001.parameters]]; the four members of the orbit are generated from this one degree of freedom by the tetragonal symmetry operations combined with the I-centering translation.\n\nNo precision corrections were required: the reported atomic positions coincide with the idealized symmetry description, so the structure as given is already an exact realization of the two-orbit arrangement in this space group."
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "reasoning_stream": {
+    "chunks": 8,
+    "characters": 67
+  },
+  "usage": {
+    "completion_tokens": 544,
+    "prompt_tokens": 1805,
+    "total_tokens": 2349,
+    "completion_tokens_details": {
+      "reasoning_tokens": 16
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "cache_creation_input_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "status": "read_only_partial_relation_diagnosis",
+  "scope": "Frozen partial5 seen evaluation only; first-END body parsed with the existing relational codec and public Wyckoff table. No repair, sampling, inference, training, SSH, or code changes.",
+  "denominator": {
+    "cases": 5,
+    "G_failures": 2,
+    "failed_ids": [
+      "anchor_Li8V4Ni4O16",
+      "mp-1205515"
+    ],
+    "limitation": "Partial5 only; no architecture or causal claim."
+  },
+  "inputs": {
+    "records": {
+      "path": "experiments/interleaved_relational_scaled32_20261006/data_001/records.jsonl",
+      "sha256": "231f336234d15a216dc9cb800d8dc1c3f30cf90985184ccc0d3e5c26333e95c6"
+    },
+    "evaluation": {
+      "path": "experiments/interleaved_relational_scaled32_20261006/eval_grounded_final2048_001/seen8/evaluation.jsonl",
+      "frozen_partial5_sha256": "4f4bbc13657cac81a71a24c36f21bc40689f631a8f7be3db3bd099b12d8b2387",
+      "later_observed_sha256": "e2e3dbcb8e013e6e89da8b8b67fce264ab7a61298f240841032657cc9cd7698d",
+      "note": "The live file grew to six lines during diagnosis. Results and denominator are restricted to the previously pinned partial5 bytes."
+    },
+    "public_definitions": "experiments/naturecry_relational_20261004/relational_codec.py and its public geometry table",
+    "prior_boundary_receipt": "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/scaled32_partial_boundary_body_audit.json"
+  },
+  "cases": [
+    {
+      "id": "anchor_Li8V4Ni4O16",
+      "G": false,
+      "generation_ok": false,
+      "END_positions_zero_based": [
+        623,
+        637
+      ],
+      "first_END_body_failure": "GateError: Orbit multiplicity and representative relations do not select one public definition",
+      "first_offending_orbit": "o005",
+      "space_group": 74,
+      "public_definition": {
+        "element": "O",
+        "wyckoff": "8h",
+        "multiplicity": 8,
+        "relations": [
+          "Its representative lies in the plane at fractional a offset 0.0.",
+          "Along b, its representative has the free fractional offset 0.02699999999999997.",
+          "Along c, its representative has the free fractional offset 0.76."
+        ],
+        "matrix": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "shift": [
+          0,
+          0,
+          0
+        ]
+      },
+      "generated_relations": [
+        "Along a, its representative has the free fractional offset 0.02690000000000003.",
+        "Along b, its representative has the free fractional offset 0.7659999999999991.",
+        "Along c, its representative has the free fractional offset 0.76."
+      ],
+      "diagnosis": "o005 drops the public a=0 constraint by making a free; b is also wrong (~0.766 vs ~0.027), while c agrees. Thus multiplicity 8 plus three free coordinates selects no public definition. A separate duplicate-END boundary failure is present; this is not boundary-only."
+    },
+    {
+      "id": "mp-1205515",
+      "G": false,
+      "generation_ok": true,
+      "END_positions_zero_based": [
+        803
+      ],
+      "first_offending_orbit": "o000",
+      "space_group": 65,
+      "public_definition": {
+        "element": "Er",
+        "wyckoff": "4j",
+        "multiplicity": 4,
+        "relations": [
+          "Its representative lies in the plane at fractional a offset 0.0.",
+          "Along b, its representative has the free fractional offset 0.33113400000000004.",
+          "Its representative lies in the plane at fractional c offset 0.5."
+        ],
+        "matrix": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "shift": [
+          0,
+          0,
+          0.5
+        ]
+      },
+      "generated_relations": [
+        "Its representative lies in the plane at fractional a offset 0.0.",
+        "Its representative lies in the plane at fractional b offset 0.33113400000000004.",
+        "Its representative lies in the plane at fractional c offset 0.5."
+      ],
+      "diagnosis": "Generated prose changes free b to a fixed plane while retaining the correct number. The resulting b row is zero with shift 0.331134, instead of coefficient 1 on b and shift 0; no SG65 multiplicity-4 public definition matches. This is a relation-category/template error, not a wrong number, typo, or boundary failure."
+    }
+  ]
+}

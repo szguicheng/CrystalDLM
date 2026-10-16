@@ -1,0 +1,174 @@
+{
+  "status": "validated",
+  "provenance": "checkpoint_replay",
+  "mode": "hybrid",
+  "prediction_offset": 0,
+  "updates": 1024,
+  "final_fingerprint": "b5ed6bff994d9cf227e31ae983a187f9ed07ef7ceacffe1454ceca38fda391b0",
+  "checkpoint_sha256": "2586534010441d7f2a380cfef4212fc4d0f55f22b815a9ba335ae73135ab0dd5",
+  "checkpoint_reload_verified": true,
+  "source_sha256": {
+    "diagnose.py": "674ec4ec5a6c2cdd78c58e51a288a066a7bd6d52ac5e81d7b6bd3a9f4b2a7772",
+    "model.py": "036ac4d4fc08437e2325c31265fceb08a573d8c703a1ca551c4f921541345406",
+    "rescore.py": "254192f4e2482f331fb42d95591f98bccdcc1c65f2bd8c6951faca194560e2ad",
+    "test_checks.py": "13228a70ebc2cd00ca0fac4111a0715cc27334da3941fe6b373b9447498c68c8",
+    "cohort.py": "ead8877f3edfc0079d9b6797c6829289dea632cfb1089148271bf80da6094593",
+    "run.py": "889e8f2a6083bcc4d04c5d0b646212d131f247897f71df7e522d1fd838abc143",
+    "prepare.py": "864927e1c27d3e3baa8107eba2db09d320d6ce3ee17b6c801370d85fd63ba688",
+    "predictor_align.py": "d6b6338ead13626552e7b230e25252725f4baa0cbb3399413e4687494ba86145",
+    "causal_diagnose.py": "3bf4be91dbe72849a26f60406b4571f5a7cb73be11fe4d07a6b86d876bf32602",
+    "align.py": "b55808efddeba49be24f1b13674fd7dc2ca6d0fd55f4eb31466c0103ace56ed5",
+    "recover.py": "3f216daace0a156754b982d6fc0319d42a11d44898861f873113ad8533bc4db1",
+    "score.py": "23b657ca2128119e9b19538a2ce73b0cc122c130623141bc334e6e416781d161",
+    "adapt.py": "6ebd2b152dcd636391b73df8f612f7f13aab39360b9f47e4e6995fdec683cd58",
+    "rebalance.py": "8f689794ae1f8e512c0a705a6fcedd58060633dfa16cb9e3277193efb9e15ae6"
+  },
+  "replay_source_sha256": {
+    "diagnose.py": "674ec4ec5a6c2cdd78c58e51a288a066a7bd6d52ac5e81d7b6bd3a9f4b2a7772",
+    "model.py": "036ac4d4fc08437e2325c31265fceb08a573d8c703a1ca551c4f921541345406",
+    "rescore.py": "254192f4e2482f331fb42d95591f98bccdcc1c65f2bd8c6951faca194560e2ad",
+    "test_checks.py": "b6195f633283a0df8ceff33992645776e10d32a9894803a5d43592baa80a819f",
+    "cohort.py": "ead8877f3edfc0079d9b6797c6829289dea632cfb1089148271bf80da6094593",
+    "run.py": "889e8f2a6083bcc4d04c5d0b646212d131f247897f71df7e522d1fd838abc143",
+    "prepare.py": "864927e1c27d3e3baa8107eba2db09d320d6ce3ee17b6c801370d85fd63ba688",
+    "predictor_align.py": "8567c5724d115ad1d999e50886b2fc65f919920708acde5fc4e531b710a8a781",
+    "causal_diagnose.py": "3bf4be91dbe72849a26f60406b4571f5a7cb73be11fe4d07a6b86d876bf32602",
+    "align.py": "b55808efddeba49be24f1b13674fd7dc2ca6d0fd55f4eb31466c0103ace56ed5",
+    "recover.py": "3f216daace0a156754b982d6fc0319d42a11d44898861f873113ad8533bc4db1",
+    "score.py": "c1dfe1b87715b5b650b7152e02fed567bd5f7f0fd9109295ec87208f23165c6b",
+    "adapt.py": "6ebd2b152dcd636391b73df8f612f7f13aab39360b9f47e4e6995fdec683cd58",
+    "rebalance.py": "8f689794ae1f8e512c0a705a6fcedd58060633dfa16cb9e3277193efb9e15ae6"
+  },
+  "validation": {
+    "legacy": {
+      "n": 128,
+      "counts": {
+        "G": 0,
+        "Q_reference": 128,
+        "E_reference": 0,
+        "closed_loop": 0,
+        "flow_complete": 0,
+        "Q_swap": 122,
+        "Q_no_crystal": 0
+      },
+      "rates": {
+        "G": 0.0,
+        "Q_reference": 1.0,
+        "E_reference": 0.0,
+        "closed_loop": 0.0,
+        "flow_complete": 0.0,
+        "Q_swap": 0.953125,
+        "Q_no_crystal": 0.0
+      },
+      "elapsed_seconds": 779.6567258941941,
+      "attempts_retried": 0,
+      "seconds_median": 6.044862114824355,
+      "seconds_p95": 6.378211009921506,
+      "evaluation_split": "val",
+      "training_materials_evaluated": false,
+      "stage0_passed": false
+    },
+    "v2": {
+      "n": 128,
+      "counts": {
+        "G": 0,
+        "Q_reference": 128,
+        "E_reference": 0,
+        "closed_loop": 0,
+        "flow_complete": 0,
+        "Q_swap": 122,
+        "Q_no_crystal": 0
+      }
+    }
+  },
+  "reading": {
+    "n": 128,
+    "success": 118,
+    "correct_by_field": {
+      "sg": 119,
+      "formula": 126,
+      "atoms": 125,
+      "orbits": 125,
+      "a": 126,
+      "b": 126,
+      "c": 126
+    }
+  },
+  "old8_regression": {
+    "legacy": {
+      "n": 8,
+      "counts": {
+        "G": 0,
+        "Q_reference": 8,
+        "E_reference": 0,
+        "closed_loop": 0,
+        "flow_complete": 0,
+        "Q_swap": 7,
+        "Q_no_crystal": 0
+      },
+      "rates": {
+        "G": 0.0,
+        "Q_reference": 1.0,
+        "E_reference": 0.0,
+        "closed_loop": 0.0,
+        "flow_complete": 0.0,
+        "Q_swap": 0.875,
+        "Q_no_crystal": 0.0
+      },
+      "elapsed_seconds": 48.16726477071643,
+      "attempts_retried": 0,
+      "seconds_median": 6.0302976639941335,
+      "seconds_p95": 6.191263142670505,
+      "evaluation_split": "train",
+      "training_materials_evaluated": true,
+      "stage0_passed": false
+    },
+    "v2": {
+      "n": 8,
+      "counts": {
+        "G": 0,
+        "Q_reference": 8,
+        "E_reference": 0,
+        "closed_loop": 0,
+        "flow_complete": 0,
+        "Q_swap": 7,
+        "Q_no_crystal": 0
+      }
+    }
+  },
+  "prefix_replay": {
+    "rows": 66,
+    "validation_ids_match": true,
+    "scientific_fields_exact": true,
+    "first_mismatch": null,
+    "forward_call_differences": [],
+    "previous_raw_sha256": "420f3914bea8aa0203b5ff318d2da3d5f24f8da16ee21804b91177f7766c9e17",
+    "replay_raw_sha256": "87b024e74f4e95cb7330cf55ad49e914aa8c822bf739a142454e3d65c1eaa7a1"
+  },
+  "strata": {
+    "original64": {
+      "n": 64,
+      "counts": {
+        "G": 0,
+        "Q_reference": 64,
+        "E_reference": 0,
+        "closed_loop": 0,
+        "flow_complete": 0,
+        "Q_swap": 61,
+        "Q_no_crystal": 0
+      }
+    },
+    "later64": {
+      "n": 64,
+      "counts": {
+        "G": 0,
+        "Q_reference": 64,
+        "E_reference": 0,
+        "closed_loop": 0,
+        "flow_complete": 0,
+        "Q_swap": 61,
+        "Q_no_crystal": 0
+      }
+    }
+  }
+}

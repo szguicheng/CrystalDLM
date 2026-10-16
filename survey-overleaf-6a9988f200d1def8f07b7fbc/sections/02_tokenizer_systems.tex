@@ -1,0 +1,82 @@
+\section{Tokenizer Systems: Definition and Method Taxonomy}
+\label{sec:tokenizer-systems}
+
+\draftsuggestion{Use the three-module definition as the common comparison frame for every method family. Classify only the operations that determine token units, assignments, or reconstruction. Keep embedding layers, foundation-model backbones, and task heads outside the tokenizer unless they change one of these operations.}
+
+% This section defines the object studied throughout the paper. The definition separates token formation from the foundation model that later processes the tokens. It also applies to symbolic vocabularies, continuous latent units, discrete neural codes, and structured scientific objects.
+
+\subsection{A Tokenizer as a Three-Module System}
+\label{sec:tokenizer-definition}
+
+\draftsuggestion{Keep the definition independent of modality and downstream architecture. Explain the roles of \texttt{train}, \texttt{encode}, and \texttt{decode} through BPE, VQ-VAE, and fixed image patches. State the reconstruction and equivalence rule for lossy or structured data, then use the definition to separate full tokenizers from methods that specify only one module.}
+
+Let $\mathcal{X}$ denote an input space and $\mathcal{Z}$ a token space. We define a tokenizer system as
+\begin{equation}
+\mathcal{T}
+=\bigl(\operatorname{train},\operatorname{encode},\operatorname{decode}\bigr),
+\label{eq:tokenizer-triple}
+\end{equation}
+with operations
+\begin{equation}
+\theta=\operatorname{train}(\mathcal{D}),
+\qquad
+Z=\operatorname{encode}_{\theta}(x),
+\qquad
+\widehat{x}=\operatorname{decode}_{\theta}(Z).
+\label{eq:tokenizer-system}
+\end{equation}
+Here, $\mathcal{D}$ is the data used to construct or fit the tokenizer, $x\in\mathcal{X}$ is an input, $Z\in\mathcal{Z}$ is its token representation, and $\widehat{x}\in\mathcal{X}$ is the reconstructed input. We use $\theta$ for all reusable quantities returned by training. These quantities may include a vocabulary, merge table, or codebook. They may also include deterministic rules or neural parameters. A predefined tokenizer is the special case $\operatorname{train}(\mathcal{D})=\theta_0$ for every $\mathcal{D}$.
+For a structured input, the encoded representation can be written as
+\begin{equation}
+Z=\bigl((z_i)_{i=1}^{n},R\bigr),
+% \qquad n<\infty,
+\label{eq:structured-tokens}
+\end{equation}
+where $z_i$ is one token and $R$ records any relations required to interpret the token collection. Sequence order can define $R$ implicitly. Graph edges, spatial coordinates, or hierarchical links may define it explicitly. A unit qualifies as a token when a later model can process it separately for masking, prediction, or routing. The decoder recovers what information the tokenizer preserves. Exact recovery requires
+\begin{equation}
+\operatorname{decode}_{\theta}
+\bigl(\operatorname{encode}_{\theta}(x)\bigr)=x.
+\label{eq:exact-roundtrip}
+\end{equation}
+Some domains have several records for the same object. In such cases, recovery may be defined up to a stated equivalence, such as graph isomorphism, geometric symmetry, or text normalization. Continuous data usually require an approximation for reconstruction rather than equality. Therefore, the reconstruction target and its comparison rule are part of the tokenizer definition.
+
+We categorize tokenizers into three classes based on how their training algorithms are defined: (1) algorithmic tokenizers, (2) neural tokenizers, and (3) hybrid tokenizers. Algorithmic tokenizers use non-neural training algorithms, which can be either predefined or data-driven, whereas neural tokenizers rely on generative models and quantization techniques.
+
+Byte pair encoding (BPE) is an example of an algorithmic tokenizer. Its training function constructs a vocabulary and an ordered merge table from corpus statistics. The encoding function applies the learned merges to a new sequence, while the decoding function concatenates the resulting symbols.
+
+Another example of an algorithmic tokenizer is image patching, as used in the Vision Transformer (ViT)~\citep{dosovitskiy2021vit}. In this predefined tokenizer, $\theta_0$ specifies the patch size and ordering. In contrast, vector-quantized variational autoencoders (VQ-VAEs) are examples of neural tokenizers~\citep{oord2017vqvae} and have been adapted to continuous and non-discrete data. In the following subsections, we define these three classes in detail.
+
+
+% Equations~\eqref{eq:tokenizer-triple}--\eqref{eq:vq-example} also separate a full tokenizer system from one of its components. A vocabulary-learning algorithm alone specifies part of \texttt{train}; a pooling rule alone specifies part of \texttt{encode}; and a generator is a tokenizer decoder only when it reconstructs the input object. 
+
+\subsection{Algorithmic Tokenizers}
+\label{sec:algorithmic-tokenizers}
+
+BPE-like
+
+\draftsuggestion{Develop this subsection around the three sources of unit formation rather than a long list of algorithms. For each family, compare what \texttt{train} estimates, how \texttt{encode} resolves competing segmentations, what \texttt{decode} recovers, and which choices introduce randomness. Select a small number of examples from text, signals, graphs, and scientific structures.}
+
+% Algorithmic tokenizers determine tokens without a trained neural network. We separate them by the source of the unit-forming rule. Predefined-unit methods specify units directly, as with amino acid residues and fixed image patches \citep{rives2021esm,dosovitskiy2021vit}. Expert-defined composition constructs units with designed rules, as in the temporal aggregation and symbolic discretization used by Symbolic Aggregate approXimation \citep{lin2003sax}. Data-learned composition estimates non-neural rules from observations, as in BPE \citep{sennrich2016}.
+
+% This division concerns token formation rather than the model that consumes the tokens. Data fitting does not by itself make a tokenizer neural. Pair counts, likelihood objectives, clustering, grammar induction, and numerical optimization can all produce learned vocabularies without a neural network. Conversely, a later Transformer or diffusion model does not change the tokenizer class when it only processes previously formed units.
+
+\subsection{Neural and Hybrid Tokenizers}
+
+\draftsuggestion{Ask section authors to identify the last operation that changes token identity or membership. Use that boundary to distinguish the tokenizer from embedding layers, backbones, task heads, and generators. Compare neural systems by their learned token operation and compare hybrid systems by how the algorithmic and neural stages are composed.}
+
+
+A vector-quantized variational autoencoder (VQ-VAE) gives a neural example~\citep{oord2017vqvae}. The training function jointly learns a neural network encoder $f_{\phi}$, a codebook $C=\{c_j\}_{j=1}^{K}$, and a neural network decoder $g_{\psi}$. For each local feature, the encoding function assigns
+\begin{equation}
+k_i=\arg\min_{1\leq j\leq K}
+\left\lVert f_{\phi}(x)_i-c_j\right\rVert_2,
+\qquad
+\widehat{x}=g_{\psi}(c_{k_1},\ldots,c_{k_n}).
+\label{eq:vq-example}
+\end{equation}
+The tokens are the code indices $(k_i)_{i=1}^{n}$, and decoding is generally approximate. The codebook is part of $\theta$.
+
+% Neural tokenizers require trained neural parameters to determine the final addressable units. Standard tensor operations inside such a system, including nearest-code lookup, do not by themselves create a separate algorithmic tokenizer. We group neural systems first by token form and then by unit layout. Quantized latent tokenizers map neural features to discrete codes, as in VQ-VAE \citep{oord2017vqvae}. Among continuous systems, selected or composed tokenizers learn input-dependent unit membership, as in TokenLearner \citep{ryoo2021tokenlearner}. Fixed-layout continuous tokenizers retain predefined positions while learning their latent values. This decision rule assigns a discrete system to the quantized family even when its encoder also performs selection or composition.
+
+% Hybrid tokenizers combine neural token formation with a separate algorithmic rule of the type defined in Section~\ref{sec:algorithmic-tokenizers}. Both parts determine the final addressable units. We distinguish three system structures. Joint systems couple the two parts in one unit-formation rule. Sequential systems pass the units from one tokenizer stage into another. Parallel-stream systems retain separate token sequences before the model combines them. Byte Latent Transformer provides a representative sequential system in which learned patches are formed over bytes \citep{pagnoni2025blt}.
+
+% The classification must follow the token-forming path. A neural encoder followed by quantization defines a neural tokenizer even when its decoder is a diffusion model. A non-neural composition rule remains algorithmic when a later neural model only processes the resulting units. The tokenizer and the full foundation-model system therefore require separate descriptions.

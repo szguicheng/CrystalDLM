@@ -1,0 +1,18 @@
+{
+  "training_job": "581969",
+  "host": "gpu-a100-06",
+  "partition": "stingy",
+  "state": "COMPLETED",
+  "exit_code": "0:0",
+  "allocation_elapsed": "01:37:17",
+  "training_loop_seconds": 4754.904476642609,
+  "models": 2,
+  "epochs_per_model": 500,
+  "steps_per_model": 53000,
+  "resources_released": true,
+  "verification_command": "sacct -j 581969 --format=JobID,State,Elapsed,ExitCode -n",
+  "preceding_jobs": [
+    {"job": "581950", "host": "gpu-a100-08", "allocation_elapsed": "00:27:30", "outcome": "data prepared; allocated GPU unable to initialize CUDA; released without formal training"},
+    {"job": "581968", "outcome": "cancelled while pending for resources"}
+  ]
+}

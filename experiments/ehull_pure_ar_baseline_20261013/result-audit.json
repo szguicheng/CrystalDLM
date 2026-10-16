@@ -1,0 +1,103 @@
+{
+  "job_id": "627890",
+  "slurm_state": "COMPLETED",
+  "exit_code": "0:0",
+  "slurm_elapsed_seconds": 1570,
+  "mode": "pure_ar",
+  "epochs": 1,
+  "train_materials": 7272,
+  "updates": 909,
+  "evaluation_count": 32,
+  "raw_valid_count": 7,
+  "raw_valid_rate": 0.21875,
+  "failure_reason_counts_nonexclusive": {
+    "formula_header_mismatch": 19,
+    "sites_header_mismatch": 19,
+    "ValueError: Wyckoff multiplicity does not match label": 1,
+    "wyckoff_coordinate_constraint": 1
+  },
+  "failure_combinations": [
+    {
+      "reasons": [
+        "formula_header_mismatch",
+        "sites_header_mismatch"
+      ],
+      "count": 13
+    },
+    {
+      "reasons": [
+        "sites_header_mismatch"
+      ],
+      "count": 5
+    },
+    {
+      "reasons": [
+        "formula_header_mismatch"
+      ],
+      "count": 5
+    },
+    {
+      "reasons": [
+        "ValueError: Wyckoff multiplicity does not match label"
+      ],
+      "count": 1
+    },
+    {
+      "reasons": [
+        "formula_header_mismatch",
+        "sites_header_mismatch",
+        "wyckoff_coordinate_constraint"
+      ],
+      "count": 1
+    }
+  ],
+  "generation_lead_variants": 4,
+  "distinct_generated_raw_texts": 32,
+  "conditional_target_strata": {
+    "target_zero": {
+      "attempts": 7,
+      "valid": 7,
+      "generated_formula_headers": {
+        "Cs8Tl4Au4Br24": 7
+      },
+      "generated_spacegroup_headers": {
+        "Spacegroup: Fm-3m": 7
+      }
+    },
+    "target_positive": {
+      "attempts": 25,
+      "valid": 0,
+      "generated_formula_headers": {
+        "Mg4Ti4O10": 25
+      },
+      "generated_spacegroup_headers": {
+        "Spacegroup: C2/m": 25
+      }
+    }
+  },
+  "basic_tail_facts_matching_generated_structure": {
+    "count": 7,
+    "total_valid": 7,
+    "fields": [
+      "formula",
+      "space_group",
+      "atom_count",
+      "orbit_count"
+    ],
+    "causal_structure_reading_test": "not_run",
+    "richer_coordination_claims": "not_checked_on_generated_structures"
+  },
+  "condition_ehull_min": 0.0,
+  "condition_ehull_max": 0.263305416666668,
+  "property_evaluation_status": "not_run",
+  "peak_gpu_GiB": 32.752841796875,
+  "training_seconds": 1216.066174350679,
+  "evaluation_seconds": 245.27993396203965,
+  "training_median_loss_first50": 0.9347954988479614,
+  "training_median_loss_last50": 0.4503202736377716,
+  "all_logged_training_losses_and_norms_finite": true,
+  "independent_audits": [
+    "ar_result_failures",
+    "ar_result_text_check"
+  ]
+}

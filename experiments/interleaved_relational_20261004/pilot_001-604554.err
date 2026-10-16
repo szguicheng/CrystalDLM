@@ -1,0 +1,15 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+Traceback (most recent call last):
+  File "/gpfs1/scratch/chenggui2/CrystalDLM/experiments/interleaved_relational_20261004/run.py", line 905, in <module>
+    raise SystemExit(main())
+  File "/gpfs1/scratch/chenggui2/CrystalDLM/experiments/interleaved_relational_20261004/run.py", line 899, in main
+    result = run(args.data, args.out.resolve())
+  File "/gpfs1/scratch/chenggui2/CrystalDLM/experiments/interleaved_relational_20261004/run.py", line 847, in run
+    held = evaluate(model, tok, mode, heldout, out / mode / "heldout16")
+  File "/gpfs1/scratch/chenggui2/CrystalDLM/experiments/interleaved_relational_20261004/run.py", line 435, in evaluate
+    record["reference_edit_grade"] = grade_edit(
+  File "/gpfs1/scratch/chenggui2/CrystalDLM/experiments/interleaved_relational_20261004/score.py", line 300, in grade_edit
+    edited_structure = geometry.execute_geometry_plan(observed, table=TABLE)
+  File "/gpfs1/scratch/chenggui2/CrystalDLM/experiments/naturecry_inline_20261003/geometry.py", line 193, in execute_geometry_plan
+    raise ValueError(
+ValueError: Expanded composition mismatch: expected {'Ge': 4, 'Ni': 2, 'Tm': 2}, got {'Tm': 2, 'Ni': 2, 'Ge': 2}

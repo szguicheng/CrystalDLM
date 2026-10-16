@@ -1,0 +1,77 @@
+\section{Data Representation and Tokenization across AI Modalities}
+\label{sec:ai}
+
+\draftsuggestion{Write this section for machine learning researchers and organize it by representation form. Use general AI tasks and models to compare token units, relations, training objectives, decoding targets, token rates, and computational cost. Mention scientific examples such as SMILES strings, protein sequences, molecular graphs, or physical trajectories only briefly, then refer readers to Section~\ref{sec:science} for their object-specific meaning and tests. This section should explain transferable tokenization methods rather than repeat the scientific-object review.}
+
+% An AI modality specifies how information is represented rather than what the represented entity is. The same scientific object may therefore appear in several subsections. A protein, for example, can be represented as a sequence, graph, three dimensional structure, or time series. This organization supports method transfer while keeping scientific meaning for Section~\ref{sec:science}. We discuss spatial fields and spectra with their primary scientific objects because the current tokenizer literature ties their unit definitions closely to coordinates, measurements, and validation rules.
+
+\subsection{Sequences}
+
+\draftsuggestion{Representative work: \citet{sennrich2016}. Treat a sequence as an ordered representation and compare characters, bytes, subwords, words, and syntax-aware units. Use text and code as the main AI cases. Discuss coverage, sequence length, reversibility, multilingual behavior, and syntactic structure. Mention SMILES, nucleic-acid sequences, and protein sequences only as short transfer examples, then refer readers to Section~\ref{sec:science}.}
+
+% Text can be represented by words, characters, bytes, or subwords. Word vocabularies are readable but have limited coverage. Character and byte systems cover any input but produce longer sequences. Subword methods learn intermediate units from corpus statistics and balance coverage against sequence length \citep{sennrich2016}.
+
+% Code adds formal syntax and long-range references. A token may correspond to a keyword, part of an identifier, whitespace, or punctuation. Frequency-based segmentation can divide the same identifier differently across repositories. Parser-based units preserve grammar roles but depend on valid syntax and may remove surface form.
+
+% Symbolic sequences use a finite alphabet whose symbols may represent bases, amino acids, events, or other ordered observations. Their units can be predefined or composed from repeated patterns. Scientific meaning and evaluation remain tied to the domain objects discussed in Section~\ref{sec:science}.
+
+\subsection{Images}
+
+\draftsuggestion{Representative work: \citet{dosovitskiy2021vit} and \citet{oord2017vqvae}. Compare pixels, fixed patches, regions, object-level units, and latent visual codes for recognition and generation. Separate token boundaries from token values and compare reconstruction, token rate, spatial resolution, and compatibility with vision backbones. Treat scientific grids as images only when their row-and-column layout defines the model input; discuss their scientific meaning in Section~\ref{sec:science}.}
+
+% Images can be divided into pixels, regular patches, regions, objects, or learned latent codes. Vision Transformers use regular patches as parallel units \citep{dosovitskiy2021vit}. Vector-quantized models map continuous image features to discrete codebook entries \citep{oord2017vqvae}. Learned pooling methods form a smaller set of input-dependent visual units \citep{ryoo2021tokenlearner}.
+
+\subsection{Video}
+
+\draftsuggestion{Use video tokenization work that studies frames, tubelets, motion-aware units, and discrete visual codes. Explain how temporal continuity changes boundary formation, token rate, and decoding compared with images. Discuss scientific video only briefly here and refer object-specific questions about calibrated intensity, event timing, and identity across frames to Section~\ref{sec:science}.}
+
+% Video adds time to the boundary problem. Fixed tubelets divide a clip into regular space-time blocks. Event-based or learned units can follow motion and scene changes, but compression may remove short or weak events. Scientific video also requires tests of calibrated intensity, event timing, and identity across frames.
+
+\subsection{Audio}
+
+\draftsuggestion{Representative work: \citet{baevski2020wav2vec2}. Compare waveform samples, frames, learned speech units, and neural codec codes while separating linguistic content from acoustic information. Cover speech, music, and sound events as distinct uses of the same representation modality. Keep generic sampled measurements in the time-series and signals subsection.}
+
+% Audio systems use waveform samples, fixed frames, spectral bins, learned speech units, and neural codec codes. wav2vec~2.0 provides an example in which continuous latent features and quantized prediction targets play different roles \citep{baevski2020wav2vec2}. Audio content, speaker identity, timing, and recording effects vary at different rates, so one flat codebook may mix information that later tasks need separately.
+
+\subsection{Graphs}
+
+\draftsuggestion{Representative work: \citet{galkin2022nodepiece}. Compare nodes, edges, paths, neighborhoods, motifs, and learned graph units. State whether adjacency belongs to the token representation or remains external relation data. Discuss permutation, structural roles, graph reconstruction, and vocabulary transfer. Use molecular, crystal, protein, and cell graphs only as short examples before referring readers to Section~\ref{sec:science}.}
+
+% Graph models often treat nodes as tokens and edges as relations, while larger units may represent paths, neighborhoods, motifs, or communities. NodePiece uses anchor and relation tokens to represent graph entities without a separate learned vector for every node \citep{galkin2022nodepiece}.
+
+\subsection{3D Geometry}
+
+\draftsuggestion{Representative work: \citet{yu2022pointbert}. Compare points, voxels, mesh elements, local geometric patches, and object-level units when coordinates, shape, or spatial neighborhoods determine token identity. Discuss sampling density, rigid transformations, local frames, and geometric reconstruction. Treat a mesh as a graph when combinatorial adjacency defines the units, and treat it as 3D geometry when coordinates and shape define them.}
+
+% Three dimensional data can use points, voxels, pillars, mesh elements, local neighborhoods, objects, or learned latent units. Token formation may follow a fixed spatial partition, local geometry, mesh topology, or object identity. Sparse sampling and viewpoint changes can alter membership even when the represented object is unchanged. A mesh belongs here when its geometry determines the tokens; a mesh that only carries physical variables belongs with the corresponding scientific object.
+
+\subsection{Tables}
+
+\draftsuggestion{Compare cells, columns, rows, records, and learned groups as candidate table tokens. Explain how schema, data type, missing values, and row or column order affect token identity. Treat sets as order-free inputs within this discussion when their elements share the same representation rules. Refer gene-expression matrices, clinical measurements, and interaction histories to their domain-object subsections.}
+
+% Tables offer cells, columns, rows, and records as candidate units. Sets remove order but may require type, measurement, or membership attributes to interpret each token.
+
+\subsection{Time Series and Signals}
+
+\draftsuggestion{Representative work: \citet{lin2003sax}. Compare samples, windows, events, transformed coefficients, and quantized measurements for forecasting, anomaly detection, and numerical sequence modeling. Distinguish time-indexed measurements from video, where spatial appearance remains central, and from audio, where waveform and acoustic structure define the task. Mention molecular trajectories, physical simulations, and Earth dynamics only to show method transfer, then refer their scientific tests to Section~\ref{sec:science}.}
+
+% Time series can use points, fixed windows, variable segments, events, or transformed coefficients. Fixed windows simplify batching but can divide a cycle or transient event. Variable segments can follow changes in the signal, although their boundaries may be sensitive to noise and sampling rate. Quantization supports discrete prediction but must declare the inverse mapping and numerical error. Spectral measurements fit this computational view when their tokenizers operate on bins, ordered peaks, or peak sets; their scientific interpretation remains with the measured object in Section~\ref{sec:science}.
+
+\begin{table}[H]
+\centering
+\small
+\caption{Representation forms and their main tokenization questions.}
+\label{tab:aimodalities}
+\begin{tabularx}{\linewidth}{L{0.23\linewidth} L{0.35\linewidth} Y}
+\toprule
+Modality & Common token choices & Main comparison question \\
+\midrule
+Text, code, and symbolic sequences & Words, bytes, subwords, syntax units & How do coverage and structural alignment trade off? \\
+Images and video & Patches, regions, objects, latent codes & Which boundaries retain objects and short events? \\
+Audio and speech & Frames, spectral bins, codec codes & Which information needs a separate rate or stream? \\
+Three dimensional geometry & Points, voxels, mesh elements, regions & Which units remain stable under sampling and transformation? \\
+Graphs, tables, and sets & Nodes, subgraphs, cells, records, groups & Which roles and relations define token identity? \\
+Time series and numerical signals & Points, windows, events, coefficients, bins, peaks & Which units retain changes across sampling rates and calibrated axes? \\
+\bottomrule
+\end{tabularx}
+\end{table}

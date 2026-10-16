@@ -1,0 +1,30 @@
+{
+  "seed": 42,
+  "fraction": "1/5",
+  "rounding": "floor",
+  "algorithm": "random.Random(seed).sample(sorted(material_ids), N // 5), independently per split",
+  "source": "/Volumes/Extention/Users/guicheng/Code/helloWorld/CrystalDLM/research/crystal_sharing_20261012/prepared_001",
+  "source_manifest_sha256": "a8e174165ef7e99b2d2e97aeb9ad84999409d90e75c1f8986c5a4c8f4486223f",
+  "splits": {
+    "train": {
+      "source_count": 36362,
+      "selected_count": 7272,
+      "source_sha256": "5cf0ae53b129804f6749f61cbd77ca364299f9fcd38be92f0a1c794175a0e8b8",
+      "facts_path": "train-facts.jsonl.gz",
+      "facts_sha256": "3e6770b6bdef5ed37c682918bc3f41f37aefa9e42c5e611f7879c2e72ba7cbb7",
+      "ids_path": "train-material-ids.txt",
+      "ids_sha256": "22f75f2de705cf3eac9f605570c1f9bf7ee14faf4702f6d5ee753b9d61c88b39"
+    },
+    "val": {
+      "source_count": 4501,
+      "selected_count": 900,
+      "source_sha256": "bc2f373672a1d78e3925b11fdbbd3463f0eb1678695a58c625e056971d6955a0",
+      "facts_path": "val-facts.jsonl.gz",
+      "facts_sha256": "1dfe1a3f97377035f3dbc9fbe3a31e66b29c472b49598d887c30e58ae34a8eea",
+      "ids_path": "val-material-ids.txt",
+      "ids_sha256": "76ce905f8ff0bfbce41b5ebe113a6e8ea9fe0092330be17c7ec97b2d1a7a28d8"
+    }
+  },
+  "test": "unchanged, excluded from annotation subset",
+  "total_selected": 8172
+}

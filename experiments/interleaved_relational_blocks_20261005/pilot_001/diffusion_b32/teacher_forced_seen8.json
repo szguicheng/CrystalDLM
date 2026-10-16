@@ -1,0 +1,878 @@
+{
+  "arm": "diffusion_b32",
+  "block_size": 32,
+  "split": "seen8",
+  "target": "G",
+  "noise_steps": {
+    "32": {
+      "n": 8,
+      "mean_normalized_ce_contributions": {
+        "crystal": 0.19944755360484123,
+        "crystal_body": 0.19817160069942474,
+        "crystal_end": 0.0006481116924987873,
+        "crystal_pad": 0.0006278413275140338
+      },
+      "crystal_metrics": {
+        "body": {
+          "count": 4898,
+          "correct": 4460,
+          "nll_sum": 1281.0668334960938,
+          "accuracy": 0.9105757452021234,
+          "mean_nll": 0.2615489655974058
+        },
+        "end": {
+          "count": 8,
+          "correct": 7,
+          "nll_sum": 3.875828005373478,
+          "accuracy": 0.875,
+          "mean_nll": 0.48447850067168474
+        },
+        "pad": {
+          "count": 15574,
+          "correct": 15565,
+          "nll_sum": 37.795350074768066,
+          "accuracy": 0.9994221137793758,
+          "mean_nll": 0.0024268235568747957
+        }
+      }
+    },
+    "16": {
+      "n": 8,
+      "mean_normalized_ce_contributions": {
+        "crystal": 0.01233531224715989,
+        "crystal_body": 0.012032424652716145,
+        "crystal_end": 2.704003782127984e-05,
+        "crystal_pad": 0.00027584735107666347
+      },
+      "crystal_metrics": {
+        "body": {
+          "count": 2431,
+          "correct": 2418,
+          "nll_sum": 40.11153507232666,
+          "accuracy": 0.9946524064171123,
+          "mean_nll": 0.016500014427119153
+        },
+        "end": {
+          "count": 1,
+          "correct": 1,
+          "nll_sum": 0.09008659422397614,
+          "accuracy": 1.0,
+          "mean_nll": 0.09008659422397614
+        },
+        "pad": {
+          "count": 7718,
+          "correct": 7718,
+          "nll_sum": 8.521255850791931,
+          "accuracy": 1.0,
+          "mean_nll": 0.0011040756479388353
+        }
+      }
+    },
+    "1": {
+      "n": 8,
+      "mean_normalized_ce_contributions": {
+        "crystal": 0.002004920550461975,
+        "crystal_body": 0.0009186773984311003,
+        "crystal_end": 0.0008480926335323602,
+        "crystal_pad": 0.0002381505364610348
+      },
+      "crystal_metrics": {
+        "body": {
+          "count": 154,
+          "correct": 154,
+          "nll_sum": 0.2193645607912913,
+          "accuracy": 1.0,
+          "mean_nll": 0.00142444519994345
+        },
+        "end": {
+          "count": 2,
+          "correct": 2,
+          "nll_sum": 0.15382768958806992,
+          "accuracy": 1.0,
+          "mean_nll": 0.07691384479403496
+        },
+        "pad": {
+          "count": 452,
+          "correct": 452,
+          "nll_sum": 0.46545984596014023,
+          "accuracy": 1.0,
+          "mean_nll": 0.001029778420265797
+        }
+      }
+    }
+  },
+  "forward_calls": 24,
+  "attempt_seconds": 6.129687257576734,
+  "attempts": [
+    {
+      "ok": true,
+      "id": "anchor_Tb8Mg4",
+      "noise_step": 32,
+      "mask_seed": 626520357,
+      "loss": 0.2362159788608551,
+      "normalized_ce_contributions": {
+        "crystal": 0.2360176295042038,
+        "crystal_body": 0.23396432399749756,
+        "crystal_end": 0.0007449190015904605,
+        "crystal_pad": 0.0013083822559565306
+      },
+      "crystal_metrics": {
+        "body": {
+          "count": 405,
+          "correct": 357,
+          "nll_sum": 145.3854522705078
+        },
+        "end": {
+          "count": 1,
+          "correct": 1,
+          "nll_sum": 0.46289271116256714
+        },
+        "pad": {
+          "count": 2154,
+          "correct": 2152,
+          "nll_sum": 8.130287170410156
+        }
+      },
+      "elapsed_seconds": 0.2855662009678781,
+      "forward_calls": 1
+    },
+    {
+      "ok": true,
+      "id": "anchor_Tb8Mg4",
+      "noise_step": 16,
+      "mask_seed": 2435084678,
+      "loss": 0.0013622522819787264,
+      "normalized_ce_contributions": {
+        "crystal": 0.0011639053700491786,
+        "crystal_body": 0.0008000477100722492,
+        "crystal_end": 0.0,
+        "crystal_pad": 0.00036385763087309897
+      },
+      "crystal_metrics": {
+        "body": {
+          "count": 200,
+          "correct": 200,
+          "nll_sum": 0.2485748529434204
+        },
+        "end": {
+          "count": 0,
+          "correct": 0,
+          "nll_sum": 0.0
+        },
+        "pad": {
+          "count": 1056,
+          "correct": 1056,
+          "nll_sum": 1.1305058002471924
+        }
+      },
+      "elapsed_seconds": 0.2655041399411857,
+      "forward_calls": 1
+    },
+    {
+      "ok": true,
+      "id": "anchor_Tb8Mg4",
+      "noise_step": 1,
+      "mask_seed": 1966460363,
+      "loss": 0.0004905748646706343,
+      "normalized_ce_contributions": {
+        "crystal": 0.0002922280109487474,
+        "crystal_body": 8.906969014788046e-06,
+        "crystal_end": 0.0,
+        "crystal_pad": 0.00028332104557193816
+      },
+      "crystal_metrics": {
+        "body": {
+          "count": 5,
+          "correct": 5,
+          "nll_sum": 0.00017296223086304963
+        },
+        "end": {
+          "count": 0,
+          "correct": 0,
+          "nll_sum": 0.0
+        },
+        "pad": {
+          "count": 53,
+          "correct": 53,
+          "nll_sum": 0.05501741170883179
+        }
+      },
+      "elapsed_seconds": 0.2551156743429601,
+      "forward_calls": 1
+    },
+    {
+      "ok": true,
+      "id": "anchor_Li8V4Ni4O16",
+      "noise_step": 32,
+      "mask_seed": 3708047613,
+      "loss": 0.1955626755952835,
+      "normalized_ce_contributions": {
+        "crystal": 0.19536186754703522,
+        "crystal_body": 0.19411931931972504,
+        "crystal_end": 0.0009871736401692033,
+        "crystal_pad": 0.0002553617814555764
+      },
+      "crystal_metrics": {
+        "body": {
+          "count": 607,
+          "correct": 549,
+          "nll_sum": 155.91664123535156
+        },
+        "end": {
+          "count": 1,
+          "correct": 1,
+          "nll_sum": 0.7928979396820068
+        },
+        "pad": {
+          "count": 1952,
+          "correct": 1952,
+          "nll_sum": 2.0510661602020264
+        }
+      },
+      "elapsed_seconds": 0.2652417682111263,
+      "forward_calls": 1
+    },
+    {
+      "ok": true,
+      "id": "anchor_Li8V4Ni4O16",
+      "noise_step": 16,
+      "mask_seed": 3802034821,
+      "loss": 0.0014163145096972585,
+      "normalized_ce_contributions": {
+        "crystal": 0.0012155049480497837,
+        "crystal_body": 0.0009607896790839732,
+        "crystal_end": 0.0,
+        "crystal_pad": 0.00025471526896581054
+      },
+      "crystal_metrics": {
+        "body": {
+          "count": 290,
+          "correct": 290,
+          "nll_sum": 0.3858531713485718
+        },
+        "end": {
+          "count": 0,
+          "correct": 0,
+          "nll_sum": 0.0
+        },
+        "pad": {
+          "count": 994,
+          "correct": 994,
+          "nll_sum": 1.0229365825653076
+        }
+      },
+      "elapsed_seconds": 0.25372563721612096,
+      "forward_calls": 1
+    },
+    {
+      "ok": true,
+      "id": "anchor_Li8V4Ni4O16",
+      "noise_step": 1,
+      "mask_seed": 2244705547,
+      "loss": 0.0037908079102635384,
+      "normalized_ce_contributions": {
+        "crystal": 0.0035899984650313854,
+        "crystal_body": 0.00013088171544950455,
+        "crystal_end": 0.0032357957679778337,
+        "crystal_pad": 0.00022332053049467504
+      },
+      "crystal_metrics": {
+        "body": {
+          "count": 17,
+          "correct": 17,
+          "nll_sum": 0.0032851314172148705
+        },
+        "end": {
+          "count": 1,
+          "correct": 1,
+          "nll_sum": 0.08121848106384277
+        },
+        "pad": {
+          "count": 53,
+          "correct": 53,
+          "nll_sum": 0.05605345219373703
+        }
+      },
+      "elapsed_seconds": 0.24225867772474885,
+      "forward_calls": 1
+    },
+    {
+      "ok": true,
+      "id": "mp-4047",
+      "noise_step": 32,
+      "mask_seed": 1765152004,
+      "loss": 0.22850525379180908,
+      "normalized_ce_contributions": {
+        "crystal": 0.22831203043460846,
+        "crystal_body": 0.22655031085014343,
+        "crystal_end": 0.000829398341011256,
+        "crystal_pad": 0.0009323506965301931
+      },
+      "crystal_metrics": {
+        "body": {
+          "count": 692,
+          "correct": 616,
+          "nll_sum": 199.29632568359375
+        },
+        "end": {
+          "count": 1,
+          "correct": 1,
+          "nll_sum": 0.7296218276023865
+        },
+        "pad": {
+          "count": 1867,
+          "correct": 1864,
+          "nll_sum": 8.20189094543457
+        }
+      },
+      "elapsed_seconds": 0.26492576533928514,
+      "forward_calls": 1
+    },
+    {
+      "ok": true,
+      "id": "mp-4047",
+      "noise_step": 16,
+      "mask_seed": 261197861,
+      "loss": 0.014937392435967922,
+      "normalized_ce_contributions": {
+        "crystal": 0.014744173735380173,
+        "crystal_body": 0.014514869078993797,
+        "crystal_end": 0.0,
+        "crystal_pad": 0.00022930384147912264
+      },
+      "crystal_metrics": {
+        "body": {
+          "count": 350,
+          "correct": 349,
+          "nll_sum": 6.384366035461426
+        },
+        "end": {
+          "count": 0,
+          "correct": 0,
+          "nll_sum": 0.0
+        },
+        "pad": {
+          "count": 955,
+          "correct": 955,
+          "nll_sum": 1.008592963218689
+        }
+      },
+      "elapsed_seconds": 0.2535740928724408,
+      "forward_calls": 1
+    },
+    {
+      "ok": true,
+      "id": "mp-4047",
+      "noise_step": 1,
+      "mask_seed": 3022902796,
+      "loss": 0.0007189867319539189,
+      "normalized_ce_contributions": {
+        "crystal": 0.0005257677985355258,
+        "crystal_body": 0.00032745106727816164,
+        "crystal_end": 0.0,
+        "crystal_pad": 0.00019831673125736415
+      },
+      "crystal_metrics": {
+        "body": {
+          "count": 19,
+          "correct": 19,
+          "nll_sum": 0.009001835249364376
+        },
+        "end": {
+          "count": 0,
+          "correct": 0,
+          "nll_sum": 0.0
+        },
+        "pad": {
+          "count": 54,
+          "correct": 54,
+          "nll_sum": 0.05451851338148117
+        }
+      },
+      "elapsed_seconds": 0.24235926708206534,
+      "forward_calls": 1
+    },
+    {
+      "ok": true,
+      "id": "mp-1205515",
+      "noise_step": 32,
+      "mask_seed": 1794305654,
+      "loss": 0.1694631725549698,
+      "normalized_ce_contributions": {
+        "crystal": 0.1692616194486618,
+        "crystal_body": 0.16896918416023254,
+        "crystal_end": 9.53523485804908e-05,
+        "crystal_pad": 0.00019707786850631237
+      },
+      "crystal_metrics": {
+        "body": {
+          "count": 865,
+          "correct": 806,
+          "nll_sum": 174.95071411132812
+        },
+        "end": {
+          "count": 1,
+          "correct": 1,
+          "nll_sum": 0.09872782975435257
+        },
+        "pad": {
+          "count": 1694,
+          "correct": 1694,
+          "nll_sum": 2.0405445098876953
+        }
+      },
+      "elapsed_seconds": 0.265048174187541,
+      "forward_calls": 1
+    },
+    {
+      "ok": true,
+      "id": "mp-1205515",
+      "noise_step": 16,
+      "mask_seed": 1283387174,
+      "loss": 0.016201570630073547,
+      "normalized_ce_contributions": {
+        "crystal": 0.01600002311170101,
+        "crystal_body": 0.015833284705877304,
+        "crystal_end": 0.0,
+        "crystal_pad": 0.00016673791105858982
+      },
+      "crystal_metrics": {
+        "body": {
+          "count": 425,
+          "correct": 423,
+          "nll_sum": 8.196892738342285
+        },
+        "end": {
+          "count": 0,
+          "correct": 0,
+          "nll_sum": 0.0
+        },
+        "pad": {
+          "count": 837,
+          "correct": 837,
+          "nll_sum": 0.8632023334503174
+        }
+      },
+      "elapsed_seconds": 0.25338432705029845,
+      "forward_calls": 1
+    },
+    {
+      "ok": true,
+      "id": "mp-1205515",
+      "noise_step": 1,
+      "mask_seed": 457452335,
+      "loss": 0.004860162269324064,
+      "normalized_ce_contributions": {
+        "crystal": 0.004658615216612816,
+        "crystal_body": 0.004463287070393562,
+        "crystal_end": 0.0,
+        "crystal_pad": 0.0001953285391209647
+      },
+      "crystal_metrics": {
+        "body": {
+          "count": 34,
+          "correct": 34,
+          "nll_sum": 0.1444152444601059
+        },
+        "end": {
+          "count": 0,
+          "correct": 0,
+          "nll_sum": 0.0
+        },
+        "pad": {
+          "count": 63,
+          "correct": 63,
+          "nll_sum": 0.06320099532604218
+        }
+      },
+      "elapsed_seconds": 0.24278345191851258,
+      "forward_calls": 1
+    },
+    {
+      "ok": true,
+      "id": "mp-30009",
+      "noise_step": 32,
+      "mask_seed": 2592281539,
+      "loss": 0.18561716377735138,
+      "normalized_ce_contributions": {
+        "crystal": 0.18541567027568817,
+        "crystal_body": 0.18284542858600616,
+        "crystal_end": 0.001638965681195259,
+        "crystal_pad": 0.0009312653564848006
+      },
+      "crystal_metrics": {
+        "body": {
+          "count": 442,
+          "correct": 404,
+          "nll_sum": 119.70891571044922
+        },
+        "end": {
+          "count": 1,
+          "correct": 0,
+          "nll_sum": 1.073030948638916
+        },
+        "pad": {
+          "count": 2117,
+          "correct": 2115,
+          "nll_sum": 6.096994400024414
+        }
+      },
+      "elapsed_seconds": 0.2665899470448494,
+      "forward_calls": 1
+    },
+    {
+      "ok": true,
+      "id": "mp-30009",
+      "noise_step": 16,
+      "mask_seed": 4244524955,
+      "loss": 0.020446309819817543,
+      "normalized_ce_contributions": {
+        "crystal": 0.020244821906089783,
+        "crystal_body": 0.019891630858182907,
+        "crystal_end": 0.0,
+        "crystal_pad": 0.0003531895636115223
+      },
+      "crystal_metrics": {
+        "body": {
+          "count": 223,
+          "correct": 220,
+          "nll_sum": 6.511526107788086
+        },
+        "end": {
+          "count": 0,
+          "correct": 0,
+          "nll_sum": 0.0
+        },
+        "pad": {
+          "count": 1023,
+          "correct": 1023,
+          "nll_sum": 1.1561660766601562
+        }
+      },
+      "elapsed_seconds": 0.2519574500620365,
+      "forward_calls": 1
+    },
+    {
+      "ok": true,
+      "id": "mp-30009",
+      "noise_step": 1,
+      "mask_seed": 2729211662,
+      "loss": 0.004086834378540516,
+      "normalized_ce_contributions": {
+        "crystal": 0.0038853466976433992,
+        "crystal_body": 1.8181650375481695e-05,
+        "crystal_end": 0.003548945300281048,
+        "crystal_pad": 0.000318219797918573
+      },
+      "crystal_metrics": {
+        "body": {
+          "count": 13,
+          "correct": 13,
+          "nll_sum": 0.0003719852538779378
+        },
+        "end": {
+          "count": 1,
+          "correct": 1,
+          "nll_sum": 0.07260920852422714
+        },
+        "pad": {
+          "count": 64,
+          "correct": 64,
+          "nll_sum": 0.06510579586029053
+        }
+      },
+      "elapsed_seconds": 0.24214130826294422,
+      "forward_calls": 1
+    },
+    {
+      "ok": true,
+      "id": "mp-1188285",
+      "noise_step": 32,
+      "mask_seed": 4169306468,
+      "loss": 0.16619956493377686,
+      "normalized_ce_contributions": {
+        "crystal": 0.16601897776126862,
+        "crystal_body": 0.16492974758148193,
+        "crystal_end": 0.00043036986608058214,
+        "crystal_pad": 0.0006588420365005732
+      },
+      "crystal_metrics": {
+        "body": {
+          "count": 489,
+          "correct": 454,
+          "nll_sum": 114.95604705810547
+        },
+        "end": {
+          "count": 1,
+          "correct": 1,
+          "nll_sum": 0.29996782541275024
+        },
+        "pad": {
+          "count": 2070,
+          "correct": 2069,
+          "nll_sum": 4.592129707336426
+        }
+      },
+      "elapsed_seconds": 0.26461996184661984,
+      "forward_calls": 1
+    },
+    {
+      "ok": true,
+      "id": "mp-1188285",
+      "noise_step": 16,
+      "mask_seed": 1852149067,
+      "loss": 0.010378562845289707,
+      "normalized_ce_contributions": {
+        "crystal": 0.01019796822220087,
+        "crystal_body": 0.009808649308979511,
+        "crystal_end": 0.0,
+        "crystal_pad": 0.00038931681774556637
+      },
+      "crystal_metrics": {
+        "body": {
+          "count": 235,
+          "correct": 233,
+          "nll_sum": 3.4183149337768555
+        },
+        "end": {
+          "count": 0,
+          "correct": 0,
+          "nll_sum": 0.0
+        },
+        "pad": {
+          "count": 1032,
+          "correct": 1032,
+          "nll_sum": 1.35676908493042
+        }
+      },
+      "elapsed_seconds": 0.25228611705824733,
+      "forward_calls": 1
+    },
+    {
+      "ok": true,
+      "id": "mp-1188285",
+      "noise_step": 1,
+      "mask_seed": 1463798700,
+      "loss": 0.0005699135945178568,
+      "normalized_ce_contributions": {
+        "crystal": 0.0003893192042596638,
+        "crystal_body": 9.934694389812648e-05,
+        "crystal_end": 0.0,
+        "crystal_pad": 0.00028997226036153734
+      },
+      "crystal_metrics": {
+        "body": {
+          "count": 15,
+          "correct": 15,
+          "nll_sum": 0.002163900760933757
+        },
+        "end": {
+          "count": 0,
+          "correct": 0,
+          "nll_sum": 0.0
+        },
+        "pad": {
+          "count": 62,
+          "correct": 62,
+          "nll_sum": 0.06315958499908447
+        }
+      },
+      "elapsed_seconds": 0.24221709091216326,
+      "forward_calls": 1
+    },
+    {
+      "ok": true,
+      "id": "mp-1207068",
+      "noise_step": 32,
+      "mask_seed": 2230855481,
+      "loss": 0.24620266258716583,
+      "normalized_ce_contributions": {
+        "crystal": 0.2460045963525772,
+        "crystal_body": 0.24516676366329193,
+        "crystal_end": 0.00034487247467041016,
+        "crystal_pad": 0.0004929870483465493
+      },
+      "crystal_metrics": {
+        "body": {
+          "count": 758,
+          "correct": 678,
+          "nll_sum": 230.23611450195312
+        },
+        "end": {
+          "count": 1,
+          "correct": 1,
+          "nll_sum": 0.3238697648048401
+        },
+        "pad": {
+          "count": 1801,
+          "correct": 1800,
+          "nll_sum": 4.629642009735107
+        }
+      },
+      "elapsed_seconds": 0.26483642822131515,
+      "forward_calls": 1
+    },
+    {
+      "ok": true,
+      "id": "mp-1207068",
+      "noise_step": 16,
+      "mask_seed": 170482772,
+      "loss": 0.012068106792867184,
+      "normalized_ce_contributions": {
+        "crystal": 0.011870034039020538,
+        "crystal_body": 0.011661968193948269,
+        "crystal_end": 0.0,
+        "crystal_pad": 0.00020806610700674355
+      },
+      "crystal_metrics": {
+        "body": {
+          "count": 394,
+          "correct": 392,
+          "nll_sum": 5.47587776184082
+        },
+        "end": {
+          "count": 0,
+          "correct": 0,
+          "nll_sum": 0.0
+        },
+        "pad": {
+          "count": 883,
+          "correct": 883,
+          "nll_sum": 0.9769744873046875
+        }
+      },
+      "elapsed_seconds": 0.2532775457948446,
+      "forward_calls": 1
+    },
+    {
+      "ok": true,
+      "id": "mp-1207068",
+      "noise_step": 1,
+      "mask_seed": 2373923741,
+      "loss": 0.0003691326710395515,
+      "normalized_ce_contributions": {
+        "crystal": 0.00017105952429119498,
+        "crystal_body": 1.6064181181718595e-05,
+        "crystal_end": 0.0,
+        "crystal_pad": 0.000154995359480381
+      },
+      "crystal_metrics": {
+        "body": {
+          "count": 27,
+          "correct": 27,
+          "nll_sum": 0.00047143359552137554
+        },
+        "end": {
+          "count": 0,
+          "correct": 0,
+          "nll_sum": 0.0
+        },
+        "pad": {
+          "count": 45,
+          "correct": 45,
+          "nll_sum": 0.045486293733119965
+        }
+      },
+      "elapsed_seconds": 0.24241361860185862,
+      "forward_calls": 1
+    },
+    {
+      "ok": true,
+      "id": "mp-1205902",
+      "noise_step": 32,
+      "mask_seed": 2026153895,
+      "loss": 0.16939015686511993,
+      "normalized_ce_contributions": {
+        "crystal": 0.16918803751468658,
+        "crystal_body": 0.16882772743701935,
+        "crystal_end": 0.00011384218669263646,
+        "crystal_pad": 0.00024646357633173466
+      },
+      "crystal_metrics": {
+        "body": {
+          "count": 640,
+          "correct": 596,
+          "nll_sum": 140.6166229248047
+        },
+        "end": {
+          "count": 1,
+          "correct": 1,
+          "nll_sum": 0.09481915831565857
+        },
+        "pad": {
+          "count": 1919,
+          "correct": 1919,
+          "nll_sum": 2.052795171737671
+        }
+      },
+      "elapsed_seconds": 0.26487318705767393,
+      "forward_calls": 1
+    },
+    {
+      "ok": true,
+      "id": "mp-1205902",
+      "noise_step": 16,
+      "mask_seed": 2776589007,
+      "loss": 0.02344818413257599,
+      "normalized_ce_contributions": {
+        "crystal": 0.02324606664478779,
+        "crystal_body": 0.02278815768659115,
+        "crystal_end": 0.0002163203025702387,
+        "crystal_pad": 0.00024159166787285358
+      },
+      "crystal_metrics": {
+        "body": {
+          "count": 314,
+          "correct": 311,
+          "nll_sum": 9.490129470825195
+        },
+        "end": {
+          "count": 1,
+          "correct": 1,
+          "nll_sum": 0.09008659422397614
+        },
+        "pad": {
+          "count": 938,
+          "correct": 938,
+          "nll_sum": 1.0061085224151611
+        }
+      },
+      "elapsed_seconds": 0.2524939766153693,
+      "forward_calls": 1
+    },
+    {
+      "ok": true,
+      "id": "mp-1205902",
+      "noise_step": 1,
+      "mask_seed": 2377381345,
+      "loss": 0.0027291476726531982,
+      "normalized_ce_contributions": {
+        "crystal": 0.002527029486373067,
+        "crystal_body": 0.002285299589857459,
+        "crystal_end": 0.0,
+        "crystal_pad": 0.0002417300274828449
+      },
+      "crystal_metrics": {
+        "body": {
+          "count": 24,
+          "correct": 24,
+          "nll_sum": 0.059482067823410034
+        },
+        "end": {
+          "count": 0,
+          "correct": 0,
+          "nll_sum": 0.0
+        },
+        "pad": {
+          "count": 58,
+          "correct": 58,
+          "nll_sum": 0.0629177987575531
+        }
+      },
+      "elapsed_seconds": 0.24249344924464822,
+      "forward_calls": 1
+    }
+  ],
+  "metric_semantics": "class accuracy and raw NLL are aggregated by masked target count; CE contributions use the whole-target normalizer",
+  "logits_persisted": false
+}

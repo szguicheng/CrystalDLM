@@ -1,0 +1,419 @@
+[
+  {
+    "split": "val",
+    "representation": "explicit",
+    "mode": "one_step",
+    "n": 512,
+    "checkpoint_epoch": 200,
+    "raw": {
+      "decoded": 121,
+      "composition_match": 75,
+      "usable": 53,
+      "reference_match": 27,
+      "basic_and_symmetry_consistent": 0
+    },
+    "projected": {
+      "decoded": 121,
+      "composition_match": 75,
+      "usable": 53,
+      "reference_match": 36,
+      "basic_and_symmetry_consistent": 53
+    },
+    "generated_space_groups": {
+      "225": 25,
+      "139": 9,
+      "123": 1,
+      "189": 5,
+      "62": 4,
+      "216": 1,
+      "220": 1,
+      "127": 5,
+      "191": 1,
+      "194": 1
+    },
+    "raw_errors": [
+      [
+        "ValueError: Invalid literal for Fraction: 'G'",
+        102
+      ],
+      [
+        "ValueError: Generator must preserve the integer lattice invertibly",
+        78
+      ],
+      [
+        "ValueError: Invalid literal for Fraction: 'SITES'",
+        20
+      ],
+      [
+        "ValueError: Expected SITES, got G",
+        16
+      ],
+      [
+        "ValueError: Parameters are only allowed as whole site-coordinate expressions",
+        13
+      ],
+      [
+        "ValueError: Family membership exceeds declared site count",
+        11
+      ],
+      [
+        "ValueError: Expected G, got z",
+        10
+      ],
+      [
+        "ValueError: Invalid literal for Fraction: 'O'",
+        9
+      ]
+    ]
+  },
+  {
+    "split": "val",
+    "representation": "explicit",
+    "mode": "confidence",
+    "n": 512,
+    "checkpoint_epoch": 200,
+    "raw": {
+      "decoded": 1,
+      "composition_match": 0,
+      "usable": 0,
+      "reference_match": 0,
+      "basic_and_symmetry_consistent": 0
+    },
+    "projected": {
+      "decoded": 1,
+      "composition_match": 0,
+      "usable": 0,
+      "reference_match": 0,
+      "basic_and_symmetry_consistent": 0
+    },
+    "generated_space_groups": {},
+    "raw_errors": [
+      [
+        "ValueError: Generator must preserve the integer lattice invertibly",
+        130
+      ],
+      [
+        "ValueError: Invalid literal for Fraction: 'G'",
+        87
+      ],
+      [
+        "ValueError: could not convert string to float: 'END'",
+        82
+      ],
+      [
+        "ValueError: Invalid literal for Fraction: 'SITES'",
+        28
+      ],
+      [
+        "ValueError: Expected SITES, got x",
+        25
+      ],
+      [
+        "ValueError: could not convert string to float: 'O'",
+        19
+      ],
+      [
+        "ValueError: Parameters are only allowed as whole site-coordinate expressions",
+        15
+      ],
+      [
+        "ValueError: Expected G, got NEG",
+        14
+      ]
+    ]
+  },
+  {
+    "split": "val",
+    "representation": "explicit",
+    "mode": "remask",
+    "n": 512,
+    "checkpoint_epoch": 200,
+    "raw": {
+      "decoded": 278,
+      "composition_match": 155,
+      "usable": 116,
+      "reference_match": 54,
+      "basic_and_symmetry_consistent": 0
+    },
+    "projected": {
+      "decoded": 278,
+      "composition_match": 155,
+      "usable": 116,
+      "reference_match": 60,
+      "basic_and_symmetry_consistent": 116
+    },
+    "generated_space_groups": {
+      "225": 43,
+      "139": 12,
+      "216": 2,
+      "62": 9,
+      "123": 1,
+      "221": 5,
+      "194": 10,
+      "166": 2,
+      "129": 5,
+      "63": 3,
+      "191": 6,
+      "227": 2,
+      "15": 1,
+      "189": 3,
+      "220": 1,
+      "127": 6,
+      "148": 1,
+      "141": 1,
+      "186": 2,
+      "14": 1
+    },
+    "raw_errors": [
+      [
+        "ValueError: Family membership exceeds declared site count",
+        16
+      ],
+      [
+        "ValueError: Invalid literal for Fraction: 'O'",
+        15
+      ],
+      [
+        "ValueError: Invalid literal for Fraction: 'RESIDUALS'",
+        11
+      ],
+      [
+        "ValueError: Expected RESIDUALS, got O",
+        8
+      ],
+      [
+        "ValueError: Invalid literal for Fraction: 'FAMILY'",
+        7
+      ],
+      [
+        "ValueError: Parameters are only allowed as whole site-coordinate expressions",
+        7
+      ],
+      [
+        "ValueError: Invalid literal for Fraction: 'Ni'",
+        7
+      ],
+      [
+        "ValueError: Invalid literal for Fraction: 'END'",
+        7
+      ]
+    ]
+  },
+  {
+    "split": "val",
+    "representation": "wyckoff",
+    "mode": "one_step",
+    "n": 512,
+    "checkpoint_epoch": 180,
+    "raw": {
+      "decoded": 156,
+      "composition_match": 125,
+      "usable": 84,
+      "reference_match": 23,
+      "basic_and_symmetry_consistent": 0
+    },
+    "projected": {
+      "decoded": 156,
+      "composition_match": 125,
+      "usable": 84,
+      "reference_match": 40,
+      "basic_and_symmetry_consistent": 84
+    },
+    "generated_space_groups": {
+      "189": 4,
+      "225": 27,
+      "139": 12,
+      "216": 2,
+      "63": 2,
+      "221": 5,
+      "123": 2,
+      "127": 6,
+      "15": 1,
+      "187": 3,
+      "62": 6,
+      "164": 1,
+      "70": 1,
+      "194": 4,
+      "191": 3,
+      "229": 1,
+      "166": 1,
+      "129": 1,
+      "227": 1,
+      "156": 1
+    },
+    "raw_errors": [
+      [
+        "ValueError: Wyckoff table setting mismatch",
+        75
+      ],
+      [
+        "ValueError: Expected END",
+        16
+      ],
+      [
+        "KeyError: '2a'",
+        14
+      ],
+      [
+        "KeyError: '1a'",
+        13
+      ],
+      [
+        "KeyError: '4c'",
+        9
+      ],
+      [
+        "ValueError: 'END' is not a valid Element",
+        7
+      ],
+      [
+        "ValueError: could not convert string to float: 'END'",
+        5
+      ],
+      [
+        "ValueError: could not convert string to float: 'Li'",
+        4
+      ]
+    ]
+  },
+  {
+    "split": "val",
+    "representation": "wyckoff",
+    "mode": "confidence",
+    "n": 512,
+    "checkpoint_epoch": 180,
+    "raw": {
+      "decoded": 65,
+      "composition_match": 10,
+      "usable": 2,
+      "reference_match": 1,
+      "basic_and_symmetry_consistent": 0
+    },
+    "projected": {
+      "decoded": 65,
+      "composition_match": 10,
+      "usable": 2,
+      "reference_match": 2,
+      "basic_and_symmetry_consistent": 2
+    },
+    "generated_space_groups": {
+      "225": 2
+    },
+    "raw_errors": [
+      [
+        "ValueError: Wyckoff table setting mismatch",
+        80
+      ],
+      [
+        "ValueError: 'END' is not a valid Element",
+        27
+      ],
+      [
+        "KeyError: '8f'",
+        12
+      ],
+      [
+        "KeyError: '8c'",
+        12
+      ],
+      [
+        "KeyError: '2a'",
+        12
+      ],
+      [
+        "KeyError: '4a'",
+        10
+      ],
+      [
+        "ValueError: Expected END",
+        8
+      ],
+      [
+        "KeyError: '4c'",
+        5
+      ]
+    ]
+  },
+  {
+    "split": "val",
+    "representation": "wyckoff",
+    "mode": "remask",
+    "n": 512,
+    "checkpoint_epoch": 180,
+    "raw": {
+      "decoded": 337,
+      "composition_match": 196,
+      "usable": 140,
+      "reference_match": 69,
+      "basic_and_symmetry_consistent": 0
+    },
+    "projected": {
+      "decoded": 337,
+      "composition_match": 196,
+      "usable": 141,
+      "reference_match": 76,
+      "basic_and_symmetry_consistent": 141
+    },
+    "generated_space_groups": {
+      "225": 45,
+      "216": 5,
+      "139": 21,
+      "193": 1,
+      "221": 8,
+      "166": 5,
+      "189": 8,
+      "140": 3,
+      "123": 4,
+      "127": 7,
+      "164": 2,
+      "70": 1,
+      "191": 4,
+      "194": 11,
+      "15": 1,
+      "220": 1,
+      "229": 2,
+      "141": 2,
+      "204": 1,
+      "14": 1,
+      "187": 1,
+      "227": 3,
+      "122": 1,
+      "82": 1,
+      "62": 2
+    },
+    "raw_errors": [
+      [
+        "ValueError: Expected END",
+        74
+      ],
+      [
+        "ValueError: 'END' is not a valid Element",
+        15
+      ],
+      [
+        "ValueError: could not convert string to float: 'O'",
+        4
+      ],
+      [
+        "ValueError: could not convert string to float: 'END'",
+        4
+      ],
+      [
+        "ValueError: '2a' is not a valid Element",
+        2
+      ],
+      [
+        "ValueError: could not convert string to float: 'Cu'",
+        2
+      ],
+      [
+        "ValueError: could not convert string to float: '8g'",
+        1
+      ],
+      [
+        "ValueError: '0.457763671875' is not a valid Element",
+        1
+      ]
+    ]
+  }
+]

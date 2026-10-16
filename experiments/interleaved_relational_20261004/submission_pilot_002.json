@@ -1,0 +1,37 @@
+{
+  "job_id": "605522",
+  "submitted_at_utc": "2026-10-05T07:59:21Z",
+  "slurm_script": "experiments/interleaved_relational_20261004/pilot_002.slurm",
+  "initial_state": {
+    "sacct": "PENDING",
+    "elapsed": "00:00:00",
+    "exit_code": "0:0",
+    "node": null,
+    "squeue_reason": "Priority"
+  },
+  "source_sha256": {
+    "resume_pilot_001.py": "23ac46bb18f7cc659d37b2291abd871c35a450f8ce6357d8019d5cb79a442eea",
+    "pilot_002.slurm": "430e3c6eda0de1dbf6d6b310b35d811270a823399c126c56309cb7f04893fb95",
+    "score.py": "3c1760481872726d798dd18ec4fb3557d6940e669e4c4d818a07da276d9c477a",
+    "test_checks.py": "d231d2766fb79750d56a251e99116a87e97342db64c05beb49e70a082773650c",
+    "data_pilot_001/manifest.json": "b8c290dd64f210dd469b83cbf41ad321ae4d7c5c40303c70e8cda0e4335cd0c3",
+    "data_pilot_001/records.jsonl": "ef2ec2dcdee1d73c62e48987a9cec86a4db3076f9c48d9ab17b8745b9eca785f",
+    "recovery_predecessor_001/source_snapshot/SHA256SUMS": "223055a9ae77337a51a2830991cf41e6852ee779ec686cef0fda96be62cd816d"
+  },
+  "inherited_ar_checkpoint": {
+    "path": "experiments/interleaved_relational_20261004/pilot_001/ar/checkpoint.pt",
+    "sha256": "9d73aeebc4966efafb6fd2bb03bb448c400d0e20878c1258ec8c8c1321f123e5",
+    "updates": 512,
+    "mode": "ar",
+    "prediction_offset": 0,
+    "final_fingerprint": "e466cb281d88e6356f3ed73dc2915a3bf947024abecaa534f25d22a6a0dca5e8",
+    "strict_reload_verified": true
+  },
+  "preflight": {
+    "pilot_002_output_absent_before_submission": true,
+    "pilot_002_logs_absent_before_submission": true,
+    "remote_bash_n_passed": true,
+    "remote_source_hashes_match": true,
+    "records_unchanged": true
+  }
+}

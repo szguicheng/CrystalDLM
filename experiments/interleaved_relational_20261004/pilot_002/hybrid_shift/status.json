@@ -1,0 +1,337 @@
+{
+  "mode": "hybrid",
+  "arm": "hybrid_shift",
+  "status": "evaluated",
+  "updates": 512,
+  "seed": 17,
+  "prediction_offset": 1,
+  "initial_fingerprint": "6bffa202d8485a6ee8bce3553044c9657948e25be702a45a9efb860ced9d1429",
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "model_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+  "tokenizer_path": "/gpfs1/scratch/chenggui2/CrystalDLM/experiments/interleaved_ar_diffusion_20261002/data_002/tokenizer",
+  "base_parameter_dtype": "float32",
+  "autocast": "bfloat16",
+  "gradient_checkpointing": false,
+  "optimizer": "AdamW",
+  "learning_rate": 2e-05,
+  "weight_decay": 0.01,
+  "scheduler": "linear warmup 40 updates then cosine to zero",
+  "gradient_clip_norm": 1.0,
+  "effective_batch": 4,
+  "microbatch": 1,
+  "gradient_accumulation": 4,
+  "K": 2560,
+  "MAXLEN": 8192,
+  "STEPS": 32,
+  "task_exposure_sha256": "79e62e1a7e4f3c7e92ef5d4354fbd907d4c3ba90076924300861c43bb04f07f4",
+  "scheduled_exposure_counts": {
+    "per_material": {
+      "anchor_Tb8Mg4": {
+        "tasks": {
+          "E": 64,
+          "G": 128,
+          "Q1": 64
+        },
+        "E_factors": {
+          "minus": 32,
+          "plus": 32
+        }
+      },
+      "anchor_Li8V4Ni4O16": {
+        "tasks": {
+          "E": 64,
+          "G": 128,
+          "Q1": 64
+        },
+        "E_factors": {
+          "minus": 32,
+          "plus": 32
+        }
+      },
+      "mp-4047": {
+        "tasks": {
+          "E": 64,
+          "G": 128,
+          "Q1": 64
+        },
+        "E_factors": {
+          "minus": 32,
+          "plus": 32
+        }
+      },
+      "mp-1205515": {
+        "tasks": {
+          "E": 64,
+          "G": 128,
+          "Q1": 64
+        },
+        "E_factors": {
+          "minus": 32,
+          "plus": 32
+        }
+      },
+      "mp-30009": {
+        "tasks": {
+          "E": 64,
+          "G": 128,
+          "Q1": 64
+        },
+        "E_factors": {
+          "minus": 32,
+          "plus": 32
+        }
+      },
+      "mp-1188285": {
+        "tasks": {
+          "E": 64,
+          "G": 128,
+          "Q1": 64
+        },
+        "E_factors": {
+          "minus": 32,
+          "plus": 32
+        }
+      },
+      "mp-1207068": {
+        "tasks": {
+          "E": 64,
+          "G": 128,
+          "Q1": 64
+        },
+        "E_factors": {
+          "minus": 32,
+          "plus": 32
+        }
+      },
+      "mp-1205902": {
+        "tasks": {
+          "E": 64,
+          "G": 128,
+          "Q1": 64
+        },
+        "E_factors": {
+          "minus": 32,
+          "plus": 32
+        }
+      }
+    },
+    "total": {
+      "E": 512,
+      "G": 1024,
+      "Q1": 512
+    }
+  },
+  "dataset_manifest_sha256": "b8c290dd64f210dd469b83cbf41ad321ae4d7c5c40303c70e8cda0e4335cd0c3",
+  "dataset_records_sha256": "ef2ec2dcdee1d73c62e48987a9cec86a4db3076f9c48d9ab17b8745b9eca785f",
+  "data_manifest_sha256": "5bf53e66bde73df60f8acb3689ba3d9322d590398835878bf59130402fad69e2",
+  "source_pin": {
+    "summary_sha256": "438d019d6dc12a89b3a952761e392c26cabf7035c145d8b61eed8af3cd77ae02",
+    "selection_sha256": "03527304a32e11c15414e0f368e72c694e754b3add76f660701437b6bf22d54a",
+    "runtime_hashes": {
+      "relational_codec.py": "365f122905399a73477b92a7af97c05b78483ea5af12347f9a6050b1a3506813",
+      "run_roundtrip.py": "3d329b9a486bb4a2cddf90e0977468034080db7d03251082836b7d9e9a4c4cdd",
+      "geometry.py": "026d5c882c0e24b8802f9cf0f25415353cd3254e9bde45a6f1693396a72c04a2",
+      "base_cohort.py": "f8b47626030b77592a3e2105544576f1b2103bd77a4f9eb9e7d138416b19a1d8",
+      "oldcodec.py": "8b8a4f11a949000e2c3f29b787676a6147a776946c4f7c9f272c1f33bfa110d9",
+      "api_runner.py": "2973ac9aef70dbd0f98257608227f9ebf645a688d8ce7f90cc8edfcd86e9716d",
+      "prepare.py": "c77ea38b734fe0a1accab663cfa8f1b071ff7c4784513681af0d4bb89a4a6a65",
+      "public_wyckoff_baseline.py": "1ccdc829f301f1279f78751dc5138fcac1e67680dfdaebefdbf72c9ca3ba758a",
+      "public_affine_parser.py": "26675890fb9847d4011153fc3d5a11a29733349d8e74c765b71375cea3ccb3a1",
+      "cif_parser.py": "2c3fb30605c725b0eee8280aed50119544bf42177528ef5339159e36e80e684f",
+      "public_wyckoff_list.csv": "ca56602252b7896121253c910739ef2fccf0ba947f2940358feb941f30c5e13d"
+    },
+    "runtime_hashes_stable": true
+  },
+  "code_hashes": {
+    "model.py": "036ac4d4fc08437e2325c31265fceb08a573d8c703a1ca551c4f921541345406",
+    "pilot_001.slurm": "6b077b25e5754dfe6988a69486ae53c30a3079b785df6a3f6c23d28715dcf935",
+    "prepare.py": "07ac45cb3ae5ab086fed460fc957afcc94e1988011161a4d0178b388b1769f14",
+    "resume_pilot_001.py": "23ac46bb18f7cc659d37b2291abd871c35a450f8ce6357d8019d5cb79a442eea",
+    "run.py": "9f5881028177c3b527ea064198b91ae73600894801960113aec2e8ffcea8ab50",
+    "score.py": "3c1760481872726d798dd18ec4fb3557d6940e669e4c4d818a07da276d9c477a",
+    "test_checks.py": "d231d2766fb79750d56a251e99116a87e97342db64c05beb49e70a082773650c"
+  },
+  "host": "gpu-a100-10",
+  "slurm_job": "605522",
+  "gpu": "NVIDIA A100-SXM4-80GB",
+  "packages": {
+    "torch": "2.2.0+cu121",
+    "transformers": "4.57.6",
+    "numpy": "1.26.4",
+    "pyxtal": "1.0.8",
+    "pymatgen": "2025.10.7",
+    "spglib": "2.7.0"
+  },
+  "completed_updates": 512,
+  "elapsed_seconds": 387.06633987883106,
+  "peak_allocated_GiB": 18.962536811828613,
+  "peak_reserved_GiB": 26.58984375,
+  "actual_exposure_counts": {
+    "per_material": {
+      "anchor_Li8V4Ni4O16": {
+        "tasks": {
+          "E": 64,
+          "G": 128,
+          "Q1": 64
+        },
+        "E_factors": {
+          "minus": 32,
+          "plus": 32
+        }
+      },
+      "anchor_Tb8Mg4": {
+        "tasks": {
+          "E": 64,
+          "G": 128,
+          "Q1": 64
+        },
+        "E_factors": {
+          "minus": 32,
+          "plus": 32
+        }
+      },
+      "mp-1188285": {
+        "tasks": {
+          "E": 64,
+          "G": 128,
+          "Q1": 64
+        },
+        "E_factors": {
+          "minus": 32,
+          "plus": 32
+        }
+      },
+      "mp-1205515": {
+        "tasks": {
+          "E": 64,
+          "G": 128,
+          "Q1": 64
+        },
+        "E_factors": {
+          "minus": 32,
+          "plus": 32
+        }
+      },
+      "mp-1205902": {
+        "tasks": {
+          "E": 64,
+          "G": 128,
+          "Q1": 64
+        },
+        "E_factors": {
+          "minus": 32,
+          "plus": 32
+        }
+      },
+      "mp-1207068": {
+        "tasks": {
+          "E": 64,
+          "G": 128,
+          "Q1": 64
+        },
+        "E_factors": {
+          "minus": 32,
+          "plus": 32
+        }
+      },
+      "mp-30009": {
+        "tasks": {
+          "E": 64,
+          "G": 128,
+          "Q1": 64
+        },
+        "E_factors": {
+          "minus": 32,
+          "plus": 32
+        }
+      },
+      "mp-4047": {
+        "tasks": {
+          "E": 64,
+          "G": 128,
+          "Q1": 64
+        },
+        "E_factors": {
+          "minus": 32,
+          "plus": 32
+        }
+      }
+    },
+    "total": {
+      "E": 512,
+      "G": 1024,
+      "Q1": 512
+    }
+  },
+  "final_fingerprint": "01f8ce739f46b7d4ebfa10810940f891f1fea0da37f016acd5788a4b161aabd8",
+  "checkpoint_sha256": "3e1b0e30b5d7edc147e11b1b975959835cad60587f1aa5aafc8ca54b0cdf25a2",
+  "checkpoint_reload_verified": true,
+  "checkpoint_reload_fingerprint": "01f8ce739f46b7d4ebfa10810940f891f1fea0da37f016acd5788a4b161aabd8",
+  "checkpoint_reload_mode": "hybrid",
+  "checkpoint_reload_offset": 1,
+  "training_seconds": 402.1292226337828,
+  "actual_exposure_sha256": "79e62e1a7e4f3c7e92ef5d4354fbd907d4c3ba90076924300861c43bb04f07f4",
+  "seen8": {
+    "n": 8,
+    "split": "train",
+    "counts": {
+      "G": 0,
+      "Q_reference": 8,
+      "E_reference": 0,
+      "closed_loop": 0,
+      "flow_complete": 0,
+      "Q_swap": 0,
+      "Q_no_crystal": 0
+    },
+    "rates": {
+      "G": 0.0,
+      "Q_reference": 1.0,
+      "E_reference": 0.0,
+      "closed_loop": 0.0,
+      "flow_complete": 0.0,
+      "Q_swap": 0.0,
+      "Q_no_crystal": 0.0
+    },
+    "attempts_retried": 0,
+    "failure_classes": {
+      "G:generation_error": 8,
+      "E_reference:edit_error": 7,
+      "closed_loop:skipped_invalid_generated_c1": 8,
+      "Q_swap:answer_mismatch": 8,
+      "E_reference:edit_mismatch": 1
+    },
+    "no_crystal_semantics": "Q_no_crystal is exact target-fact match without a structure; raw response is retained and this is not an abstention/success score."
+  },
+  "heldout16": {
+    "n": 16,
+    "split": "heldout",
+    "counts": {
+      "G": 0,
+      "Q_reference": 4,
+      "E_reference": 0,
+      "closed_loop": 0,
+      "flow_complete": 0,
+      "Q_swap": 0,
+      "Q_no_crystal": 0
+    },
+    "rates": {
+      "G": 0.0,
+      "Q_reference": 0.25,
+      "E_reference": 0.0,
+      "closed_loop": 0.0,
+      "flow_complete": 0.0,
+      "Q_swap": 0.0,
+      "Q_no_crystal": 0.0
+    },
+    "attempts_retried": 0,
+    "failure_classes": {
+      "G:generation_error": 15,
+      "Q_reference:answer_mismatch": 12,
+      "E_reference:edit_error": 16,
+      "closed_loop:skipped_invalid_generated_c1": 16,
+      "Q_swap:answer_mismatch": 16,
+      "G:generation_audit": 1
+    },
+    "no_crystal_semantics": "Q_no_crystal is exact target-fact match without a structure; raw response is retained and this is not an abstention/success score."
+  }
+}

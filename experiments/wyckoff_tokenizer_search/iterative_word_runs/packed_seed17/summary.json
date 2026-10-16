@@ -1,0 +1,84 @@
+{
+  "results": {
+    "rle_T1": {
+      "exact_match": 0.64208984375,
+      "steps_limit": 1,
+      "batch_forward_calls": 64,
+      "generation_seconds": 0.7810867649968714,
+      "validity_guaranteed_by_common_candidate_reader": true
+    },
+    "rle_T4": {
+      "exact_match": 0.638671875,
+      "steps_limit": 4,
+      "batch_forward_calls": 256,
+      "generation_seconds": 1.6674001249484718,
+      "validity_guaranteed_by_common_candidate_reader": true
+    },
+    "rle_T8": {
+      "exact_match": 0.6396484375,
+      "steps_limit": 8,
+      "batch_forward_calls": 512,
+      "generation_seconds": 3.191609207075089,
+      "validity_guaranteed_by_common_candidate_reader": true
+    },
+    "rlemerge_T1": {
+      "exact_match": 0.6337890625,
+      "steps_limit": 1,
+      "batch_forward_calls": 64,
+      "generation_seconds": 0.5021522589959204,
+      "validity_guaranteed_by_common_candidate_reader": true
+    },
+    "rlemerge_T4": {
+      "exact_match": 0.6298828125,
+      "steps_limit": 4,
+      "batch_forward_calls": 256,
+      "generation_seconds": 1.6417680578306317,
+      "validity_guaranteed_by_common_candidate_reader": true
+    },
+    "rlemerge_T8": {
+      "exact_match": 0.63330078125,
+      "steps_limit": 8,
+      "batch_forward_calls": 512,
+      "generation_seconds": 3.083969671977684,
+      "validity_guaranteed_by_common_candidate_reader": true
+    }
+  },
+  "comparisons": {
+    "1": {
+      "block_minus_rle_exact": -0.00830078125,
+      "paired_structure_bootstrap_95ci": [
+        -0.02392578125,
+        0.00732421875
+      ]
+    },
+    "4": {
+      "block_minus_rle_exact": -0.0087890625,
+      "paired_structure_bootstrap_95ci": [
+        -0.02442626953125,
+        0.00732421875
+      ]
+    },
+    "8": {
+      "block_minus_rle_exact": -0.00634765625,
+      "paired_structure_bootstrap_95ci": [
+        -0.021484375,
+        0.0087890625
+      ]
+    }
+  },
+  "structures": 2048,
+  "training_seed": 17,
+  "validation_only": true,
+  "one_training_seed_only": true,
+  "deterministic_no_sampling_noise": true,
+  "one_step_reader_parity": "PASS",
+  "no_target_fields_given_to_generation": true,
+  "remaining_mask_schedule": "floor(N_initial*cos(pi/2*(k+1)/T)); monotone confidence fixing",
+  "proposal_rule": "Exact fixed-site MAP among canonical candidates consistent with committed model words",
+  "not_exact_MaskGXT_or_D3PM": true,
+  "not_full_geometry_generation": true,
+  "no_multistep_marginal_likelihood_claim": true,
+  "elapsed_seconds": 12.147528702160344,
+  "job_id": "533187",
+  "script_sha256": "ef3d583cef317cdec9868424c0cc4b42cc0dd170bce2f21962b3a6a41312c727"
+}

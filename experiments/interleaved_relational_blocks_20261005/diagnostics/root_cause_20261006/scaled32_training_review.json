@@ -1,0 +1,52 @@
+{
+  "review_id": "scaled32_training_wrapper_20261006",
+  "verdict": "no_blocking_findings",
+  "scope": [
+    "experiments/interleaved_relational_scaled32_20261006/train.py",
+    "experiments/interleaved_relational_scaled32_20261006/test_train.py",
+    "experiments/interleaved_relational_scaled32_20261006/train.slurm",
+    "experiments/interleaved_relational_scaled32_20261006/prepare_data.py",
+    "experiments/interleaved_relational_scaled32_20261006/data_001/manifest.json",
+    "experiments/interleaved_relational_joint_20261006/run.py",
+    "experiments/interleaved_relational_joint_20261006/model.py",
+    "experiments/interleaved_relational_joint_20261006/prepare.py"
+  ],
+  "blocking_findings": [],
+  "non_blocking_findings": [
+    {
+      "id": "training_python_version_not_recorded",
+      "severity": "low",
+      "location": "experiments/interleaved_relational_joint_20261006/run.py:695-698",
+      "finding": "The training receipt records installed package versions, including torch and transformers, while the producer Python version stays in the frozen data manifest. The actual training-side Python sys.version is not recorded.",
+      "impact": "Package versions distinguish the data producer runtime from the training runtime; interpreter-level provenance is incomplete.",
+      "action": "Record the training-side Python version if complete interpreter provenance is required."
+    }
+  ],
+  "verified": [
+    {
+      "item": "Frozen data and source pins",
+      "evidence": "train.py checks the manifest and records SHA-256 values, data-only status, codec/model/capacity pins, and the unchanged 24-row prefix. prepare_data.check_dataset verifies the frozen source cohort, original byte prefix, 32/16 split, source separation, and records hash. The parent runner checks source and data hashes during training."
+    },
+    {
+      "item": "Training-only schedule and exposure",
+      "evidence": "The wrapper sets 2048 updates and uses 32 training rows only; each update supplies two G examples, one E example, and one alternating Q1/Q2 reader. Seed 17, accumulation 4, block size 32, clean-crystal AR weight 1, K=2560, and MAXLEN=8192 are inherited from or checked against the parent runner."
+    },
+    {
+      "item": "Reader schedule and causal-context accounting",
+      "evidence": "The eight-epoch preflight scan covers the schedule's repeating direction/context pattern. Q2 direction is selected independently using (epoch//2 + row_index) parity; grounded neutral/conflict context uses (epoch//4 + row_index) parity. Conflict partners are the next cyclic train row; data-level comparison found each partner's target-fact signature differs for Q1 and both Q2 directions (space group, composition, atom count, orbit count, and two-decimal lattice lengths). test_train.py asserts per-row Q counts, 8 neutral/8 conflict per Q2 direction, partner restriction, latest-target preservation, and packed-input/RNG invariants."
+    },
+    {
+      "item": "Data check and training-runtime separation",
+      "evidence": "Installed runtime and Python equality checks appear in write_dataset only (prepare_data.py:356-363). check_dataset (lines 456-503) reads pinned artifacts, hashes, and split metadata without requiring producer package versions. The parent training receipt records actual training package versions separately."
+    },
+    {
+      "item": "Training and evaluation boundary",
+      "evidence": "The wrapper calls only train_one after GPU preflight, verifies checkpoint reload, and writes train-only status. Heldout evaluation and AR inference are explicitly marked not_run; train.slurm requests one A100 and runs the training entrypoint."
+    }
+  ],
+  "validation": {
+    "native_cpu_contract_check": "passed as reported by root",
+    "gpu_run": "not performed",
+    "slurm_submission": "not performed"
+  }
+}

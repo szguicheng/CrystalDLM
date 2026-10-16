@@ -1,0 +1,109 @@
+{
+  "experiment": "interleaved_relational_20261004/pilot_001",
+  "slurm_job_id": "604554",
+  "slurm_job_name": "rel-cnl-pilot-001",
+  "observed_at_utc": "2026-10-04 20:55:38 UTC",
+  "job_state": "RUNNING",
+  "job_elapsed_at_observation": "00:06:08",
+  "job_exit_code_at_observation": "0:0",
+  "allocated_node": "gpu-a100-09",
+  "actual_gpu": {
+    "name": "NVIDIA A100-SXM4-80GB",
+    "total_memory_mib": 81920,
+    "sample_memory_used_mib": 18256,
+    "sample_utilization_percent": 88,
+    "sample_elapsed": "00:03:18",
+    "evidence": "scontrol NodeList/BatchHost gpu-a100-09; nvidia-smi via an overlapping step inside the same allocation"
+  },
+  "offline_startup": {
+    "adapter_checks": "passed: 24 fixed rows, 48 exact edits, strict failures retained",
+    "pack_status": "pack_ok",
+    "K": 2560,
+    "MAXLEN": 8192,
+    "train_E_max_tokens": 3625,
+    "heldout_E_max_tokens": 5131,
+    "truncation": false,
+    "records": 24,
+    "train_seen": 8,
+    "heldout": 16,
+    "test256_used": false
+  },
+  "data": {
+    "codec": "relational_cnl_v1",
+    "model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+    "manifest_sha256": "e4b67ae8a4e8b831b8c529992b9ea2a83b44603689cdc0b460e1d9d7f9ff5513",
+    "records_sha256": "ef2ec2dcdee1d73c62e48987a9cec86a4db3076f9c48d9ab17b8745b9eca785f",
+    "training_exposure_sha256": "9df70ed2facb02efac6bde6859d127f337c9e11be611607d8df5f69d8e4da4c0",
+    "training_updates_per_arm": 512,
+    "per_update": {"G": 2, "E": 1, "Q1": 1},
+    "total_training_examples": {"G": 1024, "E": 512, "Q1": 512},
+    "per_train_material": {"G": 128, "E": 64, "Q1": 64},
+    "E_factor_counts_per_material": {"minus": 32, "plus": 32}
+  },
+  "gpu_preflight": {
+    "status": "passed",
+    "device": "NVIDIA A100-SXM4-80GB",
+    "device_total_gib": 79.249755859375,
+    "reserved_limit_gib": 70.0,
+    "disposable_steps_counted_in_pilot": false,
+    "shared_initial_fingerprint": "6bffa202d8485a6ee8bce3553044c9657948e25be702a45a9efb860ced9d1429",
+    "ar": {
+      "mode": "ar",
+      "prediction_offset": 0,
+      "initial_fingerprint": "6bffa202d8485a6ee8bce3553044c9657948e25be702a45a9efb860ced9d1429",
+      "parameters": "FP32, zero time embedding",
+      "one_effective_batch_step_seconds": 2.338395548053086,
+      "peak_allocated_gib": 12.379798412322998,
+      "peak_reserved_gib": 14.11328125
+    },
+    "hybrid_shift": {
+      "mode": "hybrid",
+      "prediction_offset": 1,
+      "initial_fingerprint": "6bffa202d8485a6ee8bce3553044c9657948e25be702a45a9efb860ced9d1429",
+      "parameters": "FP32, zero time embedding",
+      "one_effective_batch_step_seconds": 0.7073910441249609,
+      "peak_allocated_gib": 11.668152809143066,
+      "peak_reserved_gib": 13.1953125
+    }
+  },
+  "formal_training_at_observation": {
+    "current_arm": "ar",
+    "mode": "ar",
+    "prediction_offset": 0,
+    "status_file_completed_updates": 380,
+    "planned_updates": 512,
+    "curve_last_update": 380,
+    "median_step_seconds_sample": 0.68194,
+    "peak_allocated_gib": 16.09208917617798,
+    "peak_reserved_gib": 17.296875,
+    "hybrid_shift_started": false
+  },
+  "runtime_environment": {
+    "python": "3.10.18",
+    "torch": "2.2.0+cu121",
+    "transformers": "4.57.6",
+    "numpy": "1.26.4",
+    "scipy": "1.13.1",
+    "pymatgen": "2025.10.7",
+    "spglib": "2.7.0",
+    "pyxtal": "1.0.8",
+    "preparation_manifest_versions_differ": {
+      "python": "3.10.19",
+      "torch": "2.8.0",
+      "scipy": "1.15.3"
+    },
+    "run_status_records_actual_versions": true
+  },
+  "source_pin": {
+    "run_sha256": "9f5881028177c3b527ea064198b91ae73600894801960113aec2e8ffcea8ab50",
+    "score_sha256": "55a66f8794353170aca249de6a6e5f070257ccb528d273998767a13bc1942454",
+    "model_sha256": "036ac4d4fc08437e2325c31265fceb08a573d8c703a1ca551c4f921541345406",
+    "prepare_sha256": "07ac45cb3ae5ab086fed460fc957afcc94e1988011161a4d0178b388b1769f14",
+    "test_sha256": "1c1c388c1baf1a2e6a5907d5fe725df68b27aa1c05fd0e375994cfea75605e54",
+    "slurm_sha256": "6b077b25e5754dfe6988a69486ae53c30a3079b785df6a3f6c23d28715dcf935",
+    "run100_summary_sha256": "438d019d6dc12a89b3a952761e392c26cabf7035c145d8b61eed8af3cd77ae02",
+    "runtime_hashes_stable": true
+  },
+  "note": "Formal training continues on the same job. This receipt is an observation snapshot, not an evaluation result."
+}

@@ -1,0 +1,2433 @@
+{
+  "audit": "scaled32 COMPLETEheld16 raw outcome and root-cause audit",
+  "status": "read_only_complete",
+  "scope": {
+    "split": "heldout",
+    "case_count": 16,
+    "denominator_rule": "all 16 manifest-frozen heldout cases; no filtering or retries",
+    "case_ids_in_evaluation_order": [
+      "mp-1229077",
+      "mp-1019259",
+      "mp-1079976",
+      "mp-1095422",
+      "mp-1173947",
+      "mp-21371",
+      "mp-5456",
+      "mp-19419",
+      "mp-1219591",
+      "mp-1225818",
+      "mp-757163",
+      "mp-1178612",
+      "mp-1101160",
+      "mp-31460",
+      "mp-646926",
+      "mp-1217967"
+    ],
+    "evaluation_arm": "joint_ar_diffusion_b32",
+    "model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "core_mode": "hybrid",
+    "block_size": 32,
+    "training_updates": 2048,
+    "training_job": 607943,
+    "pinned_final_fingerprint": "e00f360a3fdfcda7e947aba78736aadee04aad26e9f9b386be124fcfce118ada",
+    "eval_pin_status": "verified",
+    "eval_pin_verified_at_utc": "2026-10-06T17:11:13.917421+00:00",
+    "claim_limit": "Observed saved outputs and strict scorer results only; SG coverage is descriptive and does not establish causal failure explanations.",
+    "prohibited_actions_not_taken": [
+      "SSH",
+      "GPU inference",
+      "model-weight read",
+      "checkpoint hash computation",
+      "new job",
+      "source-data edit"
+    ]
+  },
+  "inputs": {
+    "heldout16_evaluation_jsonl": {
+      "path": "experiments/interleaved_relational_scaled32_20261006/eval_grounded_final2048_001/heldout16/evaluation.jsonl",
+      "sha256": "d18af1b7f01c8a3151eeb4fa3f941bef4892b8b7f5daa0ece75bf0c407c7fab7"
+    },
+    "heldout16_evaluation_summary_json": {
+      "path": "experiments/interleaved_relational_scaled32_20261006/eval_grounded_final2048_001/heldout16/evaluation_summary.json",
+      "sha256": "0efbc0ea2750aa290f27d45c0d47f54044823eb137d6f7783d5236afe4666ea8"
+    },
+    "seen8_evaluation_jsonl": {
+      "path": "experiments/interleaved_relational_scaled32_20261006/eval_grounded_final2048_001/seen8/evaluation.jsonl",
+      "sha256": "9b77043728086d03e3b34eedf370a13142a2f2ac0ffa6e7217beac69dc844cdd"
+    },
+    "seen8_evaluation_summary_json": {
+      "path": "experiments/interleaved_relational_scaled32_20261006/eval_grounded_final2048_001/seen8/evaluation_summary.json",
+      "sha256": "66d5c456c7831af12fdecfa2f9663de098664a2e7d1c147528fec4cd12f0d30a"
+    },
+    "overall_evaluation_summary_json": {
+      "path": "experiments/interleaved_relational_scaled32_20261006/eval_grounded_final2048_001/summary.json",
+      "sha256": "6ae1fd5ccb5ee309e54e93cf6c9e91e5214873a90d6d432fee21776dd47fca94"
+    },
+    "final_eval_input_pin_json": {
+      "path": "experiments/interleaved_relational_scaled32_20261006/eval_input_pin.json",
+      "sha256": "dff7306086bc0c94915590a69b1de9564725987c8d5e209cfa53416c1035b488"
+    },
+    "data_manifest_json": {
+      "path": "experiments/interleaved_relational_scaled32_20261006/data_001/manifest.json",
+      "sha256": "25f150360f173970895dafd31e390f94b4b01ca174e6ad09b9e288c94b1e48cc"
+    },
+    "data_records_jsonl": {
+      "path": "experiments/interleaved_relational_scaled32_20261006/data_001/records.jsonl",
+      "sha256": "231f336234d15a216dc9cb800d8dc1c3f30cf90985184ccc0d3e5c26333e95c6"
+    },
+    "edit_scorer_py": {
+      "path": "experiments/interleaved_relational_blocks_20261005/score.py",
+      "sha256": "3c1760481872726d798dd18ec4fb3557d6940e669e4c4d818a07da276d9c477a"
+    },
+    "relational_codec_py": {
+      "path": "experiments/naturecry_relational_20261004/relational_codec.py",
+      "sha256": "365f122905399a73477b92a7af97c05b78483ea5af12347f9a6050b1a3506813"
+    },
+    "existing_scaled32_coverage_audit_json": {
+      "path": "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/scaled32_coverage_audit.json",
+      "sha256": "50c016505e22f60be0ade690b5a732d337187f4218f9c350a2065824fb05b514"
+    }
+  },
+  "identity_checks": {
+    "evaluation_case_order_matches_manifest": true,
+    "manifest_record_count": 48,
+    "data_record_count": 48,
+    "train32_count": 32,
+    "heldout16_count": 16,
+    "data_manifest_records_sha256_matches_actual": true,
+    "overall_summary_status": "complete",
+    "overall_summary_stage": "scaled32_final_2048_evaluation",
+    "overall_summary_hashes_before_equal_after": true,
+    "overall_summary_fingerprint_before_equal_after": true,
+    "checkpoint_file_read_or_hashed_by_this_audit": false
+  },
+  "raw_metrics": {
+    "counts": {
+      "G": {
+        "passes": 0,
+        "denominator": 16,
+        "rate": 0.0
+      },
+      "Q_reference": {
+        "passes": 12,
+        "denominator": 16,
+        "rate": 0.75
+      },
+      "E_reference": {
+        "passes": 0,
+        "denominator": 16,
+        "rate": 0.0
+      },
+      "closed_loop": {
+        "passes": 0,
+        "denominator": 16,
+        "rate": 0.0
+      },
+      "flow_complete": {
+        "passes": 0,
+        "denominator": 16,
+        "rate": 0.0
+      },
+      "Q_swap": {
+        "passes": 0,
+        "denominator": 16,
+        "rate": 0.0
+      },
+      "Q_no_crystal": {
+        "passes": 0,
+        "denominator": 16,
+        "rate": 0.0
+      }
+    },
+    "failure_histogram": {
+      "E_reference:edit_error": 3,
+      "E_reference:edit_mismatch": 13,
+      "G:generation_audit": 15,
+      "G:generation_error": 1,
+      "Q_no_crystal:read_error": 1,
+      "Q_reference:answer_mismatch": 2,
+      "Q_reference:read_error": 2,
+      "Q_swap:answer_mismatch": 15,
+      "Q_swap:read_error": 1,
+      "closed_loop:skipped_invalid_generated_c1": 16
+    },
+    "failure_case_ids_by_stage": {
+      "G": [
+        "mp-1019259",
+        "mp-1079976",
+        "mp-1095422",
+        "mp-1101160",
+        "mp-1173947",
+        "mp-1178612",
+        "mp-1217967",
+        "mp-1219591",
+        "mp-1225818",
+        "mp-1229077",
+        "mp-19419",
+        "mp-21371",
+        "mp-31460",
+        "mp-5456",
+        "mp-646926",
+        "mp-757163"
+      ],
+      "E_reference": [
+        "mp-1019259",
+        "mp-1079976",
+        "mp-1095422",
+        "mp-1101160",
+        "mp-1173947",
+        "mp-1178612",
+        "mp-1217967",
+        "mp-1219591",
+        "mp-1225818",
+        "mp-1229077",
+        "mp-19419",
+        "mp-21371",
+        "mp-31460",
+        "mp-5456",
+        "mp-646926",
+        "mp-757163"
+      ],
+      "Q_reference": [
+        "mp-1095422",
+        "mp-1178612",
+        "mp-1219591",
+        "mp-5456"
+      ],
+      "Q_swap": [
+        "mp-1019259",
+        "mp-1079976",
+        "mp-1095422",
+        "mp-1101160",
+        "mp-1173947",
+        "mp-1178612",
+        "mp-1217967",
+        "mp-1219591",
+        "mp-1225818",
+        "mp-1229077",
+        "mp-19419",
+        "mp-21371",
+        "mp-31460",
+        "mp-5456",
+        "mp-646926",
+        "mp-757163"
+      ],
+      "closed_loop": [
+        "mp-1019259",
+        "mp-1079976",
+        "mp-1095422",
+        "mp-1101160",
+        "mp-1173947",
+        "mp-1178612",
+        "mp-1217967",
+        "mp-1219591",
+        "mp-1225818",
+        "mp-1229077",
+        "mp-19419",
+        "mp-21371",
+        "mp-31460",
+        "mp-5456",
+        "mp-646926",
+        "mp-757163"
+      ],
+      "Q_no_crystal": [
+        "mp-1173947"
+      ]
+    },
+    "matches_saved_summaries": {
+      "row_count_matches": true,
+      "case_order_matches_manifest": true,
+      "counts_match": true,
+      "rates_match": true,
+      "failure_histogram_match": true,
+      "overall_summary_heldout_counts_match": true,
+      "overall_summary_heldout_failure_histogram_match": true,
+      "all_checks_match": true
+    },
+    "summary_attempts_retried": 0,
+    "overall_summary_heldout_counts": {
+      "G": 0,
+      "Q_reference": 12,
+      "E_reference": 0,
+      "closed_loop": 0,
+      "flow_complete": 0,
+      "Q_swap": 0,
+      "Q_no_crystal": 0
+    }
+  },
+  "Q_reference": {
+    "attempted_cases": 16,
+    "cohort_cases": 16,
+    "successful_responses": 14,
+    "successful_response_case_ids": [
+      "mp-1019259",
+      "mp-1079976",
+      "mp-1095422",
+      "mp-1101160",
+      "mp-1173947",
+      "mp-1217967",
+      "mp-1225818",
+      "mp-1229077",
+      "mp-19419",
+      "mp-21371",
+      "mp-31460",
+      "mp-5456",
+      "mp-646926",
+      "mp-757163"
+    ],
+    "read_error_count": 2,
+    "read_error_case_ids": [
+      "mp-1178612",
+      "mp-1219591"
+    ],
+    "answer_mismatch_count": 2,
+    "answer_mismatch_case_ids": [
+      "mp-1095422",
+      "mp-5456"
+    ],
+    "field_metrics": {
+      "sg": {
+        "passes": 14,
+        "denominator": 16,
+        "rate": 0.875,
+        "failures": 2,
+        "passing_case_ids": [
+          "mp-1019259",
+          "mp-1079976",
+          "mp-1095422",
+          "mp-1101160",
+          "mp-1173947",
+          "mp-1217967",
+          "mp-1225818",
+          "mp-1229077",
+          "mp-19419",
+          "mp-21371",
+          "mp-31460",
+          "mp-5456",
+          "mp-646926",
+          "mp-757163"
+        ],
+        "failing_case_ids": [
+          "mp-1178612",
+          "mp-1219591"
+        ]
+      },
+      "formula": {
+        "passes": 12,
+        "denominator": 16,
+        "rate": 0.75,
+        "failures": 4,
+        "passing_case_ids": [
+          "mp-1019259",
+          "mp-1079976",
+          "mp-1101160",
+          "mp-1173947",
+          "mp-1217967",
+          "mp-1225818",
+          "mp-1229077",
+          "mp-19419",
+          "mp-21371",
+          "mp-31460",
+          "mp-646926",
+          "mp-757163"
+        ],
+        "failing_case_ids": [
+          "mp-1095422",
+          "mp-1178612",
+          "mp-1219591",
+          "mp-5456"
+        ]
+      },
+      "atoms": {
+        "passes": 14,
+        "denominator": 16,
+        "rate": 0.875,
+        "failures": 2,
+        "passing_case_ids": [
+          "mp-1019259",
+          "mp-1079976",
+          "mp-1095422",
+          "mp-1101160",
+          "mp-1173947",
+          "mp-1217967",
+          "mp-1225818",
+          "mp-1229077",
+          "mp-19419",
+          "mp-21371",
+          "mp-31460",
+          "mp-5456",
+          "mp-646926",
+          "mp-757163"
+        ],
+        "failing_case_ids": [
+          "mp-1178612",
+          "mp-1219591"
+        ]
+      },
+      "orbits": {
+        "passes": 14,
+        "denominator": 16,
+        "rate": 0.875,
+        "failures": 2,
+        "passing_case_ids": [
+          "mp-1019259",
+          "mp-1079976",
+          "mp-1095422",
+          "mp-1101160",
+          "mp-1173947",
+          "mp-1217967",
+          "mp-1225818",
+          "mp-1229077",
+          "mp-19419",
+          "mp-21371",
+          "mp-31460",
+          "mp-5456",
+          "mp-646926",
+          "mp-757163"
+        ],
+        "failing_case_ids": [
+          "mp-1178612",
+          "mp-1219591"
+        ]
+      },
+      "a": {
+        "passes": 14,
+        "denominator": 16,
+        "rate": 0.875,
+        "failures": 2,
+        "passing_case_ids": [
+          "mp-1019259",
+          "mp-1079976",
+          "mp-1095422",
+          "mp-1101160",
+          "mp-1173947",
+          "mp-1217967",
+          "mp-1225818",
+          "mp-1229077",
+          "mp-19419",
+          "mp-21371",
+          "mp-31460",
+          "mp-5456",
+          "mp-646926",
+          "mp-757163"
+        ],
+        "failing_case_ids": [
+          "mp-1178612",
+          "mp-1219591"
+        ]
+      },
+      "b": {
+        "passes": 14,
+        "denominator": 16,
+        "rate": 0.875,
+        "failures": 2,
+        "passing_case_ids": [
+          "mp-1019259",
+          "mp-1079976",
+          "mp-1095422",
+          "mp-1101160",
+          "mp-1173947",
+          "mp-1217967",
+          "mp-1225818",
+          "mp-1229077",
+          "mp-19419",
+          "mp-21371",
+          "mp-31460",
+          "mp-5456",
+          "mp-646926",
+          "mp-757163"
+        ],
+        "failing_case_ids": [
+          "mp-1178612",
+          "mp-1219591"
+        ]
+      },
+      "c": {
+        "passes": 14,
+        "denominator": 16,
+        "rate": 0.875,
+        "failures": 2,
+        "passing_case_ids": [
+          "mp-1019259",
+          "mp-1079976",
+          "mp-1095422",
+          "mp-1101160",
+          "mp-1173947",
+          "mp-1217967",
+          "mp-1225818",
+          "mp-1229077",
+          "mp-19419",
+          "mp-21371",
+          "mp-31460",
+          "mp-5456",
+          "mp-646926",
+          "mp-757163"
+        ],
+        "failing_case_ids": [
+          "mp-1178612",
+          "mp-1219591"
+        ]
+      }
+    }
+  },
+  "Q_swap": {
+    "attempted_cases": 16,
+    "cohort_cases": 16,
+    "successful_responses": 15,
+    "successful_response_case_ids": [
+      "mp-1019259",
+      "mp-1079976",
+      "mp-1095422",
+      "mp-1101160",
+      "mp-1173947",
+      "mp-1178612",
+      "mp-1217967",
+      "mp-1219591",
+      "mp-1225818",
+      "mp-1229077",
+      "mp-21371",
+      "mp-31460",
+      "mp-5456",
+      "mp-646926",
+      "mp-757163"
+    ],
+    "read_error_count": 1,
+    "read_error_case_ids": [
+      "mp-19419"
+    ],
+    "answer_mismatch_count": 15,
+    "answer_mismatch_case_ids": [
+      "mp-1019259",
+      "mp-1079976",
+      "mp-1095422",
+      "mp-1101160",
+      "mp-1173947",
+      "mp-1178612",
+      "mp-1217967",
+      "mp-1219591",
+      "mp-1225818",
+      "mp-1229077",
+      "mp-21371",
+      "mp-31460",
+      "mp-5456",
+      "mp-646926",
+      "mp-757163"
+    ],
+    "field_metrics": {
+      "sg": {
+        "passes": 0,
+        "denominator": 16,
+        "rate": 0.0,
+        "failures": 16,
+        "passing_case_ids": [],
+        "failing_case_ids": [
+          "mp-1019259",
+          "mp-1079976",
+          "mp-1095422",
+          "mp-1101160",
+          "mp-1173947",
+          "mp-1178612",
+          "mp-1217967",
+          "mp-1219591",
+          "mp-1225818",
+          "mp-1229077",
+          "mp-19419",
+          "mp-21371",
+          "mp-31460",
+          "mp-5456",
+          "mp-646926",
+          "mp-757163"
+        ]
+      },
+      "formula": {
+        "passes": 0,
+        "denominator": 16,
+        "rate": 0.0,
+        "failures": 16,
+        "passing_case_ids": [],
+        "failing_case_ids": [
+          "mp-1019259",
+          "mp-1079976",
+          "mp-1095422",
+          "mp-1101160",
+          "mp-1173947",
+          "mp-1178612",
+          "mp-1217967",
+          "mp-1219591",
+          "mp-1225818",
+          "mp-1229077",
+          "mp-19419",
+          "mp-21371",
+          "mp-31460",
+          "mp-5456",
+          "mp-646926",
+          "mp-757163"
+        ]
+      },
+      "atoms": {
+        "passes": 0,
+        "denominator": 16,
+        "rate": 0.0,
+        "failures": 16,
+        "passing_case_ids": [],
+        "failing_case_ids": [
+          "mp-1019259",
+          "mp-1079976",
+          "mp-1095422",
+          "mp-1101160",
+          "mp-1173947",
+          "mp-1178612",
+          "mp-1217967",
+          "mp-1219591",
+          "mp-1225818",
+          "mp-1229077",
+          "mp-19419",
+          "mp-21371",
+          "mp-31460",
+          "mp-5456",
+          "mp-646926",
+          "mp-757163"
+        ]
+      },
+      "orbits": {
+        "passes": 0,
+        "denominator": 16,
+        "rate": 0.0,
+        "failures": 16,
+        "passing_case_ids": [],
+        "failing_case_ids": [
+          "mp-1019259",
+          "mp-1079976",
+          "mp-1095422",
+          "mp-1101160",
+          "mp-1173947",
+          "mp-1178612",
+          "mp-1217967",
+          "mp-1219591",
+          "mp-1225818",
+          "mp-1229077",
+          "mp-19419",
+          "mp-21371",
+          "mp-31460",
+          "mp-5456",
+          "mp-646926",
+          "mp-757163"
+        ]
+      },
+      "a": {
+        "passes": 0,
+        "denominator": 16,
+        "rate": 0.0,
+        "failures": 16,
+        "passing_case_ids": [],
+        "failing_case_ids": [
+          "mp-1019259",
+          "mp-1079976",
+          "mp-1095422",
+          "mp-1101160",
+          "mp-1173947",
+          "mp-1178612",
+          "mp-1217967",
+          "mp-1219591",
+          "mp-1225818",
+          "mp-1229077",
+          "mp-19419",
+          "mp-21371",
+          "mp-31460",
+          "mp-5456",
+          "mp-646926",
+          "mp-757163"
+        ]
+      },
+      "b": {
+        "passes": 0,
+        "denominator": 16,
+        "rate": 0.0,
+        "failures": 16,
+        "passing_case_ids": [],
+        "failing_case_ids": [
+          "mp-1019259",
+          "mp-1079976",
+          "mp-1095422",
+          "mp-1101160",
+          "mp-1173947",
+          "mp-1178612",
+          "mp-1217967",
+          "mp-1219591",
+          "mp-1225818",
+          "mp-1229077",
+          "mp-19419",
+          "mp-21371",
+          "mp-31460",
+          "mp-5456",
+          "mp-646926",
+          "mp-757163"
+        ]
+      },
+      "c": {
+        "passes": 0,
+        "denominator": 16,
+        "rate": 0.0,
+        "failures": 16,
+        "passing_case_ids": [],
+        "failing_case_ids": [
+          "mp-1019259",
+          "mp-1079976",
+          "mp-1095422",
+          "mp-1101160",
+          "mp-1173947",
+          "mp-1178612",
+          "mp-1217967",
+          "mp-1219591",
+          "mp-1225818",
+          "mp-1229077",
+          "mp-19419",
+          "mp-21371",
+          "mp-31460",
+          "mp-5456",
+          "mp-646926",
+          "mp-757163"
+        ]
+      }
+    }
+  },
+  "G_root_cause": {
+    "classification_counts": {
+      "decoder_format_sentence_or_relation": 8,
+      "decoder_semantic_element_name": 3,
+      "decoder_semantic_public_definition": 4,
+      "generation_error_with_END_boundary_error_text": 1
+    },
+    "physical_or_geometry_failures": 0,
+    "requested_condition_failures": 0,
+    "successful_G": 0,
+    "decoder_audit_note": "All 15 returned G sequences failed in decode: four orbit relations did not select a public definition, three element names were malformed/unknown, and eight required sentences or standard-frame relations failed the grammar. One generation attempt errored before a token sequence was saved; its error text reports a block requiring exactly one END, so a boundary error is indicated while exact END/PAD positions remain unverified. Among the 15 saved sequences, no raw token-boundary failure was observed; physical and requested-condition checks were not reached.",
+    "per_case": [
+      {
+        "id": "mp-1229077",
+        "G": false,
+        "classification": "decoder_semantic_public_definition",
+        "attempt_ok": true,
+        "attempt_error": null,
+        "failure_stage": "decode",
+        "reason": "GateError: Orbit multiplicity and representative relations do not select one public definition",
+        "physical_checks": {},
+        "requested_condition_checks": {},
+        "raw_token_boundary": {
+          "token_count": 2560,
+          "K": 2560,
+          "K_exact": true,
+          "END_positions_zero_based": [
+            575
+          ],
+          "END_count": 1,
+          "PAD_count": 1984,
+          "PAD_first_position": 576,
+          "PAD_last_position": 2559,
+          "PAD_before_first_END": false,
+          "PAD_only_after_last_END": true,
+          "non_PAD_tokens_after_last_END": 0,
+          "strict_boundary_pass": true
+        }
+      },
+      {
+        "id": "mp-1019259",
+        "G": false,
+        "classification": "decoder_semantic_element_name",
+        "attempt_ok": true,
+        "attempt_error": null,
+        "failure_stage": "decode",
+        "reason": "GateError: Unknown element name in relational document: Hycury",
+        "physical_checks": {},
+        "requested_condition_checks": {},
+        "raw_token_boundary": {
+          "token_count": 2560,
+          "K": 2560,
+          "K_exact": true,
+          "END_positions_zero_based": [
+            533
+          ],
+          "END_count": 1,
+          "PAD_count": 2026,
+          "PAD_first_position": 534,
+          "PAD_last_position": 2559,
+          "PAD_before_first_END": false,
+          "PAD_only_after_last_END": true,
+          "non_PAD_tokens_after_last_END": 0,
+          "strict_boundary_pass": true
+        }
+      },
+      {
+        "id": "mp-1079976",
+        "G": false,
+        "classification": "decoder_semantic_element_name",
+        "attempt_ok": true,
+        "attempt_error": null,
+        "failure_stage": "decode",
+        "reason": "GateError: Unknown element name in relational document: Germanallium",
+        "physical_checks": {},
+        "requested_condition_checks": {},
+        "raw_token_boundary": {
+          "token_count": 2560,
+          "K": 2560,
+          "K_exact": true,
+          "END_positions_zero_based": [
+            564
+          ],
+          "END_count": 1,
+          "PAD_count": 1995,
+          "PAD_first_position": 565,
+          "PAD_last_position": 2559,
+          "PAD_before_first_END": false,
+          "PAD_only_after_last_END": true,
+          "non_PAD_tokens_after_last_END": 0,
+          "strict_boundary_pass": true
+        }
+      },
+      {
+        "id": "mp-1095422",
+        "G": false,
+        "classification": "decoder_format_sentence_or_relation",
+        "attempt_ok": true,
+        "attempt_error": null,
+        "failure_stage": "decode",
+        "reason": "GateError: Input atom-count sentence is missing or malformed",
+        "physical_checks": {},
+        "requested_condition_checks": {},
+        "raw_token_boundary": {
+          "token_count": 2560,
+          "K": 2560,
+          "K_exact": true,
+          "END_positions_zero_based": [
+            393
+          ],
+          "END_count": 1,
+          "PAD_count": 2166,
+          "PAD_first_position": 394,
+          "PAD_last_position": 2559,
+          "PAD_before_first_END": false,
+          "PAD_only_after_last_END": true,
+          "non_PAD_tokens_after_last_END": 0,
+          "strict_boundary_pass": true
+        }
+      },
+      {
+        "id": "mp-1173947",
+        "G": false,
+        "classification": "decoder_format_sentence_or_relation",
+        "attempt_ok": true,
+        "attempt_error": null,
+        "failure_stage": "decode",
+        "reason": "GateError: Input cell sentence is missing or malformed",
+        "physical_checks": {},
+        "requested_condition_checks": {},
+        "raw_token_boundary": {
+          "token_count": 2560,
+          "K": 2560,
+          "K_exact": true,
+          "END_positions_zero_based": [
+            864
+          ],
+          "END_count": 1,
+          "PAD_count": 1695,
+          "PAD_first_position": 865,
+          "PAD_last_position": 2559,
+          "PAD_before_first_END": false,
+          "PAD_only_after_last_END": true,
+          "non_PAD_tokens_after_last_END": 0,
+          "strict_boundary_pass": true
+        }
+      },
+      {
+        "id": "mp-21371",
+        "G": false,
+        "classification": "decoder_semantic_public_definition",
+        "attempt_ok": true,
+        "attempt_error": null,
+        "failure_stage": "decode",
+        "reason": "GateError: Orbit multiplicity and representative relations do not select one public definition",
+        "physical_checks": {},
+        "requested_condition_checks": {},
+        "raw_token_boundary": {
+          "token_count": 2560,
+          "K": 2560,
+          "K_exact": true,
+          "END_positions_zero_based": [
+            583
+          ],
+          "END_count": 1,
+          "PAD_count": 1976,
+          "PAD_first_position": 584,
+          "PAD_last_position": 2559,
+          "PAD_before_first_END": false,
+          "PAD_only_after_last_END": true,
+          "non_PAD_tokens_after_last_END": 0,
+          "strict_boundary_pass": true
+        }
+      },
+      {
+        "id": "mp-5456",
+        "G": false,
+        "classification": "decoder_format_sentence_or_relation",
+        "attempt_ok": true,
+        "attempt_error": null,
+        "failure_stage": "decode",
+        "reason": "GateError: Standard-frame coordinate relation is missing or malformed",
+        "physical_checks": {},
+        "requested_condition_checks": {},
+        "raw_token_boundary": {
+          "token_count": 2560,
+          "K": 2560,
+          "K_exact": true,
+          "END_positions_zero_based": [
+            640
+          ],
+          "END_count": 1,
+          "PAD_count": 1919,
+          "PAD_first_position": 641,
+          "PAD_last_position": 2559,
+          "PAD_before_first_END": false,
+          "PAD_only_after_last_END": true,
+          "non_PAD_tokens_after_last_END": 0,
+          "strict_boundary_pass": true
+        }
+      },
+      {
+        "id": "mp-19419",
+        "G": false,
+        "classification": "decoder_format_sentence_or_relation",
+        "attempt_ok": true,
+        "attempt_error": null,
+        "failure_stage": "decode",
+        "reason": "GateError: Input atom-count sentence is missing or malformed",
+        "physical_checks": {},
+        "requested_condition_checks": {},
+        "raw_token_boundary": {
+          "token_count": 2560,
+          "K": 2560,
+          "K_exact": true,
+          "END_positions_zero_based": [
+            477
+          ],
+          "END_count": 1,
+          "PAD_count": 2082,
+          "PAD_first_position": 478,
+          "PAD_last_position": 2559,
+          "PAD_before_first_END": false,
+          "PAD_only_after_last_END": true,
+          "non_PAD_tokens_after_last_END": 0,
+          "strict_boundary_pass": true
+        }
+      },
+      {
+        "id": "mp-1219591",
+        "G": false,
+        "classification": "decoder_format_sentence_or_relation",
+        "attempt_ok": true,
+        "attempt_error": null,
+        "failure_stage": "decode",
+        "reason": "GateError: Input cell sentence is missing or malformed",
+        "physical_checks": {},
+        "requested_condition_checks": {},
+        "raw_token_boundary": {
+          "token_count": 2560,
+          "K": 2560,
+          "K_exact": true,
+          "END_positions_zero_based": [
+            678
+          ],
+          "END_count": 1,
+          "PAD_count": 1881,
+          "PAD_first_position": 679,
+          "PAD_last_position": 2559,
+          "PAD_before_first_END": false,
+          "PAD_only_after_last_END": true,
+          "non_PAD_tokens_after_last_END": 0,
+          "strict_boundary_pass": true
+        }
+      },
+      {
+        "id": "mp-1225818",
+        "G": false,
+        "classification": "decoder_format_sentence_or_relation",
+        "attempt_ok": true,
+        "attempt_error": null,
+        "failure_stage": "decode",
+        "reason": "GateError: Input atom-count sentence is missing or malformed",
+        "physical_checks": {},
+        "requested_condition_checks": {},
+        "raw_token_boundary": {
+          "token_count": 2560,
+          "K": 2560,
+          "K_exact": true,
+          "END_positions_zero_based": [
+            660
+          ],
+          "END_count": 1,
+          "PAD_count": 1899,
+          "PAD_first_position": 661,
+          "PAD_last_position": 2559,
+          "PAD_before_first_END": false,
+          "PAD_only_after_last_END": true,
+          "non_PAD_tokens_after_last_END": 0,
+          "strict_boundary_pass": true
+        }
+      },
+      {
+        "id": "mp-757163",
+        "G": false,
+        "classification": "generation_error_with_END_boundary_error_text",
+        "attempt_ok": false,
+        "attempt_error": "CrystalBlockError: crystal block requires exactly one END: The input cell edges a, b, and c measure 4.60115, 5.09117, and 9.290365 angstrom; the angles alpha, beta, and gamma measure 90.0, 90.0, and 90.0 degrees.\nThe public setting is space group 149, with literal Hall symbol -P 6 2c.\nThe input cell contains 80 in total.\nFluorine contributes 6 atoms to the input composition.\nLithium contributes 1 atoms to the input composition.\nVanadium contributes 1 atoms to the input composition.\nThe standard fractional coordinate a equals 0.0 times input a plus 0.9999999999999999 times input b plus 0.0 times input c, then shift 0.0.\nThe standard fractional coordinate b equals 2.2710391072046488e-3 times input a plus 3.0761810281983576e-33 times input b plus 0.0 times input c, then shift 0.0.\nThe standard fractional coordinate c equals 1.0 times input a plus -5.5830567972696634e-33 times input b plus 0.0 times input c, then shift -2.7915283986348317e-33.\nThe input-frame fractional coordinates are rounded to 6 decimal places before any listed corrections.\nLithium forms a nominal 4-site symmetry orbit named o000 in the standard cell.\nIts representative lies in the plane at fractional a offset 0.0.\nIts representative lies in the plane at fractional b offset 0.0.\nIts representative lies in the plane at fractional c offset 0.0.\nLithium forms a nominal 6-site symmetry orbit named o001 in the standard cell.\nIts representative lies in the plane at fractional a offset 0.0.\nIts representative lies in the plane at fractional b offset 0.0.\nAlong c, its representative has the free fractional offset 0.29040700000000002.\nVanadium forms a nominal 4-site symmetry orbit named o002 in the standard cell.\nIts representative lies in the plane at fractional a offset 0.0.\nIts representative lies in the plane at fractional b offset 0.0.\nIts representative lies in the plane at fractional c offset 0.5.\nFluorine forms a nominal 68-site symmetry orbit named o003 in the standard cell.\nAlong a, its representative has the free fractional offset 0.05985300000000007.\nAlong b, its representative has the free fractional offset 0.3407700000000001.\nAlong c, its representative has the free fractional offset 0.48263600000000004.\nFluorine forms a nominal 4-site symmetry orbit named<CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD>",
+        "failure_stage": null,
+        "reason": null,
+        "physical_checks": {},
+        "requested_condition_checks": {},
+        "raw_token_boundary": null,
+        "boundary_error_text_evidence": {
+          "classification": "reported_END_count_mismatch",
+          "source": "saved generation attempt error text",
+          "message": "CrystalBlockError reports that the crystal block requires exactly one END.",
+          "raw_token_ids_saved": false,
+          "END_positions_verifiable": false,
+          "PAD_suffix_verifiable": false,
+          "interpretation": "Boundary failure is evidenced by the error message; exact raw END/PAD positions and token-level boundary conformance are unverified because no token sequence was saved."
+        }
+      },
+      {
+        "id": "mp-1178612",
+        "G": false,
+        "classification": "decoder_semantic_public_definition",
+        "attempt_ok": true,
+        "attempt_error": null,
+        "failure_stage": "decode",
+        "reason": "GateError: Orbit multiplicity and representative relations do not select one public definition",
+        "physical_checks": {},
+        "requested_condition_checks": {},
+        "raw_token_boundary": {
+          "token_count": 2560,
+          "K": 2560,
+          "K_exact": true,
+          "END_positions_zero_based": [
+            690
+          ],
+          "END_count": 1,
+          "PAD_count": 1869,
+          "PAD_first_position": 691,
+          "PAD_last_position": 2559,
+          "PAD_before_first_END": false,
+          "PAD_only_after_last_END": true,
+          "non_PAD_tokens_after_last_END": 0,
+          "strict_boundary_pass": true
+        }
+      },
+      {
+        "id": "mp-1101160",
+        "G": false,
+        "classification": "decoder_semantic_element_name",
+        "attempt_ok": true,
+        "attempt_error": null,
+        "failure_stage": "decode",
+        "reason": "GateError: Unknown element name in relational document: Nitoron",
+        "physical_checks": {},
+        "requested_condition_checks": {},
+        "raw_token_boundary": {
+          "token_count": 2560,
+          "K": 2560,
+          "K_exact": true,
+          "END_positions_zero_based": [
+            703
+          ],
+          "END_count": 1,
+          "PAD_count": 1856,
+          "PAD_first_position": 704,
+          "PAD_last_position": 2559,
+          "PAD_before_first_END": false,
+          "PAD_only_after_last_END": true,
+          "non_PAD_tokens_after_last_END": 0,
+          "strict_boundary_pass": true
+        }
+      },
+      {
+        "id": "mp-31460",
+        "G": false,
+        "classification": "decoder_format_sentence_or_relation",
+        "attempt_ok": true,
+        "attempt_error": null,
+        "failure_stage": "decode",
+        "reason": "GateError: Input cell sentence is missing or malformed",
+        "physical_checks": {},
+        "requested_condition_checks": {},
+        "raw_token_boundary": {
+          "token_count": 2560,
+          "K": 2560,
+          "K_exact": true,
+          "END_positions_zero_based": [
+            513
+          ],
+          "END_count": 1,
+          "PAD_count": 2046,
+          "PAD_first_position": 514,
+          "PAD_last_position": 2559,
+          "PAD_before_first_END": false,
+          "PAD_only_after_last_END": true,
+          "non_PAD_tokens_after_last_END": 0,
+          "strict_boundary_pass": true
+        }
+      },
+      {
+        "id": "mp-646926",
+        "G": false,
+        "classification": "decoder_semantic_public_definition",
+        "attempt_ok": true,
+        "attempt_error": null,
+        "failure_stage": "decode",
+        "reason": "GateError: Orbit multiplicity and representative relations do not select one public definition",
+        "physical_checks": {},
+        "requested_condition_checks": {},
+        "raw_token_boundary": {
+          "token_count": 2560,
+          "K": 2560,
+          "K_exact": true,
+          "END_positions_zero_based": [
+            503
+          ],
+          "END_count": 1,
+          "PAD_count": 2056,
+          "PAD_first_position": 504,
+          "PAD_last_position": 2559,
+          "PAD_before_first_END": false,
+          "PAD_only_after_last_END": true,
+          "non_PAD_tokens_after_last_END": 0,
+          "strict_boundary_pass": true
+        }
+      },
+      {
+        "id": "mp-1217967",
+        "G": false,
+        "classification": "decoder_format_sentence_or_relation",
+        "attempt_ok": true,
+        "attempt_error": null,
+        "failure_stage": "decode",
+        "reason": "GateError: Input atom-count sentence is missing or malformed",
+        "physical_checks": {},
+        "requested_condition_checks": {},
+        "raw_token_boundary": {
+          "token_count": 2560,
+          "K": 2560,
+          "K_exact": true,
+          "END_positions_zero_based": [
+            404
+          ],
+          "END_count": 1,
+          "PAD_count": 2155,
+          "PAD_first_position": 405,
+          "PAD_last_position": 2559,
+          "PAD_before_first_END": false,
+          "PAD_only_after_last_END": true,
+          "non_PAD_tokens_after_last_END": 0,
+          "strict_boundary_pass": true
+        }
+      }
+    ],
+    "public_definition_failure_case_ids": [
+      "mp-1178612",
+      "mp-1229077",
+      "mp-21371",
+      "mp-646926"
+    ],
+    "decoder_format_failure_case_ids": [
+      "mp-1095422",
+      "mp-1173947",
+      "mp-1217967",
+      "mp-1219591",
+      "mp-1225818",
+      "mp-19419",
+      "mp-31460",
+      "mp-5456"
+    ],
+    "decoder_semantic_element_name_case_ids": [
+      "mp-1019259",
+      "mp-1079976",
+      "mp-1101160"
+    ],
+    "generation_error_count": 1
+  },
+  "E_reference_root_cause": {
+    "classification_counts": {
+      "body_decode_failure": 6,
+      "decoded_lattice_and_nonlattice_mismatch": 1,
+      "decoded_lattice_mismatch": 6,
+      "raw_boundary_failure": 3
+    },
+    "raw_boundary_failure_case_ids": [
+      "mp-1178612",
+      "mp-1217967",
+      "mp-1229077"
+    ],
+    "body_decode_failure_case_ids": [
+      "mp-1095422",
+      "mp-1101160",
+      "mp-1173947",
+      "mp-1219591",
+      "mp-19419",
+      "mp-757163"
+    ],
+    "decoded_lattice_mismatch_case_ids": [
+      "mp-1019259",
+      "mp-1079976",
+      "mp-21371",
+      "mp-31460",
+      "mp-5456",
+      "mp-646926"
+    ],
+    "decoded_lattice_and_nonlattice_mismatch_case_ids": [
+      "mp-1225818"
+    ],
+    "decoded_bodies_with_valid_physical_audit": 7,
+    "exact_scale_lengths": 0,
+    "exact_non_lattice_plan": 6,
+    "grade_contract": "Existing score.py::grade_edit, using each frozen source c1 and the recorded plus/minus direction; exact Decimal-derived target lengths; no repair or tolerance change.",
+    "per_case": [
+      {
+        "id": "mp-1229077",
+        "direction": "plus",
+        "E_reference": false,
+        "attempt_ok": false,
+        "raw_token_boundary": {
+          "token_count": 2560,
+          "K": 2560,
+          "K_exact": true,
+          "END_positions_zero_based": [
+            891,
+            892
+          ],
+          "END_count": 2,
+          "PAD_count": 1667,
+          "PAD_first_position": 893,
+          "PAD_last_position": 2559,
+          "PAD_before_first_END": false,
+          "PAD_only_after_last_END": true,
+          "non_PAD_tokens_after_last_END": 0,
+          "strict_boundary_pass": false
+        },
+        "error": "CrystalBlockError: crystal block requires exactly one END: The input cell edges a, b, and c measure 5.65552194, 5.60552994, and 6.9330610965 angstrom; the angles alpha, beta, and gamma measure 65.7365946, 65.7365946, and 90.0 degrees.\nThe public setting is space group 82, with literal Hall symbol I -4.\nThe input cell contains 8 atoms in total.\nAluminum contributes 1 atoms to the input composition.\nCopper contributes 2 atoms to the input composition.\nIndium contributes 1 atoms to the input composition.\nSulfur contributes 4 atoms to the input composition.\nThe standard fractional coordinate a equals -7.141553772848957e-18 times input a plus -1.0 times input b plus -0.5 times input c, then shift -5.551115123125783e-17.\nThe standard fractional coordinate b equals 1.0 times input a plus -4.836959745840887e-17 times input b plus 0.5 times input c, then shift 5.551115123125783e-17.\nThe standard fractional coordinate c equals 7.141553772848957e-18 times input a plus -2.0614021842779957e-17 times input b plus 0.5 times input c, then shift 5.551115123125783e-17.\nThe input-frame fractional coordinates are rounded to 6 decimal places before any listed corrections.\nAluminum forms a nominal 2-site symmetry orbit named o000 in the standard cell.\nIts representative lies in the plane at fractional a offset 0.0.\nIts representative lies in the plane at fractional b offset 0.5.\nIts representative lies in the plane at fractional c offset 0.25.\nIndium forms a nominal 2-site symmetry orbit named o001 in the standard cell.\nIts representative lies in the plane at fractional a offset 0.0.\nIts representative lies in the plane at fractional b offset 0.0.\nIts representative lies in the plane at fractional c offset 0.5.\nCopper forms a nominal 2-site symmetry orbit named o002 in the standard cell.\nIts representative lies in the plane at fractional a offset 0.0.\nIts representative lies in the plane at fractional b offset 0.5.\nIts representative lies in the plane at fractional c offset 0.75.\nCopper forms a nominal 2-site symmetry orbit named o003 in the standard cell.\nIts representative lies in the plane at fractional a offset 0.0.\nIts representative lies in the plane at fractional b offset 0.0.\nIts representative lies in the plane at fractional c offset 0.0.\nSulfur forms a nominal 8-site symmetry orbit named o004 in the standard cell.\nAlong a, its representative has the free fractional offset 0.23178300000000007.\nAlong b, its representative has the free fractional offset 0.757471.\nAlong c, its representative has the free fractional offset 0.13320900000000008.\nThe input-frame fractional correction for retained site o004_1 of Sulfur is (-1.0000000000287557e-06, 0.0, 0.0).\nThe input-frame fractional correction for retained site o004_3 of Sulfur is (0.0, 9.999999999732445e-07, 0.0).<CRYSTAL_END><CRYSTAL_END><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD>",
+        "classification": "raw_boundary_failure"
+      },
+      {
+        "id": "mp-1019259",
+        "direction": "plus",
+        "E_reference": false,
+        "attempt_ok": true,
+        "raw_token_boundary": {
+          "token_count": 2560,
+          "K": 2560,
+          "K_exact": true,
+          "END_positions_zero_based": [
+            502
+          ],
+          "END_count": 1,
+          "PAD_count": 2057,
+          "PAD_first_position": 503,
+          "PAD_last_position": 2559,
+          "PAD_before_first_END": false,
+          "PAD_only_after_last_END": true,
+          "non_PAD_tokens_after_last_END": 0,
+          "strict_boundary_pass": true
+        },
+        "body_decode_stage": null,
+        "body_decode_reasons": [],
+        "grade": {
+          "lengths_exact": false,
+          "non_lattice_plan_exact": true,
+          "whole_geometry_scale": false,
+          "edited_physical_valid": true,
+          "exact_target_plan": false,
+          "max_abs_lattice_target_error_A": 0.15352999999999994,
+          "max_relative_lattice_target_error": 0.017598280891075242,
+          "whole_geometry_scale_errors_A": {
+            "lattice_matrix_max_abs": 0.15352999999999994,
+            "coordinate_max": 0.0,
+            "defined": true,
+            "undefined_reason": null
+          }
+        },
+        "classification": "decoded_lattice_mismatch"
+      },
+      {
+        "id": "mp-1079976",
+        "direction": "plus",
+        "E_reference": false,
+        "attempt_ok": true,
+        "raw_token_boundary": {
+          "token_count": 2560,
+          "K": 2560,
+          "K_exact": true,
+          "END_positions_zero_based": [
+            694
+          ],
+          "END_count": 1,
+          "PAD_count": 1865,
+          "PAD_first_position": 695,
+          "PAD_last_position": 2559,
+          "PAD_before_first_END": false,
+          "PAD_only_after_last_END": true,
+          "non_PAD_tokens_after_last_END": 0,
+          "strict_boundary_pass": true
+        },
+        "body_decode_stage": null,
+        "body_decode_reasons": [],
+        "grade": {
+          "lengths_exact": false,
+          "non_lattice_plan_exact": true,
+          "whole_geometry_scale": false,
+          "edited_physical_valid": true,
+          "exact_target_plan": false,
+          "max_abs_lattice_target_error_A": 0.05241149999999983,
+          "max_relative_lattice_target_error": 0.011965257093107168,
+          "whole_geometry_scale_errors_A": {
+            "lattice_matrix_max_abs": 0.05241149999999983,
+            "coordinate_max": 0.0,
+            "defined": true,
+            "undefined_reason": null
+          }
+        },
+        "classification": "decoded_lattice_mismatch"
+      },
+      {
+        "id": "mp-1095422",
+        "direction": "plus",
+        "E_reference": false,
+        "attempt_ok": true,
+        "raw_token_boundary": {
+          "token_count": 2560,
+          "K": 2560,
+          "K_exact": true,
+          "END_positions_zero_based": [
+            412
+          ],
+          "END_count": 1,
+          "PAD_count": 2147,
+          "PAD_first_position": 413,
+          "PAD_last_position": 2559,
+          "PAD_before_first_END": false,
+          "PAD_only_after_last_END": true,
+          "non_PAD_tokens_after_last_END": 0,
+          "strict_boundary_pass": true
+        },
+        "body_decode_stage": "decode",
+        "body_decode_reasons": [
+          "GateError: At least one relational orbit is required"
+        ],
+        "classification": "body_decode_failure"
+      },
+      {
+        "id": "mp-1173947",
+        "direction": "plus",
+        "E_reference": false,
+        "attempt_ok": true,
+        "raw_token_boundary": {
+          "token_count": 2560,
+          "K": 2560,
+          "K_exact": true,
+          "END_positions_zero_based": [
+            2370
+          ],
+          "END_count": 1,
+          "PAD_count": 189,
+          "PAD_first_position": 2371,
+          "PAD_last_position": 2559,
+          "PAD_before_first_END": false,
+          "PAD_only_after_last_END": true,
+          "non_PAD_tokens_after_last_END": 0,
+          "strict_boundary_pass": true
+        },
+        "body_decode_stage": "decode",
+        "body_decode_reasons": [
+          "GateError: Unrecognized representative coordinate sentence: Along representative has the free fractional offset 0.8999415."
+        ],
+        "classification": "body_decode_failure"
+      },
+      {
+        "id": "mp-21371",
+        "direction": "plus",
+        "E_reference": false,
+        "attempt_ok": true,
+        "raw_token_boundary": {
+          "token_count": 2560,
+          "K": 2560,
+          "K_exact": true,
+          "END_positions_zero_based": [
+            634
+          ],
+          "END_count": 1,
+          "PAD_count": 1925,
+          "PAD_first_position": 635,
+          "PAD_last_position": 2559,
+          "PAD_before_first_END": false,
+          "PAD_only_after_last_END": true,
+          "non_PAD_tokens_after_last_END": 0,
+          "strict_boundary_pass": true
+        },
+        "body_decode_stage": null,
+        "body_decode_reasons": [],
+        "grade": {
+          "lengths_exact": false,
+          "non_lattice_plan_exact": true,
+          "whole_geometry_scale": false,
+          "edited_physical_valid": true,
+          "exact_target_plan": false,
+          "max_abs_lattice_target_error_A": 0.5709499999999998,
+          "max_relative_lattice_target_error": 0.09121648586966445,
+          "whole_geometry_scale_errors_A": {
+            "lattice_matrix_max_abs": 0.5709499999999998,
+            "coordinate_max": 0.0,
+            "defined": true,
+            "undefined_reason": null
+          }
+        },
+        "classification": "decoded_lattice_mismatch"
+      },
+      {
+        "id": "mp-5456",
+        "direction": "plus",
+        "E_reference": false,
+        "attempt_ok": true,
+        "raw_token_boundary": {
+          "token_count": 2560,
+          "K": 2560,
+          "K_exact": true,
+          "END_positions_zero_based": [
+            649
+          ],
+          "END_count": 1,
+          "PAD_count": 1910,
+          "PAD_first_position": 650,
+          "PAD_last_position": 2559,
+          "PAD_before_first_END": false,
+          "PAD_only_after_last_END": true,
+          "non_PAD_tokens_after_last_END": 0,
+          "strict_boundary_pass": true
+        },
+        "body_decode_stage": null,
+        "body_decode_reasons": [],
+        "grade": {
+          "lengths_exact": false,
+          "non_lattice_plan_exact": true,
+          "whole_geometry_scale": false,
+          "edited_physical_valid": true,
+          "exact_target_plan": false,
+          "max_abs_lattice_target_error_A": 3.7999999999982492e-06,
+          "max_relative_lattice_target_error": 5.25819428932359e-07,
+          "whole_geometry_scale_errors_A": {
+            "lattice_matrix_max_abs": 3.7999999999982492e-06,
+            "coordinate_max": 0.0,
+            "defined": true,
+            "undefined_reason": null
+          }
+        },
+        "classification": "decoded_lattice_mismatch"
+      },
+      {
+        "id": "mp-19419",
+        "direction": "minus",
+        "E_reference": false,
+        "attempt_ok": true,
+        "raw_token_boundary": {
+          "token_count": 2560,
+          "K": 2560,
+          "K_exact": true,
+          "END_positions_zero_based": [
+            676
+          ],
+          "END_count": 1,
+          "PAD_count": 1883,
+          "PAD_first_position": 677,
+          "PAD_last_position": 2559,
+          "PAD_before_first_END": false,
+          "PAD_only_after_last_END": true,
+          "non_PAD_tokens_after_last_END": 0,
+          "strict_boundary_pass": true
+        },
+        "body_decode_stage": "decode",
+        "body_decode_reasons": [
+          "GateError: Input cell sentence is missing or malformed"
+        ],
+        "classification": "body_decode_failure"
+      },
+      {
+        "id": "mp-1219591",
+        "direction": "plus",
+        "E_reference": false,
+        "attempt_ok": true,
+        "raw_token_boundary": {
+          "token_count": 2560,
+          "K": 2560,
+          "K_exact": true,
+          "END_positions_zero_based": [
+            847
+          ],
+          "END_count": 1,
+          "PAD_count": 1712,
+          "PAD_first_position": 848,
+          "PAD_last_position": 2559,
+          "PAD_before_first_END": false,
+          "PAD_only_after_last_END": true,
+          "non_PAD_tokens_after_last_END": 0,
+          "strict_boundary_pass": true
+        },
+        "body_decode_stage": "decode",
+        "body_decode_reasons": [
+          "GateError: Unrecognized representative coordinate sentence: Along c, in the plane at fractional c offset 0.75."
+        ],
+        "classification": "body_decode_failure"
+      },
+      {
+        "id": "mp-1225818",
+        "direction": "minus",
+        "E_reference": false,
+        "attempt_ok": true,
+        "raw_token_boundary": {
+          "token_count": 2560,
+          "K": 2560,
+          "K_exact": true,
+          "END_positions_zero_based": [
+            790
+          ],
+          "END_count": 1,
+          "PAD_count": 1769,
+          "PAD_first_position": 791,
+          "PAD_last_position": 2559,
+          "PAD_before_first_END": false,
+          "PAD_only_after_last_END": true,
+          "non_PAD_tokens_after_last_END": 0,
+          "strict_boundary_pass": true
+        },
+        "body_decode_stage": null,
+        "body_decode_reasons": [],
+        "grade": {
+          "lengths_exact": false,
+          "non_lattice_plan_exact": false,
+          "whole_geometry_scale": false,
+          "edited_physical_valid": true,
+          "exact_target_plan": false,
+          "max_abs_lattice_target_error_A": 0.2567035440000005,
+          "max_relative_lattice_target_error": 0.053765353753523,
+          "whole_geometry_scale_errors_A": {
+            "lattice_matrix_max_abs": 0.2567035439999996,
+            "coordinate_max": 1.9043509999999997,
+            "defined": true,
+            "undefined_reason": null
+          }
+        },
+        "classification": "decoded_lattice_and_nonlattice_mismatch"
+      },
+      {
+        "id": "mp-757163",
+        "direction": "plus",
+        "E_reference": false,
+        "attempt_ok": true,
+        "raw_token_boundary": {
+          "token_count": 2560,
+          "K": 2560,
+          "K_exact": true,
+          "END_positions_zero_based": [
+            466
+          ],
+          "END_count": 1,
+          "PAD_count": 2093,
+          "PAD_first_position": 467,
+          "PAD_last_position": 2559,
+          "PAD_before_first_END": false,
+          "PAD_only_after_last_END": true,
+          "non_PAD_tokens_after_last_END": 0,
+          "strict_boundary_pass": true
+        },
+        "body_decode_stage": "decode",
+        "body_decode_reasons": [
+          "GateError: Unrecognized representative coordinate sentence: Along b its representative has the free fractional offset 0.36066299999999996."
+        ],
+        "classification": "body_decode_failure"
+      },
+      {
+        "id": "mp-1178612",
+        "direction": "plus",
+        "E_reference": false,
+        "attempt_ok": false,
+        "raw_token_boundary": {
+          "token_count": 2560,
+          "K": 2560,
+          "K_exact": true,
+          "END_positions_zero_based": [
+            1013,
+            1014
+          ],
+          "END_count": 2,
+          "PAD_count": 1545,
+          "PAD_first_position": 1015,
+          "PAD_last_position": 2559,
+          "PAD_before_first_END": false,
+          "PAD_only_after_last_END": true,
+          "non_PAD_tokens_after_last_END": 0,
+          "strict_boundary_pass": false
+        },
+        "error": "CrystalBlockError: crystal block requires exactly one END: The input cell edges a, b, and c measure 7.779818221999999, 7.779818222, and 7.779818272 angstrom; the angles alpha, beta, and gamma measure 137.09853607, 102.27344977999999, and 93.14694167000002 degrees.\nThe public setting is space group 72, with literal Hall symbol -I 2 2c.\nThe input cell contains 20 atoms in total.\nOxygen contributes 12 atoms to the input composition.\nSilicon contributes 4 atoms to the input composition.\nZinc contributes 4 atoms to the input composition.\nThe standard fractional coordinate a equals 0.5 times input a plus -0.5 times input b plus 0.5 times input c, then shift -8.326672684688674e-17.\nThe standard fractional coordinate b equals 0.5 times input a plus 0.5000000000000001 times input b plus -0.5000000000000001 times input c, then shift 2.7755575615628914e-17.\nThe standard fractional coordinate c equals -0.5 times input a plus 0.5000000000000001 times input b plus 0.5000000000000001 times input c, then shift 2.7755575615628914e-17.\nThe input-frame fractional coordinates are rounded to 6 decimal places before any listed corrections.\nZinc forms a nominal 8-site symmetry orbit named o000 in the standard cell.\nIts representative lies in the plane at fractional a offset 0.0.\nAlong b, its representative has the free fractional offset 0.290828.\nIts representative lies in the plane at fractional c offset 0.25.\nSilicon forms a nominal 8-site symmetry orbit named o001 in the standard cell.\nAlong a, its representative has the free fractional offset 0.2196134999999999.\nAlong b, its representative has the free fractional offset 0.08092949999999988.\nIts representative lies in the plane at fractional c offset 0.0.\nOxygen forms a nominal 8-site symmetry orbit named o002 in the standard cell.\nAlong a, its representative has the free fractional offset 0.18710099999999996.\nIts representative lies in the plane at fractional b offset 0.0.\nIts representative lies in the plane at fractional c offset 0.25.\nOxygen forms a nominal 8-site symmetry orbit named o003 in the standard cell.\nAlong a, its representative has the free fractional offset 0.11378599999999993.\nAlong b, its representative has the free fractional offset 0.2051560000000001.\nIts representative lies in the plane at fractional c offset 0.0.\nOxygen forms a nominal 8-site symmetry orbit named o004 in the standard cell.\nAlong a, its representative has the free fractional offset 0.11350900000000008.\nAlong b, its representative has the free fractional offset 0.621599.\nIts representative lies in the plane at fractional c offset 0.0.\nThe input-frame fractional correction for retained site o001_1 of Silicon is (0.0, 0.0, 1.000000000001e-06).\nThe input-frame fractional correction for retained site o001_2 of Silicon is (0.0, 0.0, -9.999999999732445e-07).\nThe input-frame fractional correction for retained site o001_3 of Silicon is (0.0, 0.0, -1.0000000000287557e-06).<CRYSTAL_END><CRYSTAL_END><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD><CRYSTAL_PAD>",
+        "classification": "raw_boundary_failure"
+      },
+      {
+        "id": "mp-1101160",
+        "direction": "minus",
+        "E_reference": false,
+        "attempt_ok": true,
+        "raw_token_boundary": {
+          "token_count": 2560,
+          "K": 2560,
+          "K_exact": true,
+          "END_positions_zero_based": [
+            1650
+          ],
+          "END_count": 1,
+          "PAD_count": 909,
+          "PAD_first_position": 1651,
+          "PAD_last_position": 2559,
+          "PAD_before_first_END": false,
+          "PAD_only_after_last_END": true,
+          "non_PAD_tokens_after_last_END": 0,
+          "strict_boundary_pass": true
+        },
+        "body_decode_stage": "decode",
+        "body_decode_reasons": [
+          "GateError: Input cell sentence is missing or malformed"
+        ],
+        "classification": "body_decode_failure"
+      },
+      {
+        "id": "mp-31460",
+        "direction": "minus",
+        "E_reference": false,
+        "attempt_ok": true,
+        "raw_token_boundary": {
+          "token_count": 2560,
+          "K": 2560,
+          "K_exact": true,
+          "END_positions_zero_based": [
+            629
+          ],
+          "END_count": 1,
+          "PAD_count": 1930,
+          "PAD_first_position": 630,
+          "PAD_last_position": 2559,
+          "PAD_before_first_END": false,
+          "PAD_only_after_last_END": true,
+          "non_PAD_tokens_after_last_END": 0,
+          "strict_boundary_pass": true
+        },
+        "body_decode_stage": null,
+        "body_decode_reasons": [],
+        "grade": {
+          "lengths_exact": false,
+          "non_lattice_plan_exact": true,
+          "whole_geometry_scale": false,
+          "edited_physical_valid": true,
+          "exact_target_plan": false,
+          "max_abs_lattice_target_error_A": 0.0038805499999998716,
+          "max_relative_lattice_target_error": 0.0009652300301842337,
+          "whole_geometry_scale_errors_A": {
+            "lattice_matrix_max_abs": 0.0038805499999998716,
+            "coordinate_max": 0.0,
+            "defined": true,
+            "undefined_reason": null
+          }
+        },
+        "classification": "decoded_lattice_mismatch"
+      },
+      {
+        "id": "mp-646926",
+        "direction": "minus",
+        "E_reference": false,
+        "attempt_ok": true,
+        "raw_token_boundary": {
+          "token_count": 2560,
+          "K": 2560,
+          "K_exact": true,
+          "END_positions_zero_based": [
+            563
+          ],
+          "END_count": 1,
+          "PAD_count": 1996,
+          "PAD_first_position": 564,
+          "PAD_last_position": 2559,
+          "PAD_before_first_END": false,
+          "PAD_only_after_last_END": true,
+          "non_PAD_tokens_after_last_END": 0,
+          "strict_boundary_pass": true
+        },
+        "body_decode_stage": null,
+        "body_decode_reasons": [],
+        "grade": {
+          "lengths_exact": false,
+          "non_lattice_plan_exact": true,
+          "whole_geometry_scale": false,
+          "edited_physical_valid": true,
+          "exact_target_plan": false,
+          "max_abs_lattice_target_error_A": 0.060456298000000075,
+          "max_relative_lattice_target_error": 0.011852861332325366,
+          "whole_geometry_scale_errors_A": {
+            "lattice_matrix_max_abs": 0.06045629799999919,
+            "coordinate_max": 0.0,
+            "defined": true,
+            "undefined_reason": null
+          }
+        },
+        "classification": "decoded_lattice_mismatch"
+      },
+      {
+        "id": "mp-1217967",
+        "direction": "plus",
+        "E_reference": false,
+        "attempt_ok": false,
+        "raw_token_boundary": {
+          "token_count": 2560,
+          "K": 2560,
+          "K_exact": true,
+          "END_positions_zero_based": [
+            738,
+            951
+          ],
+          "END_count": 2,
+          "PAD_count": 0,
+          "PAD_first_position": null,
+          "PAD_last_position": null,
+          "PAD_before_first_END": false,
+          "PAD_only_after_last_END": true,
+          "non_PAD_tokens_after_last_END": 1608,
+          "strict_boundary_pass": false
+        },
+        "error": "CrystalBlockError: crystal block requires exactly one END: The input cell edges a, b, and c measure 4.491163352, 4.491163352, and 4.7959965 angstrom; the angles alpha, beta, and gamma measure 90.0, 90.0, and 120.00000390000002 degrees.\nThe public setting is space group 187, with literal Hall symbol P -6 2.\nThe input cell contains 3 atoms in total.\nPhosphorus contributes 1 atoms to the input composition.\nPlatinum contributes 1 atoms to the input composition.\nStrontium contributes 1 atoms to the input composition.\nThe standard fractional coordinate a equals 1.0 times input a plus 1.5618900718644984e-17 times input b plus 0.0 times input c, then shift 0.9999996666666665.\nThe standard fractional coordinate b equals 0.0 times input a plus 1.0000000000000002 times input b plus 0.0 times input c, then shift 3.3333333323189623e-07.\nThe standard fractional coordinate c equals -6.920304975570727e-33 times input a plus 5.405646668507582e-33 times input b plus 1.0 times input c, then shift -4.108646439375555e-33.\nThe input-frame fractional coordinates are rounded to 6 decimal places before any listed corrections.\nStrontium forms a nominal 1-site symmetry orbit named o000 in the standard cell.\nIts representative lies in the plane at fractional a offset 0.6666666666666666.\nIts representative lies in the plane at fractional b offset 0.3333333333333333.\nIts representative lies in the plane at fractional c offset 0.0.\nPhosphine forms a nominal 1-site symmetry orbit named o001 in the standard cell.\nIts representative lies in the plane at fractional a offset 0.3333333333333333.\nIts representative lies in the plane at fractional b offset 0.6666666666666666.\nIts representative lies in the plane at fractional c offset 0.5.\nPlatinum forms a nominal 1-site symmetry orbit named o002 in the standard cell.\nIts representative lies in the plane at fractional a offset 0.0.\nIts representative lies in the plane at fractional b offset 0.0.\nIts representative lies in the plane at fractional c offset 0.5.\nThe input-frame fractional correction for retained site o001_1 of Phosph is (-1.0000000000287557e-06, 1.0000000000287557e-06, 0.0).<CRYSTAL_END> input-frame fractional correction for retained site o002_1 of Platinum is is (-1.0000000000287556e-06, 1.0000000000287506e-06, 0.0).The input-frame fractional correction for retained site o002_1 of Platinum is is (0.0000000000028757e-06, -1.0000000000287557e-06, 0.0).The input-frame fractional correction for retained site o002_1 of Phosph is (-1.0000000000287557e-06, 1.0000000000287557e-06, 0.0).<CRYSTAL_END> input-frame fractional correction for retained site o002_1 of Phosph is (1.0000000000287557e-06, -1.0000000000287557e-06, 0.0).\nThe input-frame fractional correction for retained site o002_1 of Phosph is (0.0000000000028757e-06, -1.0000000000287557e-06, 0.0).\nThe input-frame fractional correction for retained site o002_1 of Phosph is (-1.0000000000287557e-06, 1.0000000000287557e-06, 0.0).\nThe input-frame fractional correction for retained site o002_1 of Phosph is (1.0000000000287557e-06, -1.0000000000287557e-06, 0.0).\nThe input-frame fractional correction for retained site o002_1 of Phosph is (0.0000000000028557e-06, -1.0000000000287557e-06, 0.0).\nThe input-frame fractional correction for retained site o002_1 of Phosph is (-1.0000000000287557e-06, 1.0000000000287557e-06, 0.0).\nThe input-frame fractional correction for retained site o002_1 of Phosph is (1.0000000000287557e-06, -1.0000000000287557e-06, 0.0).\nThe input-frame fractional correction for retained site o002_1 of Phosph is (0.0000000000028557e-06, -1.0000000000287557e-06, 0.0).\nThe input-frame fractional correction for retained site o002_1 of Phosph is (-1.0000000000287557e-06, 1.0000000000287557e-06, 0.0).\nThe input-frame fractional correction for retained site o002_1 of Phosph is (1.0000000000287557e-06, -1.0000000000287557e-06, 0.0).\nThe input-frame fractional correction for retained site o002_1 of Phosph is (0.0000000000028557e-06, -1.0000000000287557e-06, 0.0).\nThe input-frame fractional correction for retained site o002_1 of Phosph is (-1.0000000000287557e-06, 1.0000000000287557e-06, 0.0).\nThe input-frame fractional correction for retained site o002_1 of Phosph is (1.0000000000287557e-06, -1.0000000000287557e-06, 0.0).\nThe input-frame fractional correction for retained site o002_1 of Phosph is (0.0000000000028557e-06, -1.0000000000287557e-06, 0.0).\nThe input-frame fractional correction for retained site o002_1 of Phosph is (-1.0000000000287557e-06, 1.0000000000287557e-06, 0.0).\nThe input-frame fractional correction for retained site o002_1 of Phosph is (1.0000000000287557e-06, -1.0000000000287557e-06, 0.0).\nThe input-frame fractional correction for retained site o002_1 of Phosph is (0.0000000000028557e-06, -1.0000000000287557e-06, 0.0).\nThe input-frame fractional correction for retained site o002_1 of Phosph is (-1.0000000000287557e-06, 1.0000000000287557e-06, 0.0).\nThe input-frame fractional correction for retained site o002_1 of Phosph is (1.0000000000287557e-06, -1.0000000000287557e-06, 0.0).\nThe input-frame fractional correction for retained site o002_1 of Phosph is (0.0000000000028557e-06, -1.0000000000287557e-06, 0.0).\nThe input-frame fractional correction for retained site o002_1 of Phosph is (-1.0000000000287557e-06, 1.0000000000287557e-06, 0.0).\nThe input-frame fractional correction for retained site o002_1 of Phosph is (1.0000000000287557e-06, -1.0000000000287557e-06, 0.0).\nThe input-frame fractional correction for retained site o002_1 of Phosph is (0.0000000000028557e-06, -1.00",
+        "classification": "raw_boundary_failure"
+      }
+    ]
+  },
+  "raw_token_boundaries": {
+    "token_ids": {
+      "CRYSTAL_END": 151666,
+      "CRYSTAL_PAD": 151668
+    },
+    "K": 2560,
+    "G": {
+      "returned_sequence_count": 15,
+      "generation_attempt_count": 16,
+      "all_returned_sequences_exact_K": true,
+      "unique_END_and_PAD_suffix_passes": 15,
+      "raw_boundary_failure_count": 0,
+      "generation_error_without_saved_sequence_case_ids": [
+        "mp-757163"
+      ],
+      "error_text_indicates_END_boundary_failure_case_ids": [
+        "mp-757163"
+      ],
+      "error_text_boundary_positions_unverified_case_ids": [
+        "mp-757163"
+      ],
+      "raw_token_boundary_absence_claim_scope": "No token-level boundary error was observed among the 15 saved G token sequences. mp-757163 has no saved sequence; its error text reports an exactly-one-END boundary error, but exact token positions cannot be verified."
+    },
+    "E_reference": {
+      "attempt_count": 16,
+      "all_attempts_exact_K": true,
+      "unique_END_and_PAD_suffix_passes": 13,
+      "raw_boundary_failure_count": 3
+    },
+    "per_case_G": [
+      {
+        "id": "mp-1229077",
+        "boundary": {
+          "token_count": 2560,
+          "K": 2560,
+          "K_exact": true,
+          "END_positions_zero_based": [
+            575
+          ],
+          "END_count": 1,
+          "PAD_count": 1984,
+          "PAD_first_position": 576,
+          "PAD_last_position": 2559,
+          "PAD_before_first_END": false,
+          "PAD_only_after_last_END": true,
+          "non_PAD_tokens_after_last_END": 0,
+          "strict_boundary_pass": true
+        }
+      },
+      {
+        "id": "mp-1019259",
+        "boundary": {
+          "token_count": 2560,
+          "K": 2560,
+          "K_exact": true,
+          "END_positions_zero_based": [
+            533
+          ],
+          "END_count": 1,
+          "PAD_count": 2026,
+          "PAD_first_position": 534,
+          "PAD_last_position": 2559,
+          "PAD_before_first_END": false,
+          "PAD_only_after_last_END": true,
+          "non_PAD_tokens_after_last_END": 0,
+          "strict_boundary_pass": true
+        }
+      },
+      {
+        "id": "mp-1079976",
+        "boundary": {
+          "token_count": 2560,
+          "K": 2560,
+          "K_exact": true,
+          "END_positions_zero_based": [
+            564
+          ],
+          "END_count": 1,
+          "PAD_count": 1995,
+          "PAD_first_position": 565,
+          "PAD_last_position": 2559,
+          "PAD_before_first_END": false,
+          "PAD_only_after_last_END": true,
+          "non_PAD_tokens_after_last_END": 0,
+          "strict_boundary_pass": true
+        }
+      },
+      {
+        "id": "mp-1095422",
+        "boundary": {
+          "token_count": 2560,
+          "K": 2560,
+          "K_exact": true,
+          "END_positions_zero_based": [
+            393
+          ],
+          "END_count": 1,
+          "PAD_count": 2166,
+          "PAD_first_position": 394,
+          "PAD_last_position": 2559,
+          "PAD_before_first_END": false,
+          "PAD_only_after_last_END": true,
+          "non_PAD_tokens_after_last_END": 0,
+          "strict_boundary_pass": true
+        }
+      },
+      {
+        "id": "mp-1173947",
+        "boundary": {
+          "token_count": 2560,
+          "K": 2560,
+          "K_exact": true,
+          "END_positions_zero_based": [
+            864
+          ],
+          "END_count": 1,
+          "PAD_count": 1695,
+          "PAD_first_position": 865,
+          "PAD_last_position": 2559,
+          "PAD_before_first_END": false,
+          "PAD_only_after_last_END": true,
+          "non_PAD_tokens_after_last_END": 0,
+          "strict_boundary_pass": true
+        }
+      },
+      {
+        "id": "mp-21371",
+        "boundary": {
+          "token_count": 2560,
+          "K": 2560,
+          "K_exact": true,
+          "END_positions_zero_based": [
+            583
+          ],
+          "END_count": 1,
+          "PAD_count": 1976,
+          "PAD_first_position": 584,
+          "PAD_last_position": 2559,
+          "PAD_before_first_END": false,
+          "PAD_only_after_last_END": true,
+          "non_PAD_tokens_after_last_END": 0,
+          "strict_boundary_pass": true
+        }
+      },
+      {
+        "id": "mp-5456",
+        "boundary": {
+          "token_count": 2560,
+          "K": 2560,
+          "K_exact": true,
+          "END_positions_zero_based": [
+            640
+          ],
+          "END_count": 1,
+          "PAD_count": 1919,
+          "PAD_first_position": 641,
+          "PAD_last_position": 2559,
+          "PAD_before_first_END": false,
+          "PAD_only_after_last_END": true,
+          "non_PAD_tokens_after_last_END": 0,
+          "strict_boundary_pass": true
+        }
+      },
+      {
+        "id": "mp-19419",
+        "boundary": {
+          "token_count": 2560,
+          "K": 2560,
+          "K_exact": true,
+          "END_positions_zero_based": [
+            477
+          ],
+          "END_count": 1,
+          "PAD_count": 2082,
+          "PAD_first_position": 478,
+          "PAD_last_position": 2559,
+          "PAD_before_first_END": false,
+          "PAD_only_after_last_END": true,
+          "non_PAD_tokens_after_last_END": 0,
+          "strict_boundary_pass": true
+        }
+      },
+      {
+        "id": "mp-1219591",
+        "boundary": {
+          "token_count": 2560,
+          "K": 2560,
+          "K_exact": true,
+          "END_positions_zero_based": [
+            678
+          ],
+          "END_count": 1,
+          "PAD_count": 1881,
+          "PAD_first_position": 679,
+          "PAD_last_position": 2559,
+          "PAD_before_first_END": false,
+          "PAD_only_after_last_END": true,
+          "non_PAD_tokens_after_last_END": 0,
+          "strict_boundary_pass": true
+        }
+      },
+      {
+        "id": "mp-1225818",
+        "boundary": {
+          "token_count": 2560,
+          "K": 2560,
+          "K_exact": true,
+          "END_positions_zero_based": [
+            660
+          ],
+          "END_count": 1,
+          "PAD_count": 1899,
+          "PAD_first_position": 661,
+          "PAD_last_position": 2559,
+          "PAD_before_first_END": false,
+          "PAD_only_after_last_END": true,
+          "non_PAD_tokens_after_last_END": 0,
+          "strict_boundary_pass": true
+        }
+      },
+      {
+        "id": "mp-757163",
+        "boundary": null
+      },
+      {
+        "id": "mp-1178612",
+        "boundary": {
+          "token_count": 2560,
+          "K": 2560,
+          "K_exact": true,
+          "END_positions_zero_based": [
+            690
+          ],
+          "END_count": 1,
+          "PAD_count": 1869,
+          "PAD_first_position": 691,
+          "PAD_last_position": 2559,
+          "PAD_before_first_END": false,
+          "PAD_only_after_last_END": true,
+          "non_PAD_tokens_after_last_END": 0,
+          "strict_boundary_pass": true
+        }
+      },
+      {
+        "id": "mp-1101160",
+        "boundary": {
+          "token_count": 2560,
+          "K": 2560,
+          "K_exact": true,
+          "END_positions_zero_based": [
+            703
+          ],
+          "END_count": 1,
+          "PAD_count": 1856,
+          "PAD_first_position": 704,
+          "PAD_last_position": 2559,
+          "PAD_before_first_END": false,
+          "PAD_only_after_last_END": true,
+          "non_PAD_tokens_after_last_END": 0,
+          "strict_boundary_pass": true
+        }
+      },
+      {
+        "id": "mp-31460",
+        "boundary": {
+          "token_count": 2560,
+          "K": 2560,
+          "K_exact": true,
+          "END_positions_zero_based": [
+            513
+          ],
+          "END_count": 1,
+          "PAD_count": 2046,
+          "PAD_first_position": 514,
+          "PAD_last_position": 2559,
+          "PAD_before_first_END": false,
+          "PAD_only_after_last_END": true,
+          "non_PAD_tokens_after_last_END": 0,
+          "strict_boundary_pass": true
+        }
+      },
+      {
+        "id": "mp-646926",
+        "boundary": {
+          "token_count": 2560,
+          "K": 2560,
+          "K_exact": true,
+          "END_positions_zero_based": [
+            503
+          ],
+          "END_count": 1,
+          "PAD_count": 2056,
+          "PAD_first_position": 504,
+          "PAD_last_position": 2559,
+          "PAD_before_first_END": false,
+          "PAD_only_after_last_END": true,
+          "non_PAD_tokens_after_last_END": 0,
+          "strict_boundary_pass": true
+        }
+      },
+      {
+        "id": "mp-1217967",
+        "boundary": {
+          "token_count": 2560,
+          "K": 2560,
+          "K_exact": true,
+          "END_positions_zero_based": [
+            404
+          ],
+          "END_count": 1,
+          "PAD_count": 2155,
+          "PAD_first_position": 405,
+          "PAD_last_position": 2559,
+          "PAD_before_first_END": false,
+          "PAD_only_after_last_END": true,
+          "non_PAD_tokens_after_last_END": 0,
+          "strict_boundary_pass": true
+        }
+      }
+    ],
+    "per_case_E_reference": [
+      {
+        "id": "mp-1229077",
+        "boundary": {
+          "token_count": 2560,
+          "K": 2560,
+          "K_exact": true,
+          "END_positions_zero_based": [
+            891,
+            892
+          ],
+          "END_count": 2,
+          "PAD_count": 1667,
+          "PAD_first_position": 893,
+          "PAD_last_position": 2559,
+          "PAD_before_first_END": false,
+          "PAD_only_after_last_END": true,
+          "non_PAD_tokens_after_last_END": 0,
+          "strict_boundary_pass": false
+        }
+      },
+      {
+        "id": "mp-1019259",
+        "boundary": {
+          "token_count": 2560,
+          "K": 2560,
+          "K_exact": true,
+          "END_positions_zero_based": [
+            502
+          ],
+          "END_count": 1,
+          "PAD_count": 2057,
+          "PAD_first_position": 503,
+          "PAD_last_position": 2559,
+          "PAD_before_first_END": false,
+          "PAD_only_after_last_END": true,
+          "non_PAD_tokens_after_last_END": 0,
+          "strict_boundary_pass": true
+        }
+      },
+      {
+        "id": "mp-1079976",
+        "boundary": {
+          "token_count": 2560,
+          "K": 2560,
+          "K_exact": true,
+          "END_positions_zero_based": [
+            694
+          ],
+          "END_count": 1,
+          "PAD_count": 1865,
+          "PAD_first_position": 695,
+          "PAD_last_position": 2559,
+          "PAD_before_first_END": false,
+          "PAD_only_after_last_END": true,
+          "non_PAD_tokens_after_last_END": 0,
+          "strict_boundary_pass": true
+        }
+      },
+      {
+        "id": "mp-1095422",
+        "boundary": {
+          "token_count": 2560,
+          "K": 2560,
+          "K_exact": true,
+          "END_positions_zero_based": [
+            412
+          ],
+          "END_count": 1,
+          "PAD_count": 2147,
+          "PAD_first_position": 413,
+          "PAD_last_position": 2559,
+          "PAD_before_first_END": false,
+          "PAD_only_after_last_END": true,
+          "non_PAD_tokens_after_last_END": 0,
+          "strict_boundary_pass": true
+        }
+      },
+      {
+        "id": "mp-1173947",
+        "boundary": {
+          "token_count": 2560,
+          "K": 2560,
+          "K_exact": true,
+          "END_positions_zero_based": [
+            2370
+          ],
+          "END_count": 1,
+          "PAD_count": 189,
+          "PAD_first_position": 2371,
+          "PAD_last_position": 2559,
+          "PAD_before_first_END": false,
+          "PAD_only_after_last_END": true,
+          "non_PAD_tokens_after_last_END": 0,
+          "strict_boundary_pass": true
+        }
+      },
+      {
+        "id": "mp-21371",
+        "boundary": {
+          "token_count": 2560,
+          "K": 2560,
+          "K_exact": true,
+          "END_positions_zero_based": [
+            634
+          ],
+          "END_count": 1,
+          "PAD_count": 1925,
+          "PAD_first_position": 635,
+          "PAD_last_position": 2559,
+          "PAD_before_first_END": false,
+          "PAD_only_after_last_END": true,
+          "non_PAD_tokens_after_last_END": 0,
+          "strict_boundary_pass": true
+        }
+      },
+      {
+        "id": "mp-5456",
+        "boundary": {
+          "token_count": 2560,
+          "K": 2560,
+          "K_exact": true,
+          "END_positions_zero_based": [
+            649
+          ],
+          "END_count": 1,
+          "PAD_count": 1910,
+          "PAD_first_position": 650,
+          "PAD_last_position": 2559,
+          "PAD_before_first_END": false,
+          "PAD_only_after_last_END": true,
+          "non_PAD_tokens_after_last_END": 0,
+          "strict_boundary_pass": true
+        }
+      },
+      {
+        "id": "mp-19419",
+        "boundary": {
+          "token_count": 2560,
+          "K": 2560,
+          "K_exact": true,
+          "END_positions_zero_based": [
+            676
+          ],
+          "END_count": 1,
+          "PAD_count": 1883,
+          "PAD_first_position": 677,
+          "PAD_last_position": 2559,
+          "PAD_before_first_END": false,
+          "PAD_only_after_last_END": true,
+          "non_PAD_tokens_after_last_END": 0,
+          "strict_boundary_pass": true
+        }
+      },
+      {
+        "id": "mp-1219591",
+        "boundary": {
+          "token_count": 2560,
+          "K": 2560,
+          "K_exact": true,
+          "END_positions_zero_based": [
+            847
+          ],
+          "END_count": 1,
+          "PAD_count": 1712,
+          "PAD_first_position": 848,
+          "PAD_last_position": 2559,
+          "PAD_before_first_END": false,
+          "PAD_only_after_last_END": true,
+          "non_PAD_tokens_after_last_END": 0,
+          "strict_boundary_pass": true
+        }
+      },
+      {
+        "id": "mp-1225818",
+        "boundary": {
+          "token_count": 2560,
+          "K": 2560,
+          "K_exact": true,
+          "END_positions_zero_based": [
+            790
+          ],
+          "END_count": 1,
+          "PAD_count": 1769,
+          "PAD_first_position": 791,
+          "PAD_last_position": 2559,
+          "PAD_before_first_END": false,
+          "PAD_only_after_last_END": true,
+          "non_PAD_tokens_after_last_END": 0,
+          "strict_boundary_pass": true
+        }
+      },
+      {
+        "id": "mp-757163",
+        "boundary": {
+          "token_count": 2560,
+          "K": 2560,
+          "K_exact": true,
+          "END_positions_zero_based": [
+            466
+          ],
+          "END_count": 1,
+          "PAD_count": 2093,
+          "PAD_first_position": 467,
+          "PAD_last_position": 2559,
+          "PAD_before_first_END": false,
+          "PAD_only_after_last_END": true,
+          "non_PAD_tokens_after_last_END": 0,
+          "strict_boundary_pass": true
+        }
+      },
+      {
+        "id": "mp-1178612",
+        "boundary": {
+          "token_count": 2560,
+          "K": 2560,
+          "K_exact": true,
+          "END_positions_zero_based": [
+            1013,
+            1014
+          ],
+          "END_count": 2,
+          "PAD_count": 1545,
+          "PAD_first_position": 1015,
+          "PAD_last_position": 2559,
+          "PAD_before_first_END": false,
+          "PAD_only_after_last_END": true,
+          "non_PAD_tokens_after_last_END": 0,
+          "strict_boundary_pass": false
+        }
+      },
+      {
+        "id": "mp-1101160",
+        "boundary": {
+          "token_count": 2560,
+          "K": 2560,
+          "K_exact": true,
+          "END_positions_zero_based": [
+            1650
+          ],
+          "END_count": 1,
+          "PAD_count": 909,
+          "PAD_first_position": 1651,
+          "PAD_last_position": 2559,
+          "PAD_before_first_END": false,
+          "PAD_only_after_last_END": true,
+          "non_PAD_tokens_after_last_END": 0,
+          "strict_boundary_pass": true
+        }
+      },
+      {
+        "id": "mp-31460",
+        "boundary": {
+          "token_count": 2560,
+          "K": 2560,
+          "K_exact": true,
+          "END_positions_zero_based": [
+            629
+          ],
+          "END_count": 1,
+          "PAD_count": 1930,
+          "PAD_first_position": 630,
+          "PAD_last_position": 2559,
+          "PAD_before_first_END": false,
+          "PAD_only_after_last_END": true,
+          "non_PAD_tokens_after_last_END": 0,
+          "strict_boundary_pass": true
+        }
+      },
+      {
+        "id": "mp-646926",
+        "boundary": {
+          "token_count": 2560,
+          "K": 2560,
+          "K_exact": true,
+          "END_positions_zero_based": [
+            563
+          ],
+          "END_count": 1,
+          "PAD_count": 1996,
+          "PAD_first_position": 564,
+          "PAD_last_position": 2559,
+          "PAD_before_first_END": false,
+          "PAD_only_after_last_END": true,
+          "non_PAD_tokens_after_last_END": 0,
+          "strict_boundary_pass": true
+        }
+      },
+      {
+        "id": "mp-1217967",
+        "boundary": {
+          "token_count": 2560,
+          "K": 2560,
+          "K_exact": true,
+          "END_positions_zero_based": [
+            738,
+            951
+          ],
+          "END_count": 2,
+          "PAD_count": 0,
+          "PAD_first_position": null,
+          "PAD_last_position": null,
+          "PAD_before_first_END": false,
+          "PAD_only_after_last_END": true,
+          "non_PAD_tokens_after_last_END": 1608,
+          "strict_boundary_pass": false
+        }
+      }
+    ]
+  },
+  "actual_generated_history": {
+    "eligible_actual_Q2_cases": [],
+    "actual_Q2_attempted_cases": [],
+    "actual_Q2_expected_attempts_after_G_gate": 0,
+    "interpretation": "No actual generated-history Q2 was eligible or attempted because G=0/16; this is the expected gated denominator, not missing evidence."
+  },
+  "space_group_coverage": {
+    "seen8_unique_sgs": [
+      62,
+      65,
+      74,
+      99,
+      139,
+      164,
+      194,
+      225
+    ],
+    "seen8_unique_sg_count": 8,
+    "train32_unique_sgs": [
+      1,
+      3,
+      12,
+      14,
+      38,
+      40,
+      46,
+      55,
+      62,
+      65,
+      70,
+      74,
+      99,
+      107,
+      119,
+      127,
+      129,
+      139,
+      140,
+      141,
+      148,
+      161,
+      164,
+      181,
+      189,
+      193,
+      194,
+      198,
+      215,
+      221,
+      225,
+      229
+    ],
+    "train32_unique_sg_count": 32,
+    "heldout16_unique_sgs": [
+      2,
+      8,
+      10,
+      62,
+      63,
+      71,
+      72,
+      74,
+      82,
+      149,
+      166,
+      180,
+      186,
+      187,
+      216,
+      227
+    ],
+    "heldout16_unique_sg_count": 16,
+    "heldout_sgs_also_in_train32": [
+      62,
+      74
+    ],
+    "heldout_case_ids_with_sg_seen_in_train32": [
+      "mp-1219591",
+      "mp-21371"
+    ],
+    "heldout_case_count_with_sg_seen_in_train32": 2,
+    "heldout_case_count_with_sg_unseen_in_train32": 14,
+    "interpretation": "Descriptive manifest/records coverage only; does not attribute model failures to SG novelty."
+  },
+  "audit_method": {
+    "raw_counts": "Recounted Boolean outcomes and stage/kind failure entries directly from all 16 JSONL records.",
+    "read_fields": "Recounted seven strict fields for every attempted Q_reference and Q_swap response; read errors count as field failures in denominator 16.",
+    "G": "Used saved generation token IDs and saved strict generation audit; no model decoding/inference was run.",
+    "E_reference": "Checked saved token IDs, then applied the existing local score.py parser and grade_edit to returned crystal text against frozen source c1.",
+    "boundary_rule": "Exactly one CRYSTAL_END, no CRYSTAL_PAD before it, no non-PAD token after the final END, and K=2560."
+  }
+}

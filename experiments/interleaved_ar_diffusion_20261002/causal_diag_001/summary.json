@@ -1,0 +1,230 @@
+{
+  "status": "complete",
+  "training_updates": 0,
+  "edit_summary": {
+    "reference": {
+      "n": 24,
+      "success": 23
+    },
+    "actual": {
+      "n": 24,
+      "success": 13
+    },
+    "canonical_structure": {
+      "n": 24,
+      "success": 13
+    }
+  },
+  "reading_summary": {
+    "seen_pairs": {
+      "train": {
+        "n": 24,
+        "success": 24,
+        "correct_by_field": {
+          "sg": 24,
+          "formula": 24,
+          "atoms": 24,
+          "orbits": 24,
+          "a": 24,
+          "b": 24,
+          "c": 24
+        }
+      },
+      "query_only": {
+        "n": 24,
+        "success": 0,
+        "correct_by_field": {
+          "sg": 0,
+          "formula": 20,
+          "atoms": 20,
+          "orbits": 20,
+          "a": 0,
+          "b": 0,
+          "c": 0
+        }
+      },
+      "full_test": {
+        "n": 24,
+        "success": 0,
+        "correct_by_field": {
+          "sg": 0,
+          "formula": 22,
+          "atoms": 21,
+          "orbits": 22,
+          "a": 0,
+          "b": 0,
+          "c": 0
+        }
+      }
+    },
+    "heldout_pairs": {
+      "train": {
+        "n": 32,
+        "success": 30,
+        "correct_by_field": {
+          "sg": 30,
+          "formula": 32,
+          "atoms": 32,
+          "orbits": 32,
+          "a": 32,
+          "b": 32,
+          "c": 32
+        }
+      },
+      "query_only": {
+        "n": 32,
+        "success": 0,
+        "correct_by_field": {
+          "sg": 2,
+          "formula": 30,
+          "atoms": 30,
+          "orbits": 29,
+          "a": 0,
+          "b": 0,
+          "c": 0
+        }
+      },
+      "full_test": {
+        "n": 32,
+        "success": 0,
+        "correct_by_field": {
+          "sg": 2,
+          "formula": 29,
+          "atoms": 29,
+          "orbits": 27,
+          "a": 0,
+          "b": 0,
+          "c": 0
+        }
+      }
+    }
+  },
+  "edit_checkpoint_config": {
+    "mode": "hybrid",
+    "phase": "joint",
+    "feedback": false,
+    "updates": 200,
+    "seed": 17,
+    "status": "trained",
+    "initial_fingerprint": "cc32cb8499e36b08c135b804eea94746cf9087c2f215caa7acc4a8a893ca5749",
+    "warm_fingerprint": "cc32cb8499e36b08c135b804eea94746cf9087c2f215caa7acc4a8a893ca5749",
+    "slurm_job": "600420",
+    "host": "gpu-a100-05",
+    "gpu": "NVIDIA A100-SXM4-80GB",
+    "noise_policy": "50% full MASK; remaining uniform 1..31",
+    "source_sha256": {
+      "diagnose.py": "04f551667b8e3fd0b6be79b997e9ac4ca0ea11dae76c06c5b3981e42e406b0b9",
+      "model.py": "d7abb6bcc6da9b339408ee928caef4b80a4cf8a40204a0b61b8a68b7c9aca79a",
+      "test_checks.py": "69688c1c8ef0dc1385d481ca1787953891c71dc3a50d35dc72216f929aa6d971",
+      "run.py": "9f0f856357413230acdebf6e9269705e49ccb3be47fc3c8d7ad0a13ce068558f",
+      "prepare.py": "12434c3c231564395a0f7c1c379bb57306f41fe5a38365aa9e81408fa6274925",
+      "score.py": "645184cc388bad2554b4615e63135f27e90e150407335067577375dc41525c0a",
+      "adapt.py": "3e322436f7517f277383cf9538c437569df46d74064bbde84fae782a718935fc"
+    },
+    "completed_updates": 200,
+    "elapsed_seconds": 160.27216946566477,
+    "noise_counts": {
+      "32": 821,
+      "24": 25,
+      "18": 29,
+      "4": 19,
+      "22": 27,
+      "28": 19,
+      "5": 27,
+      "30": 30,
+      "13": 29,
+      "27": 28,
+      "31": 32,
+      "26": 31,
+      "25": 30,
+      "17": 21,
+      "2": 29,
+      "8": 16,
+      "12": 25,
+      "3": 22,
+      "11": 29,
+      "19": 30,
+      "23": 29,
+      "15": 24,
+      "16": 25,
+      "9": 29,
+      "10": 16,
+      "20": 22,
+      "6": 15,
+      "21": 32,
+      "7": 20,
+      "14": 30,
+      "1": 16,
+      "29": 23
+    },
+    "training_seconds": 160.27306646993384,
+    "seconds_per_update_median": 0.799708975944668,
+    "final_fingerprint": "28ab12fc4ea85e940be48ff986edc05ee15f598e473682c3015cd3617c3135d7"
+  },
+  "reading_checkpoint_config": {
+    "mode": "hybrid",
+    "phase": "joint",
+    "feedback": true,
+    "updates": 200,
+    "seed": 17,
+    "status": "trained",
+    "initial_fingerprint": "cc32cb8499e36b08c135b804eea94746cf9087c2f215caa7acc4a8a893ca5749",
+    "warm_fingerprint": "cc32cb8499e36b08c135b804eea94746cf9087c2f215caa7acc4a8a893ca5749",
+    "slurm_job": "600420",
+    "host": "gpu-a100-05",
+    "gpu": "NVIDIA A100-SXM4-80GB",
+    "noise_policy": "50% full MASK; remaining uniform 1..31",
+    "source_sha256": {
+      "diagnose.py": "04f551667b8e3fd0b6be79b997e9ac4ca0ea11dae76c06c5b3981e42e406b0b9",
+      "model.py": "d7abb6bcc6da9b339408ee928caef4b80a4cf8a40204a0b61b8a68b7c9aca79a",
+      "test_checks.py": "69688c1c8ef0dc1385d481ca1787953891c71dc3a50d35dc72216f929aa6d971",
+      "run.py": "9f0f856357413230acdebf6e9269705e49ccb3be47fc3c8d7ad0a13ce068558f",
+      "prepare.py": "12434c3c231564395a0f7c1c379bb57306f41fe5a38365aa9e81408fa6274925",
+      "score.py": "645184cc388bad2554b4615e63135f27e90e150407335067577375dc41525c0a",
+      "adapt.py": "3e322436f7517f277383cf9538c437569df46d74064bbde84fae782a718935fc"
+    },
+    "completed_updates": 200,
+    "elapsed_seconds": 160.25715131359175,
+    "noise_counts": {
+      "32": 821,
+      "24": 25,
+      "18": 29,
+      "4": 19,
+      "22": 27,
+      "28": 19,
+      "5": 27,
+      "30": 30,
+      "13": 29,
+      "27": 28,
+      "31": 32,
+      "26": 31,
+      "25": 30,
+      "17": 21,
+      "2": 29,
+      "8": 16,
+      "12": 25,
+      "3": 22,
+      "11": 29,
+      "19": 30,
+      "23": 29,
+      "15": 24,
+      "16": 25,
+      "9": 29,
+      "10": 16,
+      "20": 22,
+      "6": 15,
+      "21": 32,
+      "7": 20,
+      "14": 30,
+      "1": 16,
+      "29": 23
+    },
+    "training_seconds": 160.25788436969742,
+    "seconds_per_update_median": 0.7986914929933846,
+    "final_fingerprint": "9e692a7169c4b52a462f21652b4012167989968e22a09cb879badae7eff840a9"
+  },
+  "elapsed_seconds": 338.6438425909728,
+  "slurm_job": "601081",
+  "code_sha256": "ae2ff5c4acaf80d9b745faa330faff89dcb77f01fbf3c4bba9844c32c1671b33",
+  "note": "Controlled diagnosis only. Reference and canonical histories are probes, not hard-coded production answers."
+}

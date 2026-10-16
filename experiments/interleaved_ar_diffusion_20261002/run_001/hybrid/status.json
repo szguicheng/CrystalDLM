@@ -1,0 +1,61 @@
+{
+  "mode": "hybrid",
+  "status": "evaluated",
+  "updates": 200,
+  "seed": 17,
+  "initial_added_embedding_sha256": "7458a60f3aa32a434cd0a7aebb05a0738b3222f71d731f1aacbba2c49b8d9846",
+  "host": "gpu-a100-05",
+  "slurm_job": "600367",
+  "gpu": "NVIDIA A100-SXM4-80GB",
+  "packages": {
+    "torch": "2.2.0+cu121",
+    "transformers": "4.57.6",
+    "numpy": "1.26.4",
+    "pyxtal": "1.0.8",
+    "pymatgen": "2025.10.7",
+    "spglib": "2.7.0"
+  },
+  "code_hashes": {
+    "model.py": "c46c232f14da3f23776c0c19899e9faa44e8ae814d93503fb3d9e3abaee32259",
+    "test_checks.py": "78a714b06abcf993c89a03d466241e1903e63acc2c1417f468e9a6649f09f942",
+    "run.py": "9f0f856357413230acdebf6e9269705e49ccb3be47fc3c8d7ad0a13ce068558f",
+    "prepare.py": "12434c3c231564395a0f7c1c379bb57306f41fe5a38365aa9e81408fa6274925",
+    "score.py": "645184cc388bad2554b4615e63135f27e90e150407335067577375dc41525c0a"
+  },
+  "dataset_manifest_sha256": "59d55f50cb47264bd1133d4b674b62677e745896951f7cb40e2bea15e829e711",
+  "microbatch": 2,
+  "accumulation": 8,
+  "effective_batch": 16,
+  "completed_updates": 200,
+  "elapsed_seconds": 163.84678467782214,
+  "peak_gpu_MB": 11721.08544921875,
+  "training_seconds": 167.48547866102308,
+  "summary": {
+    "n": 8,
+    "counts": {
+      "G": 0,
+      "Q_reference": 8,
+      "E_reference": 0,
+      "closed_loop": 0,
+      "flow_complete": 0,
+      "Q_swap": 0,
+      "Q_no_crystal": 0
+    },
+    "rates": {
+      "G": 0.0,
+      "Q_reference": 1.0,
+      "E_reference": 0.0,
+      "closed_loop": 0.0,
+      "flow_complete": 0.0,
+      "Q_swap": 0.0,
+      "Q_no_crystal": 0.0
+    },
+    "elapsed_seconds": 51.62705268710852,
+    "attempts_retried": 0,
+    "seconds_median": 6.043001270387322,
+    "seconds_p95": 8.096659053838811,
+    "evaluation_split": "train",
+    "training_materials_evaluated": true,
+    "stage0_passed": false
+  }
+}

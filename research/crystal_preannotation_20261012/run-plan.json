@@ -1,0 +1,34 @@
+{
+  "authorized_stage": "preannotation only: full CPU preprocessing plus 30 training material API pilot",
+  "full_source_records": 45629,
+  "pilot_records": 30,
+  "pilot_source": "pilot30-source.jsonl.gz",
+  "annotation_interface": "https://llm.sciencepal.ai/v1/chat/completions",
+  "model": "deepseek-v4-pro",
+  "thinking": {
+    "type": "enabled"
+  },
+  "reasoning_effort": "max",
+  "api_concurrency": 1,
+  "inter_request_delay_seconds": 1,
+  "max_tokens": 16384,
+  "on_api_error": "persist receipt and stop; no model or reasoning fallback",
+  "resume": "skip matching successful request fingerprints; reject changed inputs",
+  "bulk_llm_authorized": false,
+  "generator_training_authorized": false,
+  "cpu_remote_status": "Both fullvalidationjobs completed and resourcesreleased",
+  "structure_method": "pymatgen CrystalNN geometry-only mode; settings/version frozen by preprocessing worker",
+  "full_validation_jobs": [
+    "624103",
+    "624223"
+  ],
+  "final_pilot_captions": "pilot30-rendered-final.jsonl",
+  "preannotation_preparation_status": "complete",
+  "final_eligible_records": 45465,
+  "final_eligible_split_counts": {
+    "train": 36362,
+    "val": 4501,
+    "test": 4602
+  },
+  "final_queue_directory": "prepared_002"
+}

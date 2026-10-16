@@ -1,0 +1,29 @@
+{
+  "version": "naturecry-public-expand-frame-select-round-correct-v1",
+  "free_parameter_order": "exact axes order in the frozen public Wyckoff definition; no representative fitting",
+  "orbit_order": "stable orbit id ascending",
+  "operation_order": "frozen public definition order",
+  "frame_relation": "q_standard = P q_input + s",
+  "frame_images": "low=floor(sum(min(P,0), axis=1)+s-1), high=ceil(sum(max(P,0), axis=1)+s+1), inclusive integer ranges in itertools.product order with the last axis changing fastest",
+  "boundary_selection": "retain transformed candidates with every component in [-1e-9,1+1e-9], then modulo 1 and snap values within 1e-12 of 1 to 0",
+  "deduplication": "first-retained, same-element periodic max-component distance <1e-8; no deduplication after correction",
+  "stable_site_id": "<orbit_id>_<1-based retained-site ordinal within orbit>",
+  "rounding": "numpy.round to round_digits fractional decimals (ties to even), then modulo 1",
+  "execution_order": [
+    "expand standard public orbits",
+    "enumerate input-frame images",
+    "select boundary images",
+    "modulo, snap boundary one to zero, and species-aware first-retained deduplicate",
+    "round coordinates if round_digits is stated",
+    "modulo rounded coordinates",
+    "resolve correction site_ids",
+    "add input-frame fractional delta",
+    "modulo corrected coordinates",
+    "check composition and input atom count",
+    "construct Structure"
+  ],
+  "thresholds": {
+    "coordinate_A_strictly_less_than": 1e-06,
+    "lattice_component_A_strictly_less_than": 1e-08
+  }
+}

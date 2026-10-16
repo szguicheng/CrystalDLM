@@ -1,0 +1,812 @@
+{
+  "title": "Matched first-three heldout comparison: B4 vs B8 fixed vs B8 AR control",
+  "scope": {
+    "matched_ids": [
+      "mp-1229077",
+      "mp-1019259",
+      "mp-1079976"
+    ],
+    "selection": "First three heldout IDs in B4 log order, matched against the same IDs in both B8 logs.",
+    "logs": {
+      "eval_full_history_b4_001": "experiments/interleaved_relational_scaled32_20261006/eval_full_history_b4_001/heldout16/evaluation.jsonl",
+      "eval_full_history_b8_fixed_001": "experiments/interleaved_relational_scaled32_20261006/eval_full_history_b8_fixed_001/heldout16/evaluation.jsonl",
+      "eval_full_history_b8_ar_control_001": "experiments/interleaved_relational_scaled32_20261006/eval_full_history_b8_ar_control_001/heldout16/evaluation.jsonl"
+    },
+    "data_records": "experiments/interleaved_relational_scaled32_20261006/data_001/records.jsonl",
+    "coverage_audit": "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/scaled32_coverage_audit.json",
+    "comparison_basis": "Read-only JSONL, stored plans, and audit comparison; no SSH, model compute, checkpoint weights, or native inference."
+  },
+  "raw_generation_contract": {
+    "K": 2560,
+    "token_ids_from_frozen_tokenizer": {
+      "<CRYSTAL_END>": 151666,
+      "<CRYSTAL_MASK>": 151667,
+      "<CRYSTAL_PAD>": 151668
+    },
+    "valid_boundary_definition": "Exactly one END, no PAD before it, all remaining raw K slots PAD, and no MASK token.",
+    "count_over_matched_records": {
+      "raw_K_2560": 9,
+      "valid_END_PAD_boundary": 8,
+      "missing_END_and_PAD": 1
+    }
+  },
+  "coverage_audit_context": {
+    "matching_rule": "Exact (space_group_number, Wyckoff label) pairs from plans.source.orbits; letters are compared only within their space group.",
+    "training_sets_checked": [
+      "oldtrain8 (first eight train records)",
+      "train32 (all 32 train records)"
+    ],
+    "audit_population": {
+      "heldout_cases": 16,
+      "heldout_cases_with_unseen_sg_oldtrain8": 14,
+      "heldout_cases_with_unseen_sg_train32": 14,
+      "heldout_cases_with_any_unseen_sg_wyckoff_definition": 15,
+      "exact_training_sg_wyckoff_definitions": 92
+    },
+    "interpretation": "All three matched cases have SGs and exact SG–Wyckoff pairs absent from both checked training cohorts. These cases therefore do not test generalization to seen SG/SG–Wyckoff definitions."
+  },
+  "cases": [
+    {
+      "id": "mp-1229077",
+      "split": "heldout",
+      "condition_sg": 82,
+      "source_plan_sg": 82,
+      "source_plan_wyckoff_labels_by_orbit": [
+        "2c",
+        "2b",
+        "2d",
+        "2a",
+        "8g"
+      ],
+      "training_coverage": {
+        "oldtrain8": {
+          "space_group_seen": false,
+          "seen_sg_wyckoff_orbit_pairs": [],
+          "unseen_sg_wyckoff_orbit_pairs": [
+            "82:2c",
+            "82:2b",
+            "82:2d",
+            "82:2a",
+            "82:8g"
+          ]
+        },
+        "train32": {
+          "space_group_seen": false,
+          "seen_sg_wyckoff_orbit_pairs": [],
+          "unseen_sg_wyckoff_orbit_pairs": [
+            "82:2c",
+            "82:2b",
+            "82:2d",
+            "82:2a",
+            "82:8g"
+          ]
+        }
+      },
+      "audit_unseen_definitions": [
+        "2a",
+        "2b",
+        "2c",
+        "2d",
+        "8g"
+      ],
+      "runs": {
+        "eval_full_history_b4_001": {
+          "generation": {
+            "G_pass": false,
+            "G_failure_classes": [
+              {
+                "kind": "generation_audit",
+                "reasons": [
+                  "GateError: Orbit multiplicity and representative relations do not select one public definition"
+                ]
+              }
+            ],
+            "generation_ok": true,
+            "raw_token_count": 2560,
+            "raw_K": 2560,
+            "END_positions_zero_based": [
+              590
+            ],
+            "PAD_count": 1969,
+            "PAD_before_END": false,
+            "PAD_tail_after_END": true,
+            "MASK_count": 0,
+            "strict_raw_boundary": "one_END_then_PAD_to_K"
+          },
+          "E_reference": {
+            "response_ok": true,
+            "grade_success": false,
+            "fields": {
+              "lengths_exact": false,
+              "other_plan_fields_exact": true,
+              "whole_geometry_scale": false,
+              "exact_target_plan": false,
+              "whole_geometry_scale_defined": true,
+              "edited_physical_audit": false
+            },
+            "length_max_abs_error_A": 0.09579399999999971,
+            "length_max_relative_error": 0.016665250553554042,
+            "whole_geometry_scale_lattice_matrix_max_abs_A": 0.08733212546647007,
+            "whole_geometry_scale_coordinate_max_A": 0.0,
+            "non_lattice_fields_exact": true,
+            "edited_physical_audit": false,
+            "output_audit_reasons": [
+              "redetected_space_group_mismatch"
+            ]
+          },
+          "Q_reference": {
+            "success": true,
+            "fields": {
+              "space_group": true,
+              "formula": true,
+              "atoms": true,
+              "orbits": true,
+              "a": true,
+              "b": true,
+              "c": true
+            }
+          },
+          "Q_swap": {
+            "success": true,
+            "fields": {
+              "space_group": true,
+              "formula": true,
+              "atoms": true,
+              "orbits": true,
+              "a": true,
+              "b": true,
+              "c": true
+            }
+          },
+          "swap_id": "mp-1019259"
+        },
+        "eval_full_history_b8_fixed_001": {
+          "generation": {
+            "G_pass": false,
+            "G_failure_classes": [
+              {
+                "kind": "generation_error",
+                "error_class": "CrystalBlockError: crystal block requires exactly one END"
+              }
+            ],
+            "generation_ok": false,
+            "raw_token_count": 2560,
+            "raw_K": 2560,
+            "END_positions_zero_based": [],
+            "PAD_count": 0,
+            "PAD_before_END": false,
+            "PAD_tail_after_END": false,
+            "MASK_count": 0,
+            "strict_raw_boundary": "missing_END_and_PAD"
+          },
+          "E_reference": {
+            "response_ok": true,
+            "grade_success": false,
+            "fields": {
+              "lengths_exact": false,
+              "other_plan_fields_exact": false,
+              "whole_geometry_scale": false
+            },
+            "length_max_abs_error_A": null,
+            "length_max_relative_error": null,
+            "whole_geometry_scale_lattice_matrix_max_abs_A": null,
+            "whole_geometry_scale_coordinate_max_A": null,
+            "non_lattice_fields_exact": false,
+            "edited_physical_audit": null,
+            "output_audit_reasons": [
+              "GateError: Input cell sentence is missing or malformed"
+            ]
+          },
+          "Q_reference": {
+            "success": true,
+            "fields": {
+              "space_group": true,
+              "formula": true,
+              "atoms": true,
+              "orbits": true,
+              "a": true,
+              "b": true,
+              "c": true
+            }
+          },
+          "Q_swap": {
+            "success": false,
+            "fields": {
+              "space_group": true,
+              "formula": false,
+              "atoms": true,
+              "orbits": true,
+              "a": true,
+              "b": true,
+              "c": true
+            }
+          },
+          "swap_id": "mp-1019259"
+        },
+        "eval_full_history_b8_ar_control_001": {
+          "generation": {
+            "G_pass": false,
+            "G_failure_classes": [
+              {
+                "kind": "generation_audit",
+                "reasons": [
+                  "GateError: Orbit multiplicity and representative relations do not select one public definition"
+                ]
+              }
+            ],
+            "generation_ok": true,
+            "raw_token_count": 2560,
+            "raw_K": 2560,
+            "END_positions_zero_based": [
+              589
+            ],
+            "PAD_count": 1970,
+            "PAD_before_END": false,
+            "PAD_tail_after_END": true,
+            "MASK_count": 0,
+            "strict_raw_boundary": "one_END_then_PAD_to_K"
+          },
+          "E_reference": {
+            "response_ok": true,
+            "grade_success": false,
+            "fields": {
+              "lengths_exact": false,
+              "other_plan_fields_exact": true,
+              "whole_geometry_scale": false,
+              "exact_target_plan": false,
+              "whole_geometry_scale_defined": true,
+              "edited_physical_audit": false
+            },
+            "length_max_abs_error_A": 0.10300499999999957,
+            "length_max_relative_error": 0.017919745842838092,
+            "whole_geometry_scale_lattice_matrix_max_abs_A": 0.09390614844012912,
+            "whole_geometry_scale_coordinate_max_A": 0.0,
+            "non_lattice_fields_exact": true,
+            "edited_physical_audit": false,
+            "output_audit_reasons": [
+              "redetected_space_group_mismatch"
+            ]
+          },
+          "Q_reference": {
+            "success": true,
+            "fields": {
+              "space_group": true,
+              "formula": true,
+              "atoms": true,
+              "orbits": true,
+              "a": true,
+              "b": true,
+              "c": true
+            }
+          },
+          "Q_swap": {
+            "success": false,
+            "fields": {
+              "space_group": true,
+              "formula": false,
+              "atoms": true,
+              "orbits": true,
+              "a": true,
+              "b": true,
+              "c": true
+            }
+          },
+          "swap_id": "mp-1019259"
+        }
+      }
+    },
+    {
+      "id": "mp-1019259",
+      "split": "heldout",
+      "condition_sg": 186,
+      "source_plan_sg": 186,
+      "source_plan_wyckoff_labels_by_orbit": [
+        "2a",
+        "2b",
+        "2b"
+      ],
+      "training_coverage": {
+        "oldtrain8": {
+          "space_group_seen": false,
+          "seen_sg_wyckoff_orbit_pairs": [],
+          "unseen_sg_wyckoff_orbit_pairs": [
+            "186:2a",
+            "186:2b",
+            "186:2b"
+          ]
+        },
+        "train32": {
+          "space_group_seen": false,
+          "seen_sg_wyckoff_orbit_pairs": [],
+          "unseen_sg_wyckoff_orbit_pairs": [
+            "186:2a",
+            "186:2b",
+            "186:2b"
+          ]
+        }
+      },
+      "audit_unseen_definitions": [
+        "2a",
+        "2b"
+      ],
+      "runs": {
+        "eval_full_history_b4_001": {
+          "generation": {
+            "G_pass": false,
+            "G_failure_classes": [
+              {
+                "kind": "generation_audit",
+                "reasons": [
+                  "GateError: Orbit multiplicity and representative relations do not select one public definition"
+                ]
+              }
+            ],
+            "generation_ok": true,
+            "raw_token_count": 2560,
+            "raw_K": 2560,
+            "END_positions_zero_based": [
+              491
+            ],
+            "PAD_count": 2068,
+            "PAD_before_END": false,
+            "PAD_tail_after_END": true,
+            "MASK_count": 0,
+            "strict_raw_boundary": "one_END_then_PAD_to_K"
+          },
+          "E_reference": {
+            "response_ok": true,
+            "grade_success": false,
+            "fields": {
+              "lengths_exact": false,
+              "other_plan_fields_exact": true,
+              "whole_geometry_scale": false,
+              "exact_target_plan": false,
+              "whole_geometry_scale_defined": true,
+              "edited_physical_audit": true
+            },
+            "length_max_abs_error_A": 0.13567600000000013,
+            "length_max_relative_error": 0.015551777230362326,
+            "whole_geometry_scale_lattice_matrix_max_abs_A": 0.13567600000000013,
+            "whole_geometry_scale_coordinate_max_A": 0.0,
+            "non_lattice_fields_exact": true,
+            "edited_physical_audit": true,
+            "output_audit_reasons": []
+          },
+          "Q_reference": {
+            "success": true,
+            "fields": {
+              "space_group": true,
+              "formula": true,
+              "atoms": true,
+              "orbits": true,
+              "a": true,
+              "b": true,
+              "c": true
+            }
+          },
+          "Q_swap": {
+            "success": true,
+            "fields": {
+              "space_group": true,
+              "formula": true,
+              "atoms": true,
+              "orbits": true,
+              "a": true,
+              "b": true,
+              "c": true
+            }
+          },
+          "swap_id": "mp-1229077"
+        },
+        "eval_full_history_b8_fixed_001": {
+          "generation": {
+            "G_pass": false,
+            "G_failure_classes": [
+              {
+                "kind": "generation_audit",
+                "reasons": [
+                  "GateError: Orbit multiplicity and representative relations do not select one public definition"
+                ]
+              }
+            ],
+            "generation_ok": true,
+            "raw_token_count": 2560,
+            "raw_K": 2560,
+            "END_positions_zero_based": [
+              581
+            ],
+            "PAD_count": 1978,
+            "PAD_before_END": false,
+            "PAD_tail_after_END": true,
+            "MASK_count": 0,
+            "strict_raw_boundary": "one_END_then_PAD_to_K"
+          },
+          "E_reference": {
+            "response_ok": true,
+            "grade_success": false,
+            "fields": {
+              "lengths_exact": false,
+              "other_plan_fields_exact": true,
+              "whole_geometry_scale": false,
+              "exact_target_plan": false,
+              "whole_geometry_scale_defined": true,
+              "edited_physical_audit": true
+            },
+            "length_max_abs_error_A": 0.18536899999999967,
+            "length_max_relative_error": 0.021247806490573323,
+            "whole_geometry_scale_lattice_matrix_max_abs_A": 0.18536899999999967,
+            "whole_geometry_scale_coordinate_max_A": 0.0,
+            "non_lattice_fields_exact": true,
+            "edited_physical_audit": true,
+            "output_audit_reasons": []
+          },
+          "Q_reference": {
+            "success": true,
+            "fields": {
+              "space_group": true,
+              "formula": true,
+              "atoms": true,
+              "orbits": true,
+              "a": true,
+              "b": true,
+              "c": true
+            }
+          },
+          "Q_swap": {
+            "success": false,
+            "fields": {
+              "space_group": true,
+              "formula": false,
+              "atoms": true,
+              "orbits": true,
+              "a": true,
+              "b": true,
+              "c": true
+            }
+          },
+          "swap_id": "mp-1229077"
+        },
+        "eval_full_history_b8_ar_control_001": {
+          "generation": {
+            "G_pass": false,
+            "G_failure_classes": [
+              {
+                "kind": "generation_audit",
+                "reasons": [
+                  "GateError: Orbit multiplicity and representative relations do not select one public definition"
+                ]
+              }
+            ],
+            "generation_ok": true,
+            "raw_token_count": 2560,
+            "raw_K": 2560,
+            "END_positions_zero_based": [
+              560
+            ],
+            "PAD_count": 1999,
+            "PAD_before_END": false,
+            "PAD_tail_after_END": true,
+            "MASK_count": 0,
+            "strict_raw_boundary": "one_END_then_PAD_to_K"
+          },
+          "E_reference": {
+            "response_ok": true,
+            "grade_success": false,
+            "fields": {
+              "lengths_exact": false,
+              "other_plan_fields_exact": true,
+              "whole_geometry_scale": false,
+              "exact_target_plan": false,
+              "whole_geometry_scale_defined": true,
+              "edited_physical_audit": true
+            },
+            "length_max_abs_error_A": 0.1453710000000008,
+            "length_max_relative_error": 0.01666306058370686,
+            "whole_geometry_scale_lattice_matrix_max_abs_A": 0.1453710000000008,
+            "whole_geometry_scale_coordinate_max_A": 0.0,
+            "non_lattice_fields_exact": true,
+            "edited_physical_audit": true,
+            "output_audit_reasons": []
+          },
+          "Q_reference": {
+            "success": true,
+            "fields": {
+              "space_group": true,
+              "formula": true,
+              "atoms": true,
+              "orbits": true,
+              "a": true,
+              "b": true,
+              "c": true
+            }
+          },
+          "Q_swap": {
+            "success": false,
+            "fields": {
+              "space_group": true,
+              "formula": false,
+              "atoms": true,
+              "orbits": true,
+              "a": true,
+              "b": true,
+              "c": true
+            }
+          },
+          "swap_id": "mp-1229077"
+        }
+      }
+    },
+    {
+      "id": "mp-1079976",
+      "split": "heldout",
+      "condition_sg": 63,
+      "source_plan_sg": 63,
+      "source_plan_wyckoff_labels_by_orbit": [
+        "4c",
+        "4c",
+        "4c",
+        "4c"
+      ],
+      "training_coverage": {
+        "oldtrain8": {
+          "space_group_seen": false,
+          "seen_sg_wyckoff_orbit_pairs": [],
+          "unseen_sg_wyckoff_orbit_pairs": [
+            "63:4c",
+            "63:4c",
+            "63:4c",
+            "63:4c"
+          ]
+        },
+        "train32": {
+          "space_group_seen": false,
+          "seen_sg_wyckoff_orbit_pairs": [],
+          "unseen_sg_wyckoff_orbit_pairs": [
+            "63:4c",
+            "63:4c",
+            "63:4c",
+            "63:4c"
+          ]
+        }
+      },
+      "audit_unseen_definitions": [
+        "4c"
+      ],
+      "runs": {
+        "eval_full_history_b4_001": {
+          "generation": {
+            "G_pass": false,
+            "G_failure_classes": [
+              {
+                "kind": "generation_audit",
+                "reasons": [
+                  "GateError: Input cell sentence is missing or malformed"
+                ]
+              }
+            ],
+            "generation_ok": true,
+            "raw_token_count": 2560,
+            "raw_K": 2560,
+            "END_positions_zero_based": [
+              499
+            ],
+            "PAD_count": 2060,
+            "PAD_before_END": false,
+            "PAD_tail_after_END": true,
+            "MASK_count": 0,
+            "strict_raw_boundary": "one_END_then_PAD_to_K"
+          },
+          "E_reference": {
+            "response_ok": true,
+            "grade_success": false,
+            "fields": {
+              "lengths_exact": false,
+              "other_plan_fields_exact": false,
+              "whole_geometry_scale": false
+            },
+            "length_max_abs_error_A": null,
+            "length_max_relative_error": null,
+            "whole_geometry_scale_lattice_matrix_max_abs_A": null,
+            "whole_geometry_scale_coordinate_max_A": null,
+            "non_lattice_fields_exact": false,
+            "edited_physical_audit": null,
+            "output_audit_reasons": [
+              "GateError: Unknown element name in relational document: Germanerium"
+            ]
+          },
+          "Q_reference": {
+            "success": true,
+            "fields": {
+              "space_group": true,
+              "formula": true,
+              "atoms": true,
+              "orbits": true,
+              "a": true,
+              "b": true,
+              "c": true
+            }
+          },
+          "Q_swap": {
+            "success": true,
+            "fields": {
+              "space_group": true,
+              "formula": true,
+              "atoms": true,
+              "orbits": true,
+              "a": true,
+              "b": true,
+              "c": true
+            }
+          },
+          "swap_id": "mp-1229077"
+        },
+        "eval_full_history_b8_fixed_001": {
+          "generation": {
+            "G_pass": false,
+            "G_failure_classes": [
+              {
+                "kind": "generation_audit",
+                "reasons": [
+                  "GateError: Input composition is missing"
+                ]
+              }
+            ],
+            "generation_ok": true,
+            "raw_token_count": 2560,
+            "raw_K": 2560,
+            "END_positions_zero_based": [
+              400
+            ],
+            "PAD_count": 2159,
+            "PAD_before_END": false,
+            "PAD_tail_after_END": true,
+            "MASK_count": 0,
+            "strict_raw_boundary": "one_END_then_PAD_to_K"
+          },
+          "E_reference": {
+            "response_ok": true,
+            "grade_success": false,
+            "fields": {
+              "lengths_exact": false,
+              "other_plan_fields_exact": false,
+              "whole_geometry_scale": false
+            },
+            "length_max_abs_error_A": null,
+            "length_max_relative_error": null,
+            "whole_geometry_scale_lattice_matrix_max_abs_A": null,
+            "whole_geometry_scale_coordinate_max_A": null,
+            "non_lattice_fields_exact": false,
+            "edited_physical_audit": null,
+            "output_audit_reasons": [
+              "GateError: Standard-frame coordinate relation is missing or malformed"
+            ]
+          },
+          "Q_reference": {
+            "success": true,
+            "fields": {
+              "space_group": true,
+              "formula": true,
+              "atoms": true,
+              "orbits": true,
+              "a": true,
+              "b": true,
+              "c": true
+            }
+          },
+          "Q_swap": {
+            "success": false,
+            "fields": {
+              "space_group": true,
+              "formula": false,
+              "atoms": true,
+              "orbits": true,
+              "a": true,
+              "b": true,
+              "c": true
+            }
+          },
+          "swap_id": "mp-1229077"
+        },
+        "eval_full_history_b8_ar_control_001": {
+          "generation": {
+            "G_pass": false,
+            "G_failure_classes": [
+              {
+                "kind": "generation_audit",
+                "reasons": [
+                  "GateError: Orbit multiplicity and representative relations do not select one public definition"
+                ]
+              }
+            ],
+            "generation_ok": true,
+            "raw_token_count": 2560,
+            "raw_K": 2560,
+            "END_positions_zero_based": [
+              413
+            ],
+            "PAD_count": 2146,
+            "PAD_before_END": false,
+            "PAD_tail_after_END": true,
+            "MASK_count": 0,
+            "strict_raw_boundary": "one_END_then_PAD_to_K"
+          },
+          "E_reference": {
+            "response_ok": true,
+            "grade_success": false,
+            "fields": {
+              "lengths_exact": false,
+              "other_plan_fields_exact": true,
+              "whole_geometry_scale": false,
+              "exact_target_plan": false,
+              "whole_geometry_scale_defined": true,
+              "edited_physical_audit": true
+            },
+            "length_max_abs_error_A": 0.10143144999999976,
+            "length_max_relative_error": 0.023156241980798985,
+            "whole_geometry_scale_lattice_matrix_max_abs_A": 0.10143144999999976,
+            "whole_geometry_scale_coordinate_max_A": 0.0,
+            "non_lattice_fields_exact": true,
+            "edited_physical_audit": true,
+            "output_audit_reasons": []
+          },
+          "Q_reference": {
+            "success": true,
+            "fields": {
+              "space_group": true,
+              "formula": true,
+              "atoms": true,
+              "orbits": true,
+              "a": true,
+              "b": true,
+              "c": true
+            }
+          },
+          "Q_swap": {
+            "success": false,
+            "fields": {
+              "space_group": true,
+              "formula": false,
+              "atoms": true,
+              "orbits": true,
+              "a": true,
+              "b": true,
+              "c": true
+            }
+          },
+          "swap_id": "mp-1229077"
+        }
+      }
+    }
+  ],
+  "aggregate": {
+    "eval_full_history_b4_001": {
+      "cases": 3,
+      "G_pass": 0,
+      "Q_reference_exact": 3,
+      "Q_swap_exact": 3,
+      "E_reference_scored": 2,
+      "E_reference_grade_success": 0
+    },
+    "eval_full_history_b8_fixed_001": {
+      "cases": 3,
+      "G_pass": 0,
+      "Q_reference_exact": 3,
+      "Q_swap_exact": 0,
+      "E_reference_scored": 1,
+      "E_reference_grade_success": 0
+    },
+    "eval_full_history_b8_ar_control_001": {
+      "cases": 3,
+      "G_pass": 0,
+      "Q_reference_exact": 3,
+      "Q_swap_exact": 0,
+      "E_reference_scored": 3,
+      "E_reference_grade_success": 0
+    }
+  },
+  "limits": [
+    "This is a matched comparison of three heldout cases only; it does not estimate the remaining heldout set or overall model feasibility.",
+    "All three matched cases are out of coverage for both oldtrain8 and train32 SG and exact SG–Wyckoff pairs, so the observed failures cannot isolate coverage from other causes.",
+    "E_reference is a separately prompted edit control; missing diagnostics indicate strict parsing/audit failure, not zero geometric error."
+  ]
+}

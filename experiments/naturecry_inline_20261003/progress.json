@@ -1,0 +1,45 @@
+{
+  "task": "CrystalDLM NatureCry inline codec implementation",
+  "status": "completed_offline_implementation_api_unrun",
+  "updated_at": "2026-10-03T15:50:27Z",
+  "started_at": "2026-10-03T14:34:03Z",
+  "current_step": "offline_implementation_complete",
+  "completed_modules": [
+    "geometry.py: public table verification, canonical orbit expansion, stable site ID assignment, immutable lookup, geometry execution, structure comparator with NaN-safe strict thresholds",
+    "codec.py: typed inline inventory, placeholder binding, plain-prose numeric/structure gate, exact value/metadata gates, strict JSON and decoder schema gates",
+    "prepare.py/api_runner.py/preflight.py: frozen source preparation, entry hash verification, no-retry first-pass accounting, serialized-CIF scoring, offline shared-entry preflight",
+    "IMPLEMENTATION_REPORT.md: final metrics, hash verification, runner constraints, semantic boundary, verification commands"
+  ],
+  "active_module": null,
+  "steps": {
+    "ledger_init": "completed",
+    "context_gathering": "completed",
+    "inline_codec_implementation": "completed; focused tests 5/5",
+    "executor_and_stable_id": "completed",
+    "unit_tests": "completed; combined suite 14 passed, 536 dependency deprecation warnings",
+    "preflight_100_cohort": "completed; prepared_final with preflight/final_002, 100/100 and CIF roundtrip",
+    "runner_and_protocol": "completed; fake transport/truncation verified; no live API calls",
+    "final_preparation": "completed; prepared_final hashes match current runtime",
+    "final_report": "completed",
+    "source_preparation": "completed",
+    "preflight_shared_entry": "completed"
+  },
+  "notes": [
+    "Validating and preparing the unchanged frozen 100-case selection.",
+    "Prepared 100/100 cases; failed source preparations remain in the denominator.",
+    "Running deterministic local fixtures through the shared decoder gate and public geometry executor.",
+    "Offline preflight: 100/100; API calls 0; maximum coordinate error 9.381384558082572e-16 A.",
+    "Runner retry ledger, CIF roundtrip, finish_reason gate, and credential redaction are implemented; final preparation/hash refresh pending.",
+    "Review fixes: reject untagged numeric Unicode and structured appendices; separate stage/kind; verify runtime and prepared artifacts before preflight/API entry.",
+    "Preparing a final hash-pinned version from the unchanged frozen 100-case selection.",
+    "Prepared 100/100 cases; failed source preparations remain in the denominator.",
+    "Running deterministic local fixtures through the shared decoder gate and public geometry executor after entry hash verification.",
+    "Offline preflight: 100/100; API calls 0; maximum coordinate error 9.381384558082572e-16 A.",
+    "Preparing a final hash-pinned version from the unchanged frozen 100-case selection.",
+    "Prepared 100/100 cases; failed source preparations remain in the denominator.",
+    "Running deterministic local fixtures through the shared decoder gate and public geometry executor after entry hash verification.",
+    "Offline preflight: 100/100; API calls 0; maximum coordinate error 9.381384558082572e-16 A.",
+    "Combined test suite: 14 passed, 536 spglib deprecation warnings; CLI refused execution without --execute-api; no credential configured and no real request attempted.",
+    "Final report written to experiments/naturecry_inline_20261003/IMPLEMENTATION_REPORT.md."
+  ]
+}

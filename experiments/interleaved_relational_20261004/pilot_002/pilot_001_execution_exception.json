@@ -1,0 +1,65 @@
+{
+  "experiment": "interleaved_relational_20261004/pilot_001",
+  "slurm_job_id": "604554",
+  "slurm_job_name": "rel-cnl-pilot-001",
+  "terminal_state": "FAILED",
+  "elapsed": "00:19:27",
+  "exit_code": "1:0",
+  "output_preserved_locally_without_checkpoints": true,
+  "failure": {
+    "phase": "ar/heldout16",
+    "stage": "reference_edit_grade",
+    "record_id": "mp-1079976",
+    "exception_type": "ValueError",
+    "message": "Expanded composition mismatch: expected {'Ge': 4, 'Ni': 2, 'Tm': 2}, got {'Tm': 2, 'Ni': 2, 'Ge': 2}",
+    "traceback_path": "run.py:435 evaluate -> score.py:300 grade_edit -> naturecry_inline_20261003/geometry.py:193 execute_geometry_plan",
+    "cause_class": "scorer execution exception on a decoded but physically invalid reference-edit output; expected to be retained as a false grade without aborting the denominator",
+    "failed_row_written_to_raw": false
+  },
+  "completed_arm_evidence": {
+    "arm": "ar",
+    "mode": "ar",
+    "prediction_offset": 0,
+    "updates": 512,
+    "training_seconds": 359.52398142404854,
+    "initial_fingerprint": "6bffa202d8485a6ee8bce3553044c9657948e25be702a45a9efb860ced9d1429",
+    "final_fingerprint": "e466cb281d88e6356f3ed73dc2915a3bf947024abecaa534f25d22a6a0dca5e8",
+    "checkpoint_sha256": "9d73aeebc4966efafb6fd2bb03bb448c400d0e20878c1258ec8c8c1321f123e5",
+    "checkpoint_bytes_remote": 5926264588,
+    "strict_reload_verified": true,
+    "actual_exposure": {"G": 1024, "E": 512, "Q1": 512},
+    "actual_exposure_sha256": "79e62e1a7e4f3c7e92ef5d4354fbd907d4c3ba90076924300861c43bb04f07f4"
+  },
+  "partial_evaluation": {
+    "seen8": {
+      "rows": 8,
+      "counts": {"G": 8, "Q_reference": 8, "E_reference": 8, "closed_loop": 0, "flow_complete": 7, "Q_swap": 0, "Q_no_crystal": 0}
+    },
+    "heldout16": {
+      "rows_written": 2,
+      "denominator": 16,
+      "failed_record": "mp-1079976",
+      "failed_record_raw_recovered": false
+    },
+    "hybrid_shift_started": false,
+    "complete_pilot_result": false
+  },
+  "frozen_data": {
+    "manifest_sha256": "e4b67ae8a4e8b831b8c529992b9ea2a83b44603689cdc0b460e1d9d7f9ff5513",
+    "records_sha256": "ef2ec2dcdee1d73c62e48987a9cec86a4db3076f9c48d9ab17b8745b9eca785f",
+    "test256_used": false
+  },
+  "local_raw_sha256": {
+    "ar/seen8/evaluation.jsonl": "9101a6a776af5a346a1356d35287c0b5fa942201091e227826b05f6b5617ca5d",
+    "ar/seen8/evaluation_summary.json": "fd89cc4e321bcbc41e3d27637b0625a00c7ab526627e657a4588b5d01841ecf1",
+    "ar/heldout16/evaluation.jsonl": "41f6329c10216476251aeca6d67097264a9048082d5fe016fe515ad233695afd"
+  },
+  "source_sha256": {
+    "run.py": "9f5881028177c3b527ea064198b91ae73600894801960113aec2e8ffcea8ab50",
+    "score.py": "55a66f8794353170aca249de6a6e5f070257ccb528d273998767a13bc1942454",
+    "model.py": "036ac4d4fc08437e2325c31265fceb08a573d8c703a1ca551c4f921541345406",
+    "prepare.py": "07ac45cb3ae5ab086fed460fc957afcc94e1988011161a4d0178b388b1769f14",
+    "pilot_001.slurm": "6b077b25e5754dfe6988a69486ae53c30a3079b785df6a3f6c23d28715dcf935"
+  },
+  "recovery_status": "No retry or new job submitted. Original stdout/stderr, two heldout raw rows, complete seen8 raw, training receipt, curves, exposure, preflight and AR checkpoint receipt remain preserved; the large checkpoint remains remote."
+}

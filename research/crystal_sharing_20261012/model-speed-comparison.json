@@ -1,0 +1,46 @@
+{
+  "pro_historical_same_input": {
+    "n": 30,
+    "mean_seconds": 2.1279333333333335,
+    "median_seconds": 2.144,
+    "p95_seconds": 2.373,
+    "min_seconds": 1.774,
+    "max_seconds": 2.441,
+    "prompt_tokens": 37427,
+    "completion_tokens": 3712,
+    "cached_input_tokens": 10752
+  },
+  "flash_matched_input_control": {
+    "n": 30,
+    "mean_seconds": 2.1313666666666666,
+    "median_seconds": 2.1385,
+    "p95_seconds": 2.407,
+    "min_seconds": 1.787,
+    "max_seconds": 2.791,
+    "prompt_tokens": 37427,
+    "completion_tokens": 3921,
+    "cached_input_tokens": 22912
+  },
+  "flash_with_sharing": {
+    "n": 30,
+    "mean_seconds": 2.295733333333333,
+    "median_seconds": 2.286,
+    "p95_seconds": 2.604,
+    "min_seconds": 2.038,
+    "max_seconds": 2.612,
+    "prompt_tokens": 49340,
+    "completion_tokens": 4349,
+    "cached_input_tokens": 15104
+  },
+  "matched_mean_latency_ratio": 1.0016134590682664,
+  "flash_sharing_ttf_mean_seconds": 1.19582,
+  "limitations": "Pro is historical ratherthancontemporaneousinterleaving; cachesdiffer; endtoendgatewaylatency, notisolatedGPUkernelspeed.",
+  "flash_shared_content_stream_mean_seconds": 1.02007,
+  "flash_control_ttf_mean_seconds": 1.1588633333333334,
+  "request_model_and_max_verified": true,
+  "full45465_flash_sharing_token_projection": {
+    "prompt_tokens": 74774770,
+    "completion_tokens": 6590910,
+    "total_tokens": 81365680
+  }
+}

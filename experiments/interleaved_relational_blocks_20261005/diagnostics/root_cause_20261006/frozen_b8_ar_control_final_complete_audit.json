@@ -1,0 +1,630 @@
+{
+  "audit_status": "passed",
+  "scope": "One complete local B8 native-AR-control evaluation paired by case ID/order to the corrected B8 confidence-one run. This audit checks receipts, result serialization, and recorded raw arrays; it does not load weights or rerun native scoring.",
+  "paths": {
+    "AR_control": "experiments/interleaved_relational_scaled32_20261006/eval_full_history_b8_ar_control_001",
+    "CF_fixed": "experiments/interleaved_relational_scaled32_20261006/eval_full_history_b8_fixed_001",
+    "training_receipt": "experiments/interleaved_relational_scaled32_20261006/training_full_history_b8_001/joint_ar_diffusion_b8/checkpoint_receipt.json",
+    "seen_memorization_audit": "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/b8_fixed_seen_complete_audit.json"
+  },
+  "checks": {
+    "AR_seen8_summary_reconciliation": true,
+    "AR_heldout16_summary_reconciliation": true,
+    "CF_seen8_summary_reconciliation": true,
+    "CF_heldout16_summary_reconciliation": true,
+    "AR_vs_CF_all_24_IDs_and_order_match": true,
+    "fixed_reader_text_exact_on_all_24": true,
+    "all_56_AR_raw_arrays_available_K2560_END_PAD_valid": true,
+    "seen8_strict_actual_G_Q1_E_Q2_all8": true,
+    "seen8_memo_identity_all8": true,
+    "AR_eval_status_complete": true,
+    "checkpoint_same_as_CF": true,
+    "fingerprints_before_after_same": true,
+    "training_receipt_metadata_matches": true,
+    "zero_optimizer_and_2048_training_updates": true,
+    "model_revision_and_config_same_as_CF": true,
+    "shared_data_source_tokenizer_and_receipt_hashes_same_as_CF": true,
+    "all_AR_hash_snapshots_before_after_unchanged": true
+  },
+  "AR_control": {
+    "job_id": "609170",
+    "status": "complete",
+    "model": {
+      "name": "Qwen/Qwen2.5-1.5B-Instruct",
+      "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+      "mode": "hybrid",
+      "block_size": 8,
+      "prediction_offset": 0,
+      "clean_crystal_ar_weight": 1.0
+    },
+    "training_updates": 2048,
+    "optimizer_updates": 0,
+    "checkpoint_sha256": "da812d90566c1e791c776a88358d734a9c7d01832cd084df7466e38e3190981e",
+    "fingerprint_before": "ff8d4429032fe96b0232770c3065c71c1e4cd73e690f95522f34238a830620af",
+    "fingerprint_after": "ff8d4429032fe96b0232770c3065c71c1e4cd73e690f95522f34238a830620af",
+    "counts_rates_failure_histograms": {
+      "seen8": {
+        "n": 8,
+        "counts": {
+          "G": 8,
+          "Q_reference": 8,
+          "E_reference": 8,
+          "closed_loop": 8,
+          "flow_complete": 8,
+          "Q_swap": 8,
+          "Q_no_crystal": 0
+        },
+        "rates": {
+          "G": 1.0,
+          "Q_reference": 1.0,
+          "E_reference": 1.0,
+          "closed_loop": 1.0,
+          "flow_complete": 1.0,
+          "Q_swap": 1.0,
+          "Q_no_crystal": 0.0
+        },
+        "failure_histogram": {}
+      },
+      "heldout16": {
+        "n": 16,
+        "counts": {
+          "G": 0,
+          "Q_reference": 12,
+          "E_reference": 0,
+          "closed_loop": 0,
+          "flow_complete": 0,
+          "Q_swap": 3,
+          "Q_no_crystal": 0
+        },
+        "rates": {
+          "G": 0.0,
+          "Q_reference": 0.75,
+          "E_reference": 0.0,
+          "closed_loop": 0.0,
+          "flow_complete": 0.0,
+          "Q_swap": 0.1875,
+          "Q_no_crystal": 0.0
+        },
+        "failure_histogram": {
+          "E_reference:edit_mismatch": 16,
+          "G:generation_audit": 16,
+          "Q_reference:answer_mismatch": 4,
+          "Q_swap:answer_mismatch": 13,
+          "closed_loop:skipped_invalid_generated_c1": 16
+        }
+      }
+    },
+    "percohort_metadata": {
+      "seen8": {
+        "arm": "joint_ar_diffusion_b8",
+        "block_size": 8,
+        "model": "Qwen/Qwen2.5-1.5B-Instruct",
+        "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+        "n": 8,
+        "split": "train",
+        "counts": {
+          "G": 8,
+          "Q_reference": 8,
+          "E_reference": 8,
+          "closed_loop": 8,
+          "flow_complete": 8,
+          "Q_swap": 8,
+          "Q_no_crystal": 0
+        },
+        "rates": {
+          "G": 1.0,
+          "Q_reference": 1.0,
+          "E_reference": 1.0,
+          "closed_loop": 1.0,
+          "flow_complete": 1.0,
+          "Q_swap": 1.0,
+          "Q_no_crystal": 0.0
+        },
+        "failure_classes": {},
+        "forward_calls": 17579,
+        "attempts_retried": 0
+      },
+      "heldout16": {
+        "arm": "joint_ar_diffusion_b8",
+        "block_size": 8,
+        "model": "Qwen/Qwen2.5-1.5B-Instruct",
+        "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+        "n": 16,
+        "split": "heldout",
+        "counts": {
+          "G": 0,
+          "Q_reference": 12,
+          "E_reference": 0,
+          "closed_loop": 0,
+          "flow_complete": 0,
+          "Q_swap": 3,
+          "Q_no_crystal": 0
+        },
+        "rates": {
+          "G": 0.0,
+          "Q_reference": 0.75,
+          "E_reference": 0.0,
+          "closed_loop": 0.0,
+          "flow_complete": 0.0,
+          "Q_swap": 0.1875,
+          "Q_no_crystal": 0.0
+        },
+        "failure_classes": {
+          "G:generation_audit": 16,
+          "E_reference:edit_mismatch": 16,
+          "closed_loop:skipped_invalid_generated_c1": 16,
+          "Q_swap:answer_mismatch": 13,
+          "Q_reference:answer_mismatch": 4
+        },
+        "forward_calls": 27173,
+        "attempts_retried": 0
+      }
+    },
+    "raw_array_boundary": {
+      "attempts": 56,
+      "arrays_available": 56,
+      "K2560": 56,
+      "exactly_one_END_with_PAD_suffix": 56,
+      "token_ids": {
+        "END": 151666,
+        "PAD": 151668
+      },
+      "by_split": {
+        "seen8": {
+          "G": {
+            "attempts": 8,
+            "arrays_available": 8,
+            "K2560": 8,
+            "exactly_one_END_PAD_suffix": 8,
+            "boundary_failures": []
+          },
+          "E_reference": {
+            "attempts": 8,
+            "arrays_available": 8,
+            "K2560": 8,
+            "exactly_one_END_PAD_suffix": 8,
+            "boundary_failures": []
+          },
+          "E_actual": {
+            "attempts": 8,
+            "arrays_available": 8,
+            "K2560": 8,
+            "exactly_one_END_PAD_suffix": 8,
+            "boundary_failures": []
+          }
+        },
+        "heldout16": {
+          "G": {
+            "attempts": 16,
+            "arrays_available": 16,
+            "K2560": 16,
+            "exactly_one_END_PAD_suffix": 16,
+            "boundary_failures": []
+          },
+          "E_reference": {
+            "attempts": 16,
+            "arrays_available": 16,
+            "K2560": 16,
+            "exactly_one_END_PAD_suffix": 16,
+            "boundary_failures": []
+          },
+          "E_actual": {
+            "attempts": 0,
+            "arrays_available": 0,
+            "K2560": 0,
+            "exactly_one_END_PAD_suffix": 0,
+            "boundary_failures": []
+          }
+        }
+      },
+      "interpretation": "All 56 saved crystal-output arrays satisfy fixed length and END/PAD suffix boundaries. This only establishes termination/padding format, not structural or numerical correctness."
+    },
+    "sampling_flags": {
+      "policy": "greedy_native_ar_crystal_control",
+      "body_mode": "ar",
+      "autoregressive_end_then_pad": true,
+      "token_selection": "greedy_argmax",
+      "raw_tokens_per_crystal": 2560,
+      "early_eos": true,
+      "ar_fallback": false,
+      "grammar_repair": false,
+      "physical_repair": false,
+      "oracle_numbers_at_inference": false
+    },
+    "actual_seen8_chain": {
+      "strict_chains": 8,
+      "expected": 8,
+      "cases": [
+        {
+          "id": "anchor_Tb8Mg4",
+          "G": true,
+          "Q1_7_fields": true,
+          "E_6_fields": true,
+          "Q2_7_fields": true,
+          "attempts_ok": true,
+          "closed_loop": true,
+          "flow_complete": true
+        },
+        {
+          "id": "anchor_Li8V4Ni4O16",
+          "G": true,
+          "Q1_7_fields": true,
+          "E_6_fields": true,
+          "Q2_7_fields": true,
+          "attempts_ok": true,
+          "closed_loop": true,
+          "flow_complete": true
+        },
+        {
+          "id": "mp-4047",
+          "G": true,
+          "Q1_7_fields": true,
+          "E_6_fields": true,
+          "Q2_7_fields": true,
+          "attempts_ok": true,
+          "closed_loop": true,
+          "flow_complete": true
+        },
+        {
+          "id": "mp-1205515",
+          "G": true,
+          "Q1_7_fields": true,
+          "E_6_fields": true,
+          "Q2_7_fields": true,
+          "attempts_ok": true,
+          "closed_loop": true,
+          "flow_complete": true
+        },
+        {
+          "id": "mp-30009",
+          "G": true,
+          "Q1_7_fields": true,
+          "E_6_fields": true,
+          "Q2_7_fields": true,
+          "attempts_ok": true,
+          "closed_loop": true,
+          "flow_complete": true
+        },
+        {
+          "id": "mp-1188285",
+          "G": true,
+          "Q1_7_fields": true,
+          "E_6_fields": true,
+          "Q2_7_fields": true,
+          "attempts_ok": true,
+          "closed_loop": true,
+          "flow_complete": true
+        },
+        {
+          "id": "mp-1207068",
+          "G": true,
+          "Q1_7_fields": true,
+          "E_6_fields": true,
+          "Q2_7_fields": true,
+          "attempts_ok": true,
+          "closed_loop": true,
+          "flow_complete": true
+        },
+        {
+          "id": "mp-1205902",
+          "G": true,
+          "Q1_7_fields": true,
+          "E_6_fields": true,
+          "Q2_7_fields": true,
+          "attempts_ok": true,
+          "closed_loop": true,
+          "flow_complete": true
+        }
+      ]
+    },
+    "seen8_memorization": {
+      "AR_generation_C1_text_equal_CF": 8,
+      "expected": 8,
+      "same_case_train_text_exact": 8,
+      "same_case_train_decoded_plan_hash_exact": 8,
+      "identity_case_ID_order_matches": true,
+      "all_seen_C1_same_case_memorization": true
+    },
+    "heldout_structural_and_edit_failures": {
+      "counts": {
+        "E_reference:edit_mismatch": 16,
+        "G:generation_audit": 16,
+        "Q_reference:answer_mismatch": 4,
+        "Q_swap:answer_mismatch": 13,
+        "closed_loop:skipped_invalid_generated_c1": 16
+      },
+      "G_audit_reason_classes": {
+        "ambiguous_orbit_definition": 16
+      },
+      "E_reference_false_grade_fields": {
+        "lengths_exact": 16,
+        "whole_geometry_scale": 16,
+        "exact_target_plan": 16,
+        "edited_physical_audit": 1
+      },
+      "interpretation": "AR control removes the recorded G/E boundary failures seen in CF, but all heldout G outputs still fail decode/audit (16/16 share an ambiguous-orbit-definition error), and all E_reference outputs fail length/whole-geometry/target-plan checks. This indicates a remaining structured-output/geometry problem in this run; fixed PAD structure alone is not a method-level feasibility verdict."
+    }
+  },
+  "matched_CF_comparison": {
+    "per_cohort_ids_and_order": {
+      "seen8": {
+        "same_ID_order": true,
+        "IDs": [
+          "anchor_Tb8Mg4",
+          "anchor_Li8V4Ni4O16",
+          "mp-4047",
+          "mp-1205515",
+          "mp-30009",
+          "mp-1188285",
+          "mp-1207068",
+          "mp-1205902"
+        ]
+      },
+      "heldout16": {
+        "same_ID_order": true,
+        "IDs": [
+          "mp-1229077",
+          "mp-1019259",
+          "mp-1079976",
+          "mp-1095422",
+          "mp-1173947",
+          "mp-21371",
+          "mp-5456",
+          "mp-19419",
+          "mp-1219591",
+          "mp-1225818",
+          "mp-757163",
+          "mp-1178612",
+          "mp-1101160",
+          "mp-31460",
+          "mp-646926",
+          "mp-1217967"
+        ]
+      }
+    },
+    "per_cohort_counts_rates": {
+      "seen8": {
+        "AR": {
+          "n": 8,
+          "counts": {
+            "G": 8,
+            "Q_reference": 8,
+            "E_reference": 8,
+            "closed_loop": 8,
+            "flow_complete": 8,
+            "Q_swap": 8,
+            "Q_no_crystal": 0
+          },
+          "rates": {
+            "G": 1.0,
+            "Q_reference": 1.0,
+            "E_reference": 1.0,
+            "closed_loop": 1.0,
+            "flow_complete": 1.0,
+            "Q_swap": 1.0,
+            "Q_no_crystal": 0.0
+          },
+          "failure_histogram": {}
+        },
+        "CF": {
+          "n": 8,
+          "counts": {
+            "G": 8,
+            "Q_reference": 8,
+            "E_reference": 8,
+            "closed_loop": 8,
+            "flow_complete": 8,
+            "Q_swap": 8,
+            "Q_no_crystal": 0
+          },
+          "rates": {
+            "G": 1.0,
+            "Q_reference": 1.0,
+            "E_reference": 1.0,
+            "closed_loop": 1.0,
+            "flow_complete": 1.0,
+            "Q_swap": 1.0,
+            "Q_no_crystal": 0.0
+          },
+          "failure_histogram": {}
+        },
+        "AR_minus_CF_counts": {
+          "G": 0,
+          "Q_reference": 0,
+          "E_reference": 0,
+          "closed_loop": 0,
+          "flow_complete": 0,
+          "Q_swap": 0,
+          "Q_no_crystal": 0
+        }
+      },
+      "heldout16": {
+        "AR": {
+          "n": 16,
+          "counts": {
+            "G": 0,
+            "Q_reference": 12,
+            "E_reference": 0,
+            "closed_loop": 0,
+            "flow_complete": 0,
+            "Q_swap": 3,
+            "Q_no_crystal": 0
+          },
+          "rates": {
+            "G": 0.0,
+            "Q_reference": 0.75,
+            "E_reference": 0.0,
+            "closed_loop": 0.0,
+            "flow_complete": 0.0,
+            "Q_swap": 0.1875,
+            "Q_no_crystal": 0.0
+          },
+          "failure_histogram": {
+            "E_reference:edit_mismatch": 16,
+            "G:generation_audit": 16,
+            "Q_reference:answer_mismatch": 4,
+            "Q_swap:answer_mismatch": 13,
+            "closed_loop:skipped_invalid_generated_c1": 16
+          }
+        },
+        "CF": {
+          "n": 16,
+          "counts": {
+            "G": 0,
+            "Q_reference": 12,
+            "E_reference": 0,
+            "closed_loop": 0,
+            "flow_complete": 0,
+            "Q_swap": 3,
+            "Q_no_crystal": 0
+          },
+          "rates": {
+            "G": 0.0,
+            "Q_reference": 0.75,
+            "E_reference": 0.0,
+            "closed_loop": 0.0,
+            "flow_complete": 0.0,
+            "Q_swap": 0.1875,
+            "Q_no_crystal": 0.0
+          },
+          "failure_histogram": {
+            "E_reference:edit_error": 1,
+            "E_reference:edit_mismatch": 15,
+            "G:generation_audit": 14,
+            "G:generation_error": 2,
+            "Q_reference:answer_mismatch": 4,
+            "Q_swap:answer_mismatch": 13,
+            "closed_loop:skipped_invalid_generated_c1": 16
+          }
+        },
+        "AR_minus_CF_counts": {
+          "G": 0,
+          "Q_reference": 0,
+          "E_reference": 0,
+          "closed_loop": 0,
+          "flow_complete": 0,
+          "Q_swap": 0,
+          "Q_no_crystal": 0
+        }
+      }
+    },
+    "failure_histogram_difference": {
+      "seen8": {
+        "AR": {},
+        "CF": {}
+      },
+      "heldout16": {
+        "AR": {
+          "E_reference:edit_mismatch": 16,
+          "G:generation_audit": 16,
+          "Q_reference:answer_mismatch": 4,
+          "Q_swap:answer_mismatch": 13,
+          "closed_loop:skipped_invalid_generated_c1": 16
+        },
+        "CF": {
+          "E_reference:edit_error": 1,
+          "E_reference:edit_mismatch": 15,
+          "G:generation_audit": 14,
+          "G:generation_error": 2,
+          "Q_reference:answer_mismatch": 4,
+          "Q_swap:answer_mismatch": 13,
+          "closed_loop:skipped_invalid_generated_c1": 16
+        }
+      }
+    },
+    "fixed_reader_text_exactness": {
+      "seen8.reference_read": {
+        "exact_text_matches": 8,
+        "expected": 8,
+        "all_exact": true,
+        "mismatched_IDs": []
+      },
+      "seen8.swap_read": {
+        "exact_text_matches": 8,
+        "expected": 8,
+        "all_exact": true,
+        "mismatched_IDs": []
+      },
+      "seen8.no_crystal_read": {
+        "exact_text_matches": 8,
+        "expected": 8,
+        "all_exact": true,
+        "mismatched_IDs": []
+      },
+      "heldout16.reference_read": {
+        "exact_text_matches": 16,
+        "expected": 16,
+        "all_exact": true,
+        "mismatched_IDs": []
+      },
+      "heldout16.swap_read": {
+        "exact_text_matches": 16,
+        "expected": 16,
+        "all_exact": true,
+        "mismatched_IDs": []
+      },
+      "heldout16.no_crystal_read": {
+        "exact_text_matches": 16,
+        "expected": 16,
+        "all_exact": true,
+        "mismatched_IDs": []
+      }
+    },
+    "seen8_AR_C1_equals_CF_count": 8,
+    "metadata_match": {
+      "model_fields": {
+        "name": true,
+        "revision": true,
+        "mode": true,
+        "block_size": true,
+        "prediction_offset": true,
+        "clean_crystal_ar_weight": true
+      },
+      "shared_provenance_fields": {
+        "checkpoint_receipt_sha256": true,
+        "checkpoint_sha256": true,
+        "final_fingerprint": true,
+        "training_status_sha256": true,
+        "training_summary_sha256": true,
+        "pin_sha256": true,
+        "tokenizer_hashes": true,
+        "data_hashes": true,
+        "codec_pin": true
+      }
+    }
+  },
+  "provenance_invariants": {
+    "AR_eval_status_complete": true,
+    "checkpoint_same_as_CF": true,
+    "fingerprints_before_after_same": true,
+    "training_receipt_metadata_matches": true,
+    "zero_optimizer_and_2048_training_updates": true,
+    "model_revision_and_config_same_as_CF": true,
+    "shared_data_source_tokenizer_and_receipt_hashes_same_as_CF": true,
+    "all_AR_hash_snapshots_before_after_unchanged": true,
+    "shared_metadata_fields_checked": [
+      "checkpoint_receipt_sha256",
+      "checkpoint_sha256",
+      "final_fingerprint",
+      "training_status_sha256",
+      "training_summary_sha256",
+      "pin_sha256",
+      "tokenizer_hashes",
+      "data_hashes",
+      "codec_pin"
+    ],
+    "AR_only_source_fields": [
+      "ar_control_policy",
+      "ar_control_sources"
+    ],
+    "source_hashes_are_expected_to_differ_for_AR_control_adapter": true,
+    "checkpoint_bytes_loaded_or_hashed_by_this_auditor": false,
+    "native_scoring_replayed_by_this_auditor": false
+  },
+  "limitations": [
+    "The audit is limited to this matched checkpoint, these 24 fixed IDs, and this AR-control decoding policy.",
+    "The raw K/END/PAD check is a formatting boundary check only; all heldout structures still fail the strict decoder/edit evaluation.",
+    "Slurm terminal status and 80-case native scoring replay were checked separately by root; this agent did not redo either."
+  ],
+  "failed_checks": []
+}

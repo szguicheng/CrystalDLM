@@ -1,0 +1,40 @@
+{
+  "arm": "joint_ar_diffusion_b8",
+  "core_mode": "hybrid",
+  "block_size": 8,
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+  "n": 16,
+  "split": "heldout",
+  "counts": {
+    "G": 0,
+    "Q_reference": 12,
+    "E_reference": 0,
+    "closed_loop": 0,
+    "flow_complete": 0,
+    "Q_swap": 3,
+    "Q_no_crystal": 0
+  },
+  "rates": {
+    "G": 0.0,
+    "Q_reference": 0.75,
+    "E_reference": 0.0,
+    "closed_loop": 0.0,
+    "flow_complete": 0.0,
+    "Q_swap": 0.1875,
+    "Q_no_crystal": 0.0
+  },
+  "attempts_retried": 0,
+  "failure_classes": {
+    "G:generation_error": 2,
+    "E_reference:edit_mismatch": 15,
+    "closed_loop:skipped_invalid_generated_c1": 16,
+    "Q_swap:answer_mismatch": 13,
+    "G:generation_audit": 14,
+    "Q_reference:answer_mismatch": 4,
+    "E_reference:edit_error": 1
+  },
+  "forward_calls": 85395,
+  "attempt_seconds": 4520.358528946992,
+  "no_crystal_semantics": "Q_no_crystal is exact target-fact match without a structure; raw response is retained and this is not an abstention/success score."
+}

@@ -1,0 +1,142 @@
+[
+  {
+    "representation": "explicit",
+    "mode": "confidence",
+    "n": 512,
+    "seed": 17,
+    "nonpad_token_accuracy": 0.27349846087765767,
+    "counts": {
+      "decoded": 0,
+      "composition_match": 0,
+      "usable": 0,
+      "reference_match": 0
+    },
+    "errors": [
+      [
+        "ValueError: Invalid literal for Fraction: '<PAD>'",
+        89
+      ],
+      [
+        "ValueError: could not convert string to float: '<PAD>'",
+        50
+      ],
+      [
+        "ValueError: invalid literal for int() with base 10: '<PAD>'",
+        22
+      ],
+      [
+        "ValueError: invalid literal for int() with base 10: '3.8634574693135'",
+        20
+      ],
+      [
+        "ValueError: invalid literal for int() with base 10: '4.0173601185911'",
+        14
+      ]
+    ]
+  },
+  {
+    "representation": "explicit",
+    "mode": "one_step",
+    "n": 512,
+    "seed": 17,
+    "nonpad_token_accuracy": 0.4700050110959983,
+    "counts": {
+      "decoded": 32,
+      "composition_match": 4,
+      "usable": 3,
+      "reference_match": 0
+    },
+    "errors": [
+      [
+        "ValueError: Invalid literal for Fraction: 'G'",
+        286
+      ],
+      [
+        "ValueError: Generator must preserve the integer lattice invertibly",
+        111
+      ],
+      [
+        "ValueError: Expected SITES, got G",
+        17
+      ],
+      [
+        "ValueError: Invalid literal for Fraction: 'FAMILY'",
+        12
+      ],
+      [
+        "ValueError: Parameters are only allowed as whole site-coordinate expressions",
+        10
+      ]
+    ]
+  },
+  {
+    "representation": "wyckoff",
+    "mode": "confidence",
+    "n": 512,
+    "seed": 17,
+    "nonpad_token_accuracy": 0.41106469173313076,
+    "counts": {
+      "decoded": 1,
+      "composition_match": 0,
+      "usable": 0,
+      "reference_match": 0
+    },
+    "errors": [
+      [
+        "ValueError: Wyckoff table setting mismatch",
+        12
+      ],
+      [
+        "ValueError: invalid literal for int() with base 10: '2.7827440243536'",
+        11
+      ],
+      [
+        "ValueError: invalid literal for int() with base 10: '3.1287232062386'",
+        9
+      ],
+      [
+        "ValueError: invalid literal for int() with base 10: '2.6449608137946'",
+        9
+      ],
+      [
+        "ValueError: invalid literal for int() with base 10: '3.1532620864772'",
+        9
+      ]
+    ]
+  },
+  {
+    "representation": "wyckoff",
+    "mode": "one_step",
+    "n": 512,
+    "seed": 17,
+    "nonpad_token_accuracy": 0.6455247499683504,
+    "counts": {
+      "decoded": 44,
+      "composition_match": 14,
+      "usable": 10,
+      "reference_match": 6
+    },
+    "errors": [
+      [
+        "ValueError: Wyckoff table setting mismatch",
+        118
+      ],
+      [
+        "KeyError: '2a'",
+        42
+      ],
+      [
+        "KeyError: '4c'",
+        23
+      ],
+      [
+        "KeyError: '1a'",
+        17
+      ],
+      [
+        "KeyError: '4a'",
+        10
+      ]
+    ]
+  }
+]

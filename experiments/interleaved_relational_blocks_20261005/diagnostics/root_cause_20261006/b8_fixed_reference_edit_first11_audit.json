@@ -1,0 +1,1187 @@
+{
+  "scope": {
+    "b8_path": "experiments/interleaved_relational_scaled32_20261006/eval_full_history_b8_fixed_001/heldout16/evaluation.jsonl",
+    "b8_rows_analyzed": 11,
+    "b8_rows_after_selected_prefix": "excluded from analysis",
+    "b32_comparator_path": "experiments/interleaved_relational_scaled32_20261006/eval_full_history_final2048_001/heldout16/evaluation.jsonl",
+    "b32_comparison": "same 11 IDs as the selected B8 prefix, joined by id",
+    "unselected_heldout_rows": "not inferred",
+    "raw_crystal_text_copied": false,
+    "b8_jsonl_rows_observed": 12,
+    "row_count_note": "The file currently has 12 JSONL rows; analysis used only rows 1-11. Row 12 and all other unselected heldout cases are excluded."
+  },
+  "scorer": {
+    "path": "experiments/interleaved_relational_joint_20261006/score.py",
+    "sha256": "3c1760481872726d798dd18ec4fb3557d6940e669e4c4d818a07da276d9c477a",
+    "matches_data_manifest_blockrunner_code_sha256_score_py": true,
+    "grade_edit_lines": "263-320",
+    "contract": {
+      "base": "audit(actual_base_text); invalid base returns actual_base_invalid",
+      "decode": "edited output must decode to a plan; decode failure returns edited_plan_decode_failed",
+      "lengths": "target abc are Decimal(repr(base_length)) * Decimal(str(factor)); observed abc must equal targets exactly",
+      "other_plan_fields": "all non-lattice plan fields and lattice entries after abc must equal the actual base exactly",
+      "whole_geometry_scale": "same species and fractional geometry under lattice scaled by factor; lattice matrix error <1e-8 A and coordinate error <1e-6 A",
+      "periodic_coordinates": "coordinate comparison wraps fractional residuals by subtracting round(residual)"
+    }
+  },
+  "b8_summary": {
+    "n": 11,
+    "E_reference_false": 11,
+    "grade_success": 0,
+    "reference_edit_call_ok": 11,
+    "actual_base_invalid": 0,
+    "decode_failed": 4,
+    "decode_reason_counts": {
+      "GateError: Input atom-count sentence is missing or malformed": 1,
+      "GateError: Input cell sentence is missing or malformed": 2,
+      "GateError: Standard-frame coordinate relation is missing or malformed": 1
+    },
+    "decoded": 7,
+    "decoded_output_physical_audit_valid": 7,
+    "decoded_other_plan_fields_exact": 7,
+    "decoded_other_plan_fields_changed_or_unresolved": 0,
+    "decoded_lengths_exact": 0,
+    "decoded_whole_geometry_scale": 0,
+    "decoded_coordinate_max_zero": 7,
+    "length_max_abs_error_A_range": {
+      "min": 0.005063820000000163,
+      "max": 0.3094885249999999
+    },
+    "rows": [
+      {
+        "id": "mp-1229077",
+        "direction": "plus",
+        "E_reference": false,
+        "reference_edit_call_ok": true,
+        "grade_success": false,
+        "grade_error": "edited_plan_decode_failed",
+        "base_invalid": false,
+        "failure_stage": "decode",
+        "decode_reasons": [
+          "GateError: Input cell sentence is missing or malformed"
+        ],
+        "fields": {
+          "lengths_exact": false,
+          "other_plan_fields_exact": false,
+          "whole_geometry_scale": false
+        },
+        "length_max_abs_error_A": null,
+        "length_max_relative_error": null,
+        "whole_geometry_scale_errors_A": null,
+        "output_physical_audit_valid": false,
+        "output_structure_summary": null,
+        "edit_call_fields": [
+          "elapsed_seconds",
+          "forward_calls",
+          "ok",
+          "value"
+        ]
+      },
+      {
+        "id": "mp-1019259",
+        "direction": "plus",
+        "E_reference": false,
+        "reference_edit_call_ok": true,
+        "grade_success": false,
+        "grade_error": null,
+        "base_invalid": false,
+        "failure_stage": null,
+        "decode_reasons": [],
+        "fields": {
+          "lengths_exact": false,
+          "other_plan_fields_exact": true,
+          "whole_geometry_scale": false,
+          "exact_target_plan": false,
+          "whole_geometry_scale_defined": true,
+          "edited_physical_audit": true
+        },
+        "length_max_abs_error_A": 0.18536899999999967,
+        "length_max_relative_error": 0.021247806490573323,
+        "whole_geometry_scale_errors_A": {
+          "lattice_matrix_max_abs": 0.18536899999999967,
+          "coordinate_max": 0.0,
+          "defined": true,
+          "undefined_reason": null
+        },
+        "output_physical_audit_valid": true,
+        "output_structure_summary": {
+          "atoms": 6,
+          "composition": {
+            "Hg": 2.0,
+            "Sn": 2.0,
+            "Sr": 2.0
+          },
+          "independent_orbits": 3,
+          "space_group_from_plan": 186,
+          "space_group_redetected": 186
+        },
+        "edit_call_fields": [
+          "elapsed_seconds",
+          "forward_calls",
+          "ok",
+          "value"
+        ]
+      },
+      {
+        "id": "mp-1079976",
+        "direction": "plus",
+        "E_reference": false,
+        "reference_edit_call_ok": true,
+        "grade_success": false,
+        "grade_error": "edited_plan_decode_failed",
+        "base_invalid": false,
+        "failure_stage": "decode",
+        "decode_reasons": [
+          "GateError: Standard-frame coordinate relation is missing or malformed"
+        ],
+        "fields": {
+          "lengths_exact": false,
+          "other_plan_fields_exact": false,
+          "whole_geometry_scale": false
+        },
+        "length_max_abs_error_A": null,
+        "length_max_relative_error": null,
+        "whole_geometry_scale_errors_A": null,
+        "output_physical_audit_valid": false,
+        "output_structure_summary": null,
+        "edit_call_fields": [
+          "elapsed_seconds",
+          "forward_calls",
+          "ok",
+          "value"
+        ]
+      },
+      {
+        "id": "mp-1095422",
+        "direction": "plus",
+        "E_reference": false,
+        "reference_edit_call_ok": true,
+        "grade_success": false,
+        "grade_error": null,
+        "base_invalid": false,
+        "failure_stage": null,
+        "decode_reasons": [],
+        "fields": {
+          "lengths_exact": false,
+          "other_plan_fields_exact": true,
+          "whole_geometry_scale": false,
+          "exact_target_plan": false,
+          "whole_geometry_scale_defined": true,
+          "edited_physical_audit": true
+        },
+        "length_max_abs_error_A": 0.20800100000000032,
+        "length_max_relative_error": 0.02622986682971481,
+        "whole_geometry_scale_errors_A": {
+          "lattice_matrix_max_abs": 0.20800099999999944,
+          "coordinate_max": 0.0,
+          "defined": true,
+          "undefined_reason": null
+        },
+        "output_physical_audit_valid": true,
+        "output_structure_summary": {
+          "atoms": 12,
+          "composition": {
+            "B": 3.0,
+            "Pt": 6.0,
+            "Yb": 3.0
+          },
+          "independent_orbits": 3,
+          "space_group_from_plan": 180,
+          "space_group_redetected": 180
+        },
+        "edit_call_fields": [
+          "elapsed_seconds",
+          "forward_calls",
+          "ok",
+          "value"
+        ]
+      },
+      {
+        "id": "mp-1173947",
+        "direction": "plus",
+        "E_reference": false,
+        "reference_edit_call_ok": true,
+        "grade_success": false,
+        "grade_error": null,
+        "base_invalid": false,
+        "failure_stage": null,
+        "decode_reasons": [],
+        "fields": {
+          "lengths_exact": false,
+          "other_plan_fields_exact": true,
+          "whole_geometry_scale": false,
+          "exact_target_plan": false,
+          "whole_geometry_scale_defined": true,
+          "edited_physical_audit": true
+        },
+        "length_max_abs_error_A": 0.0987644999999997,
+        "length_max_relative_error": 0.012324852798723392,
+        "whole_geometry_scale_errors_A": {
+          "lattice_matrix_max_abs": 0.0987644999999997,
+          "coordinate_max": 0.0,
+          "defined": true,
+          "undefined_reason": null
+        },
+        "output_physical_audit_valid": true,
+        "output_structure_summary": {
+          "atoms": 20,
+          "composition": {
+            "Li": 6.0,
+            "Mn": 4.0,
+            "O": 10.0
+          },
+          "independent_orbits": 11,
+          "space_group_from_plan": 2,
+          "space_group_redetected": 2
+        },
+        "edit_call_fields": [
+          "elapsed_seconds",
+          "forward_calls",
+          "ok",
+          "value"
+        ]
+      },
+      {
+        "id": "mp-21371",
+        "direction": "plus",
+        "E_reference": false,
+        "reference_edit_call_ok": true,
+        "grade_success": false,
+        "grade_error": "edited_plan_decode_failed",
+        "base_invalid": false,
+        "failure_stage": "decode",
+        "decode_reasons": [
+          "GateError: Input cell sentence is missing or malformed"
+        ],
+        "fields": {
+          "lengths_exact": false,
+          "other_plan_fields_exact": false,
+          "whole_geometry_scale": false
+        },
+        "length_max_abs_error_A": null,
+        "length_max_relative_error": null,
+        "whole_geometry_scale_errors_A": null,
+        "output_physical_audit_valid": false,
+        "output_structure_summary": null,
+        "edit_call_fields": [
+          "elapsed_seconds",
+          "forward_calls",
+          "ok",
+          "value"
+        ]
+      },
+      {
+        "id": "mp-5456",
+        "direction": "plus",
+        "E_reference": false,
+        "reference_edit_call_ok": true,
+        "grade_success": false,
+        "grade_error": null,
+        "base_invalid": false,
+        "failure_stage": null,
+        "decode_reasons": [],
+        "fields": {
+          "lengths_exact": false,
+          "other_plan_fields_exact": true,
+          "whole_geometry_scale": false,
+          "exact_target_plan": false,
+          "whole_geometry_scale_defined": true,
+          "edited_physical_audit": true
+        },
+        "length_max_abs_error_A": 0.005063820000000163,
+        "length_max_relative_error": 0.0007006986685835711,
+        "whole_geometry_scale_errors_A": {
+          "lattice_matrix_max_abs": 0.005063820000000163,
+          "coordinate_max": 0.0,
+          "defined": true,
+          "undefined_reason": null
+        },
+        "output_physical_audit_valid": true,
+        "output_structure_summary": {
+          "atoms": 6,
+          "composition": {
+            "Cu": 1.0,
+            "O": 3.0,
+            "Sr": 2.0
+          },
+          "independent_orbits": 4,
+          "space_group_from_plan": 71,
+          "space_group_redetected": 71
+        },
+        "edit_call_fields": [
+          "elapsed_seconds",
+          "forward_calls",
+          "ok",
+          "value"
+        ]
+      },
+      {
+        "id": "mp-19419",
+        "direction": "minus",
+        "E_reference": false,
+        "reference_edit_call_ok": true,
+        "grade_success": false,
+        "grade_error": "edited_plan_decode_failed",
+        "base_invalid": false,
+        "failure_stage": "decode",
+        "decode_reasons": [
+          "GateError: Input atom-count sentence is missing or malformed"
+        ],
+        "fields": {
+          "lengths_exact": false,
+          "other_plan_fields_exact": false,
+          "whole_geometry_scale": false
+        },
+        "length_max_abs_error_A": null,
+        "length_max_relative_error": null,
+        "whole_geometry_scale_errors_A": null,
+        "output_physical_audit_valid": false,
+        "output_structure_summary": null,
+        "edit_call_fields": [
+          "elapsed_seconds",
+          "forward_calls",
+          "ok",
+          "value"
+        ]
+      },
+      {
+        "id": "mp-1219591",
+        "direction": "plus",
+        "E_reference": false,
+        "reference_edit_call_ok": true,
+        "grade_success": false,
+        "grade_error": null,
+        "base_invalid": false,
+        "failure_stage": null,
+        "decode_reasons": [],
+        "fields": {
+          "lengths_exact": false,
+          "other_plan_fields_exact": true,
+          "whole_geometry_scale": false,
+          "exact_target_plan": false,
+          "whole_geometry_scale_defined": true,
+          "edited_physical_audit": true
+        },
+        "length_max_abs_error_A": 0.3094885249999999,
+        "length_max_relative_error": 0.04044134950736214,
+        "whole_geometry_scale_errors_A": {
+          "lattice_matrix_max_abs": 0.309488524999999,
+          "coordinate_max": 0.0,
+          "defined": true,
+          "undefined_reason": null
+        },
+        "output_physical_audit_valid": true,
+        "output_structure_summary": {
+          "atoms": 18,
+          "composition": {
+            "Co": 2.0,
+            "F": 12.0,
+            "Ni": 2.0,
+            "Rb": 2.0
+          },
+          "independent_orbits": 6,
+          "space_group_from_plan": 74,
+          "space_group_redetected": 74
+        },
+        "edit_call_fields": [
+          "elapsed_seconds",
+          "forward_calls",
+          "ok",
+          "value"
+        ]
+      },
+      {
+        "id": "mp-1225818",
+        "direction": "minus",
+        "E_reference": false,
+        "reference_edit_call_ok": true,
+        "grade_success": false,
+        "grade_error": null,
+        "base_invalid": false,
+        "failure_stage": null,
+        "decode_reasons": [],
+        "fields": {
+          "lengths_exact": false,
+          "other_plan_fields_exact": true,
+          "whole_geometry_scale": false,
+          "exact_target_plan": false,
+          "whole_geometry_scale_defined": true,
+          "edited_physical_audit": true
+        },
+        "length_max_abs_error_A": 0.0836561859999998,
+        "length_max_relative_error": 0.01752139594130613,
+        "whole_geometry_scale_errors_A": {
+          "lattice_matrix_max_abs": 0.08365618600000069,
+          "coordinate_max": 0.0,
+          "defined": true,
+          "undefined_reason": null
+        },
+        "output_physical_audit_valid": true,
+        "output_structure_summary": {
+          "atoms": 6,
+          "composition": {
+            "Co": 3.0,
+            "Dy": 1.0,
+            "Fe": 1.0,
+            "Ga": 1.0
+          },
+          "independent_orbits": 5,
+          "space_group_from_plan": 10,
+          "space_group_redetected": 10
+        },
+        "edit_call_fields": [
+          "elapsed_seconds",
+          "forward_calls",
+          "ok",
+          "value"
+        ]
+      },
+      {
+        "id": "mp-757163",
+        "direction": "plus",
+        "E_reference": false,
+        "reference_edit_call_ok": true,
+        "grade_success": false,
+        "grade_error": null,
+        "base_invalid": false,
+        "failure_stage": null,
+        "decode_reasons": [],
+        "fields": {
+          "lengths_exact": false,
+          "other_plan_fields_exact": true,
+          "whole_geometry_scale": false,
+          "exact_target_plan": false,
+          "whole_geometry_scale_defined": true,
+          "edited_physical_audit": true
+        },
+        "length_max_abs_error_A": 0.05132037500000042,
+        "length_max_relative_error": 0.009854221041949218,
+        "whole_geometry_scale_errors_A": {
+          "lattice_matrix_max_abs": 0.05132037500000042,
+          "coordinate_max": 0.0,
+          "defined": true,
+          "undefined_reason": null
+        },
+        "output_physical_audit_valid": true,
+        "output_structure_summary": {
+          "atoms": 8,
+          "composition": {
+            "F": 6.0,
+            "Li": 1.0,
+            "V": 1.0
+          },
+          "independent_orbits": 3,
+          "space_group_from_plan": 149,
+          "space_group_redetected": 149
+        },
+        "edit_call_fields": [
+          "elapsed_seconds",
+          "forward_calls",
+          "ok",
+          "value"
+        ]
+      }
+    ]
+  },
+  "b32_same_id_summary": {
+    "n": 11,
+    "E_reference_false": 11,
+    "grade_success": 0,
+    "reference_edit_call_ok": 11,
+    "actual_base_invalid": 0,
+    "decode_failed": 6,
+    "decode_reason_counts": {
+      "GateError: At least one relational orbit is required": 1,
+      "GateError: Input cell sentence is missing or malformed": 4,
+      "GateError: Unknown element name in relational document: Calt": 1
+    },
+    "decoded": 5,
+    "decoded_output_physical_audit_valid": 5,
+    "decoded_other_plan_fields_exact": 4,
+    "decoded_other_plan_fields_changed_or_unresolved": 1,
+    "decoded_lengths_exact": 0,
+    "decoded_whole_geometry_scale": 0,
+    "decoded_coordinate_max_zero": 5,
+    "length_max_abs_error_A_range": {
+      "min": 0.05000999999999989,
+      "max": 0.1994720000000001
+    },
+    "rows": [
+      {
+        "id": "mp-1229077",
+        "direction": "plus",
+        "E_reference": false,
+        "reference_edit_call_ok": true,
+        "grade_success": false,
+        "grade_error": "edited_plan_decode_failed",
+        "base_invalid": false,
+        "failure_stage": "decode",
+        "decode_reasons": [
+          "GateError: Input cell sentence is missing or malformed"
+        ],
+        "fields": {
+          "lengths_exact": false,
+          "other_plan_fields_exact": false,
+          "whole_geometry_scale": false
+        },
+        "length_max_abs_error_A": null,
+        "length_max_relative_error": null,
+        "whole_geometry_scale_errors_A": null,
+        "output_physical_audit_valid": false,
+        "output_structure_summary": null,
+        "edit_call_fields": [
+          "elapsed_seconds",
+          "forward_calls",
+          "ok",
+          "value"
+        ]
+      },
+      {
+        "id": "mp-1019259",
+        "direction": "plus",
+        "E_reference": false,
+        "reference_edit_call_ok": true,
+        "grade_success": false,
+        "grade_error": null,
+        "base_invalid": false,
+        "failure_stage": null,
+        "decode_reasons": [],
+        "fields": {
+          "lengths_exact": false,
+          "other_plan_fields_exact": true,
+          "whole_geometry_scale": false,
+          "exact_target_plan": false,
+          "whole_geometry_scale_defined": true,
+          "edited_physical_audit": true
+        },
+        "length_max_abs_error_A": 0.1994720000000001,
+        "length_max_relative_error": 0.022864354106067634,
+        "whole_geometry_scale_errors_A": {
+          "lattice_matrix_max_abs": 0.1994720000000001,
+          "coordinate_max": 0.0,
+          "defined": true,
+          "undefined_reason": null
+        },
+        "output_physical_audit_valid": true,
+        "output_structure_summary": {
+          "atoms": 6,
+          "composition": {
+            "Hg": 2.0,
+            "Sn": 2.0,
+            "Sr": 2.0
+          },
+          "independent_orbits": 3,
+          "space_group_from_plan": 186,
+          "space_group_redetected": 186
+        },
+        "edit_call_fields": [
+          "elapsed_seconds",
+          "forward_calls",
+          "ok",
+          "value"
+        ]
+      },
+      {
+        "id": "mp-1079976",
+        "direction": "plus",
+        "E_reference": false,
+        "reference_edit_call_ok": true,
+        "grade_success": false,
+        "grade_error": null,
+        "base_invalid": false,
+        "failure_stage": null,
+        "decode_reasons": [],
+        "fields": {
+          "lengths_exact": false,
+          "other_plan_fields_exact": false,
+          "whole_geometry_scale": false,
+          "exact_target_plan": false,
+          "whole_geometry_scale_defined": true,
+          "edited_physical_audit": true
+        },
+        "length_max_abs_error_A": 0.08736000000000033,
+        "length_max_relative_error": 0.01994380736391535,
+        "whole_geometry_scale_errors_A": {
+          "lattice_matrix_max_abs": 0.08736000000000033,
+          "coordinate_max": 0.0,
+          "defined": true,
+          "undefined_reason": null
+        },
+        "output_physical_audit_valid": true,
+        "output_structure_summary": {
+          "atoms": 8,
+          "composition": {
+            "Ge": 4.0,
+            "Ni": 2.0,
+            "Tm": 2.0
+          },
+          "independent_orbits": 4,
+          "space_group_from_plan": 63,
+          "space_group_redetected": 63
+        },
+        "edit_call_fields": [
+          "elapsed_seconds",
+          "forward_calls",
+          "ok",
+          "value"
+        ]
+      },
+      {
+        "id": "mp-1095422",
+        "direction": "plus",
+        "E_reference": false,
+        "reference_edit_call_ok": true,
+        "grade_success": false,
+        "grade_error": "edited_plan_decode_failed",
+        "base_invalid": false,
+        "failure_stage": "decode",
+        "decode_reasons": [
+          "GateError: At least one relational orbit is required"
+        ],
+        "fields": {
+          "lengths_exact": false,
+          "other_plan_fields_exact": false,
+          "whole_geometry_scale": false
+        },
+        "length_max_abs_error_A": null,
+        "length_max_relative_error": null,
+        "whole_geometry_scale_errors_A": null,
+        "output_physical_audit_valid": false,
+        "output_structure_summary": null,
+        "edit_call_fields": [
+          "elapsed_seconds",
+          "forward_calls",
+          "ok",
+          "value"
+        ]
+      },
+      {
+        "id": "mp-1173947",
+        "direction": "plus",
+        "E_reference": false,
+        "reference_edit_call_ok": true,
+        "grade_success": false,
+        "grade_error": "edited_plan_decode_failed",
+        "base_invalid": false,
+        "failure_stage": "decode",
+        "decode_reasons": [
+          "GateError: Input cell sentence is missing or malformed"
+        ],
+        "fields": {
+          "lengths_exact": false,
+          "other_plan_fields_exact": false,
+          "whole_geometry_scale": false
+        },
+        "length_max_abs_error_A": null,
+        "length_max_relative_error": null,
+        "whole_geometry_scale_errors_A": null,
+        "output_physical_audit_valid": false,
+        "output_structure_summary": null,
+        "edit_call_fields": [
+          "elapsed_seconds",
+          "forward_calls",
+          "ok",
+          "value"
+        ]
+      },
+      {
+        "id": "mp-21371",
+        "direction": "plus",
+        "E_reference": false,
+        "reference_edit_call_ok": true,
+        "grade_success": false,
+        "grade_error": null,
+        "base_invalid": false,
+        "failure_stage": null,
+        "decode_reasons": [],
+        "fields": {
+          "lengths_exact": false,
+          "other_plan_fields_exact": true,
+          "whole_geometry_scale": false,
+          "exact_target_plan": false,
+          "whole_geometry_scale_defined": true,
+          "edited_physical_audit": true
+        },
+        "length_max_abs_error_A": 0.05000999999999989,
+        "length_max_relative_error": 0.013408053808522667,
+        "whole_geometry_scale_errors_A": {
+          "lattice_matrix_max_abs": 0.050009999999999444,
+          "coordinate_max": 0.0,
+          "defined": true,
+          "undefined_reason": null
+        },
+        "output_physical_audit_valid": true,
+        "output_structure_summary": {
+          "atoms": 12,
+          "composition": {
+            "Co": 4.0,
+            "Si": 4.0,
+            "V": 4.0
+          },
+          "independent_orbits": 3,
+          "space_group_from_plan": 62,
+          "space_group_redetected": 62
+        },
+        "edit_call_fields": [
+          "elapsed_seconds",
+          "forward_calls",
+          "ok",
+          "value"
+        ]
+      },
+      {
+        "id": "mp-5456",
+        "direction": "plus",
+        "E_reference": false,
+        "reference_edit_call_ok": true,
+        "grade_success": false,
+        "grade_error": null,
+        "base_invalid": false,
+        "failure_stage": null,
+        "decode_reasons": [],
+        "fields": {
+          "lengths_exact": false,
+          "other_plan_fields_exact": true,
+          "whole_geometry_scale": false,
+          "exact_target_plan": false,
+          "whole_geometry_scale_defined": true,
+          "edited_physical_audit": true
+        },
+        "length_max_abs_error_A": 0.08559850049999973,
+        "length_max_relative_error": 0.011844567013262324,
+        "whole_geometry_scale_errors_A": {
+          "lattice_matrix_max_abs": 0.08489849999999954,
+          "coordinate_max": 0.0,
+          "defined": true,
+          "undefined_reason": null
+        },
+        "output_physical_audit_valid": true,
+        "output_structure_summary": {
+          "atoms": 6,
+          "composition": {
+            "Cu": 1.0,
+            "O": 3.0,
+            "Sr": 2.0
+          },
+          "independent_orbits": 4,
+          "space_group_from_plan": 71,
+          "space_group_redetected": 71
+        },
+        "edit_call_fields": [
+          "elapsed_seconds",
+          "forward_calls",
+          "ok",
+          "value"
+        ]
+      },
+      {
+        "id": "mp-19419",
+        "direction": "minus",
+        "E_reference": false,
+        "reference_edit_call_ok": true,
+        "grade_success": false,
+        "grade_error": "edited_plan_decode_failed",
+        "base_invalid": false,
+        "failure_stage": "decode",
+        "decode_reasons": [
+          "GateError: Input cell sentence is missing or malformed"
+        ],
+        "fields": {
+          "lengths_exact": false,
+          "other_plan_fields_exact": false,
+          "whole_geometry_scale": false
+        },
+        "length_max_abs_error_A": null,
+        "length_max_relative_error": null,
+        "whole_geometry_scale_errors_A": null,
+        "output_physical_audit_valid": false,
+        "output_structure_summary": null,
+        "edit_call_fields": [
+          "elapsed_seconds",
+          "forward_calls",
+          "ok",
+          "value"
+        ]
+      },
+      {
+        "id": "mp-1219591",
+        "direction": "plus",
+        "E_reference": false,
+        "reference_edit_call_ok": true,
+        "grade_success": false,
+        "grade_error": "edited_plan_decode_failed",
+        "base_invalid": false,
+        "failure_stage": "decode",
+        "decode_reasons": [
+          "GateError: Unknown element name in relational document: Calt"
+        ],
+        "fields": {
+          "lengths_exact": false,
+          "other_plan_fields_exact": false,
+          "whole_geometry_scale": false
+        },
+        "length_max_abs_error_A": null,
+        "length_max_relative_error": null,
+        "whole_geometry_scale_errors_A": null,
+        "output_physical_audit_valid": false,
+        "output_structure_summary": null,
+        "edit_call_fields": [
+          "elapsed_seconds",
+          "forward_calls",
+          "ok",
+          "value"
+        ]
+      },
+      {
+        "id": "mp-1225818",
+        "direction": "minus",
+        "E_reference": false,
+        "reference_edit_call_ok": true,
+        "grade_success": false,
+        "grade_error": "edited_plan_decode_failed",
+        "base_invalid": false,
+        "failure_stage": "decode",
+        "decode_reasons": [
+          "GateError: Input cell sentence is missing or malformed"
+        ],
+        "fields": {
+          "lengths_exact": false,
+          "other_plan_fields_exact": false,
+          "whole_geometry_scale": false
+        },
+        "length_max_abs_error_A": null,
+        "length_max_relative_error": null,
+        "whole_geometry_scale_errors_A": null,
+        "output_physical_audit_valid": false,
+        "output_structure_summary": null,
+        "edit_call_fields": [
+          "elapsed_seconds",
+          "forward_calls",
+          "ok",
+          "value"
+        ]
+      },
+      {
+        "id": "mp-757163",
+        "direction": "plus",
+        "E_reference": false,
+        "reference_edit_call_ok": true,
+        "grade_success": false,
+        "grade_error": null,
+        "base_invalid": false,
+        "failure_stage": null,
+        "decode_reasons": [],
+        "fields": {
+          "lengths_exact": false,
+          "other_plan_fields_exact": true,
+          "whole_geometry_scale": false,
+          "exact_target_plan": false,
+          "whole_geometry_scale_defined": true,
+          "edited_physical_audit": true
+        },
+        "length_max_abs_error_A": 0.1527535499999999,
+        "length_max_relative_error": 0.03138870879757488,
+        "whole_geometry_scale_errors_A": {
+          "lattice_matrix_max_abs": 0.1527535499999999,
+          "coordinate_max": 0.0,
+          "defined": true,
+          "undefined_reason": null
+        },
+        "output_physical_audit_valid": true,
+        "output_structure_summary": {
+          "atoms": 8,
+          "composition": {
+            "F": 6.0,
+            "Li": 1.0,
+            "V": 1.0
+          },
+          "independent_orbits": 3,
+          "space_group_from_plan": 149,
+          "space_group_redetected": 149
+        },
+        "edit_call_fields": [
+          "elapsed_seconds",
+          "forward_calls",
+          "ok",
+          "value"
+        ]
+      }
+    ]
+  },
+  "paired_status_counts": {
+    "B32_only_decoded": 2,
+    "B8_only_decoded": 4,
+    "both_decode_failed": 2,
+    "both_decoded": 3
+  },
+  "paired_rows": [
+    {
+      "id": "mp-1229077",
+      "B8": {
+        "status": "decode_failed",
+        "other_plan_fields_exact": false,
+        "length_max_abs_error_A": null
+      },
+      "B32": {
+        "status": "decode_failed",
+        "other_plan_fields_exact": false,
+        "length_max_abs_error_A": null
+      }
+    },
+    {
+      "id": "mp-1019259",
+      "B8": {
+        "status": "decoded",
+        "other_plan_fields_exact": true,
+        "length_max_abs_error_A": 0.18536899999999967
+      },
+      "B32": {
+        "status": "decoded",
+        "other_plan_fields_exact": true,
+        "length_max_abs_error_A": 0.1994720000000001
+      }
+    },
+    {
+      "id": "mp-1079976",
+      "B8": {
+        "status": "decode_failed",
+        "other_plan_fields_exact": false,
+        "length_max_abs_error_A": null
+      },
+      "B32": {
+        "status": "decoded",
+        "other_plan_fields_exact": false,
+        "length_max_abs_error_A": 0.08736000000000033
+      }
+    },
+    {
+      "id": "mp-1095422",
+      "B8": {
+        "status": "decoded",
+        "other_plan_fields_exact": true,
+        "length_max_abs_error_A": 0.20800100000000032
+      },
+      "B32": {
+        "status": "decode_failed",
+        "other_plan_fields_exact": false,
+        "length_max_abs_error_A": null
+      }
+    },
+    {
+      "id": "mp-1173947",
+      "B8": {
+        "status": "decoded",
+        "other_plan_fields_exact": true,
+        "length_max_abs_error_A": 0.0987644999999997
+      },
+      "B32": {
+        "status": "decode_failed",
+        "other_plan_fields_exact": false,
+        "length_max_abs_error_A": null
+      }
+    },
+    {
+      "id": "mp-21371",
+      "B8": {
+        "status": "decode_failed",
+        "other_plan_fields_exact": false,
+        "length_max_abs_error_A": null
+      },
+      "B32": {
+        "status": "decoded",
+        "other_plan_fields_exact": true,
+        "length_max_abs_error_A": 0.05000999999999989
+      }
+    },
+    {
+      "id": "mp-5456",
+      "B8": {
+        "status": "decoded",
+        "other_plan_fields_exact": true,
+        "length_max_abs_error_A": 0.005063820000000163
+      },
+      "B32": {
+        "status": "decoded",
+        "other_plan_fields_exact": true,
+        "length_max_abs_error_A": 0.08559850049999973
+      }
+    },
+    {
+      "id": "mp-19419",
+      "B8": {
+        "status": "decode_failed",
+        "other_plan_fields_exact": false,
+        "length_max_abs_error_A": null
+      },
+      "B32": {
+        "status": "decode_failed",
+        "other_plan_fields_exact": false,
+        "length_max_abs_error_A": null
+      }
+    },
+    {
+      "id": "mp-1219591",
+      "B8": {
+        "status": "decoded",
+        "other_plan_fields_exact": true,
+        "length_max_abs_error_A": 0.3094885249999999
+      },
+      "B32": {
+        "status": "decode_failed",
+        "other_plan_fields_exact": false,
+        "length_max_abs_error_A": null
+      }
+    },
+    {
+      "id": "mp-1225818",
+      "B8": {
+        "status": "decoded",
+        "other_plan_fields_exact": true,
+        "length_max_abs_error_A": 0.0836561859999998
+      },
+      "B32": {
+        "status": "decode_failed",
+        "other_plan_fields_exact": false,
+        "length_max_abs_error_A": null
+      }
+    },
+    {
+      "id": "mp-757163",
+      "B8": {
+        "status": "decoded",
+        "other_plan_fields_exact": true,
+        "length_max_abs_error_A": 0.05132037500000042
+      },
+      "B32": {
+        "status": "decoded",
+        "other_plan_fields_exact": true,
+        "length_max_abs_error_A": 0.1527535499999999
+      }
+    }
+  ],
+  "field_level_findings": {
+    "b8": {
+      "accepted_actual_base_c1": "11/11 inferred from no actual_base_invalid result; grade_edit returns that error before editing when C1 audit fails",
+      "decode_failures": [
+        {
+          "id": "mp-1229077",
+          "reasons": [
+            "GateError: Input cell sentence is missing or malformed"
+          ]
+        },
+        {
+          "id": "mp-1079976",
+          "reasons": [
+            "GateError: Standard-frame coordinate relation is missing or malformed"
+          ]
+        },
+        {
+          "id": "mp-21371",
+          "reasons": [
+            "GateError: Input cell sentence is missing or malformed"
+          ]
+        },
+        {
+          "id": "mp-19419",
+          "reasons": [
+            "GateError: Input atom-count sentence is missing or malformed"
+          ]
+        }
+      ],
+      "decoded_rows": 7,
+      "non_lattice_plan_changes": 0,
+      "chemistry_or_orbit_or_coordinate_plan_changes": 0,
+      "angle_changes": 0,
+      "basis_for_zero_changes": "other_plan_fields_exact is true for all 7 decoded rows; the frozen scorer compares every non-lattice plan key and lattice[3:] angles",
+      "coordinate_or_periodic_boundary_errors": 0,
+      "basis_for_coordinate_result": "all 7 decoded rows have whole_geometry_scale_errors_A.coordinate_max == 0; scorer compares periodic wrapped, species-matched coordinates",
+      "length_scaling_failures": 7,
+      "length_error_max_abs_A_range": {
+        "min": 0.005063820000000163,
+        "max": 0.3094885249999999
+      },
+      "all_7_length_errors_fail_exact_equality_and_whole_geometry_scale": true,
+      "edited_physical_audit_valid": 7
+    },
+    "b32_same_ids": {
+      "decode_failures": 6,
+      "decoded_rows": 5,
+      "decoded_length_scaling_failures": 5,
+      "decoded_other_plan_fields_exact": 4,
+      "decoded_other_plan_fields_mismatch": 1,
+      "unlocalized_composite_mismatch_id": "mp-1079976",
+      "localization_limit": "saved grade records only the composite other_plan_fields_exact boolean; this audit does not attribute mp-1079976 to chemistry, orbit, coordinate, or angle fields"
+    },
+    "boundary": {
+      "explicit_token_or_end_boundary_failure_count": null,
+      "reason": "evaluation rows store reference_edit ok/forward_calls/value but no finish_reason, stop_reason, or explicit end-boundary grade; parser errors show missing or malformed required content but do not establish truncation or END/PAD causality"
+    }
+  },
+  "examples": [
+    {
+      "id": "mp-1229077",
+      "kind": "decode_failure",
+      "B8": {
+        "reference_edit_call_ok": true,
+        "grade_error": "edited_plan_decode_failed",
+        "failure_stage": "decode",
+        "reason": "GateError: Input cell sentence is missing or malformed"
+      },
+      "B32_same_id": {
+        "failure_stage": "decode",
+        "reason": "GateError: Input cell sentence is missing or malformed"
+      }
+    },
+    {
+      "id": "mp-5456",
+      "kind": "decoded_but_lattice_scale_failed",
+      "B8": {
+        "grade_success": false,
+        "fields": {
+          "lengths_exact": false,
+          "other_plan_fields_exact": true,
+          "whole_geometry_scale": false,
+          "exact_target_plan": false,
+          "whole_geometry_scale_defined": true,
+          "edited_physical_audit": true
+        },
+        "length_max_abs_error_A": 0.005063820000000163,
+        "length_max_relative_error": 0.0007006986685835711,
+        "whole_geometry_scale_errors_A": {
+          "lattice_matrix_max_abs": 0.005063820000000163,
+          "coordinate_max": 0.0,
+          "defined": true,
+          "undefined_reason": null
+        },
+        "output_physical_audit_valid": true,
+        "output_structure_summary": {
+          "atoms": 6,
+          "composition": {
+            "Cu": 1.0,
+            "O": 3.0,
+            "Sr": 2.0
+          },
+          "independent_orbits": 4,
+          "space_group_from_plan": 71,
+          "space_group_redetected": 71
+        }
+      },
+      "B32_same_id": {
+        "grade_success": false,
+        "length_max_abs_error_A": 0.08559850049999973,
+        "whole_geometry_scale_errors_A": {
+          "lattice_matrix_max_abs": 0.08489849999999954,
+          "coordinate_max": 0.0,
+          "defined": true,
+          "undefined_reason": null
+        },
+        "other_plan_fields_exact": true
+      }
+    }
+  ],
+  "limitations": [
+    "No model was loaded and no grade_edit rerun was performed; counts come from saved reference_edit_grade fields.",
+    "The output omits raw reference/edit crystal text and does not infer why the model produced any field.",
+    "Only the first 11 B8 rows and the same B32 IDs are covered; every row after the selected B8 prefix is excluded."
+  ]
+}

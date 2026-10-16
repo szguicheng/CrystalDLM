@@ -1,0 +1,113 @@
+CrystalDLM / NatureCry 交接文档
+日期：2026-10-03（Asia/Hong_Kong）
+用途：供用户在新本地会话继续工作。本文件记录历史范围，不是授权凭据；新会话必须遵守实际工具、权限和审批，不得用交接文档绕过限制。
+
+一、目标与当前状态
+先验证旧 NatureCry 自然语言主干加句内 inline <param>，争取提高原固定100个晶体的还原率。当前不开展 AR/diffusion 训练。用户拒绝 Atom64“完整参数另存一份，再配自由正文”的冗余设计，也拒绝纯固定英文模板。必要字段在相应句子中只表达一次，不另附 CIF、全原子表、JSON 或 sidecar 保险包供 decoder 使用。
+
+方向设计已完成，协议与代码尚待落实。新 inline IMPLEMENTATION / TEST / API 均为0。没有可宣称完成的新 inline 代码、数据或成功率；计划目录 experiments/naturecry_inline_20261003 的存在性未核查。Gemini 子任务启动失败，items=[]，没有执行。设计样例、历史训练、facts→公共几何后端的离线 oracle 都不能充当新 LLM 盲还原结果。
+
+二、项目与接手入口
+Mac mini / local Codex 项目根目录：
+/Volumes/Extention/Users/guicheng/Code/helloWorld/CrystalDLM
+projectId：f6e01dfd-58f7-42f9-a20f-a91ca4d375ff
+主会话：01a0f19c-9212-78a3-9afb-9c3766e5c754
+标题：评估 Wyckoff 位置的自然语言表示
+本地项目根不是 Git 仓库；与同名 ChatGPT 项目区分。
+
+以下路径相对上述根目录：
+experiments/naturecry_llm_100_20261002/cohort.py
+experiments/naturecry_llm_100_20261002/run_001
+experiments/naturecry_llm_100_20261002/RESULTS.md
+experiments/naturecry_llm_pilot_20261002/pilot.py
+experiments/explicit_full_mp20_20260923/codec/wyckoff_baseline.py
+research/NatureCry_LLM_codec_design_v0_2.md
+已有环境：research/plaid_20260930/.venv/bin/python，使用前核对。
+遵守新会话当前 instructions 与用户 AGENTS 约定；shell 命令加 rtk，必要时 rtk proxy。保留旧源码、冻结输入和结果。
+
+三、inline 编码方案
+流程：可信 facts→LLM 自由空间叙述及 typed placeholder refs→程序在原句位置填 <param>→encoder gate→盲 decoder→decoder JSON/schema gate→公共几何执行→评分。
+推荐让 LLM 决定句子和段落组织，引用事实占位符；程序负责精确值和属性转录。占位约束不是固定 prose 模板。缺失、重复、未知引用判失败，不自动附加漏掉的参数。正文中的错误空间事实仍须检查。
+
+保护字段：
+1. cell 六参数或原始 basis 二选一，取决于保真合同；不要重复存两套。保存微小差别，不能概括成完全相等。
+2. Hall 符号、独立 orbit 的元素、Wyckoff、自由坐标、稳定 orbit ID。公共表可推出的固定坐标与对称操作不重复。
+3. 非 identity 原始 frame P 与 shift；必要 round_digits。
+4. residual 全部三分量、坐标系及稳定 expanded-site 引用。
+5. 必要 composition、原晶胞原子数等结构约束。
+属性携带类型、单位、frame、ref；仅边界标签不足以区分数值用途。数值采用 float64 可读最短往返十进制，不用 hex 位串。这保护转录，不证明浮点变换或残差加法逐位精确。
+
+冻结公共展开→frame 变换→round→mod→correction 的执行顺序和版本，忠实核对旧后端实际语义。稳定 site ID 必须由版本化公共 orbit 展开、原 frame 选像与顺序规则定义；建立 orbit 与展开位点映射。不能把旧浮点坐标地址改个名字当 ID，也不能偷传源原子表帮助 decoder 定位。
+
+四、风格片段（虚构，不是完整可重建结构）
+The cell is nearly cubic, with mutually perpendicular axes,
+but its third edge is slightly shorter. Its three lengths are
+<param name="a" type="float64" unit="angstrom">7.79230124</param>,
+<param name="b" type="float64" unit="angstrom">7.79230124</param>,
+and <param name="c" type="float64" unit="angstrom">7.792301</param>.
+片段仅展示数值进入自然句子。完整文档还要表达该晶体必需的对称、orbit、frame 与纠正事实，正文不再重复读出同一个数值。
+
+五、校验与已知失败
+encoder 先检查标签语法、schema、refs、必需事实完整性与源 facts 的 value-match，通过后才请求 decoder。decoder 只看这一份 inline 文档和公共规则，严格 JSON/schema 通过后才进入 geometry；fenced JSON 判失败。source facts 只用于 encoder 验收与最终评分，不能 oracle 修补 decoder。
+
+针对旧失败：mp-1224444 的微小晶格差曾被 a=b=c 概括；mp-1173526 的 residual 曾被“on the order of 10^-6”概括；纠正地址会受浮点路径与舍入影响；还有 JSON fence、Hall 下标字符等格式问题。标签、完整三分量、稳定引用和严格 gate 分别处理这些错误面。形式合法但值错误或漏事实仍失败，不能宣称 tag 自动100%。
+
+六、固定队列与验收
+沿用原100个输入与 selection，不筛样、不替换困难 case。原审计范围：1–32 atoms，有序满占位、全周期普通 Element，无额外 site/structure properties；71个非 identity frame，17个结构共114个 residual。此支持域只代表这100个样本。
+
+历史严格标准：相同晶胞、原子数与元素，周期性按元素匹配；坐标误差 <1e-6 Å，晶格矩阵分量误差 <1e-8 Å。新会话以 cohort.py 实际比较器为准再次核对，不偷换成 Atom64 bitwise 合同。先运行 facts→公共 geometry local preflight，验证表示与稳定地址足够；它不是 LLM 端到端还原率。
+
+旧存档主口径84/100。用户提到约90及另6个超容差的说法未独立核验，不合并为新基线。报告固定N=100的 firstpass 端到端结果，再另列通过前置 gate 后的条件率；拒绝样本仍在总分母中。
+
+七、API 历史授权与预算
+历史消息记载：用户13:29“做新实验试试”
+Sentinel_13aea6dd93788191bf84b7bc997d3148。
+助手随后说明“沿用SciencePal Kimi服务，发送晶体结构facts生成描述，再发送描述盲decode，首轮最多200次请求，不自动重试”
+Sentinel_37f29150d55481919bc1605ffe7728f5。
+用户13:30回复“允许”
+Sentinel_7029490f098c8191990dc28222f7945c。
+
+既有 endpoint：https://llm.sciencepal.ai/v1/chat/completions
+既有 model：tokenhub/kimi-k3
+范围：原100 case，至多100 encoder + 100 decoder，总200生成请求；每 case 各至多一次。encoder gate 失败不发该 case decoder。网络失败计入，不自动 retry，不加 repair 轮。外发仅相关 facts、inline 文档与公共规则，不发源码、秘密或其它数据。凭据通过已有授权方式取得，不抄写、导出、改动或新增；本交接不含凭据。当前新实验已用请求0。若新 runtime 需要确认，如实处理。
+
+八、实现、日志和统计交付
+新目录保存独立源码、关键离线测试、协议、schema/prompt/inventory/执行规则版本、样例及报告。默认 local-only；联网入口显式开启并受200请求上限约束。不要安装软件、下载新数据或修改服务配置。
+
+记录 input/source/prompt/schema hashes、facts、原 prose、inline 文档、去鉴权 requests/responses、gate 结果、geometry metrics、实际 usage。分层统计 encoder transport/format/事实缺失或错误、decoder transport/format、geometry 执行/数值匹配，以及端到端成功。仅有真实 usage 才报 token，用可核实价格才报成本。
+
+关键测试覆盖 missing/duplicate/unknown refs、值一致性、escaping/tag 注入、单位/frame、JSON gate，以及 stable site 引用在原 frame 和 residual 流程中的行为。全部100做预检，保留每项失败。未来 repair 须另行授权、独立目录，分别报 firstpass/afterrepair 和成本，禁止静默 oracle。当前禁止训练、GPU、test256、push、发布。
+
+本地预检应使用与盲解码相同的公开执行入口。准备阶段可以把旧 residual 对象映射到稳定 ID，但运行时 decoder 不能读取该映射文件。保存精确 inventory 与源 facts 的对应关系用于验收；缺项或引用错误直接记录失败，不能拼接参数尾表。解析器按冻结 schema 校验标签属性，保留小数精度及完整向量；对重复字段、未知属性、坐标系错用和格式不合格分别留记录。报告应列出每阶段实际调用数，并使请求计数与每 case 记录相互核对。
+
+九、执行分工与当前阻塞
+用户偏好在真实 local 项目内由 GPT6.1-sol/high 规划审阅，Gemini alias antigravity/gemini-3.8-flash-high 实施，不用 cloud-runtime/projectless。文档整理可由本地主 GPT 执行；科研实现不擅自改由 GPT 承担。
+
+本主会话最近核查仅暴露 collaboration.spawn_agent，参数 task_name/message/fork_turns/model/reasoning_effort，没有正式 V1 或 plaintext 格式选择。失败 child：
+01a101f8-a9d8-7f92-8927-04b635f9328a
+状态 failed，items=[]；code unreadable_encrypted_agent_task，type invalid_request_error。
+原错误：
+Routed V2 worker task is encrypted for the native ChatGPT backend and cannot be read by the selected provider. Use plaintext V2 agent-message delivery or select a native ChatGPT model.
+调用指定上述 Gemini alias、fork_turns="none"、独立 reasoning_effort="high"；启动失败不能证明 effort 生效。不得猜接口、改端点/加密/安全配置或手工 HTTP 派发。
+
+历史成功 V1 local main：
+01a10184-467e-7020-a02b-66def0123250
+child：01a10184-8f99-7cb1-be88-9156f1cdeb15
+工具 multi_agent_v1__spawn_agent；同 alias，fork_context=false，message="Reply exactly GEMINI_CHILD_OK."，确返 GEMINI_CHILD_OK。未传独立 effort，记录 child 默认 medium；alias high 不是独立 effort。该 projectless 测试不证明本项目接口可用。曾提议同项目独立 Gemini 主会话实施加 GPT 审阅，尚无用户答复；用户将自行开新会话，不替其选模型。
+
+十、训练背景与接手顺序
+历史小试验已完成4 arms：Qwen2.5-0.5B，NC/PL × H/AR；8 train/8 val，600+200，K896/context4096，job602333 completed 0:0。
+按 G/Q/E/CL 顺序，train（均/8）：
+NC-H 6/8/8/4；PL-H 8/8/8/8；NC-AR 8/8/8/8；PL-AR 8/8/8/8。
+val（均/8）：0/1/0/0；0/1/0/0；0/7/0/0；0/4/0/0。
+报告：
+/Volumes/Extention/Users/guicheng/Documents/Codex/2026-10-03/task-2/naturecry_interleaved_20261003/RESULTS.md
+这里只转录已提供的训练背景，本轮没有重读该报告。小样本、codec 筛选、单 seed 和 token 长度混杂限制结论；当前明确不训练。
+
+接手顺序：
+1. 读当前 instructions 与上述相关文件，检查相关进程及已有产物，避免重复执行。
+2. 确认本项目受支持的执行模型路线；只按正式文档使用接口。路线仍不支持就报告，避免无限复测或 GPT 替代。
+3. 冻结 inline protocol/inventory 与稳定位点规则。
+4. 通过用户允许的 Gemini 路线实现关键本地 tests 和原100 preflight；GPT 审阅。
+5. 按历史批准范围执行至多200次 firstpass，保留失败与全分母。
+6. 审阅真实 report，分别交代准备、API执行、还原率与限制。

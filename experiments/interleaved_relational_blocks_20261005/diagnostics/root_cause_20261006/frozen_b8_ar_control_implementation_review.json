@@ -1,0 +1,19 @@
+{
+  "review": "frozen_b8_ar_control_implementation_review",
+  "status": "passed",
+  "blocking_findings": [],
+  "non_blocking_findings": [],
+  "review_scope": "Independent read-only review of the three bounded B8 native-AR control files.",
+  "review_basis": {
+    "full_review": "The prior source version was reviewed end to end against the agreed checklist: frozen B8 import and checkpoint path, native causal AR crystal-body binding, original text/header route, 750-tensor and 8-case gates, strict END/PAD parsing with raw CrystalBlockError, all-heldout runtime override, snapshot hashes, summary metadata, and non-overwriting output path.",
+    "follow_up": "After the review finding, re-read annotate_summary and confirmed sampling.pop('block_size') removes the diffusion block-size field from AR sampling metadata. The B8 value remains in model/cohort configuration metadata.",
+    "cpu_validation": "Root-reported CPU contract validation passed after the new regression assertion was first observed failing before the metadata fix.",
+    "slurm_validation": "Root-reported bash -n validation passed."
+  },
+  "reviewed_files": {
+    "experiments/interleaved_relational_scaled32_20261006/evaluate_full_history_b8_ar_control.py": "34b0764e0a956075c2ae5389cab637ecbf9982154aba126133939819f3f3b651",
+    "experiments/interleaved_relational_scaled32_20261006/test_evaluate_full_history_b8_ar_control.py": "e8ff7dc61e875320daed1d0165d061708979501c000bcc7f48e82cfc6193234a",
+    "experiments/interleaved_relational_scaled32_20261006/evaluate_full_history_b8_ar_control.slurm": "3bd7110ebee65de61cc999827f5d55b10afc613c3a8654bd40a9d6c416afa7e8"
+  },
+  "remaining_boundary": "This review covers implementation correctness and CPU contract only; it does not report a GPU run or learned-model result."
+}

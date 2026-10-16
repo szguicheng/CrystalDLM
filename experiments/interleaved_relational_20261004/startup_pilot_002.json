@@ -1,0 +1,44 @@
+{
+  "observed_at_utc": "2026-10-05T09:19:11Z",
+  "job_id": "605522",
+  "slurm_state": "RUNNING",
+  "slurm_elapsed": "00:04:26",
+  "node": "gpu-a100-10",
+  "process": {
+    "pid": 3137018,
+    "command": "resume_pilot_001.py",
+    "cuda_visible_devices": "0",
+    "gpu_uuid": "GPU-de730f35-787c-e466-cddd-2b1052c3e7dc",
+    "gpu_name": "NVIDIA A100-SXM4-80GB",
+    "gpu_memory_total_mib": 81920,
+    "process_gpu_memory_used_mib": 3810,
+    "observed_gpu_utilization_percent": 58
+  },
+  "ar_checkpoint_restore": {
+    "status": "checkpoint_restored",
+    "checkpoint_path": "pilot_001/ar/checkpoint.pt",
+    "checkpoint_sha256": "9d73aeebc4966efafb6fd2bb03bb448c400d0e20878c1258ec8c8c1321f123e5",
+    "updates": 512,
+    "mode": "ar",
+    "prediction_offset": 0,
+    "initial_fingerprint": "6bffa202d8485a6ee8bce3553044c9657948e25be702a45a9efb860ced9d1429",
+    "final_fingerprint": "e466cb281d88e6356f3ed73dc2915a3bf947024abecaa534f25d22a6a0dca5e8",
+    "strict_reload_verified": true
+  },
+  "ar_seen8_inheritance": {
+    "copied_verbatim": true,
+    "raw_sha256": "9101a6a776af5a346a1356d35287c0b5fa942201091e227826b05f6b5617ca5d",
+    "matches_pilot_001": true,
+    "summary_sha256": "fd89cc4e321bcbc41e3d27637b0625a00c7ab526627e657a4588b5d01841ecf1"
+  },
+  "ar_heldout16_replay": {
+    "rows_written_at_observation": 2,
+    "heldout_denominator": 16,
+    "first_two_scientific_payload_comparison": "pending"
+  },
+  "hshift": {
+    "started": false,
+    "training_updates": 0
+  },
+  "test256_used": false
+}

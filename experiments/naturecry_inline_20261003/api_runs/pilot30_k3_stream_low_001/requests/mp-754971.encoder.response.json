@@ -1,0 +1,33 @@
+{
+  "id": "cb8abd5e-e544-46a0-951a-f872efeac8be",
+  "object": "chat.completion",
+  "created": 1791054484,
+  "model": "tokenhub/kimi-k3",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "The structure is described by an input cell whose lattice parameters are [[param:cell.a]], [[param:cell.b]], [[param:cell.c]], [[param:cell.alpha]], [[param:cell.beta]], and [[param:cell.gamma]]. The two basal edge lengths are equal, and the two angles involving the c axis are likewise equal, while the third angle differs, giving the cell a skewed, near-hexagonal character. This input cell contains [[param:input.atom_count]] atoms in total, comprising [[param:composition.Cs]] caesium atoms, [[param:composition.Tm]] thulium atoms, and [[param:composition.O]] oxygen atoms.\n\nThe symmetry of the refined model is monoclinic, assigned to space group number [[param:space_group.number]] with Hall symbol [[param:space_group.hall]], that is, C2/m in its conventional setting. Because the input cell does not coincide with this conventional monoclinic setting, a change of coordinate frame is required: the input fractional coordinates are mapped into the standard setting by the rotation [[param:frame.matrix]] together with the origin shift [[param:frame.origin_shift]], which is zero. Input fractional coordinates were processed at [[param:round_digits]] decimal places of precision.\n\nWithin the standard C2/m frame, the atoms are grouped into six independent Wyckoff orbits. Three of these carry caesium. The first caesium orbit, [[param:orbit.o000.id]], is a Cs site on Wyckoff position [[param:orbit.o000.wyckoff]] with free parameters [[param:orbit.o000.parameters]]; it has multiplicity 4 and coordinate relation x, 0, z, so its atoms lie on mirror planes with both x and z free. The second caesium orbit, [[param:orbit.o001.id]], is a Cs site on [[param:orbit.o001.wyckoff]] with parameter [[param:orbit.o001.parameters]]; of multiplicity 4 with relation 0, y, 1/2, it lies at the top of the cell in z with only y free. The third, [[param:orbit.o002.id]], is a Cs site on [[param:orbit.o002.wyckoff]] with parameter [[param:orbit.o002.parameters]], of multiplicity 4 with relation 0, y, 0, again with only y free but sitting at the base of the cell in z.\n\nThe thulium atoms occupy a single orbit, [[param:orbit.o003.id]], a Tm site on [[param:orbit.o003.wyckoff]] with free parameters [[param:orbit.o003.parameters]], multiplicity 4 and relation x, 0, z, placing the thulium atoms on mirror planes like the first caesium orbit.\n\nOxygen is distributed over two orbits. The orbit [[param:orbit.o004.id]] is an O site on [[param:orbit.o004.wyckoff]] with parameters [[param:orbit.o004.parameters]], multiplicity 4 with relation x, 0, z, another mirror-plane orbit with two free coordinates. The remaining oxygen orbit, [[param:orbit.o005.id]], is an O site on the general position [[param:orbit.o005.wyckoff]] with parameters [[param:orbit.o005.parameters]], of multiplicity 8 with relation x, y, z, so it is the only fully unconstrained site in the structure. The multiplicities of these six orbits—five of multiplicity 4 and one of multiplicity 8—sum to the 14-atom primitive content implied by the input composition.\n\nNo precision corrections were supplied, so the idealized symmetry backbone as described is accepted without any reported deviations."
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "reasoning_stream": {
+    "chunks": 18,
+    "characters": 179
+  },
+  "usage": {
+    "completion_tokens": 808,
+    "prompt_tokens": 3225,
+    "total_tokens": 4033,
+    "completion_tokens_details": {
+      "reasoning_tokens": 32
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "cache_creation_input_tokens": 0
+    }
+  }
+}

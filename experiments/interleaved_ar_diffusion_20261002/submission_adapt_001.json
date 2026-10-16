@@ -1,0 +1,27 @@
+{
+  "slurm_job": "600420",
+  "remote_root": "/scratch/chenggui2/CrystalDLM/experiments/interleaved_ar_diffusion_20261002",
+  "output": "adaptation_001",
+  "models": [
+    "ar",
+    "hybrid"
+  ],
+  "warmup_updates": 600,
+  "joint_branches": {
+    "consistent": 200,
+    "feedback": 200
+  },
+  "seed": 17,
+  "data": "smoke_data_002",
+  "training_pairs": 24,
+  "held_out_pairs": 32,
+  "held_out_reading_cases": 64,
+  "gpu": "A100-SXM4-80GB",
+  "node": "gpu-a100-05",
+  "walltime": "02:00:00",
+  "diagnostic_schema_fix": "standalone report parser patched before hybrid diagnostic; training source frozen",
+  "status": "COMPLETED",
+  "exit_code": "0:0",
+  "elapsed": "00:42:40",
+  "formal_1024_training_started": false
+}

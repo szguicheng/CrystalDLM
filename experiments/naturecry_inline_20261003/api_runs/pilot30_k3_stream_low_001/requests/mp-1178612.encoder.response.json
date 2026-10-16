@@ -1,0 +1,33 @@
+{
+  "id": "d3be998a-8b42-4d7e-b3cd-78864c1ca024",
+  "object": "chat.completion",
+  "created": 1791054020,
+  "model": "tokenhub/kimi-k3",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "The original input is described by a triclinic-like cell metric whose three edge lengths are very close but not asserted to be identical: [[param:cell.a]], [[param:cell.b]], and [[param:cell.c]], with interaxial angles [[param:cell.alpha]], [[param:cell.beta]], and [[param:cell.gamma]]. The input cell contains [[param:input.atom_count]] atoms, distributed as oxygen [[param:composition.O]], silicon [[param:composition.Si]], and zinc [[param:composition.Zn]].\n\nThe symmetry assigned to the structure is space group [[param:space_group.number]], with Hall symbol [[param:space_group.hall]]; this is the body-centered orthorhombic setting conventionally denoted Ibam. A change of coordinate frame relates the supplied input cell to the standard setting through [[param:frame.matrix]] together with a numerically negligible origin shift [[param:frame.origin_shift]], and fractional input coordinates were rounded to [[param:round_digits]] decimal places before interpretation.\n\nIn the standard frame the independent content is organized into five symmetry-independent Wyckoff orbits, each of multiplicity eight in the supplied public expansion. The zinc orbit is [[param:orbit.o000.id]], element [[param:orbit.o000.element]], on Wyckoff position [[param:orbit.o000.wyckoff]] with free parameter set [[param:orbit.o000.parameters]]; its representative coordinate relation is (0, y, 1/4), so only the y coordinate is free. Silicon occupies [[param:orbit.o001.id]], element [[param:orbit.o001.element]], Wyckoff position [[param:orbit.o001.wyckoff]], parameters [[param:orbit.o001.parameters]], on an (x, y, 0) orbit with two in-plane free coordinates. One oxygen orbit, [[param:orbit.o002.id]], element [[param:orbit.o002.element]], is on [[param:orbit.o002.wyckoff]] with parameters [[param:orbit.o002.parameters]], corresponding to (x, 0, 1/4) and therefore one free coordinate. The remaining oxygen density is split between two distinct 8j orbits rather than merged: [[param:orbit.o003.id]], element [[param:orbit.o003.element]], Wyckoff [[param:orbit.o003.wyckoff]], parameters [[param:orbit.o003.parameters]]; and [[param:orbit.o004.id]], element [[param:orbit.o004.element]], Wyckoff [[param:orbit.o004.wyckoff]], parameters [[param:orbit.o004.parameters]]. Both share the (x, y, 0) coordinate form but remain independent because their parameter pairs differ.\n\nThe precision corrections are treated as small real displacements away from the idealized symmetric backbone, not as features of the ideal structure. They apply to three expanded silicon sites in the input cell: [[param:correction.c000.site_id]] of element [[param:correction.c000.element]] is shifted by [[param:correction.c000.delta]]; [[param:correction.c001.site_id]] of element [[param:correction.c001.element]] by [[param:correction.c001.delta]]; and [[param:correction.c002.site_id]] of element [[param:correction.c002.element]] by [[param:correction.c002.delta]]. These deltas are essentially along the fractional z direction and are of order 10⁻⁶, with opposite signs among the sites, so they describe minute relaxational noise around the Si orbit rather than a change of Wyckoff assignment or space-group symmetry."
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "reasoning_stream": {
+    "chunks": 251,
+    "characters": 2366
+  },
+  "usage": {
+    "completion_tokens": 1317,
+    "prompt_tokens": 3634,
+    "total_tokens": 4951,
+    "completion_tokens_details": {
+      "reasoning_tokens": 561
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "cache_creation_input_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "job_id": 608870,
+  "state": "RUNNING",
+  "reason": "None",
+  "dependency": "(null)",
+  "training_job": 608706,
+  "partition": "gpu_a100",
+  "qos": "normal",
+  "requested_node": "gpu-a100-07",
+  "walltime": "04:00:00",
+  "output": "experiments/interleaved_relational_scaled32_20261006/eval_full_history_b8_fixed_001",
+  "input_pin": "experiments/interleaved_relational_scaled32_20261006/eval_full_history_b8_input_pin.json",
+  "pin_creation": "inside evaluation allocation after terminal training receipt and all32 actual exposure checks; large checkpoint SHA verified by frozen evaluator in allocation",
+  "source_hashes": {
+    "evaluate_full_history_b8.py": "edbccaedd80cc0fb2d064fc7315d2623a5ec7c471c72786f427ff5aa9af9cbf7",
+    "evaluate_full_history_b8.slurm": "971a36af9f31f4d6807380e0d917791b20f30e69fdc49ddbee7d2263127902a8",
+    "test_evaluate_full_history_b8.py": "8ffa556d478fadf98ac3a29348b26dd4e7d2d2c2e0f4d51dd8a41fb41ce2596b"
+  },
+  "checks": {
+    "local_CPU": "passed",
+    "remote_CPU": "passed",
+    "slurm_syntax": "passed",
+    "independent_review": "no blockers",
+    "output_and_pin_absent_before_submit": true,
+    "dependency_verified_by_scontrol": true
+  },
+  "sampling": {
+    "block_size": 8,
+    "K": 2560,
+    "policy": "confidence_one",
+    "time_rule": "k=ceil(remaining_masks*STEPS/B); B32 trajectory preserved",
+    "no_AR_fallback_or_repair": true
+  },
+  "cohort": {
+    "seen8": 8,
+    "heldout16": 16,
+    "same_frozen_scorer": true
+  },
+  "recorded_at_utc": "2026-10-06T22:48:43.468495+00:00",
+  "evaluation_started": true,
+  "actual_node": "gpu-a100-04",
+  "actual_partition": "stingy",
+  "old_runtime_invalid_job": 608543
+}

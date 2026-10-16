@@ -1,0 +1,144 @@
+{
+  "review_status": "passed_after_startup_import_source_pin_and_runtime_policy_review",
+  "scope": "Read-only source review of the final metadata selection and data-preparation path. No geometric preparation, source CSV parsing by this reviewer, training, Slurm submission, or SSH was performed.",
+  "reviewed_source_hashes": {
+    "prepare_data.py": "12ef3af18a4e85ceef5f99fa208171aab9dc4184952b31ef67b7084f38fcf92b",
+    "test_prepare_data.py": "28a109e91ff0aab778a83f38193418ee9b2ead839f1aeb816485b65526f07c96",
+    "prepare_data.slurm": "4241d89c10f94f5b1418f62e522ac18a5aeb0df1e78ce54f8099331ce9261a10",
+    "selection.json": "82707935dd3d7c71c70cefc2fb7ca6eadc73079d83ed9e0a55cf34147af25988"
+  },
+  "selection_evidence": {
+    "selection_sha_matches_sidecar_and_requested_pin": true,
+    "selected_cases": 224,
+    "unique_ids": 224,
+    "unique_source_rows": 224,
+    "unique_cif_hashes": 224,
+    "selected_space_groups": 169,
+    "round_robin_case_order_matches_rule": true,
+    "all_224_selected_input_CIF_files_exist_and_match_recorded_SHA256": true,
+    "previous_100_selection_SHA_matches": true,
+    "old48_records_SHA_and_train32_heldout16_split_match": true,
+    "selected_ID_overlap_old100": 0,
+    "selected_CIF_SHA_overlap_old100": 0,
+    "selected_element_set_matches_to_old_heldout16": 0,
+    "metadata": {
+      "source_dataset": "work/PLaID/data/basic/train.csv",
+      "recorded_source_sha256": "133bab58dba02d316f9f91174839f17802dce648be4e8659d1a42b32b97fa01d",
+      "recorded_rows": 27136,
+      "local_file_bytes": 34975028
+    },
+    "CSV_handling_boundary": "This reviewer checked file metadata and the frozen selection/CIF hashes; the 35 MB CSV was not parsed or rehashed here. Root separately reported a full selector/order and CIF verification."
+  },
+  "source_call_review": {
+    "direct_pure_inline_entrypoint": "prepare_data.py:552 calls the hash-pinned inline.prepare_case(CIF path, block_adapter.TABLE) for each selected case; it does not invoke inline.prepare batch/output workflow.",
+    "module_binding": "_load_adapters loads inline.prepare.py first under a private module name, then installs the pinned blockrunner prepare.py as sys.modules[\"prepare\"], then removes/reloads score from BLOCK_ROOT. blockrunner score.py imports prepare, so score.audit is bound to that same pinned adapter.",
+    "source_pins": "Current source pins cover the scaled32 helper, inline prepare.py, and blockrunner prepare.py/score.py before evaluation/row construction.",
+    "frozen_helper_contract": "The actual frozen helper.prepare_row(case_id, selection_bytes, source_hashes, adapter, score) is used after per-case facts/plan generation. It verifies source plan/facts/text/CIF SHAs, plan/render equality, canonical normalization, exact second decode, CIF-vs-plan source geometry, source physical audit, plus/minus edit geometry and physical audits, and per-text K bounds.",
+    "packing_contract": "The frozen helper.audit_packing runs over old48 plus all 224 new rows. Its pinned checks cover both directions, train variants 0/1 and heldout variant 0, all four arms, crystal-body K=2560 and packed MAXLEN=8192."
+  },
+  "preparation_gates": {
+    "actual_composition_rechecked_against_old_heldout_element_sets": true,
+    "candidate_failures_replaced": false,
+    "streamed_case_progress": "A per-attempt cases.jsonl is created before work; each case result is append-flushed immediately, and Slurm stdout progress is emitted every 10 cases and at 224.",
+    "run100_runtime_pin": "Before processing, the script requires run100 passed=100, all contracts passed, runtime_hashes_stable=true, and current plus saved source-snapshot hashes equal the run100 runtime_hash map. It repeats those checks after case processing/packing, requires current hashes and run100 summary SHA to remain unchanged, and returns failure before dataset commit on mismatch.",
+    "split_specific_coverage": "_coverage returns separate train, heldout, and all counts. Heldout unseen SG/Wyckoff coverage is computed against training-only SG/pair sets. The new CPU test covers these distinctions.",
+    "commit_gate": "The script writes data_001 only after exactly 224 results exist and all pass, aggregate packing passes, IDs/CIFs remain disjoint, and total split is exactly 272 records with train=256 and heldout=16. Records preserve the old48 JSONL byte prefix and publish via a temporary directory rename.",
+    "no_overwrite": "Existing data_001 or .data_001.tmp causes a refusal; failed/incomplete cases only produce a per-attempt failure summary and do not create data_001."
+  },
+  "slurm_resources": {
+    "partition": "stingy",
+    "qos": "normal",
+    "nodes": 1,
+    "tasks": 1,
+    "cpus_per_task": 4,
+    "memory": "16G",
+    "time_limit": "02:00:00",
+    "GPU_requested": false,
+    "offline_HF": true
+  },
+  "verification_provenance": {
+    "source_SHA_values_match_owner_final_message": true,
+    "owner_reported_pure_CPU_tests_passed": true,
+    "owner_reported_bash_syntax_check_passed": true,
+    "reviewer_ran_geometry_or_batch_preparation": false,
+    "reviewer_submitted_job_or_used_SSH": false,
+    "owner_reported_pure_CPU_tests_passed_after_revision": true,
+    "owner_reported_bash_syntax_check_passed_after_revision": true,
+    "reviewer_verified_final_source_SHA_values": true,
+    "reviewer_verified_three_new_raw_source_hashes_against_constants": true
+  },
+  "blockers": [],
+  "startup_failure_history": {
+    "job": "609508",
+    "status": "FAILED",
+    "elapsed_seconds": 3,
+    "processed": 0,
+    "failure": "Root-reported missing raw pilot import dependency before any selected-case processing.",
+    "scope_note": "The failed attempt is historical evidence only; this review did not rerun it or inspect remote logs."
+  },
+  "raw_cif_import_dependency_review": {
+    "pinned_dependencies": {
+      "pilot.py": {
+        "path": "experiments/naturecry_llm_pilot_20261002/pilot.py",
+        "expected_sha256": "0aad3088782cb38abf80949f439d915cef407075aaad3697cf6fd6fc3f626b81",
+        "local_sha256_matches": true
+      },
+      "benchmark.py": {
+        "path": "experiments/naturecry_roundtrip_20261001/benchmark.py",
+        "expected_sha256": "603cc3a0923d7171c1507ff2503574cdab13f69f005635b8af417716356b69e9",
+        "local_sha256_matches": true
+      },
+      "naturecry_codec.py": {
+        "path": "experiments/naturecry_roundtrip_20261001/naturecry_codec.py",
+        "expected_sha256": "5421ceac327c00d8a9d783685be9a02a16d1d16b727414c4a227060715a202ee",
+        "local_sha256_matches": true
+      }
+    },
+    "import_chain": "Pinned inline.prepare.py imports cohort.py; cohort.py imports pilot.py; pilot.py imports benchmark.py and naturecry_codec.py. naturecry_codec.py imports wyckoff_baseline.py and test_program.py, which are already covered by the existing CNL runtime source map.",
+    "before_after_gate": "prepare_stage hashes all three pinned files before loading/execution and again after per-case preparation; any missing file, mismatch, or change sets a failure before data_001 commit.",
+    "requests_import_note": "pilot.py imports requests at module import time although its network chat functions are not invoked by inline.prepare_case. requests is not a member of the exact-version runtime policy. The actual Burgundy environment was not probed under this read-only/no-SSH review; package presence remains a runtime prerequisite."
+  },
+  "runtime_environment_policy_review": {
+    "baseline": {
+      "python": "3.10.19",
+      "torch": "2.8.0",
+      "exact_libraries": {
+        "numpy": "1.26.4",
+        "scipy": "1.15.3",
+        "pymatgen": "2025.10.7",
+        "spglib": "2.7.0",
+        "transformers": "4.57.6"
+      }
+    },
+    "Burgundy_actual_versions_root_reported": {
+      "python": "3.10.18",
+      "torch": "2.2.0+cu121",
+      "exact_libraries": {
+        "numpy": "1.26.4",
+        "scipy": "1.15.3",
+        "pymatgen": "2025.10.7",
+        "spglib": "2.7.0",
+        "transformers": "4.57.6"
+      }
+    },
+    "policy_semantics": {
+      "same_package_set_required": true,
+      "five_geometry_tokenizer_libraries_must_match_exactly": true,
+      "python_major_minor_must_match": true,
+      "python_patch_difference_allowed_and_recorded": true,
+      "torch_version_difference_allowed_and_recorded": true,
+      "torch_or_model_arithmetic_in_data_prep": false
+    },
+    "source_review": {
+      "_runtime_policy_matches_requested_boundary": true,
+      "runtime_versions_recorded_in_attempt_and_manifest": true,
+      "rejects_Python_3_11": true,
+      "tests_reject_changed_exact_library_versions": true
+    },
+    "evidence_boundary": "Baseline versions were read from frozen data_pilot_001/manifest.json. Burgundy versions and successful CPU-test status were reported by root/owner; no remote session or environment was run by this reviewer."
+  },
+  "nonblocking_notes": [
+    "prepare_stage checks selection.sha256 against the current selection.json and records that digest in every output source pin; the expected 82707935…af25988 digest is not hard-coded as a constant in prepare_data.py. The current selection and all 224 frozen CIF inputs were independently checked here, select_stage refuses to replace an existing prepare_001, and the final audit should retain the verified selection SHA.",
+    "Runtime-source pins now include the three raw-CIF import files. A module-level requests import remains a compute-environment prerequisite but no network function is called by this preparation path."
+  ]
+}

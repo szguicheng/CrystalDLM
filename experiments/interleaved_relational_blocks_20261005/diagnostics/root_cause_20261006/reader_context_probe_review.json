@@ -1,0 +1,42 @@
+{
+  "status": "passed",
+  "scope": "bounded read-only review of the current Q2 and Q_swap reader-context probe",
+  "reviewed_at": "2026-10-07",
+  "findings": [],
+  "sources_sha256": {
+    "reader_context_probe.py": "4308f6cfe4f8eeaa0a84265d3bd39e304ca9e35fa0aa3e9b974119eddee8164a",
+    "test_reader_context_probe.py": "345a91ef70541485c5bef4e2eb9bb07ce461df68c0078c966845076e17f18bd0"
+  },
+  "q2_review": {
+    "status": "pass",
+    "cases": "five valid generated-C2 actual-Q2 cases replayed before any contrast",
+    "target": "same generated C2 supplies all three prompt contexts and grading audit"
+  },
+  "q_swap_review": {
+    "status": "pass",
+    "cases": "all eight frozen seen8 replacement-read cases replayed",
+    "source_reconstruction": "matches joint run.py replacement prefix from source generation context, frozen swap_id partner C1, preserved Q1 question, and assistant boundary",
+    "neutral_control": "uses scaled32 train._reader_prefix for the partner Q1 with the same partner C1",
+    "target": "partner C1 is shared across full-history replay, neutral context, cue context, and score.audit grading"
+  },
+  "replay_order_and_receipts": {
+    "status": "pass",
+    "evidence": "five Q2 plus eight Q_swap replays are accumulated and attempt-match gated before contrasts; receipts are separated by task and report raw-success denominator, exact successful outputs, and matched failed attempts"
+  },
+  "summary_and_boundaries": {
+    "status": "pass",
+    "evidence": "summary keeps seen8/attempted/eligible/replayed counts per task and records hashes, checkpoint fingerprints, fast metadata receipt, zero optimizer updates, and diagnostic-only interpretation"
+  },
+  "prior_blocker": {
+    "status": "resolved",
+    "evidence": "pure _replay_summary receipt is computed before output creation and summary uses its fields"
+  },
+  "validation": {
+    "cpu_regression": "passed (reported by parent; regression covers Q2 and Q_swap prompt construction plus success/failure replay receipt accounting)",
+    "runtime_jobs": "not run"
+  },
+  "reviewed_files": [
+    "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/reader_context_probe.py",
+    "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/test_reader_context_probe.py"
+  ]
+}

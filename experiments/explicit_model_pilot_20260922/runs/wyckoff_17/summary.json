@@ -1,0 +1,121 @@
+{
+  "n": 512,
+  "counts": {
+    "decoded": 2,
+    "positive_volume": 2,
+    "no_overlap": 0,
+    "composition_match": 0,
+    "usable": 0,
+    "reference_match": 0,
+    "reference_sg_match": 0
+  },
+  "rates": {
+    "decoded": 0.00390625,
+    "positive_volume": 0.00390625,
+    "no_overlap": 0.0,
+    "composition_match": 0.0,
+    "usable": 0.0,
+    "reference_match": 0.0,
+    "reference_sg_match": 0.0
+  },
+  "space_group_counts": {
+    "None": 1,
+    "2": 1
+  },
+  "top_errors": [
+    [
+      "ValueError:decode",
+      498
+    ],
+    [
+      "KeyError:decode",
+      12
+    ]
+  ],
+  "recovery": {
+    "loss": 0.5462641213572377,
+    "ce": 0.48276207826651135,
+    "numeric_rmse_normalized": 0.2519961172135917,
+    "masked_nonpad_accuracy": 0.7618869337326843,
+    "masked_content_accuracy": 0.524191063174114,
+    "counts": {
+      "ce": 6646.716705322266,
+      "weight": 13768.100280761719,
+      "squared_error": 206.06412982940674,
+      "numeric": 3245,
+      "correct": 6105,
+      "count": 8013,
+      "content_correct": 1701,
+      "content_count": 3245,
+      "unknown": 0
+    },
+    "numeric_by_type": {
+      "<LENGTH>": {
+        "absolute_error_normalized": 160.96365928649902,
+        "count": 755
+      },
+      "<ANGLE>": {
+        "absolute_error_normalized": 61.54847478866577,
+        "count": 776
+      },
+      "<COORD>": {
+        "absolute_error_normalized": 378.24199295043945,
+        "count": 1714
+      },
+      "<OFFSET>": {
+        "absolute_error_normalized": 0.0,
+        "count": 0
+      },
+      "<DELTA>": {
+        "absolute_error_normalized": 0.0,
+        "count": 0
+      }
+    }
+  },
+  "training": {
+    "best_step": 4000,
+    "best_validation_loss": 0.5630877990961444,
+    "initial_validation": {
+      "loss": 8.388392722248186,
+      "ce": 6.95425294621066,
+      "numeric_rmse_normalized": 1.1975557507012045,
+      "masked_nonpad_accuracy": 0.0,
+      "masked_content_accuracy": 0.0,
+      "counts": {
+        "ce": 95947.134765625,
+        "weight": 13796.900329589844,
+        "squared_error": 4622.232498168945,
+        "numeric": 3223,
+        "correct": 0,
+        "count": 8045,
+        "content_correct": 0,
+        "content_count": 3303,
+        "unknown": 0
+      },
+      "numeric_by_type": {
+        "<LENGTH>": {
+          "absolute_error_normalized": 1730.678092956543,
+          "count": 755
+        },
+        "<ANGLE>": {
+          "absolute_error_normalized": 381.2561283111572,
+          "count": 776
+        },
+        "<COORD>": {
+          "absolute_error_normalized": 537.6142387390137,
+          "count": 1692
+        },
+        "<OFFSET>": {
+          "absolute_error_normalized": 0.0,
+          "count": 0
+        },
+        "<DELTA>": {
+          "absolute_error_normalized": 0.0,
+          "count": 0
+        }
+      }
+    },
+    "elapsed_seconds": 56.96255588531494,
+    "max_gpu_memory_MB": 463.3525390625
+  }
+}

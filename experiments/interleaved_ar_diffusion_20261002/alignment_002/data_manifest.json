@@ -1,0 +1,27 @@
+{
+  "source_rows_sha256": "f5a715861d4489d2a6ccc6ec19f85f9d474aacd1b152209cc5f3bc218f35dd6e",
+  "train_questions": [
+    "Read the current crystal and give its composition, space group number, atom count, independent orbit count, and lattice lengths a, b, c.",
+    "Describe the structure that is actually shown. Report its formula, space group number, number of cell atoms and independent orbits, and a, b, c.",
+    "Use the current crystal block as the source of truth even when earlier design conditions disagree. Give the formula, space group number, atoms, orbits, and all three lattice lengths.",
+    "Check the supplied crystal rather than the requested design. State its composition, space group number, cell atom count, orbit count, and a, b, c in angstroms.",
+    "What does the displayed structure contain? Give composition, space group number, total atoms, independent orbits, and lattice lengths a, b and c.",
+    "Summarize the latest crystal using its own data: composition, space group number, atoms per cell, orbit count and a, b, c.",
+    "Earlier requested properties may differ from this crystal. Extract the actual composition and space group number, atom and orbit counts, and lattice lengths a, b, c.",
+    "List the factual cell description from the current structure: formula, space group number, atoms, independent orbits and lattice lengths a, b, c.",
+    "Tell me the actual formula and space group number. Also report the total number of atoms, number of independent orbits, and a, b, c for this crystal.",
+    "Please inspect the provided crystal itself and return its composition, space group number, atom count, independent orbit count and a, b, c.",
+    "Extract seven facts from the latest block: composition, space group number, atom count, independent orbit count, a, b and c.",
+    "Report the measured cell description in the crystal block, not a repetition of my earlier conditions: formula, space group number, atoms, orbits, a, b, c."
+  ],
+  "test_questions": [
+    "For the structure currently in front of you, what are its chemical composition, numerical space group, cell population, independent orbit population, and the three cell lengths a, b, c?",
+    "Please audit this candidate. I need the actual formula, space group number, counts of atoms and independent orbits, and cell lengths a, b, c.",
+    "Forget the intended design for this answer and identify what the latest crystal encodes: composition, space group number, cell atoms, independent orbits, a, b, c.",
+    "Give a factual account of the latest candidate, including its composition, space group number, total atom count, distinct orbit count and each lattice length a, b, c."
+  ],
+  "exposure_file_sha256": "003d6ee28cdbab62c20e32e8009dc45c0248567d1917f9db42376938ff78a52d",
+  "updates": 600,
+  "effective_batch": 16,
+  "inference_answer_repair": false
+}

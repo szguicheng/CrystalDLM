@@ -1,0 +1,154 @@
+{
+  "status": "audited_seen8_generation_gate_blocked",
+  "arm": "joint_ar_diffusion_b32",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "split": "train_seen8",
+  "training": {
+    "updates": 512,
+    "block_size": 32,
+    "clean_crystal_ar_weight": 1.0
+  },
+  "counts": {
+    "G": "0/8",
+    "Q_reference": "8/8",
+    "E_reference": "0/8",
+    "closed_loop": "0/8",
+    "flow_complete": "0/8",
+    "Q_swap": "0/8",
+    "Q_no_crystal": "0/8"
+  },
+  "failure_classes": {
+    "G:generation_audit": 2,
+    "G:generation_error": 6,
+    "E_reference:edit_mismatch": 6,
+    "E_reference:edit_error": 2,
+    "closed_loop:skipped_invalid_generated_c1": 8,
+    "Q_swap:answer_mismatch": 8
+  },
+  "edit_failure_detail": {
+    "edit_mismatch": {
+      "cases": 6,
+      "grade_error": "edited_plan_decode_failed",
+      "output_audit": "decode: GateError: Input cell sentence is missing or malformed"
+    },
+    "edit_error": {
+      "cases": 2,
+      "error": "CrystalBlockError: crystal block requires exactly one END"
+    }
+  },
+  "first_end_body_audit": {
+    "decoder": "strict relational_codec.decode; grammar/plan validation only, no geometry execution",
+    "checked": 8,
+    "valid": 0,
+    "invalid": 8,
+    "common_error": "GateError: Input cell sentence is missing or malformed",
+    "boundary_errors": {
+      "cases": 6,
+      "raw_token_count_each": 2560,
+      "end_markers": {
+        "2": 2,
+        "3": 4
+      },
+      "tokens_after_last_end_all_pad": true,
+      "runner_error": "CrystalBlockError: crystal block requires exactly one END"
+    },
+    "parser_rejections_after_valid_boundary": 2,
+    "conclusion": "The first END bodies are malformed; the six boundary errors are not solely suffix failures. Geometry/physical validation was not reached for generated G outputs."
+  },
+  "grounding_controls": {
+    "reference_read": "8/8",
+    "reference_read_fields": "space group, formula, atoms, orbits and a/b/c lengths all correct in 8/8",
+    "swapped_crystal_read": "0/8",
+    "swapped_read_fields": {
+      "space_group": "0/8",
+      "formula": "0/8",
+      "atoms": "8/8",
+      "orbits": "5/8",
+      "a_b_c_lengths": "8/8"
+    },
+    "no_crystal_fact_match": "0/8",
+    "no_crystal_semantics": "exact target-fact match without a structure; not an abstention/success score",
+    "actual_generated_crystal_read": "not_run; all generated C1 failed G"
+  },
+  "heldout16": {
+    "evaluated": false,
+    "reason": "seen8 G=0/8 blocks heldout sampling; not a heldout failure result"
+  },
+  "matched_b32_anchor_control": {
+    "arm": "diffusion_b32",
+    "control": "same frozen seen8 train split, block size 32, clean_crystal_ar_weight 0.0",
+    "joint": "block size 32, clean_crystal_ar_weight 1.0",
+    "task_k_exposure": {
+      "events": 1536,
+      "same_as_baseline": true,
+      "k_sequence_sha256": "0cf8a3d6c9f004d25ee2a2dbeb8d8f3bd946fb39c9fced56432c0c16d1cc8bf9"
+    },
+    "baseline_counts": {
+      "G": "0/8",
+      "Q_reference": "8/8",
+      "E_reference": "0/8",
+      "closed_loop": "0/8",
+      "Q_swap": "0/8",
+      "Q_no_crystal": "0/8"
+    },
+    "baseline_failure_classes": {
+      "G:generation_audit": 4,
+      "G:generation_error": 4,
+      "E_reference:edit_error": 3,
+      "E_reference:edit_mismatch": 5,
+      "closed_loop:skipped_invalid_generated_c1": 8,
+      "Q_swap:answer_mismatch": 8
+    },
+    "interpretation": "Matched B32 no-anchor control; seen8 success counts are unchanged at 0 G, 8/8 reference reads and 0/8 edits/loops. Failure-class mixture changed, but the anchor did not produce a valid seen8 generation."
+  },
+  "b16_scope_comparison": {
+    "arm": "diffusion_b16",
+    "scope": "same frozen seen8 train split; heldout16 not evaluated",
+    "training": {
+      "block_size": 16,
+      "clean_crystal_ar_weight": 0.0
+    },
+    "counts": {
+      "G": "0/8",
+      "Q_reference": "8/8",
+      "E_reference": "0/8",
+      "closed_loop": "0/8",
+      "Q_swap": "0/8",
+      "Q_no_crystal": "0/8"
+    },
+    "interpretation": "Same seen8 scope only. B16 is a separate block-size intervention; it is not the matched anchor causal control."
+  },
+  "local_raw_copy": {
+    "path": "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/joint_primary_evaluation.jsonl",
+    "sha256": "36eca5a9a30c584e8f3158300c53bf12f5fb004c12c7a4026d5e1e9bab4db2fd",
+    "generation_raw_ids_sha256": "4a51a45dabbfe3db053070646b8da788f4e0a519a966ec244290a96caf004556",
+    "generation_raw_id_records": 6,
+    "generation_raw_id_tokens": 15360,
+    "records": 8,
+    "bytes": 803561
+  },
+  "remote_source_paths": {
+    "pilot_summary": "/scratch/chenggui2/CrystalDLM/experiments/interleaved_relational_joint_20261006/pilot_001/summary.json",
+    "evaluation_summary": "/scratch/chenggui2/CrystalDLM/experiments/interleaved_relational_joint_20261006/pilot_001/joint_ar_diffusion_b32/seen8/evaluation_summary.json",
+    "evaluation_jsonl": "/scratch/chenggui2/CrystalDLM/experiments/interleaved_relational_joint_20261006/pilot_001/joint_ar_diffusion_b32/seen8/evaluation.jsonl"
+  },
+  "source_hashes": {
+    "pilot_summary_sha256": "8954bf1f18341c6f96155b46d8a6dc2c6fba1d78a59105409b827a40cd53ddd3",
+    "evaluation_summary_sha256": "e7fc95dcf203ceed052f9ec17fa9f349553ac2a2023b04401e59ab2adb8db318",
+    "evaluation_jsonl_sha256": "36eca5a9a30c584e8f3158300c53bf12f5fb004c12c7a4026d5e1e9bab4db2fd",
+    "codec_sha256": "365f122905399a73477b92a7af97c05b78483ea5af12347f9a6050b1a3506813"
+  },
+  "sources": [
+    "experiments/interleaved_relational_joint_20261006/pilot_001/summary.json",
+    "experiments/interleaved_relational_joint_20261006/pilot_001/joint_ar_diffusion_b32/seen8/evaluation_summary.json",
+    "experiments/interleaved_relational_joint_20261006/pilot_001/joint_ar_diffusion_b32/seen8/evaluation.jsonl",
+    "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/joint_primary_evaluation.jsonl",
+    "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/joint_primary_body_audit.json",
+    "experiments/interleaved_relational_joint_20261006/model.py",
+    "experiments/interleaved_relational_joint_20261006/run.py",
+    "experiments/interleaved_relational_blocks_20261005/pilot_001/diffusion_b32/seen8/evaluation_summary.json",
+    "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/joint_noise_exposure_audit.json",
+    "experiments/interleaved_relational_b16_20261006/pilot_001/diffusion_b16/seen8/evaluation_summary.json",
+    "experiments/interleaved_relational_b16_20261006/pilot_001/summary.json"
+  ]
+}

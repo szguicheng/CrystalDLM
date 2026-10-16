@@ -1,0 +1,87 @@
+{
+  "status": "frozen",
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+  "capacity": 256,
+  "steps": 32,
+  "max_length": 1536,
+  "source_hashes": {
+    "train": "133bab58dba02d316f9f91174839f17802dce648be4e8659d1a42b32b97fa01d"
+  },
+  "sizes": {
+    "train": 8
+  },
+  "templates": {
+    "train": [
+      [
+        "Generate a crystal with cell composition {formula} and space group {sg}.",
+        "Read the current crystal. Report its composition, space group number, atom count, independent orbit count, and lattice lengths a, b, c.",
+        "Scale every lattice length by {scale}, keeping the angles, elements, Wyckoff sites and fractional coordinates unchanged."
+      ],
+      [
+        "Create a crystal whose unit cell composition is {formula}, using space group {sg}.",
+        "Describe the actual crystal: give its formula, space group number, cell atoms, independent orbits, and a, b, c.",
+        "Multiply a, b and c by {scale}. Preserve all other crystal fields."
+      ]
+    ],
+    "val": [
+      [
+        "Produce a crystal in space group {sg}, with cell composition {formula}.",
+        "For the supplied crystal, state the formula, space group number, total atoms, independent orbits, and the three lattice lengths.",
+        "Apply a factor of {scale} to all lattice lengths; leave all other fields fixed."
+      ]
+    ],
+    "test": [
+      [
+        "Design a unit cell containing {formula} in space group {sg}.",
+        "Inspect the current structure and report its composition, space group number, atoms per cell, independent orbits, and a, b, c.",
+        "Change each of the three lattice lengths to {scale} times its current value, without changing any other field."
+      ]
+    ]
+  },
+  "packages": {
+    "pyxtal": "1.0.8",
+    "pymatgen": "2025.10.7",
+    "spglib": "2.7.0",
+    "numpy": "1.26.4",
+    "transformers": "4.57.6",
+    "torch": "2.8.0"
+  },
+  "code_hashes": {
+    "test_checks.py": "21776cce1ddc54f1f69795b38f1e966e219b252de5303fa6e28b3915def628cd",
+    "prepare.py": "12434c3c231564395a0f7c1c379bb57306f41fe5a38365aa9e81408fa6274925",
+    "score.py": "454d4cc619b97485edc421a8b05f1a2b994edc3103e7b635ec514f899a0670a2"
+  },
+  "selection": {
+    "train": {
+      "selected": 8,
+      "scanned": 9,
+      "exclusions": {
+        "ValueError:invalid fractional coordinate": 1
+      },
+      "ids": [
+        "mp-4047",
+        "mp-1205515",
+        "mp-30009",
+        "mp-979266",
+        "mp-1207068",
+        "mp-1205902",
+        "mp-1229077",
+        "mp-10797"
+      ],
+      "sg_counts": {
+        "225": 1,
+        "65": 1,
+        "139": 1,
+        "194": 2,
+        "99": 1,
+        "164": 1,
+        "82": 1
+      }
+    }
+  },
+  "elapsed_seconds": 1.0522488330025226,
+  "dataset_hashes": {
+    "train": "55957d7e59ae8665efb3dd105f43a174189a2bd1814faaac592dafda4782ff21"
+  }
+}

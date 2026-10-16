@@ -1,0 +1,33 @@
+{
+  "id": "e90cab42-91ba-4f87-8c1a-c75cfaca54d2",
+  "object": "chat.completion",
+  "created": 1791054240,
+  "model": "tokenhub/kimi-k3",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "The input structure is a three-atom hexagonal cell containing one atom each of strontium, phosphorus, and platinum. The composition is described by [[param:composition.Sr]], [[param:composition.P]], and [[param:composition.Pt]], and the cell contains [[param:input.atom_count]] atoms in total. Its lattice parameters are [[param:cell.a]] and [[param:cell.b]] angstroms along the two equivalent basal axes, with [[param:cell.c]] angstroms along the c axis; the interaxial angles are [[param:cell.alpha]] and [[param:cell.beta]] degrees, while gamma is [[param:cell.gamma]] degrees, deviating microscopically from the ideal 120 degrees of an exact hexagonal lattice.\n\nThe symmetry is that of space group number [[param:space_group.number]], the hexagonal group P-6m2, whose Hall symbol is [[param:space_group.hall]]. In this primitive hexagonal setting the three atoms occupy three distinct, symmetry-independent Wyckoff orbits, each of multiplicity one and each fully fixed in position with no free coordinate parameters. The strontium atom sits on orbit [[param:orbit.o000.id]], the [[param:orbit.o000.wyckoff]] site occupied by [[param:orbit.o000.element]], at the special position 2/3, 1/3, 0. The phosphorus atom occupies orbit [[param:orbit.o001.id]], the [[param:orbit.o001.wyckoff]] site for [[param:orbit.o001.element]], at 1/3, 2/3, 1/2. The platinum atom lies on orbit [[param:orbit.o002.id]], the [[param:orbit.o002.wyckoff]] site for [[param:orbit.o002.element]], at 0, 0, 1/2. Thus the cell stacks one atom per layer along the c direction: strontium at the basal level and phosphorus and platinum at mid-height, each on its own onefold orbit.\n\nThe transformation relating the input description to the standard crystallographic frame is essentially the identity, but not exactly so. The rotation-like matrix [[param:frame.matrix]] departs from the unit matrix only at the level of about 10⁻¹⁷ in its off-diagonal and b-axis diagonal entries, and the origin shift [[param:frame.origin_shift]] is a displacement of nearly one full lattice period along the first axis together with a shift of about 3.3 × 10⁻⁷ along the second, reflecting a translation by a lattice vector with only a tiny residual. Fractional coordinates in the input frame are reported to [[param:round_digits]] decimal places.\n\nBeyond these frame subtleties, one genuine precision correction is recorded against the idealized backbone: the expanded site [[param:correction.c000.site_id]], the [[param:correction.c000.element]] atom, is displaced from its ideal Wyckoff position by [[param:correction.c000.delta]] fractional units, a shift of about 10⁻⁶ along the first basal axis, an equal-magnitude shift of opposite sign along the second basal axis, and no displacement along c. This is a small real deviation of the refined structure from the symmetric ideal position, not a feature of the underlying symmetry itself."
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "reasoning_stream": {
+    "chunks": 11,
+    "characters": 125
+  },
+  "usage": {
+    "completion_tokens": 724,
+    "prompt_tokens": 2347,
+    "total_tokens": 3071,
+    "completion_tokens_details": {
+      "reasoning_tokens": 26
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "cache_creation_input_tokens": 0
+    }
+  }
+}

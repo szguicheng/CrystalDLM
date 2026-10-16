@@ -1,0 +1,33 @@
+{
+  "id": "799095b8-0877-4eae-916a-f5fc38d42ef9",
+  "object": "chat.completion",
+  "created": 1791053156,
+  "model": "tokenhub/kimi-k3",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "The input cell is given as a small rhombohedral-like primitive setting: the three edge lengths are [[param:cell.a]], [[param:cell.b]], and [[param:cell.c]], and the three interaxial angles are [[param:cell.alpha]], [[param:cell.beta]], and [[param:cell.gamma]]. It contains [[param:input.atom_count]] atoms, with input counts [[param:composition.Cs]], [[param:composition.Si]], and [[param:composition.F]], i.e. one primitive Cs–Si–F unit rather than the face-centered conventional content.\n\nThe symmetry is the cubic face-centered space group identified by [[param:space_group.number]], with Hall symbol [[param:space_group.hall]]. In that setting the independent Wyckoff backbone reduces to three orbits. The cesium orbit is [[param:orbit.o000.id]], occupied by [[param:orbit.o000.element]] on the fixed site [[param:orbit.o000.wyckoff]], the public 8c position at the quarter–quarter–quarter-type location with no free coordinate. Silicon is [[param:orbit.o001.id]], occupied by [[param:orbit.o001.element]] on [[param:orbit.o001.wyckoff]], the fixed 4a origin-type site. Fluorine is [[param:orbit.o002.id]], occupied by [[param:orbit.o002.element]] on [[param:orbit.o002.wyckoff]], the 24e axis position with one free fractional coordinate stored as [[param:orbit.o002.parameters]]; its standard relation is x along the axis with the other two coordinates fixed by symmetry.\n\nBecause the listed Wyckoff multiplicities are conventional F-cell multiplicities—8, 4, and 24—they describe four times the nine-atom primitive input, consistent with F centering rather than with the input cell itself. The supplied change of frame from the input setting to the standard setting is [[param:frame.matrix]], with [[param:frame.origin_shift]]; its dominant one-half off-diagonal pattern converts the primitive equal-edge, near-60° cell into the conventional cubic F frame, while the tiny non-half residues are numerical noise in the transform rather than atoms being shifted. Fractional input coordinates were rounded according to [[param:round_digits]].\n\nNo precision-correction entries were supplied, so there are no measured deviations from this idealized F-centered backbone to report; the structure is therefore presented as the fixed Cs and Si sublattices plus the single adjustable fluorine coordinate within the cubic face-centered symmetry."
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "reasoning_stream": {
+    "chunks": 603,
+    "characters": 6127
+  },
+  "usage": {
+    "completion_tokens": 1890,
+    "prompt_tokens": 2207,
+    "total_tokens": 4097,
+    "completion_tokens_details": {
+      "reasoning_tokens": 1349
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "cache_creation_input_tokens": 0
+    }
+  }
+}

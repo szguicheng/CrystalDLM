@@ -1,0 +1,1667 @@
+{
+  "budget": {
+    "batch_size": 256,
+    "epochs": 500,
+    "seed": 17,
+    "train_count": 27136,
+    "steps_per_epoch": 106,
+    "steps_per_model": 53000,
+    "estimated_pair_seconds": 5235.554866981693,
+    "estimated_pair_1000_seconds": 10471.109733963385,
+    "rule": "smallest batch within 10% of best measured pair throughput; 1000 epochs if pair including 15% reserve <=60 min, else 500",
+    "gpu": "NVIDIA A100-SXM4-80GB",
+    "max_length": 256,
+    "measurements": [
+      {
+        "representation": "explicit",
+        "batch_size": 32,
+        "seconds_per_step_median": 0.013995131943374872,
+        "examples_per_second": 2286.509346926766,
+        "seconds_per_epoch": 11.867871887981892,
+        "gpu_peak_MB": 550.9287109375,
+        "last_loss": 3.7468204498291016
+      },
+      {
+        "representation": "explicit",
+        "batch_size": 128,
+        "seconds_per_step_median": 0.025064213201403618,
+        "examples_per_second": 5106.882828176385,
+        "seconds_per_epoch": 5.313613198697567,
+        "gpu_peak_MB": 1718.56298828125,
+        "last_loss": 3.7930188179016113
+      },
+      {
+        "representation": "explicit",
+        "batch_size": 256,
+        "seconds_per_step_median": 0.0429602786898613,
+        "examples_per_second": 5958.993000211064,
+        "seconds_per_epoch": 4.5537895411252975,
+        "gpu_peak_MB": 3279.6435546875,
+        "last_loss": 3.2906577587127686
+      },
+      {
+        "representation": "explicit",
+        "batch_size": 512,
+        "seconds_per_step_median": 0.07839542021974921,
+        "examples_per_second": 6530.993756584495,
+        "seconds_per_epoch": 4.154957271646708,
+        "gpu_peak_MB": 6412.94873046875,
+        "last_loss": 3.2519445419311523
+      },
+      {
+        "representation": "wyckoff",
+        "batch_size": 32,
+        "seconds_per_step_median": 0.013948264066129923,
+        "examples_per_second": 2294.192298646286,
+        "seconds_per_epoch": 11.828127928078175,
+        "gpu_peak_MB": 550.9287109375,
+        "last_loss": 3.3149192333221436
+      },
+      {
+        "representation": "wyckoff",
+        "batch_size": 128,
+        "seconds_per_step_median": 0.025042592082172632,
+        "examples_per_second": 5111.291977283809,
+        "seconds_per_epoch": 5.309029521420598,
+        "gpu_peak_MB": 1718.56298828125,
+        "last_loss": 3.4920196533203125
+      },
+      {
+        "representation": "wyckoff",
+        "batch_size": 256,
+        "seconds_per_step_median": 0.04293889878317714,
+        "examples_per_second": 5961.960070114728,
+        "seconds_per_epoch": 4.551523271016777,
+        "gpu_peak_MB": 3279.6435546875,
+        "last_loss": 3.1825575828552246
+      },
+      {
+        "representation": "wyckoff",
+        "batch_size": 512,
+        "seconds_per_step_median": 0.07838754495605826,
+        "examples_per_second": 6531.64989778685,
+        "seconds_per_epoch": 4.154539882671088,
+        "gpu_peak_MB": 6412.94873046875,
+        "last_loss": 3.073112726211548
+      }
+    ],
+    "slurm_job": "581969",
+    "host": "gpu-a100-06"
+  },
+  "training": {
+    "explicit": {
+      "state": "complete",
+      "epochs": 500,
+      "steps": 53000,
+      "examples_seen": 13568000,
+      "best_epoch": 200,
+      "best_validation_loss": 0.19050489715602734,
+      "elapsed_seconds": 2378.268164396286,
+      "max_gpu_memory_MB": 3292.74365234375
+    },
+    "wyckoff": {
+      "state": "complete",
+      "epochs": 500,
+      "steps": 53000,
+      "examples_seen": 13568000,
+      "best_epoch": 180,
+      "best_validation_loss": 0.16465953153509005,
+      "elapsed_seconds": 2376.6363122463226,
+      "max_gpu_memory_MB": 3292.74365234375
+    }
+  },
+  "export_checks": [
+    {
+      "representation": "explicit",
+      "id": "mp-29167",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-973625",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-867290",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-2906",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-570822",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-862725",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-568005",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-675028",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-1205937",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-20586",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-7113",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-863714",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-1079944",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-1113432",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-4822",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-9556",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-19093",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-865169",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-570093",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-867187",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-1080842",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-568914",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-1112924",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-867249",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-1112469",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-862822",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-865745",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-1521056",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-1013550",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-11498",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-558895",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-1080486",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-984555",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-1114432",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-14172",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-1227052",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-1102132",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-1112413",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-567769",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-11520",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-1660",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-4738",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-866037",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-1114394",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-12557",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-972908",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-562809",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-989537",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-1025128",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-1941",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-978744",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-1111035",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-4337",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-14209",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-1102890",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-754969",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-11082",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-961713",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-20292",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-1113881",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-1077785",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-1228901",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-864968",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-23023",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-866019",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-1184717",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-1114378",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-1113442",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-1111652",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-546011",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-19357",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-20601",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-1102603",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-1189981",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-1101818",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-1183577",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-20249",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-865566",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-1183416",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-1225448",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-646420",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-11124",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-1186439",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-1079803",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-862697",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-865288",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-7089",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-862759",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-1210536",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-30449",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-1206406",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-1068797",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-1017559",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-867227",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-20732",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-156",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-978849",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-1111127",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-12516",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-1183558",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-632319",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-5960",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-861980",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-640118",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-1111259",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-1185602",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-3927",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-1232083",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-864620",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-1207118",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-567621",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-1183455",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-1111691",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-1463",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-1187674",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-1205903",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-11104",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-1079180",
+      "error_A": 0.0
+    },
+    {
+      "representation": "explicit",
+      "id": "mp-1186196",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-29167",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-568161",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-867290",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-2906",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-570822",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-675283",
+      "error_A": 5.8128251903244704e-12
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-24096",
+      "error_A": 2.0898120872915953e-12
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-1205937",
+      "error_A": 4.8827785010901964e-12
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-20586",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-863714",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-1138",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-1080089",
+      "error_A": 4.704773358145029e-12
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-1079944",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-1113432",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-1216935",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-4822",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-568574",
+      "error_A": 8.70687530358636e-12
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-9556",
+      "error_A": 2.3355449716530386e-12
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-19093",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-865169",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-570093",
+      "error_A": 3.063143621985956e-12
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-1222370",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-867187",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-764648",
+      "error_A": 6.9353129821212726e-12
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-1080842",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-568914",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-1112924",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-867249",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-1112469",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-1186754",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-862822",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-865745",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-1521056",
+      "error_A": 2.5251350223888205e-12
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-11498",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-558895",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-984555",
+      "error_A": 7.70738994820361e-12
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-862814",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-14172",
+      "error_A": 2.8483413229998586e-12
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-1112413",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-567769",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-11520",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-1660",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-1188811",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-1102486",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-33615",
+      "error_A": 4.971972864998764e-12
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-4738",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-1114394",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-12557",
+      "error_A": 2.283288545818646e-12
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-972908",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-562809",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-989537",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-1025128",
+      "error_A": 2.5290959507291834e-12
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-30367",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-30736",
+      "error_A": 3.708022127210359e-12
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-978744",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-1111035",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-4337",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-1075902",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-1114697",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-1104853",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-10889",
+      "error_A": 4.7230035517619226e-12
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-1228427",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-14209",
+      "error_A": 4.192996689244849e-12
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-1102890",
+      "error_A": 2.3596330066337327e-12
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-754969",
+      "error_A": 8.108787223234727e-12
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-11082",
+      "error_A": 4.6573218726457285e-12
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-20292",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-1186673",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-1113881",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-1103666",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-4668",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-1228494",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-867335",
+      "error_A": 1.0530991243332192e-12
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-864968",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-1105776",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-23023",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-865568",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-866019",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-22867",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-151",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-1184717",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-1114378",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-1188375",
+      "error_A": 2.877557131767369e-12
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-1111652",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-2213",
+      "error_A": 6.053645978616034e-12
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-546011",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-1206890",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-20601",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-1187929",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-1186593",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-1179917",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-545436",
+      "error_A": 4.7442896507997245e-12
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-30759",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-1113037",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-1219072",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-2286",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-865566",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-1183416",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-1225448",
+      "error_A": 6.305806302191585e-12
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-646420",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-11124",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-1186439",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-862697",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-865288",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-7089",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-776593",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-862759",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-1206911",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-1078672",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-11118",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-1206406",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-1068797",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-1017559",
+      "error_A": 2.7043334220303206e-12
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-867227",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-20732",
+      "error_A": 2.3479800692077133e-12
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-1210651",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-156",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-1111127",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-30395",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-12516",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-861980",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-1223443",
+      "error_A": 8.876448175012896e-12
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-1094987",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-1111259",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-1185602",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-3927",
+      "error_A": 2.7103797064075093e-12
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-1232083",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-8122",
+      "error_A": 2.263492930249383e-12
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-864620",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-1519208",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-1207118",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-567621",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-1183455",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-761314",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-552857",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-1207009",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-1205903",
+      "error_A": 4.667665760879236e-12
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-29973",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-1080123",
+      "error_A": 3.235324448330958e-12
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-11104",
+      "error_A": 4.57535810212668e-12
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-1206659",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-1070713",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-978528",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-1186196",
+      "error_A": 0.0
+    },
+    {
+      "representation": "wyckoff",
+      "id": "mp-1079861",
+      "error_A": 1.1380959230727417e-11
+    }
+  ],
+  "selection": {
+    "mode": "remask",
+    "ranking": [
+      {
+        "mode": "remask",
+        "projected_valid": 257,
+        "raw_usable": 256,
+        "raw_decoded": 615
+      },
+      {
+        "mode": "one_step",
+        "projected_valid": 137,
+        "raw_usable": 137,
+        "raw_decoded": 277
+      },
+      {
+        "mode": "confidence",
+        "projected_valid": 2,
+        "raw_usable": 2,
+        "raw_decoded": 66
+      }
+    ],
+    "selection": "same sampler for both representations, selected on first 512 hash-ordered validation structures",
+    "checkpoint_selection": "lowest full-validation fixed-mask reconstruction loss within the fixed epoch budget",
+    "checkpoint_sha256": {
+      "explicit": "825db17b5f05b934fff0693a03d284fe917aa80346ec8f17358c78d6212384c0",
+      "wyckoff": "8e81769a8ad924e272df693b7bc08f4f246c62f3bb6d18f91211c2a51556b4e2"
+    }
+  },
+  "test": [
+    {
+      "split": "test",
+      "representation": "explicit",
+      "mode": "remask",
+      "n": 512,
+      "checkpoint_epoch": 200,
+      "raw": {
+        "decoded": 254,
+        "composition_match": 155,
+        "usable": 119,
+        "reference_match": 61,
+        "basic_and_symmetry_consistent": 0
+      },
+      "projected": {
+        "decoded": 254,
+        "composition_match": 155,
+        "usable": 119,
+        "reference_match": 63,
+        "basic_and_symmetry_consistent": 119
+      },
+      "generated_space_groups": {
+        "139": 12,
+        "225": 46,
+        "221": 4,
+        "63": 4,
+        "227": 3,
+        "189": 5,
+        "166": 3,
+        "129": 7,
+        "194": 12,
+        "74": 1,
+        "123": 2,
+        "62": 8,
+        "191": 1,
+        "216": 2,
+        "186": 1,
+        "193": 1,
+        "127": 2,
+        "70": 1,
+        "14": 1,
+        "164": 1,
+        "148": 1,
+        "71": 1
+      },
+      "raw_errors": [
+        [
+          "ValueError: Invalid literal for Fraction: 'O'",
+          21
+        ],
+        [
+          "ValueError: Invalid literal for Fraction: 'RESIDUALS'",
+          12
+        ],
+        [
+          "ValueError: Family membership exceeds declared site count",
+          12
+        ],
+        [
+          "ValueError: Invalid literal for Fraction: 'F'",
+          10
+        ],
+        [
+          "ValueError: Invalid literal for Fraction: 'FAMILY'",
+          9
+        ],
+        [
+          "ValueError: Expected RESIDUALS, got FREE",
+          8
+        ],
+        [
+          "ValueError: Parameters are only allowed as whole site-coordinate expressions",
+          8
+        ],
+        [
+          "ValueError: Invalid literal for Fraction: 'Fe'",
+          7
+        ]
+      ]
+    },
+    {
+      "split": "test",
+      "representation": "wyckoff",
+      "mode": "remask",
+      "n": 512,
+      "checkpoint_epoch": 180,
+      "raw": {
+        "decoded": 330,
+        "composition_match": 201,
+        "usable": 145,
+        "reference_match": 69,
+        "basic_and_symmetry_consistent": 0
+      },
+      "projected": {
+        "decoded": 330,
+        "composition_match": 201,
+        "usable": 145,
+        "reference_match": 75,
+        "basic_and_symmetry_consistent": 145
+      },
+      "generated_space_groups": {
+        "139": 15,
+        "225": 56,
+        "221": 9,
+        "148": 1,
+        "191": 2,
+        "189": 6,
+        "129": 5,
+        "71": 2,
+        "164": 2,
+        "187": 2,
+        "74": 1,
+        "123": 5,
+        "166": 6,
+        "14": 4,
+        "216": 3,
+        "229": 2,
+        "141": 1,
+        "122": 1,
+        "194": 7,
+        "15": 1,
+        "136": 1,
+        "88": 1,
+        "63": 4,
+        "72": 1,
+        "127": 3,
+        "62": 1,
+        "140": 1,
+        "227": 2
+      },
+      "raw_errors": [
+        [
+          "ValueError: Expected END",
+          74
+        ],
+        [
+          "ValueError: 'END' is not a valid Element",
+          12
+        ],
+        [
+          "ValueError: could not convert string to float: 'F'",
+          4
+        ],
+        [
+          "ValueError: Wyckoff table setting mismatch",
+          4
+        ],
+        [
+          "ValueError: could not convert string to float: 'O'",
+          4
+        ],
+        [
+          "ValueError: could not convert string to float: 'Nb'",
+          2
+        ],
+        [
+          "KeyError: '2e'",
+          2
+        ],
+        [
+          "KeyError: '8f'",
+          2
+        ]
+      ]
+    }
+  ],
+  "data": {
+    "seconds": 18.802523374557495,
+    "vocab_size": 1119,
+    "unknown_tokens": [],
+    "max_length": 256,
+    "maximum_training_length": 115,
+    "cached_records": 36694,
+    "encoder_tolerance_exceptions": [
+      {
+        "id": "mp-1189141",
+        "encoder_symprec": 0.0005,
+        "reason": "No standard Wyckoff template matches Z=67, orbit=4"
+      }
+    ],
+    "coverage": {
+      "train": {
+        "ok": 27136,
+        "failed": 0,
+        "overlength": 0
+      },
+      "val": {
+        "ok": 9047,
+        "failed": 0,
+        "overlength": 0
+      },
+      "test": {
+        "ok": 512,
+        "failed": 0,
+        "overlength": 0
+      }
+    },
+    "mean_lengths": {
+      "explicit": 54.99259286556604,
+      "wyckoff": 31.51934699292453
+    },
+    "failures": []
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "job_id": 607872,
+  "submitted_at_utc": "2026-10-06T14:19:00+00:00",
+  "partition": "stingy",
+  "requested_nodelist": "gpu-a100-04",
+  "walltime": "04:00:00",
+  "gpu_count": 1,
+  "cpus_per_task": 4,
+  "memory": "64G",
+  "entrypoint": "joint_confidence_eval.slurm",
+  "dependency": "none; independent frozencheckpoint inference",
+  "checkpoint_sha256": "6a3052775a85e5a75c17e269b897b14ea4975ca77b5baf02736815b6da3a1ce5",
+  "scope": "frozenjoint512/B32/weight1, confidencefullKseen8 actualflow plusreference/groundingcontrols; noheldout/optimizer/fallback/repair",
+  "source_hashes": {
+    "joint_confidence_eval.py": "1c739713672ed7530f0b1921cf58d85192c36647faa3b3225718d7d808b974f3",
+    "test_joint_confidence_eval.py": "dee39688a6e4c998d37f2e3f7d8d34ed282d8a679aad7c6b8578d446d1eb9ecf",
+    "joint_confidence_eval.slurm": "d698da666cc33535088317a6daeee40c37aaeb0a2030726ce0681fff5c5b5c0f",
+    "joint_inference_source_equality.json": "d29ba6ba3d928c737bb04aa850dc8e89bec0bac48dc8beb499675d599cd3a6b9"
+  },
+  "checks": {
+    "previous_job_607742": "COMPLETED exit 0",
+    "replaced_job_607772": "CANCELLED while PENDING at RunTime 00:00:00",
+    "source_hashes": "all four matched frozen local receipt immediately before submission",
+    "joint_output_before_submission": "absent",
+    "node_capacity": "gpu-a100-04 had 4 A100 GPUs, 32 CPUs, 1000G configured; 1 GPU, 8 CPUs, 64G allocated; requested 1 GPU, 4 CPUs, 64G fits"
+  },
+  "required_GPU_gates": [
+    "750 tensor equality against actual joint originals",
+    "paired 8 joint legacy unoptimized/optimized raw 128 token/text/time/release/header",
+    "frozen checkpoint/config/fingerprint before and after"
+  ],
+  "initial_scheduler_state": {
+    "job_state": "PENDING",
+    "runtime": "00:00:00",
+    "partition": "stingy",
+    "node_list": ""
+  },
+  "final_scheduler_state": {
+    "state": "COMPLETED",
+    "exit_code": "0:0",
+    "elapsed": "00:48:29",
+    "node": "gpu-a100-04"
+  },
+  "final_output": "joint_confidence_001",
+  "final_gates": {
+    "metadata_tensor_comparisons": 750,
+    "metadata_optimization": "passed",
+    "joint_legacy_parity_cases": 8,
+    "joint_legacy_parity": "passed"
+  },
+  "seen8_summary": {
+    "n": 8,
+    "commit_policy": "confidence_one",
+    "G": "4/8",
+    "Q_reference": "8/8",
+    "E_reference": "5/8",
+    "closed_loop": "2/8",
+    "flow_complete": "3/8",
+    "heldout_evaluated": false,
+    "optimizer_updates": 0,
+    "ar_fallback": false,
+    "repair_applied": false
+  }
+}

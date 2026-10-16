@@ -1,0 +1,107 @@
+{
+  "experiment": "predictor_align_1024_002",
+  "slurm_job": "601858",
+  "observed_at_utc": "2026-10-02 23:28:02 UTC",
+  "job_state": "RUNNING",
+  "job_elapsed_at_observation": "00:05:43",
+  "host": "gpu-a100-03",
+  "gpu": "NVIDIA A100-SXM4-80GB",
+  "arm_startup_log": {
+    "name": "ar_control",
+    "mode": "ar",
+    "prediction_offset": 0,
+    "device": "cuda:0",
+    "initial_fingerprint": "7567d5dd878a1e02a51b05a9ec4ecd67e68cd1a79da88235c975e1eeb4b21c85"
+  },
+  "hybrid_same_startup_log": {
+    "name": "hybrid_same",
+    "mode": "hybrid",
+    "prediction_offset": 0,
+    "device": "cuda:0",
+    "initial_fingerprint": "7567d5dd878a1e02a51b05e9ac4ecd67e68cd1a79da88235c975e1eeb4b21c85",
+    "observed_job_elapsed": "00:52:30"
+  },
+  "hybrid_shift_startup_pending": true,
+  "ar_control_training_status_receipt": {
+    "status": "training",
+    "completed_updates": 375,
+    "parameter_device": "cuda:0",
+    "cuda_device_index": 0,
+    "timing_clock": "time.monotonic with torch.cuda.synchronize around each optimizer update",
+    "initial_fingerprint": "7567d5dd878a1e02a51b05e9ac4ecd67e68cd1a79da88235c975e1eeb4b21c85",
+    "warm_fingerprint": "7567d5dd878a1e02a51b05e9ac4ecd67e68cd1a79da88235c975e1eeb4b21c85"
+  },
+  "hybrid_same_training_status_receipt": {
+    "status": "trained",
+    "completed_updates": 1024,
+    "mode": "hybrid",
+    "prediction_offset": 0,
+    "parameter_device": "cuda:0",
+    "cuda_device_index": 0,
+    "initial_fingerprint": "7567d5dd878a1e02a51b05e9ac4ecd67e68cd1a79da88235c975e1eeb4b21c85",
+    "final_fingerprint": "b5ed6bff994d9cf227e31ae983a187f9ed07ef7ceacffe1454ceca38fda391b0",
+    "training_seconds": 819.4081966760568,
+    "seconds_per_update_median": 0.7968014213256538,
+    "first_update_seconds": [0.8636284442618489, 0.8067216873168945, 0.8147010677494109, 0.8019889481365681, 0.8039916860871017, 0.8054178319871426]
+  },
+  "time_embedding_device": {
+    "device": "cuda:0",
+    "basis": "Hybrid.cuda().train() migrates the complete registered module tree; model.time is its registered nn.Embedding child, while train_phase independently asserts the first model parameter is CUDA."
+  },
+  "initial_v8_source_snapshot_verified": true,
+  "current_v9_source_snapshot_byte_match": true,
+  "source_sha256_matches_reviewed_14_pins": true,
+  "data_manifest_sha256": "e3a5a86e58eaae871fa2718d3c9f646551cb297047ef724bf841b24bc48c0004",
+  "initial_checkpoint": "rebalance_001/ar/checkpoint.pt",
+  "initial_mode": "ar",
+  "initial_updates": 4096,
+  "initial_fingerprint": "7567d5dd878a1e02a51b05a9ec4ecd67e68cd1a79da88235c975e1eeb4b21c85",
+  "exposure_audit": {
+    "status": "frozen",
+    "rows": 16384,
+    "updates": 1024,
+    "unique_materials": 1024,
+    "examples_per_material": 16,
+    "batches_per_material": 1,
+    "task_examples": {"G": 8192, "E": 4096, "Q": 4096},
+    "sha256": "d53173eb40675ef28a48f90fc27c0890bd9cb4bf4b8553a350386553bfc24f6f"
+  },
+  "first_update_seconds": [
+    1.0681110499426723,
+    0.817817066796124,
+    0.8319845772348344,
+    0.8140991986729205,
+    0.8207092671655118,
+    0.8236529836431146
+  ],
+  "logged_25_update_samples_seconds": {
+    "25": 0.813104857224971,
+    "50": 0.806231125257909,
+    "75": 0.811124087311327,
+    "100": 0.801489481702447,
+    "125": 0.797745767980815,
+    "150": 0.802047760225832,
+    "175": 0.814793844241649,
+    "200": 0.811080164741725,
+    "225": 0.8066466157324612,
+    "250": 0.7975169508717954,
+    "275": 0.8036394030787051,
+    "300": 0.795478630810976,
+    "325": 0.8258223310112953,
+    "350": 0.803662930149585,
+    "375": 0.8003336107358336
+  },
+  "allocated_node_resource_sample": {
+    "process_pid": 1313288,
+    "process_elapsed": "00:03:27",
+    "cpu_percent": 119,
+    "resident_memory_kib": 7332144,
+    "nvidia_smi_process_memory_mib": 13342,
+    "gpu_utilization_percent": 44,
+    "gpu_memory_used_mib": 13368,
+    "gpu_memory_total_mib": 81920,
+    "power_watts": 154.57
+  },
+  "validation_started": false,
+  "test_used": false
+}

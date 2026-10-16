@@ -1,0 +1,33 @@
+{
+  "id": "c37e7f50-8ebc-4a61-b076-3dcdde0c4952",
+  "object": "chat.completion",
+  "created": 1791053644,
+  "model": "tokenhub/kimi-k3",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "This crystal is described in the base-centered orthorhombic space group Cmcm, space group number [[param:space_group.number]], whose symmetry is also captured by the Hall symbol [[param:space_group.hall]]. The input cell is not the conventional C-centered orthorhombic cell but a smaller primitive-like oblique cell: its in-plane edges have lengths [[param:cell.a]] and [[param:cell.b]] angstrom, equal to each other but distinct from the out-of-plane edge [[param:cell.c]], with angles [[param:cell.alpha]] and [[param:cell.beta]] both right angles while the gamma angle [[param:cell.gamma]] deviates strongly from 90 degrees, giving the cell a skewed, near-hexagonal appearance in the ab plane. This input cell contains [[param:input.atom_count]] atoms in total, comprising thulium [[param:composition.Tm]], nickel [[param:composition.Ni]], and germanium [[param:composition.Ge]] atoms in the stated counts.\n\nThe relationship between this input cell and the conventional standard frame of Cmcm is given by a change of basis with matrix [[param:frame.matrix]] and a vanishing origin shift [[param:frame.origin_shift]]. The first two rows of that matrix take half-sum and half-difference combinations of the input in-plane vectors, which converts the oblique in-plane description into the orthogonal a–b description of the standard setting, while the third row is essentially the identity along c up to floating-point residue. No origin translation is required. Fractional coordinates are quoted to the precision indicated by [[param:round_digits]] decimal places.\n\nIn the standard Cmcm frame, the eight atoms of the input cell expand into four independent Wyckoff orbits, each of multiplicity four on the 4c site, whose representative position has the form (0, y, 1/4) with only the y coordinate free. Thus every atom lies on a mirror plane at z = 1/4 (and by symmetry also at z = 3/4), stacked along b at characteristic heights. The thulium orbit, identified as [[param:orbit.o000.id]] with element [[param:orbit.o000.element]] on Wyckoff site [[param:orbit.o000.wyckoff]], sits closest to the origin along b with free parameter [[param:orbit.o000.parameters]]. Nickel follows: orbit [[param:orbit.o001.id]], element [[param:orbit.o001.element]], site [[param:orbit.o001.wyckoff]], with free parameter [[param:orbit.o001.parameters]]. Two crystallographically distinct germanium orbits complete the structure: orbit [[param:orbit.o002.id]], element [[param:orbit.o002.element]], site [[param:orbit.o002.wyckoff]], at [[param:orbit.o002.parameters]], and orbit [[param:orbit.o003.id]], element [[param:orbit.o003.element]], site [[param:orbit.o003.wyckoff]], at [[param:orbit.o003.parameters]]. Because all four orbits share the same 4c symmetry, the structure can be pictured as four interleaved fourfold chains running along the b axis at x = 0 (and symmetry-related x = 1/2) within the z = 1/4 and z = 3/4 planes, distinguished only by their chemical species and their y positions, which are ordered Tm < Ni < Ge(o002) < Ge(o003) along b. No precision corrections beyond the stated rounding were required: the refined free parameters coincide with the idealized backbone values to within the reported precision, so the structure as listed needs no deviation terms."
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "reasoning_stream": {
+    "chunks": 14,
+    "characters": 139
+  },
+  "usage": {
+    "completion_tokens": 801,
+    "prompt_tokens": 2567,
+    "total_tokens": 3368,
+    "completion_tokens_details": {
+      "reasoning_tokens": 30
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "cache_creation_input_tokens": 0
+    }
+  }
+}

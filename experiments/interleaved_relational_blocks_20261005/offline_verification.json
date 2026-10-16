@@ -1,0 +1,33 @@
+{
+  "verified_at_utc": "2026-10-05T14:36:56.370152+00:00",
+  "model_tests": 6,
+  "model_tests_status": "passed",
+  "runner_contract_status": "passed",
+  "pack_source_pin_status": "passed",
+  "python_compile_status": "passed",
+  "slurm_syntax_status": "passed",
+  "model_review": {
+    "P1_P2_findings": 0,
+    "method": "independent source review; primary numerical checks"
+  },
+  "runner_review": {
+    "initial_P2": "Missing actual loss reduction test",
+    "resolution": "Added Hybrid.loss numerical check for B=2560 and B=32; six model checks passed; scoped independent re-review confirmed addressed",
+    "remaining_P1_P2_findings": 0
+  },
+  "original_sources_unchanged": true,
+  "frozen_records_unchanged": true,
+  "source_sha256": {
+    "IMPLEMENTATION_PLAN.md": "85a6309c85e08f9cd7e4ea8ec9fc0205ef51c5b4952f6bcb35f4f40a72704a8f",
+    "PROTOCOL.md": "f6135adb2a9cbac4fe93cd9aab231b76c54c98b4c4c5671f33a9ed08c2d35003",
+    "model.py": "0b27ee6f952ebbdaea599b67da1e7b1061e3dd4b43bbe730bf2291eed0811349",
+    "pilot_001.slurm": "e0043191d5ad4215dc41e9850b72ee128b3a5a1ac6fa6b3f9c070b4e09dbbd96",
+    "prepare.py": "4889b777e79b15c1761698375f9b1f48316e648129cce4f0439a30714fb1a30b",
+    "run.py": "1be7999e5d297f3a3129b513be704eef7ec8ad6c5e7f8e1d62a6befe2a542f62",
+    "score.py": "3c1760481872726d798dd18ec4fb3557d6940e669e4c4d818a07da276d9c477a",
+    "test_block_model.py": "20c8e4e41438ea3ec725506eebc88eb695c285d8f6fb6c3c7ad5450878cc8fd9",
+    "test_block_runner.py": "086c87750518e30a2d03694102ab72d6bab703c650cb9e94e244030628ea15ac"
+  },
+  "gpu_preflight_status": "not_run",
+  "learned_model_results_status": "not_run"
+}

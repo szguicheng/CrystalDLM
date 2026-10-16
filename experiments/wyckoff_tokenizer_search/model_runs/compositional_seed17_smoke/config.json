@@ -1,0 +1,23 @@
+{
+  "variant": "compositional",
+  "seed": 17,
+  "steps": 5,
+  "batch_size": 64,
+  "eval_every": 5,
+  "val_limit": 32,
+  "width": 128,
+  "layers": 3,
+  "smoke": true,
+  "host": "gpu-a100-05",
+  "job_id": "532805",
+  "gpu": "NVIDIA A100-SXM4-80GB",
+  "train_structures": 26086,
+  "val_structures": 32,
+  "parameter_count": 799360,
+  "data_sha256": "31fbce9cbbd6fa1a8ad50924f2216487e4535e1a0c43ce7c26be2e3bbbaf9fa8",
+  "script_sha256": "a9af7df0906bd7c066cde6a21bd53de97beee0ee0e34d6a33a733340cf6fef92",
+  "hidden_target_leakage_check": "PASS",
+  "both_variants_use_identical_complete_legal_candidate_sets": true,
+  "task": "Composition + SG -> one-element Wyckoff profiles; all-mask validation",
+  "not_geometry_or_material_stability_evaluation": true
+}

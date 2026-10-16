@@ -1,0 +1,165 @@
+{
+  "mode": "ar",
+  "phase": "joint",
+  "feedback": true,
+  "updates": 1024,
+  "seed": 17,
+  "status": "validated",
+  "prediction_offset": 0,
+  "initial_fingerprint": "7567d5dd878a1e02a51b05a9ec4ecd67e68cd1a79da88235c975e1eeb4b21c85",
+  "warm_fingerprint": "7567d5dd878a1e02a51b05a9ec4ecd67e68cd1a79da88235c975e1eeb4b21c85",
+  "slurm_job": "601858",
+  "host": "gpu-a100-03",
+  "gpu": "NVIDIA A100-SXM4-80GB",
+  "parameter_device": "cuda:0",
+  "cuda_device_index": 0,
+  "timing_clock": "time.monotonic with torch.cuda.synchronize around each optimizer update",
+  "noise_policy": "50% full MASK; remaining uniform 1..31",
+  "source_sha256": {
+    "diagnose.py": "674ec4ec5a6c2cdd78c58e51a288a066a7bd6d52ac5e81d7b6bd3a9f4b2a7772",
+    "model.py": "036ac4d4fc08437e2325c31265fceb08a573d8c703a1ca551c4f921541345406",
+    "rescore.py": "254192f4e2482f331fb42d95591f98bccdcc1c65f2bd8c6951faca194560e2ad",
+    "test_checks.py": "13228a70ebc2cd00ca0fac4111a0715cc27334da3941fe6b373b9447498c68c8",
+    "cohort.py": "ead8877f3edfc0079d9b6797c6829289dea632cfb1089148271bf80da6094593",
+    "run.py": "889e8f2a6083bcc4d04c5d0b646212d131f247897f71df7e522d1fd838abc143",
+    "prepare.py": "864927e1c27d3e3baa8107eba2db09d320d6ce3ee17b6c801370d85fd63ba688",
+    "predictor_align.py": "d6b6338ead13626552e7b230e25252725f4baa0cbb3399413e4687494ba86145",
+    "causal_diagnose.py": "3bf4be91dbe72849a26f60406b4571f5a7cb73be11fe4d07a6b86d876bf32602",
+    "align.py": "b55808efddeba49be24f1b13674fd7dc2ca6d0fd55f4eb31466c0103ace56ed5",
+    "recover.py": "3f216daace0a156754b982d6fc0319d42a11d44898861f873113ad8533bc4db1",
+    "score.py": "23b657ca2128119e9b19538a2ce73b0cc122c130623141bc334e6e416781d161",
+    "adapt.py": "6ebd2b152dcd636391b73df8f612f7f13aab39360b9f47e4e6995fdec683cd58",
+    "rebalance.py": "8f689794ae1f8e512c0a705a6fcedd58060633dfa16cb9e3277193efb9e15ae6"
+  },
+  "completed_updates": 1024,
+  "elapsed_seconds": 826.7489038417116,
+  "noise_counts": {},
+  "training_seconds": 826.749603652861,
+  "seconds_per_update_median": 0.8040011269040406,
+  "final_fingerprint": "45684803b4513e4ac6c086c8e8440990b2cbefd323380530174fd0957c036242",
+  "checkpoint_sha256": "826d1cfdc7fd26c684706ff6f258ba89aaef9680b754b1024c4a4d36b6c276bb",
+  "checkpoint_reload_verified": true,
+  "validation": {
+    "legacy": {
+      "n": 128,
+      "counts": {
+        "G": 51,
+        "Q_reference": 128,
+        "E_reference": 113,
+        "closed_loop": 47,
+        "flow_complete": 51,
+        "Q_swap": 126,
+        "Q_no_crystal": 0
+      },
+      "rates": {
+        "G": 0.3984375,
+        "Q_reference": 1.0,
+        "E_reference": 0.8828125,
+        "closed_loop": 0.3671875,
+        "flow_complete": 0.3984375,
+        "Q_swap": 0.984375,
+        "Q_no_crystal": 0.0
+      },
+      "elapsed_seconds": 1835.5674029989168,
+      "attempts_retried": 0,
+      "seconds_median": 14.312271531205624,
+      "seconds_p95": 20.3209343528375,
+      "evaluation_split": "val",
+      "training_materials_evaluated": false,
+      "stage0_passed": false
+    },
+    "v2": {
+      "n": 128,
+      "counts": {
+        "G": 51,
+        "Q_reference": 128,
+        "E_reference": 113,
+        "closed_loop": 47,
+        "flow_complete": 51,
+        "Q_swap": 126,
+        "Q_no_crystal": 0
+      }
+    }
+  },
+  "reading": {
+    "n": 128,
+    "success": 97,
+    "correct_by_field": {
+      "sg": 126,
+      "formula": 128,
+      "atoms": 97,
+      "orbits": 97,
+      "a": 128,
+      "b": 128,
+      "c": 128
+    }
+  },
+  "old8_regression": {
+    "legacy": {
+      "n": 8,
+      "counts": {
+        "G": 6,
+        "Q_reference": 8,
+        "E_reference": 8,
+        "closed_loop": 6,
+        "flow_complete": 6,
+        "Q_swap": 8,
+        "Q_no_crystal": 0
+      },
+      "rates": {
+        "G": 0.75,
+        "Q_reference": 1.0,
+        "E_reference": 1.0,
+        "closed_loop": 0.75,
+        "flow_complete": 0.75,
+        "Q_swap": 1.0,
+        "Q_no_crystal": 0.0
+      },
+      "elapsed_seconds": 136.94621261302382,
+      "attempts_retried": 0,
+      "seconds_median": 16.026006191503257,
+      "seconds_p95": 23.576008014241232,
+      "evaluation_split": "train",
+      "training_materials_evaluated": true,
+      "stage0_passed": false
+    },
+    "v2": {
+      "n": 8,
+      "counts": {
+        "G": 6,
+        "Q_reference": 8,
+        "E_reference": 8,
+        "closed_loop": 6,
+        "flow_complete": 6,
+        "Q_swap": 8,
+        "Q_no_crystal": 0
+      }
+    }
+  },
+  "strata": {
+    "original64": {
+      "n": 64,
+      "counts": {
+        "G": 22,
+        "Q_reference": 64,
+        "E_reference": 59,
+        "closed_loop": 20,
+        "flow_complete": 22,
+        "Q_swap": 63,
+        "Q_no_crystal": 0
+      }
+    },
+    "later64": {
+      "n": 64,
+      "counts": {
+        "G": 29,
+        "Q_reference": 64,
+        "E_reference": 54,
+        "closed_loop": 27,
+        "flow_complete": 29,
+        "Q_swap": 63,
+        "Q_no_crystal": 0
+      }
+    }
+  }
+}

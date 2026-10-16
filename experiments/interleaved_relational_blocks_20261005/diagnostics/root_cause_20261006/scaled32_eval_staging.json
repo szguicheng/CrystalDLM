@@ -1,0 +1,35 @@
+{
+  "status": "staged_and_verified",
+  "created_utc": "2026-10-06T16:17:02Z",
+  "source_directory": "experiments/interleaved_relational_scaled32_20261006",
+  "remote_directory": "Burgundy:/scratch/chenggui2/CrystalDLM/experiments/interleaved_relational_scaled32_20261006",
+  "files": {
+    "evaluate.py": {
+      "sha256": "e0ca48792dfd942022e49b98907b2bb0518c5c9e20e7f6b54b96f627d4c63a73",
+      "local_remote_match": true
+    },
+    "test_evaluate.py": {
+      "sha256": "307fffd07980060f3c435d04fbc45ced6e2facdbe5cf64a0341a3b9333aef07d",
+      "local_remote_match": true
+    },
+    "evaluate.slurm": {
+      "sha256": "1845a7c0f386d6cc762eaf49bd02967a272f5187f031e7d9c0c5513620f43af8",
+      "local_remote_match": true
+    }
+  },
+  "checks": {
+    "rsync_three_files_only": "passed",
+    "remote_python3_B_test_evaluate": "passed",
+    "remote_bash_n_evaluate_slurm": "passed",
+    "hashes_equal": true,
+    "gpu_checkpoint_or_model_operation": "none",
+    "job_submission": "not_performed"
+  },
+  "restaged_utc": "2026-10-06T16:54:55.812999+00:00",
+  "receipt_schema_correction": {
+    "actual_producer_field": "source_hashes",
+    "previous_incorrect_field": "parent_source_hashes",
+    "regression": "actual train.py metadata fixture fails before fix and passes after",
+    "training_modified": false
+  }
+}

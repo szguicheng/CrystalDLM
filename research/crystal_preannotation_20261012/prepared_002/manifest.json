@@ -1,0 +1,159 @@
+{
+  "source_records": 45629,
+  "source_sha256": "821b942d948ab893b4e7c90def9123a16a74547edb52c9cf58c021f54367e16b",
+  "record_status_counts": {
+    "ok": 45465,
+    "error": 164
+  },
+  "annotation_eligible_split_counts": {
+    "train": 36362,
+    "val": 4501,
+    "test": 4602
+  },
+  "error_split_counts": {
+    "train": 129,
+    "val": 16,
+    "test": 19
+  },
+  "error_stage_counts": {
+    "consistency:RecordFailure": 163,
+    "local_structure_facts:ValueError": 1
+  },
+  "error_messages": {
+    "PLaID consistency checks failed: encoded_header_sites_matches_decoded_atom_count, encoded_orbit_multiplicity_sum_matches_header, all_scientific_consistency_checks_pass": 30,
+    "PLaID consistency checks failed: encoded_space_group_matches_decoded_analysis, all_scientific_consistency_checks_pass": 38,
+    "PLaID consistency checks failed: source_structure_matches_decoded, all_scientific_consistency_checks_pass": 40,
+    "PLaID consistency checks failed: encoded_space_group_matches_decoded_analysis, encoded_orbit_count_matches_decoded_analysis, all_scientific_consistency_checks_pass": 54,
+    "No Voronoi neighbors found for site - try increasing cutoff": 1,
+    "PLaID consistency checks failed: encoded_orbit_count_matches_decoded_analysis, all_scientific_consistency_checks_pass": 1
+  },
+  "failed_consistency_checks": {
+    "encoded_header_sites_matches_decoded_atom_count": 30,
+    "encoded_orbit_multiplicity_sum_matches_header": 30,
+    "all_scientific_consistency_checks_pass": 163,
+    "encoded_space_group_matches_decoded_analysis": 92,
+    "source_structure_matches_decoded": 40,
+    "encoded_orbit_count_matches_decoded_analysis": 55
+  },
+  "error_examples": {
+    "consistency:RecordFailure": [
+      "mp-1247200",
+      "mp-998745",
+      "mp-18814",
+      "mp-1026810",
+      "mp-2012678"
+    ],
+    "local_structure_facts:ValueError": [
+      "mp-994911"
+    ]
+  },
+  "decoded_atom_counts": {
+    "1": 7,
+    "2": 512,
+    "3": 325,
+    "4": 1649,
+    "5": 1042,
+    "6": 1844,
+    "7": 320,
+    "8": 3167,
+    "9": 936,
+    "10": 1874,
+    "11": 282,
+    "12": 3963,
+    "13": 546,
+    "14": 1564,
+    "15": 598,
+    "16": 6733,
+    "17": 316,
+    "18": 1894,
+    "19": 749,
+    "20": 3231,
+    "21": 108,
+    "22": 322,
+    "24": 2016,
+    "26": 723,
+    "27": 36,
+    "28": 1529,
+    "30": 706,
+    "32": 1450,
+    "33": 89,
+    "34": 200,
+    "36": 1264,
+    "38": 235,
+    "39": 170,
+    "40": 3528,
+    "42": 349,
+    "44": 2,
+    "45": 161,
+    "48": 141,
+    "51": 13,
+    "52": 65,
+    "54": 54,
+    "56": 306,
+    "57": 101,
+    "60": 200,
+    "64": 65,
+    "68": 19,
+    "72": 26,
+    "76": 5,
+    "80": 30
+  },
+  "feature_method": [
+    "crystal-preannotation-20261012-v3",
+    "a3ce96b7fd97084f4de385f7a1e9e0d868f9945efc7ddf9aa8a4d8982a81fb36"
+  ],
+  "shard_hashes": {
+    "shard-000.jsonl": "569c2550244b4e4ea8c8dc11fbe8a98088b1bf253919459b6bc808286a9c8203",
+    "shard-001.jsonl": "458a61b9e5449bd274f065c9544437028f1da2495e516d17edf1c52accfc9d5e",
+    "shard-002.jsonl": "1ae61cb0acf6efe933f57dc0a6ae84c45d2abe080b6cafc3a0ab64ee7dfd05ab",
+    "shard-003.jsonl": "807515f2e86142c6b539860882b7f652ac6055099602064f46e0742006e71c10",
+    "shard-004.jsonl": "da7a5337d331d2b7584c723cfe958f35448fb92b3e31d52e19d0bf1a69b9b06b",
+    "shard-005.jsonl": "f8da20f61b49822cb513f5248a18adfd4f75188f95589087466fe28691d99040",
+    "shard-006.jsonl": "7e13cbd7be2e43ddd5052f46fab4153affdb6af91cf72f6472c0d612f6395ca2",
+    "shard-007.jsonl": "2dffaa66acead0d243fd922465bf3d62bc699355d39462ddd4c722f94f2f1de5",
+    "shard-008.jsonl": "163b06a9cd5dcaec25aee2ccc9f8db934f1da8a0bab0f1a2855755c171df04ac",
+    "shard-009.jsonl": "61c66423cc307f4027cc89dae12880d2ecff908489c30180da8a8a773dee0617",
+    "shard-010.jsonl": "dcf807aa9cebc7eceefd94641a22c8d5334c1651ef1d2191b7074ac6152fcca9",
+    "shard-011.jsonl": "2f85d6798dce222a056dcc36b39eec14e80cf6740d9aefb2c3a0f7a762397ddb",
+    "shard-012.jsonl": "e52294bd9c249ecd9f96d9f501b66e408b3f1313286830619397ca15726bc6a2",
+    "shard-013.jsonl": "ee3cd59be6b6c03e1acd513f23076d3d64c9f18ee9bb05ea227d28675664d769",
+    "shard-014.jsonl": "e1b3e79db85ff020a8997fc847892921b4414c8503f96f7b71518686c5e9cdf2",
+    "shard-015.jsonl": "c3ad9520c6dc8db464106f4abc0a53a1d208360095bb5af2ba93172480f8cc5f",
+    "shard-016.jsonl": "c1be2d49f08fa7272ac3a13fb4196482ccc02dbb004967705b4e7a1b955dcc29",
+    "shard-017.jsonl": "5a43104de3bf69de4aaf6418a55a6f335f6b4ad2cef4cdf14a93acc99d231243",
+    "shard-018.jsonl": "76c66debf54a7d2be489e49c3ac7d64e4710ce79e56c681f1c383232db26fd1e",
+    "shard-019.jsonl": "0c3f4e5c03495c0787301de9fb2af40c8e21ec8ccd2b6a06a0a479283d543e8e",
+    "shard-020.jsonl": "8d46aea06be6101f77a0b466e8dd1bf0e60b5b7dd0f3ed8068b64d31bf6ec4a2",
+    "shard-021.jsonl": "ebd9923f7ff8b166f536d4d5d9b68adbc43720f1eb57876a8417a50c73765339",
+    "shard-022.jsonl": "64d52d2e0d028a0a34755705488c189b8a8961a1819ecf49cf3ab3ec6ba01f7e",
+    "shard-023.jsonl": "ed13611c1b69ee01c340cc33f6a17d65b81c341afdabb45f63f778f9219f87b6",
+    "shard-024.jsonl": "f48bd3b2b83a3657dae0c5075e93bd60ee3cff415826ef3cfcb581c3f45f1a51",
+    "shard-025.jsonl": "ab52887d9097b857d63128e366b3aa3f1791092fd15567a0a3aa5331420d1969",
+    "shard-026.jsonl": "dd3fd433d50c785256dd3af15692f0e521e83ae4862d5b3d39c89dcb1a162bf2",
+    "shard-027.jsonl": "5192428b42fe8716c4814b1c5f91bf45a26fea4fd6489404746aef422b8c49d9",
+    "shard-028.jsonl": "45b4acc0925a194bd4010cc90c0c9695ccf3790273a3719dc3bc28268135a55b",
+    "shard-029.jsonl": "9663aa245cba03e0f9f5a7a81e1228d0c1f6a8fc33fd80944643fa97a52c5085",
+    "shard-030.jsonl": "a235d0797a91da5a2c56b5d6f1bf592b0002a439a54c0be0e4baf280da3b71b1",
+    "shard-031.jsonl": "fce4d157d959867bbf2de25d9a8d12e972ebf823b09a429e8c8ee6d5dbed0920"
+  },
+  "source_identity_structure_hash_split_and_label_checks": "all records passed",
+  "artifacts": {
+    "errors.jsonl.gz": {
+      "bytes": 153169,
+      "sha256": "86851624e112bd6da83c3b5e9988b830a61b33cd8dc140d0f1b109017ea25a78"
+    },
+    "test-facts.jsonl.gz": {
+      "bytes": 7185272,
+      "sha256": "2e13eed147ef81a1f063783d85bd1d26554ca8b13a2dcbbb0fc2b042cf09ea98"
+    },
+    "train-facts.jsonl.gz": {
+      "bytes": 54841531,
+      "sha256": "3681e4e170bebba59e21aa331bdd80546ed4d7ac8167da8a1220d085707d7934"
+    },
+    "val-facts.jsonl.gz": {
+      "bytes": 7054765,
+      "sha256": "43ae76f516e4fecdad7e41d08c1bad4b21e0f062a528472b251095f68e436fc8"
+    }
+  },
+  "bulk_llm_calls": 0
+}

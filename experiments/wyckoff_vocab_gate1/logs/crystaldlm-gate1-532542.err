@@ -1,0 +1,19 @@
+Traceback (most recent call last):
+  File "/gpfs1/scratch/chenggui2/CrystalDLM/gate1_20260908/count_vocab.py", line 305, in <module>
+    main()
+  File "/gpfs1/scratch/chenggui2/CrystalDLM/gate1_20260908/count_vocab.py", line 251, in main
+    groups = read_groups(args.input)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfs1/scratch/chenggui2/CrystalDLM/gate1_20260908/count_vocab.py", line 86, in read_groups
+    matrix = coordinate_matrix(operations[0])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfs1/scratch/chenggui2/CrystalDLM/gate1_20260908/count_vocab.py", line 63, in coordinate_matrix
+    node = ast.parse(expression.strip(), mode='eval')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chenggui2/scratch/anaconda3/lib/python3.12/ast.py", line 52, in parse
+    return compile(source, filename, mode, flags,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<unknown>", line 1
+    2x
+    ^
+SyntaxError: invalid decimal literal

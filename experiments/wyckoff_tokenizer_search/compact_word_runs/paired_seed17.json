@@ -1,0 +1,44 @@
+{
+  "seed": 17,
+  "structures": 2048,
+  "results": {
+    "rle": {
+      "structures": 2048,
+      "joint_exact_match": 0.51953125,
+      "element_accuracy": 0.7174091731053757,
+      "mean_profile_nll": 0.8860272431883981,
+      "raw_word_sequence_exact": 0.40966796875
+    },
+    "rlemerge": {
+      "structures": 2048,
+      "joint_exact_match": 0.52978515625,
+      "element_accuracy": 0.7289166529672859,
+      "mean_profile_nll": 0.8437485313753244,
+      "raw_word_sequence_exact": 0.4296875
+    }
+  },
+  "rlemerge_minus_rle_exact": 0.01025390625,
+  "paired_structure_bootstrap_exact_95ci": [
+    -0.0048828125,
+    0.024914550781249933
+  ],
+  "rlemerge_minus_rle_profile_nll": -0.04227871181307374,
+  "paired_structure_bootstrap_nll_95ci": [
+    -0.0630676853594415,
+    -0.01967045150599378
+  ],
+  "rlemerge_only_correct": 136,
+  "rle_only_correct": 115,
+  "single_training_seed_only": true,
+  "validation_only": true,
+  "resamples": 2000,
+  "job_id": "533026",
+  "training_seconds": {
+    "rle": 31.96814534603618,
+    "rlemerge": 31.986735666170716
+  },
+  "peak_cuda_memory_bytes": {
+    "rle": 82947072,
+    "rlemerge": 70092288
+  }
+}

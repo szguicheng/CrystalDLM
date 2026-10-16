@@ -1,0 +1,33 @@
+{
+  "id": "692f74eb-c660-4b46-b13e-a358ef192d06",
+  "object": "chat.completion",
+  "created": 1791054279,
+  "model": "tokenhub/kimi-k3",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "The crystal is described in space group number [[param:space_group.number]] (Fddd, Hall symbol [[param:space_group.hall]]), an orthorhombic, face-centered space group with a body of inversion centers and diagonal glide symmetry characteristic of the F-centered orthorhombic class. The supplied structure was entered in a nonstandard triclinic-like input cell with lattice constants [[param:cell.a]], [[param:cell.b]], and [[param:cell.c]] Å and interaxial angles [[param:cell.alpha]], [[param:cell.beta]], and [[param:cell.gamma]] degrees. This skewed input cell contains [[param:input.atom_count]] atoms, comprising [[param:composition.Ti]] and [[param:composition.Si]], and represents a reduced primitive description of the underlying face-centered lattice.\n\nA frame transformation converts the input description into the conventional standard setting: fractional coordinates are mapped by the matrix [[param:frame.matrix]] together with the origin shift [[param:frame.origin_shift]], which moves the reference origin by seven-eighths along each axis. Input fractional coordinates were processed to [[param:round_digits]] decimal places.\n\nIn the standard Fddd setting, the atomic arrangement reduces to two independent Wyckoff orbits. The titanium atoms occupy a single fixed orbit, identified as [[param:orbit.o000.id]], with element assignment [[param:orbit.o000.element]] and Wyckoff label [[param:orbit.o000.wyckoff]]. This site has no free positional parameters: its representative atom sits at the special position with coordinates one-eighth, one-eighth, one-eighth, and the full set of titanium positions is generated purely by the face-centering translations and the point symmetry of the space group.\n\nThe silicon atoms form the second independent orbit, identified as [[param:orbit.o001.id]], with element assignment [[param:orbit.o001.element]] and Wyckoff label [[param:orbit.o001.wyckoff]]. This site retains one free coordinate: its representative position has the form one-eighth, y, one-eighth, so that the silicon atoms are pinned in the first and third fractional coordinates but free to move along the second direction. The refined value of this free parameter is [[param:orbit.o001.parameters]] in standard fractional coordinates. No precision corrections relative to an idealized backbone were recorded, so the reported geometry stands as given, with the silicon y-parameter being the only internal structural degree of freedom in the description."
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "reasoning_stream": {
+    "chunks": 63,
+    "characters": 655
+  },
+  "usage": {
+    "completion_tokens": 660,
+    "prompt_tokens": 1892,
+    "total_tokens": 2552,
+    "completion_tokens_details": {
+      "reasoning_tokens": 139
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "cache_creation_input_tokens": 0
+    }
+  }
+}

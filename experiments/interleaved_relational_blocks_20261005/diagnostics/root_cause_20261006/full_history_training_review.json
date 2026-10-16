@@ -1,0 +1,44 @@
+{
+  "review_id": "full_history_training_20261007",
+  "verdict": "no_blocking_findings",
+  "scope": [
+    "experiments/interleaved_relational_scaled32_20261006/FULL_HISTORY_PROTOCOL.md",
+    "experiments/interleaved_relational_scaled32_20261006/train_full_history.py",
+    "experiments/interleaved_relational_scaled32_20261006/train_full_history.slurm",
+    "experiments/interleaved_relational_scaled32_20261006/test_train_full_history.py",
+    "experiments/interleaved_relational_scaled32_20261006/train.py",
+    "experiments/interleaved_relational_scaled32_20261006/evaluate.py",
+    "experiments/interleaved_relational_joint_20261006/run.py"
+  ],
+  "blocking_findings": [],
+  "verified": [
+    {
+      "item": "Reader contexts follow the repair protocol",
+      "evidence": "The wrapper delegates neutral contexts unchanged. For Q2 conflict contexts it uses the parent task prefix and current directional C2 target; for Q1 it replaces the design-condition prefix with the cyclic partner's train-only generation conditions, then appends current C1 and the existing read question. The focused test compares neutral prefixes byte-for-byte, checks Q2 against the parent prefix, checks the Q1 replacement prefix and target, and preserves the Q1/Q2 schedule."
+    },
+    {
+      "item": "Frozen trainer and data provenance remain pinned",
+      "evidence": "The frozen train.py SHA-256 constant is 1bb619fb809d71c68813eb07aa162b2b2bfa1b8f2de7cef1a67b60054d4ae816 and matches the current file. The wrapper hashes this file before importing it. The base trainer checks the frozen manifest and records data hashes, model revision, seed, update budget, recipe, source hashes, exposure counts, and checkpoint reload receipts."
+    },
+    {
+      "item": "Source pins and paths resolve downstream",
+      "evidence": "The wrapper adds hashes for itself, its launcher, and its focused test using paths relative to JOINT_ROOT. The focused test checks these keys against the files; evaluate.py resolves each parent key as JOINT_ROOT / key, so sibling paths under ../interleaved_relational_scaled32_20261006 are checked against the same files."
+    },
+    {
+      "item": "Fresh output and launcher paths are isolated",
+      "evidence": "The launcher invokes the current top-level train_full_history.py. The wrapper defaults to a new training_full_history_001 directory and the base trainer creates the output with exist_ok=False, preserving the predecessor training output. The wrapper marks evaluation as not run."
+    }
+  ],
+  "validation": {
+    "static_review": "passed",
+    "frozen_train_sha256": "1bb619fb809d71c68813eb07aa162b2b2bfa1b8f2de7cef1a67b60054d4ae816",
+    "new_source_sha256": {
+      "train_full_history.py": "e2954cf3eea94639782987596799a772b475d6a3b62eada787ad8a4820633112",
+      "train_full_history.slurm": "3156e9199cf4c04e5d1649ac35f32968641dc0d6a6e9b4f5b31f2fd563f7f439",
+      "test_train_full_history.py": "2183f127a720a51fdb1c8ab79db3bdba1309ea3867e086cca089f22889121783"
+    },
+    "cpu_contract_check": "reported passed by the root agent for the full 2048-update schedule and real-row capacity checks; not rerun by this reviewer",
+    "gpu_training": "not performed",
+    "slurm_submission": "not performed"
+  }
+}

@@ -1,0 +1,352 @@
+[
+  {
+    "representation": "explicit",
+    "mode": "one_step",
+    "n": 64,
+    "seed": 17,
+    "nonpad_token_accuracy": 0.475817346663064,
+    "counts": {
+      "decoded": 2,
+      "composition_match": 2,
+      "usable": 2,
+      "reference_match": 1
+    },
+    "errors": [
+      [
+        "ValueError: Invalid literal for Fraction: 'G'",
+        32
+      ],
+      [
+        "ValueError: Generator must preserve the integer lattice invertibly",
+        16
+      ],
+      [
+        "ValueError: Expected SITES, got G",
+        4
+      ],
+      [
+        "ValueError: Parameters are only allowed as whole site-coordinate expressions",
+        2
+      ],
+      [
+        "ValueError: Expected G, got y",
+        1
+      ]
+    ]
+  },
+  {
+    "representation": "explicit",
+    "mode": "confidence",
+    "n": 64,
+    "seed": 17,
+    "nonpad_token_accuracy": 0.2453390975412051,
+    "counts": {
+      "decoded": 0,
+      "composition_match": 0,
+      "usable": 0,
+      "reference_match": 0
+    },
+    "errors": [
+      [
+        "ValueError: Invalid literal for Fraction: '<PAD>'",
+        11
+      ],
+      [
+        "ValueError: invalid literal for int() with base 10: '3.7445913792445'",
+        3
+      ],
+      [
+        "ValueError: invalid literal for int() with base 10: '3.9550767229206'",
+        3
+      ],
+      [
+        "ValueError: invalid literal for int() with base 10: '4.1126290683491'",
+        3
+      ],
+      [
+        "ValueError: invalid literal for int() with base 10: '3.8333918047584'",
+        3
+      ]
+    ]
+  },
+  {
+    "representation": "explicit",
+    "mode": "random",
+    "n": 64,
+    "seed": 17,
+    "nonpad_token_accuracy": 0.4531207781680627,
+    "counts": {
+      "decoded": 11,
+      "composition_match": 0,
+      "usable": 0,
+      "reference_match": 0
+    },
+    "errors": [
+      [
+        "ValueError: Invalid literal for Fraction: 'G'",
+        12
+      ],
+      [
+        "ValueError: Generator must preserve the integer lattice invertibly",
+        9
+      ],
+      [
+        "ValueError: Expected RESIDUALS, got F",
+        4
+      ],
+      [
+        "ValueError: Invalid literal for Fraction: 'SITES'",
+        4
+      ],
+      [
+        "ValueError: Expected SITES, got G",
+        4
+      ]
+    ]
+  },
+  {
+    "representation": "explicit",
+    "mode": "content_first",
+    "n": 64,
+    "seed": 17,
+    "nonpad_token_accuracy": 0.44447446636044313,
+    "counts": {
+      "decoded": 6,
+      "composition_match": 1,
+      "usable": 1,
+      "reference_match": 1
+    },
+    "errors": [
+      [
+        "ValueError: Expected SITES, got G",
+        15
+      ],
+      [
+        "ValueError: Invalid literal for Fraction: 'G'",
+        11
+      ],
+      [
+        "ValueError: Generator must preserve the integer lattice invertibly",
+        8
+      ],
+      [
+        "ValueError: Expected SITES, got z",
+        7
+      ],
+      [
+        "ValueError: Expected G, got x",
+        4
+      ]
+    ]
+  },
+  {
+    "representation": "explicit",
+    "mode": "remask",
+    "n": 64,
+    "seed": 17,
+    "nonpad_token_accuracy": 0.43339637935693054,
+    "counts": {
+      "decoded": 21,
+      "composition_match": 2,
+      "usable": 1,
+      "reference_match": 0
+    },
+    "errors": [
+      [
+        "ValueError: Expected RESIDUALS, got F",
+        4
+      ],
+      [
+        "ValueError: Generator must preserve the integer lattice invertibly",
+        4
+      ],
+      [
+        "ValueError: Invalid literal for Fraction: 'SITES'",
+        4
+      ],
+      [
+        "ValueError: Expected RESIDUALS, got <PAD>",
+        2
+      ],
+      [
+        "ValueError: invalid literal for int() with base 10: 'FAMILY'",
+        2
+      ]
+    ]
+  },
+  {
+    "representation": "wyckoff",
+    "mode": "one_step",
+    "n": 64,
+    "seed": 17,
+    "nonpad_token_accuracy": 0.6591296928327645,
+    "counts": {
+      "decoded": 2,
+      "composition_match": 1,
+      "usable": 1,
+      "reference_match": 1
+    },
+    "errors": [
+      [
+        "ValueError: Wyckoff table setting mismatch",
+        15
+      ],
+      [
+        "KeyError: '2a'",
+        8
+      ],
+      [
+        "KeyError: '1a'",
+        3
+      ],
+      [
+        "KeyError: '4e'",
+        2
+      ],
+      [
+        "ValueError: '2i' is not a valid Element",
+        2
+      ]
+    ]
+  },
+  {
+    "representation": "wyckoff",
+    "mode": "confidence",
+    "n": 64,
+    "seed": 17,
+    "nonpad_token_accuracy": 0.3464163822525597,
+    "counts": {
+      "decoded": 0,
+      "composition_match": 0,
+      "usable": 0,
+      "reference_match": 0
+    },
+    "errors": [
+      [
+        "ValueError: invalid literal for int() with base 10: '7.3890560989307'",
+        3
+      ],
+      [
+        "ValueError: invalid literal for int() with base 10: '6.8873576059976'",
+        2
+      ],
+      [
+        "ValueError: invalid literal for int() with base 10: '2.6449608137946'",
+        2
+      ],
+      [
+        "ValueError: invalid literal for int() with base 10: '2.7827440243536'",
+        2
+      ],
+      [
+        "ValueError: Wyckoff table setting mismatch",
+        2
+      ]
+    ]
+  },
+  {
+    "representation": "wyckoff",
+    "mode": "random",
+    "n": 64,
+    "seed": 17,
+    "nonpad_token_accuracy": 0.648037542662116,
+    "counts": {
+      "decoded": 13,
+      "composition_match": 1,
+      "usable": 1,
+      "reference_match": 0
+    },
+    "errors": [
+      [
+        "ValueError: Expected END",
+        7
+      ],
+      [
+        "ValueError: Wyckoff table setting mismatch",
+        5
+      ],
+      [
+        "ValueError: 'END' is not a valid Element",
+        5
+      ],
+      [
+        "ValueError: '<PAD>' is not a valid Element",
+        3
+      ],
+      [
+        "KeyError: '0.3212890625'",
+        1
+      ]
+    ]
+  },
+  {
+    "representation": "wyckoff",
+    "mode": "content_first",
+    "n": 64,
+    "seed": 17,
+    "nonpad_token_accuracy": 0.6224402730375427,
+    "counts": {
+      "decoded": 1,
+      "composition_match": 1,
+      "usable": 1,
+      "reference_match": 1
+    },
+    "errors": [
+      [
+        "ValueError: invalid literal for int() with base 10: '1a'",
+        20
+      ],
+      [
+        "ValueError: '0.462646484375' is not a valid Element",
+        2
+      ],
+      [
+        "ValueError: '0.39697265625' is not a valid Element",
+        2
+      ],
+      [
+        "ValueError: could not convert string to float: 'Dy'",
+        2
+      ],
+      [
+        "ValueError: could not convert string to float: 'Eu'",
+        2
+      ]
+    ]
+  },
+  {
+    "representation": "wyckoff",
+    "mode": "remask",
+    "n": 64,
+    "seed": 17,
+    "nonpad_token_accuracy": 0.6343856655290102,
+    "counts": {
+      "decoded": 19,
+      "composition_match": 1,
+      "usable": 1,
+      "reference_match": 0
+    },
+    "errors": [
+      [
+        "ValueError: 'END' is not a valid Element",
+        14
+      ],
+      [
+        "ValueError: Expected END",
+        8
+      ],
+      [
+        "ValueError: '<PAD>' is not a valid Element",
+        3
+      ],
+      [
+        "ValueError: could not convert string to float: '<PAD>'",
+        2
+      ],
+      [
+        "ValueError: '4e' is not a valid Element",
+        2
+      ]
+    ]
+  }
+]

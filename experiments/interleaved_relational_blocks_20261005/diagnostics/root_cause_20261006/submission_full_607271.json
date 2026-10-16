@@ -1,0 +1,26 @@
+{
+  "job_id": 607271,
+  "submitted_at_utc": "2026-10-06T08:37:33.359714+00:00",
+  "entrypoint": "full_commit_eval.slurm",
+  "entrypoint_sha256": "7d35180d43d15fc7cc45a260ef69f1ed8e57de7f0ca138db596cce5dc7915291",
+  "partition": "gpu_a100",
+  "walltime": "04:00:00",
+  "dependency": "none",
+  "gpu_count": 1,
+  "purpose": "FrozenoldB32 fullK2560 seen8 actualgen/read/edit/read perconfidence/uniform/LTR; greedy; nooptimizer/noheldout",
+  "offline_verification": {
+    "native_CPU_check": "passed direct test_full_commit_eval.py exactK andstrictEND/PAD raw preservation",
+    "source_hashes": {
+      "full_commit_eval.py": "a9065f34257873d0e7c6cc417054514ed3adc3d97b1f7c69e71232e50a11f596",
+      "test_full_commit_eval.py": "6eb857fd1f31fb3193595203b74eda4daa2c8b14afe56e4d195a506a9d02492f",
+      "full_commit_eval.slurm": "7d35180d43d15fc7cc45a260ef69f1ed8e57de7f0ca138db596cce5dc7915291",
+      "commit_probe.py": "081ad3a97090651bba4b146e77fcd47807e0942d3ab4f7da450274a1e594b8d3"
+    },
+    "scope": "frozenB32seen8fullG/read/edit/read andswap; greedy countmatchedconfidence/uniform/LTR; allK2560 no earlystop/repair/oracle; nooptimizer orheldout",
+    "gpu_evaluation": "not_yet_submitted",
+    "independent_review": "No blocking findings: fullK/time masks/greedycountmatchedpolicies/strictboundaries/frozenmodel/actualC1C2 flow; rootadded fixedreviewedsamplerpin andruntime/caseseed receipts",
+    "trace_scope": "rawfullKIDs saved; full per-step traces notpersisted, implementationpinned to the independently audited prefix sampler"
+  },
+  "dependency_update_requested": "remove afterany607229: frozencheckpoint diagnostic is independent, may use separate regular A100 allocation inparallel with trainingcontrols",
+  "last_verified_state": "PENDING Priority after dependency removal; main607229 RUNNING gpu-a100-04"
+}

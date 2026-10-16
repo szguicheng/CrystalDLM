@@ -1,0 +1,11 @@
+import fs from 'node:fs/promises';
+import {FileBlob,PresentationFile} from '@oai/artifact-tool';
+const root='/Volumes/Extention/Users/guicheng/Code/helloWorld/CrystalDLM';
+const p=await PresentationFile.importPptx(await FileBlob.load(root+'/outputs/group_meeting_with_model_comparison_final.pptx'));
+const scan=await p.inspect({kind:'slide,table,textbox',maxChars:40000});
+await fs.writeFile(root+'/work/edge_orbit_update/source_inspect.ndjson',scan.ndjson);
+console.log(scan.ndjson.split('\n').filter(s=>s.includes('"slide":11')).join('\n'));
+const slide=p.slides.getItem(10);
+const png=await slide.export({format:'png',scale:1.5});
+await fs.writeFile(root+'/work/edge_orbit_update/source_slide11.png',new Uint8Array(await png.arrayBuffer()));
+await fs.writeFile(root+'/work/edge_orbit_update/source_layout.json',await (await slide.export({format:'layout'})).text());

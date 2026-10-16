@@ -1,0 +1,24 @@
+{
+  "job_id": 607221,
+  "submitted_at_utc": "2026-10-06T07:57:30.436215+00:00",
+  "partition": "stingy",
+  "walltime": "06:00:00",
+  "gpu_count": 1,
+  "entrypoint": "repair_controls.slurm",
+  "entrypoint_sha256": "6da97178018b0a93a6dfe3da76643f1d3b737089643c31753514bcea40194612",
+  "order": [
+    "native_mask_replay",
+    "frozen_B32_commit_probe",
+    "fresh_B16_no_anchor_control",
+    "fresh_B32_clean_AR_anchor"
+  ],
+  "predecessor_pending_job": {
+    "id": 607220,
+    "status": "cancelled_before_start",
+    "reason": "stingy per-user submitted job limit requires one sequential allocation"
+  },
+  "initial_submission_failures": [
+    "08h request rejected by stingy 06h QoS wall limit; corrected before submission",
+    "separate training jobs rejected by stingy submitted-job-per-user limit; combined in one allocation"
+  ]
+}

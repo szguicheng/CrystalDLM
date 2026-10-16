@@ -1,0 +1,118 @@
+{
+  "mode": "hybrid",
+  "phase": "joint",
+  "feedback": false,
+  "updates": 200,
+  "seed": 17,
+  "status": "evaluated",
+  "initial_fingerprint": "cc32cb8499e36b08c135b804eea94746cf9087c2f215caa7acc4a8a893ca5749",
+  "warm_fingerprint": "cc32cb8499e36b08c135b804eea94746cf9087c2f215caa7acc4a8a893ca5749",
+  "slurm_job": "600420",
+  "host": "gpu-a100-05",
+  "gpu": "NVIDIA A100-SXM4-80GB",
+  "noise_policy": "50% full MASK; remaining uniform 1..31",
+  "source_sha256": {
+    "diagnose.py": "04f551667b8e3fd0b6be79b997e9ac4ca0ea11dae76c06c5b3981e42e406b0b9",
+    "model.py": "d7abb6bcc6da9b339408ee928caef4b80a4cf8a40204a0b61b8a68b7c9aca79a",
+    "test_checks.py": "69688c1c8ef0dc1385d481ca1787953891c71dc3a50d35dc72216f929aa6d971",
+    "run.py": "9f0f856357413230acdebf6e9269705e49ccb3be47fc3c8d7ad0a13ce068558f",
+    "prepare.py": "12434c3c231564395a0f7c1c379bb57306f41fe5a38365aa9e81408fa6274925",
+    "score.py": "645184cc388bad2554b4615e63135f27e90e150407335067577375dc41525c0a",
+    "adapt.py": "3e322436f7517f277383cf9538c437569df46d74064bbde84fae782a718935fc"
+  },
+  "completed_updates": 200,
+  "elapsed_seconds": 160.27216946566477,
+  "noise_counts": {
+    "32": 821,
+    "24": 25,
+    "18": 29,
+    "4": 19,
+    "22": 27,
+    "28": 19,
+    "5": 27,
+    "30": 30,
+    "13": 29,
+    "27": 28,
+    "31": 32,
+    "26": 31,
+    "25": 30,
+    "17": 21,
+    "2": 29,
+    "8": 16,
+    "12": 25,
+    "3": 22,
+    "11": 29,
+    "19": 30,
+    "23": 29,
+    "15": 24,
+    "16": 25,
+    "9": 29,
+    "10": 16,
+    "20": 22,
+    "6": 15,
+    "21": 32,
+    "7": 20,
+    "14": 30,
+    "1": 16,
+    "29": 23
+  },
+  "training_seconds": 160.27306646993384,
+  "seconds_per_update_median": 0.799708975944668,
+  "final_fingerprint": "28ab12fc4ea85e940be48ff986edc05ee15f598e473682c3015cd3617c3135d7",
+  "original_evaluation": {
+    "n": 8,
+    "counts": {
+      "G": 8,
+      "Q_reference": 8,
+      "E_reference": 8,
+      "closed_loop": 4,
+      "flow_complete": 4,
+      "Q_swap": 0,
+      "Q_no_crystal": 0
+    },
+    "rates": {
+      "G": 1.0,
+      "Q_reference": 1.0,
+      "E_reference": 1.0,
+      "closed_loop": 0.5,
+      "flow_complete": 0.5,
+      "Q_swap": 0.0,
+      "Q_no_crystal": 0.0
+    },
+    "elapsed_seconds": 75.17007926199585,
+    "attempts_retried": 0,
+    "seconds_median": 9.009543239604682,
+    "seconds_p95": 11.716229688562452,
+    "evaluation_split": "train",
+    "training_materials_evaluated": true,
+    "stage0_passed": false
+  },
+  "conflict_evaluation": {
+    "1": {
+      "n": 32,
+      "success": 0,
+      "correct_by_field": {
+        "sg": 1,
+        "formula": 0,
+        "atoms": 4,
+        "orbits": 3,
+        "a": 25,
+        "b": 25,
+        "c": 26
+      }
+    },
+    "1.03": {
+      "n": 32,
+      "success": 0,
+      "correct_by_field": {
+        "sg": 1,
+        "formula": 0,
+        "atoms": 4,
+        "orbits": 3,
+        "a": 26,
+        "b": 26,
+        "c": 26
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+Traceback (most recent call last):
+  File "/gpfs1/scratch/chenggui2/CrystalDLM/experiments/interleaved_ar_diffusion_20261002/predictor_align.py", line 190, in <module>
+    main()
+  File "/gpfs1/scratch/chenggui2/CrystalDLM/experiments/interleaved_ar_diffusion_20261002/predictor_align.py", line 164, in main
+    core = evaluation(model, tok, mode, validation, branch / 'validation_128', materials)
+  File "/gpfs1/scratch/chenggui2/CrystalDLM/experiments/interleaved_ar_diffusion_20261002/recover.py", line 69, in evaluation
+    out.mkdir();legacy=evaluate(model,tok,mode,rows,out,split)
+  File "/gpfs1/scratch/chenggui2/CrystalDLM/experiments/interleaved_ar_diffusion_20261002/run.py", line 182, in evaluate
+    if qn['ok']: record['Q_no_crystal']=grade_answer(qn['value'],swap['c1'])['success']
+  File "/gpfs1/scratch/chenggui2/CrystalDLM/experiments/interleaved_ar_diffusion_20261002/score.py", line 182, in grade_answer
+    fields[name] = bool(values) and all(abs(float(v)-p['lengths'][i]) <= .005 + 1e-10 for v in values)
+  File "/gpfs1/scratch/chenggui2/CrystalDLM/experiments/interleaved_ar_diffusion_20261002/score.py", line 182, in <genexpr>
+    fields[name] = bool(values) and all(abs(float(v)-p['lengths'][i]) <= .005 + 1e-10 for v in values)
+ValueError: could not convert string to float: '7.02.'

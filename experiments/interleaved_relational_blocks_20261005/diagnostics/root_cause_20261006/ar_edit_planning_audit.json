@@ -1,0 +1,117 @@
+{
+  "artifact_version": "1.0",
+  "objective": "Read-only design audit of an E-only AR lattice-planning lead for relational_cnl_v1 shared-model generation/editing.",
+  "scope": {
+    "repository": "/Volumes/Extention/Users/guicheng/Code/helloWorld/CrystalDLM",
+    "heldout16_source_rows_explicitly_inspected_or_used": false,
+    "mixed_split_aggregate_opened_by_helper": "terminal_body_audit_b32.json was opened, then immediately excluded after heldout entries were noticed; none of its content was analyzed or reported",
+    "live_job_or_checkpoint_inspected": false,
+    "scope_note": "A helper briefly opened a mixed-split aggregate before noticing it included heldout entries, stopped, and excluded it. No heldout source rows were explicitly inspected, analyzed, or used.",
+    "current_job_note": "Parent reports one first-seen case from Slurm 607872 completed G, strict E-reference, and closed-loop successfully with the generic lead; raw independent re-audit and full cohort are pending. This report does not independently verify that result."
+  },
+  "assessment": {
+    "verdict": "conditional_follow_up_candidate",
+    "fit_to_goal": "A concise E lead that states the source and desired a,b,c lengths before CRYSTAL_START is a better operational match to interleaved AR reasoning followed by crystal-body generation than the current generic sentence.",
+    "necessity": "Not established. The old B32 diagnostic supports the hypothesis, while the newly reported generic-lead success is counterevidence. Wait for the current full-cohort raw audit before spending another training budget.",
+    "claim_boundary": "This tests a supervised, visible calculation plan; it does not establish hidden reasoning, prove the plan causes every edit failure, or support a universal-infeasibility claim."
+  },
+  "existing_flow": {
+    "task": "E prompt includes source CNL, source-fact answer, then the scale-only instruction. The E lead target is currently a generic sentence.",
+    "training": "model.pack supervises lead tokens as AR text. clean_crystal_ar_weight=1.0 adds auxiliary next-token loss on the crystal body; it does not create an inference-time planner.",
+    "inference": "generate() calls greedy model.text(..., trigger=true) until CRYSTAL_START, then passes the generated lead in the full context to model.crystal(). Hybrid crystal sampling generates all K=2560 raw tokens.",
+    "actual_loop": "Actual E is conditioned on the generated C1 and model-generated Q1 answer; actual C2 is scored against that C1. Q2 sees the E lead as context, so Q2 must remain separate from strict E scoring.",
+    "naming": "No run.emit function is present in the active joint source; generate() is the relevant entry point."
+  },
+  "candidate_intervention": {
+    "treatment": "Change only the E lead target to a short natural-language template naming original a,b,c, requested factor, and desired a,b,c before CRYSTAL_START. Keep G lead, G/Q prompts and targets, crystal bodies, sampler, decoder, and scorer fixed.",
+    "labels": "Build training lead labels from the existing exact source plans and Decimal 1.05/0.95 target plans. Keep all six values in the lead; do not round through Q1 prose, which formats lattice lengths to two decimals.",
+    "inference": "At evaluation, obtain the lead only from free-running model.text(..., trigger=true). Do not insert target plans/values into the E prompt, compute a correction externally, or repair the generated body.",
+    "crystal_body": "Continue sampling all raw K tokens through the unchanged hybrid crystal branch and existing decoder/scorer; no AR-body fallback or post-hoc edit."
+  },
+  "smallest_controlled_pilot": {
+    "trigger": "Proceed only if the completed generic-lead full-cohort/raw audit leaves recurring strict E failures, especially physically valid body-preserving outputs with wrong exact lattice values. If the generic model holds up, stop here.",
+    "arms": [
+      "Generic E lead baseline",
+      "Planned E lead treatment"
+    ],
+    "data": "Train both arms on the same reviewed train32 rows and variants. Keep source16 held out of training and tuning; open it once for evaluation only after both checkpoints, code, seeds, and metrics are frozen.",
+    "matched_configuration": "Use the same clean initial fingerprint, 1.5B model revision, clean_crystal_ar_weight=1.0, block size 32, K=2560, MAXLEN=8192, 512 updates, seed 17, effective batch 4, optimizer/scheduler, task exposure, and confidence sampler. The active joint runner currently points to the old 24-row data directory, so a future 32-row comparison must pin the reviewed scaled32 records explicitly; do not treat the current run as a train32 baseline.",
+    "evaluation": "Run the existing reference-E and actual G/read/edit/read evaluator on identical heldout cases and per-case sampler seeds. Report lead numeric accuracy, E_reference, E_actual, G, Q1, Q2, closed-loop, physical audit, exact length error, and every failure in the denominator. Keep E_reference as the paired E mechanism check and the full loop as the end-to-end check."
+  },
+  "confounds_and_controls": [
+    "Teacher forcing: training lead CE conditions on gold preceding tokens, while inference free-runs the plan. Score the generated six values at inference; do not substitute teacher-forced lead accuracy.",
+    "Generated-C1 shift: training plans derive from reference C1/source plans, while actual E sees sampled C1 and generated Q1. In the full loop, require the plan's original values to match that actual C1 and desired values to match its exact requested scale.",
+    "Q2 copying: actual Q2 context includes the plan lead. Score Q2 against the generated C2 audit, and never count Q2 alone as evidence that C2 is correct.",
+    "Lead length and capacity: model.text has a 160-token trigger limit. Keep the plan concise, record lead lengths, and rerun the static pack/MAXLEN audit before training.",
+    "Shared-weight spillover: G/Q task data and scoring stay fixed, but E-only updates still change shared weights. Treat G/Q shifts as measured spillovers, not assumed invariants."
+  ],
+  "acceptance_gates": {
+    "preflight": "Confirm exact train32/heldout16 separation, identical arm initialization and training/sampling receipts, plan labels from train source plans only, and capacity fit without truncation.",
+    "mechanism": "On the sealed 16-case evaluation, report whether the free-running E lead states all original and desired values exactly before CRYSTAL_START; retain failed/malformed leads in the denominator.",
+    "body_edit": "Use unchanged strict grade_edit: exact target lengths, unchanged non-lattice fields, whole-geometry scale, and passing physical audit. Any missing condition is an E failure.",
+    "screening_rule": "Pre-register a continuation threshold before opening heldout results; a practical pilot screen is at least 3 net paired gains in strict E_reference out of 16, plus at least one net full-loop gain, with no material G/Q regression. This is a screening gate only, not a statistical or generalization claim.",
+    "interpretation": "If G rarely yields an auditable C1, report the full-loop effect as unresolved and use paired E_reference results only as the narrower mechanism evidence."
+  },
+  "secondary_method": {
+    "option": "Freeze unchanged body spans and resample only the lattice sentence/values with an inpainting or constrained-mask path.",
+    "tradeoff": "Could avoid regenerating stable orbit/correction text, but changes the crystal sampler and requires reliable span handling for variable-length numeric text. Keep it as a separate method change after the E-lead pilot."
+  },
+  "evidence": [
+    {
+      "finding": "Current E lead is generic; E task already supplies source body/facts plus the scale request.",
+      "sources": [
+        "experiments/interleaved_relational_joint_20261006/prepare.py:50-51",
+        "experiments/interleaved_relational_joint_20261006/prepare.py:124-139"
+      ]
+    },
+    {
+      "finding": "Lead is supervised as AR text; greedy text generation precedes all-K hybrid crystal generation.",
+      "sources": [
+        "experiments/interleaved_relational_joint_20261006/model.py:172-228",
+        "experiments/interleaved_relational_joint_20261006/model.py:288-339",
+        "experiments/interleaved_relational_joint_20261006/run.py:401-404"
+      ]
+    },
+    {
+      "finding": "Actual loop uses generated C1 and Q1 for E, and includes the E lead in Q2 context.",
+      "sources": [
+        "experiments/interleaved_relational_joint_20261006/run.py:529-565"
+      ]
+    },
+    {
+      "finding": "Strict edit grades exact scaled lengths, unchanged plan fields, whole geometry, and physical audit; Q1 response rounds lengths to two decimals.",
+      "sources": [
+        "experiments/interleaved_relational_joint_20261006/prepare.py:92-100",
+        "experiments/interleaved_relational_joint_20261006/score.py:181-206",
+        "experiments/interleaved_relational_joint_20261006/score.py:263-323"
+      ]
+    },
+    {
+      "finding": "Old B32 diagnostic is train-seen8 only with zero optimizer updates; all three policies had E_reference=0/8 and closed_loop=0/8. Of 24 raw E-reference outputs across policies, 14 (six confidence and eight LTR) were physically valid and body-preserving yet missed exact lattice values.",
+      "sources": [
+        "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/full_commit_fast_001/summary.json:16-18,26-31,72-75,118-121",
+        "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/full_commit_fast_001/confidence_one/seen8/evaluation.jsonl:1",
+        "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/full_commit_fast_001/left_to_right_one/seen8/evaluation.jsonl:1"
+      ]
+    },
+    {
+      "finding": "Reviewed scaled32 data has 32 train/16 heldout, exact Decimal targets, and no training yet; the active joint runner still defaults to old 24-row data.",
+      "sources": [
+        "experiments/interleaved_relational_scaled32_20261006/PROTOCOL.md:3-13",
+        "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/scaled32_data_review.json",
+        "experiments/interleaved_relational_joint_20261006/prepare.py:23,189-203"
+      ]
+    },
+    {
+      "finding": "Matched current-run configuration is pinned in source.",
+      "sources": [
+        "experiments/interleaved_relational_joint_20261006/run.py:42-56,644-685"
+      ]
+    }
+  ],
+  "limits": [
+    "Old strict B32 evidence uses one checkpoint and only eight seen train materials per sampling policy; it has no heldout result and no training comparison.",
+    "The current generic-lead success is parent-reported for one seen case and awaits raw independent audit/full-cohort completion.",
+    "The scaled32 dataset is preparation evidence only; no model result supports the planned-lead hypothesis yet."
+  ]
+}

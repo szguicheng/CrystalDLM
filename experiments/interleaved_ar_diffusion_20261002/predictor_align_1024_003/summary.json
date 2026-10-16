@@ -1,0 +1,507 @@
+{
+  "status": "complete",
+  "results": {
+    "ar_control": {
+      "provenance": "inherited_raw_rescored",
+      "validation": {
+        "n": 128,
+        "counts": {
+          "G": 51,
+          "Q_reference": 128,
+          "E_reference": 113,
+          "closed_loop": 47,
+          "flow_complete": 51,
+          "Q_swap": 126,
+          "Q_no_crystal": 0
+        }
+      },
+      "reading": {
+        "n": 128,
+        "success": 97,
+        "correct_by_field": {
+          "sg": 126,
+          "formula": 128,
+          "atoms": 97,
+          "orbits": 97,
+          "a": 128,
+          "b": 128,
+          "c": 128
+        }
+      },
+      "old8": {
+        "n": 8,
+        "counts": {
+          "G": 6,
+          "Q_reference": 8,
+          "E_reference": 8,
+          "closed_loop": 6,
+          "flow_complete": 6,
+          "Q_swap": 8,
+          "Q_no_crystal": 0
+        }
+      },
+      "initial_fingerprint": "7567d5dd878a1e02a51b05a9ec4ecd67e68cd1a79da88235c975e1eeb4b21c85",
+      "final_fingerprint": "45684803b4513e4ac6c086c8e8440990b2cbefd323380530174fd0957c036242",
+      "strata": {
+        "original64": {
+          "n": 64,
+          "counts": {
+            "G": 22,
+            "Q_reference": 64,
+            "E_reference": 59,
+            "closed_loop": 20,
+            "flow_complete": 22,
+            "Q_swap": 63,
+            "Q_no_crystal": 0
+          }
+        },
+        "later64": {
+          "n": 64,
+          "counts": {
+            "G": 29,
+            "Q_reference": 64,
+            "E_reference": 54,
+            "closed_loop": 27,
+            "flow_complete": 29,
+            "Q_swap": 63,
+            "Q_no_crystal": 0
+          }
+        }
+      },
+      "source_raw_sha256": "f1834a30968622020eb1d8691b9e10210b0ba95a43c8b978383a7057b00d8927",
+      "prior_failure_context": {
+        "arm": "hybrid_same",
+        "phase": "validation_128",
+        "validation_rows_written": 66,
+        "next_current_row_written": false,
+        "raw_failed_response_recovered": false,
+        "scorer_exception": "grade_answer parsed a lattice-length token as '7.02.' then raised from float conversion",
+        "summary_status": "partial",
+        "hybrid_shift_started": false
+      }
+    },
+    "hybrid_same": {
+      "provenance": "replayed_existing_checkpoint",
+      "initial_fingerprint": "7567d5dd878a1e02a51b05a9ec4ecd67e68cd1a79da88235c975e1eeb4b21c85",
+      "final_fingerprint": "b5ed6bff994d9cf227e31ae983a187f9ed07ef7ceacffe1454ceca38fda391b0",
+      "checkpoint_sha256": "2586534010441d7f2a380cfef4212fc4d0f55f22b815a9ba335ae73135ab0dd5",
+      "validation": {
+        "legacy": {
+          "n": 128,
+          "counts": {
+            "G": 0,
+            "Q_reference": 128,
+            "E_reference": 0,
+            "closed_loop": 0,
+            "flow_complete": 0,
+            "Q_swap": 122,
+            "Q_no_crystal": 0
+          },
+          "rates": {
+            "G": 0.0,
+            "Q_reference": 1.0,
+            "E_reference": 0.0,
+            "closed_loop": 0.0,
+            "flow_complete": 0.0,
+            "Q_swap": 0.953125,
+            "Q_no_crystal": 0.0
+          },
+          "elapsed_seconds": 779.6567258941941,
+          "attempts_retried": 0,
+          "seconds_median": 6.044862114824355,
+          "seconds_p95": 6.378211009921506,
+          "evaluation_split": "val",
+          "training_materials_evaluated": false,
+          "stage0_passed": false
+        },
+        "v2": {
+          "n": 128,
+          "counts": {
+            "G": 0,
+            "Q_reference": 128,
+            "E_reference": 0,
+            "closed_loop": 0,
+            "flow_complete": 0,
+            "Q_swap": 122,
+            "Q_no_crystal": 0
+          }
+        }
+      },
+      "reading": {
+        "n": 128,
+        "success": 118,
+        "correct_by_field": {
+          "sg": 119,
+          "formula": 126,
+          "atoms": 125,
+          "orbits": 125,
+          "a": 126,
+          "b": 126,
+          "c": 126
+        }
+      },
+      "old8": {
+        "legacy": {
+          "n": 8,
+          "counts": {
+            "G": 0,
+            "Q_reference": 8,
+            "E_reference": 0,
+            "closed_loop": 0,
+            "flow_complete": 0,
+            "Q_swap": 7,
+            "Q_no_crystal": 0
+          },
+          "rates": {
+            "G": 0.0,
+            "Q_reference": 1.0,
+            "E_reference": 0.0,
+            "closed_loop": 0.0,
+            "flow_complete": 0.0,
+            "Q_swap": 0.875,
+            "Q_no_crystal": 0.0
+          },
+          "elapsed_seconds": 48.16726477071643,
+          "attempts_retried": 0,
+          "seconds_median": 6.0302976639941335,
+          "seconds_p95": 6.191263142670505,
+          "evaluation_split": "train",
+          "training_materials_evaluated": true,
+          "stage0_passed": false
+        },
+        "v2": {
+          "n": 8,
+          "counts": {
+            "G": 0,
+            "Q_reference": 8,
+            "E_reference": 0,
+            "closed_loop": 0,
+            "flow_complete": 0,
+            "Q_swap": 7,
+            "Q_no_crystal": 0
+          }
+        }
+      },
+      "prefix_replay": {
+        "rows": 66,
+        "validation_ids_match": true,
+        "scientific_fields_exact": true,
+        "first_mismatch": null,
+        "forward_call_differences": [],
+        "previous_raw_sha256": "420f3914bea8aa0203b5ff318d2da3d5f24f8da16ee21804b91177f7766c9e17",
+        "replay_raw_sha256": "87b024e74f4e95cb7330cf55ad49e914aa8c822bf739a142454e3d65c1eaa7a1"
+      },
+      "strata": {
+        "original64": {
+          "n": 64,
+          "counts": {
+            "G": 0,
+            "Q_reference": 64,
+            "E_reference": 0,
+            "closed_loop": 0,
+            "flow_complete": 0,
+            "Q_swap": 61,
+            "Q_no_crystal": 0
+          }
+        },
+        "later64": {
+          "n": 64,
+          "counts": {
+            "G": 0,
+            "Q_reference": 64,
+            "E_reference": 0,
+            "closed_loop": 0,
+            "flow_complete": 0,
+            "Q_swap": 61,
+            "Q_no_crystal": 0
+          }
+        }
+      }
+    },
+    "hybrid_shift": {
+      "provenance": "new_training_from_v8_ar",
+      "initial_fingerprint": "7567d5dd878a1e02a51b05a9ec4ecd67e68cd1a79da88235c975e1eeb4b21c85",
+      "final_fingerprint": "f784f0044dfb98bae694bcfcf9289b38a5ddd84048161292ed2e0aed360b8c1c",
+      "prediction_offset": 1,
+      "validation": {
+        "legacy": {
+          "n": 128,
+          "counts": {
+            "G": 0,
+            "Q_reference": 128,
+            "E_reference": 0,
+            "closed_loop": 0,
+            "flow_complete": 0,
+            "Q_swap": 122,
+            "Q_no_crystal": 0
+          },
+          "rates": {
+            "G": 0.0,
+            "Q_reference": 1.0,
+            "E_reference": 0.0,
+            "closed_loop": 0.0,
+            "flow_complete": 0.0,
+            "Q_swap": 0.953125,
+            "Q_no_crystal": 0.0
+          },
+          "elapsed_seconds": 793.7958353762515,
+          "attempts_retried": 0,
+          "seconds_median": 6.052975609665737,
+          "seconds_p95": 7.489714857051145,
+          "evaluation_split": "val",
+          "training_materials_evaluated": false,
+          "stage0_passed": false
+        },
+        "v2": {
+          "n": 128,
+          "counts": {
+            "G": 0,
+            "Q_reference": 128,
+            "E_reference": 0,
+            "closed_loop": 0,
+            "flow_complete": 0,
+            "Q_swap": 122,
+            "Q_no_crystal": 0
+          }
+        }
+      },
+      "reading": {
+        "n": 128,
+        "success": 122,
+        "correct_by_field": {
+          "sg": 122,
+          "formula": 128,
+          "atoms": 128,
+          "orbits": 128,
+          "a": 128,
+          "b": 128,
+          "c": 128
+        }
+      },
+      "old8": {
+        "legacy": {
+          "n": 8,
+          "counts": {
+            "G": 0,
+            "Q_reference": 8,
+            "E_reference": 0,
+            "closed_loop": 0,
+            "flow_complete": 0,
+            "Q_swap": 7,
+            "Q_no_crystal": 0
+          },
+          "rates": {
+            "G": 0.0,
+            "Q_reference": 1.0,
+            "E_reference": 0.0,
+            "closed_loop": 0.0,
+            "flow_complete": 0.0,
+            "Q_swap": 0.875,
+            "Q_no_crystal": 0.0
+          },
+          "elapsed_seconds": 47.98109781509265,
+          "attempts_retried": 0,
+          "seconds_median": 6.009538731537759,
+          "seconds_p95": 6.188104172819294,
+          "evaluation_split": "train",
+          "training_materials_evaluated": true,
+          "stage0_passed": false
+        },
+        "v2": {
+          "n": 8,
+          "counts": {
+            "G": 0,
+            "Q_reference": 8,
+            "E_reference": 0,
+            "closed_loop": 0,
+            "flow_complete": 0,
+            "Q_swap": 7,
+            "Q_no_crystal": 0
+          }
+        }
+      },
+      "strata": {
+        "original64": {
+          "n": 64,
+          "counts": {
+            "G": 0,
+            "Q_reference": 64,
+            "E_reference": 0,
+            "closed_loop": 0,
+            "flow_complete": 0,
+            "Q_swap": 62,
+            "Q_no_crystal": 0
+          }
+        },
+        "later64": {
+          "n": 64,
+          "counts": {
+            "G": 0,
+            "Q_reference": 64,
+            "E_reference": 0,
+            "closed_loop": 0,
+            "flow_complete": 0,
+            "Q_swap": 60,
+            "Q_no_crystal": 0
+          }
+        }
+      }
+    }
+  },
+  "validation_groups": {
+    "original64": [
+      "mp-980669",
+      "mp-1212698",
+      "mp-626173",
+      "mp-938",
+      "mp-22451",
+      "mp-1176693",
+      "mp-1247020",
+      "mp-1519341",
+      "mp-1793",
+      "mp-1185100",
+      "mp-1079072",
+      "mp-9024",
+      "mp-20542",
+      "mp-8882",
+      "mp-752679",
+      "mp-20054",
+      "mp-21901",
+      "mp-1218155",
+      "mp-1111676",
+      "mp-569760",
+      "mp-754674",
+      "mp-1177898",
+      "mp-1184358",
+      "mp-1103395",
+      "mp-754676",
+      "mp-12965",
+      "mp-626885",
+      "mp-35078",
+      "mp-1225902",
+      "mp-1184476",
+      "mp-1078628",
+      "mp-20344",
+      "mp-1095063",
+      "mp-1114638",
+      "mp-623108",
+      "mp-502",
+      "mp-31136",
+      "mp-1592",
+      "mp-761676",
+      "mp-1188111",
+      "mp-1207119",
+      "mp-1216643",
+      "mp-1063914",
+      "mp-1078092",
+      "mp-1213763",
+      "mp-10140",
+      "mp-976412",
+      "mp-19899",
+      "mp-1226895",
+      "mp-999539",
+      "mp-1103788",
+      "mvc-12771",
+      "mp-1206072",
+      "mp-1103434",
+      "mp-540828",
+      "mp-1211993",
+      "mp-973058",
+      "mp-656144",
+      "mp-1502",
+      "mp-1209478",
+      "mp-1302314",
+      "mp-755021",
+      "mp-1357",
+      "mp-1102830"
+    ],
+    "later64": [
+      "mp-1186636",
+      "mp-3930",
+      "mp-676553",
+      "mp-981368",
+      "mp-1226603",
+      "mp-753813",
+      "mp-15786",
+      "mp-560616",
+      "mp-341",
+      "mp-4742",
+      "mp-2482",
+      "mp-13485",
+      "mp-1072113",
+      "mp-7631",
+      "mp-1206819",
+      "mp-16336",
+      "mp-1114480",
+      "mp-1018131",
+      "mp-628631",
+      "mp-1101643",
+      "mp-1025358",
+      "mp-1184560",
+      "mp-779906",
+      "mp-1222289",
+      "mp-30854",
+      "mp-1207919",
+      "mp-569568",
+      "mp-23715",
+      "mp-1080141",
+      "mp-1675",
+      "mp-20816",
+      "mp-1224913",
+      "mp-1101358",
+      "mp-1222151",
+      "mp-1220198",
+      "mp-1018709",
+      "mp-573119",
+      "mp-1189686",
+      "mp-1576",
+      "mp-10298",
+      "mp-1223014",
+      "mp-13125",
+      "mp-21331",
+      "mp-21502",
+      "mp-16505",
+      "mp-1216617",
+      "mp-1080515",
+      "mp-761710",
+      "mp-1189006",
+      "mp-644246",
+      "mp-1206679",
+      "mp-1104487",
+      "mp-7948",
+      "mp-567545",
+      "mp-592",
+      "mp-1079437",
+      "mp-1103226",
+      "mp-864621",
+      "mp-755972",
+      "mp-976182",
+      "mp-1185168",
+      "mp-1205422",
+      "mp-754999",
+      "mp-1112471"
+    ]
+  },
+  "paired_hshift_vs_hsame": {
+    "G": {
+      "n": 128,
+      "gain": 0,
+      "loss": 0,
+      "net": 0,
+      "gain_rate": 0.0,
+      "loss_rate": 0.0,
+      "net_rate": 0.0
+    },
+    "closed_loop": {
+      "n": 128,
+      "gain": 0,
+      "loss": 0,
+      "net": 0,
+      "gain_rate": 0.0,
+      "loss_rate": 0.0,
+      "net_rate": 0.0
+    }
+  },
+  "test_used": false,
+  "note": "AR inherited and rescored; Hsame checkpoint replayed with the first 66 rows matched; only Hshift was trained."
+}

@@ -1,0 +1,33 @@
+{
+  "id": "d9ce979b-471a-43f5-b929-bd3b75384564",
+  "object": "chat.completion",
+  "created": 1791053737,
+  "model": "tokenhub/kimi-k3",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "The structure is described in an orthorhombic input cell whose edge lengths are [[cell.a]], [[cell.b]], and [[cell.c]], with all interaxial angles fixed by [[cell.alpha]], [[cell.beta]], and [[cell.gamma]]. Its symmetry is assigned to space-group number [[space_group.number]] with Hall symbol [[space_group.hall]], corresponding to the centrosymmetric orthorhombic Pnma arrangement in standard crystallographic tables. The original input model contains [[input.atom_count]] atoms, divided equally among [[composition.Co]], [[composition.Si]], and [[composition.V]].\n\nIn the standard Pnma description, the twelve atoms are generated from three independent fourfold orbits. The vanadium atoms form orbit [[orbit.o000.id]], with element assignment [[orbit.o000.element]], Wyckoff label [[orbit.o000.wyckoff]], and independent standard fractional parameters [[orbit.o000.parameters]]. The cobalt atoms form orbit [[orbit.o001.id]], with element assignment [[orbit.o001.element]], Wyckoff label [[orbit.o001.wyckoff]], and independent standard fractional parameters [[orbit.o001.parameters]]. The silicon atoms form orbit [[orbit.o002.id]], with element assignment [[orbit.o002.element]], Wyckoff label [[orbit.o002.wyckoff]], and independent standard fractional parameters [[orbit.o002.parameters]]. For each of these orbits, the public Pnma 4c site has multiplicity four and coordinate form x, 1/4, z, so y is fixed while x and z remain the two free fractional axes; symmetry expansion of the three listed positions therefore accounts for the full input atom count.\n\nThe coordinate frame used for the tabulated standard parameters is reached from the input frame by [[frame.matrix]], with no translational displacement in the standard origin because [[frame.origin_shift]] is zero. This transformation essentially relabels the input axes rather than introducing a new origin, and its very small off-ideal matrix terms are numerical noise rather than independent structural freedom. No precision corrections to an idealized backbone were supplied, so the listed coordinates are treated directly at the stated input fractional rounding of [[round_digits]]."
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "reasoning_stream": {
+    "chunks": 507,
+    "characters": 5043
+  },
+  "usage": {
+    "completion_tokens": 1555,
+    "prompt_tokens": 2343,
+    "total_tokens": 3898,
+    "completion_tokens_details": {
+      "reasoning_tokens": 1102
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "cache_creation_input_tokens": 0
+    }
+  }
+}

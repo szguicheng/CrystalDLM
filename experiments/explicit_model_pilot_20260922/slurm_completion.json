@@ -1,0 +1,13 @@
+{
+  "job_id": "580699",
+  "host": "gpu-a100-04",
+  "partition": "stingy",
+  "gpu": "NVIDIA A100-SXM4-80GB",
+  "cpus": 4,
+  "state": "COMPLETED",
+  "exit_code": "0:0",
+  "allocation_elapsed": "00:28:24",
+  "worker_finished_at": "2026-09-22T10:58:51.615227+00:00",
+  "verification": "sacct -j 580699 --format=JobID,State,Elapsed,ExitCode -n; compute_allocations/580699/state.json",
+  "note": "Allocation includes data preparation, preflight, four training runs, evaluation, diagnostics and idle editing time. Four formal training loops total 225.9 seconds. Allocation has been released."
+}

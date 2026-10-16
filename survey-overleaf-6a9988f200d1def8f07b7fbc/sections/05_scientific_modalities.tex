@@ -1,0 +1,112 @@
+\section{Data Representation and Tokenization by Domain Object}
+\label{sec:science}
+
+\draftsuggestion{Organize this section by what is represented and use the modality methods in Section~\ref{sec:ai} as technical background. Use the six families below only to structure the review. Place each concrete object in a subsubsection. Avoid repeating BPE, patching, graph pooling, vector quantization, or signal segmentation. Explain instead how object identity, accepted equivalences, known relations, measurement conditions, and validation rules change the tokenization problem. Refer systems that combine several objects or modalities to Section~\ref{sec:joint-systems}.}
+
+% Domain objects can be observed through several modalities. A molecule may appear as a sequence, graph, three dimensional structure, spectrum, or trajectory. A cell may appear as an image, expression table, ranked gene set, or interaction graph. This section asks which units carry scientific or operational meaning across those representations.
+
+\subsection{Language and Formal Objects}
+
+\draftsuggestion{Use this family to compare tokenization for natural language, source code, and mathematical expressions without treating them as one representation. The sequence methods in Section~\ref{sec:ai} provide the shared background. Focus here on the linguistic, syntactic, and formal constraints that determine valid boundaries and decoding.}
+
+\subsubsection{Natural Language}
+
+\draftsuggestion{Representative work: \citet{sennrich2016}. Discuss words, characters, bytes, and learned subwords through input coverage, linguistic boundaries, multilingual transfer, normalization, and exact decoding. Separate the tokenizer from the language model that consumes its output.}
+
+\subsubsection{Code and Mathematics}
+
+\draftsuggestion{Compare lexical tokens, learned subwords, syntax-tree units, and serialized mathematical expressions. Ask how a tokenizer handles identifiers, whitespace, formal grammar, variable names, and equivalent expressions. Use sequence and graph tokenization from Section~\ref{sec:ai} as background, then focus on syntactic validity and executable or symbolic equivalence.}
+
+\subsection{Music and Sound Events}
+
+\draftsuggestion{Keep this family separate from natural language because musical structure and non-speech events use different units and decoding targets. Build on the audio methods in Section~\ref{sec:ai}, then compare event tokens, note-like symbols, acoustic codec codes, and their temporal hierarchy.}
+
+\draftsuggestion{Discuss symbolic music, acoustic music, and non-speech events through timing, pitch or event identity, polyphony, hierarchy, and waveform reconstruction. State whether tokens represent semantic events, acoustic segments, or codec codes, because these choices support different prediction and generation tasks.}
+
+\subsection{Molecular and Material Objects}
+
+\draftsuggestion{This family groups objects whose token definitions depend on chemical identity, bonding, geometry, composition, or periodicity. Keep the five object subsubsections distinct. Compare them through valid transformations, reconstruction targets, scale, and physical constraints rather than through one shared chemical vocabulary.}
+
+\subsubsection{Nucleic Acids}
+
+\draftsuggestion{Representative work: \citet{dallatorre2025nucleotide}. Sequence methods overlap with Section~\ref{sec:ai}; summarize them briefly and focus here on bases, codons, regulatory regions, reverse complements, reading frames, mutations, and transfer across genomes. Move joint nucleic-acid and protein systems to Section~\ref{sec:joint-systems}.}
+
+% DNA and RNA can be represented by bases, fixed $k$-mers, learned subwords, genes, functional regions, or structural units. Single bases preserve mutation-level detail, while larger units shorten sequences and may match codons, motifs, or repeated elements. Biological function does not follow one fixed partition because reading frames, regulatory regions, and three dimensional contacts can overlap.
+
+\subsubsection{Proteins and Peptides}
+
+\draftsuggestion{Representative work: \citet{rives2021esm}. This object overlaps with sequences, graphs, 3D geometry, and time series in Section~\ref{sec:ai}. Focus on residues, motifs, domains, structural units, conformational states, noncanonical residues, and biological function. Include peptides when residue sequence, conformation, or biological function defines the problem. Discuss protein complexes and multiscale biology in Section~\ref{sec:joint-systems}.}
+
+% Protein language models commonly treat amino acids as tokens, and residue-level inputs support structural and functional prediction \citep{rives2021esm}. Structure-aware systems may add coordinates, contacts, local frames, secondary structures, or discrete structure codes. Larger units can match motifs, domains, and binding sites, but they may hide mutations or depend on one conformation. Peptide studies also tokenize mass spectra through bins, ordered peaks, or peak sets. Noncanonical residues, cyclic structures, and design constraints require separate checks.
+
+\subsubsection{Small Molecules and Reactions}
+
+\draftsuggestion{Representative work: \citet{jin2018jtvae}. Sequences, graphs, 3D geometry, spectra, and trajectories overlap with Section~\ref{sec:ai}; focus here on molecular equivalence, stereochemistry, valence, fragments, reaction centers, chemical validity, and inverse reconstruction. Treat reactions as transformations among molecular objects. Move biomolecular assemblies with proteins or nucleic acids to Section~\ref{sec:joint-systems}.}
+
+% Small molecules can be represented as strings, graphs, coordinate sets, surfaces, spectra, or trajectories. String systems serialize molecular graphs, while graph systems use atoms and bonds directly. Junction-tree methods provide one representative construction that composes molecules from larger valid substructures \citep{jin2018jtvae}.
+
+% Chemical reactions add changing bonds, reagents, conditions, and sometimes time. Frequent fragments need not match reaction centers. Evaluation should therefore separate sequence reconstruction, graph equivalence, stereochemistry, geometric fidelity, chemical validity, and reaction consistency.
+
+\subsubsection{Synthetic Polymers}
+
+\draftsuggestion{Representative work: \citet{zhu2025grin}. Discuss monomers, repeat units, chains, branches, conformations, and learned motifs. Check whether the tokenizer treats repeat-unit equivalence, sequence disorder, molecular-weight distribution, chain architecture, and processing history as part of the representation or as external conditions.}
+
+% Polymers add repeat structure, sequence disorder, architecture, molecular-weight distribution, conformation, and processing history. Monomers and repeat units provide intermediate scales, but several strings can describe the same repeated material. Tests should cover equivalent repeat descriptions and controlled changes in composition, chain length, architecture, and conformation.
+
+\subsubsection{Crystals}
+
+\draftsuggestion{Compare atom-level, graph-based, geometric, and sequence representations of periodic structures. Focus on unit-cell choice, periodic boundary conditions, atom permutation, symmetry, defects, composition, and reconstruction of an equivalent crystal. Keep diffraction as a measurement linked to the crystal rather than as a separate domain object.}
+
+% Crystals require element identity, geometry, and periodic symmetry. Atom order and unit-cell choice can change while the infinite structure remains the same. Token systems should remain invariant or measurably consistent under equivalent cells, translations, and atom permutations.
+
+\subsection{Biomedical Observations}
+
+\draftsuggestion{This family moves from molecular measurements to spatial morphology and clinical context. Keep the three object subsubsections distinct because their samples, relations, missing-data processes, and validation protocols differ. Use the modality section for image, table, graph, sequence, and signal methods.}
+
+\subsubsection{Gene Expression Profiles}
+
+\draftsuggestion{Representative work: \citet{cui2024scgpt}. Compare genes, expression values, ranked gene lists, expression bins, cells, and learned cell states. Discuss assay conditions, sparsity, batch effects, perturbations, and transfer across tissues or studies. Distinguish gene tokens from cell-level sample tokens.}
+
+% Cell models may use genes as feature tokens, cells as sample units, ranked gene lists, expression bins, interaction graphs, or learned states. scGPT represents gene and expression information within a generative foundation-model framework \citep{cui2024scgpt}. Gene and cell tokens depend on assay, condition, uncertainty, tissue location, neighborhood, and perturbation history.
+
+\subsubsection{Cell and Tissue Morphology}
+
+\draftsuggestion{Discuss microscopy and digital pathology through pixels, patches, segmented cells, subcellular structures, tissue regions, and spatial neighborhoods. Compare token scale against rare-cell retention, tissue boundaries, spatial context, and cross-instrument transfer. Refer multimodal or perturbation systems that combine morphology with molecular measurements to Section~\ref{sec:joint-systems}.}
+
+% Tissue systems often start from microscopy or pathology images. Their token units may be pixels, tiles, segmented cells, subcellular structures, tissue regions, or spatial neighborhoods. Token scale controls computation and whether rare cell groups and tissue boundaries remain visible.
+
+\subsubsection{Clinical Records and Measurements}
+
+\draftsuggestion{Compare tokenization of clinical text, codes, laboratory measurements, physiological signals, medical images, and longitudinal events. Focus on missingness, irregular time, coding systems, patient context, privacy constraints, and validation across clinical sites. Keep modality-specific mechanics in Section~\ref{sec:ai}.}
+
+% Clinical systems combine reports, coded events, laboratory measurements, images, and physiological signals. Their token units may follow words, codes, visits, measurements, image regions, or temporal events. The same event can have different meaning under another clinical context or measurement protocol.
+
+\subsection{Physical and Robotic Objects}
+
+\draftsuggestion{This family covers physical variables, represented environments, and control outputs. Keep fields, scenes, and actions separate because they differ in their coordinate systems, decoding targets, and evaluation. Discuss a complete action-conditioned model of observations and transitions in Section~\ref{sec:joint-systems}.}
+
+\subsubsection{Physical Fields}
+
+\draftsuggestion{Representative work: \citet{wu2024transolver}. Build on image, graph, geometry, and time-series methods from Section~\ref{sec:ai}. Focus on physical variables, units, boundary conditions, conservation laws, discretization error, numerical stability, and transfer across grids or meshes.}
+
+% Physical fields are represented through grids, particles, meshes, sensor samples, or simulation states. The discretization sets spatial and temporal resolution before learning begins. Geometry-aware tokenization can group physical variables by local states rather than by a fixed mesh alone \citep{wu2024transolver}. Adaptive units may place finer regions near shocks, boundaries, or rapid changes, but their use must preserve the declared physical constraints.
+
+\subsubsection{Scenes and Geographical Regions}
+
+\draftsuggestion{Representative work: \citet{lam2023graphcast}. Compare scene regions, objects, map cells, geographic regions, and geospatial graph nodes. Distinguish generic 3D geometry from location-specific coordinates, map projections, vertical levels, observation networks, and transfer across locations or seasons. Move joint state, action, and transition tokenization to Section~\ref{sec:joint-systems}.}
+
+% Scenes and geographical regions combine maps, sensor channels, spatial coordinates, irregular sampling, and sometimes time. A fixed geographic patch can represent a different physical area under another projection, while a learned region may vary with weather patterns or land cover.
+
+\subsubsection{Robot Actions}
+
+\draftsuggestion{Representative work: \citet{pertsch2025fast}. Compare scalar controls, transformed coefficients, discrete actions, action chunks, and reusable action segments. Evaluate action reconstruction, control error, temporal abstraction, and closed-loop behavior. Exclude systems whose main contribution is joint observation, latent-state, action, and transition tokenization; discuss them as world models in Section~\ref{sec:joint-systems}.}
+
+% Robot tokenizers can represent control values, transformed coefficients, primitive actions, or reusable action segments. Their decoding target is an action sequence rather than an observed image or text string. Quantization error can accumulate through closed-loop control, so reconstruction error alone does not measure whether an action vocabulary is useful.
+
+\subsection{Recommendation Data}
+
+\draftsuggestion{Use this family for tokenization that represents recommendable items and observed interaction histories. Keep its vocabulary aligned with recommender-system research. Treat recommendation as the application context and place the concrete represented objects in the subsubsection below.}
+
+% \subsubsection{Items and Interaction Histories}
+
+\draftsuggestion{Begin with \href{https://proceedings.neurips.cc/paper_files/paper/2023/hash/20dcab0f14046a5c6b02b61da9f13229-Abstract-Conference.html}{generative retrieval with semantic identifiers}. Compare item identifiers, semantic identifiers, item sequences, sessions, and temporal histories. Ask whether the tokenizer preserves item identity, item coverage, interaction order, new-item handling, and decoding to valid items.}

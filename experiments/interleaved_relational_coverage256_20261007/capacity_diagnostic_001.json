@@ -1,0 +1,1285 @@
+{
+  "scope": "fixed224 complete native source/plus/minus validation; no data/model writes",
+  "selection_sha256": "82707935dd3d7c71c70cefc2fb7ca6eadc73079d83ed9e0a55cf34147af25988",
+  "diagnostic_upper_bounds": {
+    "K": 4096,
+    "MAXLEN": 32768
+  },
+  "selected": 224,
+  "passed": 224,
+  "failures": [],
+  "maximum_body_tokens_including_END": 2705,
+  "minimum_K_aligned32": 2720,
+  "packing": {
+    "directions": [
+      "minus",
+      "plus"
+    ],
+    "variants_by_split": {
+      "train": [
+        0,
+        1
+      ],
+      "heldout": [
+        0
+      ]
+    },
+    "max_dual_stream_prefix_plus_2K": 8341,
+    "max_actual_dual_pack_prefix_streams_plus_2K": 8341,
+    "arms": {
+      "ar": {
+        "train": {
+          "G": {
+            "n": 1024,
+            "min": 2751,
+            "max": 2762
+          },
+          "Q1": {
+            "n": 1024,
+            "min": 429,
+            "max": 2841
+          },
+          "E": {
+            "n": 1024,
+            "min": 3209,
+            "max": 5621
+          },
+          "Q2": {
+            "n": 1024,
+            "min": 890,
+            "max": 5710
+          }
+        },
+        "heldout": {
+          "G": {
+            "n": 32,
+            "min": 2753,
+            "max": 2759
+          },
+          "Q1": {
+            "n": 32,
+            "min": 552,
+            "max": 2511
+          },
+          "E": {
+            "n": 32,
+            "min": 3332,
+            "max": 5291
+          },
+          "Q2": {
+            "n": 32,
+            "min": 1130,
+            "max": 5048
+          }
+        }
+      },
+      "diffusion_full": {
+        "train": {
+          "G": {
+            "n": 1024,
+            "min": 5471,
+            "max": 5482
+          },
+          "Q1": {
+            "n": 1024,
+            "min": 429,
+            "max": 2841
+          },
+          "E": {
+            "n": 1024,
+            "min": 5929,
+            "max": 8341
+          },
+          "Q2": {
+            "n": 1024,
+            "min": 890,
+            "max": 5710
+          }
+        },
+        "heldout": {
+          "G": {
+            "n": 32,
+            "min": 5473,
+            "max": 5479
+          },
+          "Q1": {
+            "n": 32,
+            "min": 552,
+            "max": 2511
+          },
+          "E": {
+            "n": 32,
+            "min": 6052,
+            "max": 8011
+          },
+          "Q2": {
+            "n": 32,
+            "min": 1130,
+            "max": 5048
+          }
+        }
+      },
+      "diffusion_b32": {
+        "train": {
+          "G": {
+            "n": 1024,
+            "min": 5471,
+            "max": 5482
+          },
+          "Q1": {
+            "n": 1024,
+            "min": 429,
+            "max": 2841
+          },
+          "E": {
+            "n": 1024,
+            "min": 5929,
+            "max": 8341
+          },
+          "Q2": {
+            "n": 1024,
+            "min": 890,
+            "max": 5710
+          }
+        },
+        "heldout": {
+          "G": {
+            "n": 32,
+            "min": 5473,
+            "max": 5479
+          },
+          "Q1": {
+            "n": 32,
+            "min": 552,
+            "max": 2511
+          },
+          "E": {
+            "n": 32,
+            "min": 6052,
+            "max": 8011
+          },
+          "Q2": {
+            "n": 32,
+            "min": 1130,
+            "max": 5048
+          }
+        }
+      },
+      "diffusion_b64": {
+        "train": {
+          "G": {
+            "n": 1024,
+            "min": 5471,
+            "max": 5482
+          },
+          "Q1": {
+            "n": 1024,
+            "min": 429,
+            "max": 2841
+          },
+          "E": {
+            "n": 1024,
+            "min": 5929,
+            "max": 8341
+          },
+          "Q2": {
+            "n": 1024,
+            "min": 890,
+            "max": 5710
+          }
+        },
+        "heldout": {
+          "G": {
+            "n": 32,
+            "min": 5473,
+            "max": 5479
+          },
+          "Q1": {
+            "n": 32,
+            "min": 552,
+            "max": 2511
+          },
+          "E": {
+            "n": 32,
+            "min": 6052,
+            "max": 8011
+          },
+          "Q2": {
+            "n": 32,
+            "min": 1130,
+            "max": 5048
+          }
+        }
+      }
+    }
+  },
+  "full_history_reader_checks": 2176,
+  "maximum_full_history_reader_tokens": 5710,
+  "maximum_required_context_tokens": 8341,
+  "minimum_MAXLEN_aligned256": 8448,
+  "original_MAXLEN8192_sufficient": false,
+  "long_case": {
+    "id": "mp-1276200",
+    "split": "train",
+    "c1": "The input cell edges a, b, and c measure 5.27070997, 5.51547503, and 7.519606 angstrom; the angles alpha, beta, and gamma measure 109.93178650999998, 69.10813326, and 103.21475373000001 degrees.\nThe public setting is space group 8, with literal Hall symbol C -2y.\nThe input cell contains 18 atoms in total.\nFluorine contributes 8 atoms to the input composition.\nLithium contributes 6 atoms to the input composition.\nManganese contributes 2 atoms to the input composition.\nOxygen contributes 2 atoms to the input composition.\nThe standard fractional coordinate a equals 0.5 times input a plus -0.5 times input b plus 0.0 times input c, then shift 0.9999605.\nThe standard fractional coordinate b equals 0.5 times input a plus -0.49999999999999994 times input b plus 2.0 times input c, then shift 3.9499999999970115e-05.\nThe standard fractional coordinate c equals 0.0 times input a plus -1.0 times input b plus 0.0 times input c, then shift 0.0.\nThe input-frame fractional coordinates are rounded to 6 decimal places before any listed corrections.\nLithium forms a nominal 2-site symmetry orbit named o000 in the standard cell.\nAlong a, its representative has the free fractional offset 0.4584435.\nIts representative lies in the plane at fractional b offset 0.0.\nAlong c, its representative has the free fractional offset 0.27938550000000006.\nLithium forms a nominal 2-site symmetry orbit named o001 in the standard cell.\nAlong a, its representative has the free fractional offset 0.20266574999999998.\nIts representative lies in the plane at fractional b offset 0.0.\nAlong c, its representative has the free fractional offset 0.6647685.\nLithium forms a nominal 2-site symmetry orbit named o002 in the standard cell.\nAlong a, its representative has the free fractional offset 0.81310075.\nIts representative lies in the plane at fractional b offset 0.0.\nAlong c, its representative has the free fractional offset 0.4104555000000001.\nManganese forms a nominal 2-site symmetry orbit named o003 in the standard cell.\nAlong a, its representative has the free fractional offset 0.999723.\nIts representative lies in the plane at fractional b offset 0.0.\nAlong c, its representative has the free fractional offset 0.984811.\nOxygen forms a nominal 2-site symmetry orbit named o004 in the standard cell.\nAlong a, its representative has the free fractional offset 0.4756277500000001.\nIts representative lies in the plane at fractional b offset 0.0.\nAlong c, its representative has the free fractional offset 0.990511.\nFluorine forms a nominal 2-site symmetry orbit named o005 in the standard cell.\nAlong a, its representative has the free fractional offset 0.72211725.\nIts representative lies in the plane at fractional b offset 0.0.\nAlong c, its representative has the free fractional offset 0.6075254999999999.\nFluorine forms a nominal 2-site symmetry orbit named o006 in the standard cell.\nAlong a, its representative has the free fractional offset 0.04978624999999992.\nIts representative lies in the plane at fractional b offset 0.0.\nAlong c, its representative has the free fractional offset 0.7459355.\nFluorine forms a nominal 2-site symmetry orbit named o007 in the standard cell.\nAlong a, its representative has the free fractional offset 0.95989075.\nIts representative lies in the plane at fractional b offset 0.0.\nAlong c, its representative has the free fractional offset 0.2525345.\nFluorine forms a nominal 2-site symmetry orbit named o008 in the standard cell.\nAlong a, its representative has the free fractional offset 0.2733745000000001.\nIts representative lies in the plane at fractional b offset 0.0.\nAlong c, its representative has the free fractional offset 0.3080685000000001.\nThe input-frame fractional correction for retained site o000_1 of Lithium is (6.20000000000065e-05, 0.00013499999999999623, 8.999999999997899e-05).\nThe input-frame fractional correction for retained site o000_2 of Lithium is (-6.100000000008876e-05, -0.00013399999999996748, -1.599999999990498e-05).\nThe input-frame fractional correction for retained site o001_1 of Lithium is (7.899999999994023e-05, -4.599999999999049e-05, 1.5000000000042757e-05).\nThe input-frame fractional correction for retained site o001_2 of Lithium is (-7.900000000005125e-05, 4.500000000001725e-05, 8.000000000008e-06).\nThe input-frame fractional correction for retained site o002_1 of Lithium is (-0.00010799999999999699, 3.500000000000725e-05, 2.5999999999998247e-05).\nThe input-frame fractional correction for retained site o002_2 of Lithium is (0.00010800000000002474, -3.399999999997849e-05, -4.499999999996174e-05).\nThe input-frame fractional correction for retained site o003_1 of Manganese is (-0.00016799999999999975, -7.000000000000062e-06, 8.6e-05).\nThe input-frame fractional correction for retained site o003_2 of Manganese is (0.00016799999999999975, 7.000000000000062e-06, -8.599999999991947e-05).\nThe input-frame fractional correction for retained site o004_1 of Oxygen is (0.00018099999999998673, 7.000000000000062e-05, -4.6000000000046004e-05).\nThe input-frame fractional correction for retained site o004_2 of Oxygen is (-0.00018200000000001548, -6.999999999999888e-05, 1.799999999996249e-05).\nThe input-frame fractional correction for retained site o005_1 of Fluorine is (-6.799999999995698e-05, -6.100000000003325e-05, 0.00012799999999998923).\nThe input-frame fractional correction for retained site o005_2 of Fluorine is (6.8000000000068e-05, 6.0000000000004494e-05, 4.500000000007276e-05).\nThe input-frame fractional correction for retained site o006_1 of Fluorine is (0.000126000000000015, 1.0000000000287557e-06, 0.0002449999999999952).\nThe input-frame fractional correction for retained site o006_2 of Fluorine is (-0.00012599999999995948, -2.000000000002e-06, 6.899999999998574e-05).\nThe input-frame fractional correction for retained site o007_1 of Fluorine is (1.4999999999987246e-05, -5.299999999996974e-05, -0.00016900000000000248).\nThe input-frame fractional correction for retained site o007_2 of Fluorine is (-1.4999999999987246e-05, 5.2000000000052005e-05, 0.00011499999999997623).\nThe input-frame fractional correction for retained site o008_1 of Fluorine is (6.20000000000065e-05, -6.999999999979245e-06, 1.999999999996449e-05).\nThe input-frame fractional correction for retained site o008_2 of Fluorine is (-6.30000000000075e-05, 8.000000000008e-06, -5.999999999950489e-06).",
+    "plus": "The input cell edges a, b, and c measure 5.5342454685, 5.7912487815, and 7.8955863 angstrom; the angles alpha, beta, and gamma measure 109.93178650999998, 69.10813326, and 103.21475373000001 degrees.\nThe public setting is space group 8, with literal Hall symbol C -2y.\nThe input cell contains 18 atoms in total.\nFluorine contributes 8 atoms to the input composition.\nLithium contributes 6 atoms to the input composition.\nManganese contributes 2 atoms to the input composition.\nOxygen contributes 2 atoms to the input composition.\nThe standard fractional coordinate a equals 0.5 times input a plus -0.5 times input b plus 0.0 times input c, then shift 0.9999605.\nThe standard fractional coordinate b equals 0.5 times input a plus -0.49999999999999994 times input b plus 2.0 times input c, then shift 3.9499999999970115e-05.\nThe standard fractional coordinate c equals 0.0 times input a plus -1.0 times input b plus 0.0 times input c, then shift 0.0.\nThe input-frame fractional coordinates are rounded to 6 decimal places before any listed corrections.\nLithium forms a nominal 2-site symmetry orbit named o000 in the standard cell.\nAlong a, its representative has the free fractional offset 0.4584435.\nIts representative lies in the plane at fractional b offset 0.0.\nAlong c, its representative has the free fractional offset 0.27938550000000006.\nLithium forms a nominal 2-site symmetry orbit named o001 in the standard cell.\nAlong a, its representative has the free fractional offset 0.20266574999999998.\nIts representative lies in the plane at fractional b offset 0.0.\nAlong c, its representative has the free fractional offset 0.6647685.\nLithium forms a nominal 2-site symmetry orbit named o002 in the standard cell.\nAlong a, its representative has the free fractional offset 0.81310075.\nIts representative lies in the plane at fractional b offset 0.0.\nAlong c, its representative has the free fractional offset 0.4104555000000001.\nManganese forms a nominal 2-site symmetry orbit named o003 in the standard cell.\nAlong a, its representative has the free fractional offset 0.999723.\nIts representative lies in the plane at fractional b offset 0.0.\nAlong c, its representative has the free fractional offset 0.984811.\nOxygen forms a nominal 2-site symmetry orbit named o004 in the standard cell.\nAlong a, its representative has the free fractional offset 0.4756277500000001.\nIts representative lies in the plane at fractional b offset 0.0.\nAlong c, its representative has the free fractional offset 0.990511.\nFluorine forms a nominal 2-site symmetry orbit named o005 in the standard cell.\nAlong a, its representative has the free fractional offset 0.72211725.\nIts representative lies in the plane at fractional b offset 0.0.\nAlong c, its representative has the free fractional offset 0.6075254999999999.\nFluorine forms a nominal 2-site symmetry orbit named o006 in the standard cell.\nAlong a, its representative has the free fractional offset 0.04978624999999992.\nIts representative lies in the plane at fractional b offset 0.0.\nAlong c, its representative has the free fractional offset 0.7459355.\nFluorine forms a nominal 2-site symmetry orbit named o007 in the standard cell.\nAlong a, its representative has the free fractional offset 0.95989075.\nIts representative lies in the plane at fractional b offset 0.0.\nAlong c, its representative has the free fractional offset 0.2525345.\nFluorine forms a nominal 2-site symmetry orbit named o008 in the standard cell.\nAlong a, its representative has the free fractional offset 0.2733745000000001.\nIts representative lies in the plane at fractional b offset 0.0.\nAlong c, its representative has the free fractional offset 0.3080685000000001.\nThe input-frame fractional correction for retained site o000_1 of Lithium is (6.20000000000065e-05, 0.00013499999999999623, 8.999999999997899e-05).\nThe input-frame fractional correction for retained site o000_2 of Lithium is (-6.100000000008876e-05, -0.00013399999999996748, -1.599999999990498e-05).\nThe input-frame fractional correction for retained site o001_1 of Lithium is (7.899999999994023e-05, -4.599999999999049e-05, 1.5000000000042757e-05).\nThe input-frame fractional correction for retained site o001_2 of Lithium is (-7.900000000005125e-05, 4.500000000001725e-05, 8.000000000008e-06).\nThe input-frame fractional correction for retained site o002_1 of Lithium is (-0.00010799999999999699, 3.500000000000725e-05, 2.5999999999998247e-05).\nThe input-frame fractional correction for retained site o002_2 of Lithium is (0.00010800000000002474, -3.399999999997849e-05, -4.499999999996174e-05).\nThe input-frame fractional correction for retained site o003_1 of Manganese is (-0.00016799999999999975, -7.000000000000062e-06, 8.6e-05).\nThe input-frame fractional correction for retained site o003_2 of Manganese is (0.00016799999999999975, 7.000000000000062e-06, -8.599999999991947e-05).\nThe input-frame fractional correction for retained site o004_1 of Oxygen is (0.00018099999999998673, 7.000000000000062e-05, -4.6000000000046004e-05).\nThe input-frame fractional correction for retained site o004_2 of Oxygen is (-0.00018200000000001548, -6.999999999999888e-05, 1.799999999996249e-05).\nThe input-frame fractional correction for retained site o005_1 of Fluorine is (-6.799999999995698e-05, -6.100000000003325e-05, 0.00012799999999998923).\nThe input-frame fractional correction for retained site o005_2 of Fluorine is (6.8000000000068e-05, 6.0000000000004494e-05, 4.500000000007276e-05).\nThe input-frame fractional correction for retained site o006_1 of Fluorine is (0.000126000000000015, 1.0000000000287557e-06, 0.0002449999999999952).\nThe input-frame fractional correction for retained site o006_2 of Fluorine is (-0.00012599999999995948, -2.000000000002e-06, 6.899999999998574e-05).\nThe input-frame fractional correction for retained site o007_1 of Fluorine is (1.4999999999987246e-05, -5.299999999996974e-05, -0.00016900000000000248).\nThe input-frame fractional correction for retained site o007_2 of Fluorine is (-1.4999999999987246e-05, 5.2000000000052005e-05, 0.00011499999999997623).\nThe input-frame fractional correction for retained site o008_1 of Fluorine is (6.20000000000065e-05, -6.999999999979245e-06, 1.999999999996449e-05).\nThe input-frame fractional correction for retained site o008_2 of Fluorine is (-6.30000000000075e-05, 8.000000000008e-06, -5.999999999950489e-06).",
+    "minus": "The input cell edges a, b, and c measure 5.0071744715, 5.2397012785, and 7.1436257 angstrom; the angles alpha, beta, and gamma measure 109.93178650999998, 69.10813326, and 103.21475373000001 degrees.\nThe public setting is space group 8, with literal Hall symbol C -2y.\nThe input cell contains 18 atoms in total.\nFluorine contributes 8 atoms to the input composition.\nLithium contributes 6 atoms to the input composition.\nManganese contributes 2 atoms to the input composition.\nOxygen contributes 2 atoms to the input composition.\nThe standard fractional coordinate a equals 0.5 times input a plus -0.5 times input b plus 0.0 times input c, then shift 0.9999605.\nThe standard fractional coordinate b equals 0.5 times input a plus -0.49999999999999994 times input b plus 2.0 times input c, then shift 3.9499999999970115e-05.\nThe standard fractional coordinate c equals 0.0 times input a plus -1.0 times input b plus 0.0 times input c, then shift 0.0.\nThe input-frame fractional coordinates are rounded to 6 decimal places before any listed corrections.\nLithium forms a nominal 2-site symmetry orbit named o000 in the standard cell.\nAlong a, its representative has the free fractional offset 0.4584435.\nIts representative lies in the plane at fractional b offset 0.0.\nAlong c, its representative has the free fractional offset 0.27938550000000006.\nLithium forms a nominal 2-site symmetry orbit named o001 in the standard cell.\nAlong a, its representative has the free fractional offset 0.20266574999999998.\nIts representative lies in the plane at fractional b offset 0.0.\nAlong c, its representative has the free fractional offset 0.6647685.\nLithium forms a nominal 2-site symmetry orbit named o002 in the standard cell.\nAlong a, its representative has the free fractional offset 0.81310075.\nIts representative lies in the plane at fractional b offset 0.0.\nAlong c, its representative has the free fractional offset 0.4104555000000001.\nManganese forms a nominal 2-site symmetry orbit named o003 in the standard cell.\nAlong a, its representative has the free fractional offset 0.999723.\nIts representative lies in the plane at fractional b offset 0.0.\nAlong c, its representative has the free fractional offset 0.984811.\nOxygen forms a nominal 2-site symmetry orbit named o004 in the standard cell.\nAlong a, its representative has the free fractional offset 0.4756277500000001.\nIts representative lies in the plane at fractional b offset 0.0.\nAlong c, its representative has the free fractional offset 0.990511.\nFluorine forms a nominal 2-site symmetry orbit named o005 in the standard cell.\nAlong a, its representative has the free fractional offset 0.72211725.\nIts representative lies in the plane at fractional b offset 0.0.\nAlong c, its representative has the free fractional offset 0.6075254999999999.\nFluorine forms a nominal 2-site symmetry orbit named o006 in the standard cell.\nAlong a, its representative has the free fractional offset 0.04978624999999992.\nIts representative lies in the plane at fractional b offset 0.0.\nAlong c, its representative has the free fractional offset 0.7459355.\nFluorine forms a nominal 2-site symmetry orbit named o007 in the standard cell.\nAlong a, its representative has the free fractional offset 0.95989075.\nIts representative lies in the plane at fractional b offset 0.0.\nAlong c, its representative has the free fractional offset 0.2525345.\nFluorine forms a nominal 2-site symmetry orbit named o008 in the standard cell.\nAlong a, its representative has the free fractional offset 0.2733745000000001.\nIts representative lies in the plane at fractional b offset 0.0.\nAlong c, its representative has the free fractional offset 0.3080685000000001.\nThe input-frame fractional correction for retained site o000_1 of Lithium is (6.20000000000065e-05, 0.00013499999999999623, 8.999999999997899e-05).\nThe input-frame fractional correction for retained site o000_2 of Lithium is (-6.100000000008876e-05, -0.00013399999999996748, -1.599999999990498e-05).\nThe input-frame fractional correction for retained site o001_1 of Lithium is (7.899999999994023e-05, -4.599999999999049e-05, 1.5000000000042757e-05).\nThe input-frame fractional correction for retained site o001_2 of Lithium is (-7.900000000005125e-05, 4.500000000001725e-05, 8.000000000008e-06).\nThe input-frame fractional correction for retained site o002_1 of Lithium is (-0.00010799999999999699, 3.500000000000725e-05, 2.5999999999998247e-05).\nThe input-frame fractional correction for retained site o002_2 of Lithium is (0.00010800000000002474, -3.399999999997849e-05, -4.499999999996174e-05).\nThe input-frame fractional correction for retained site o003_1 of Manganese is (-0.00016799999999999975, -7.000000000000062e-06, 8.6e-05).\nThe input-frame fractional correction for retained site o003_2 of Manganese is (0.00016799999999999975, 7.000000000000062e-06, -8.599999999991947e-05).\nThe input-frame fractional correction for retained site o004_1 of Oxygen is (0.00018099999999998673, 7.000000000000062e-05, -4.6000000000046004e-05).\nThe input-frame fractional correction for retained site o004_2 of Oxygen is (-0.00018200000000001548, -6.999999999999888e-05, 1.799999999996249e-05).\nThe input-frame fractional correction for retained site o005_1 of Fluorine is (-6.799999999995698e-05, -6.100000000003325e-05, 0.00012799999999998923).\nThe input-frame fractional correction for retained site o005_2 of Fluorine is (6.8000000000068e-05, 6.0000000000004494e-05, 4.500000000007276e-05).\nThe input-frame fractional correction for retained site o006_1 of Fluorine is (0.000126000000000015, 1.0000000000287557e-06, 0.0002449999999999952).\nThe input-frame fractional correction for retained site o006_2 of Fluorine is (-0.00012599999999995948, -2.000000000002e-06, 6.899999999998574e-05).\nThe input-frame fractional correction for retained site o007_1 of Fluorine is (1.4999999999987246e-05, -5.299999999996974e-05, -0.00016900000000000248).\nThe input-frame fractional correction for retained site o007_2 of Fluorine is (-1.4999999999987246e-05, 5.2000000000052005e-05, 0.00011499999999997623).\nThe input-frame fractional correction for retained site o008_1 of Fluorine is (6.20000000000065e-05, -6.999999999979245e-06, 1.999999999996449e-05).\nThe input-frame fractional correction for retained site o008_2 of Fluorine is (-6.30000000000075e-05, 8.000000000008e-06, -5.999999999950489e-06).",
+    "condition": {
+      "formula": "F8Li6Mn2O2",
+      "sg": 8
+    },
+    "plans": {
+      "source": {
+        "status": "ok",
+        "space_group_number": 8,
+        "hall_symbol": "C -2y",
+        "lattice": [
+          5.27070997,
+          5.51547503,
+          7.519606,
+          109.93178650999998,
+          69.10813326,
+          103.21475373000001
+        ],
+        "input_atom_count": 18,
+        "composition": {
+          "F": 8,
+          "Li": 6,
+          "Mn": 2,
+          "O": 2
+        },
+        "orbits": [
+          {
+            "id": "o000",
+            "element": "Li",
+            "wyckoff": "2a",
+            "parameters": [
+              0.4584435,
+              0.27938550000000006
+            ]
+          },
+          {
+            "id": "o001",
+            "element": "Li",
+            "wyckoff": "2a",
+            "parameters": [
+              0.20266574999999998,
+              0.6647685
+            ]
+          },
+          {
+            "id": "o002",
+            "element": "Li",
+            "wyckoff": "2a",
+            "parameters": [
+              0.81310075,
+              0.4104555000000001
+            ]
+          },
+          {
+            "id": "o003",
+            "element": "Mn",
+            "wyckoff": "2a",
+            "parameters": [
+              0.999723,
+              0.984811
+            ]
+          },
+          {
+            "id": "o004",
+            "element": "O",
+            "wyckoff": "2a",
+            "parameters": [
+              0.4756277500000001,
+              0.990511
+            ]
+          },
+          {
+            "id": "o005",
+            "element": "F",
+            "wyckoff": "2a",
+            "parameters": [
+              0.72211725,
+              0.6075254999999999
+            ]
+          },
+          {
+            "id": "o006",
+            "element": "F",
+            "wyckoff": "2a",
+            "parameters": [
+              0.04978624999999992,
+              0.7459355
+            ]
+          },
+          {
+            "id": "o007",
+            "element": "F",
+            "wyckoff": "2a",
+            "parameters": [
+              0.95989075,
+              0.2525345
+            ]
+          },
+          {
+            "id": "o008",
+            "element": "F",
+            "wyckoff": "2a",
+            "parameters": [
+              0.2733745000000001,
+              0.3080685000000001
+            ]
+          }
+        ],
+        "frame_transform": {
+          "matrix": [
+            [
+              0.5,
+              -0.5,
+              0.0
+            ],
+            [
+              0.5,
+              -0.49999999999999994,
+              2.0
+            ],
+            [
+              0.0,
+              -1.0,
+              0.0
+            ]
+          ],
+          "origin_shift": [
+            0.9999605,
+            3.9499999999970115e-05,
+            0.0
+          ]
+        },
+        "round_digits": 6,
+        "precision_corrections": [
+          {
+            "site_id": "o000_1",
+            "element": "Li",
+            "delta": [
+              6.20000000000065e-05,
+              0.00013499999999999623,
+              8.999999999997899e-05
+            ]
+          },
+          {
+            "site_id": "o000_2",
+            "element": "Li",
+            "delta": [
+              -6.100000000008876e-05,
+              -0.00013399999999996748,
+              -1.599999999990498e-05
+            ]
+          },
+          {
+            "site_id": "o001_1",
+            "element": "Li",
+            "delta": [
+              7.899999999994023e-05,
+              -4.599999999999049e-05,
+              1.5000000000042757e-05
+            ]
+          },
+          {
+            "site_id": "o001_2",
+            "element": "Li",
+            "delta": [
+              -7.900000000005125e-05,
+              4.500000000001725e-05,
+              8.000000000008e-06
+            ]
+          },
+          {
+            "site_id": "o002_1",
+            "element": "Li",
+            "delta": [
+              -0.00010799999999999699,
+              3.500000000000725e-05,
+              2.5999999999998247e-05
+            ]
+          },
+          {
+            "site_id": "o002_2",
+            "element": "Li",
+            "delta": [
+              0.00010800000000002474,
+              -3.399999999997849e-05,
+              -4.499999999996174e-05
+            ]
+          },
+          {
+            "site_id": "o003_1",
+            "element": "Mn",
+            "delta": [
+              -0.00016799999999999975,
+              -7.000000000000062e-06,
+              8.6e-05
+            ]
+          },
+          {
+            "site_id": "o003_2",
+            "element": "Mn",
+            "delta": [
+              0.00016799999999999975,
+              7.000000000000062e-06,
+              -8.599999999991947e-05
+            ]
+          },
+          {
+            "site_id": "o004_1",
+            "element": "O",
+            "delta": [
+              0.00018099999999998673,
+              7.000000000000062e-05,
+              -4.6000000000046004e-05
+            ]
+          },
+          {
+            "site_id": "o004_2",
+            "element": "O",
+            "delta": [
+              -0.00018200000000001548,
+              -6.999999999999888e-05,
+              1.799999999996249e-05
+            ]
+          },
+          {
+            "site_id": "o005_1",
+            "element": "F",
+            "delta": [
+              -6.799999999995698e-05,
+              -6.100000000003325e-05,
+              0.00012799999999998923
+            ]
+          },
+          {
+            "site_id": "o005_2",
+            "element": "F",
+            "delta": [
+              6.8000000000068e-05,
+              6.0000000000004494e-05,
+              4.500000000007276e-05
+            ]
+          },
+          {
+            "site_id": "o006_1",
+            "element": "F",
+            "delta": [
+              0.000126000000000015,
+              1.0000000000287557e-06,
+              0.0002449999999999952
+            ]
+          },
+          {
+            "site_id": "o006_2",
+            "element": "F",
+            "delta": [
+              -0.00012599999999995948,
+              -2.000000000002e-06,
+              6.899999999998574e-05
+            ]
+          },
+          {
+            "site_id": "o007_1",
+            "element": "F",
+            "delta": [
+              1.4999999999987246e-05,
+              -5.299999999996974e-05,
+              -0.00016900000000000248
+            ]
+          },
+          {
+            "site_id": "o007_2",
+            "element": "F",
+            "delta": [
+              -1.4999999999987246e-05,
+              5.2000000000052005e-05,
+              0.00011499999999997623
+            ]
+          },
+          {
+            "site_id": "o008_1",
+            "element": "F",
+            "delta": [
+              6.20000000000065e-05,
+              -6.999999999979245e-06,
+              1.999999999996449e-05
+            ]
+          },
+          {
+            "site_id": "o008_2",
+            "element": "F",
+            "delta": [
+              -6.30000000000075e-05,
+              8.000000000008e-06,
+              -5.999999999950489e-06
+            ]
+          }
+        ]
+      },
+      "plus": {
+        "status": "ok",
+        "space_group_number": 8,
+        "hall_symbol": "C -2y",
+        "lattice": [
+          5.5342454685,
+          5.7912487815,
+          7.8955863,
+          109.93178650999998,
+          69.10813326,
+          103.21475373000001
+        ],
+        "input_atom_count": 18,
+        "composition": {
+          "F": 8,
+          "Li": 6,
+          "Mn": 2,
+          "O": 2
+        },
+        "orbits": [
+          {
+            "id": "o000",
+            "element": "Li",
+            "wyckoff": "2a",
+            "parameters": [
+              0.4584435,
+              0.27938550000000006
+            ]
+          },
+          {
+            "id": "o001",
+            "element": "Li",
+            "wyckoff": "2a",
+            "parameters": [
+              0.20266574999999998,
+              0.6647685
+            ]
+          },
+          {
+            "id": "o002",
+            "element": "Li",
+            "wyckoff": "2a",
+            "parameters": [
+              0.81310075,
+              0.4104555000000001
+            ]
+          },
+          {
+            "id": "o003",
+            "element": "Mn",
+            "wyckoff": "2a",
+            "parameters": [
+              0.999723,
+              0.984811
+            ]
+          },
+          {
+            "id": "o004",
+            "element": "O",
+            "wyckoff": "2a",
+            "parameters": [
+              0.4756277500000001,
+              0.990511
+            ]
+          },
+          {
+            "id": "o005",
+            "element": "F",
+            "wyckoff": "2a",
+            "parameters": [
+              0.72211725,
+              0.6075254999999999
+            ]
+          },
+          {
+            "id": "o006",
+            "element": "F",
+            "wyckoff": "2a",
+            "parameters": [
+              0.04978624999999992,
+              0.7459355
+            ]
+          },
+          {
+            "id": "o007",
+            "element": "F",
+            "wyckoff": "2a",
+            "parameters": [
+              0.95989075,
+              0.2525345
+            ]
+          },
+          {
+            "id": "o008",
+            "element": "F",
+            "wyckoff": "2a",
+            "parameters": [
+              0.2733745000000001,
+              0.3080685000000001
+            ]
+          }
+        ],
+        "frame_transform": {
+          "matrix": [
+            [
+              0.5,
+              -0.5,
+              0.0
+            ],
+            [
+              0.5,
+              -0.49999999999999994,
+              2.0
+            ],
+            [
+              0.0,
+              -1.0,
+              0.0
+            ]
+          ],
+          "origin_shift": [
+            0.9999605,
+            3.9499999999970115e-05,
+            0.0
+          ]
+        },
+        "round_digits": 6,
+        "precision_corrections": [
+          {
+            "site_id": "o000_1",
+            "element": "Li",
+            "delta": [
+              6.20000000000065e-05,
+              0.00013499999999999623,
+              8.999999999997899e-05
+            ]
+          },
+          {
+            "site_id": "o000_2",
+            "element": "Li",
+            "delta": [
+              -6.100000000008876e-05,
+              -0.00013399999999996748,
+              -1.599999999990498e-05
+            ]
+          },
+          {
+            "site_id": "o001_1",
+            "element": "Li",
+            "delta": [
+              7.899999999994023e-05,
+              -4.599999999999049e-05,
+              1.5000000000042757e-05
+            ]
+          },
+          {
+            "site_id": "o001_2",
+            "element": "Li",
+            "delta": [
+              -7.900000000005125e-05,
+              4.500000000001725e-05,
+              8.000000000008e-06
+            ]
+          },
+          {
+            "site_id": "o002_1",
+            "element": "Li",
+            "delta": [
+              -0.00010799999999999699,
+              3.500000000000725e-05,
+              2.5999999999998247e-05
+            ]
+          },
+          {
+            "site_id": "o002_2",
+            "element": "Li",
+            "delta": [
+              0.00010800000000002474,
+              -3.399999999997849e-05,
+              -4.499999999996174e-05
+            ]
+          },
+          {
+            "site_id": "o003_1",
+            "element": "Mn",
+            "delta": [
+              -0.00016799999999999975,
+              -7.000000000000062e-06,
+              8.6e-05
+            ]
+          },
+          {
+            "site_id": "o003_2",
+            "element": "Mn",
+            "delta": [
+              0.00016799999999999975,
+              7.000000000000062e-06,
+              -8.599999999991947e-05
+            ]
+          },
+          {
+            "site_id": "o004_1",
+            "element": "O",
+            "delta": [
+              0.00018099999999998673,
+              7.000000000000062e-05,
+              -4.6000000000046004e-05
+            ]
+          },
+          {
+            "site_id": "o004_2",
+            "element": "O",
+            "delta": [
+              -0.00018200000000001548,
+              -6.999999999999888e-05,
+              1.799999999996249e-05
+            ]
+          },
+          {
+            "site_id": "o005_1",
+            "element": "F",
+            "delta": [
+              -6.799999999995698e-05,
+              -6.100000000003325e-05,
+              0.00012799999999998923
+            ]
+          },
+          {
+            "site_id": "o005_2",
+            "element": "F",
+            "delta": [
+              6.8000000000068e-05,
+              6.0000000000004494e-05,
+              4.500000000007276e-05
+            ]
+          },
+          {
+            "site_id": "o006_1",
+            "element": "F",
+            "delta": [
+              0.000126000000000015,
+              1.0000000000287557e-06,
+              0.0002449999999999952
+            ]
+          },
+          {
+            "site_id": "o006_2",
+            "element": "F",
+            "delta": [
+              -0.00012599999999995948,
+              -2.000000000002e-06,
+              6.899999999998574e-05
+            ]
+          },
+          {
+            "site_id": "o007_1",
+            "element": "F",
+            "delta": [
+              1.4999999999987246e-05,
+              -5.299999999996974e-05,
+              -0.00016900000000000248
+            ]
+          },
+          {
+            "site_id": "o007_2",
+            "element": "F",
+            "delta": [
+              -1.4999999999987246e-05,
+              5.2000000000052005e-05,
+              0.00011499999999997623
+            ]
+          },
+          {
+            "site_id": "o008_1",
+            "element": "F",
+            "delta": [
+              6.20000000000065e-05,
+              -6.999999999979245e-06,
+              1.999999999996449e-05
+            ]
+          },
+          {
+            "site_id": "o008_2",
+            "element": "F",
+            "delta": [
+              -6.30000000000075e-05,
+              8.000000000008e-06,
+              -5.999999999950489e-06
+            ]
+          }
+        ]
+      },
+      "minus": {
+        "status": "ok",
+        "space_group_number": 8,
+        "hall_symbol": "C -2y",
+        "lattice": [
+          5.0071744715,
+          5.2397012785,
+          7.1436257,
+          109.93178650999998,
+          69.10813326,
+          103.21475373000001
+        ],
+        "input_atom_count": 18,
+        "composition": {
+          "F": 8,
+          "Li": 6,
+          "Mn": 2,
+          "O": 2
+        },
+        "orbits": [
+          {
+            "id": "o000",
+            "element": "Li",
+            "wyckoff": "2a",
+            "parameters": [
+              0.4584435,
+              0.27938550000000006
+            ]
+          },
+          {
+            "id": "o001",
+            "element": "Li",
+            "wyckoff": "2a",
+            "parameters": [
+              0.20266574999999998,
+              0.6647685
+            ]
+          },
+          {
+            "id": "o002",
+            "element": "Li",
+            "wyckoff": "2a",
+            "parameters": [
+              0.81310075,
+              0.4104555000000001
+            ]
+          },
+          {
+            "id": "o003",
+            "element": "Mn",
+            "wyckoff": "2a",
+            "parameters": [
+              0.999723,
+              0.984811
+            ]
+          },
+          {
+            "id": "o004",
+            "element": "O",
+            "wyckoff": "2a",
+            "parameters": [
+              0.4756277500000001,
+              0.990511
+            ]
+          },
+          {
+            "id": "o005",
+            "element": "F",
+            "wyckoff": "2a",
+            "parameters": [
+              0.72211725,
+              0.6075254999999999
+            ]
+          },
+          {
+            "id": "o006",
+            "element": "F",
+            "wyckoff": "2a",
+            "parameters": [
+              0.04978624999999992,
+              0.7459355
+            ]
+          },
+          {
+            "id": "o007",
+            "element": "F",
+            "wyckoff": "2a",
+            "parameters": [
+              0.95989075,
+              0.2525345
+            ]
+          },
+          {
+            "id": "o008",
+            "element": "F",
+            "wyckoff": "2a",
+            "parameters": [
+              0.2733745000000001,
+              0.3080685000000001
+            ]
+          }
+        ],
+        "frame_transform": {
+          "matrix": [
+            [
+              0.5,
+              -0.5,
+              0.0
+            ],
+            [
+              0.5,
+              -0.49999999999999994,
+              2.0
+            ],
+            [
+              0.0,
+              -1.0,
+              0.0
+            ]
+          ],
+          "origin_shift": [
+            0.9999605,
+            3.9499999999970115e-05,
+            0.0
+          ]
+        },
+        "round_digits": 6,
+        "precision_corrections": [
+          {
+            "site_id": "o000_1",
+            "element": "Li",
+            "delta": [
+              6.20000000000065e-05,
+              0.00013499999999999623,
+              8.999999999997899e-05
+            ]
+          },
+          {
+            "site_id": "o000_2",
+            "element": "Li",
+            "delta": [
+              -6.100000000008876e-05,
+              -0.00013399999999996748,
+              -1.599999999990498e-05
+            ]
+          },
+          {
+            "site_id": "o001_1",
+            "element": "Li",
+            "delta": [
+              7.899999999994023e-05,
+              -4.599999999999049e-05,
+              1.5000000000042757e-05
+            ]
+          },
+          {
+            "site_id": "o001_2",
+            "element": "Li",
+            "delta": [
+              -7.900000000005125e-05,
+              4.500000000001725e-05,
+              8.000000000008e-06
+            ]
+          },
+          {
+            "site_id": "o002_1",
+            "element": "Li",
+            "delta": [
+              -0.00010799999999999699,
+              3.500000000000725e-05,
+              2.5999999999998247e-05
+            ]
+          },
+          {
+            "site_id": "o002_2",
+            "element": "Li",
+            "delta": [
+              0.00010800000000002474,
+              -3.399999999997849e-05,
+              -4.499999999996174e-05
+            ]
+          },
+          {
+            "site_id": "o003_1",
+            "element": "Mn",
+            "delta": [
+              -0.00016799999999999975,
+              -7.000000000000062e-06,
+              8.6e-05
+            ]
+          },
+          {
+            "site_id": "o003_2",
+            "element": "Mn",
+            "delta": [
+              0.00016799999999999975,
+              7.000000000000062e-06,
+              -8.599999999991947e-05
+            ]
+          },
+          {
+            "site_id": "o004_1",
+            "element": "O",
+            "delta": [
+              0.00018099999999998673,
+              7.000000000000062e-05,
+              -4.6000000000046004e-05
+            ]
+          },
+          {
+            "site_id": "o004_2",
+            "element": "O",
+            "delta": [
+              -0.00018200000000001548,
+              -6.999999999999888e-05,
+              1.799999999996249e-05
+            ]
+          },
+          {
+            "site_id": "o005_1",
+            "element": "F",
+            "delta": [
+              -6.799999999995698e-05,
+              -6.100000000003325e-05,
+              0.00012799999999998923
+            ]
+          },
+          {
+            "site_id": "o005_2",
+            "element": "F",
+            "delta": [
+              6.8000000000068e-05,
+              6.0000000000004494e-05,
+              4.500000000007276e-05
+            ]
+          },
+          {
+            "site_id": "o006_1",
+            "element": "F",
+            "delta": [
+              0.000126000000000015,
+              1.0000000000287557e-06,
+              0.0002449999999999952
+            ]
+          },
+          {
+            "site_id": "o006_2",
+            "element": "F",
+            "delta": [
+              -0.00012599999999995948,
+              -2.000000000002e-06,
+              6.899999999998574e-05
+            ]
+          },
+          {
+            "site_id": "o007_1",
+            "element": "F",
+            "delta": [
+              1.4999999999987246e-05,
+              -5.299999999996974e-05,
+              -0.00016900000000000248
+            ]
+          },
+          {
+            "site_id": "o007_2",
+            "element": "F",
+            "delta": [
+              -1.4999999999987246e-05,
+              5.2000000000052005e-05,
+              0.00011499999999997623
+            ]
+          },
+          {
+            "site_id": "o008_1",
+            "element": "F",
+            "delta": [
+              6.20000000000065e-05,
+              -6.999999999979245e-06,
+              1.999999999996449e-05
+            ]
+          },
+          {
+            "site_id": "o008_2",
+            "element": "F",
+            "delta": [
+              -6.30000000000075e-05,
+              8.000000000008e-06,
+              -5.999999999950489e-06
+            ]
+          }
+        ]
+      }
+    },
+    "source_hashes": {
+      "selection_sha256": "82707935dd3d7c71c70cefc2fb7ca6eadc73079d83ed9e0a55cf34147af25988",
+      "source_cif_sha256": "a6ff023791f325c26229a75b3d3be21258633a5c8702a08c7138af6de687a18d",
+      "source_plan_sha256": "e3798201f07e0bacca767e95cbb305feee28be4c2d1ca1da7494f3da99a97aeb",
+      "source_facts_sha256": "ffa4db3d2dfad779395d6328602ac897636e599829ac86677c034849b21ec41d",
+      "source_text_sha256": "314a33eb1135afb2344c9fe00dec728be5dc5fd8217ef7e54ecea97ce143e259"
+    },
+    "source_files": {
+      "selection": "experiments/interleaved_relational_coverage256_20261007/prepare_001/selection.json",
+      "plan": "experiments/interleaved_relational_coverage256_20261007/prepare_001/prepare_attempt_003/cache/mp-1276200/plan.json",
+      "facts": "experiments/interleaved_relational_coverage256_20261007/prepare_001/prepare_attempt_003/cache/mp-1276200/facts.json",
+      "text": "experiments/interleaved_relational_coverage256_20261007/prepare_001/prepare_attempt_003/cache/mp-1276200/text.txt",
+      "cif": "experiments/interleaved_relational_coverage256_20261007/prepare_001/inputs/mp-1276200.cif"
+    },
+    "target_hashes": {
+      "plus": {
+        "plan_sha256": "029fe866d5b913f80fc01e7fd6542bca9bd1d2c4065a1508965a2f174d3fa819",
+        "text_sha256": "7b390677b283f4d5f88bf00cc776a5e85231ed7551be776bff201fb3c7b271da"
+      },
+      "minus": {
+        "plan_sha256": "b7e55c18410eb1b317068bd053eb61c99aa7b02ec51e1ef080309eead253cea2",
+        "text_sha256": "1cb2ef49f97de3f64e9a657d2d621d1fa1460eae8e066b5512f7001fc5ad9e9a"
+      }
+    },
+    "token_lengths": {
+      "c1": 2700,
+      "plus": 2705,
+      "minus": 2705
+    },
+    "baseline_audit": {
+      "source": {
+        "valid": true,
+        "failure_stage": null,
+        "reasons": [],
+        "decoded_plan_sha256": "e8ef26342be6073bbc35f27048b3313dc83126f104e0c92ca1f87264345f8c95",
+        "structure": {
+          "atoms": 18,
+          "composition": {
+            "F": 8.0,
+            "Li": 6.0,
+            "Mn": 2.0,
+            "O": 2.0
+          },
+          "volume_A3": 190.5623637295911,
+          "input_lattice_parameters": [
+            5.27070997,
+            5.51547503,
+            7.519606,
+            109.93178650999998,
+            69.10813326,
+            103.21475373000001
+          ],
+          "independent_orbits": 9,
+          "space_group_from_plan": 8,
+          "space_group_redetected": 8,
+          "minimum_pair_distance_A": 1.8882936878674965
+        },
+        "physical": {
+          "finite_lattice": true,
+          "finite_positive_volume": true,
+          "minimum_pair_distance_defined": true,
+          "minimum_pair_distance_at_least_0_5_A": true,
+          "space_group_redetected": true,
+          "requested_input_composition": true,
+          "requested_input_atoms": true,
+          "requested_space_group": true
+        },
+        "requested_checks": {
+          "requested_input_composition": true,
+          "requested_input_atoms": true,
+          "requested_space_group": true
+        }
+      },
+      "plus": {
+        "valid": true,
+        "failure_stage": null,
+        "reasons": [],
+        "decoded_plan_sha256": "029fe866d5b913f80fc01e7fd6542bca9bd1d2c4065a1508965a2f174d3fa819",
+        "structure": {
+          "atoms": 18,
+          "composition": {
+            "F": 8.0,
+            "Li": 6.0,
+            "Mn": 2.0,
+            "O": 2.0
+          },
+          "volume_A3": 220.59975631246786,
+          "input_lattice_parameters": [
+            5.5342454685,
+            5.7912487815,
+            7.8955863,
+            109.93178650999998,
+            69.10813326,
+            103.21475373000001
+          ],
+          "independent_orbits": 9,
+          "space_group_from_plan": 8,
+          "space_group_redetected": 8,
+          "minimum_pair_distance_A": 1.98270837226087
+        },
+        "physical": {
+          "finite_lattice": true,
+          "finite_positive_volume": true,
+          "minimum_pair_distance_defined": true,
+          "minimum_pair_distance_at_least_0_5_A": true,
+          "space_group_redetected": true,
+          "requested_input_composition": true,
+          "requested_input_atoms": true,
+          "requested_space_group": true
+        },
+        "requested_checks": {
+          "requested_input_composition": true,
+          "requested_input_atoms": true,
+          "requested_space_group": true
+        }
+      },
+      "minus": {
+        "valid": true,
+        "failure_stage": null,
+        "reasons": [],
+        "decoded_plan_sha256": "b7e55c18410eb1b317068bd053eb61c99aa7b02ec51e1ef080309eead253cea2",
+        "structure": {
+          "atoms": 18,
+          "composition": {
+            "F": 8.0,
+            "Li": 6.0,
+            "Mn": 2.0,
+            "O": 2.0
+          },
+          "volume_A3": 163.38340660265817,
+          "input_lattice_parameters": [
+            5.0071744715,
+            5.2397012785,
+            7.1436257,
+            109.93178650999998,
+            69.10813326,
+            103.21475373000001
+          ],
+          "independent_orbits": 9,
+          "space_group_from_plan": 8,
+          "space_group_redetected": 8,
+          "minimum_pair_distance_A": 1.793879003474121
+        },
+        "physical": {
+          "finite_lattice": true,
+          "finite_positive_volume": true,
+          "minimum_pair_distance_defined": true,
+          "minimum_pair_distance_at_least_0_5_A": true,
+          "space_group_redetected": true,
+          "requested_input_composition": true,
+          "requested_input_atoms": true,
+          "requested_space_group": true
+        },
+        "requested_checks": {
+          "requested_input_composition": true,
+          "requested_input_atoms": true,
+          "requested_space_group": true
+        }
+      },
+      "source_cif_geometry": {
+        "lattice_component_error_A": 1.1102230246251565e-15,
+        "coordinate_error_A": 0.0
+      },
+      "edit_geometry": {
+        "plus": {
+          "lattice_component_error_A": 1.2212453270876722e-15,
+          "coordinate_error_A": 0.0
+        },
+        "minus": {
+          "lattice_component_error_A": 1.1102230246251565e-15,
+          "coordinate_error_A": 0.0
+        }
+      }
+    }
+  },
+  "frozen_sources_unchanged": true
+}

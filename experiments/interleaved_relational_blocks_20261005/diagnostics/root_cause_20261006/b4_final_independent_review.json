@@ -1,0 +1,345 @@
+{
+  "status": "read_only_independent_review_complete",
+  "scope": "B4 full 8-seen + 16-heldout result; matched heldout comparison against B8 fixed, B8 AR control, and B32.",
+  "completion_check": {
+    "b4_summary_status": "complete",
+    "b4_heldout_status": "evaluated",
+    "b4_heldout_jsonl_rows": 16,
+    "b4_heldout_jsonl_rows_parseable": 16,
+    "matched_ids_and_order_identical_across_all_four_runs": true,
+    "slurm": {
+      "job_id": 609995,
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed": "02:19:20",
+      "evidence": "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/b4_final_complete_root_audit.json"
+    },
+    "goal_ledger_note": "GOAL_LEDGER.json still records the earlier RUNNING/14-heldout observation; left unchanged. The newer final root audit and local complete summary show 16 heldout rows."
+  },
+  "matched_heldout_results_n16": {
+    "B4": {
+      "path": "experiments/interleaved_relational_scaled32_20261006/eval_full_history_b4_001/heldout16/evaluation.jsonl",
+      "block_size": 4,
+      "stage": "scaled32_final_2048_evaluation",
+      "summary_status": "complete",
+      "heldout_status": "evaluated",
+      "n": 16,
+      "counts": {
+        "G": 0,
+        "Q_reference": 13,
+        "E_reference": 0,
+        "closed_loop": 0,
+        "flow_complete": 0,
+        "Q_swap": 14,
+        "Q_no_crystal": 0
+      },
+      "rates": {
+        "G": 0.0,
+        "Q_reference": 0.8125,
+        "E_reference": 0.0,
+        "closed_loop": 0.0,
+        "flow_complete": 0.0,
+        "Q_swap": 0.875,
+        "Q_no_crystal": 0.0
+      },
+      "failure_classes": {
+        "G:generation_audit": 15,
+        "E_reference:edit_mismatch": 16,
+        "closed_loop:skipped_invalid_generated_c1": 16,
+        "Q_swap:answer_mismatch": 2,
+        "G:generation_error": 1,
+        "Q_reference:answer_mismatch": 3
+      },
+      "raw_generation_arrays": {
+        "count": 16,
+        "K": 2560,
+        "valid_END_PAD_boundaries": 15,
+        "invalid_END_PAD_boundaries": 1
+      }
+    },
+    "B8_fixed": {
+      "path": "experiments/interleaved_relational_scaled32_20261006/eval_full_history_b8_fixed_001/heldout16/evaluation.jsonl",
+      "block_size": 8,
+      "stage": "scaled32_final_2048_evaluation",
+      "summary_status": "complete",
+      "heldout_status": "evaluated",
+      "n": 16,
+      "counts": {
+        "G": 0,
+        "Q_reference": 12,
+        "E_reference": 0,
+        "closed_loop": 0,
+        "flow_complete": 0,
+        "Q_swap": 3,
+        "Q_no_crystal": 0
+      },
+      "rates": {
+        "G": 0.0,
+        "Q_reference": 0.75,
+        "E_reference": 0.0,
+        "closed_loop": 0.0,
+        "flow_complete": 0.0,
+        "Q_swap": 0.1875,
+        "Q_no_crystal": 0.0
+      },
+      "failure_classes": {
+        "G:generation_error": 2,
+        "E_reference:edit_mismatch": 15,
+        "closed_loop:skipped_invalid_generated_c1": 16,
+        "Q_swap:answer_mismatch": 13,
+        "G:generation_audit": 14,
+        "Q_reference:answer_mismatch": 4,
+        "E_reference:edit_error": 1
+      },
+      "raw_generation_arrays": {
+        "count": 16,
+        "K": 2560,
+        "valid_END_PAD_boundaries": 14,
+        "invalid_END_PAD_boundaries": 2
+      }
+    },
+    "B8_AR_control": {
+      "path": "experiments/interleaved_relational_scaled32_20261006/eval_full_history_b8_ar_control_001/heldout16/evaluation.jsonl",
+      "block_size": 8,
+      "stage": "frozen_b8_ar_crystal_control",
+      "summary_status": "complete",
+      "heldout_status": "evaluated",
+      "n": 16,
+      "counts": {
+        "G": 0,
+        "Q_reference": 12,
+        "E_reference": 0,
+        "closed_loop": 0,
+        "flow_complete": 0,
+        "Q_swap": 3,
+        "Q_no_crystal": 0
+      },
+      "rates": {
+        "G": 0.0,
+        "Q_reference": 0.75,
+        "E_reference": 0.0,
+        "closed_loop": 0.0,
+        "flow_complete": 0.0,
+        "Q_swap": 0.1875,
+        "Q_no_crystal": 0.0
+      },
+      "failure_classes": {
+        "G:generation_audit": 16,
+        "E_reference:edit_mismatch": 16,
+        "closed_loop:skipped_invalid_generated_c1": 16,
+        "Q_swap:answer_mismatch": 13,
+        "Q_reference:answer_mismatch": 4
+      },
+      "raw_generation_arrays": {
+        "count": 16,
+        "K": 2560,
+        "valid_END_PAD_boundaries": 16,
+        "invalid_END_PAD_boundaries": 0
+      }
+    },
+    "B32": {
+      "path": "experiments/interleaved_relational_scaled32_20261006/eval_full_history_final2048_001/heldout16/evaluation.jsonl",
+      "block_size": 32,
+      "stage": "scaled32_final_2048_evaluation",
+      "summary_status": "complete",
+      "heldout_status": "evaluated",
+      "n": 16,
+      "counts": {
+        "G": 0,
+        "Q_reference": 13,
+        "E_reference": 0,
+        "closed_loop": 0,
+        "flow_complete": 0,
+        "Q_swap": 0,
+        "Q_no_crystal": 0
+      },
+      "rates": {
+        "G": 0.0,
+        "Q_reference": 0.8125,
+        "E_reference": 0.0,
+        "closed_loop": 0.0,
+        "flow_complete": 0.0,
+        "Q_swap": 0.0,
+        "Q_no_crystal": 0.0
+      },
+      "failure_classes": {
+        "G:generation_audit": 16,
+        "E_reference:edit_mismatch": 15,
+        "closed_loop:skipped_invalid_generated_c1": 16,
+        "Q_swap:answer_mismatch": 16,
+        "Q_reference:answer_mismatch": 3,
+        "E_reference:edit_error": 1
+      },
+      "raw_generation_arrays": {
+        "count": 16,
+        "K": 2560,
+        "valid_END_PAD_boundaries": 16,
+        "invalid_END_PAD_boundaries": 0
+      }
+    }
+  },
+  "b4_failure_analysis": {
+    "raw_generation": {
+      "K": 2560,
+      "raw_arrays_checked_across_24_cases_and_attempt_types": 56,
+      "failed_generation_attempt_array_retained": {
+        "id": "mp-1173947",
+        "length": 2560,
+        "END_count": 0,
+        "failure": "CrystalBlockError: crystal block requires exactly one END",
+        "reference_edit_array": "K=2560 with exactly one END followed by PAD"
+      },
+      "generation_boundary_failures_heldout": 1,
+      "generation_boundary_valid_heldout": 15
+    },
+    "G_failure_class_counts": {
+      "total": 16,
+      "generation_audit": 15,
+      "generation_error": 1,
+      "exact_reason_counts": {
+        "GateError: Orbit multiplicity and representative relations do not select one public definition": 6,
+        "GateError: Input cell sentence is missing or malformed": 1,
+        "GateError: Unknown element name in relational document: Ptall": 1,
+        "CrystalBlockError: crystal block requires exactly one END": 1,
+        "GateError: Unknown element name in relational document: Vanob": 1,
+        "GateError: Unknown element name in relational document: Iron contributes": 1,
+        "GateError: Unknown element name in relational document: Ruorine": 1,
+        "GateError: Unknown element name in relational document: Dysproine": 1,
+        "GateError: Unknown element name in relational document: Van standard": 1,
+        "GateError: Unknown element name in relational document: Nicku": 1,
+        "GateError: Input atom-count sentence is missing or malformed": 1
+      },
+      "review_grouping": {
+        "missing_END_boundary": 1,
+        "missing_or_malformed_required_header_sentences": 2,
+        "unknown_or_merged_element_names": 7,
+        "orbit_definition_ambiguity": 6
+      },
+      "grouping_note": "The grouped labels classify the exact scorer reasons above; generation_audit and generation_error remain the recorded failure classes."
+    },
+    "E_reference": {
+      "attempts": 16,
+      "strict_grade_success": 0,
+      "failure_classes": {
+        "edit_mismatch": 16
+      },
+      "lengths_exact": 0,
+      "whole_geometry_scale": 0,
+      "other_plan_fields_exact": 13,
+      "whole_geometry_scale_defined": 13,
+      "edited_physical_audit": 12
+    },
+    "actual_loop": {
+      "closed_loop": 0,
+      "flow_complete": 0,
+      "all16_skipped_after_invalid_G": true
+    }
+  },
+  "reader_field_counts_b4": {
+    "Q_reference_exact": 13,
+    "Q_reference_fields_correct_of16": {
+      "sg": 16,
+      "formula": 13,
+      "atoms": 16,
+      "orbits": 16,
+      "a": 16,
+      "b": 16,
+      "c": 16
+    },
+    "Q_swap_exact": 14,
+    "Q_swap_fields_correct_of16": {
+      "sg": 16,
+      "formula": 14,
+      "atoms": 16,
+      "orbits": 16,
+      "a": 16,
+      "b": 16,
+      "c": 16
+    },
+    "Q_swap_targets": {
+      "mp-1019259": 1,
+      "mp-1229077": 15
+    },
+    "Q_swap_unique_target_count": 2,
+    "Q_swap_scope_limit": "15/16 attempts use mp-1229077 and 1/16 uses mp-1019259; 14/16 correctness is not evidence across 14 distinct replacement structures."
+  },
+  "seen_case_original_text_check": {
+    "method": "Exact string equality between each B4 seen8 generation.value.crystal and that case C1 in data_001/records.jsonl.",
+    "exact_same_case_source_C1_matches": 8,
+    "denominator": 8,
+    "case_ids": [
+      "anchor_Tb8Mg4",
+      "anchor_Li8V4Ni4O16",
+      "mp-4047",
+      "mp-1205515",
+      "mp-30009",
+      "mp-1188285",
+      "mp-1207068",
+      "mp-1205902"
+    ],
+    "interpretation": "B4 reproduces the original training C1 text verbatim on all seen8 cases; this supports in-sample memorization/replay, not heldout generalization.",
+    "cross_control_audits": {
+      "B8_fixed_same_case_C1_exact_matches": 8,
+      "B8_AR_control_same_case_train_text_exact": 8,
+      "B32_valid_G_exact_same_case_C1_text_matches": 4,
+      "B32_valid_G_count": 5,
+      "B32_evidence": "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/full_history_final_complete_audit.json"
+    }
+  },
+  "training_and_coverage_context": {
+    "B4_training_match": {
+      "evidence": "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/b4_training_terminal_root_audit.json",
+      "updates": 2048,
+      "K": 2560,
+      "MAXLEN": 8192,
+      "initial_fingerprint_matches_B8": true,
+      "actual_noise_events_match_B8": true,
+      "actual_exposure_and_scheduled_events_match_B8": true
+    },
+    "B8_vs_B32_training_match": {
+      "evidence": "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/b8_terminal_training_match_audit.json",
+      "source_data_schedule_and_noise_checks_passed": true,
+      "only_training_arm_and_block_configuration_differ": true
+    },
+    "heldout_SG_and_SG_W_coverage": {
+      "evidence": "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/scaled32_coverage_audit.json",
+      "heldout_cases_with_unseen_SG_in_train32": 14,
+      "heldout_cases_with_any_unseen_SG_W_pair": 15,
+      "heldout_cases_with_all_source_plan_SG_W_pairs_seen": [
+        "mp-21371"
+      ],
+      "fully_covered_case_B4_G_failure": {
+        "id": "mp-21371",
+        "failure": "GateError: Unknown element name in relational document: Vanob"
+      },
+      "interpretation": "The large unseen-SG fraction supports a coverage hypothesis. Failure on mp-21371 with all exact SG-W pairs seen shows coverage alone does not explain every G failure; these cohort counts do not attribute the numerical edit errors causally."
+    }
+  },
+  "block_size_assessment": {
+    "conclusion": "Block size 4 is not sufficient to explain or fix the heldout generation/edit generalization failure.",
+    "evidence": "B4, B8 fixed, B8 AR control, and B32 all score G=0/16, E_reference=0/16, and closed_loop=0/16. B4 has 15/16 valid G END/PAD boundaries; B8 AR control and B32 have 16/16, yet still G=0/16. B4 improves Q_swap to 14/16, but this uses only two targets, with 15/16 attempts on one target.",
+    "qualified_interpretation": "The matched training audits support block size as the intended changed training variable, but results do not show that smaller blocks restore free generation, exact numeric editing, or a full closed loop. The Q_swap difference may reflect some reader behavior and must be interpreted within its two-target scope."
+  },
+  "audit_state_and_limitations": {
+    "b4_root_artifact_audit_status": "artifact_audit_passed_native_replay_pending",
+    "hashes_before_after_equal": true,
+    "weights_unchanged": true,
+    "optimizer_updates": 0,
+    "native_scorer_replay": "pending in the separately assigned audit_b16_final; this review used the stored strict evaluator outputs and root artifact audit.",
+    "no_remote_model_inference_or_checkpoint_weight_reading": true,
+    "scope_limit": "The report covers this fixed 16-case heldout cohort and matched B8/B32 controls; it does not claim overall infeasibility or isolate coverage as the sole cause."
+  },
+  "evidence_files": {
+    "b4_heldout_rows": "experiments/interleaved_relational_scaled32_20261006/eval_full_history_b4_001/heldout16/evaluation.jsonl",
+    "b4_heldout_summary": "experiments/interleaved_relational_scaled32_20261006/eval_full_history_b4_001/heldout16/evaluation_summary.json",
+    "b4_full_summary": "experiments/interleaved_relational_scaled32_20261006/eval_full_history_b4_001/summary.json",
+    "b4_root_artifact_audit": "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/b4_final_complete_root_audit.json",
+    "B8_fixed_rows": "experiments/interleaved_relational_scaled32_20261006/eval_full_history_b8_fixed_001/heldout16/evaluation.jsonl",
+    "B8_AR_control_rows": "experiments/interleaved_relational_scaled32_20261006/eval_full_history_b8_ar_control_001/heldout16/evaluation.jsonl",
+    "B32_rows": "experiments/interleaved_relational_scaled32_20261006/eval_full_history_final2048_001/heldout16/evaluation.jsonl",
+    "B8_fixed_root_audit": "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/b8_fixed_final_complete_audit.json",
+    "B8_AR_control_root_audit": "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/frozen_b8_ar_control_final_complete_audit.json",
+    "B32_root_audit": "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/full_history_final_complete_audit.json",
+    "goal_ledger_read_only_reference": "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/GOAL_LEDGER.json"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "base_url": "https://llm.sciencepal.ai/v1",
+  "model": "deepseek-v4-flash",
+  "thinking": {
+    "type": "enabled"
+  },
+  "reasoning_effort": "max",
+  "stream": true,
+  "max_tokens": 16384,
+  "credential_reference": {
+    "file": ".env",
+    "variable": "SCIENCEPAL_API_KEY",
+    "secret_value_saved_here": false
+  },
+  "validation": {
+    "models_endpoint": "model list checked this run; exact listed id used",
+    "bulk_annotation_started": false,
+    "maximum_thinking": "send thinking enabled and reasoning_effort max per user; no reasoning telemetry gate"
+  },
+  "official_parameter_reference": "https://api-docs.deepseek.com/guides/thinking_mode/"
+}

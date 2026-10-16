@@ -1,0 +1,26 @@
+{
+  "checked_at_utc": "2026-10-06T07:49:55.434300+00:00",
+  "native_local_checks": {
+    "joint_model": {
+      "passed": 4
+    },
+    "joint_runner": {
+      "passed": 5
+    },
+    "check_pack": "passed frozen codec/data/tokenizer/model pins and boundaries",
+    "max_train_dual_stream_tokens": 6185,
+    "max_heldout_dual_stream_tokens": 7691
+  },
+  "code_hashes": {
+    "model.py": "51e547b34d9a30a07f601f7cb2027d6d64f067ce4ce4cfc7027baf26c719d448",
+    "pilot_001.slurm": "47e97c39ee654f2c457e653942f542f17c68725970ab02cc1dfe638afb33442a",
+    "prepare.py": "4889b777e79b15c1761698375f9b1f48316e648129cce4f0439a30714fb1a30b",
+    "run.py": "e40bec18f806456e66dd04169db15d726082394dc0b9670255ad62ba809525b0",
+    "score.py": "3c1760481872726d798dd18ec4fb3557d6940e669e4c4d818a07da276d9c477a",
+    "test_joint_model.py": "38098f2bf4a4c4fd833bf6af780e33f19f6567bd90e7ef96dd91f72f8c58b3da",
+    "test_joint_runner.py": "e9350b403f4c45f085a00b89913e4d19d090170266d79d684c665dfb1af7662a"
+  },
+  "gpu_preflight": "not_yet_run",
+  "training": "not_yet_submitted",
+  "independent_review": "clean causal loss, RNG, preflight, checkpoint and actual loop reviewed; fixed literal records digest assertion added before preflight"
+}

@@ -1,0 +1,14 @@
+{
+  "scope": "train-only2048 updates,32train/frozenheld16,shared1.5B/B32/cleanAR1; G/E andQtargets unchanged; balancedgroundedreadercontext",
+  "source_hashes": {
+    "train.py": "f11d548d732e9664c1b98b6ed4f2aa28c7bde3ee3101045cf113fbe38bc3650c",
+    "test_train.py": "b718470998216aedcac41f945d0d899075db1eca531d237e4ca9496c1bf2d549",
+    "train.slurm": "66f494e4def37fec6529883fcdd199ec64e1223c73aa7665fbd3ea6efe60d7bb",
+    "prepare_data.py": "3323b74d93ac7895c9c1233c018d1c58341743eb1bb23d1df1835eaf5573c101"
+  },
+  "native_CPU_contract": "passed actualHybrid.pack masks/positions/times/RNG and2048schedule; Q2reader directions16/16 contexts8/8",
+  "stdlib_data_check": "passed after moving producer-onlyruntime checks towrite_dataset",
+  "GPU_preflight": "not_run",
+  "training": "not_started",
+  "independent_review": "pending"
+}

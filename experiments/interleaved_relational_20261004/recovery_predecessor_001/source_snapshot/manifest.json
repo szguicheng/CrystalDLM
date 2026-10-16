@@ -1,0 +1,211 @@
+{
+  "status": "frozen",
+  "codec": "relational_cnl_v1",
+  "cohort": {
+    "selection_path": "experiments/naturecry_roundtrip_20261001/run_001/selection.json",
+    "selection_sha256": "03527304a32e11c15414e0f368e72c694e754b3add76f660701437b6bf22d54a",
+    "selected_total": 100,
+    "included": 24,
+    "train_ids": [
+      "anchor_Tb8Mg4",
+      "anchor_Li8V4Ni4O16",
+      "mp-4047",
+      "mp-1205515",
+      "mp-30009",
+      "mp-1188285",
+      "mp-1207068",
+      "mp-1205902"
+    ],
+    "heldout_ids": [
+      "mp-1229077",
+      "mp-1019259",
+      "mp-1079976",
+      "mp-1095422",
+      "mp-1173947",
+      "mp-21371",
+      "mp-5456",
+      "mp-19419",
+      "mp-1219591",
+      "mp-1225818",
+      "mp-757163",
+      "mp-1178612",
+      "mp-1101160",
+      "mp-31460",
+      "mp-646926",
+      "mp-1217967"
+    ],
+    "excluded_from_this_pilot": [
+      "mp-2582",
+      "mp-18127",
+      "mp-1215249",
+      "mp-754971",
+      "mp-7483",
+      "mp-10847",
+      "mp-1224444",
+      "mp-974400",
+      "mp-775763",
+      "mp-37014",
+      "mp-1105932",
+      "mp-1218490",
+      "mp-1219974",
+      "mp-1099786",
+      "mp-11192",
+      "mp-23856",
+      "mp-1218405",
+      "mp-8189",
+      "mp-764280",
+      "mp-12961",
+      "mp-1189385",
+      "mp-759522",
+      "mp-555984",
+      "mp-1190391",
+      "mp-753017",
+      "mp-1218114",
+      "mp-1215652",
+      "mp-559584",
+      "mp-14091",
+      "mp-1104369",
+      "mp-555934",
+      "mp-1208349",
+      "mp-1225715",
+      "mp-38220",
+      "mp-1189365",
+      "mp-12964",
+      "mp-567772",
+      "mp-1095420",
+      "mp-1079656",
+      "mp-1223282",
+      "mp-30037",
+      "mp-1227998",
+      "mp-1106073",
+      "mp-353",
+      "mp-1222953",
+      "mp-1188971",
+      "mp-974620",
+      "mp-560067",
+      "mp-756483",
+      "mp-1224867",
+      "mp-1105940",
+      "mp-1217949",
+      "mp-558828",
+      "mp-1102838",
+      "mp-1215586",
+      "mp-643253",
+      "mp-1104841",
+      "mp-1225733",
+      "mp-1189636",
+      "mp-569571",
+      "mp-19880",
+      "mp-568032",
+      "mp-33880",
+      "mp-6511",
+      "mp-22864",
+      "mp-754670",
+      "mp-558689",
+      "mp-1218763",
+      "mp-1221929",
+      "mp-546757",
+      "mp-23667",
+      "mp-1181188",
+      "mp-1173526",
+      "mp-1220391",
+      "mp-1029640",
+      "mp-754760"
+    ]
+  },
+  "capacity": {
+    "K": 2560,
+    "MAXLEN": 8192
+  },
+  "diffusion": {
+    "STEPS": 32,
+    "tokenizer_path": "experiments/interleaved_ar_diffusion_20261002/data_002/tokenizer"
+  },
+  "token_lengths": {
+    "train": {
+      "source_max": 866,
+      "source_p50": 624.5,
+      "edited_max": 870,
+      "trajectory_max": 3625
+    },
+    "heldout": {
+      "source_max": 2371,
+      "source_p50": 681.0,
+      "edited_max": 2373,
+      "trajectory_max": 5131
+    }
+  },
+  "length_distribution_note": "Fixed first-eight train and next-sixteen heldout split is unchanged; the heldout source texts are longer on this cohort. No case was filtered or truncated.",
+  "provenance": {
+    "files": {
+      "selection": "03527304a32e11c15414e0f368e72c694e754b3add76f660701437b6bf22d54a",
+      "prepared_manifest": "5a39d1cd7297244f7d040581246ede2eabcbd01e408e3a63025edc7549fab3ac",
+      "prepared_source_hashes": "fd191899c1aa39fcf44f045d4dd6f1827e2ec8b5a2a48c7b7f0a53f1a23083c1",
+      "relational_codec": "365f122905399a73477b92a7af97c05b78483ea5af12347f9a6050b1a3506813",
+      "geometry": "026d5c882c0e24b8802f9cf0f25415353cd3254e9bde45a6f1693396a72c04a2",
+      "source_facts_helper": "8b8a4f11a949000e2c3f29b787676a6147a776946c4f7c9f272c1f33bfa110d9",
+      "public_wyckoff_fixture": "ca56602252b7896121253c910739ef2fccf0ba947f2940358feb941f30c5e13d",
+      "preflight": "543b748488da3a0ac086dae8299ea689c744dbdcf7dc6e5849968130073dabf6",
+      "adapter_prepare": "07ac45cb3ae5ab086fed460fc957afcc94e1988011161a4d0178b388b1769f14",
+      "adapter_score": "55a66f8794353170aca249de6a6e5f070257ccb528d273998767a13bc1942454"
+    },
+    "public_table_sha256": "ca56602252b7896121253c910739ef2fccf0ba947f2940358feb941f30c5e13d",
+    "tokenizer_path": "experiments/interleaved_ar_diffusion_20261002/data_002/tokenizer",
+    "tokenizer_files": {
+      "added_tokens.json": "28dc70f2cb07b1cca239390e21197945125792bfe8ef6c2a7463a4c387e79673",
+      "chat_template.jinja": "cd8e9439f0570856fd70470bf8889ebd8b5d1107207f67a5efb46e342330527f",
+      "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+      "special_tokens_map.json": "f863ec62eb91385603a3f882a55401ade618a3621d4ccc2affa3f28a579c9785",
+      "tokenizer.json": "64b64b25afdb5e3e79168467889b4b777778dc17ae29458bcd2c41a51110cca6",
+      "tokenizer_config.json": "1697fb166f8a8b20603b9b8782423599271e2c2e1c4740087ef1b4b8cffa2596",
+      "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    },
+    "runtime_versions": {
+      "numpy": "1.26.4",
+      "scipy": "1.15.3",
+      "pymatgen": "2025.10.7",
+      "spglib": "2.7.0",
+      "torch": "2.8.0",
+      "transformers": "4.57.6"
+    },
+    "python_version": "3.10.19",
+    "model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+    "source_facts_helper": "relational_codec.oldcodec.source_facts_from_plan(plan)"
+  },
+  "records_sha256": "ef2ec2dcdee1d73c62e48987a9cec86a4db3076f9c48d9ab17b8745b9eca785f",
+  "split_counts": {
+    "train": 8,
+    "heldout": 16
+  },
+  "physical_reference_audit": {
+    "source_cases": 24,
+    "plus_cases": 24,
+    "minus_cases": 24,
+    "required_denominator_each": 24,
+    "no_truncation": true
+  },
+  "reference_failure_report": {
+    "source": {
+      "denominator": 24,
+      "failed_ids": [],
+      "classes": {}
+    },
+    "plus": {
+      "denominator": 24,
+      "failed_ids": [],
+      "classes": {}
+    },
+    "minus": {
+      "denominator": 24,
+      "failed_ids": [],
+      "classes": {}
+    }
+  },
+  "post_generation_score_refresh": {
+    "previous_score_sha256": "3215f659dd4be63ea434b729f88c73323cf827e092a309de5b21dd814119446d",
+    "current_score_sha256": "55a66f8794353170aca249de6a6e5f070257ccb528d273998767a13bc1942454",
+    "records_sha256_unchanged": "ef2ec2dcdee1d73c62e48987a9cec86a4db3076f9c48d9ab17b8745b9eca785f",
+    "reason": "JSON-safe undefined geometry diagnostics; source targets and cohort split unchanged"
+  }
+}

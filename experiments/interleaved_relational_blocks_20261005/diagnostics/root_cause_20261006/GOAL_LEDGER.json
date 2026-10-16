@@ -1,0 +1,2143 @@
+{
+  "objective": "继续，找到失败的原因并修复，如果经过足够的探索，发现这种交错训练方式确实不行那就停止goal并回报原因",
+  "status": "active",
+  "previous_goal_turn_classification": "progress: B4 all24 evaluation artifacts audited, terminal609995 verified, complete failure evidence obtained",
+  "requirements": [
+    "Preserve a shared language-model backbone with AR text generation and diffusion crystal generation; auxiliary AR training must not be misreported as diffusion inference or replaced by an AR fallback.",
+    "Demonstrate complete raw crystal generation under the frozen relational_cnl_v1 decoder, requested composition/space group, geometry and physical checks.",
+    "Verify the actual generated-C1 read/edit/generated-C2/read loop with exact edit grading, rather than reference reading, syntax-only diagnostics or memorized target answers.",
+    "Audit replacement-crystal grounding and heldout behavior; keep frozen heldout structures out of training and report all denominators and failures.",
+    "Attribute repairs using matched controls and immutable predecessor artifacts, model/data/source pins, actual noise exposures and checkpoint reload verification.",
+    "Do not terminate as infeasible based solely on tiny-cohort or wrong-objective pilots; a stop report must delimit the explored model, representation, data, training and inference regime and explain remaining uncertainty."
+  ],
+  "verified_history": [
+    {
+      "job": "606069",
+      "status": "complete",
+      "model": "Qwen2.5-1.5B-Instruct",
+      "updates_per_arm": 512,
+      "arms": [
+        "ar",
+        "diffusion_full",
+        "diffusion_b32",
+        "diffusion_b64"
+      ],
+      "raw_evaluation_rows": 96,
+      "result": "AR seen8 full loop 8/8 but heldout generation 0/16 and seen swap-read 0/8; all diffusion generation/edit/loop 0; conditional denoising is better at B32."
+    },
+    {
+      "job": "607106",
+      "status": "complete",
+      "optimizer_updates": 0,
+      "raw_prefix_attempts": 48,
+      "result": "Frozen B32 checkpoint sampled at inference B32/16/8 with random/greedy tokens; complete header counts 2/3, 1/2, 3/2 over eight per cell, no monotonic rescue; model and release-policy invariants verified."
+    },
+    {
+      "job": 607229,
+      "stage": "commit_probe_complete",
+      "optimizer_updates": 0,
+      "raw_prefix_attempts": 32,
+      "legacy_exact_matches": 8,
+      "headers_over8": {
+        "legacy_random": 3,
+        "uniform_one": 4,
+        "confidence_one": 7,
+        "left_to_right_one": 8
+      },
+      "independent_raw_audit": "all128 positions releasedonce; countmatchedmethods1commit eachstep;29source/data/tokenizer pins match; nofullstructureclaim"
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "H_anchor",
+      "status": "complete_seenG0_E0_loop0_heldout_not_evaluated",
+      "evidence": "Current hybrid pack supervises noisy crystal tokens but no causal next-token group on the same clean crystal body. FLARE explicitly anchors these same tokens with AR plus diffusion loss.",
+      "test": "Fresh B32 joint-AR/diffusion crystal training, same base revision/cohort/512 updates/noise schedule/sampler/scorer; auxiliary clean crystal AR weight 1 only.",
+      "verified_training": {
+        "updates": 512,
+        "strict_checkpoint_reload": true,
+        "final_fingerprint": "ea511f138dde1598328f5d019a7b5b1701470302196c39aaba666a821f2ae009",
+        "noise_sequence_matches_old_B32_native_replay": true,
+        "noise_sequence_sha256": "0cf8a3d6c9f004d25ee2a2dbeb8d8f3bd946fb39c9fced56432c0c16d1cc8bf9"
+      },
+      "conditional_diagnostic": {
+        "k32_body_correct": 4368,
+        "k32_body_count": 4898,
+        "k32_body_accuracy": 0.8917925683952633,
+        "k32_end_correct": 7,
+        "k32_end_count": 8,
+        "clean_crystal_ar_loss": 6.152376136014936e-05,
+        "scope": "gold-prefix conditional; doesnotdemonstratefreegeneration"
+      },
+      "full_result": {
+        "seen_n": 8,
+        "G": 0,
+        "E_reference": 0,
+        "closed_loop": 0,
+        "Q_reference": 8,
+        "Q_swap": 0,
+        "heldout": "not_evaluated_due_generation_gate"
+      }
+    },
+    {
+      "id": "H_commit",
+      "status": "complete_three_policy_fullseen8_Gconfidence1_uniform0_LTR2_Eall0_loopall0",
+      "evidence": "Greedy token choice did not reliably fix headers, but commit order remains random and irreversible; confidence-based commit has not been tested.",
+      "test": "Frozen B32 checkpoint, greedy candidate tokens, count-matched random/confidence/left-to-right release, first128 prefix plus separate complete-generation gate; no grammar repair or oracle lengths.",
+      "result": {
+        "legacy_exact_token_matches": 8,
+        "complete_header_counts_over8": {
+          "legacy_random": 3,
+          "uniform_one": 4,
+          "confidence_one": 7,
+          "left_to_right_one": 8
+        },
+        "first_block_token_accuracy": {
+          "k32_allmask": 0.73828125,
+          "k16_masked": 0.9435483870967742,
+          "causal_ar": 0.8125
+        },
+        "scope": "first128 tokens only; no full crystal or loop success claim"
+      },
+      "partial_full_result": {
+        "completed": 6,
+        "of": 8,
+        "G": 1,
+        "E_reference": 0,
+        "closed_loop": 0,
+        "flow_complete": 1,
+        "actual_read": 1,
+        "actual_edit_failure": "lengths_exact and whole_geometry_scale; otherplanfields unchanged; editedphysicalpasses",
+        "scope": "partialevaluated only; completecohort andrandom/LTRcomparison unfinished"
+      },
+      "full_confidence_result": {
+        "n": 8,
+        "G": 1,
+        "E_reference": 0,
+        "closed_loop": 0,
+        "flow_complete": 1,
+        "all_rawK_END_PAD_valid": true,
+        "first128_tokens_reproduce_prefix_probe": 8,
+        "independent_raw_audit": "full_confidence_complete_audit.json",
+        "comparison_limit": "greedyandcommitcount/order changedvsoriginalstochastic; fixedcountgreedyuniform/LTRpending"
+      },
+      "full_three_policy_results": {
+        "confidence_one": {
+          "G": 1,
+          "Q_reference": 8,
+          "E_reference": 0,
+          "closed_loop": 0,
+          "flow_complete": 1,
+          "Q_swap": 0,
+          "Q_no_crystal": 0
+        },
+        "uniform_one": {
+          "G": 0,
+          "Q_reference": 8,
+          "E_reference": 0,
+          "closed_loop": 0,
+          "flow_complete": 0,
+          "Q_swap": 0,
+          "Q_no_crystal": 0
+        },
+        "left_to_right_one": {
+          "G": 2,
+          "Q_reference": 8,
+          "E_reference": 0,
+          "closed_loop": 0,
+          "flow_complete": 2,
+          "Q_swap": 0,
+          "Q_no_crystal": 0
+        }
+      },
+      "all_policy_model_and_file_invariants_passed": true
+    },
+    {
+      "id": "H_cold_start",
+      "status": "native_checkpoint_rng_replay_verified_causality_unproven",
+      "evidence": "Local ordered replay gives G k32 exposure only 1..6 per material, E 0..4 per material; masking is present but may undersample cold starts. Counts alone are not causal proof.",
+      "test": "Native Torch RNG replay and first-block full-mask/partial-mask/clean-AR diagnostics; only change the noise distribution in a separate matched experiment if needed.",
+      "native_counts_match_local_counts": true
+    },
+    {
+      "id": "H_grounding",
+      "status": "mixed_stale_condition_and_target_sensitive_field_behavior_verified",
+      "evidence": "Strict swap0/8: formula andSG0/8, atoms andeach lattice length8/8, orbits7/8. Original designcue remains inhistory; seven ofeight shareone replacementpartner. Targets arevalid, but trainingreadercan copy formulaSG fromrequest andQ2factsfrompriorQ1answer/editfactor. Correctfields do not prove generalizableparsing; aggregate0 doesnotmeanzerostructure sensitivity.",
+      "test": "After generation mechanism recovery, train and evaluate structure-replacement controls under a frozen data split, preserving actual-C1/C2 scoring.",
+      "field_counts": {
+        "sg": 0,
+        "formula": 0,
+        "atoms": 8,
+        "orbits": 7,
+        "a": 8,
+        "b": 8,
+        "c": 8
+      },
+      "swap_partners": {
+        "anchor_Li8V4Ni4O16": 1,
+        "anchor_Tb8Mg4": 7
+      },
+      "next_test": "After full generation recovers: separate train-only reader-slot intervention using neutral/conflicting cues and current frozenC1/C2, removingpriorQ1answer shortcut. Preserve G/E andheldout16; report exact andfieldwise readergrades."
+    },
+    {
+      "id": "H_B16_matched",
+      "status": "complete_pilot_seenG0_E0_loop0_Qref8_heldout_not_evaluated",
+      "evidence": "User explicitly requested smallerB test; frozenB32model inferenceB32/16/8 notmonotonic and cannot answer matchedtraining effect.",
+      "test": "FreshB16 weight0 same1.5Bseed17/512schedule/frozendata/oldloss/primarysampler vscompletedB32weight0.",
+      "verified_training": {
+        "initial_fp_matches_baseline": true,
+        "updates": 512,
+        "training_forwards": 2048,
+        "task_exposure_sha256": "d9c1f0576a30c62d81a9e00bdcf84cd13412057012b85da34d8c154f8424f560",
+        "actual_task_counts": {
+          "G": 1024,
+          "E": 512,
+          "Q1": 256,
+          "Q2": 256
+        },
+        "noise_events": 1536,
+        "G_k32": 31,
+        "E_k32": 15,
+        "strict_checkpoint_reload": true,
+        "k_sequence_matches_old_B32_native_replay": true,
+        "k_sequence_sha256": "0cf8a3d6c9f004d25ee2a2dbeb8d8f3bd946fb39c9fced56432c0c16d1cc8bf9"
+      },
+      "conditional_diagnostic": {
+        "k32_body_correct": 4835,
+        "k32_body_count": 4898,
+        "k32_end_correct": 8,
+        "k32_end_count": 8,
+        "interpretation": "correct prior crystal blocks provided; B16 has more frequent gold-prefix anchors than B32, not a free generation success measure"
+      },
+      "full_result": {
+        "seen_n": 8,
+        "G": 0,
+        "E_reference": 0,
+        "closed_loop": 0,
+        "Q_reference": 8,
+        "heldout": "not_evaluated_due_generation_gate",
+        "interpretation": "B16improvesconditionaldenoising withgoldpastblocks butdoesnotrescuefreegeneration underoriginalstochastic/randomrelease sampler"
+      }
+    },
+    {
+      "id": "H_terminal_contract",
+      "status": "old_B32_suffix_only_explanation_not_supported",
+      "evidence": "Read-only counterfactual audit of31 oldB32 G/E boundary failures acrossseen8/heldout16:0 firstgeneratedEND prefixes pass frozenfull decoder/geometry/physical checks. Thus simpleEOScensoringcannotrescue theseoldattempts. Originalstrictscoresunchanged. FLAREAlgorithm12 usesblock-completeEOSrouting, butthat isanother samplingcontractandnotyettestedhere.",
+      "test": "Maintainfrozenprimaryendpoint; revisitnativeENDrouteonlyifnewfullsampler produces validbodywithtail-onlyfailure.",
+      "joint_body_audit": {
+        "seen_n": 8,
+        "first_END_body_decode_pass": 0,
+        "failure": "Input cell sentence is missing or malformed",
+        "geometry": "not_reached",
+        "independent_audit": "audit_joint_final raw IDs and strict relational codec; primary evidence inspection pending",
+        "primary_evidence": "joint_primary_body_audit.json: main strict codec8/8 same first-header rejection"
+      }
+    },
+    {
+      "id": "H_anchor_plus_commit",
+      "status": "complete_fullseen8_G4E5loop2swap0",
+      "test": "Existing jointB32anchorweight1 checkpoint plus same confidence_one sampler as positive oldB32weight0; fullseen8 actualG/read/edit/read, nooptimizer/heldout/repair",
+      "rationale": "Oldconfidencehas1/2validG andexactotherplanfields on2referenceE, remainingE numerical; testcombinationbeforefreshtraining",
+      "inference_source_equality": "joint_inference_source_equality.json: eight inferencefunctions ASTidentical tobaseline",
+      "acceptance": "Pinnedweight/config/codec/data/source andpairedold/fast CUDA/legacy8 gates; frozenstrictG/physical/condition/edit/actualreader grading; cohort/fullcontrolsfinishbeforeclaiminggeneralization",
+      "first_case_result": {
+        "case": "anchor_Tb8Mg4",
+        "G": true,
+        "E_reference": true,
+        "actual_read_all7": true,
+        "actual_edit_exact_lengths": true,
+        "actual_edit_other_fields_exact": true,
+        "actual_edit_geometry_scale": true,
+        "actual_second_read_all7": true,
+        "closed_loop": true,
+        "actual_length_max_abs_error_A": 0.0,
+        "sourceC1_same_as_reference": true,
+        "Q_swap": false,
+        "scope": "firstcompletedtraincase; nogeneralization/grounding completion claim",
+        "proof": "joint_confidence_first_loop_audit.json"
+      },
+      "partial_cohort_result": {
+        "completed": 4,
+        "of": 8,
+        "G": 2,
+        "E_reference": 4,
+        "closed_loop": 2,
+        "Q_swap": 0,
+        "scope": "livepartial; notfinal/generalizationproof"
+      },
+      "full_cohort_result": {
+        "n": 8,
+        "G": 4,
+        "E_reference": 5,
+        "closed_loop": 2,
+        "flow_complete": 3,
+        "Q_reference": 8,
+        "Q_swap": 0,
+        "heldout_evaluated": false,
+        "model_and_sources_unchanged": true
+      },
+      "independent_full_audit": "joint_confidence_complete_audit.json",
+      "full_actual_workflow_breakdown": {
+        "validG": 4,
+        "reference_identicalG": 2,
+        "plan_distinctG_withinseen": 2,
+        "actualQ1": {
+          "passed": 4,
+          "attempted": 4
+        },
+        "actualE": {
+          "passed": 2,
+          "attempted": 4
+        },
+        "actualQ2": {
+          "passed": 3,
+          "attempted": 3
+        },
+        "closed_loop": {
+          "passed": 2,
+          "cohort": 8
+        },
+        "swap_sg_formula": 0
+      }
+    },
+    {
+      "id": "H_data_scale",
+      "status": "scaled32_dataset_prepared_and_check_passed_not_trained",
+      "evidence": "24 selected byhardcodedfirst24 slice, notlengthorcodecfailure; run100sourcecodec/geometry100pass, allsource<=2371tokens; 76additionalvalidatedsource plans/texts exist",
+      "test": "Prepare32train(original8+source24:48), frozenheld16 unchanged,52remainingreserved; allneweditedphysical/geometry/K/dualMAXLENgates beforeanytraining",
+      "training": "not_started; percase64epochs implies2048updates for32train; separate learningrecipe decision afterfrozen samplercontrols",
+      "source": "data_scale_audit.json",
+      "scope": "codec/source availability isnotlearnedgeneration evidence",
+      "prepared_dataset": {
+        "manifest": "experiments/interleaved_relational_scaled32_20261006/data_001/manifest.json",
+        "records_sha256": "231f336234d15a216dc9cb800d8dc1c3f30cf90985184ccc0d3e5c26333e95c6",
+        "train": 32,
+        "heldout": 16,
+        "original24_prefix_byte_identical": true,
+        "added_source_plus_minus_valid": 24,
+        "max_train_dual_E": 7201,
+        "max_all_dual": 7691,
+        "K": 2560,
+        "MAXLEN": 8192,
+        "training_started": false
+      },
+      "independent_review": "scaled32_data_review.json passed; native24appended rows reproduce, exactprefix/split/allsource+target/pack gates passed"
+    }
+  ],
+  "active_work": [
+    "Observe608444 parity andfullrawseen8→held16actualworkflow",
+    "Auditfullhistoryreaderrepair withmatchedcontrols/geometry/grounding, preservegoalfulfillmentcriteria"
+  ],
+  "next_acceptance_gates": [
+    "Complete all8seen cases peroldB32 sampler andverifyend fingerprints/sourcehashes; no conclusionfrompartialcohort",
+    "JointcheckpointSHA6a3052775a85e5a75c17e269b897b14ea4975ca77b5baf02736815b6da3a1ce5 andfp ea511f138dde1598328f5d019a7b5b1701470302196c39aaba666a821f2ae009, config cleanARweight1/offset0/B32; independentCPU/source review beforeGPU",
+    "JointCUDA750 metadata equality plus8pairedjointunoptimized/optimized rawprefix checks beforefull eval",
+    "Preserveexactedit andactualC1/C2 reading, report validbody-but-wrong-lattice failures separately",
+    "Aftergenerationandedit mechanismrecovery, verifygrounding andheldout16; seenmemorization alone cannotcompletegoal"
+  ],
+  "resource_policy": "Start with bounded single-A100 runs and cheap frozen-checkpoint diagnostics. Run all real model computation inside Slurm; use stingy A100 resources if the regular queue is unavailable. Do not alter or resume the paused old automation.",
+  "job_submission": {
+    "job_id": 607229,
+    "submitted_at_utc": "2026-10-06T08:00:22.013478+00:00",
+    "partition": "stingy",
+    "walltime": "06:00:00",
+    "gpu_count": 1,
+    "entrypoint": "repair_controls.slurm",
+    "entrypoint_sha256": "6da97178018b0a93a6dfe3da76643f1d3b737089643c31753514bcea40194612",
+    "order": [
+      "native_mask_replay",
+      "frozen_B32_commit_probe",
+      "fresh_B16_no_anchor_control",
+      "fresh_B32_clean_AR_anchor"
+    ],
+    "predecessor_pending_job": {
+      "id": 607220,
+      "status": "cancelled_before_start",
+      "reason": "stingy per-user submitted job limit requires one sequential allocation"
+    },
+    "initial_submission_failures": [
+      "08h request rejected by stingy 06h QoS wall limit; corrected before submission",
+      "separate training jobs rejected by stingy submitted-job-per-user limit; combined in one allocation"
+    ],
+    "prior_attempt": {
+      "job_id": 607221,
+      "state": "FAILED",
+      "exit_code": "1:0",
+      "elapsed": "00:00:16",
+      "training_started": false,
+      "cause": "Torch2.2 mmap load rejected pathlib.Path filename",
+      "repair": "Pass str(filename) to mmap load"
+    },
+    "last_verified_state": "COMPLETED 03:17:45 ExitCode0:0; B16 and joint seen8 evaluations complete"
+  },
+  "full_sampler_job_submission": {
+    "job_id": 607271,
+    "submitted_at_utc": "2026-10-06T08:37:33.359714+00:00",
+    "entrypoint": "full_commit_eval.slurm",
+    "entrypoint_sha256": "7d35180d43d15fc7cc45a260ef69f1ed8e57de7f0ca138db596cce5dc7915291",
+    "partition": "gpu_a100",
+    "walltime": "04:00:00",
+    "dependency": "none",
+    "gpu_count": 1,
+    "purpose": "FrozenoldB32 fullK2560 seen8 actualgen/read/edit/read perconfidence/uniform/LTR; greedy; nooptimizer/noheldout",
+    "offline_verification": {
+      "native_CPU_check": "passed direct test_full_commit_eval.py exactK andstrictEND/PAD raw preservation",
+      "source_hashes": {
+        "full_commit_eval.py": "a9065f34257873d0e7c6cc417054514ed3adc3d97b1f7c69e71232e50a11f596",
+        "test_full_commit_eval.py": "6eb857fd1f31fb3193595203b74eda4daa2c8b14afe56e4d195a506a9d02492f",
+        "full_commit_eval.slurm": "7d35180d43d15fc7cc45a260ef69f1ed8e57de7f0ca138db596cce5dc7915291",
+        "commit_probe.py": "081ad3a97090651bba4b146e77fcd47807e0942d3ab4f7da450274a1e594b8d3"
+      },
+      "scope": "frozenB32seen8fullG/read/edit/read andswap; greedy countmatchedconfidence/uniform/LTR; allK2560 no earlystop/repair/oracle; nooptimizer orheldout",
+      "gpu_evaluation": "not_yet_submitted",
+      "independent_review": "No blocking findings: fullK/time masks/greedycountmatchedpolicies/strictboundaries/frozenmodel/actualC1C2 flow; rootadded fixedreviewedsamplerpin andruntime/caseseed receipts",
+      "trace_scope": "rawfullKIDs saved; full per-step traces notpersisted, implementationpinned to the independently audited prefix sampler"
+    },
+    "dependency_update_requested": "remove afterany607229: frozencheckpoint diagnostic is independent, may use separate regular A100 allocation inparallel with trainingcontrols",
+    "last_verified_state": "PENDING Priority after dependency removal; main607229 RUNNING gpu-a100-04",
+    "terminal_state": "cancelled_before_start"
+  },
+  "full_sampler_fast_job_submission": {
+    "job_id": 607742,
+    "submitted_at_utc": "2026-10-06T10:26:16.504443+00:00",
+    "partition": "stingy",
+    "walltime": "04:00:00",
+    "gpu_count": 1,
+    "entrypoint": "full_commit_fast_eval.slurm",
+    "entrypoint_sha256": "dec8d70134a8e7d9d2d66e581d8b6cf905c3c468df1e9475f4d429bf51511977",
+    "predecessor": {
+      "job_id": 607271,
+      "cancelled_before_start": true,
+      "reason": "replacewithmetadataoptimized evaluator gated by GPUtensor eq and8exactlegacyreplays"
+    },
+    "offline_verification": {
+      "checks": {
+        "CPU_metadata_equal": "passed fixedfixtures+24randomsequences+spans/modes",
+        "CPU_gate": "passed real-original-binding andabort-beforeeval"
+      },
+      "source_hashes": {
+        "full_commit_fast_eval.py": "444e6d1fca8bf7f1de00dca951d64961cec5b3b64e3461034174140742b4bb36",
+        "test_full_commit_fast_eval.py": "099f438e5227cbdbd2f7a1527ae5019ff537d272ef9fdb8d293cf937f256d471",
+        "fast_inference_metadata.py": "0163435947c8d8efa4c8f1455fba8ff22080b4a2969e2b98891f9dc9cfba356d",
+        "test_fast_inference_metadata.py": "c41ea06b2b941ca289f4033bf431958783f494cd0f6d8d88a6aa51991b76b5d2",
+        "full_commit_fast_eval.slurm": "dec8d70134a8e7d9d2d66e581d8b6cf905c3c468df1e9475f4d429bf51511977",
+        "commit_probe.py": "081ad3a97090651bba4b146e77fcd47807e0942d3ab4f7da450274a1e594b8d3",
+        "full_commit_eval.py": "a9065f34257873d0e7c6cc417054514ed3adc3d97b1f7c69e71232e50a11f596"
+      },
+      "required_GPU_gates": [
+        "bitwise same masks/regions/times againstactualoldfunctions",
+        "legacy8 randomgreedy128 exact tokens/text/time/release/header",
+        "unchangedcheckpointfingerprint"
+      ],
+      "purpose": "speedmetadata only, unchanged sampler/floatmath/scorer/rawK2560",
+      "review": "review found sampler prefix-time import alias; root explicitly patched that alias too, CPU scope check passes; all other reviewed semantic/mask/float/sampler/scoring behavior unchanged"
+    },
+    "required_GPU_gates": [
+      "bitwisehelperoutputs matchactualoriginals",
+      "8/8oldprefix exacttokens/time/release/header",
+      "unchangedweights fingerprint"
+    ],
+    "full_scope": "seen8 fullK2560 gen/read/edit/read pluscontrols; samefrozenmodel/sampler/scorer; nooptimizer/heldout/repair",
+    "last_verified_state": "COMPLETED exit0 1:55:50; all three fullcohorts/fingerprint/source/data invariants passed",
+    "prior_job_id": 607515,
+    "queue_change_reason": "607229 terminal complete; idle stingy A100 verified; regular607515 pending0elapsed cancelled before start; identical pinned entrypoint with partition override",
+    "GPU_gate_artifact": "optimization_gate.json"
+  },
+  "joint_confidence_job_submission": {
+    "job_id": 607872,
+    "submitted_at_utc": "2026-10-06T12:49:13.744456+00:00",
+    "partition": "stingy",
+    "walltime": "04:00:00",
+    "gpu_count": 1,
+    "entrypoint": "joint_confidence_eval.slurm",
+    "dependency": "none; independent frozencheckpoint inference",
+    "checkpoint_sha256": "6a3052775a85e5a75c17e269b897b14ea4975ca77b5baf02736815b6da3a1ce5",
+    "scope": "frozenjoint512/B32/weight1, confidencefullKseen8 actualflow plusreference/groundingcontrols; noheldout/optimizer/fallback/repair",
+    "source_hashes": {
+      "joint_confidence_eval.py": "1c739713672ed7530f0b1921cf58d85192c36647faa3b3225718d7d808b974f3",
+      "test_joint_confidence_eval.py": "dee39688a6e4c998d37f2e3f7d8d34ed282d8a679aad7c6b8578d446d1eb9ecf",
+      "joint_confidence_eval.slurm": "d698da666cc33535088317a6daeee40c37aaeb0a2030726ce0681fff5c5b5c0f",
+      "joint_inference_source_equality.json": "d29ba6ba3d928c737bb04aa850dc8e89bec0bac48dc8beb499675d599cd3a6b9"
+    },
+    "checks": {
+      "synthetic_receipt_guard": "passed",
+      "actual_frozen_receipt": "passed",
+      "native_runtime_imports": "passed",
+      "equality_receipt": "passed",
+      "bash_syntax": "passed",
+      "Python_AST": "passed"
+    },
+    "required_GPU_gates": [
+      "750tensor equality againstactualjoint originals",
+      "paired8jointlegacy unoptimized/optimized raw128 token/text/time/release/header",
+      "frozencheckpoint/config/fingerprint beforeafter"
+    ],
+    "GPU_results": "not_yet_observed",
+    "last_verified_state": "COMPLETED exit0 48:29; G4/E5/loop2/flow3 seen8, heldoutnotrun",
+    "prior_pending_job": 607772,
+    "node": "gpu-a100-04",
+    "handoff_receipt": "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/submission_joint_confidence_stingy_607872.json"
+  },
+  "scaled32_training_implementation": {
+    "scope": "train-only2048 updates,32train/frozenheld16,shared1.5B/B32/cleanAR1; G/E andQtargets unchanged; balancedgroundedreadercontext",
+    "source_hashes": {
+      "train.py": "f11d548d732e9664c1b98b6ed4f2aa28c7bde3ee3101045cf113fbe38bc3650c",
+      "test_train.py": "b718470998216aedcac41f945d0d899075db1eca531d237e4ca9496c1bf2d549",
+      "train.slurm": "66f494e4def37fec6529883fcdd199ec64e1223c73aa7665fbd3ea6efe60d7bb",
+      "prepare_data.py": "3323b74d93ac7895c9c1233c018d1c58341743eb1bb23d1df1835eaf5573c101"
+    },
+    "native_CPU_contract": "passed actualHybrid.pack masks/positions/times/RNG and2048schedule; Q2reader directions16/16 contexts8/8",
+    "stdlib_data_check": "passed after moving producer-onlyruntime checks towrite_dataset",
+    "GPU_preflight": "not_run",
+    "training": "not_started",
+    "independent_review": "pending"
+  },
+  "scaled32_training_job_submission": {
+    "job_id": 607943,
+    "submitted_at_utc": "2026-10-06T15:20:00.583534+00:00",
+    "partition": "stingy",
+    "node_requested": "gpu-a100-04",
+    "walltime": "04:00:00",
+    "gpu_count": 1,
+    "entrypoint": "experiments/interleaved_relational_scaled32_20261006/train.slurm",
+    "reader_mode": "grounded",
+    "updates": 2048,
+    "train_cases": 32,
+    "heldout_cases": 16,
+    "heldout_used_in_training": false,
+    "scope": "train-only fresh1.5B/B32/cleanAR1; context-groundedQ only; noARbodyinference/repair/evaluation",
+    "source_hashes": {
+      "train.py": "1bb619fb809d71c68813eb07aa162b2b2bfa1b8f2de7cef1a67b60054d4ae816",
+      "test_train.py": "b718470998216aedcac41f945d0d899075db1eca531d237e4ca9496c1bf2d549",
+      "train.slurm": "66f494e4def37fec6529883fcdd199ec64e1223c73aa7665fbd3ea6efe60d7bb",
+      "prepare_data.py": "3323b74d93ac7895c9c1233c018d1c58341743eb1bb23d1df1835eaf5573c101",
+      "data_001/manifest.json": "25f150360f173970895dafd31e390f94b4b01ca174e6ad09b9e288c94b1e48cc",
+      "data_001/records.jsonl": "231f336234d15a216dc9cb800d8dc1c3f30cf90985184ccc0d3e5c26333e95c6"
+    },
+    "checks": {
+      "native_CPU_contract": "passed",
+      "HPC_stdlib_data_check": "passed",
+      "HPC_load_data_imports": "passed",
+      "remote_local_hashes": "matched",
+      "independent_review": "no blocking findings; Python version nowrecorded"
+    },
+    "required_GPU_gates": [
+      "actualA10080GB allocation",
+      "fresh fp e97aed646b7289c06f10be376b37d67cd7aa6a42ad6214b61da008cd85b8404b",
+      "worst fullmask disposable optimizerstep≤70GiB",
+      "finite training andactualexposure receipt",
+      "final2048 strictcheckpointreload"
+    ],
+    "training_results": "not_yet_observed",
+    "last_verified_state": "RUNNING607943 gpu-a100-04 elapsed10:55; preflightpassed,180/2048 updates,peakreserved43.876953125GiB",
+    "latest_observation": {
+      "observed_at_utc": "2026-10-06T16:58:37.898478+00:00",
+      "state": "RUNNING",
+      "completed_updates": 1850,
+      "required_updates": 2048,
+      "node": "gpu-a100-04",
+      "final_evaluation": "not_started"
+    }
+  },
+  "scaled32_evaluation_preparation": {
+    "status": "staged_CPU_and_static_review_passed",
+    "staging_receipt": "scaled32_eval_staging.json",
+    "review_receipt": "scaled32_evaluation_review.json",
+    "input_pin": "not_created_pending_terminal_training",
+    "evaluation_job": "not_submitted",
+    "observed_at_utc": "2026-10-06T16:17:42.272885+00:00",
+    "receipt_schema_correction": "checkpoint_receipt.source_hashes validated against status.code_hashes; realproducerASTfixture"
+  },
+  "last_verified_wait_utc": "2026-10-06T21:19:23.903552+00:00",
+  "coverage_interpretation": {
+    "heldout_SG_absent_from_training": 14,
+    "heldout_SG_present_in_training": 2,
+    "heldout_cases_with_new_elements": 4,
+    "source_token_max": {
+      "oldtrain8": 866,
+      "train32": 1882,
+      "heldout16": 2371
+    },
+    "scope": "Descriptive frozen data coverage, not a causal diagnosis or model result. Preserve heldout16; do not change training midrun.",
+    "audit_artifact": "scaled32_coverage_audit.json",
+    "normalized_heldout_relation_sentences_covered": 316,
+    "normalized_heldout_relation_sentence_denominator": 316,
+    "heldout_cases_with_unseen_public_definition": 15,
+    "heldout_case_denominator": 16,
+    "interpretation": "Sentence wording coverage is not SG-specific definition coverage; no causal outcome inferred."
+  },
+  "scaled32_final_training": {
+    "status": "trained_verified",
+    "updates": 2048,
+    "final_fingerprint": "e00f360a3fdfcda7e947aba78736aadee04aad26e9f9b386be124fcfce118ada",
+    "checkpoint_sha256": "14ace5533efb5476d5ea7e08156463bfa176c6066173795cff4f3f37b9d85482",
+    "heldout_training_ids": 0
+  },
+  "scaled32_evaluation_job_submission": {
+    "job_id": 608179,
+    "submitted_at_utc": "2026-10-06T17:12:13.065131+00:00",
+    "partition": "stingy",
+    "node": "gpu-a100-04",
+    "walltime": "04:00:00",
+    "gpu_count": 1,
+    "training_job": 607943,
+    "training_terminal": "COMPLETED0:0 01:52:56",
+    "updates": 2048,
+    "final_fingerprint": "e00f360a3fdfcda7e947aba78736aadee04aad26e9f9b386be124fcfce118ada",
+    "checkpoint_sha256": "14ace5533efb5476d5ea7e08156463bfa176c6066173795cff4f3f37b9d85482",
+    "input_pin_sha256": "dff7306086bc0c94915590a69b1de9564725987c8d5e209cfa53416c1035b488",
+    "source_hashes": {
+      "evaluate.py": "e0ca48792dfd942022e49b98907b2bb0518c5c9e20e7f6b54b96f627d4c63a73",
+      "test_evaluate.py": "307fffd07980060f3c435d04fbc45ced6e2facdbe5cf64a0341a3b9333aef07d",
+      "evaluate.slurm": "1845a7c0f386d6cc762eaf49bd02967a272f5187f031e7d9c0c5513620f43af8"
+    },
+    "prechecks": "local and remote receipt/actual-exposure/small-source checks passed; GPU model and checkpoint hash gates run within allocation",
+    "scope": "originalseen8 thenfrozenheld16 ifGpositive; actualgeneratedC1/Q1/E/C2/Q2, referencecontrols andswap; fullK2560 confidenceone greedy; nooptimizer/ARfallback/repair",
+    "runtime_gate": {
+      "status": "passed",
+      "cuda_tensor_comparisons": 750,
+      "paired_exact_cases": 8,
+      "required_cases": 8,
+      "finalcheckpoint_matches_pin": true,
+      "observed_at_utc": "2026-10-06T17:16:39.822227+00:00"
+    },
+    "latest_observation": {
+      "observed_at_utc": "2026-10-06T18:06:00.638860+00:00",
+      "state": "RUNNING",
+      "elapsed": "00:53:52",
+      "seen_records": 8,
+      "heldout_records": 0,
+      "final_summary": false
+    },
+    "partial_seen_observation": {
+      "n": 7,
+      "expected": 8,
+      "G": 5,
+      "E_reference": 7,
+      "closed_loop": 0,
+      "flow_complete": 1,
+      "Q_swap": 0,
+      "actual_Q2_failure": "copies C1 lattice lengths despite exactly edited C2",
+      "scope": "partial7of8; fullcohortpending",
+      "observed_at_utc": "2026-10-06T17:52:26.011179+00:00",
+      "eligible_actual_Q2": 5,
+      "old_C1_length_copy_failures": 5,
+      "superseded_by": "seen8_complete_result"
+    },
+    "seen8_complete_result": {
+      "n": 8,
+      "G": 5,
+      "Q_reference": 7,
+      "E_reference": 8,
+      "closed_loop": 0,
+      "flow_complete": 5,
+      "Q_swap": 0,
+      "Q_no_crystal": 0,
+      "independent_audit": "scaled32_seen_complete_audit.json",
+      "heldout_evaluation": "started_no_completed_records",
+      "root_read_edit_audit": {
+        "actual_C2_exact_edits": 5,
+        "Q2_byte_equals_Q1": 5,
+        "eligible": 5,
+        "all_Q2_nonlattice_fields_correct": true,
+        "all_Q2_lattice_fields_wrong": true
+      }
+    },
+    "partial_heldout_observation": {
+      "n": 14,
+      "expected": 16,
+      "G": 0,
+      "Q_reference": 10,
+      "E_reference": 0,
+      "closed_loop": 0,
+      "scope": "partial14of16; remaining2andendhash checks pending",
+      "observed_at_utc": "2026-10-06T19:11:02.961828+00:00",
+      "Q_swap": 0
+    },
+    "terminal_result": {
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed": "02:06:33",
+      "seen8": {
+        "G": 5,
+        "Q_reference": 7,
+        "E_reference": 8,
+        "closed_loop": 0,
+        "flow_complete": 5,
+        "Q_swap": 0,
+        "Q_no_crystal": 0
+      },
+      "heldout16": {
+        "G": 0,
+        "Q_reference": 12,
+        "E_reference": 0,
+        "closed_loop": 0,
+        "flow_complete": 0,
+        "Q_swap": 0,
+        "Q_no_crystal": 0
+      },
+      "all_raw_counts_and_failureclasses_match": true,
+      "end_fingerprints_and_inputhashes_match": true,
+      "independent_heldout_audit": "scaled32_heldout_complete_audit.json"
+    }
+  },
+  "reader_context_probe_preparation": {
+    "status": "extendedQ2andQswapstagedreviewpassedwaitterminaleval",
+    "checkpoint_updates": 0,
+    "requires_completed_final_evaluation": true,
+    "contrasts": [
+      "exactfullhistoryreplay",
+      "groundedtrainingneutralcontextdiagnostic",
+      "fullhistorywithlatestblockinstruction"
+    ],
+    "scope": "BothactualQ2 andoriginalQswap frozenreplay+neutraldiagnostic+fullhistorycue, zero optimizerupdates",
+    "staging_receipt": "reader_context_probe_staging.json",
+    "source_hashes": {
+      "reader_context_probe.py": "4308f6cfe4f8eeaa0a84265d3bd39e304ca9e35fa0aa3e9b974119eddee8164a",
+      "test_reader_context_probe.py": "345a91ef70541485c5bef4e2eb9bb07ce461df68c0078c966845076e17f18bd0"
+    },
+    "review_receipt": "reader_context_probe_review.json",
+    "real_generated_C2_CPU_check": "reader_context_probe_real_prompt_check.json",
+    "eligible_tasks": {
+      "Q2_actual": 5,
+      "Q_swap": 8
+    },
+    "launcher": "reader_context_probe.slurm"
+  },
+  "scaled32_partial_boundary_diagnostic": {
+    "artifact": "scaled32_partial_boundary_body_audit.json",
+    "case": "anchor_Li8V4Ni4O16",
+    "first_END_body_valid": false,
+    "failure_stage": "decode publicdefinition selection",
+    "baseline_result_changed": false
+  },
+  "scaled32_relation_diagnostic": {
+    "artifact": "scaled32_partial_relation_audit.json",
+    "pinned_source_first5_hash_matches": true,
+    "interpretation": "Encodingrelationcategoryerrors invalidatepublicdefinitionmatching; doesnotaloneprovegeometryinvalidorarchitectureinfeasible."
+  },
+  "scaled32_generation_identity_diagnostic": {
+    "artifact": "scaled32_partial_generation_identity.json",
+    "partial_n": 6,
+    "valid_G_n": 4,
+    "exact_reference_text_and_plan": 4,
+    "heldout_generalization_proven": false
+  },
+  "heldout_coveredSG_failure": {
+    "id": "mp-21371",
+    "requested_SG": 62,
+    "generated_Hall": "-C 2 2",
+    "decoder_failure": "Orbit multiplicity and representative relations do not select one public definition",
+    "scope": "Read-only generatedbody observation; no causal isolation or global conclusion"
+  },
+  "heldout_numeric_observation": {
+    "scope": "partialfirst8 only",
+    "physically_decoded_edit_cases": 4,
+    "exactscale_success": 0,
+    "threeaxes_changed": 4,
+    "examples_max_length_abs_errors_A": {
+      "mp-5456": 3.8e-06,
+      "mp-21371": 0.57095
+    },
+    "baseline_tolerance_or_raw_modified": false,
+    "artifact": "scaled32_partial_heldout_edit_audit.json"
+  },
+  "heldout_coveredSG_failure_74": {
+    "id": "mp-1219591",
+    "requested_SG": 74,
+    "generated_Hall": "-I 2b 2",
+    "G_decoder_failure": "Input cell sentence missing or malformed; angles sentence lacks measure",
+    "E_decoder_failure": "Unrecognized representative coordinate sentence along c plane",
+    "scope": "Readonly singlecase, doesnotisolatecausalreason"
+  },
+  "reader_context_probe_job_submission": {
+    "job_id": 608322,
+    "submitted_at_utc": "2026-10-06T19:19:52.175780+00:00",
+    "partition": "stingy",
+    "node": "gpu-a100-04",
+    "walltime": "01:00:00",
+    "gpu_count": 1,
+    "input_evaluation_job": 608179,
+    "input_evaluation_terminal": "COMPLETED0:0 02:06:33",
+    "checkpoint_sha256": "14ace5533efb5476d5ea7e08156463bfa176c6066173795cff4f3f37b9d85482",
+    "final_fingerprint": "e00f360a3fdfcda7e947aba78736aadee04aad26e9f9b386be124fcfce118ada",
+    "source_hashes": {
+      "reader_context_probe.py": "4308f6cfe4f8eeaa0a84265d3bd39e304ca9e35fa0aa3e9b974119eddee8164a",
+      "test_reader_context_probe.py": "345a91ef70541485c5bef4e2eb9bb07ce461df68c0078c966845076e17f18bd0",
+      "reader_context_probe.slurm": "277dfba4f3cd08619636ca2b272840a3d38ea0e7266b20976e11a2f731b3eb39"
+    },
+    "input_summary_sha256": "6ae1fd5ccb5ee309e54e93cf6c9e91e5214873a90d6d432fee21776dd47fca94",
+    "input_seen8_sha256": "9b77043728086d03e3b34eedf370a13142a2f2ac0ffa6e7217beac69dc844cdd",
+    "scope": "5actualQ2 +8replacementreads; samecheckpoint/currentcrystal, all13exactreplaybefore2contrasts; nooptimizer/noCFregeneration/nooraclefacts; neutralnotgoalachievement",
+    "terminal_result": {
+      "state": "COMPLETED",
+      "elapsed": "00:02:54",
+      "optimizer_updates": 0,
+      "exact_replays": 13,
+      "Q2_actual": {
+        "n": 5,
+        "full": 0,
+        "neutral": 5,
+        "full_with_instruction": 0
+      },
+      "Q_swap": {
+        "n": 8,
+        "full": 0,
+        "neutral": 8,
+        "full_with_instruction": 0
+      },
+      "fingerprints_and_inputs_match": true,
+      "scope": "Pairedcontext diagnostic, neutralresetnotclosed-loopgoal; seen-only and2unique replacementtargets",
+      "independent_audit": "reader_context_probe_results_audit.json",
+      "root_actual_grader_responses_rechecked": 39,
+      "replacement_unique_structure_count": 2
+    }
+  },
+  "next_repair_decision": {
+    "status": "full_history_repair_seenloop5and_swap8_verified; heldoutG/E/loop/swap0; B8_matched_trial_submitted",
+    "change": "Replace half groundedconflictreaderexamples with actualinference-shaped histories; keepneutralhalf andG/E/model/noise/exposures/budget/data unchanged",
+    "Q2": "nominal fullsamecase G/C1/Q1/E/C2history",
+    "Q1": "replacement-style staleconditions fromtrainpartner/currentC1target",
+    "acceptance": "Frozenfullinterleaved seen8+held16 andreplacementgrades, notneutral-only; matchedinitialization/noisekexposure/strictreload"
+  },
+  "full_history_training_job_submission": {
+    "job_id": 608363,
+    "submitted_at_utc": "2026-10-06T19:44:12.079953+00:00",
+    "partition": "stingy",
+    "node": "gpu-a100-04",
+    "gpu_count": 1,
+    "walltime": "04:00:00",
+    "updates": 2048,
+    "seed": 17,
+    "fresh_initialization": true,
+    "expected_initial_fingerprint": "e97aed646b7289c06f10be376b37d67cd7aa6a42ad6214b61da008cd85b8404b",
+    "model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "block_size": 32,
+    "clean_crystal_ar_weight": 1,
+    "data_sha256": {
+      "records": "231f336234d15a216dc9cb800d8dc1c3f30cf90985184ccc0d3e5c26333e95c6",
+      "manifest": "25f150360f173970895dafd31e390f94b4b01ca174e6ad09b9e288c94b1e48cc"
+    },
+    "source_sha256": {
+      "train_full_history.py": "e2954cf3eea94639782987596799a772b475d6a3b62eada787ad8a4820633112",
+      "train_full_history.slurm": "3156e9199cf4c04e5d1649ac35f32968641dc0d6a6e9b4f5b31f2fd563f7f439",
+      "test_train_full_history.py": "2183f127a720a51fdb1c8ab79db3bdba1309ea3867e086cca089f22889121783"
+    },
+    "changes": "only nonneutral reader histories:Q1 replacement with stale partnerconditions/currentC1; Q2 full samecaseparenttrajectory; neutral/G/E/targets/schedule unchanged",
+    "prechecks": {
+      "local_and_remote_full2048_CPU_contract": "passed",
+      "real_capacity1024examples": "passed max7201<8192",
+      "source_paths": "passed sibling pathsresolve",
+      "independent_review": "no blockers"
+    },
+    "output": "experiments/interleaved_relational_scaled32_20261006/training_full_history_001",
+    "evaluation": "completed608444",
+    "latest_observation": {
+      "state": "COMPLETED",
+      "completed_updates": 2048,
+      "elapsed": "01:52:13",
+      "reload_verified": true
+    },
+    "staging_receipt": "full_history_training_staging.json",
+    "noise_prefix_audit": "full_history_noise_prefix_audit.json",
+    "noise_prefix_audit_500": "full_history_noise_prefix_500.json",
+    "terminal_result": {
+      "status": "terminal2048_and_complete_schedule_verified",
+      "initial_matches_baseline": true,
+      "final_fingerprint": "d5da46c8cf9cd082801a575bd43b5d7cbf8e2bb037514c7ad7a652e59b59612f",
+      "checkpoint_sha256": "ac300333d36b076269adae7448a9eddb61a2cddcaa1ba19689d78542a9e05d93",
+      "actual_task_counts": {
+        "E": 2048,
+        "G": 4096,
+        "Q1": 1024,
+        "Q2": 1024
+      },
+      "matched_updates": 2048,
+      "matched_noise_events": 6144,
+      "noise_sha256": "dc8e63553cbd4b1e4e8fc08a32ab71dd972eaf2d4558aa1af1c0285977561670",
+      "mask_position_equality_claim": false
+    }
+  },
+  "full_history_evaluator_preparation": {
+    "status": "completed608444",
+    "staging": "full_history_evaluation_staging.json",
+    "source_hashes": {
+      "evaluate_full_history.py": "6108063bf5e84117f828ae34f3b33b152da700e060362b8df65d74a5534237e4",
+      "evaluate_full_history.slurm": "19abfea8623949ecd9e07ad9d726058873abafefd1e08c04dc01855de90207ba",
+      "test_evaluate_full_history.py": "d83f73848a0ef9337ace45fde8af0818d8218220d9d5fbac972d73acc711377d"
+    },
+    "pin": "eval_full_history_input_pin.json verified from real terminal training receipts",
+    "output": "eval_full_history_final2048_001",
+    "GPU_evaluation": "COMPLETED0:0"
+  },
+  "full_history_evaluation_job_submission": {
+    "job_id": 608444,
+    "recorded_at_utc": "2026-10-06T21:48:26.177063+00:00",
+    "partition": "stingy",
+    "node": "gpu-a100-04",
+    "walltime": "04:00:00",
+    "gpu_count": 1,
+    "training_job": 608363,
+    "training_terminal": "COMPLETED0:0 01:52:13",
+    "updates": 2048,
+    "final_fingerprint": "d5da46c8cf9cd082801a575bd43b5d7cbf8e2bb037514c7ad7a652e59b59612f",
+    "checkpoint_sha256": "ac300333d36b076269adae7448a9eddb61a2cddcaa1ba19689d78542a9e05d93",
+    "input_pin_sha256": "0e1556774c192f870b8a532c510a1a8800e3398debbefb3a6af811cf2db461ab",
+    "source_hashes": {
+      "evaluate_full_history.py": "6108063bf5e84117f828ae34f3b33b152da700e060362b8df65d74a5534237e4",
+      "evaluate_full_history.slurm": "19abfea8623949ecd9e07ad9d726058873abafefd1e08c04dc01855de90207ba",
+      "test_evaluate_full_history.py": "d83f73848a0ef9337ace45fde8af0818d8218220d9d5fbac972d73acc711377d"
+    },
+    "scope": "samefullrawK2560 confidence_one, actualfullhistoryG/Q1/E/Q2 plusstrictswap; originalseen8 thenheld16conditionalgate; nooptimizer/repair/neutralreset/ARfallback",
+    "runtime_gate": {
+      "status": "passed",
+      "CUDA_tensor_comparisons": 750,
+      "paired_exact_prefixes": 8
+    },
+    "partial_seen_observation": {
+      "n": 7,
+      "expected": 8,
+      "G": 4,
+      "Q_reference": 7,
+      "E_reference": 6,
+      "closed_loop": 4,
+      "flow_complete": 4,
+      "Q_swap": 7,
+      "scope": "Partial seen training cohort only; heldout pending"
+    },
+    "seen_complete_result": {
+      "n": 8,
+      "counts": {
+        "G": 5,
+        "Q_reference": 8,
+        "E_reference": 7,
+        "closed_loop": 5,
+        "flow_complete": 5,
+        "Q_swap": 8,
+        "Q_no_crystal": 0
+      },
+      "baseline_counts": {
+        "G": 5,
+        "Q_reference": 7,
+        "E_reference": 8,
+        "closed_loop": 0,
+        "flow_complete": 5,
+        "Q_swap": 0,
+        "Q_no_crystal": 0
+      },
+      "root_native_CPU_grader_checks": 47,
+      "replacement_unique_structure_count": 2,
+      "C1_training_identity_diagnostic": {
+        "exact_reference_texts": 4,
+        "valid_G": 5,
+        "remaining_case": "mp-1205902",
+        "reference_lattice": [
+          4.22795437,
+          4.22795437,
+          8.056072,
+          90.0,
+          90.0,
+          120.00000582999999
+        ],
+        "generated_lattice": [
+          4.22795437,
+          4.22795437,
+          8.056072,
+          90.0,
+          90.0,
+          120.00000582
+        ],
+        "other_plan_fields_exact": true,
+        "coordinate_error_A": 0.0,
+        "lattice_matrix_error_A": 6.390554752044864e-10,
+        "interpretation": "Four exact reference C1 texts; fifth differs only by about 1e-8 degree gamma. No new-material claim."
+      },
+      "scope": "Complete seen8 only; heldout and full-run model/source invariants remain pending"
+    },
+    "partial_heldout4_native_audit": {
+      "scope": "Frozen first4 heldout only; full cohort and terminal invariants pending",
+      "n": 4,
+      "ids": [
+        "mp-1229077",
+        "mp-1019259",
+        "mp-1079976",
+        "mp-1095422"
+      ],
+      "root_native_CPU_grader_checks": 16,
+      "counts": {
+        "G": 0,
+        "Q_reference": 3,
+        "E_reference": 0,
+        "closed_loop": 0,
+        "Q_swap": 0
+      },
+      "new_swap_fields": {
+        "sg": 4,
+        "formula": 0,
+        "atoms": 4,
+        "orbits": 2,
+        "a": 4,
+        "b": 4,
+        "c": 4
+      },
+      "old_same_cases_swap_fields": {
+        "sg": 0,
+        "formula": 0,
+        "atoms": 0,
+        "orbits": 0,
+        "a": 0,
+        "b": 0,
+        "c": 0
+      },
+      "replacement_unique_structure_count": 2
+    },
+    "partial_heldout_observation": {
+      "scope": "Partial heldout only; full16 and terminal invariants pending",
+      "n": 12,
+      "expected": 16,
+      "source_sha256": "28481a97094bc1c15f78085705e31cac0c491cdb7d6ecf82f359ace9e581805c",
+      "counts": {
+        "G": 0,
+        "Q_reference": 10,
+        "E_reference": 0,
+        "closed_loop": 0,
+        "Q_swap": 0
+      },
+      "swap_fields": {
+        "sg": 12,
+        "formula": 0,
+        "atoms": 12,
+        "orbits": 3,
+        "a": 12,
+        "b": 12,
+        "c": 12
+      },
+      "replacement_unique_structure_count": 2
+    },
+    "terminal_result": {
+      "slurm_state": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed": "02:07:29",
+      "status": "complete",
+      "seen8": {
+        "G": 5,
+        "Q_reference": 8,
+        "E_reference": 7,
+        "closed_loop": 5,
+        "flow_complete": 5,
+        "Q_swap": 8,
+        "Q_no_crystal": 0
+      },
+      "heldout16": {
+        "G": 0,
+        "Q_reference": 13,
+        "E_reference": 0,
+        "closed_loop": 0,
+        "flow_complete": 0,
+        "Q_swap": 0,
+        "Q_no_crystal": 0
+      },
+      "fingerprint": "d5da46c8cf9cd082801a575bd43b5d7cbf8e2bb037514c7ad7a652e59b59612f",
+      "checkpoint_sha256": "ac300333d36b076269adae7448a9eddb61a2cddcaa1ba19689d78542a9e05d93",
+      "before_after_invariants_equal": true,
+      "root_native_score_checks_seen": 47,
+      "root_native_score_checks_heldout": 63,
+      "heldout_swap_fields": {
+        "sg": 16,
+        "formula": 0,
+        "atoms": 16,
+        "orbits": 4,
+        "a": 16,
+        "b": 16,
+        "c": 16
+      },
+      "replacement_unique_structure_count": 2,
+      "root_invariants_audit": "full_history_terminal_root_invariants.json",
+      "independent_audit": "passed full_history_final_complete_audit.json"
+    }
+  },
+  "point_membership_diagnostic": {
+    "artifact": "scaled32_point_membership_diagnostic.json",
+    "strict_protocol_unchanged": true,
+    "scope": "Two numericrepresentatives only; notfullparagraphvalidity",
+    "SG65_4j_unique_numeric_member": true,
+    "SG74_no_multiplicity8_numeric_member": true
+  },
+  "B8_matched_followup": {
+    "job_id": 608706,
+    "state": "COMPLETED",
+    "reason": "None",
+    "dependency": "(null)",
+    "partition": "stingy",
+    "qos": "normal",
+    "requested_node": "gpu-a100-04",
+    "gpu_count": 1,
+    "walltime": "04:00:00",
+    "updates": 2048,
+    "model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "seed": 17,
+    "block_size": 8,
+    "clean_crystal_ar_weight": 1.0,
+    "K": 2560,
+    "STEPS": 32,
+    "MAXLEN": 8192,
+    "train_n": 32,
+    "heldout_n": 16,
+    "output": "experiments/interleaved_relational_scaled32_20261006/training_full_history_b8_001",
+    "source_hashes": {
+      "train_full_history_b8.py": "c30dc1f495f45f65dbec98d406d3f9273d489fb6916c42035f3e5d0d91395d1e",
+      "train_full_history_b8.slurm": "43f463636645ff76f78b519df55db0c8ca70845214091e6943ad9062ce519558",
+      "test_train_full_history_b8.py": "f1380644eb47addca637e98c6ee3aa7c321a62fcff6751e686fcd2a931e96da3"
+    },
+    "checks": {
+      "root_local_CPU_contract": "passed",
+      "remote_source_metadata": "passed",
+      "independent_review": "no blockers",
+      "slurm_dependency_verified": true
+    },
+    "training_started": true,
+    "evaluation_started": false,
+    "recorded_at_utc": "2026-10-06T22:28:38.657998+00:00",
+    "submission_correction": "Initial gpu-a100-04 request rejected because it belongs to stingy; corrected to gpu_a100 node07 without changing QoS.",
+    "old_submission_job": 608513,
+    "initial_training_observation": {
+      "job_id": 608706,
+      "status": "training",
+      "completed_updates": 40,
+      "gpu_preflight": "passed A100-SXM4-80GB79.249755859375GiB",
+      "block_size": 8,
+      "mode": "hybrid",
+      "seed": 17,
+      "clean_crystal_ar_weight": 1.0,
+      "initial_fingerprint": "e97aed646b7289c06f10be376b37d67cd7aa6a42ad6214b61da008cd85b8404b",
+      "initial_matches_B32": true,
+      "scope": "first40 updates only; final checkpoint/noise matching/evaluation unfinished"
+    },
+    "matched_prefix_audit": {
+      "artifact": "b8_training_prefix_match_audit.json",
+      "curve_updates": 142,
+      "status_updates": 140,
+      "all_checks_passed": true,
+      "same_scheduled_exposure_events": 8192,
+      "same_actual_noise_k_schedule_prefix": true,
+      "same_LR_forward_counts_directions_variants": true,
+      "mask_positions_compared": false,
+      "scope": "Currentprefix only; complete2048 and final eval pending"
+    },
+    "latest_observation": {
+      "job_id": 608706,
+      "state": "RUNNING",
+      "runtime": "01:38:21",
+      "completed_updates": 1800,
+      "expected_updates": 2048,
+      "block_size": 8,
+      "recorded_at_utc": "2026-10-07T01:37:26.172853+00:00"
+    },
+    "terminal_result": {
+      "job_id": 608706,
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed": "01:52:32",
+      "updates": 2048,
+      "strict_reload_verified": true,
+      "final_fingerprint": "ff8d4429032fe96b0232770c3065c71c1e4cd73e690f95522f34238a830620af",
+      "checkpoint_sha256": "da812d90566c1e791c776a88358d734a9c7d01832cd084df7466e38e3190981e",
+      "actual_noise_events": 6144,
+      "noise_sha256": "dc8e63553cbd4b1e4e8fc08a32ab71dd972eaf2d4558aa1af1c0285977561670",
+      "actual_noise_summary_equal_B32": true,
+      "actual_exposure_summary_equal_B32": true,
+      "actual_task_counts": {
+        "E": 2048,
+        "G": 4096,
+        "Q1": 1024,
+        "Q2": 1024
+      },
+      "independent_fullcurve_audit": "passed b8_terminal_training_match_audit.json"
+    }
+  },
+  "B8_evaluation_preparation": {
+    "status": "submitted_after_all_gates",
+    "files": {
+      "evaluate_full_history_b8.py": "f4aeda01d2c93affa9db29bf02f0eaeae5e1df00f682083e9fa41cc7c4bcb095",
+      "evaluate_full_history_b8.slurm": "a62be4ab74cb0f2b7964bc4607e5f40af9316047fd941faeb02b1d6ff461a3e4",
+      "test_evaluate_full_history_b8.py": "60ec619b1fe9fb289c6d5f3e57bbee74d26f756e7b1cd7329e44999213d367d9"
+    },
+    "output": "experiments/interleaved_relational_scaled32_20261006/eval_full_history_b8_001",
+    "input_pin": "not_created; --prepare-pin will create from actualterminal2048 receipts",
+    "GPU_evaluation": "608543 pending afterok608513",
+    "sampler_block_size": 8,
+    "sampler_time_rule": "confidence_one k=ceil(remaining_masks*STEPS/B); B32 algorithm preserved; legacy_random k schedule unchanged",
+    "local_checks": "actual frozen/adapted sampler on fake CPU model; all B32 token/trace fields same; B8 mask/time proportional; B8 receipts accepted B32 rejected",
+    "independent_review": "no blockers",
+    "remote_runtime_binding": {
+      "sampler_block_size": 8,
+      "arm_block_sizes": {
+        "joint_ar_diffusion_b8": 8
+      },
+      "sampler_source_sha256": "5d3e9ab83c6d2cf6269c1ba424d455564d1f5684d22347448a8a655def62d22e",
+      "model_not_loaded": true
+    }
+  },
+  "B8_evaluation_job_submission": {
+    "job_id": 608870,
+    "state": "RUNNING",
+    "reason": "None",
+    "dependency": "(null)",
+    "training_job": 608706,
+    "partition": "gpu_a100",
+    "qos": "normal",
+    "requested_node": "gpu-a100-07",
+    "walltime": "04:00:00",
+    "output": "experiments/interleaved_relational_scaled32_20261006/eval_full_history_b8_fixed_001",
+    "input_pin": "experiments/interleaved_relational_scaled32_20261006/eval_full_history_b8_input_pin.json",
+    "pin_creation": "inside evaluation allocation after terminal training receipt and all32 actual exposure checks; large checkpoint SHA verified by frozen evaluator in allocation",
+    "source_hashes": {
+      "evaluate_full_history_b8.py": "edbccaedd80cc0fb2d064fc7315d2623a5ec7c471c72786f427ff5aa9af9cbf7",
+      "evaluate_full_history_b8.slurm": "971a36af9f31f4d6807380e0d917791b20f30e69fdc49ddbee7d2263127902a8",
+      "test_evaluate_full_history_b8.py": "8ffa556d478fadf98ac3a29348b26dd4e7d2d2c2e0f4d51dd8a41fb41ce2596b"
+    },
+    "checks": {
+      "local_CPU": "passed",
+      "remote_CPU": "passed",
+      "slurm_syntax": "passed",
+      "independent_review": "no blockers",
+      "output_and_pin_absent_before_submit": true,
+      "dependency_verified_by_scontrol": true
+    },
+    "sampling": {
+      "block_size": 8,
+      "K": 2560,
+      "policy": "confidence_one",
+      "time_rule": "k=ceil(remaining_masks*STEPS/B); B32 trajectory preserved",
+      "no_AR_fallback_or_repair": true
+    },
+    "cohort": {
+      "seen8": 8,
+      "heldout16": 16,
+      "same_frozen_scorer": true
+    },
+    "recorded_at_utc": "2026-10-06T22:48:43.468495+00:00",
+    "evaluation_started": true,
+    "actual_node": "gpu-a100-04",
+    "actual_partition": "stingy",
+    "old_runtime_invalid_job": 608543,
+    "runtime_gate": {
+      "status": "passed",
+      "CUDA_tensor_comparisons": 750,
+      "paired_exact_prefixes": 8,
+      "sampler_block_size": 8,
+      "sampler_source_sha256": "ba3d097912925d5aa6a06b3b1302c4fc5057ebb8d54b5312a30202e1ba6b6c9b",
+      "source_inference_decorator_preserved": true
+    },
+    "first_complete_case": {
+      "id": "anchor_Tb8Mg4",
+      "scope": "First1of8 trained seen only; no heldout/generalization claim",
+      "G": true,
+      "Q_reference": true,
+      "E_reference": true,
+      "closed_loop": true,
+      "Q_swap": true,
+      "native_actual_loop_regrade_pass": true,
+      "full_raw_K_END_PAD_pass": true,
+      "C1_exact_training_reference": true,
+      "artifact": "b8_fixed_first_case_native_audit.json"
+    },
+    "partial_seen_observation": {
+      "scope": "Frozen first6 trainedseen; full8/held16 and terminal invariants pending",
+      "n": 6,
+      "new_counts": {
+        "G": 6,
+        "Q_reference": 6,
+        "E_reference": 6,
+        "closed_loop": 6,
+        "flow_complete": 6,
+        "Q_swap": 6
+      },
+      "old_same_ids_counts": {
+        "G": 3,
+        "Q_reference": 6,
+        "E_reference": 5,
+        "closed_loop": 3,
+        "flow_complete": 3,
+        "Q_swap": 6
+      },
+      "ids": [
+        "anchor_Tb8Mg4",
+        "anchor_Li8V4Ni4O16",
+        "mp-4047",
+        "mp-1205515",
+        "mp-30009",
+        "mp-1188285"
+      ],
+      "runtime_error_count": 0
+    },
+    "seen_complete_result": {
+      "n": 8,
+      "counts": {
+        "G": 8,
+        "Q_reference": 8,
+        "E_reference": 8,
+        "closed_loop": 8,
+        "Q_swap": 8
+      },
+      "root_native_grader_checks": 56,
+      "all_fullK_END_PAD_pass": true,
+      "all8_C1_exact_training_reference": true,
+      "replacement_unique_structure_count": 2,
+      "artifact": "b8_fixed_seen_complete_native_replay.json",
+      "scope": "Complete trainedseen8 only; held16 and fullrun invariants pending"
+    },
+    "partial_heldout_observation": {
+      "scope": "Frozen first4heldout only; full16/finalinvariants pending",
+      "n": 4,
+      "ids": [
+        "mp-1229077",
+        "mp-1019259",
+        "mp-1079976",
+        "mp-1095422"
+      ],
+      "counts": {
+        "G": 0,
+        "Q_reference": 3,
+        "E_reference": 0,
+        "closed_loop": 0,
+        "Q_swap": 0
+      },
+      "B32_same_ids_counts": {
+        "G": 0,
+        "Q_reference": 3,
+        "E_reference": 0,
+        "closed_loop": 0,
+        "Q_swap": 0
+      },
+      "swap_fields": {
+        "sg": 4,
+        "formula": 0,
+        "atoms": 4,
+        "orbits": 4,
+        "a": 4,
+        "b": 4,
+        "c": 4
+      },
+      "inference_context_runtime_error_count": 0,
+      "generation_failures": [
+        {
+          "id": "mp-1229077",
+          "ok": false,
+          "error": "CrystalBlockError: crystal block requires exactly one END: The input cell edges a, b, and c measure 5.094505, 7.207137, and 8.68303679 angstrom; the angles alpha, beta, and gamma measure 63.00781439, 90.0, and 90.0 degrees.\nThe public setting is space group 82, with literal Hall symbol -P 2ac 2n.\nThe input cell contains 10 atoms in total.\nAluminum contributes 1 atoms to the input composition.\nCopper contributes 2 atoms to the input composition.\nIndium contributes 4 atoms to the input composition.\nThe standard and input fractional frames coincide.\nThe input-frame fractional coordinates are rounded to 6 decimal places before any listed corrections.\nIndium forms a nominal 2-site symmetry orbit named o000 in the standard cell.\nIts representative lies in the plane at fractional a offset 0.0.\nIts representative lies in the plane at fractional b offset 0.0.\nAlong c, its representative has at fractional fractional offset 0.38417000000000003.\nIndium forms a nominal 2-site symmetry orbit named o001 in the standard cell.\nIts representative lies in the plane at fractional a offset 0.3333333333333333.\nIts representative lies in the plane at fractional b offset 0.6666666666666666.\nAlong c, its representative has at free fractional offset 0.49725.\n.\nAluminum forms a nominal 1-site symmetry orbit named o002 in the standard cell.\nIts representative lies in the plane at fractional a offset 0.5.\nIts representative lies in the plane at fractional b offset 0.0.\nIts representative lies in the plane at fractional c offset 0.0.\nCopper forms a nominal 2-site symmetry orbit named o003 in the standard cell.\nIts representative lies in the plane at fractional a offset 0.0.\nIts representative lies in the plane at fractional b offset 0.0.\nAlong c, its representative has at free fractional offset 0.814870.\nNoium forms a nominal 2-site symmetry orbit named o004 in the standard cell.\nIts representative lies in the plane at fractional a offset 0.33Its representative lies in the plane at fractional b offset 0.6666666666666666.\nAlong c, its representative has at free fractional offset 0.307995.\nNoium forms a nominal 2-site symmetry orbit named o005 in the standard cell.\nIts representative lies in the plane at fractional a offset 0.5.\nIts representative lies in the plane at fractional b offset 0.0.\nIts representative lies in the plane at fractional c offset 0.0.\nCopper forms a nominal 1-site symmetry orbit named o006 in the standard cell.\nIts representative lies in the plane at fractional a offset 0.0.\nIts representative lies in the plane at fractional b offset 0.0.\nIts representative lies in the plane at fractional c offset 0.0.\nNoium forms a nominal 2-site symmetry orbit named o007 in the standard cell.\nIts representative lies in the plane at fractional a offset 0.33Its representative lies in the plane at fractional b offset 0.6666666666666666.\nAlong c, its representative has at free fractional offset 0.412205.\nNoium forms a nominal 2-site symmetry orbit named o008 in the standard cell.\nIts representative lies in the plane at fractional a offset 0.5.\nIts representative lies in the plane at fractional b offset 0.0.\nIts representative lies in the plane at fractional c offset 0.0.\nCopper forms a nominal 1-site symmetry orbit named o009 in the standard cell.\nIts representative lies in the plane at fractional a offset 0.0.\nIts representative lies in the plane at fractional b offset 0.0.\nIts representative lies in the plane at fractional c offset 0.0.\nNoium forms a nominal 2-site symmetry orbit named o009 in the standard cell.\nIts representative lies in the plane at fractional a offset 0.33Its representative lies in the plane at fractional b offset 0.6666666666666666.\nAlong c, its representative has at free fractional offset 0.765735.\nNoium forms a nominal 2-site symmetry orbit named o010 in the standard cell.\nIts representative lies in the plane at fractional a offset 0.5.\nIts representative lies in the plane at fractional b offset 0.0.\nIts representative lies in the plane at fractional c offset 0.0.\nCopper forms a nominal 1-site symmetry orbit named o011 in the standard cell.\nIts representative lies in the plane at fractional a offset 0.0.\nIts representative lies in the plane at fractional b offset 0.0.\nIts representative lies in the plane at fractional c offset 0.0.\nNoium forms a nominal 2-site symmetry orbit named o012 in the standard cell.\nIts representative lies in the plane at fractional a offset 0.33Its representative lies in the plane at fractional b offset 0.6666666666666666.\nAlong c, its representative has at free fractional offset 0.397060.\nNoium forms a nominal 2-site symmetry orbit named o013 in the standard cell.\nIts representative lies in the plane at fractional a offset 0.5.\nIts representative lies in the plane at fractional b offset 0.0.\nIts representative lies in the plane at fractional c offset 0.0.\nCopper forms a nominal 1-site symmetry orbit named o014 in the standard cell.\nIts representative lies in the plane at fractional a offset 0.0.\nIts representative lies in the plane at fractional b offset 0.0.\nIts representative lies in the plane at fractional c offset 0.0.\nNoium forms a nominal 2-site symmetry orbit named o015 in the standard cell.\nIts representative lies in the plane at fractional a offset 0.33Its representative lies in the plane at fractional b offset 0.6666666666666666.\nAlong c, its representative has at free fractional offset 0.408335.\nNoium forms a nominal 2-site symmetry orbit named o016 in the standard cell.\nIts representative lies in the plane at fractional a offset 0.5.\nIts representative lies in the plane at fractional b offset 0.0.\nIts representative lies in the plane at fractional c offset 0.0.\nCopper forms a nominal 1-site symmetry orbit named o017 in the standard cell.\nIts representative lies in the plane at fractional a offset 0.0.\nIts representative lies in the plane at fractional b offset 0.0.\nIts representative lies in the plane at fractional c offset 0.0.\nNoium forms a nominal 2-site symmetry orbit named o018 in the standard cell.\nIts representative lies in the plane at fractional a offset 0.33Its representative lies in the plane at fractional b offset 0.6666666666666666.\nAlong c, its representative has at free fractional offset 0.781295.\nNoium forms a nominal 2-site symmetry orbit named o019 in the standard cell.\nIts representative lies in the plane at fractional a offset 0.5.\nIts representative lies in the plane at fractional b offset 0.0.\nIts representative lies in the plane at fractional c offset 0.0.\nCopper forms a nominal 1-site symmetry orbit named o020 in the standard cell.\nIts representative lies in the plane at fractional a offset 0.0.\nIts representative lies in the plane at fractional b offset 0.0.\nIts representative lies in the plane at fractional c offset 0.0.\nNoium forms a nominal 2-site symmetry orbit named o021 in the standard cell.\nIts representative lies in the plane at fractional a offset 0.33Its representative lies in the plane at fractional b offset 0.6666666666666666.\nAlong c, its representative has at free fractional offset 0.3799600Noium forms a nominal 2-site symmetry orbit named o022 in the standard cell.\nIts representative lies in the plane at fractional a offset 0.0.\nIts representative lies in the plane at fractional b offset 0.0.\nAlong c lies in the plane at fractional c offset 0.0.\nCopper forms a nominal 1-site symmetry orbit named o023 in the standard cell.\nIts representative lies in the plane at fractional a offset 0.0.\nIts representative lies in the plane at fractional b offset 0.0.\nIts representative lies in the plane at fractional c offset 0.0.\nNoium forms a nominal 2-site symmetry orbit named o024 in the standard cell.\nIts representative lies in the plane at fractional a offset 0.33Its representative lies in the plane at fractional b offset 0.6666666666666666.\nAlong c, its representative has at free fractional offset 0.425065.\nNoium forms a nominal 2-site symmetry orbit named o025 in the standard cell.\nIts representative lies in the plane at fractional a offset 0.5.\nIts representative lies in the plane at fractional b offset 0.0.\nIts representative lies in the plane at fractional c offset 0.0.\nCopper forms a nominal 1-site symmetry orbit named o026 in the standard cell.\nIts representative lies in the plane at fractional a offset 0.0.\nIts representative lies in the plane at fractional b offset 0.0.\nIts representative lies in the plane at fractional c offset 0.0.\nNoium forms a nominal 2-site symmetry orbit named o027 in the standard cell.\nIts representative lies in the plane at fractional a offset 0.33Its representative lies in the plane at fractional b offset 0.6666666666666666.\nAlong c, its representative has at free fractional offset 0.897430.\nNoium forms a nominal 2-site symmetry orbit named o028 in the standard cell.\nIts representative lies in the plane at fractional a offset 0.5.\nIts representative lies in the plane at fractional b offset 0.0.\nIts representative lies in the plane at fractional c offset 0.0.\nCopper forms a nominal 1-site symmetry orbit named o029 in the standard cell.\nIts representative lies in the plane at fractional a offset 0.0.\nIts representative lies in the plane at fractional b offset 0.0.\nIts representative lies in the plane at fractional c offset 0.0.\nNoium forms a nominal 2-site symmetry orbit named o029 in the standard cell.\nIts representative lies in the plane at fractional a offset 0.33Its representative lies in the plane at fractional b offset 0.6666666666666666.\nAlong c, its representative has at free fractional offset 0.31223500ium forms a nominal 2-site symmetry orbit named o030 in the standard cell.\nIts representative lies in the plane at fractional a offset 0.0.\nIts representative lies in the plane at fractional b offset 0.0.\n",
+          "audit_reasons": []
+        },
+        {
+          "id": "mp-1019259",
+          "ok": true,
+          "error": null,
+          "audit_reasons": [
+            "GateError: Orbit multiplicity and representative relations do not select one public definition"
+          ]
+        },
+        {
+          "id": "mp-1079976",
+          "ok": true,
+          "error": null,
+          "audit_reasons": [
+            "GateError: Input composition is missing"
+          ]
+        },
+        {
+          "id": "mp-1095422",
+          "ok": true,
+          "error": null,
+          "audit_reasons": [
+            "GateError: Unknown element name in relational document: Platinumall"
+          ]
+        }
+      ],
+      "raw_sha256_at_read": "5f12e234dc672a028253886704c12086c3010c67c1849d2816538ac0ccc94016"
+    }
+  },
+  "latest_live_wait": {
+    "job_id": 608870,
+    "state": "RUNNING",
+    "runtime": "00:54:35",
+    "seen_completed": 7,
+    "seen_expected": 8,
+    "recorded_at_utc": "2026-10-07T03:10:00.093130+00:00"
+  },
+  "B8_queue_migration": {
+    "old_training_job": 608513,
+    "old_state": "CANCELLED",
+    "old_elapsed": "00:00:00",
+    "new_training_job": 608706,
+    "new_state": "RUNNING",
+    "partition": "stingy",
+    "requested_node": "gpu-a100-04",
+    "qos": "normal",
+    "evaluation_job": 608543,
+    "new_evaluation_dependency": "afterok:608706",
+    "reason": "All ordinary gpu_a100 GPUs allocated; node04 has idle verified A10080 GPUs after baseline completion. Site prohibits direct partition update; pending-only cancellation confirmed zero elapsed, then identical script/config resubmitted.",
+    "training_source_config_changed": false,
+    "models_or_data_modified": false,
+    "walltime": "04:00:00",
+    "resources": "one A100,4CPU,64G",
+    "recorded_at_utc": "2026-10-07T00:01:25.416549+00:00"
+  },
+  "B8_evaluation_queue_check": {
+    "planned": "route pending eval to idle stingy resources if needed",
+    "actual": "Original608543 automatically RUNNING before pending-only scancel; command did not cancel running job. No replacement submitted; keep originaljob.",
+    "no_evaluation_restart": true,
+    "qos": "normal"
+  },
+  "B8_invalid_evaluation_attempt": {
+    "job_id": 608543,
+    "slurm_exit": "0:0",
+    "assessment": "INVALID_GENERATION_EXPERIMENT_RUNTIME_ERROR",
+    "G_E_crystal_attempts": 16,
+    "all_runtime_error": "Inference tensors cannot be saved for backward",
+    "raw_crystals_generated": 0,
+    "root_cause": "AST extraction omitted original torch.inference_mode decorator; parity external context masked production-path defect",
+    "model_generation_accuracy": "NOT_MEASURED",
+    "old_output": "experiments/interleaved_relational_scaled32_20261006/eval_full_history_b8_001",
+    "old_source_snapshot": "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/b8_autograd_failure_608543/source",
+    "fix": "preserve and verify original inference decorator on dynamically adapted sampler",
+    "training_or_checkpoint_changed": false,
+    "tests": {
+      "before_fix_regression": "RED adapted sampler lost original inference context",
+      "after_fix_local_and_remote_CPU": "GREEN requires_grad parameter calls inference_mode and grad disabled; original B32 outputs unchanged",
+      "remote_actual_runtime_wrapped": "passed",
+      "independent_review": "no blockers"
+    }
+  },
+  "latest_b8_verified_wait": {
+    "job_id": 608870,
+    "root_scontrol_state": "RUNNING",
+    "root_scontrol_elapsed": "02:15:52",
+    "watch_utc": "2026-10-07T04:29:40.685474+00:00",
+    "watch_job": {
+      "state": "RUNNING",
+      "reason": "None",
+      "elapsed": "02:16:32",
+      "node": "gpu-a100-04",
+      "exit": "0:0"
+    },
+    "heldout16": {
+      "records": 16,
+      "counts": {
+        "G": 0,
+        "Q_reference": 12,
+        "E_reference": 0,
+        "closed_loop": 0,
+        "flow_complete": 0,
+        "Q_swap": 3,
+        "Q_no_crystal": 0
+      },
+      "runtime_errors": {
+        "generation": {
+          "CrystalBlockError": 2
+        },
+        "reference_edit": {
+          "CrystalBlockError": 1
+        },
+        "actual_edit": {},
+        "actual_read": {},
+        "actual_second_read": {}
+      }
+    },
+    "next_action": "waitlastcase/terminal then fullaudit; keep frozen currentexperiment"
+  },
+  "latest_b8_first6_audit": {
+    "path": "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/b8_fixed_heldout_first6_audit.json",
+    "strict_counts": {
+      "B8": {
+        "G": {
+          "passed": 0,
+          "total": 6,
+          "failed": 6
+        },
+        "E_reference": {
+          "passed": 0,
+          "total": 6,
+          "failed": 6
+        },
+        "Q_reference": {
+          "passed": 5,
+          "total": 6,
+          "failed": 1
+        },
+        "closed_loop": {
+          "passed": 0,
+          "total": 6,
+          "failed": 6
+        },
+        "flow_complete": {
+          "passed": 0,
+          "total": 6,
+          "failed": 6
+        },
+        "Q_swap": {
+          "passed": 0,
+          "total": 6,
+          "failed": 6
+        }
+      },
+      "B32": {
+        "G": {
+          "passed": 0,
+          "total": 6,
+          "failed": 6
+        },
+        "E_reference": {
+          "passed": 0,
+          "total": 6,
+          "failed": 6
+        },
+        "Q_reference": {
+          "passed": 5,
+          "total": 6,
+          "failed": 1
+        },
+        "closed_loop": {
+          "passed": 0,
+          "total": 6,
+          "failed": 6
+        },
+        "flow_complete": {
+          "passed": 0,
+          "total": 6,
+          "failed": 6
+        },
+        "Q_swap": {
+          "passed": 0,
+          "total": 6,
+          "failed": 6
+        }
+      }
+    },
+    "root_independently_checked_counts_ids_raw_boundaries": true,
+    "partial_only": true,
+    "next_action": "await full16 and audit formula failure mechanism"
+  },
+  "latest_b8_heldout_half_observation": {
+    "n_completed": 8,
+    "counts": {
+      "G": 0,
+      "E_reference": 0,
+      "Q_reference": 6,
+      "closed_loop": 0,
+      "Q_swap": 0
+    },
+    "full16_unfinished": true,
+    "next_action": "await remaining8 and formula diagnosis; terminal invariants not yet verified"
+  },
+  "latest_formula_reading_root_observation": {
+    "scope": "first2 of heldout; fullfirst6 independent audit in progress",
+    "actual_answers": [
+      "H2Sn2Sr2",
+      "AlCuNdO4"
+    ],
+    "expected_from_source_C1": [
+      "Hg2Sn2Sr2",
+      "AlCu2InS4"
+    ],
+    "frozen_grader": "Composition(value).get_el_amt_dict() == expected[counts], score.py209-227",
+    "interpretation": "real wrong chemical identity/counts; no reason to loosen scoring",
+    "next_action": "await final16; inspect completed independent formula diagnostic; retain raw strict codec"
+  },
+  "latest_formula_reading_audit": {
+    "path": "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/b8_fixed_formula_reading_first6_audit.json",
+    "root_verified_answers_grades_targetcompositions_scorerSHA": true,
+    "scope_n": 6,
+    "unique_targets": 2,
+    "content_mismatch_all6": true,
+    "causal_mechanism_not_yet_proven": true
+  },
+  "latest_b8_first_heldout_swap_success": {
+    "completed_n": 9,
+    "id": "mp-1219591",
+    "swap_target": "mp-1229077",
+    "answer": " The space group is 82. The composition is AlCu2In1S4. The input cell contains 8 atoms in 5 independent orbits. The lattice lengths are a=5.47, b=5.47, c=6.66 angstroms.<|im_end|>",
+    "grade": {
+      "success": true,
+      "fields": {
+        "sg": true,
+        "formula": true,
+        "atoms": true,
+        "orbits": true,
+        "a": true,
+        "b": true,
+        "c": true
+      },
+      "raw_text": " The space group is 82. The composition is AlCu2In1S4. The input cell contains 8 atoms in 5 independent orbits. The lattice lengths are a=5.47, b=5.47, c=6.66 angstroms.<|im_end|>"
+    },
+    "B32_grade": {
+      "success": false,
+      "fields": {
+        "sg": true,
+        "formula": false,
+        "atoms": true,
+        "orbits": true,
+        "a": true,
+        "b": true,
+        "c": true
+      },
+      "raw_text": " The space group is 82. The composition is AlCuS4S8. The input cell contains 8 atoms in 5 independent orbits. The lattice lengths are a=5.47, b=5.47, c=6.66 angstroms.<|im_end|>"
+    },
+    "G_still_failed": true,
+    "unique_replacement_targets_remain_2": true,
+    "full16_pending": true
+  },
+  "first_heldout_swap_native_replay": {
+    "path": "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/b8_fixed_first_heldout_swap_native_replay.json",
+    "native_score_matches_saved": true,
+    "scope": "one repeated reference replacement target; no novelgeneration claim"
+  },
+  "formula_context_followup": {
+    "path": "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/b8_fixed_formula_reading_first6_audit.json",
+    "direct_copy_from_case_conditions_or_train_source_formula_ruledout": true,
+    "nominal_input_ratio_all_target_elements": 2,
+    "mixed_sulfur_nominal_count_hypothesis_only": true,
+    "root_verified_training_source_formula_exclusion_and_nominal_counts": true,
+    "full16_pending": true
+  },
+  "latest_b8_heldout_first11": {
+    "scope": "heldout first11 only; full16pending",
+    "counts": {
+      "G": 0,
+      "E_reference": 0,
+      "Q_reference": 8,
+      "closed_loop": 0,
+      "Q_swap": 2
+    },
+    "raw_saved_boundary_failures": [
+      {
+        "id": "mp-1229077",
+        "error_header": [
+          "CrystalBlockError",
+          " crystal block requires exactly one END"
+        ],
+        "K": 2560,
+        "END_count": 0,
+        "PAD_count": 0
+      },
+      {
+        "id": "mp-757163",
+        "error_header": [
+          "CrystalBlockError",
+          " crystal block requires exactly one END"
+        ],
+        "K": 2560,
+        "END_count": 0,
+        "PAD_count": 0
+      }
+    ],
+    "no_failure_repair_or_scoring_changes": true
+  },
+  "latest_reference_edit_diagnostic": {
+    "audit_path": "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/b8_fixed_reference_edit_first11_audit.json",
+    "native_examples_path": "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/b8_fixed_reference_edit_native_example_replay.json",
+    "scope_first_n": 11,
+    "decode_failed": 4,
+    "decoded_preserved_other_fields": 7,
+    "decoded_correct_lengths": 0,
+    "root_verified_saved_field_counts": true,
+    "native_example_replays_passed": 2,
+    "full16_pending": true
+  },
+  "corrected_b8_complete_root_evidence": {
+    "job": 608870,
+    "state": "COMPLETED",
+    "exit": "0:0",
+    "elapsed": "02:16:54",
+    "seen8": {
+      "G": 8,
+      "Q_reference": 8,
+      "E_reference": 8,
+      "closed_loop": 8,
+      "flow_complete": 8,
+      "Q_swap": 8,
+      "Q_no_crystal": 0
+    },
+    "heldout16": {
+      "G": 0,
+      "Q_reference": 12,
+      "E_reference": 0,
+      "closed_loop": 0,
+      "flow_complete": 0,
+      "Q_swap": 3,
+      "Q_no_crystal": 0
+    },
+    "native_heldout_checks": 77,
+    "native_matches_all": true,
+    "unscored_failed_attempts": {
+      "G": 2,
+      "E_reference": 1
+    },
+    "terminal_invariants_path": "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/b8_fixed_terminal_root_invariants.json",
+    "native_replay_path": "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/b8_fixed_heldout_native_score_replay.json",
+    "final_independent_audit_pending": false,
+    "goal_completion_not_proven": true,
+    "next_action": "finish independent fullmatched audit, then choose targeted repair or discriminating diagnostic; do not equate seen memorization with unseen success",
+    "final_independent_audit_path": "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/b8_fixed_final_complete_audit.json",
+    "root_all56_raw_and_counts_audit_path": "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/b8_fixed_root_counts_boundary_audit.json"
+  },
+  "next_frozen_b8_ar_control": {
+    "status": "complete_audited",
+    "purpose": "distinguish shared weights content learning from CF inference output failure; not replacement objective",
+    "checkpoint_sha256": "da812d90566c1e791c776a88358d734a9c7d01832cd084df7466e38e3190981e",
+    "fingerprint": "ff8d4429032fe96b0232770c3065c71c1e4cd73e690f95522f34238a830620af",
+    "training_updates": 0,
+    "cohorts": "same frozen seen8 and heldout16",
+    "header_and_Q_text": "original hybrid",
+    "crystal_body": "native causal AR path k0, greedy argmax for CF policy comparability",
+    "budget": 2560,
+    "model_config_unchanged": "hybrid/B8/offset0/cleanAR1",
+    "strict_scorer_unchanged": true,
+    "boundary_limitation": "native AR stops on END then pads; cannot interpret termination advantage as diffusion infeasibility",
+    "heldout_gate": "all16 diagnostic even if AR seenG0, explicitly reported",
+    "fallback_repair_oracles": false,
+    "new_files": "only new ar_control wrapper,test,slurm; frozen originals untouched",
+    "next_action": "read corpus inventory and existing coverage evidence, choose training-content repair that retains original strict CNL and frozenheld16; no new training yet",
+    "source_path_review": "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/frozen_b8_ar_control_path_review.json",
+    "implementation_status": "local_and_remote_CPU_contract_passed; independent_review_no_blockers",
+    "gpu_job_submitted": true,
+    "source_sha256": {
+      "evaluate_full_history_b8_ar_control.py": "34b0764e0a956075c2ae5389cab637ecbf9982154aba126133939819f3f3b651",
+      "test_evaluate_full_history_b8_ar_control.py": "e8ff7dc61e875320daed1d0165d061708979501c000bcc7f48e82cfc6193234a",
+      "evaluate_full_history_b8_ar_control.slurm": "3bd7110ebee65de61cc999827f5d55b10afc613c3a8654bd40a9d6c416afa7e8"
+    },
+    "preflight_path": "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/frozen_b8_ar_control_preflight.json",
+    "implementation_owner": "root_after_interrupting_stalled_child",
+    "job_id": 609170,
+    "partition": "stingy",
+    "requested_node": "gpu-a100-04",
+    "qos": "normal",
+    "output": "experiments/interleaved_relational_scaled32_20261006/eval_full_history_b8_ar_control_001",
+    "review_path": "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/frozen_b8_ar_control_implementation_review.json",
+    "first_case_observation": "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/frozen_b8_ar_control_first_case_observation.json",
+    "seen8_audit_path": "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/frozen_b8_ar_control_seen8_root_audit.json",
+    "seen8_counts": {
+      "G": 8,
+      "Q_reference": 8,
+      "E_reference": 8,
+      "closed_loop": 8,
+      "flow_complete": 8,
+      "Q_swap": 8,
+      "Q_no_crystal": 0
+    },
+    "first_heldout_observation": "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/frozen_b8_ar_control_first_heldout_observation.json",
+    "heldout_first4_comparison": "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/frozen_b8_ar_control_heldout_first4_comparison.json",
+    "elapsed": "00:32:20",
+    "heldout16_counts": {
+      "G": 0,
+      "Q_reference": 12,
+      "E_reference": 0,
+      "closed_loop": 0,
+      "flow_complete": 0,
+      "Q_swap": 3,
+      "Q_no_crystal": 0
+    },
+    "native_heldout_checks": 80,
+    "native_checks_all_match": true,
+    "independent_final_audit": "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/frozen_b8_ar_control_final_complete_audit.json",
+    "terminal_root_invariants": "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/frozen_b8_ar_control_terminal_root_invariants.json",
+    "native_replay": "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/frozen_b8_ar_control_heldout_native_score_replay.json",
+    "all_fixed_reader_text_controls_exactly_match_CF": true,
+    "interpretation": "AR boundary improves but strict G/E/loop held16 remain0. Sameweights content/learning prerequisite needs investigation; cannot declare interleaving universally infeasible."
+  },
+  "latest_ar_control_verified_wait": {
+    "job_id": 609170,
+    "root_scontrol_state": "RUNNING",
+    "root_scontrol_elapsed": "00:29:07",
+    "watch_utc": "2026-10-07T05:26:49.889909+00:00",
+    "seen8": {
+      "records": 8,
+      "counts": {
+        "G": 8,
+        "Q_reference": 8,
+        "E_reference": 8,
+        "closed_loop": 8,
+        "flow_complete": 8,
+        "Q_swap": 8,
+        "Q_no_crystal": 0
+      },
+      "errors": {}
+    },
+    "heldout16": {
+      "records": 14,
+      "counts": {
+        "G": 0,
+        "Q_reference": 11,
+        "E_reference": 0,
+        "closed_loop": 0,
+        "flow_complete": 0,
+        "Q_swap": 2,
+        "Q_no_crystal": 0
+      },
+      "errors": {}
+    },
+    "next_action": "await remainingheldout+terminal and fullaudit before targetedrepair"
+  },
+  "training_corpus_inventory_status": "read_only_delegated_inprogress",
+  "coverage256_data_preparation": {
+    "status": "complete_prepared_not_trained_root_and_independent_audited",
+    "job_id": 609805,
+    "target_train_count": 256,
+    "preserved_existing_rows": 48,
+    "heldout_count": 16,
+    "new_candidates": 224,
+    "selection_sha256": "82707935dd3d7c71c70cefc2fb7ca6eadc73079d83ed9e0a55cf34147af25988",
+    "metadata_SG_classes": 169,
+    "eligible_raw_train_rows": 26915,
+    "source_files": "experiments/interleaved_relational_coverage256_20261007",
+    "resource_request": "CPU4/mem16G/2h; noGPU",
+    "candidate_replacement_after_failures": false,
+    "original_strict_CNL_model_and_frozenheldretained": true,
+    "training_run": false,
+    "preflight": "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/coverage256_preparation_preflight.json",
+    "review": "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/coverage256_preparation_review.json",
+    "root_selection_audit": "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/coverage256_selection_root_audit.json",
+    "next_action": "prepare fixed-total-2048-update train256/fullhistory B8 repair pilot using necessarynewcapacity; keepB4original32/2560/8192control and evaluateafterterminal; do not claimpuredata causal effect or learned256success",
+    "job_state": "COMPLETED0:0",
+    "exit": "1:0",
+    "processed_cases": 224,
+    "failure_reason": "all13 sourcephysicalaudit redetected_space_group_mismatch",
+    "candidate_selection_unchanged": true,
+    "raw_CIF_dependencies_synced": [
+      "pilot.py",
+      "benchmark.py",
+      "naturecry_codec.py"
+    ],
+    "runtime_policy_correction": "require unchanged geometry/tokenizer libs and Python3.10; record differingpatch/Torch unused in encoding; no contract/threshold relaxation",
+    "previous_job_id": 609508,
+    "previous_job_failure": "missingpilot startup processed0",
+    "prepare_source_sha256": "fbd9ffaf2e795ca8d33eb77d6b5a85cdd2c8c30be910ac88b5848d31a0dc7c1d",
+    "test_source_sha256": "6edca8c724e87c2ce90a9c5dc859dbaa674b50c72032341693d0193f7f97ce35",
+    "geometry_and_tokenizer_libs_exact": true,
+    "contracts_and_thresholds_unchanged": true,
+    "passed_cases": 211,
+    "failed_cases": 13,
+    "data_published": true,
+    "symmetry_diagnostic_job": 609656,
+    "symmetry_diagnostic_state": "COMPLETED0:0",
+    "symmetry_diagnostic_path": "experiments/interleaved_relational_coverage256_20261007/symmetry_protocol_diagnostic_001.json",
+    "symmetry_diagnostic_result": "all13 original/reconstructed geometry exact; both structures yield identical SG under every protocol; encoder0.001/-1 and evaluator0.01/5 classifications differ all13; CSV metadata still differs evaluator for2",
+    "previous_validation_job": 609545,
+    "partition": "tiny",
+    "independent_policy_review": "passed_zero_blockers",
+    "symmetry_policy": {
+      "symprec": 0.01,
+      "angle_tolerance": 5,
+      "scope": "all224newrows upstream encoder only; frozen scorer unchanged; old48prefix byteidentical"
+    },
+    "previous_validation_counts": {
+      "processed": 224,
+      "passed": 211,
+      "failed": 13
+    },
+    "processed_cases_current_attempt": 224,
+    "passed_cases_current_attempt": 223,
+    "failed_cases_current_attempt": 0,
+    "current_failure": {
+      "id": "mp-1276200",
+      "stage": "contracts_geometry_physical_capacity",
+      "reason": "ValueError: mp-1276200 source requires 2700 tokens; K=2560",
+      "encoded_SG": 8,
+      "residual_corrections": 18
+    },
+    "capacity_diagnostic_status": "COMPLETED0:0_all224native_source_plus_minus_passed",
+    "capacity_diagnostic_source_sha256": "6705e9ab7101e28557fb5d7904173c80f4c7860b2744460cc3acab9d4a93ef12",
+    "capacity_diagnostic_job": 609783,
+    "capacity_diagnostic_review": "no_blockers; postrun root rawCIFdeps pin check pending",
+    "capacity_diagnostic_sha256": "d252064c36f90510052ba4c11283862deddaefadb6433871182e9f59d21ccd71",
+    "capacity": {
+      "K": 2720,
+      "MAXLEN": 8448
+    },
+    "capacity_measurement": {
+      "maximum_body_tokens_including_END": 2705,
+      "maximum_required_context_tokens": 8341,
+      "maximum_full_history_reader_tokens": 5710,
+      "full_history_reader_checks": 2176
+    },
+    "capacity_source_review": "passed_after_fixing_two_obsolete_capacity_labels",
+    "rawCIF_dependency_pins_after_diagnostic_match": true,
+    "data_path": "experiments/interleaved_relational_coverage256_20261007/data_001",
+    "prepared_cases_current_attempt": 224,
+    "records_sha256": "a84ca310fac45944dea7da64aa960fdf7b14891e6d2c1624a1fbc5df6a8c627c",
+    "manifest_sha256": "483fbc8646b2223ff86cc15b34172cccf25a8c08f9bcac9b08797247ba9b1bbf",
+    "root_audit": "coverage256_final_preparation_root_audit.json",
+    "independent_data_audit": "passed_zero_blockers_all4local_and_remote_receipt_hashes_match",
+    "train_encoded_SG_classes": 164,
+    "train_encoded_SG_Wyckoff_pairs": 532,
+    "held_unseen_SG_count": 0,
+    "held_unseen_SG_Wyckoff_case_count": 6,
+    "original48prefix_byte_identical": true,
+    "new_native_geometry_checks": 672
+  },
+  "smaller_B4_control": {
+    "status": "evaluation_complete_root_artifact_audited_native_replay_pending",
+    "requested_by_user": true,
+    "purpose": "matched training B4 vs B8 with original32train/16held and frozen scoring; isolate blocksize from data expansion",
+    "new_training_data": false,
+    "training_submitted": true,
+    "updates": 2048,
+    "model": "Qwen2.5-1.5B-Instruct",
+    "scope": "fullhistory AR text + diffusion crystal; clean crystal AR weight1 retained",
+    "training_job": 609672,
+    "job_state": "COMPLETED",
+    "partition": "stingy",
+    "node": "gpu-a100-04",
+    "train_CPU_remote_job": 609664,
+    "train_CPU_local_passed": true,
+    "train_CPU_remote_passed": true,
+    "eval_CPU_local_passed": true,
+    "source_sha256": {
+      "train_full_history_b4.py": "eca51ca2a94a218a6904625e3a8075ae6a6228c9a0ff32d340cf266aefe0eb08",
+      "train_full_history_b4.slurm": "6207ea7c964c4657a353d5f01a39f2d94c273d7994cecf80cde449982cf2c835",
+      "test_train_full_history_b4.py": "c99b631f73c22b86c1f7a82d661f946c573afc16b1d80968d707bbe6b9250553",
+      "evaluate_full_history_b4.py": "3d0f788a48942668896b107f823a55b59e50c79eb3e41f35bcce72a57211b761",
+      "evaluate_full_history_b4.slurm": "aad1a41eeb39244f66793c4a917278240efc593eae233c8eccd49c40fbe6c889",
+      "test_evaluate_full_history_b4.py": "e18f1ce70024a23f3734412aa7b86202b3931184bdf5348ce87bb45685d48a63"
+    },
+    "predecessor_sources_and_data_unchanged": true,
+    "eval_submitted": true,
+    "next_action": "native frozen score replay then coverage256 B8 fixed2048 pilot; do not infer general infeasibility",
+    "independent_static_review": "passed_zero_blockers",
+    "eval_remote_source_hashes_match": true,
+    "goal_completion_not_proven": true,
+    "last_observed_update": 2000,
+    "last_observed_job_state": "COMPLETED",
+    "last_observed_elapsed": "02:09:42",
+    "partial_native_schedule_audit": "b4_partial_native_schedule_audit.json",
+    "logged_updates_audited": 44,
+    "last_logged_update_audited": 440,
+    "observed_k_LR_schedule_all_match_B8": true,
+    "training_state": "COMPLETED0:0",
+    "final_fingerprint": "e4eee01bbcb31a3e116367ba6ec7247163870fb4c15b4efc008df3abb267ed65",
+    "checkpoint_sha256": "c46077cb2df9239f10560aa33dde7423736e0b0de4fcf229cd4bc0694c49ddea",
+    "actual_noise_events_match_B8": true,
+    "eval_job": 609995,
+    "eval_state": "COMPLETED0:0",
+    "eval_last_observed_elapsed": "00:07:14",
+    "runtime_gate": "passed_750CUDA_8paired_and_trainingweights_match",
+    "runtime_gate_audit": "b4_eval_gate_root_audit.json",
+    "last_verified_wait": {
+      "job": 609995,
+      "state": "RUNNING",
+      "elapsed": "01:59:08",
+      "seen_completed": 8,
+      "held_completed": 11,
+      "held_G": 0,
+      "held_E": 0,
+      "held_closed_loop": 0
+    },
+    "first_seen_case_audit": "b4_first_seen_case_root_audit.json",
+    "seen_completed": 8,
+    "held_completed": 16,
+    "partial_seen_counts": {
+      "G": 1,
+      "E_reference": 1,
+      "closed_loop": 1,
+      "Q_swap": 1
+    },
+    "partial_seen_root_audit": "b4_partial_seen_root_audit.json",
+    "complete_seen8_counts": {
+      "G": 8,
+      "Q_reference": 8,
+      "E_reference": 8,
+      "closed_loop": 8,
+      "flow_complete": 8,
+      "Q_swap": 8,
+      "Q_no_crystal": 0
+    },
+    "complete_seen_audit": "b4_complete_seen_root_audit.json",
+    "first_heldout_audit": "b4_first_heldout_root_audit.json",
+    "partial_held_counts": {
+      "G": 0,
+      "Q_reference": 12,
+      "E_reference": 0,
+      "closed_loop": 0,
+      "flow_complete": 0,
+      "Q_swap": 12,
+      "Q_no_crystal": 0
+    },
+    "partial_held_root_audit": "b4_partial_held_root_audit.json",
+    "independent_first3_matched_comparison": "b4_first3_held_matched_compare.json",
+    "first3SG_gap_root_verified": [
+      {
+        "id": "mp-1229077",
+        "SG": 82,
+        "unseenSG": true,
+        "all_required_SG_W_pairs_unseen": true
+      },
+      {
+        "id": "mp-1019259",
+        "SG": 186,
+        "unseenSG": true,
+        "all_required_SG_W_pairs_unseen": true
+      },
+      {
+        "id": "mp-1079976",
+        "SG": 63,
+        "unseenSG": true,
+        "all_required_SG_W_pairs_unseen": true
+      }
+    ],
+    "complete_held_counts": {
+      "G": 0,
+      "Q_reference": 13,
+      "E_reference": 0,
+      "closed_loop": 0,
+      "flow_complete": 0,
+      "Q_swap": 14,
+      "Q_no_crystal": 0
+    },
+    "final_root_audit": "b4_final_complete_root_audit.json",
+    "independent_final_review": "b4_final_independent_review.json",
+    "heldout_generation_failure_classes": {
+      "ambiguous_orbit_relations": 6,
+      "damaged_element_or_words": 7,
+      "missing_required_sentences": 2,
+      "missing_END": 1
+    }
+  },
+  "coverage256_training_design": {
+    "status": "train_eval_CPU_contracts_and_static_reviews_passed_ready_for_GPU",
+    "proposed_total_updates": 2048,
+    "train_cases": 256,
+    "epochs_per_train_case": 8,
+    "previous_train32_epochs": 64,
+    "model": "same1.5Bbase",
+    "proposed_block_size": 8,
+    "capacity": {
+      "K": 2720,
+      "MAXLEN": 8448
+    },
+    "loss_and_reader_recipe": "same fullhistory cleanAR1 hybrid CF objective",
+    "attribution_limit": "coverage and requiredcapacity change together; totalupdates fixed, percase repetitions differ",
+    "GPU_submitted": false,
+    "implementation_owner": "implement_coverage256_train",
+    "updates": 2048,
+    "arm": "joint_ar_diffusion_b8",
+    "source_sha256": {
+      "train.py": "944cabeba0094e8f1e0cc520526aca5966b67982ca8d3f1fb562c7a303eff855",
+      "train.slurm": "ffe477bda9b27a996d6eeb8529d38141b98d7dc41c118a81213f64e783735e06",
+      "test_train.py": "5aefb285554a3b3a6390488404a9e3215da56e0e02fc088590634e74f05ea2c0",
+      "evaluate.py": "75a149fc858dce0c8ec6f73c2db0b046e88733bc8b71a233d61564a01b4d52ff",
+      "evaluate.slurm": "72de368c856cc351b62a74587ac9e826b51be10b4545f48026d72a08818083af",
+      "test_evaluate.py": "507bd457591177ad6d866f60a2521fbb93ee4b0e19730812a2c31b6214b90477"
+    },
+    "Q2_provenance_corrected": "samecasefullhistory Q2 has no partner_id; Q1 conflict retains train partner",
+    "initial_remote_contract_job": 609916,
+    "initial_remote_contract_state": "COMPLETED0:0_old_metadata_version",
+    "evaluation_remaining_train_cases": 248,
+    "evaluation_all16held": true,
+    "final_remote_contract_job": 609945,
+    "final_remote_contract_state": "COMPLETED0:0",
+    "static_eval_review": "no_blockers",
+    "actual_runtime_alias_and_capacity_local_check": true
+  },
+  "user_scope_redirect_20261008": {
+    "authority": "direct user instruction in current conversation",
+    "mainline": "Existing PLaID style crystal representation/tokenization with interleaved AR natural language and diffusion crystal generation, grounded in Efficient-DLM, FLARE and Llamole",
+    "deferred": "New tokenizer and relational_cnl_v1 representation research",
+    "previous_coverage256_CNL_training": "do not submit under superseded mainline",
+    "current_request": "Explain interpretation and technical route; no new training requested in this turn",
+    "preserve_prior_results": true
+  },
+  "current_user_scope_20261010": {
+    "authority": "latest explicit user instruction",
+    "authorized_stage": "This chat only determines first property label and dataset source",
+    "label": "e_above_hull, continuous eV/atom, original paired label retained",
+    "dataset_recommendation": "CDVAE official MP-20 fixed snapshot",
+    "source_commit": "f857f598d6f6cca5dc1ea0582d228f12dcc2c2ea",
+    "source_path": "data/mp_20/{train,val,test}.csv",
+    "verified_rows": {
+      "train": 27136,
+      "val": 9047,
+      "test": 9046
+    },
+    "finite_ehull_all_rows": true,
+    "local_copy_matches_official_git_blobs": true,
+    "excluded_from_this_stage": [
+      "new training",
+      "ablations",
+      "generated-crystal stability evaluation",
+      "replacement/swap operation chain",
+      "new tokenizer research"
+    ]
+  },
+  "current_user_scope_20261011": {
+    "authority": "latest user request",
+    "stage": "Define and collect a wider structure-ehull dataset; no training or ablations",
+    "range_eV_per_atom": [
+      0,
+      0.3
+    ],
+    "recommended_source": "User MongoDB MP snapshot; official MP API fallback",
+    "plan": "research/mp_ehull030_collection_plan_20261011.md",
+    "target_max_records": 50000,
+    "planned_strata_max_each": 10000,
+    "candidate_counts": "not yet queried; MongoDB connection location requested",
+    "MP20_only_scope_superseded": true,
+    "ICSD": "provenance metadata only unless a matched MP structure-label record exists"
+  },
+  "mongo_read_only_requirement": {
+    "authority": "explicit user reminder",
+    "allowed": [
+      "read",
+      "download to local files"
+    ],
+    "forbidden": [
+      "insert",
+      "update",
+      "delete",
+      "create/drop indexes",
+      "modify database/server configuration"
+    ],
+    "operations_so_far": "ping, list databases/collections/indexes, metadata count, read-only aggregate/find; all writes local only"
+  },
+  "data_collection_progress": {
+    "status": "current_data_selection_stage_complete",
+    "metadata_records": 154879,
+    "eligible_downloaded_candidates": 64043,
+    "selected": 45629,
+    "bins": {
+      "(0,0.05]": 10000,
+      "(0.05,0.1]": 10000,
+      "(0.2,0.3]": 5629,
+      "(0.1,0.2]": 10000,
+      "0": 10000
+    },
+    "splits": {
+      "train": 36491,
+      "val": 4517,
+      "test": 4621
+    },
+    "unique_elements": 88,
+    "spacegroups": 178,
+    "manifest": "research/mp_ehull030_20261011/collection_001/data_001/manifest.json",
+    "verification": "research/mp_ehull030_20261011/collection_001/data_001/verification.json",
+    "source_structure_and_label_exact_matches": 45629,
+    "client_database_write_commands": 0,
+    "next_stage": "wait for user instruction; do not start training, ablations, new tokenizer or generated stability evaluation"
+  },
+  "user_scope_redirect_20261011": {
+    "authority": "user invoked wayfinder and confirmed destination and three scope questions",
+    "phase": "planning_only",
+    "canonical_map": ".scratch/unified-crystal-ar-diffusion/map.md",
+    "destination": "first executable experiment protocol for target-conditioned unified AR/diffusion crystal generation",
+    "confirmed_constraints": {
+      "property_targets": 1,
+      "text": "short verifiable design description",
+      "hardware": "one A100",
+      "total_GPU_hours_limit": 48
+    },
+    "representation": "fixed PLaID style",
+    "replace_swap": "examples only, no edit-chain task",
+    "no_training_submission_during_map": true,
+    "new_tokenizer_research": "deferred",
+    "specific_property": "not selected by this map; existing MP-ehull receipts are candidate evidence"
+  }
+}

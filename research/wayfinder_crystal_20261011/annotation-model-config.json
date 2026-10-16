@@ -1,0 +1,25 @@
+{
+  "base_url": "https://llm.sciencepal.ai/v1",
+  "model": "deepseek-v4-pro",
+  "thinking": {
+    "type": "enabled"
+  },
+  "reasoning_effort": "max",
+  "stream": true,
+  "max_tokens": 16384,
+  "credential_reference": {
+    "file": ".env",
+    "variable": "SCIENCEPAL_API_KEY",
+    "secret_value_saved_here": false
+  },
+  "validation": {
+    "models_endpoint": "HTTP200; model listed",
+    "chat_annotation": "two completed responses for one material; requested/returned model name deepseek-v4-pro",
+    "maximum_thinking": "Client sends thinking enabled and reasoning_effort max. User accepts this request setting; absent reasoning telemetry is not a blocker. Upstream execution remains unobserved.",
+    "responses_interface": "HTTP400: downstream service ID deepseek-flash not found despite requested deepseek-v4-pro",
+    "bulk_annotation_started": false,
+    "selected_interface": "Chat Completions (/v1/chat/completions)",
+    "user_acceptance_date": "2026-10-12"
+  },
+  "official_parameter_reference": "https://api-docs.deepseek.com/guides/thinking_mode/"
+}

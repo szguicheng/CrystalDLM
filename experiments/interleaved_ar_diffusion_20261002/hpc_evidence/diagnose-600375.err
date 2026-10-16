@@ -1,0 +1,7 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+Traceback (most recent call last):
+  File "/gpfs1/scratch/chenggui2/CrystalDLM/experiments/interleaved_ar_diffusion_20261002/diagnose.py", line 83, in <module>
+    main()
+  File "/gpfs1/scratch/chenggui2/CrystalDLM/experiments/interleaved_ar_diffusion_20261002/diagnose.py", line 53, in main
+    logits[:,banned]=-torch.inf
+RuntimeError: Inplace update to inference tensor outside InferenceMode is not allowed.You can make a clone to get a normal tensor before doing inplace update.See https://github.com/pytorch/rfcs/pull/17 for more details.

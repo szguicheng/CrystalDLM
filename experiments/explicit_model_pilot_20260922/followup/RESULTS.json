@@ -1,0 +1,686 @@
+{
+  "selection": {
+    "selected_at": "2026-09-22T11:29:55.717219+00:00",
+    "selected": "one_step",
+    "selection_data": "512 validation structures x 2 representations x 2 fixed training seeds",
+    "selection_order": [
+      "usable",
+      "composition_match",
+      "decoded"
+    ],
+    "ranking": [
+      {
+        "mode": "one_step",
+        "n": 2048,
+        "usable": 23,
+        "composition_match": 25,
+        "decoded": 130
+      },
+      {
+        "mode": "remask",
+        "n": 2048,
+        "usable": 22,
+        "composition_match": 28,
+        "decoded": 488
+      },
+      {
+        "mode": "random",
+        "n": 2048,
+        "usable": 15,
+        "composition_match": 22,
+        "decoded": 314
+      },
+      {
+        "mode": "content_first",
+        "n": 2048,
+        "usable": 13,
+        "composition_match": 15,
+        "decoded": 146
+      },
+      {
+        "mode": "confidence",
+        "n": 2048,
+        "usable": 0,
+        "composition_match": 0,
+        "decoded": 0
+      }
+    ],
+    "fresh_data": {
+      "selected": 512,
+      "coverage": {
+        "ok": 512,
+        "failed": 0,
+        "overlength": 0
+      },
+      "unknown_tokens": [],
+      "disjoint_from_previous": true
+    },
+    "source_sha256": {
+      "model.py": "ed56525fd72df8b86980295c1bf4d862eea4c8e18785c5128224a1c84a1fb6df",
+      "sampling_followup.py": "9faaf7930693543f650017022e5c34d58eb74d77ccdbcd199925e845457b16eb",
+      "evaluate.py": "cfbe8dc6b5f50483df26835c489ee274ebca663d408453761fa49ee0113d4e81"
+    },
+    "checkpoint_sha256": {
+      "explicit_17": "fda0bf73ef9a026124ffe39859782e4d796d5d7d12cc4b371779d3e2bc5f3a6b",
+      "explicit_29": "e6c4489742208c67f922ae656b5d4897bc71a3f9cbd373a601c120aa03e3a46b",
+      "wyckoff_17": "a045daefee996033c75f5162b05455561b44edca6dc94f6fd36a37f5c321643f",
+      "wyckoff_29": "273a6e375dfe72279edbc02b9fcda60a977fc390310ce44486257800cb6dc376"
+    }
+  },
+  "fresh_results": [
+    {
+      "representation": "explicit",
+      "mode": "confidence",
+      "n": 512,
+      "seed": 17,
+      "nonpad_token_accuracy": 0.27349846087765767,
+      "counts": {
+        "decoded": 0,
+        "composition_match": 0,
+        "usable": 0,
+        "reference_match": 0
+      },
+      "errors": [
+        [
+          "ValueError: Invalid literal for Fraction: '<PAD>'",
+          89
+        ],
+        [
+          "ValueError: could not convert string to float: '<PAD>'",
+          50
+        ],
+        [
+          "ValueError: invalid literal for int() with base 10: '<PAD>'",
+          22
+        ],
+        [
+          "ValueError: invalid literal for int() with base 10: '3.8634574693135'",
+          20
+        ],
+        [
+          "ValueError: invalid literal for int() with base 10: '4.0173601185911'",
+          14
+        ]
+      ],
+      "basic_and_symmetry_consistent": 0
+    },
+    {
+      "representation": "explicit",
+      "mode": "one_step",
+      "n": 512,
+      "seed": 17,
+      "nonpad_token_accuracy": 0.4700050110959983,
+      "counts": {
+        "decoded": 32,
+        "composition_match": 4,
+        "usable": 3,
+        "reference_match": 0
+      },
+      "errors": [
+        [
+          "ValueError: Invalid literal for Fraction: 'G'",
+          286
+        ],
+        [
+          "ValueError: Generator must preserve the integer lattice invertibly",
+          111
+        ],
+        [
+          "ValueError: Expected SITES, got G",
+          17
+        ],
+        [
+          "ValueError: Invalid literal for Fraction: 'FAMILY'",
+          12
+        ],
+        [
+          "ValueError: Parameters are only allowed as whole site-coordinate expressions",
+          10
+        ]
+      ],
+      "basic_and_symmetry_consistent": 0
+    },
+    {
+      "representation": "wyckoff",
+      "mode": "confidence",
+      "n": 512,
+      "seed": 17,
+      "nonpad_token_accuracy": 0.41106469173313076,
+      "counts": {
+        "decoded": 1,
+        "composition_match": 0,
+        "usable": 0,
+        "reference_match": 0
+      },
+      "errors": [
+        [
+          "ValueError: Wyckoff table setting mismatch",
+          12
+        ],
+        [
+          "ValueError: invalid literal for int() with base 10: '2.7827440243536'",
+          11
+        ],
+        [
+          "ValueError: invalid literal for int() with base 10: '3.1287232062386'",
+          9
+        ],
+        [
+          "ValueError: invalid literal for int() with base 10: '2.6449608137946'",
+          9
+        ],
+        [
+          "ValueError: invalid literal for int() with base 10: '3.1532620864772'",
+          9
+        ]
+      ],
+      "basic_and_symmetry_consistent": 0
+    },
+    {
+      "representation": "wyckoff",
+      "mode": "one_step",
+      "n": 512,
+      "seed": 17,
+      "nonpad_token_accuracy": 0.6455247499683504,
+      "counts": {
+        "decoded": 44,
+        "composition_match": 14,
+        "usable": 10,
+        "reference_match": 6
+      },
+      "errors": [
+        [
+          "ValueError: Wyckoff table setting mismatch",
+          118
+        ],
+        [
+          "KeyError: '2a'",
+          42
+        ],
+        [
+          "KeyError: '4c'",
+          23
+        ],
+        [
+          "KeyError: '1a'",
+          17
+        ],
+        [
+          "KeyError: '4a'",
+          10
+        ]
+      ],
+      "basic_and_symmetry_consistent": 0
+    },
+    {
+      "representation": "explicit",
+      "mode": "confidence",
+      "n": 512,
+      "seed": 29,
+      "nonpad_token_accuracy": 0.30428090772424654,
+      "counts": {
+        "decoded": 0,
+        "composition_match": 0,
+        "usable": 0,
+        "reference_match": 0
+      },
+      "errors": [
+        [
+          "ValueError: invalid literal for int() with base 10: '<PAD>'",
+          297
+        ],
+        [
+          "ValueError: could not convert string to float: '<PAD>'",
+          215
+        ]
+      ],
+      "basic_and_symmetry_consistent": 0
+    },
+    {
+      "representation": "explicit",
+      "mode": "one_step",
+      "n": 512,
+      "seed": 29,
+      "nonpad_token_accuracy": 0.4602691674421934,
+      "counts": {
+        "decoded": 27,
+        "composition_match": 0,
+        "usable": 0,
+        "reference_match": 0
+      },
+      "errors": [
+        [
+          "ValueError: Invalid literal for Fraction: 'G'",
+          250
+        ],
+        [
+          "ValueError: Generator must preserve the integer lattice invertibly",
+          166
+        ],
+        [
+          "ValueError: Expected G, got z",
+          17
+        ],
+        [
+          "ValueError: Invalid literal for Fraction: 'FAMILY'",
+          9
+        ],
+        [
+          "ValueError: Expected G, got y",
+          6
+        ]
+      ],
+      "basic_and_symmetry_consistent": 0
+    },
+    {
+      "representation": "wyckoff",
+      "mode": "confidence",
+      "n": 512,
+      "seed": 29,
+      "nonpad_token_accuracy": 0.3668818837827573,
+      "counts": {
+        "decoded": 0,
+        "composition_match": 0,
+        "usable": 0,
+        "reference_match": 0
+      },
+      "errors": [
+        [
+          "ValueError: Expected SG",
+          94
+        ],
+        [
+          "ValueError: Unknown baseline format",
+          81
+        ],
+        [
+          "ValueError: invalid literal for int() with base 10: '6.125742661882'",
+          16
+        ],
+        [
+          "ValueError: invalid literal for int() with base 10: '6.0780717542854'",
+          15
+        ],
+        [
+          "ValueError: invalid literal for int() with base 10: '6.6754558894563'",
+          14
+        ]
+      ],
+      "basic_and_symmetry_consistent": 0
+    },
+    {
+      "representation": "wyckoff",
+      "mode": "one_step",
+      "n": 512,
+      "seed": 29,
+      "nonpad_token_accuracy": 0.6288770730472212,
+      "counts": {
+        "decoded": 28,
+        "composition_match": 2,
+        "usable": 2,
+        "reference_match": 1
+      },
+      "errors": [
+        [
+          "ValueError: Wyckoff table setting mismatch",
+          158
+        ],
+        [
+          "KeyError: '2a'",
+          51
+        ],
+        [
+          "KeyError: '1a'",
+          45
+        ],
+        [
+          "KeyError: '4c'",
+          14
+        ],
+        [
+          "ValueError: Expected END",
+          5
+        ]
+      ],
+      "basic_and_symmetry_consistent": 0
+    }
+  ],
+  "symmetry_audits": [
+    {
+      "id": "mp-1112999",
+      "representation": "explicit",
+      "seed": 17,
+      "decoded": true,
+      "positive_volume": true,
+      "no_overlap": true,
+      "composition_match": true,
+      "usable": true,
+      "reference_match": false,
+      "reference_sg_match": false,
+      "atoms": 40,
+      "formula": "Cs2LiTlCl6",
+      "generated_sg": 2,
+      "metric_relative_error": 0.16659729835781747,
+      "site_mapping_error_A": 2.6645352591003757e-15,
+      "symmetry_consistent": false,
+      "mode": "one_step"
+    },
+    {
+      "id": "mp-1113021",
+      "representation": "explicit",
+      "seed": 17,
+      "decoded": true,
+      "positive_volume": true,
+      "no_overlap": true,
+      "composition_match": true,
+      "usable": true,
+      "reference_match": false,
+      "reference_sg_match": false,
+      "atoms": 40,
+      "formula": "Cs2LiBiI6",
+      "generated_sg": 2,
+      "metric_relative_error": 0.4495260954337144,
+      "site_mapping_error_A": 0.0,
+      "symmetry_consistent": false,
+      "mode": "one_step"
+    },
+    {
+      "id": "mp-1112486",
+      "representation": "explicit",
+      "seed": 17,
+      "decoded": true,
+      "positive_volume": true,
+      "no_overlap": true,
+      "composition_match": true,
+      "usable": true,
+      "reference_match": false,
+      "reference_sg_match": false,
+      "atoms": 40,
+      "formula": "Cs2TlRuF6",
+      "generated_sg": 2,
+      "metric_relative_error": 0.14941609947730183,
+      "site_mapping_error_A": 8.882326281544893e-16,
+      "symmetry_consistent": false,
+      "mode": "one_step"
+    },
+    {
+      "id": "mp-13815",
+      "representation": "wyckoff",
+      "seed": 17,
+      "decoded": true,
+      "positive_volume": true,
+      "no_overlap": true,
+      "composition_match": true,
+      "usable": true,
+      "reference_match": false,
+      "reference_sg_match": false,
+      "atoms": 40,
+      "formula": "Rb2NaErF6",
+      "generated_sg": 2,
+      "declared_sg": 225,
+      "declared_sg_match": false,
+      "metric_relative_error": 0.3080605204503661,
+      "site_mapping_error_A": 0.0,
+      "symmetry_consistent": false,
+      "mode": "one_step"
+    },
+    {
+      "id": "mp-1113376",
+      "representation": "wyckoff",
+      "seed": 17,
+      "decoded": true,
+      "positive_volume": true,
+      "no_overlap": true,
+      "composition_match": true,
+      "usable": true,
+      "reference_match": false,
+      "reference_sg_match": false,
+      "atoms": 40,
+      "formula": "Rb2AgAsCl6",
+      "generated_sg": 2,
+      "declared_sg": 225,
+      "declared_sg_match": false,
+      "metric_relative_error": 0.4835357414561556,
+      "site_mapping_error_A": 0.0,
+      "symmetry_consistent": false,
+      "mode": "one_step"
+    },
+    {
+      "id": "mp-1114380",
+      "representation": "wyckoff",
+      "seed": 17,
+      "decoded": true,
+      "positive_volume": true,
+      "no_overlap": true,
+      "composition_match": true,
+      "usable": true,
+      "reference_match": false,
+      "reference_sg_match": false,
+      "atoms": 40,
+      "formula": "Rb3VF6",
+      "generated_sg": 2,
+      "declared_sg": 225,
+      "declared_sg_match": false,
+      "metric_relative_error": 0.32926246211397253,
+      "site_mapping_error_A": 0.0,
+      "symmetry_consistent": false,
+      "mode": "one_step"
+    },
+    {
+      "id": "mp-1114419",
+      "representation": "wyckoff",
+      "seed": 17,
+      "decoded": true,
+      "positive_volume": true,
+      "no_overlap": true,
+      "composition_match": true,
+      "usable": true,
+      "reference_match": true,
+      "reference_sg_match": false,
+      "atoms": 40,
+      "formula": "Rb2LiInF6",
+      "generated_sg": 2,
+      "declared_sg": 225,
+      "declared_sg_match": false,
+      "metric_relative_error": 0.30677234628170963,
+      "site_mapping_error_A": 0.0,
+      "symmetry_consistent": false,
+      "mode": "one_step"
+    },
+    {
+      "id": "mp-1112008",
+      "representation": "wyckoff",
+      "seed": 17,
+      "decoded": true,
+      "positive_volume": true,
+      "no_overlap": true,
+      "composition_match": true,
+      "usable": true,
+      "reference_match": true,
+      "reference_sg_match": false,
+      "atoms": 40,
+      "formula": "Cs2NaLuCl6",
+      "generated_sg": 2,
+      "declared_sg": 225,
+      "declared_sg_match": false,
+      "metric_relative_error": 0.26925504966670283,
+      "site_mapping_error_A": 0.0,
+      "symmetry_consistent": false,
+      "mode": "one_step"
+    },
+    {
+      "id": "mp-865230",
+      "representation": "wyckoff",
+      "seed": 17,
+      "decoded": true,
+      "positive_volume": true,
+      "no_overlap": true,
+      "composition_match": true,
+      "usable": true,
+      "reference_match": true,
+      "reference_sg_match": false,
+      "atoms": 16,
+      "formula": "TmMgRh2",
+      "generated_sg": 2,
+      "declared_sg": 225,
+      "declared_sg_match": false,
+      "metric_relative_error": 0.13659470638574783,
+      "site_mapping_error_A": 0.0,
+      "symmetry_consistent": false,
+      "mode": "one_step"
+    },
+    {
+      "id": "mp-1112939",
+      "representation": "wyckoff",
+      "seed": 17,
+      "decoded": true,
+      "positive_volume": true,
+      "no_overlap": true,
+      "composition_match": true,
+      "usable": true,
+      "reference_match": true,
+      "reference_sg_match": false,
+      "atoms": 40,
+      "formula": "Cs2SmAgCl6",
+      "generated_sg": 2,
+      "declared_sg": 225,
+      "declared_sg_match": false,
+      "metric_relative_error": 0.3488175720088484,
+      "site_mapping_error_A": 0.0,
+      "symmetry_consistent": false,
+      "mode": "one_step"
+    },
+    {
+      "id": "mp-1112999",
+      "representation": "wyckoff",
+      "seed": 17,
+      "decoded": true,
+      "positive_volume": true,
+      "no_overlap": true,
+      "composition_match": true,
+      "usable": true,
+      "reference_match": true,
+      "reference_sg_match": false,
+      "atoms": 40,
+      "formula": "Cs2LiTlCl6",
+      "generated_sg": 2,
+      "declared_sg": 225,
+      "declared_sg_match": false,
+      "metric_relative_error": 0.34624780462649296,
+      "site_mapping_error_A": 0.0,
+      "symmetry_consistent": false,
+      "mode": "one_step"
+    },
+    {
+      "id": "mp-1187574",
+      "representation": "wyckoff",
+      "seed": 17,
+      "decoded": true,
+      "positive_volume": true,
+      "no_overlap": true,
+      "composition_match": true,
+      "usable": true,
+      "reference_match": true,
+      "reference_sg_match": false,
+      "atoms": 16,
+      "formula": "YbMgRh2",
+      "generated_sg": 2,
+      "declared_sg": 225,
+      "declared_sg_match": false,
+      "metric_relative_error": 0.2350442156105379,
+      "site_mapping_error_A": 0.0,
+      "symmetry_consistent": false,
+      "mode": "one_step"
+    },
+    {
+      "id": "mp-1113021",
+      "representation": "wyckoff",
+      "seed": 17,
+      "decoded": true,
+      "positive_volume": true,
+      "no_overlap": true,
+      "composition_match": true,
+      "usable": true,
+      "reference_match": false,
+      "reference_sg_match": false,
+      "atoms": 40,
+      "formula": "Cs2LiBiI6",
+      "generated_sg": 2,
+      "declared_sg": 225,
+      "declared_sg_match": false,
+      "metric_relative_error": 0.5107194407066288,
+      "site_mapping_error_A": 0.0,
+      "symmetry_consistent": false,
+      "mode": "one_step"
+    },
+    {
+      "id": "mp-1113021",
+      "representation": "wyckoff",
+      "seed": 29,
+      "decoded": true,
+      "positive_volume": true,
+      "no_overlap": true,
+      "composition_match": true,
+      "usable": true,
+      "reference_match": false,
+      "reference_sg_match": false,
+      "atoms": 40,
+      "formula": "Cs2LiBiI6",
+      "generated_sg": 2,
+      "declared_sg": 225,
+      "declared_sg_match": false,
+      "metric_relative_error": 0.25540343826819406,
+      "site_mapping_error_A": 0.0,
+      "symmetry_consistent": false,
+      "mode": "one_step"
+    },
+    {
+      "id": "mp-1111908",
+      "representation": "wyckoff",
+      "seed": 29,
+      "decoded": true,
+      "positive_volume": true,
+      "no_overlap": true,
+      "composition_match": true,
+      "usable": true,
+      "reference_match": true,
+      "reference_sg_match": false,
+      "atoms": 40,
+      "formula": "K2RbTlF6",
+      "generated_sg": 2,
+      "declared_sg": 225,
+      "declared_sg_match": false,
+      "metric_relative_error": 0.15665854816347372,
+      "site_mapping_error_A": 0.0,
+      "symmetry_consistent": false,
+      "mode": "one_step"
+    }
+  ],
+  "explicit_basic_examples": [
+    {
+      "id": "mp-1112999",
+      "seed": 17,
+      "formula": "Cs2LiTlCl6",
+      "symmetry_consistent": false,
+      "cif": "fresh_frozen/fresh_512_17/explicit_one_step/runs/explicit_17/samples/mp-1112999.cif",
+      "program": "SP1 CELL 12.374340325456 12.182493960703 13.37985208893 89.560550367426 90.895356202421 93.930603574964 ROUND 6 GENERATORS 2 G NEG y z x G z ADD y 1/2 ADD x 1/2 SITES 4 Cs 1/4 1/4 1/4 Li 1/2 1/2 1/2 Tl 0 1/2 1/2 Cl FREE 0.3369140625 0 0 RESIDUALS 0 END"
+    },
+    {
+      "id": "mp-1113021",
+      "seed": 17,
+      "formula": "Cs2LiBiI6",
+      "symmetry_consistent": false,
+      "cif": "fresh_frozen/fresh_512_17/explicit_one_step/runs/explicit_17/samples/mp-1113021.cif",
+      "program": "SP1 CELL 14.242778409807 13.804574186067 17.725424121462 90.785502514914 92.811584830143 100.93208175354 ROUND 6 GENERATORS 2 G NEG y z x G z ADD y 1/2 ADD x 1/2 SITES 4 Cs 1/4 1/4 1/4 Li 1/2 1/2 1/2 Bi 0 0 0 I FREE 0.203125 0 0 RESIDUALS 0 END"
+    },
+    {
+      "id": "mp-1112486",
+      "seed": 17,
+      "formula": "Cs2TlRuF6",
+      "symmetry_consistent": false,
+      "cif": "fresh_frozen/fresh_512_17/explicit_one_step/runs/explicit_17/samples/mp-1112486.cif",
+      "program": "SP1 CELL 10.09964222548 9.9430617860145 10.920317008742 89.082673369777 90.906341429826 90.845922353645 ROUND 6 GENERATORS 2 G NEG y z x G z ADD y 1/2 ADD x 1/2 SITES 4 Cs 1/4 1/4 1/4 Tl 1/2 1/2 1/2 Ru 0 0 0 F FREE 0.3173828125 0 0 RESIDUALS 0 END"
+    }
+  ],
+  "audit_real_structure_checks": 32
+}

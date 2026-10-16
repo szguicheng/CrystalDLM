@@ -1,0 +1,34 @@
+{
+  "job_id": 608363,
+  "submitted_at_utc": "2026-10-06T19:44:12.079953+00:00",
+  "partition": "stingy",
+  "node": "gpu-a100-04",
+  "gpu_count": 1,
+  "walltime": "04:00:00",
+  "updates": 2048,
+  "seed": 17,
+  "fresh_initialization": true,
+  "expected_initial_fingerprint": "e97aed646b7289c06f10be376b37d67cd7aa6a42ad6214b61da008cd85b8404b",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+  "block_size": 32,
+  "clean_crystal_ar_weight": 1,
+  "data_sha256": {
+    "records": "231f336234d15a216dc9cb800d8dc1c3f30cf90985184ccc0d3e5c26333e95c6",
+    "manifest": "25f150360f173970895dafd31e390f94b4b01ca174e6ad09b9e288c94b1e48cc"
+  },
+  "source_sha256": {
+    "train_full_history.py": "e2954cf3eea94639782987596799a772b475d6a3b62eada787ad8a4820633112",
+    "train_full_history.slurm": "3156e9199cf4c04e5d1649ac35f32968641dc0d6a6e9b4f5b31f2fd563f7f439",
+    "test_train_full_history.py": "2183f127a720a51fdb1c8ab79db3bdba1309ea3867e086cca089f22889121783"
+  },
+  "changes": "only nonneutral reader histories:Q1 replacement with stale partnerconditions/currentC1; Q2 full samecaseparenttrajectory; neutral/G/E/targets/schedule unchanged",
+  "prechecks": {
+    "local_and_remote_full2048_CPU_contract": "passed",
+    "real_capacity1024examples": "passed max7201<8192",
+    "source_paths": "passed sibling pathsresolve",
+    "independent_review": "no blockers"
+  },
+  "output": "experiments/interleaved_relational_scaled32_20261006/training_full_history_001",
+  "evaluation": "not_run"
+}

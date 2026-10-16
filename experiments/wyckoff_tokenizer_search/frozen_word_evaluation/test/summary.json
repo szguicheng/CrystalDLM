@@ -1,0 +1,118 @@
+{
+  "split": "test",
+  "structures": 8730,
+  "seeds": [
+    17,
+    29,
+    43
+  ],
+  "results": {
+    "rle_seed17": {
+      "structures": 8730,
+      "joint_exact_match": 0.6201603665521191,
+      "element_accuracy": 0.7844331899013747,
+      "mean_profile_nll": 0.6702323970441999,
+      "raw_word_sequence_exact": 0.5530355097365407
+    },
+    "rlemerge_seed17": {
+      "structures": 8730,
+      "joint_exact_match": 0.6407789232531501,
+      "element_accuracy": 0.7938387723239785,
+      "mean_profile_nll": 0.6441984968600603,
+      "raw_word_sequence_exact": 0.5817869415807561
+    },
+    "rle_seed29": {
+      "structures": 8730,
+      "joint_exact_match": 0.6189003436426117,
+      "element_accuracy": 0.7831384943452268,
+      "mean_profile_nll": 0.6823869200225071,
+      "raw_word_sequence_exact": 0.5427262313860252
+    },
+    "rlemerge_seed29": {
+      "structures": 8730,
+      "joint_exact_match": 0.6088201603665521,
+      "element_accuracy": 0.7783405049312669,
+      "mean_profile_nll": 0.6784500203647658,
+      "raw_word_sequence_exact": 0.5449026345933562
+    },
+    "rle_seed43": {
+      "structures": 8730,
+      "joint_exact_match": 0.6051546391752577,
+      "element_accuracy": 0.7797494383306043,
+      "mean_profile_nll": 0.6718942767327628,
+      "raw_word_sequence_exact": 0.5436426116838488
+    },
+    "rlemerge_seed43": {
+      "structures": 8730,
+      "joint_exact_match": 0.6034364261168385,
+      "element_accuracy": 0.7772362057804348,
+      "mean_profile_nll": 0.6743458510115165,
+      "raw_word_sequence_exact": 0.5399770904925544
+    }
+  },
+  "means": {
+    "rle": {
+      "joint_exact_match": 0.6147384497899963,
+      "mean_profile_nll": 0.6748378645998233,
+      "element_accuracy": 0.7824403741924019,
+      "raw_word_sequence_exact": 0.5464681176021382
+    },
+    "rlemerge": {
+      "joint_exact_match": 0.6176785032455135,
+      "mean_profile_nll": 0.6656647894121143,
+      "element_accuracy": 0.7831384943452268,
+      "raw_word_sequence_exact": 0.5555555555555555
+    }
+  },
+  "seed_deltas": [
+    {
+      "seed": 17,
+      "exact_delta": 0.020618556701030927,
+      "nll_delta": -0.026033900184139154
+    },
+    {
+      "seed": 29,
+      "exact_delta": -0.010080183276059565,
+      "nll_delta": -0.003936899657741079
+    },
+    {
+      "seed": 43,
+      "exact_delta": -0.001718213058419244,
+      "nll_delta": 0.002451574278753593
+    }
+  ],
+  "mean_exact_delta": 0.002940053455517373,
+  "mean_profile_nll_delta": -0.009173075187708879,
+  "hierarchical_bootstrap_exact_95ci": [
+    -0.01156930126002291,
+    0.02012313860252004
+  ],
+  "hierarchical_bootstrap_nll_95ci": [
+    -0.026664398821239603,
+    0.007163226613879933
+  ],
+  "bootstrap_scope": "Resample 3 paired training seeds and matched structures; only 3 observed initializations",
+  "checkpoint_rule": "Best validation profile NLL among steps 1000..10000; frozen before test",
+  "mean_training_seconds": {
+    "rle": 144.05471794796176,
+    "rlemerge": 148.92724082036875
+  },
+  "peak_training_cuda_bytes": {
+    "rle": [
+      84419072,
+      86057984,
+      86033920
+    ],
+    "rlemerge": [
+      72620032,
+      73313280,
+      74552320
+    ]
+  },
+  "data_sha256": "ae8d9046e4e58e03a0f2cb0f2eba27e0da2f3973bcbac1a5e6c4d1616d8ef28b",
+  "source_sha256": "8ec754e67884714c160def31714e42a226254e2d6a3555747a0bbd96751c8590",
+  "elapsed_seconds": 18.05534947407432,
+  "job_id": "533113",
+  "no_geometry_or_material_stability_claim": true,
+  "candidate_cap256_model_scope": true
+}

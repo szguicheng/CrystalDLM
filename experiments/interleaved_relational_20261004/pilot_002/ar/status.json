@@ -1,0 +1,75 @@
+{
+  "status": "evaluated",
+  "mode": "ar",
+  "arm": "ar",
+  "seed": 17,
+  "updates": 512,
+  "prediction_offset": 0,
+  "initial_fingerprint": "6bffa202d8485a6ee8bce3553044c9657948e25be702a45a9efb860ced9d1429",
+  "final_fingerprint": "e466cb281d88e6356f3ed73dc2915a3bf947024abecaa534f25d22a6a0dca5e8",
+  "checkpoint_sha256": "9d73aeebc4966efafb6fd2bb03bb448c400d0e20878c1258ec8c8c1321f123e5",
+  "checkpoint_reload_verified": true,
+  "score_sha256": "3c1760481872726d798dd18ec4fb3557d6940e669e4c4d818a07da276d9c477a",
+  "seen8": {
+    "n": 8,
+    "split": "train",
+    "counts": {
+      "G": 8,
+      "Q_reference": 8,
+      "E_reference": 8,
+      "closed_loop": 0,
+      "flow_complete": 7,
+      "Q_swap": 0,
+      "Q_no_crystal": 0
+    },
+    "rates": {
+      "G": 1.0,
+      "Q_reference": 1.0,
+      "E_reference": 1.0,
+      "closed_loop": 0.0,
+      "flow_complete": 0.875,
+      "Q_swap": 0.0,
+      "Q_no_crystal": 0.0
+    },
+    "attempts_retried": 0,
+    "failure_classes": {
+      "Q2_actual:answer_mismatch": 7,
+      "Q_swap:answer_mismatch": 8,
+      "Q_no_crystal:read_error": 8,
+      "Q2_actual:read_error": 1
+    },
+    "no_crystal_semantics": "Q_no_crystal is exact target-fact match without a structure; raw response is retained and this is not an abstention/success score."
+  },
+  "heldout16": {
+    "n": 16,
+    "split": "heldout",
+    "counts": {
+      "G": 0,
+      "Q_reference": 4,
+      "E_reference": 0,
+      "closed_loop": 0,
+      "flow_complete": 0,
+      "Q_swap": 0,
+      "Q_no_crystal": 0
+    },
+    "rates": {
+      "G": 0.0,
+      "Q_reference": 0.25,
+      "E_reference": 0.0,
+      "closed_loop": 0.0,
+      "flow_complete": 0.0,
+      "Q_swap": 0.0,
+      "Q_no_crystal": 0.0
+    },
+    "attempts_retried": 0,
+    "failure_classes": {
+      "G:generation_audit": 16,
+      "Q_reference:answer_mismatch": 12,
+      "E_reference:edit_mismatch": 16,
+      "closed_loop:skipped_invalid_generated_c1": 16,
+      "Q_swap:answer_mismatch": 16,
+      "Q_no_crystal:read_error": 16
+    },
+    "no_crystal_semantics": "Q_no_crystal is exact target-fact match without a structure; raw response is retained and this is not an abstention/success score."
+  }
+}

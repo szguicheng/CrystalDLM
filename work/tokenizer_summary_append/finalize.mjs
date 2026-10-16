@@ -1,0 +1,28 @@
+import fs from 'node:fs/promises';
+import {pathToFileURL} from 'node:url';
+import {FileBlob,PresentationFile} from '@oai/artifact-tool';
+const root='/Volumes/Extention/Users/guicheng/Code/helloWorld/CrystalDLM';
+const work=root+'/work/tokenizer_summary_append';
+const skill='/Volumes/Extention/Users/guicheng/.codex/plugins/cache/openai-primary-runtime/presentations/26.905.11957/skills/presentations';
+const runtime='/Volumes/Extention/Users/guicheng/.cache/codex-runtimes/codex-primary-runtime/dependencies';
+process.env.RUNTIME_NODE_MODULES=runtime+'/node/node_modules';
+process.env.RUNTIME_NODE=runtime+'/node/bin/node';
+process.env.RUNTIME_PYTHON=runtime+'/python/bin/python3';
+const {finalizePresentation}=await import(pathToFileURL(skill+'/container_tools/artifact_tool_utils.mjs').href);
+const preserved=JSON.parse(await fs.readFile(work+'/preservation.json','utf8'));
+const finalPath=root+'/outputs/group_meeting_tokenizer_exploration_20260909.pptx';
+const result=await finalizePresentation({workspaceDir:root,candidatePath:work+'/candidate.pptx',finalPath,
+ pythonExecutable:process.env.RUNTIME_PYTHON,integrityValidatorPath:skill+'/container_tools/inspect_presentation_package_integrity.py',
+ layoutValidatorPath:skill+'/container_tools/inspect_presentation_layout_geometry.py',
+ layoutArgs:['--expected-slide-size-emu','12192000,6858000','--validate-bullet-geometry','--validate-heading-fit','--require-native-table-slide','13'],
+ explicitTotalSlideCount:13,requiredNativeTableOwnerSlides:[13],verifyArtifactToolImport:true,
+ fontPolicy:{basis:'reference',families:[...preserved.font_families,'Calibri'],referencePath:work+'/reference.pptx',referenceSha256:preserved.reference_sha256},
+ receiptPath:work+'/validation.json'});
+console.log(JSON.stringify(result));
+const p=await PresentationFile.importPptx(await FileBlob.load(finalPath));
+for(let i=0;i<p.slides.items.length;i++){
+ const b=await p.slides.getItem(i).export({format:'png',scale:1});
+ await fs.writeFile(work+`/final-${i+1}.png`,new Uint8Array(await b.arrayBuffer()));
+}
+const b=await p.export({format:'webp',montage:true,scale:.3});
+await fs.writeFile(work+'/montage.webp',new Uint8Array(await b.arrayBuffer()));

@@ -1,0 +1,33 @@
+{
+  "id": "7177da42-b699-41df-a6b3-35845bf26b26",
+  "object": "chat.completion",
+  "created": 1791053594,
+  "model": "tokenhub/kimi-k3",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "The as-reported input cell is hexagonal in metric character: the two basal edges are recorded as [[param:cell.a]] and [[param:cell.b]], the unique axis as [[param:cell.c]], the basal-to-unique angles as [[param:cell.alpha]] and [[param:cell.beta]], and the basal angle as [[param:cell.gamma]]. Thus a and b have the same supplied length while gamma is marginally above the ideal hexagonal value; this is treated as an as-input deviation rather than an idealized correction, and no separate precision-correction terms are supplied. The input contents comprise [[param:input.atom_count]] atoms, chemically distributed as [[param:composition.Hg]], [[param:composition.Sn]], and [[param:composition.Sr]].\n\nThe symmetry is that of space group [[param:space_group.number]], with Hall symbol [[param:space_group.hall]], a primitive hexagonal polar setting in which the independent atoms are expanded by the public symmetry operations. The standard coordinate frame is coincident with the input frame: the basis transform is the identity [[param:frame.matrix]] and the origin displacement is zero [[param:frame.origin_shift]], so fractional coordinates in the standard setting can be read directly against the supplied cell, subject to the stated input fractional rounding of [[param:round_digits]] decimal places.\n\nThree independent Wyckoff orbits account for the six atoms. Strontium occupies orbit [[param:orbit.o000.id]], assigned to element [[param:orbit.o000.element]] on Wyckoff site [[param:orbit.o000.wyckoff]], with its single free coordinate given by [[param:orbit.o000.parameters]]; in the public expansion this is a multiplicity-two orbit lying on the polar axis at fractional positions of the form 0, 0, z, with only z free. Tin occupies orbit [[param:orbit.o001.id]], assigned to element [[param:orbit.o001.element]] on Wyckoff site [[param:orbit.o001.wyckoff]], with free coordinate [[param:orbit.o001.parameters]]; it is likewise multiplicity two but uses the 1/3, 2/3, z coordinate relation, again free only along z. Mercury occupies orbit [[param:orbit.o002.id]], assigned to element [[param:orbit.o002.element]] on Wyckoff site [[param:orbit.o002.wyckoff]], with free coordinate [[param:orbit.o002.parameters]]; it shares the same 1/3, 2/3, z public coordinate relation as the tin orbit while remaining crystallographically independent because its z parameter differs."
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "reasoning_stream": {
+    "chunks": 287,
+    "characters": 3043
+  },
+  "usage": {
+    "completion_tokens": 1246,
+    "prompt_tokens": 2238,
+    "total_tokens": 3484,
+    "completion_tokens_details": {
+      "reasoning_tokens": 699
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "cache_creation_input_tokens": 0
+    }
+  }
+}

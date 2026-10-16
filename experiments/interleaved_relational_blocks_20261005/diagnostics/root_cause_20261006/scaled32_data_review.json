@@ -1,0 +1,82 @@
+{
+  "review": "scaled32 data-stage independent audit",
+  "status": "pass",
+  "scope": "Read-only. No GPU, training, model forward, Slurm, or SSH used.",
+  "artifacts": {
+    "protocol": "experiments/interleaved_relational_scaled32_20261006/PROTOCOL.md",
+    "protocol_sha256": "3a57882aeb7ede7c9efb338f4dd15c2ed5a71bc4f16cf579cf7d460f84df6b10",
+    "preparer": "experiments/interleaved_relational_scaled32_20261006/prepare_data.py",
+    "preparer_sha256": "a83593413a9b3342dc6e6500dfa5024fc11e483181a809581b41058eac90a9d9",
+    "manifest_sha256": "25f150360f173970895dafd31e390f94b4b01ca174e6ad09b9e288c94b1e48cc",
+    "records_sha256": "231f336234d15a216dc9cb800d8dc1c3f30cf90985184ccc0d3e5c26333e95c6"
+  },
+  "source_provenance": {
+    "verify_frozen_sources": "pass for all 100 selected sources and stored 100/100 relational run",
+    "runtime_and_blockrunner_pins": "pass",
+    "original24_manifest_sha256": "b8c290dd64f210dd469b83cbf41ad321ae4d7c5c40303c70e8cda0e4335cd0c3",
+    "original24_records_sha256": "ef2ec2dcdee1d73c62e48987a9cec86a4db3076f9c48d9ab17b8745b9eca785f",
+    "source_plan_facts_text_cif_hashes": "all 48 saved rows match their source artifacts and frozen selection"
+  },
+  "cohort": {
+    "rows": 48,
+    "order": "selection IDs [0:48]",
+    "split": "train first 8, frozen heldout next 16, appended train IDs [24:48]",
+    "train": 32,
+    "heldout": 16,
+    "untouched_selection_ids": 52,
+    "original24_prefix_byte_identical": true,
+    "train_heldout_id_overlap": 0,
+    "train_heldout_source_cif_hash_overlap": 0
+  },
+  "appended_reference_checks": {
+    "rows_regenerated_exactly_matching_saved_rows": "24/24",
+    "source_plus_minus_physical_audits": "72/72 pass",
+    "original24_saved_source_plus_minus_audits": "72/72 pass",
+    "plus_factor": "1.05",
+    "minus_factor": "0.95",
+    "first_three_lattice_lengths_only": "pass; decimal multiplication matches pinned generator output",
+    "non_lattice_plan_fields_preserved": "pass",
+    "max_source_or_edit_geometry_component_error_A": 7.105427357601002e-15,
+    "failed_filtered_replaced_or_truncated_cases": 0
+  },
+  "capacity": {
+    "K": 2560,
+    "MAXLEN": 8192,
+    "maximum_crystal_body_plus_END_tokens": 2373,
+    "maximum_audited_pack_tokens": 7691,
+    "maximum_dual_stream_prefix_plus_2K": 7691,
+    "all_four_arms_and_G_Q1_E_Q2_packs_within_MAXLEN": true,
+    "train_variants": [
+      0,
+      1
+    ],
+    "heldout_variants": [
+      0
+    ],
+    "per_arm_per_task_examples": {
+      "train": 128,
+      "heldout": 32
+    },
+    "recomputed_pack_audit_matches_manifest": true
+  },
+  "cross_split_geometry_receipt": {
+    "path": "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/scaled32_cross_split_geometry_audit.json",
+    "records_sha256_matches_reviewed_records": true,
+    "reported_parameters": {
+      "ltol": 1e-06,
+      "stol": 1e-06,
+      "angle_tol": 1e-06,
+      "primitive_cell": true,
+      "scale": false
+    },
+    "reported_candidate_pairs": 0,
+    "reported_exact_matches": [],
+    "scope": "Receipt is limited to this strict matcher configuration; it is not a broad novelty claim."
+  },
+  "training": {
+    "scheduled": false,
+    "status": "not_run",
+    "learned_results": false
+  },
+  "findings": []
+}

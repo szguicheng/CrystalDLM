@@ -1,0 +1,37 @@
+{
+  "status": "COMPLETED",
+  "best_step": 10000,
+  "metrics": {
+    "structures": 2048,
+    "joint_exact_match": 0.66455078125,
+    "mean_profile_nll": 0.5597011010530101
+  },
+  "config": {
+    "variant": "unaggregated",
+    "seed": 17,
+    "steps": 10000,
+    "batch_size": 32,
+    "val_limit": 2048,
+    "eval_every": 1000,
+    "smoke": false,
+    "job_id": "533326",
+    "host": "gpu-a100-05",
+    "gpu": "NVIDIA A100-SXM4-80GB",
+    "parameter_count": 555456,
+    "train_structures": 26086,
+    "validation_structures": 2048,
+    "data_sha256": "91f324263c75a5da0a88cd75d4682fd04d7863a53e4f4253f4ed6d24c99f5904",
+    "source_sha256": "be6767e5d0e491df48abb8c82ee2042e150357388703f85ac7e331b9e46a63b7",
+    "model_sha256": "a4c1a52421699f1a88a980410aafb63e4d8d2a5879fb4c243b1480f3d31d18eb",
+    "feature_model_sha256": "980948b976170b3092dc8741b3bdbf42db714a62ad27860f496e8c877ae3cb38",
+    "frozen_trainer_sha256": "52c55974b036036ca938395068abdc9d7e4fcf75e0974847b2568be3751bcfac",
+    "hidden_target_leakage_check": "PASS",
+    "normalization_and_single_parent_identity": "PASS",
+    "same_parameter_constructor_as_frozen_flat": true,
+    "feature_change": "Embed per-WP counts before summing, instead of aggregating counts by multiplicity before embedding",
+    "validation_only": true,
+    "not_complete_diffusion_or_geometry_evaluation": true
+  },
+  "total_seconds": 583.9243903520983,
+  "peak_cuda_memory_bytes": 133240832
+}

@@ -1,0 +1,164 @@
+{
+  "status": "read_only_confidence_one_seen8_audit_complete",
+  "policy": "confidence_one",
+  "token_selection": "greedy_argmax",
+  "commit_rule": "one active position per reverse step, selected by highest top-1 softmax confidence",
+  "scope": {
+    "split": "train_seen8_only",
+    "records": 8,
+    "unique_ids": 8,
+    "ids_match_frozen_train_ids_exactly": true,
+    "heldout_evaluated": false,
+    "heldout_reason": "This policy artifact is explicitly seen8-only; no heldout records are present."
+  },
+  "strict_raw_token_bounds": {
+    "K": 2560,
+    "raw_token_field": "generation.value.tokens",
+    "end_token_id": 151666,
+    "pad_token_id": 151668,
+    "checked_records": 8,
+    "all_bounds_valid": true,
+    "checks": "Each sequence has exactly 2560 IDs, exactly one END, no PAD before END, and PAD only after END.",
+    "end_positions_zero_based": {
+      "anchor_Tb8Mg4": 405,
+      "anchor_Li8V4Ni4O16": 618,
+      "mp-4047": 694,
+      "mp-1205515": 841,
+      "mp-30009": 323,
+      "mp-1188285": 431,
+      "mp-1207068": 688,
+      "mp-1205902": 506
+    }
+  },
+  "summary_reconciliation": {
+    "policy_evaluation_equals_evaluation_summary": true,
+    "summary_counts_recomputed_from_raw": true,
+    "summary_failure_classes_recomputed_from_raw": true,
+    "counts": {
+      "G": "1/8",
+      "Q_reference": "8/8",
+      "E_reference": "0/8",
+      "closed_loop": "0/8",
+      "flow_complete": "1/8",
+      "Q_swap": "0/8",
+      "Q_no_crystal": "0/8"
+    },
+    "failure_classes": {
+      "G:generation_audit": 7,
+      "E_reference:edit_mismatch": 8,
+      "E_actual:edit_mismatch": 1,
+      "Q2_actual:answer_mismatch": 1,
+      "Q_swap:answer_mismatch": 8,
+      "closed_loop:skipped_invalid_generated_c1": 7
+    }
+  },
+  "generation_audit": {
+    "valid_G": ["anchor_Tb8Mg4"],
+    "decode_failures": {
+      "Orbit multiplicity and representative relations do not select one public definition": 4,
+      "Input cell sentence is missing or malformed": 1,
+      "Unknown element name in relational document: Dysproium": 1,
+      "Unknown element name in relational document: Geium": 1
+    },
+    "geometry_reached": 1,
+    "geometry_not_reached_due_decode": 7,
+    "valid_G_physical_audit": "anchor_Tb8Mg4 passes all physical checks and requested composition, atom-count, and space-group checks."
+  },
+  "reference_edit_audit": {
+    "attempts": 8,
+    "successes": 0,
+    "decode_failure": {
+      "cases": 1,
+      "id": "mp-1205515",
+      "reason": "Public symmetry sentence is missing or malformed",
+      "geometry_reached": false
+    },
+    "decoded_and_executed": 7,
+    "other_plan_fields_exact": "7/7 decoded edits",
+    "lattice_lengths_exact": "0/7 decoded edits",
+    "whole_geometry_scale": "0/7 decoded edits",
+    "edited_physical_audit": {
+      "passed": 6,
+      "failed": 1,
+      "failed_case": "mp-1188285",
+      "failure": "redetected_space_group_mismatch"
+    },
+    "length_max_abs_error_A": {
+      "anchor_Tb8Mg4": 0.50005105,
+      "anchor_Li8V4Ni4O16": 0.0975,
+      "mp-4047": 0.0007499495,
+      "mp-30009": 0.0046520045,
+      "mp-1188285": 0.4033991625,
+      "mp-1207068": 0.01599335,
+      "mp-1205902": 0.1028041
+    },
+    "physical_scope": "Six decoded reference edits pass the physical audit; one fails space-group redetection. The remaining case fails decoding before geometry."
+  },
+  "actual_generated_crystal_loop": {
+    "case": "anchor_Tb8Mg4",
+    "actual_C1_read": "success; all 7 graded fields correct",
+    "actual_E": {
+      "success": false,
+      "other_plan_fields_exact": true,
+      "lattice_lengths_exact": false,
+      "whole_geometry_scale": false,
+      "length_max_abs_error_A": 0.50005105,
+      "edited_physical_audit": true
+    },
+    "actual_Q2": {
+      "success": false,
+      "correct_fields": "6/7",
+      "incorrect_field": "b lattice length"
+    },
+    "flow_complete": true,
+    "closed_loop": false
+  },
+  "grounding_controls": {
+    "Q_reference": "8/8; space group, formula, atom count, orbit count, and a/b/c all correct",
+    "Q_swap": "0/8",
+    "Q_swap_correct_fields": {
+      "space_group": "0/8",
+      "formula": "0/8",
+      "atom_count": "8/8",
+      "orbit_count": "8/8",
+      "a_b_c_lengths": "8/8"
+    },
+    "Q_no_crystal": "0/8 exact target-fact matches; this is not an abstention score"
+  },
+  "execution_integrity": {
+    "attempts_retried": 0,
+    "oracle_repair_applied": false,
+    "source_behavior": "The frozen evaluator calls generation once per case and grades its unmodified output; the pinned sampler has no repair step.",
+    "sampler_sha256": "081ad3a97090651bba4b146e77fcd47807e0942d3ab4f7da450274a1e594b8d3",
+    "sampler_sha_matches_driver_pin": true,
+    "checkpoint_sha256_pin": "79359e4c1936782f925b35a9fbd9b9545add49e29dff8398057aa9868c14d4e0",
+    "weight_fingerprint_pin": "474810720624206b4623a586f7ffc9d099ae84ff0faabf579b259d7d09249350",
+    "driver_per_policy_guard": "The driver asserts the model fingerprint is unchanged after evaluation and before writing each policy JSON; the confidence_one artifact was emitted after that assertion.",
+    "all_three_policy_end_invariants": "pending; only confidence_one artifacts are present, while uniform_one and left_to_right_one plus the aggregate final checks are unfinished"
+  },
+  "comparison_limit": {
+    "original_stochastic_B32_seen8_G": "0/8",
+    "confidence_one_seen8_G": "1/8",
+    "interpretation": "Confidence-one changes both candidate selection to greedy argmax and the commit count/order. Uniform-one and left-to-right-one full controls are unfinished, so this does not isolate commit order as the cause of the generation change."
+  },
+  "source_hashes": {
+    "policy_json": "f55809668f5faf9e45f1f30b51230799c3be373cd101484f291c9cc2ecebfd25",
+    "evaluation_summary_json": "e246a1feb1894b6c0cac9f9fcac03523e826acf3b1710c3763855ac50183f40e",
+    "evaluation_jsonl": "fce5f3fa6d8e27c86992bd1625f8e086acd6137b8c7a041cc0a54aa098b60ed4",
+    "full_commit_fast_eval_py": "444e6d1fca8bf7f1de00dca951d64961cec5b3b64e3461034174140742b4bb36",
+    "tokenizer_json": "64b64b25afdb5e3e79168467889b4b777778dc17ae29458bcd2c41a51110cca6",
+    "original_stochastic_B32_evaluation_summary": "6f2c1139574cb45076d7e241f600a9f5061fc74b08191c65c4d776c103f66a44"
+  },
+  "sources": [
+    "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/full_commit_fast_001/confidence_one/policy.json",
+    "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/full_commit_fast_001/confidence_one/seen8/evaluation_summary.json",
+    "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/full_commit_fast_001/confidence_one/seen8/evaluation.jsonl",
+    "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/full_commit_fast_eval.py",
+    "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/commit_probe.py",
+    "experiments/interleaved_relational_blocks_20261005/run.py",
+    "experiments/interleaved_relational_blocks_20261005/score.py",
+    "experiments/interleaved_relational_blocks_20261005/pilot_001/diffusion_b32/seen8/evaluation_summary.json",
+    "experiments/interleaved_relational_20261004/data_pilot_001/manifest.json",
+    "experiments/interleaved_ar_diffusion_20261002/data_002/tokenizer/tokenizer.json"
+  ]
+}

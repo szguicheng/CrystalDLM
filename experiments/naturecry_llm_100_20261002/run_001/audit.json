@@ -1,0 +1,79 @@
+{
+  "classification": {
+    "pass": 84,
+    "geometry_execution_failure": 6,
+    "output_format_failure": 1,
+    "original_structure_match_failure": 6,
+    "transport_failure": 3
+  },
+  "total_requests_attempted": 198,
+  "model_responses_received": 195,
+  "total_tokens": 343797,
+  "all_100_source_hashes_verified": true,
+  "all_passed_outputs_independently_rechecked": true,
+  "blind_decoder_requests_verified": true,
+  "code_snapshots_verified": true,
+  "subgroups": {
+    "frame_transform_False": {
+      "selected": 29,
+      "passed": 26,
+      "transport_failures": 1
+    },
+    "frame_transform_True": {
+      "selected": 71,
+      "passed": 58,
+      "transport_failures": 2
+    },
+    "precision_corrections_False": {
+      "selected": 83,
+      "passed": 72,
+      "transport_failures": 1
+    },
+    "precision_corrections_True": {
+      "selected": 17,
+      "passed": 12,
+      "transport_failures": 2
+    }
+  },
+  "numeric_failures": [
+    {
+      "case": "mp-1173526",
+      "coordinate_error_A": 2.088010524022776e-05,
+      "lattice_error_A": 0.0
+    },
+    {
+      "case": "mp-1223282",
+      "coordinate_error_A": 8.473271866490837e-06,
+      "lattice_error_A": 1.3322676295501878e-15
+    },
+    {
+      "case": "mp-1224444",
+      "coordinate_error_A": 0.0,
+      "lattice_error_A": 2.399999994295854e-07
+    },
+    {
+      "case": "mp-38220",
+      "coordinate_error_A": 0.0,
+      "lattice_error_A": 4.1000000017277216e-07
+    },
+    {
+      "case": "mp-546757",
+      "coordinate_error_A": 7.199903500207038e-06,
+      "lattice_error_A": 0.0
+    },
+    {
+      "case": "mp-555984",
+      "coordinate_error_A": 6.091290270175159e-06,
+      "lattice_error_A": 0.0
+    }
+  ],
+  "format_only_diagnostic": {
+    "case": "mp-1105932",
+    "only_outer_fence_removed": true,
+    "matches_original": true,
+    "coordinate_error_A": 0.0,
+    "lattice_error_A": 0.0
+  },
+  "main_result_unchanged": "84/100",
+  "note": "Runtime coarse failure_kind incorrectly labeled network exceptions as model failures; audited types are authoritative. Outer-fence diagnostic is not counted in the main first-pass result."
+}

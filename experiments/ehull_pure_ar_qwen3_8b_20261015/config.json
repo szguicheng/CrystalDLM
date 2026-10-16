@@ -1,0 +1,60 @@
+{
+  "experiment": "ehull_pure_ar_qwen3_8b_20261015",
+  "mode": "pure_ar",
+  "model": "Qwen/Qwen3-8B",
+  "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+  "base_dtype": "bfloat16",
+  "adapter_dtype": "float32",
+  "adapter": {
+    "method": "LoRA",
+    "rank": 32,
+    "alpha": 64,
+    "dropout": 0.0,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj",
+      "lm_head"
+    ],
+    "trainable_token_indices": "four added PLaID control-token rows in input embeddings"
+  },
+  "data": {
+    "directory": "research/crystal_training_preflight_20261013/data_001",
+    "train_materials": 7272,
+    "validation_materials": 900,
+    "seed": 42,
+    "manifest_sha256": "aa21f3fbb4e9a19a676d1012405575932134675c3684d336d2c41283a281e741",
+    "train_sha256": "b74afafbca5a52eb1a63c9a7502c9fe1f5055cfef0c25f122de6d140c137080b",
+    "validation_sha256": "4e97dbe73aa2c4903aa11c4438f3c7c4da05a87eb1028632f121db4e8cd97f12",
+    "evaluation_ids_sha256": "d3cad1379df8d17089e5bc196fc6abedc09ca1f11f204370839df2471aceaa8c",
+    "sample_order_sha256": "7abf514e32c5d5aa109049c09e2a3b9d6a3ede86ffa01c17e78aac0167423247"
+  },
+  "training": {
+    "epochs": 1,
+    "updates": 909,
+    "effective_task_examples": 16,
+    "microbatch_tasks_per_material": 2,
+    "materials_per_optimizer_update": 8,
+    "learning_rate": 0.0002,
+    "weight_decay": 0.01,
+    "warmup_fraction": 0.05,
+    "schedule": "linear warmup then cosine decay",
+    "gradient_clip_norm": 1.0,
+    "gradient_checkpointing": true,
+    "auxiliary_trainable_parameters": [
+      {
+        "name": "time.weight",
+        "shape": "[STEPS + 1, hidden_size]",
+        "dtype": "float32",
+        "initialization": "zeros"
+      }
+    ],
+    "distributed_world_size": 2,
+    "checkpoint_interval_updates": 50,
+    "checkpoint_retention": 1
+  }
+}

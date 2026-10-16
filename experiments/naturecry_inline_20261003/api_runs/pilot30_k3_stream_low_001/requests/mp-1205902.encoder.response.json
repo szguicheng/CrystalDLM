@@ -1,0 +1,33 @@
+{
+  "id": "f24ee32a-139d-4774-8b05-02f8690bb7fc",
+  "object": "chat.completion",
+  "created": 1791053505,
+  "model": "tokenhub/kimi-k3",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "The original input cell is hexagonal in setting, with basal edges [[param:cell.a]] and [[param:cell.b]], axial length [[param:cell.c]], right angles [[param:cell.alpha]] and [[param:cell.beta]], and a basal angle [[param:cell.gamma]] that is only very slightly offset from the ideal 120-degree hexagonal value. The structure is described in the trigonal space group [[param:space_group.number]] with Hall symbol [[param:space_group.hall]], and the supplied input contains [[param:input.atom_count]] atoms distributed as Cu [[param:composition.Cu]], Ge [[param:composition.Ge]], and Li [[param:composition.Li]].\n\nNo change of coordinate frame is required between input and standard descriptions: the transformation matrix is [[param:frame.matrix]] and the origin shift is [[param:frame.origin_shift]], so fractional positions may be read directly in the standard frame, subject to the stated rounding convention [[param:round_digits]].\n\nThe independent symmetry orbits are five in number. Lithium occupies three distinct orbits: [[param:orbit.o000.id]] is Li [[param:orbit.o000.element]] on Wyckoff site [[param:orbit.o000.wyckoff]] with free axial parameter [[param:orbit.o000.parameters]]; [[param:orbit.o001.id]] is Li [[param:orbit.o001.element]] on a separate [[param:orbit.o001.wyckoff]] orbit with parameter [[param:orbit.o001.parameters]]; and [[param:orbit.o002.id]] is Li [[param:orbit.o002.element]] on the fixed site [[param:orbit.o002.wyckoff]]. Copper is represented by [[param:orbit.o003.id]], element [[param:orbit.o003.element]], Wyckoff label [[param:orbit.o003.wyckoff]], and axial parameter [[param:orbit.o003.parameters]]. Germanium is represented by [[param:orbit.o004.id]], element [[param:orbit.o004.element]], Wyckoff label [[param:orbit.o004.wyckoff]], and parameter [[param:orbit.o004.parameters]].\n\nSpatially, the 2d lithium and germanium orbits lie on the threefold-axis positions of the 1/3, 2/3, z type, with only z free; the copper 2c orbit lies on the 0, 0, z axis, again with only z free; and the lithium 1a orbit is fixed at the origin. Thus the five independent orbits generate the nine-atom input cell by symmetry, with the two-parameter basal metric held essentially hexagonal and the small gamma deviation retained as part of the input geometry rather than idealized away. No precision corrections were supplied, so there are no additional deviations from the idealized backbone to record beyond the input cell values themselves."
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "reasoning_stream": {
+    "chunks": 309,
+    "characters": 3128
+  },
+  "usage": {
+    "completion_tokens": 1298,
+    "prompt_tokens": 2713,
+    "total_tokens": 4011,
+    "completion_tokens_details": {
+      "reasoning_tokens": 700
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "cache_creation_input_tokens": 0
+    }
+  }
+}

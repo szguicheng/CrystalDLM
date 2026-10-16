@@ -1,0 +1,279 @@
+{
+  "status": "complete",
+  "diagnostic": "frozen_checkpoint_prefix_only",
+  "device": {
+    "name": "NVIDIA A100-SXM4-80GB",
+    "total_memory_GiB": 79.249755859375
+  },
+  "checkpoint_sha256": "79359e4c1936782f925b35a9fbd9b9545add49e29dff8398057aa9868c14d4e0",
+  "fingerprint_before": "474810720624206b4623a586f7ffc9d099ae84ff0faabf579b259d7d09249350",
+  "fingerprint_after": "474810720624206b4623a586f7ffc9d099ae84ff0faabf579b259d7d09249350",
+  "model_block_size": 32,
+  "prediction_offset": 0,
+  "inference_block_sizes": [
+    32,
+    16,
+    8
+  ],
+  "selection_policies": [
+    "multinomial",
+    "greedy"
+  ],
+  "generated_tokens_per_attempt": 128,
+  "cases": [
+    "anchor_Tb8Mg4",
+    "anchor_Li8V4Ni4O16",
+    "mp-4047",
+    "mp-1205515",
+    "mp-30009",
+    "mp-1188285",
+    "mp-1207068",
+    "mp-1205902"
+  ],
+  "split": "train_seen8_only",
+  "heldout_evaluated": false,
+  "sampling_retries": 0,
+  "header_reference_lengths": {
+    "anchor_Tb8Mg4": 61,
+    "anchor_Li8V4Ni4O16": 61,
+    "mp-4047": 121,
+    "mp-1205515": 87,
+    "mp-30009": 102,
+    "mp-1188285": 91,
+    "mp-1207068": 72,
+    "mp-1205902": 91
+  },
+  "paired_release_hashes_match": true,
+  "groups": {
+    "32": {
+      "multinomial": {
+        "n": 8,
+        "header_syntax_valid": 2,
+        "header_numbers_finite": 2,
+        "first_nonempty_line_terminated_by_newline": 8,
+        "complete_header_syntax_valid": 2,
+        "positive_edge_lengths": 2,
+        "angles_in_range": 2,
+        "cell_geometry_valid": 1,
+        "cell_geometry_checked": 2,
+        "failures": 0,
+        "model_calls": 1007,
+        "elapsed_seconds": 30.377040404826403,
+        "denominator": 8,
+        "sampling_retries": 0,
+        "header_syntax_rate": 0.25,
+        "header_line_termination_rate": 1.0,
+        "complete_header_syntax_rate": 0.25
+      },
+      "greedy": {
+        "n": 8,
+        "header_syntax_valid": 3,
+        "header_numbers_finite": 3,
+        "first_nonempty_line_terminated_by_newline": 8,
+        "complete_header_syntax_valid": 3,
+        "positive_edge_lengths": 3,
+        "angles_in_range": 2,
+        "cell_geometry_valid": 2,
+        "cell_geometry_checked": 2,
+        "failures": 0,
+        "model_calls": 1007,
+        "elapsed_seconds": 26.76273112371564,
+        "denominator": 8,
+        "sampling_retries": 0,
+        "header_syntax_rate": 0.375,
+        "header_line_termination_rate": 1.0,
+        "complete_header_syntax_rate": 0.375
+      }
+    },
+    "16": {
+      "multinomial": {
+        "n": 8,
+        "header_syntax_valid": 1,
+        "header_numbers_finite": 1,
+        "first_nonempty_line_terminated_by_newline": 8,
+        "complete_header_syntax_valid": 1,
+        "positive_edge_lengths": 1,
+        "angles_in_range": 1,
+        "cell_geometry_valid": 1,
+        "cell_geometry_checked": 1,
+        "failures": 0,
+        "model_calls": 1966,
+        "elapsed_seconds": 52.805481342598796,
+        "denominator": 8,
+        "sampling_retries": 0,
+        "header_syntax_rate": 0.125,
+        "header_line_termination_rate": 1.0,
+        "complete_header_syntax_rate": 0.125
+      },
+      "greedy": {
+        "n": 8,
+        "header_syntax_valid": 2,
+        "header_numbers_finite": 2,
+        "first_nonempty_line_terminated_by_newline": 8,
+        "complete_header_syntax_valid": 2,
+        "positive_edge_lengths": 2,
+        "angles_in_range": 2,
+        "cell_geometry_valid": 2,
+        "cell_geometry_checked": 2,
+        "failures": 0,
+        "model_calls": 1966,
+        "elapsed_seconds": 52.27643301943317,
+        "denominator": 8,
+        "sampling_retries": 0,
+        "header_syntax_rate": 0.25,
+        "header_line_termination_rate": 1.0,
+        "complete_header_syntax_rate": 0.25
+      }
+    },
+    "8": {
+      "multinomial": {
+        "n": 8,
+        "header_syntax_valid": 3,
+        "header_numbers_finite": 3,
+        "first_nonempty_line_terminated_by_newline": 8,
+        "complete_header_syntax_valid": 3,
+        "positive_edge_lengths": 3,
+        "angles_in_range": 3,
+        "cell_geometry_valid": 3,
+        "cell_geometry_checked": 3,
+        "failures": 0,
+        "model_calls": 3753,
+        "elapsed_seconds": 100.81870565470308,
+        "denominator": 8,
+        "sampling_retries": 0,
+        "header_syntax_rate": 0.375,
+        "header_line_termination_rate": 1.0,
+        "complete_header_syntax_rate": 0.375
+      },
+      "greedy": {
+        "n": 8,
+        "header_syntax_valid": 2,
+        "header_numbers_finite": 2,
+        "first_nonempty_line_terminated_by_newline": 8,
+        "complete_header_syntax_valid": 2,
+        "positive_edge_lengths": 2,
+        "angles_in_range": 2,
+        "cell_geometry_valid": 2,
+        "cell_geometry_checked": 2,
+        "failures": 0,
+        "model_calls": 3753,
+        "elapsed_seconds": 99.94977139402181,
+        "denominator": 8,
+        "sampling_retries": 0,
+        "header_syntax_rate": 0.25,
+        "header_line_termination_rate": 1.0,
+        "complete_header_syntax_rate": 0.25
+      }
+    }
+  },
+  "hashes_before": {
+    "parent_code_hashes": {
+      "model.py": "0b27ee6f952ebbdaea599b67da1e7b1061e3dd4b43bbe730bf2291eed0811349",
+      "pilot_001.slurm": "e0043191d5ad4215dc41e9850b72ee128b3a5a1ac6fa6b3f9c070b4e09dbbd96",
+      "prepare.py": "4889b777e79b15c1761698375f9b1f48316e648129cce4f0439a30714fb1a30b",
+      "run.py": "1be7999e5d297f3a3129b513be704eef7ec8ad6c5e7f8e1d62a6befe2a542f62",
+      "score.py": "3c1760481872726d798dd18ec4fb3557d6940e669e4c4d818a07da276d9c477a",
+      "test_block_model.py": "20c8e4e41438ea3ec725506eebc88eb695c285d8f6fb6c3c7ad5450878cc8fd9",
+      "test_block_runner.py": "086c87750518e30a2d03694102ab72d6bab703c650cb9e94e244030628ea15ac"
+    },
+    "probe_py_sha256": "41afdd7c9425592388adc79f2a403c17215830222bb60f0a58aea5981d36d004",
+    "codec_runtime_hashes": {
+      "relational_codec.py": "365f122905399a73477b92a7af97c05b78483ea5af12347f9a6050b1a3506813",
+      "run_roundtrip.py": "3d329b9a486bb4a2cddf90e0977468034080db7d03251082836b7d9e9a4c4cdd",
+      "geometry.py": "026d5c882c0e24b8802f9cf0f25415353cd3254e9bde45a6f1693396a72c04a2",
+      "base_cohort.py": "f8b47626030b77592a3e2105544576f1b2103bd77a4f9eb9e7d138416b19a1d8",
+      "oldcodec.py": "8b8a4f11a949000e2c3f29b787676a6147a776946c4f7c9f272c1f33bfa110d9",
+      "api_runner.py": "2973ac9aef70dbd0f98257608227f9ebf645a688d8ce7f90cc8edfcd86e9716d",
+      "prepare.py": "c77ea38b734fe0a1accab663cfa8f1b071ff7c4784513681af0d4bb89a4a6a65",
+      "public_wyckoff_baseline.py": "1ccdc829f301f1279f78751dc5138fcac1e67680dfdaebefdbf72c9ca3ba758a",
+      "public_affine_parser.py": "26675890fb9847d4011153fc3d5a11a29733349d8e74c765b71375cea3ccb3a1",
+      "cif_parser.py": "2c3fb30605c725b0eee8280aed50119544bf42177528ef5339159e36e80e684f",
+      "public_wyckoff_list.csv": "ca56602252b7896121253c910739ef2fccf0ba947f2940358feb941f30c5e13d"
+    },
+    "data": {
+      "manifest_sha256": "b8c290dd64f210dd469b83cbf41ad321ae4d7c5c40303c70e8cda0e4335cd0c3",
+      "records_sha256": "ef2ec2dcdee1d73c62e48987a9cec86a4db3076f9c48d9ab17b8745b9eca785f"
+    },
+    "tokenizer": {
+      "added_tokens.json": "28dc70f2cb07b1cca239390e21197945125792bfe8ef6c2a7463a4c387e79673",
+      "chat_template.jinja": "cd8e9439f0570856fd70470bf8889ebd8b5d1107207f67a5efb46e342330527f",
+      "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+      "special_tokens_map.json": "f863ec62eb91385603a3f882a55401ade618a3621d4ccc2affa3f28a579c9785",
+      "tokenizer.json": "64b64b25afdb5e3e79168467889b4b777778dc17ae29458bcd2c41a51110cca6",
+      "tokenizer_config.json": "1697fb166f8a8b20603b9b8782423599271e2c2e1c4740087ef1b4b8cffa2596",
+      "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    },
+    "checkpoint_sha256": "79359e4c1936782f925b35a9fbd9b9545add49e29dff8398057aa9868c14d4e0"
+  },
+  "hashes_after": {
+    "parent_code_hashes": {
+      "model.py": "0b27ee6f952ebbdaea599b67da1e7b1061e3dd4b43bbe730bf2291eed0811349",
+      "pilot_001.slurm": "e0043191d5ad4215dc41e9850b72ee128b3a5a1ac6fa6b3f9c070b4e09dbbd96",
+      "prepare.py": "4889b777e79b15c1761698375f9b1f48316e648129cce4f0439a30714fb1a30b",
+      "run.py": "1be7999e5d297f3a3129b513be704eef7ec8ad6c5e7f8e1d62a6befe2a542f62",
+      "score.py": "3c1760481872726d798dd18ec4fb3557d6940e669e4c4d818a07da276d9c477a",
+      "test_block_model.py": "20c8e4e41438ea3ec725506eebc88eb695c285d8f6fb6c3c7ad5450878cc8fd9",
+      "test_block_runner.py": "086c87750518e30a2d03694102ab72d6bab703c650cb9e94e244030628ea15ac"
+    },
+    "probe_py_sha256": "41afdd7c9425592388adc79f2a403c17215830222bb60f0a58aea5981d36d004",
+    "codec_runtime_hashes": {
+      "relational_codec.py": "365f122905399a73477b92a7af97c05b78483ea5af12347f9a6050b1a3506813",
+      "run_roundtrip.py": "3d329b9a486bb4a2cddf90e0977468034080db7d03251082836b7d9e9a4c4cdd",
+      "geometry.py": "026d5c882c0e24b8802f9cf0f25415353cd3254e9bde45a6f1693396a72c04a2",
+      "base_cohort.py": "f8b47626030b77592a3e2105544576f1b2103bd77a4f9eb9e7d138416b19a1d8",
+      "oldcodec.py": "8b8a4f11a949000e2c3f29b787676a6147a776946c4f7c9f272c1f33bfa110d9",
+      "api_runner.py": "2973ac9aef70dbd0f98257608227f9ebf645a688d8ce7f90cc8edfcd86e9716d",
+      "prepare.py": "c77ea38b734fe0a1accab663cfa8f1b071ff7c4784513681af0d4bb89a4a6a65",
+      "public_wyckoff_baseline.py": "1ccdc829f301f1279f78751dc5138fcac1e67680dfdaebefdbf72c9ca3ba758a",
+      "public_affine_parser.py": "26675890fb9847d4011153fc3d5a11a29733349d8e74c765b71375cea3ccb3a1",
+      "cif_parser.py": "2c3fb30605c725b0eee8280aed50119544bf42177528ef5339159e36e80e684f",
+      "public_wyckoff_list.csv": "ca56602252b7896121253c910739ef2fccf0ba947f2940358feb941f30c5e13d"
+    },
+    "data": {
+      "manifest_sha256": "b8c290dd64f210dd469b83cbf41ad321ae4d7c5c40303c70e8cda0e4335cd0c3",
+      "records_sha256": "ef2ec2dcdee1d73c62e48987a9cec86a4db3076f9c48d9ab17b8745b9eca785f"
+    },
+    "tokenizer": {
+      "added_tokens.json": "28dc70f2cb07b1cca239390e21197945125792bfe8ef6c2a7463a4c387e79673",
+      "chat_template.jinja": "cd8e9439f0570856fd70470bf8889ebd8b5d1107207f67a5efb46e342330527f",
+      "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+      "special_tokens_map.json": "f863ec62eb91385603a3f882a55401ade618a3621d4ccc2affa3f28a579c9785",
+      "tokenizer.json": "64b64b25afdb5e3e79168467889b4b777778dc17ae29458bcd2c41a51110cca6",
+      "tokenizer_config.json": "1697fb166f8a8b20603b9b8782423599271e2c2e1c4740087ef1b4b8cffa2596",
+      "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    },
+    "checkpoint_sha256": "79359e4c1936782f925b35a9fbd9b9545add49e29dff8398057aa9868c14d4e0"
+  },
+  "codec_pin": {
+    "summary_sha256": "438d019d6dc12a89b3a952761e392c26cabf7035c145d8b61eed8af3cd77ae02",
+    "selection_sha256": "03527304a32e11c15414e0f368e72c694e754b3add76f660701437b6bf22d54a",
+    "adapter_prepare_sha256": "07ac45cb3ae5ab086fed460fc957afcc94e1988011161a4d0178b388b1769f14",
+    "adapter_score_sha256": "3c1760481872726d798dd18ec4fb3557d6940e669e4c4d818a07da276d9c477a",
+    "data_model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "data_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+    "data_tokenizer_path": "experiments/interleaved_ar_diffusion_20261002/data_002/tokenizer",
+    "data_tokenizer_files": {
+      "added_tokens.json": "28dc70f2cb07b1cca239390e21197945125792bfe8ef6c2a7463a4c387e79673",
+      "chat_template.jinja": "cd8e9439f0570856fd70470bf8889ebd8b5d1107207f67a5efb46e342330527f",
+      "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+      "special_tokens_map.json": "f863ec62eb91385603a3f882a55401ade618a3621d4ccc2affa3f28a579c9785",
+      "tokenizer.json": "64b64b25afdb5e3e79168467889b4b777778dc17ae29458bcd2c41a51110cca6",
+      "tokenizer_config.json": "1697fb166f8a8b20603b9b8782423599271e2c2e1c4740087ef1b4b8cffa2596",
+      "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    },
+    "runtime_hashes": {
+      "relational_codec.py": "365f122905399a73477b92a7af97c05b78483ea5af12347f9a6050b1a3506813",
+      "run_roundtrip.py": "3d329b9a486bb4a2cddf90e0977468034080db7d03251082836b7d9e9a4c4cdd",
+      "geometry.py": "026d5c882c0e24b8802f9cf0f25415353cd3254e9bde45a6f1693396a72c04a2",
+      "base_cohort.py": "f8b47626030b77592a3e2105544576f1b2103bd77a4f9eb9e7d138416b19a1d8",
+      "oldcodec.py": "8b8a4f11a949000e2c3f29b787676a6147a776946c4f7c9f272c1f33bfa110d9",
+      "api_runner.py": "2973ac9aef70dbd0f98257608227f9ebf645a688d8ce7f90cc8edfcd86e9716d",
+      "prepare.py": "c77ea38b734fe0a1accab663cfa8f1b071ff7c4784513681af0d4bb89a4a6a65",
+      "public_wyckoff_baseline.py": "1ccdc829f301f1279f78751dc5138fcac1e67680dfdaebefdbf72c9ca3ba758a",
+      "public_affine_parser.py": "26675890fb9847d4011153fc3d5a11a29733349d8e74c765b71375cea3ccb3a1",
+      "cif_parser.py": "2c3fb30605c725b0eee8280aed50119544bf42177528ef5339159e36e80e684f",
+      "public_wyckoff_list.csv": "ca56602252b7896121253c910739ef2fccf0ba947f2940358feb941f30c5e13d"
+    },
+    "runtime_hashes_stable": true
+  }
+}

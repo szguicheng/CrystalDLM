@@ -1,0 +1,264 @@
+{
+  "inventory_date": "2026-10-07",
+  "scope": "Read-only corpus audit. No training, geometry parsing, encoding, or source-data edits. This inventory is the only written artifact.",
+  "findings": [
+    "Local MP-20 CSV splits are complete and content-pinned: train 27136, val 9047, test 9046 rows.",
+    "All 100 strict relational_cnl_v1 source texts are already present locally and on Burgundy; all 100 passed exact-plan, geometry, canonical-text, and second-decode checks.",
+    "The scaled32 corpus is 32 train + 16 heldout. All 16 heldout IDs and their byte-identical CIFs are in the repository MP-20 train CSV.",
+    "The full 27k legacy SP1/Wyckoff encoded cache is remote only; no full-MP20 relational_cnl_v1 cache was found."
+  ],
+  "mp20_splits": {
+    "local_directory": "work/PLaID/data/basic",
+    "source_provenance": "work/PLaID/README.md calls these primary dataset splits. Upstream release ID is not independently recorded; the experiment pins CSV SHA-256.",
+    "preparation": "experiments/explicit_full_mp20_20260923/prepare.py",
+    "protocol": "experiments/explicit_full_mp20_20260923/PROTOCOL.md",
+    "files": {
+      "train": {
+        "path": "work/PLaID/data/basic/train.csv",
+        "rows": 27136,
+        "bytes": 34975028,
+        "sha256": "133bab58dba02d316f9f91174839f17802dce648be4e8659d1a42b32b97fa01d",
+        "local": true,
+        "burgundy_path": "/gpfs1/scratch/chenggui2/CrystalDLM/tokenizer_search_20260908/input/train.csv",
+        "burgundy_bytes": 34975028,
+        "burgundy_mtime_utc": "2026-09-08"
+      },
+      "val": {
+        "path": "work/PLaID/data/basic/val.csv",
+        "rows": 9047,
+        "bytes": 11617279,
+        "sha256": "7b5f4085464b3eac9fd2123acee97ec372214004ce7e983b535b33395abc3e29",
+        "local": true,
+        "burgundy_path": "/gpfs1/scratch/chenggui2/CrystalDLM/tokenizer_search_20260908/input/val.csv",
+        "burgundy_bytes": 11617279,
+        "burgundy_mtime_utc": "2026-09-08"
+      },
+      "test": {
+        "path": "work/PLaID/data/basic/test.csv",
+        "rows": 9046,
+        "bytes": 11599133,
+        "sha256": "dd605c7543cf95a13e150aed630d0915e74edc8dea17e85301ee6fbfeb7f500a",
+        "local": true,
+        "burgundy_path": "/gpfs1/scratch/chenggui2/CrystalDLM/tokenizer_search_20260908/input/test.csv",
+        "burgundy_bytes": 11599133,
+        "burgundy_mtime_utc": "2026-09-08",
+        "prior_experiment_uses": "SHA256(material_id)-sorted indices [1024:1536], 512 test rows"
+      }
+    },
+    "total_rows": 45229,
+    "useful_columns": [
+      "material_id",
+      "pretty_formula",
+      "elements",
+      "cif",
+      "spacegroup.number"
+    ],
+    "enriched_derivative": {
+      "path": "work/PLaID/data/enriched/train_with_bulk_modulus.csv",
+      "bytes": 41910695,
+      "note": "train.csv plus bulk-modulus annotations; not an additional split"
+    }
+  },
+  "full_mp20_legacy_encoding": {
+    "representation": "explicit/SP1 and Wyckoff; distinct from relational_cnl_v1",
+    "summary": "experiments/explicit_full_mp20_20260923/data/summary.json",
+    "coverage": {
+      "train_ok": 27136,
+      "val_ok": 9047,
+      "selected_test_ok": 512,
+      "failures": 0
+    },
+    "local_records_jsonl_present": false,
+    "burgundy_records_jsonl": {
+      "path": "/gpfs1/scratch/chenggui2/CrystalDLM/explicit_full_mp20_20260923/data/records.jsonl",
+      "present": true,
+      "bytes": 127198821,
+      "hash_recomputed": false
+    },
+    "burgundy_prior_pilot_cache": {
+      "path": "/scratch/chenggui2/CrystalDLM/explicit_model_pilot_20260922/data/records.jsonl",
+      "present": true,
+      "bytes": 24394710
+    }
+  },
+  "relational_cnl_v1": {
+    "selection": {
+      "path": "experiments/naturecry_roundtrip_20261001/run_001/selection.json",
+      "bytes": 24726,
+      "sha256": "03527304a32e11c15414e0f368e72c694e754b3add76f660701437b6bf22d54a",
+      "cases": 100,
+      "mp20_train_ids": 98,
+      "anchor_ids_not_in_mp20_splits": 2
+    },
+    "strict_source_pool": {
+      "path": "experiments/naturecry_relational_20261004/run100_001",
+      "aggregate_bytes": 1235917,
+      "files": 413,
+      "records_bytes": 92289,
+      "summary_bytes": 17926,
+      "verified_texts": {
+        "directory": "experiments/naturecry_relational_20261004/run100_001/texts",
+        "files": 100,
+        "bytes": 259240
+      },
+      "source_cifs": {
+        "directory": "experiments/naturecry_roundtrip_20261001/run_001/inputs",
+        "files": 100,
+        "bytes": 128416
+      },
+      "saved_plans": {
+        "directory": "experiments/naturecry_inline_20261003/prepared_final/preflight_only/oracle_plans",
+        "files": 100,
+        "bytes": 160382
+      },
+      "encoder_facts": {
+        "directory": "experiments/naturecry_inline_20261003/prepared_final/cases",
+        "files": 100,
+        "encoder_facts_json_bytes": 241356
+      },
+      "validation": {
+        "completed": 100,
+        "passed": 100,
+        "failed": 0,
+        "api_requests": 0,
+        "llm_calls": 0,
+        "all_four_contracts_passed": true,
+        "contracts": [
+          "exact_plan_match",
+          "geometry_match",
+          "canonical_text_match",
+          "second_decode_match"
+        ]
+      },
+      "burgundy": {
+        "root": "/gpfs1/scratch/chenggui2/CrystalDLM",
+        "records_bytes": 92289,
+        "summary_bytes": 17926,
+        "text_files": 100,
+        "text_bytes": 259240,
+        "all_source_files_present": true,
+        "missing_or_hash_mismatched_files": 0,
+        "records_and_texts_mtime_utc": "2026-10-04 09:28:23"
+      }
+    },
+    "current_scaled32": {
+      "status": "data_prepared_not_trained",
+      "path": "experiments/interleaved_relational_scaled32_20261006/data_001",
+      "manifest_bytes": 22553,
+      "records_path": "experiments/interleaved_relational_scaled32_20261006/data_001/records.jsonl",
+      "records_bytes": 704386,
+      "records": 48,
+      "train": 32,
+      "heldout": 16,
+      "K": 2560,
+      "MAXLEN": 8192,
+      "later_model_pin": {
+        "name": "Qwen/Qwen2.5-1.5B-Instruct",
+        "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306"
+      },
+      "burgundy": {
+        "manifest_bytes": 22553,
+        "records_bytes": 704386,
+        "mtime_utc": "2026-10-06 13:43:59"
+      }
+    },
+    "entrypoints": {
+      "scale_data": "experiments/interleaved_relational_scaled32_20261006/prepare_data.py",
+      "cohort": "experiments/naturecry_relational_20261004/run100_001/sources/base_cohort.py",
+      "strict_runner": "experiments/naturecry_relational_20261004/run_roundtrip.py",
+      "raw_cif_to_facts": "experiments/naturecry_inline_20261003/prepare.py:71",
+      "plan_to_facts": "experiments/naturecry_inline_20261003/codec.py:253",
+      "encoder": "experiments/naturecry_relational_20261004/relational_codec.py:118",
+      "minimal_calls": [
+        "prepare_case(source, table) for CIF input",
+        "source_facts_from_plan(plan), then relational_codec.encode(facts, table=TABLE) for saved plan"
+      ],
+      "legacy_llm_result": "experiments/naturecry_llm_100_20261002/run_001 is a different representation (84/100 strict recovery); its prose is not the strict-CNL source text."
+    }
+  },
+  "frozen_heldout": {
+    "ids": [
+      "mp-1229077",
+      "mp-1019259",
+      "mp-1079976",
+      "mp-1095422",
+      "mp-1173947",
+      "mp-21371",
+      "mp-5456",
+      "mp-19419",
+      "mp-1219591",
+      "mp-1225818",
+      "mp-757163",
+      "mp-1178612",
+      "mp-1101160",
+      "mp-31460",
+      "mp-646926",
+      "mp-1217967"
+    ],
+    "repository_split_membership": {
+      "train": 16,
+      "val": 0,
+      "test": 0,
+      "source_cif_byte_matches_csv_cell": 16,
+      "train_sha256": "133bab58dba02d316f9f91174839f17802dce648be4e8659d1a42b32b97fa01d"
+    },
+    "current_scaled32_overlap": {
+      "train_mp20_rows": 30,
+      "train_anchor_rows": 2,
+      "heldout_rows": 16,
+      "heldout_pretty_formula_matches_in_current_train": 0,
+      "heldout_element_set_matches_in_current_train": 0
+    },
+    "if_using_remaining_mp20_train_rows": {
+      "comparison_rows_after_removing_heldout_ids": 27120,
+      "heldout_with_same_pretty_formula_string": 5,
+      "formula_ids": [
+        "mp-1173947",
+        "mp-19419",
+        "mp-757163",
+        "mp-1178612",
+        "mp-1101160"
+      ],
+      "heldout_with_same_elements_set": 7,
+      "elements_set_ids": [
+        "mp-1079976",
+        "mp-1173947",
+        "mp-5456",
+        "mp-19419",
+        "mp-757163",
+        "mp-1178612",
+        "mp-1101160"
+      ]
+    },
+    "current_gate": {
+      "evidence": "experiments/interleaved_relational_scaled32_20261006/prepare_data.py:371-384",
+      "split": "selection positions 0:8 train, 8:24 heldout, 24:48 added to train",
+      "checks": [
+        "source material ID disjointness",
+        "source CIF SHA-256 disjointness"
+      ],
+      "formula_or_reduced_composition_gate": false,
+      "chemical_system_gate": false
+    },
+    "interpretation": "An unfiltered MP-20 train expansion includes the exact 16 heldout IDs and byte-identical CIFs. Current code does not define formula-level or chemical-system exclusions. The counts above compare exact pretty_formula strings and elements sets; no separate reduced-formula normalization was run, so the parent should set any broader novelty rule."
+  },
+  "caveats": [
+    "Remote full-MP20 legacy records were checked for presence and size only, not rehashed.",
+    "No CIF geometry was parsed or converted here; heldout source verification compared CSV field bytes with the frozen input CIF files."
+  ],
+  "evidence_paths": [
+    "experiments/interleaved_relational_scaled32_20261006/data_001/manifest.json",
+    "experiments/interleaved_relational_scaled32_20261006/prepare_data.py",
+    "experiments/naturecry_roundtrip_20261001/run_001/selection.json",
+    "experiments/naturecry_relational_20261004/run100_001/records.json",
+    "experiments/naturecry_relational_20261004/run100_001/summary.json",
+    "experiments/naturecry_relational_20261004/relational_codec.py",
+    "experiments/naturecry_relational_20261004/run100_001/sources/base_cohort.py",
+    "experiments/naturecry_inline_20261003/prepare.py",
+    "experiments/naturecry_inline_20261003/codec.py",
+    "experiments/explicit_full_mp20_20260923/prepare.py",
+    "experiments/explicit_full_mp20_20260923/PROTOCOL.md",
+    "experiments/explicit_full_mp20_20260923/data/summary.json",
+    "work/PLaID/README.md"
+  ]
+}

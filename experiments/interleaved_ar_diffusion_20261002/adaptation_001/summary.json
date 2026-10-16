@@ -1,0 +1,374 @@
+{
+  "status": "complete",
+  "results": {
+    "ar": {
+      "warmup": {
+        "mode": "ar",
+        "phase": "warmup",
+        "feedback": false,
+        "updates": 600,
+        "seed": 17,
+        "status": "trained",
+        "initial_fingerprint": "6bffa202d8485a6ee8bce3553044c9657948e25be702a45a9efb860ced9d1429",
+        "warm_fingerprint": null,
+        "slurm_job": "600420",
+        "host": "gpu-a100-05",
+        "gpu": "NVIDIA A100-SXM4-80GB",
+        "noise_policy": "50% full MASK; remaining uniform 16..31",
+        "source_sha256": {
+          "diagnose.py": "30ebc2b3eabdff23c20814e51d4570709ce5d4f4c5764db02830c713614755af",
+          "model.py": "d7abb6bcc6da9b339408ee928caef4b80a4cf8a40204a0b61b8a68b7c9aca79a",
+          "test_checks.py": "69688c1c8ef0dc1385d481ca1787953891c71dc3a50d35dc72216f929aa6d971",
+          "run.py": "9f0f856357413230acdebf6e9269705e49ccb3be47fc3c8d7ad0a13ce068558f",
+          "prepare.py": "12434c3c231564395a0f7c1c379bb57306f41fe5a38365aa9e81408fa6274925",
+          "score.py": "645184cc388bad2554b4615e63135f27e90e150407335067577375dc41525c0a",
+          "adapt.py": "3e322436f7517f277383cf9538c437569df46d74064bbde84fae782a718935fc"
+        },
+        "completed_updates": 600,
+        "elapsed_seconds": 466.77471396513283,
+        "noise_counts": {},
+        "training_seconds": 466.7756402133964,
+        "seconds_per_update_median": 0.7724807872436941,
+        "final_fingerprint": "d532fa64463298d45358208f7ef60b25169b393707f8b26ce1b22e5689e90d03"
+      },
+      "branches": {
+        "consistent": {
+          "original": {
+            "n": 8,
+            "counts": {
+              "G": 8,
+              "Q_reference": 8,
+              "E_reference": 8,
+              "closed_loop": 8,
+              "flow_complete": 8,
+              "Q_swap": 1,
+              "Q_no_crystal": 0
+            },
+            "rates": {
+              "G": 1.0,
+              "Q_reference": 1.0,
+              "E_reference": 1.0,
+              "closed_loop": 1.0,
+              "flow_complete": 1.0,
+              "Q_swap": 0.125,
+              "Q_no_crystal": 0.0
+            },
+            "elapsed_seconds": 148.24251171993092,
+            "attempts_retried": 0,
+            "seconds_median": 19.004034087527543,
+            "seconds_p95": 23.139245939534156,
+            "evaluation_split": "train",
+            "training_materials_evaluated": true,
+            "stage0_passed": true
+          },
+          "conflicts": {
+            "1": {
+              "n": 32,
+              "success": 2,
+              "correct_by_field": {
+                "sg": 2,
+                "formula": 24,
+                "atoms": 32,
+                "orbits": 30,
+                "a": 32,
+                "b": 32,
+                "c": 32
+              }
+            },
+            "1.03": {
+              "n": 32,
+              "success": 2,
+              "correct_by_field": {
+                "sg": 2,
+                "formula": 24,
+                "atoms": 32,
+                "orbits": 30,
+                "a": 32,
+                "b": 32,
+                "c": 32
+              }
+            }
+          }
+        },
+        "feedback": {
+          "original": {
+            "n": 8,
+            "counts": {
+              "G": 8,
+              "Q_reference": 8,
+              "E_reference": 8,
+              "closed_loop": 8,
+              "flow_complete": 8,
+              "Q_swap": 8,
+              "Q_no_crystal": 0
+            },
+            "rates": {
+              "G": 1.0,
+              "Q_reference": 1.0,
+              "E_reference": 1.0,
+              "closed_loop": 1.0,
+              "flow_complete": 1.0,
+              "Q_swap": 1.0,
+              "Q_no_crystal": 0.0
+            },
+            "elapsed_seconds": 148.98581600096077,
+            "attempts_retried": 0,
+            "seconds_median": 18.86958653968759,
+            "seconds_p95": 23.39649784914218,
+            "evaluation_split": "train",
+            "training_materials_evaluated": true,
+            "stage0_passed": true
+          },
+          "conflicts": {
+            "1": {
+              "n": 32,
+              "success": 14,
+              "correct_by_field": {
+                "sg": 28,
+                "formula": 32,
+                "atoms": 32,
+                "orbits": 32,
+                "a": 16,
+                "b": 16,
+                "c": 16
+              }
+            },
+            "1.03": {
+              "n": 32,
+              "success": 15,
+              "correct_by_field": {
+                "sg": 30,
+                "formula": 32,
+                "atoms": 32,
+                "orbits": 32,
+                "a": 16,
+                "b": 16,
+                "c": 16
+              }
+            }
+          }
+        }
+      }
+    },
+    "hybrid": {
+      "warmup": {
+        "mode": "hybrid",
+        "phase": "warmup",
+        "feedback": false,
+        "updates": 600,
+        "seed": 17,
+        "status": "trained",
+        "initial_fingerprint": "6bffa202d8485a6ee8bce3553044c9657948e25be702a45a9efb860ced9d1429",
+        "warm_fingerprint": null,
+        "slurm_job": "600420",
+        "host": "gpu-a100-05",
+        "gpu": "NVIDIA A100-SXM4-80GB",
+        "noise_policy": "50% full MASK; remaining uniform 16..31",
+        "source_sha256": {
+          "diagnose.py": "04f551667b8e3fd0b6be79b997e9ac4ca0ea11dae76c06c5b3981e42e406b0b9",
+          "model.py": "d7abb6bcc6da9b339408ee928caef4b80a4cf8a40204a0b61b8a68b7c9aca79a",
+          "test_checks.py": "69688c1c8ef0dc1385d481ca1787953891c71dc3a50d35dc72216f929aa6d971",
+          "run.py": "9f0f856357413230acdebf6e9269705e49ccb3be47fc3c8d7ad0a13ce068558f",
+          "prepare.py": "12434c3c231564395a0f7c1c379bb57306f41fe5a38365aa9e81408fa6274925",
+          "score.py": "645184cc388bad2554b4615e63135f27e90e150407335067577375dc41525c0a",
+          "adapt.py": "3e322436f7517f277383cf9538c437569df46d74064bbde84fae782a718935fc"
+        },
+        "completed_updates": 600,
+        "elapsed_seconds": 484.84480315074325,
+        "noise_counts": {
+          "32": 4788,
+          "18": 307,
+          "30": 280,
+          "19": 323,
+          "23": 326,
+          "20": 309,
+          "28": 297,
+          "25": 299,
+          "31": 309,
+          "27": 316,
+          "17": 300,
+          "24": 329,
+          "21": 281,
+          "29": 305,
+          "22": 256,
+          "26": 297,
+          "16": 278
+        },
+        "training_seconds": 484.845655599609,
+        "seconds_per_update_median": 0.8138556289486587,
+        "final_fingerprint": "cc32cb8499e36b08c135b804eea94746cf9087c2f215caa7acc4a8a893ca5749"
+      },
+      "branches": {
+        "consistent": {
+          "original": {
+            "n": 8,
+            "counts": {
+              "G": 8,
+              "Q_reference": 8,
+              "E_reference": 8,
+              "closed_loop": 4,
+              "flow_complete": 4,
+              "Q_swap": 0,
+              "Q_no_crystal": 0
+            },
+            "rates": {
+              "G": 1.0,
+              "Q_reference": 1.0,
+              "E_reference": 1.0,
+              "closed_loop": 0.5,
+              "flow_complete": 0.5,
+              "Q_swap": 0.0,
+              "Q_no_crystal": 0.0
+            },
+            "elapsed_seconds": 75.17007926199585,
+            "attempts_retried": 0,
+            "seconds_median": 9.009543239604682,
+            "seconds_p95": 11.716229688562452,
+            "evaluation_split": "train",
+            "training_materials_evaluated": true,
+            "stage0_passed": false
+          },
+          "conflicts": {
+            "1": {
+              "n": 32,
+              "success": 0,
+              "correct_by_field": {
+                "sg": 1,
+                "formula": 0,
+                "atoms": 4,
+                "orbits": 3,
+                "a": 25,
+                "b": 25,
+                "c": 26
+              }
+            },
+            "1.03": {
+              "n": 32,
+              "success": 0,
+              "correct_by_field": {
+                "sg": 1,
+                "formula": 0,
+                "atoms": 4,
+                "orbits": 3,
+                "a": 26,
+                "b": 26,
+                "c": 26
+              }
+            }
+          },
+          "diagnostic": {
+            "16": {
+              "content_top1_accuracy": 1.0,
+              "content_correct": 598,
+              "content_count": 598,
+              "condition_valid": 8,
+              "n": 8
+            },
+            "32": {
+              "content_top1_accuracy": 1.0,
+              "content_correct": 1230,
+              "content_count": 1230,
+              "condition_valid": 8,
+              "n": 8
+            }
+          }
+        },
+        "feedback": {
+          "original": {
+            "n": 8,
+            "counts": {
+              "G": 7,
+              "Q_reference": 8,
+              "E_reference": 8,
+              "closed_loop": 3,
+              "flow_complete": 4,
+              "Q_swap": 1,
+              "Q_no_crystal": 0
+            },
+            "rates": {
+              "G": 0.875,
+              "Q_reference": 1.0,
+              "E_reference": 1.0,
+              "closed_loop": 0.375,
+              "flow_complete": 0.5,
+              "Q_swap": 0.125,
+              "Q_no_crystal": 0.0
+            },
+            "elapsed_seconds": 73.98266610316932,
+            "attempts_retried": 0,
+            "seconds_median": 9.05088279931806,
+            "seconds_p95": 10.99489788392093,
+            "evaluation_split": "train",
+            "training_materials_evaluated": true,
+            "stage0_passed": false
+          },
+          "conflicts": {
+            "1": {
+              "n": 32,
+              "success": 0,
+              "correct_by_field": {
+                "sg": 2,
+                "formula": 29,
+                "atoms": 29,
+                "orbits": 27,
+                "a": 0,
+                "b": 0,
+                "c": 0
+              }
+            },
+            "1.03": {
+              "n": 32,
+              "success": 0,
+              "correct_by_field": {
+                "sg": 2,
+                "formula": 28,
+                "atoms": 28,
+                "orbits": 25,
+                "a": 0,
+                "b": 0,
+                "c": 0
+              }
+            }
+          },
+          "diagnostic": {
+            "16": {
+              "content_top1_accuracy": 1.0,
+              "content_correct": 598,
+              "content_count": 598,
+              "condition_valid": 8,
+              "n": 8
+            },
+            "32": {
+              "content_top1_accuracy": 1.0,
+              "content_correct": 1230,
+              "content_count": 1230,
+              "condition_valid": 8,
+              "n": 8
+            }
+          }
+        }
+      },
+      "warmup_diagnostic": {
+        "16": {
+          "content_top1_accuracy": 1.0,
+          "content_correct": 598,
+          "content_count": 598,
+          "condition_valid": 8,
+          "n": 8
+        },
+        "32": {
+          "content_top1_accuracy": 1.0,
+          "content_correct": 1230,
+          "content_count": 1230,
+          "condition_valid": 8,
+          "n": 8
+        }
+      }
+    }
+  },
+  "mechanism_gate": {
+    "ar": false,
+    "hybrid": false
+  },
+  "note": "Training structures seen; counterfactual pairings and 1.03 perturbation held out. No 1024-material training launched."
+}

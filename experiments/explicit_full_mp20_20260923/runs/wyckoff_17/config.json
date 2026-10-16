@@ -1,0 +1,25 @@
+{
+  "representation": "wyckoff",
+  "seed": 17,
+  "epochs": 500,
+  "batch_size": 256,
+  "train_count": 27136,
+  "validation_count": 9047,
+  "steps_per_epoch": 106,
+  "condition": "reduced composition only",
+  "max_length": 256,
+  "epoch_definition": "one shuffled traversal of every training structure; retain final partial batch",
+  "lr": 0.0003,
+  "weight_decay": 0.01,
+  "early_stopping": false,
+  "parameter_count": 2358112,
+  "gpu": "NVIDIA A100-SXM4-80GB",
+  "torch": "2.2.0+cu121",
+  "slurm_job": "581969",
+  "source_sha256": {
+    "model.py": "7f23107b18f483927e15bed09e0469fa457b0ed59bce9b9ad42349ab5662edd7",
+    "prepare.py": "0924b9b8e2b8a3fc73d4f390155529380f85e23d6984ef4f93780eba4298aa86",
+    "train_full.py": "ba8ef3b8e3cf7b0d9c049d90f61ecdfbfdfd13c6d02d9c552c91c0e2a9beb03e"
+  },
+  "data_sha256": "614ee311d0c0894b1cca1d05cd40334d1f09b557d98634281a266869e0d6f27d"
+}

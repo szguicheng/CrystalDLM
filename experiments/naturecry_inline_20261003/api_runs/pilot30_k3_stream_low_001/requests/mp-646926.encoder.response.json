@@ -1,0 +1,33 @@
+{
+  "id": "947f7cb9-1201-4b69-91f3-a4f81e24e040",
+  "object": "chat.completion",
+  "created": 1791054148,
+  "model": "tokenhub/kimi-k3",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "The original input is a small rhombohedrally described cell whose three edges are given as [[param:cell.a]], [[param:cell.b]], and [[param:cell.c]], with interaxial angles [[param:cell.alpha]], [[param:cell.beta]], and [[param:cell.gamma]]; the near-equalities are retained as supplied rather than rewritten as exactly equal. This input cell contains [[param:input.atom_count]] atoms overall, distributed as [[param:composition.Gd]] and [[param:composition.Ru]]. Public crystallographic interpretation places the structure in space group [[param:space_group.number]] with Hall symbol [[param:space_group.hall]], i.e. a centrosymmetric face-centered cubic setting described through a primitive input cell rather than the larger conventional cubic cell.\n\nThe symmetry expansion reduces to two independent Wyckoff orbits. The gadolinium orbit [[param:orbit.o000.id]] has species [[param:orbit.o000.element]] and Wyckoff label [[param:orbit.o000.wyckoff]], and it is a fixed special-position orbit with no free positional parameters in the supplied expansion. The ruthenium orbit [[param:orbit.o001.id]] has species [[param:orbit.o001.element]] and Wyckoff label [[param:orbit.o001.wyckoff]], likewise fully fixed by symmetry. Together these two independent orbits account for the six-atom input composition when expressed in the primitive input description, while their public multiplicities correspond to the face-centered conventional setting.\n\nThe relationship between coordinate frames is specified by the standard-from-input rotation matrix [[param:frame.matrix]] and the standard-frame origin shift [[param:frame.origin_shift]]. The matrix is very close to the ideal half-fraction mapping expected between a rhombohedral primitive description and the conventional face-centered cubic frame, but the tiny floating-point departures are preserved as given and are not idealized away. Input fractional coordinates were rounded to [[param:round_digits]] decimal places. No precision-correction entries were supplied, so there are no measured or fitted deviations from the idealized backbone to report; the structure is therefore described only by the fixed Wyckoff backbone and the stated frame transformation."
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "reasoning_stream": {
+    "chunks": 578,
+    "characters": 5942
+  },
+  "usage": {
+    "completion_tokens": 1742,
+    "prompt_tokens": 1825,
+    "total_tokens": 3567,
+    "completion_tokens_details": {
+      "reasoning_tokens": 1280
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "cache_creation_input_tokens": 0
+    }
+  }
+}

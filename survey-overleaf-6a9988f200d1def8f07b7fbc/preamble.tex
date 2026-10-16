@@ -1,0 +1,48 @@
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[margin=0.86in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs,longtable,tabularx,array}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+
+\definecolor{deepblue}{HTML}{174A7E}
+\definecolor{midblue}{HTML}{3B78A8}
+\definecolor{pale}{HTML}{EEF5FA}
+\definecolor{warm}{HTML}{9B5B2E}
+\definecolor{palewarm}{HTML}{FBF1E8}
+\definecolor{darkgray}{HTML}{374151}
+
+\hypersetup{colorlinks=true,linkcolor=deepblue,citecolor=deepblue,urlcolor=midblue,pdfauthor={Gang Liu},pdftitle={What Should Count as a Token?}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.70em}
+\setlist{nosep,leftmargin=1.6em}
+\captionsetup{font=small,labelfont=bf}
+\titleformat{\section}{\Large\bfseries\color{deepblue}}{\thesection}{0.65em}{}
+\titleformat{\subsection}{\large\bfseries\color{darkgray}}{\thesubsection}{0.55em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries\color{warm}}{\thesubsubsection}{0.5em}{}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{What Should Count as a Token?}
+\rhead{Working Draft}
+\cfoot{\thepage}
+\setlength{\headheight}{14pt}
+
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcommand{\term}[1]{\textbf{#1}}
+\newcommand{\status}[1]{\textbf{#1}}
+\newcommand{\topic}[1]{\par\smallskip\noindent\textbf{#1.}\ }
+\newcommand{\draftsuggestion}[1]{\begin{center}\fcolorbox{warm}{palewarm}{\parbox{0.92\linewidth}{\textbf{Draft suggestion:} #1}}\end{center}}
+\newcommand{\principle}[1]{\begin{center}\fcolorbox{deepblue}{pale}{\parbox{0.92\linewidth}{#1}}\end{center}}
+\newcommand{\observation}[1]{\begin{center}\fcolorbox{warm}{palewarm}{\parbox{0.92\linewidth}{#1}}\end{center}}

@@ -1,0 +1,2128 @@
+{
+  "review_date": "2026-10-12",
+  "scope": "Read-only scientific/factual QA of all 30 v2 captions, immutable v3 raw receipts, the legacy pilot30-rendered.jsonl draft, and final pilot30-rendered-final.jsonl against pilot30-facts-v2.jsonl and each stored request payload.",
+  "counting_rule": "Abbreviation-safe sentence count: sentence-ending .?! followed by whitespace plus an uppercase letter, or end-of-text; decimal points and the period in No. <number> do not count as sentence boundaries.",
+  "summary": {
+    "v2": {
+      "pass": 18,
+      "fail": 12,
+      "ehull_exact_value_failures": 10,
+      "unsupported_cp_subtype_failures": 5,
+      "overlap_between_failure_sets": 3,
+      "unique_failed_material_ids": [
+        "mp-11535",
+        "mp-1215264",
+        "mp-1215537",
+        "mp-1218454",
+        "mp-1220730",
+        "mp-1221465",
+        "mp-1223904",
+        "mp-2646981",
+        "mp-605060",
+        "mp-675545",
+        "mp-9219",
+        "mp-981544"
+      ]
+    },
+    "final_rendered_v3": {
+      "artifact": "pilot30-rendered-final.jsonl",
+      "pass": 30,
+      "fail": 0,
+      "failed_material_ids": [],
+      "exact_source_ehull_values_and_original_archived_mp_provenance": 30,
+      "property_absence_contradictions": 0,
+      "all_final_captions_3_to_5_sentences": true,
+      "all_final_captions_single_english_paragraph": true,
+      "changed_vs_legacy_draft": [
+        "mp-1189227",
+        "mp-1225286",
+        "mp-1221465",
+        "mp-605060",
+        "mp-1181470"
+      ],
+      "changes": "Removed three contradictory no-property-label clauses and two redundant polyhedra-sharing status clauses; structural composition, coordination, and graph claims remain."
+    },
+    "notes": [
+      "Allowed numeric rounding was accepted for structural cell and distance displays; original MP energy-above-hull values require exact preservation.",
+      "Omitted lattice, density, orbit labels, or local environments were not treated as failures when absent from the compact prompt.",
+      "Positive bonding, material-performance, and corner/edge/face-sharing claims were not found.",
+      "v2 mp-1217376 has an ambiguous phrase joining separate CN=12 cp and CN=3 C-neighbor environments; it is not counted as a contradiction; v3 omits the detail.",
+      "The previous draft review reported 28/30, then a full recheck found mp-1221465 has the same no-property-label contradiction as mp-1189227 and mp-605060; the corrected legacy result is 27/30."
+    ],
+    "word_count_note": "Word count was advisory, not a pass/fail gate. Final rendered captions contain 73–104 whitespace-delimited tokens; the v2 captions contain 113–184. The request explicitly said not to invent a hard word cap.",
+    "legacy_rendered_v3_draft": {
+      "pass": 27,
+      "fail": 3,
+      "failed_material_ids": [
+        "mp-1189227",
+        "mp-1221465",
+        "mp-605060"
+      ],
+      "initial_review_reported": {
+        "pass": 28,
+        "fail": 2
+      },
+      "correction": "A full recheck found the third matching absence contradiction in mp-1221465; the legacy draft result is 27/30."
+    }
+  },
+  "receipt_and_payload_checks": {
+    "v2": {
+      "records": 30,
+      "status_ok": 30,
+      "finish_reason_stop": 30,
+      "returned_model_matches": 30,
+      "facts_sha256_matches": 30,
+      "request_sha256_matches_actual_payload": 30,
+      "core_facts_payload_matches": 30,
+      "grouped_local_payload_matches_source_after_cp_bcc_label_normalization": 30,
+      "property_payload_matches_original_source_value_and_provenance": 30
+    },
+    "v3": {
+      "records": 30,
+      "status_ok": 30,
+      "finish_reason_stop": 30,
+      "returned_model_matches": 30,
+      "facts_sha256_matches": 30,
+      "request_sha256_matches_actual_payload": 30,
+      "compact_core_payload_matches_source_subset": 30,
+      "grouped_local_payload_matches_source": 30,
+      "property_value_omitted_from_llm_prompt": 30
+    },
+    "renderer": {
+      "artifact": "pilot30-rendered-final.jsonl",
+      "records": 30,
+      "facts_sha256_matches": 30,
+      "renderer_code_sha256_matches_annotation_py": 30,
+      "caption_text_matches_deterministic_renderer": 30,
+      "property_labels_object_matches_facts": 30,
+      "exact_source_ehull_value_and_original_archived_mp_provenance_in_caption": 30,
+      "property_absence_contradictions": 0
+    },
+    "legacy_rendered_draft": {
+      "records": 30,
+      "facts_sha256_matches": 30,
+      "renderer_code_sha256_present_and_constant": 30,
+      "renderer_code_sha256_matches_current_annotation_py": 0,
+      "exact_value_and_provenance_appended": 30,
+      "note": "The legacy file records a renderer hash from its earlier generation; that code is no longer the current annotation.py. Current-code reproduction is verified for pilot30-rendered-final.jsonl only."
+    }
+  },
+  "method_references": {
+    "cp_label_definition_and_threshold": [
+      "research/crystal_preannotation_20261012/feature-method.md:19",
+      "research/crystal_preannotation_20261012/feature-method.json:75",
+      "research/crystal_preannotation_20261012/annotation.py:32-35"
+    ],
+    "cp_to_caption_wording_map": "research/crystal_preannotation_20261012/annotation.py:32-35"
+  },
+  "records": [
+    {
+      "material_id": "mp-2767078",
+      "line_number": 1,
+      "fact_anchor": {
+        "cell_formula": "Tl2 In2 Cl6",
+        "reduced_formula": "TlInCl3",
+        "space_group": "P1",
+        "crystal_system": "triclinic",
+        "cell_atom_count": 10,
+        "independent_orbit_count": 10,
+        "representative_local_environment": {
+          "center_element": "In",
+          "coordination_number": 6,
+          "neighbor_element_counts": {
+            "Cl": 6
+          },
+          "recognized_motif": "octahedral",
+          "distance_range_A": [
+            3.0882,
+            3.0999
+          ],
+          "orbit_multiplicity": 1
+        },
+        "network_maximum_periodic_dimension": 3,
+        "network_component_site_counts": [
+          10
+        ],
+        "energy_above_hull": 0.0,
+        "energy_unit": "eV/atom"
+      },
+      "v2": {
+        "result": "pass",
+        "caption_ref": "pilot30-annotations-v2.jsonl:1",
+        "facts_ref": "pilot30-facts-v2.jsonl:1",
+        "findings": []
+      },
+      "v2_grouping_ambiguity": null,
+      "legacy_rendered_v3_draft": {
+        "result": "pass",
+        "caption_ref": "pilot30-rendered.jsonl:1",
+        "raw_receipt_ref": "pilot30-annotations-v3.jsonl:1",
+        "facts_ref": "pilot30-facts-v2.jsonl:1",
+        "sentence_count_abbreviation_safe": 5,
+        "word_count_whitespace": 95,
+        "findings": [],
+        "nonblocking_notes": []
+      },
+      "final_rendered_v3": {
+        "result": "pass",
+        "caption_ref": "pilot30-rendered-final.jsonl:1",
+        "raw_receipt_ref": "pilot30-annotations-v3.jsonl:1",
+        "facts_ref": "pilot30-facts-v2.jsonl:1",
+        "sentence_count_abbreviation_safe": 5,
+        "word_count_whitespace": 95,
+        "findings": [],
+        "nonblocking_notes": [],
+        "same_as_legacy_caption": true
+      }
+    },
+    {
+      "material_id": "mp-1189965",
+      "line_number": 2,
+      "fact_anchor": {
+        "cell_formula": "Ti1 H8 N2 F6",
+        "reduced_formula": "TiH8(NF3)2",
+        "space_group": "P-3m1",
+        "crystal_system": "trigonal",
+        "cell_atom_count": 17,
+        "independent_orbit_count": 5,
+        "representative_local_environment": {
+          "center_element": "N",
+          "coordination_number": 4,
+          "neighbor_element_counts": {
+            "H": 4
+          },
+          "recognized_motif": "tetrahedral",
+          "distance_range_A": [
+            1.021,
+            1.0245
+          ],
+          "orbit_multiplicity": 2
+        },
+        "network_maximum_periodic_dimension": 3,
+        "network_component_site_counts": [
+          17
+        ],
+        "energy_above_hull": 0.0,
+        "energy_unit": "eV/atom"
+      },
+      "v2": {
+        "result": "pass",
+        "caption_ref": "pilot30-annotations-v2.jsonl:2",
+        "facts_ref": "pilot30-facts-v2.jsonl:2",
+        "findings": []
+      },
+      "v2_grouping_ambiguity": null,
+      "legacy_rendered_v3_draft": {
+        "result": "pass",
+        "caption_ref": "pilot30-rendered.jsonl:2",
+        "raw_receipt_ref": "pilot30-annotations-v3.jsonl:2",
+        "facts_ref": "pilot30-facts-v2.jsonl:2",
+        "sentence_count_abbreviation_safe": 5,
+        "word_count_whitespace": 88,
+        "findings": [],
+        "nonblocking_notes": []
+      },
+      "final_rendered_v3": {
+        "result": "pass",
+        "caption_ref": "pilot30-rendered-final.jsonl:2",
+        "raw_receipt_ref": "pilot30-annotations-v3.jsonl:2",
+        "facts_ref": "pilot30-facts-v2.jsonl:2",
+        "sentence_count_abbreviation_safe": 5,
+        "word_count_whitespace": 88,
+        "findings": [],
+        "nonblocking_notes": [],
+        "same_as_legacy_caption": true
+      }
+    },
+    {
+      "material_id": "mp-1189227",
+      "line_number": 3,
+      "fact_anchor": {
+        "cell_formula": "Na8 Al8 P16 S48",
+        "reduced_formula": "NaAl(PS3)2",
+        "space_group": "Fdd2",
+        "crystal_system": "orthorhombic",
+        "cell_atom_count": 80,
+        "independent_orbit_count": 6,
+        "representative_local_environment": {
+          "center_element": "Al",
+          "coordination_number": 6,
+          "neighbor_element_counts": {
+            "S": 6
+          },
+          "recognized_motif": "octahedral",
+          "distance_range_A": [
+            2.4008,
+            2.4861
+          ],
+          "orbit_multiplicity": 8
+        },
+        "network_maximum_periodic_dimension": 3,
+        "network_component_site_counts": [
+          80
+        ],
+        "energy_above_hull": 0.0,
+        "energy_unit": "eV/atom"
+      },
+      "v2": {
+        "result": "pass",
+        "caption_ref": "pilot30-annotations-v2.jsonl:3",
+        "facts_ref": "pilot30-facts-v2.jsonl:3",
+        "findings": []
+      },
+      "v2_grouping_ambiguity": null,
+      "legacy_rendered_v3_draft": {
+        "result": "fail",
+        "caption_ref": "pilot30-rendered.jsonl:3",
+        "raw_receipt_ref": "pilot30-annotations-v3.jsonl:3",
+        "facts_ref": "pilot30-facts-v2.jsonl:3",
+        "sentence_count_abbreviation_safe": 5,
+        "word_count_whitespace": 93,
+        "findings": [
+          {
+            "type": "internal_property_label_contradiction",
+            "severity": "fail",
+            "caption_claim": "no property labels are supplied here",
+            "fact_value": "energy_above_hull=0.0 eV/atom; the same legacy caption appends this original archived MP value",
+            "evidence_refs": [
+              "pilot30-rendered.jsonl:3",
+              "pilot30-annotations-v3.jsonl:3",
+              "pilot30-facts-v2.jsonl:3"
+            ]
+          }
+        ],
+        "nonblocking_notes": [
+          "Legacy caption also contained a true but redundant polyhedra-sharing not-computed status clause; the final renderer removes it."
+        ]
+      },
+      "final_rendered_v3": {
+        "result": "pass",
+        "caption_ref": "pilot30-rendered-final.jsonl:3",
+        "raw_receipt_ref": "pilot30-annotations-v3.jsonl:3",
+        "facts_ref": "pilot30-facts-v2.jsonl:3",
+        "sentence_count_abbreviation_safe": 5,
+        "word_count_whitespace": 81,
+        "findings": [],
+        "nonblocking_notes": [],
+        "same_as_legacy_caption": false
+      }
+    },
+    {
+      "material_id": "mp-1213028",
+      "line_number": 4,
+      "fact_anchor": {
+        "cell_formula": "Er1 Mn6 Sn4 Ge2",
+        "reduced_formula": "ErMn6(Sn2Ge)2",
+        "space_group": "P6/mmm",
+        "crystal_system": "hexagonal",
+        "cell_atom_count": 13,
+        "independent_orbit_count": 5,
+        "representative_local_environment": {
+          "center_element": "Ge",
+          "coordination_number": 12,
+          "neighbor_element_counts": {
+            "Er": 3,
+            "Ge": 3,
+            "Mn": 6
+          },
+          "recognized_motif": "cp",
+          "distance_range_A": [
+            2.5341,
+            3.0888
+          ],
+          "orbit_multiplicity": 2
+        },
+        "network_maximum_periodic_dimension": 3,
+        "network_component_site_counts": [
+          13
+        ],
+        "energy_above_hull": 0.0,
+        "energy_unit": "eV/atom"
+      },
+      "v2": {
+        "result": "pass",
+        "caption_ref": "pilot30-annotations-v2.jsonl:4",
+        "facts_ref": "pilot30-facts-v2.jsonl:4",
+        "findings": []
+      },
+      "v2_grouping_ambiguity": null,
+      "legacy_rendered_v3_draft": {
+        "result": "pass",
+        "caption_ref": "pilot30-rendered.jsonl:4",
+        "raw_receipt_ref": "pilot30-annotations-v3.jsonl:4",
+        "facts_ref": "pilot30-facts-v2.jsonl:4",
+        "sentence_count_abbreviation_safe": 4,
+        "word_count_whitespace": 89,
+        "findings": [],
+        "nonblocking_notes": []
+      },
+      "final_rendered_v3": {
+        "result": "pass",
+        "caption_ref": "pilot30-rendered-final.jsonl:4",
+        "raw_receipt_ref": "pilot30-annotations-v3.jsonl:4",
+        "facts_ref": "pilot30-facts-v2.jsonl:4",
+        "sentence_count_abbreviation_safe": 4,
+        "word_count_whitespace": 89,
+        "findings": [],
+        "nonblocking_notes": [],
+        "same_as_legacy_caption": true
+      }
+    },
+    {
+      "material_id": "mp-1104327",
+      "line_number": 5,
+      "fact_anchor": {
+        "cell_formula": "Cr10 Se16",
+        "reduced_formula": "Cr5Se8",
+        "space_group": "C2/m",
+        "crystal_system": "monoclinic",
+        "cell_atom_count": 26,
+        "independent_orbit_count": 6,
+        "representative_local_environment": {
+          "center_element": "Cr",
+          "coordination_number": 6,
+          "neighbor_element_counts": {
+            "Se": 6
+          },
+          "recognized_motif": "octahedral",
+          "distance_range_A": [
+            2.5476,
+            2.5711
+          ],
+          "orbit_multiplicity": 2
+        },
+        "network_maximum_periodic_dimension": 3,
+        "network_component_site_counts": [
+          26
+        ],
+        "energy_above_hull": 0.0,
+        "energy_unit": "eV/atom"
+      },
+      "v2": {
+        "result": "pass",
+        "caption_ref": "pilot30-annotations-v2.jsonl:5",
+        "facts_ref": "pilot30-facts-v2.jsonl:5",
+        "findings": []
+      },
+      "v2_grouping_ambiguity": null,
+      "legacy_rendered_v3_draft": {
+        "result": "pass",
+        "caption_ref": "pilot30-rendered.jsonl:5",
+        "raw_receipt_ref": "pilot30-annotations-v3.jsonl:5",
+        "facts_ref": "pilot30-facts-v2.jsonl:5",
+        "sentence_count_abbreviation_safe": 5,
+        "word_count_whitespace": 91,
+        "findings": [],
+        "nonblocking_notes": []
+      },
+      "final_rendered_v3": {
+        "result": "pass",
+        "caption_ref": "pilot30-rendered-final.jsonl:5",
+        "raw_receipt_ref": "pilot30-annotations-v3.jsonl:5",
+        "facts_ref": "pilot30-facts-v2.jsonl:5",
+        "sentence_count_abbreviation_safe": 5,
+        "word_count_whitespace": 91,
+        "findings": [],
+        "nonblocking_notes": [],
+        "same_as_legacy_caption": true
+      }
+    },
+    {
+      "material_id": "mp-867853",
+      "line_number": 6,
+      "fact_anchor": {
+        "cell_formula": "Sm4 Cd4 Ag8",
+        "reduced_formula": "SmCdAg2",
+        "space_group": "Fm-3m",
+        "crystal_system": "cubic",
+        "cell_atom_count": 16,
+        "independent_orbit_count": 3,
+        "representative_local_environment": {
+          "center_element": "Ag",
+          "coordination_number": 8,
+          "neighbor_element_counts": {
+            "Cd": 4,
+            "Sm": 4
+          },
+          "recognized_motif": "bcc",
+          "distance_range_A": [
+            3.0441,
+            3.0441
+          ],
+          "orbit_multiplicity": 8
+        },
+        "network_maximum_periodic_dimension": 3,
+        "network_component_site_counts": [
+          16
+        ],
+        "energy_above_hull": 0.0,
+        "energy_unit": "eV/atom"
+      },
+      "v2": {
+        "result": "pass",
+        "caption_ref": "pilot30-annotations-v2.jsonl:6",
+        "facts_ref": "pilot30-facts-v2.jsonl:6",
+        "findings": []
+      },
+      "v2_grouping_ambiguity": null,
+      "legacy_rendered_v3_draft": {
+        "result": "pass",
+        "caption_ref": "pilot30-rendered.jsonl:6",
+        "raw_receipt_ref": "pilot30-annotations-v3.jsonl:6",
+        "facts_ref": "pilot30-facts-v2.jsonl:6",
+        "sentence_count_abbreviation_safe": 4,
+        "word_count_whitespace": 92,
+        "findings": [],
+        "nonblocking_notes": []
+      },
+      "final_rendered_v3": {
+        "result": "pass",
+        "caption_ref": "pilot30-rendered-final.jsonl:6",
+        "raw_receipt_ref": "pilot30-annotations-v3.jsonl:6",
+        "facts_ref": "pilot30-facts-v2.jsonl:6",
+        "sentence_count_abbreviation_safe": 4,
+        "word_count_whitespace": 92,
+        "findings": [],
+        "nonblocking_notes": [],
+        "same_as_legacy_caption": true
+      }
+    },
+    {
+      "material_id": "mp-2646981",
+      "line_number": 7,
+      "fact_anchor": {
+        "cell_formula": "Cs1 Pb1 I2 Br1",
+        "reduced_formula": "CsPbI2Br",
+        "space_group": "P4/mmm",
+        "crystal_system": "tetragonal",
+        "cell_atom_count": 5,
+        "independent_orbit_count": 4,
+        "representative_local_environment": {
+          "center_element": "Cs",
+          "coordination_number": 12,
+          "neighbor_element_counts": {
+            "Br": 4,
+            "I": 8
+          },
+          "recognized_motif": "cp",
+          "distance_range_A": [
+            4.3654,
+            4.5113
+          ],
+          "orbit_multiplicity": 1
+        },
+        "network_maximum_periodic_dimension": 3,
+        "network_component_site_counts": [
+          5
+        ],
+        "energy_above_hull": 0.035953406166669005,
+        "energy_unit": "eV/atom"
+      },
+      "v2": {
+        "result": "fail",
+        "caption_ref": "pilot30-annotations-v2.jsonl:7",
+        "facts_ref": "pilot30-facts-v2.jsonl:7",
+        "findings": [
+          {
+            "type": "unsupported_cp_subtype",
+            "severity": "fail",
+            "caption_claim": "cuboctahedral-like (\"cp\") environment",
+            "fact_value": "recognized_motif=\"cp\" at CN=12; the supplied classification supports close-packed-like only",
+            "evidence_refs": [
+              "pilot30-annotations-v2.jsonl:7",
+              "pilot30-facts-v2.jsonl:7",
+              "research/crystal_preannotation_20261012/feature-method.md:19",
+              "research/crystal_preannotation_20261012/feature-method.json:75",
+              "research/crystal_preannotation_20261012/annotation.py:32-35"
+            ]
+          }
+        ]
+      },
+      "v2_grouping_ambiguity": null,
+      "legacy_rendered_v3_draft": {
+        "result": "pass",
+        "caption_ref": "pilot30-rendered.jsonl:7",
+        "raw_receipt_ref": "pilot30-annotations-v3.jsonl:7",
+        "facts_ref": "pilot30-facts-v2.jsonl:7",
+        "sentence_count_abbreviation_safe": 5,
+        "word_count_whitespace": 73,
+        "findings": [],
+        "nonblocking_notes": []
+      },
+      "final_rendered_v3": {
+        "result": "pass",
+        "caption_ref": "pilot30-rendered-final.jsonl:7",
+        "raw_receipt_ref": "pilot30-annotations-v3.jsonl:7",
+        "facts_ref": "pilot30-facts-v2.jsonl:7",
+        "sentence_count_abbreviation_safe": 5,
+        "word_count_whitespace": 73,
+        "findings": [],
+        "nonblocking_notes": [],
+        "same_as_legacy_caption": true
+      }
+    },
+    {
+      "material_id": "mp-624928",
+      "line_number": 8,
+      "fact_anchor": {
+        "cell_formula": "K1 Eu1 Cu2 Te4",
+        "reduced_formula": "KEu(CuTe2)2",
+        "space_group": "P4mm",
+        "crystal_system": "tetragonal",
+        "cell_atom_count": 8,
+        "independent_orbit_count": 6,
+        "representative_local_environment": {
+          "center_element": "Cu",
+          "coordination_number": 4,
+          "neighbor_element_counts": {
+            "Te": 4
+          },
+          "recognized_motif": "tetrahedral",
+          "distance_range_A": [
+            2.6545,
+            2.772
+          ],
+          "orbit_multiplicity": 2
+        },
+        "network_maximum_periodic_dimension": 3,
+        "network_component_site_counts": [
+          8
+        ],
+        "energy_above_hull": 0.017097575234372,
+        "energy_unit": "eV/atom"
+      },
+      "v2": {
+        "result": "pass",
+        "caption_ref": "pilot30-annotations-v2.jsonl:8",
+        "facts_ref": "pilot30-facts-v2.jsonl:8",
+        "findings": []
+      },
+      "v2_grouping_ambiguity": null,
+      "legacy_rendered_v3_draft": {
+        "result": "pass",
+        "caption_ref": "pilot30-rendered.jsonl:8",
+        "raw_receipt_ref": "pilot30-annotations-v3.jsonl:8",
+        "facts_ref": "pilot30-facts-v2.jsonl:8",
+        "sentence_count_abbreviation_safe": 5,
+        "word_count_whitespace": 93,
+        "findings": [],
+        "nonblocking_notes": []
+      },
+      "final_rendered_v3": {
+        "result": "pass",
+        "caption_ref": "pilot30-rendered-final.jsonl:8",
+        "raw_receipt_ref": "pilot30-annotations-v3.jsonl:8",
+        "facts_ref": "pilot30-facts-v2.jsonl:8",
+        "sentence_count_abbreviation_safe": 5,
+        "word_count_whitespace": 93,
+        "findings": [],
+        "nonblocking_notes": [],
+        "same_as_legacy_caption": true
+      }
+    },
+    {
+      "material_id": "mp-1225286",
+      "line_number": 9,
+      "fact_anchor": {
+        "cell_formula": "Dy2 Co2 Si4 Rh2",
+        "reduced_formula": "DyCoSi2Rh",
+        "space_group": "I-4m2",
+        "crystal_system": "tetragonal",
+        "cell_atom_count": 10,
+        "independent_orbit_count": 4,
+        "representative_local_environment": {
+          "center_element": "Co",
+          "coordination_number": 4,
+          "neighbor_element_counts": {
+            "Si": 4
+          },
+          "recognized_motif": "tetrahedral",
+          "distance_range_A": [
+            2.3486,
+            2.3486
+          ],
+          "orbit_multiplicity": 2
+        },
+        "network_maximum_periodic_dimension": 3,
+        "network_component_site_counts": [
+          10
+        ],
+        "energy_above_hull": 0.034005364,
+        "energy_unit": "eV/atom"
+      },
+      "v2": {
+        "result": "pass",
+        "caption_ref": "pilot30-annotations-v2.jsonl:9",
+        "facts_ref": "pilot30-facts-v2.jsonl:9",
+        "findings": []
+      },
+      "v2_grouping_ambiguity": null,
+      "legacy_rendered_v3_draft": {
+        "result": "pass",
+        "caption_ref": "pilot30-rendered.jsonl:9",
+        "raw_receipt_ref": "pilot30-annotations-v3.jsonl:9",
+        "facts_ref": "pilot30-facts-v2.jsonl:9",
+        "sentence_count_abbreviation_safe": 5,
+        "word_count_whitespace": 100,
+        "findings": [],
+        "nonblocking_notes": [
+          "Legacy caption also contained a true but redundant polyhedra-sharing not-computed status clause; the final renderer removes it."
+        ]
+      },
+      "final_rendered_v3": {
+        "result": "pass",
+        "caption_ref": "pilot30-rendered-final.jsonl:9",
+        "raw_receipt_ref": "pilot30-annotations-v3.jsonl:9",
+        "facts_ref": "pilot30-facts-v2.jsonl:9",
+        "sentence_count_abbreviation_safe": 5,
+        "word_count_whitespace": 95,
+        "findings": [],
+        "nonblocking_notes": [],
+        "same_as_legacy_caption": false
+      }
+    },
+    {
+      "material_id": "mp-981544",
+      "line_number": 10,
+      "fact_anchor": {
+        "cell_formula": "Pr9",
+        "reduced_formula": "Pr",
+        "space_group": "R-3m",
+        "crystal_system": "trigonal",
+        "cell_atom_count": 9,
+        "independent_orbit_count": 2,
+        "representative_local_environment": {
+          "center_element": "Pr",
+          "coordination_number": 12,
+          "neighbor_element_counts": {
+            "Pr": 12
+          },
+          "recognized_motif": "cp",
+          "distance_range_A": [
+            3.6852,
+            3.76
+          ],
+          "orbit_multiplicity": 3
+        },
+        "network_maximum_periodic_dimension": 3,
+        "network_component_site_counts": [
+          9
+        ],
+        "energy_above_hull": 0.022790668333335002,
+        "energy_unit": "eV/atom"
+      },
+      "v2": {
+        "result": "fail",
+        "caption_ref": "pilot30-annotations-v2.jsonl:10",
+        "facts_ref": "pilot30-facts-v2.jsonl:10",
+        "findings": [
+          {
+            "type": "supplied_property_value_changed",
+            "severity": "fail",
+            "caption_claim": "energy above hull 0.02279 eV/atom",
+            "fact_value": "0.022790668333335002 eV/atom",
+            "evidence_refs": [
+              "pilot30-annotations-v2.jsonl:10",
+              "pilot30-facts-v2.jsonl:10"
+            ]
+          }
+        ]
+      },
+      "v2_grouping_ambiguity": null,
+      "legacy_rendered_v3_draft": {
+        "result": "pass",
+        "caption_ref": "pilot30-rendered.jsonl:10",
+        "raw_receipt_ref": "pilot30-annotations-v3.jsonl:10",
+        "facts_ref": "pilot30-facts-v2.jsonl:10",
+        "sentence_count_abbreviation_safe": 4,
+        "word_count_whitespace": 86,
+        "findings": [],
+        "nonblocking_notes": []
+      },
+      "final_rendered_v3": {
+        "result": "pass",
+        "caption_ref": "pilot30-rendered-final.jsonl:10",
+        "raw_receipt_ref": "pilot30-annotations-v3.jsonl:10",
+        "facts_ref": "pilot30-facts-v2.jsonl:10",
+        "sentence_count_abbreviation_safe": 4,
+        "word_count_whitespace": 86,
+        "findings": [],
+        "nonblocking_notes": [],
+        "same_as_legacy_caption": true
+      }
+    },
+    {
+      "material_id": "mp-9219",
+      "line_number": 11,
+      "fact_anchor": {
+        "cell_formula": "La2 B4 Pt4 C2",
+        "reduced_formula": "LaB2Pt2C",
+        "space_group": "I4/mmm",
+        "crystal_system": "tetragonal",
+        "cell_atom_count": 12,
+        "independent_orbit_count": 4,
+        "representative_local_environment": {
+          "center_element": "Pt",
+          "coordination_number": 4,
+          "neighbor_element_counts": {
+            "B": 4
+          },
+          "recognized_motif": "tetrahedral",
+          "distance_range_A": [
+            2.2941,
+            2.2941
+          ],
+          "orbit_multiplicity": 4
+        },
+        "network_maximum_periodic_dimension": 3,
+        "network_component_site_counts": [
+          12
+        ],
+        "energy_above_hull": 0.024602639250002,
+        "energy_unit": "eV/atom"
+      },
+      "v2": {
+        "result": "fail",
+        "caption_ref": "pilot30-annotations-v2.jsonl:11",
+        "facts_ref": "pilot30-facts-v2.jsonl:11",
+        "findings": [
+          {
+            "type": "supplied_property_value_changed",
+            "severity": "fail",
+            "caption_claim": "energy above hull 0.0246 eV/atom",
+            "fact_value": "0.024602639250002 eV/atom",
+            "evidence_refs": [
+              "pilot30-annotations-v2.jsonl:11",
+              "pilot30-facts-v2.jsonl:11"
+            ]
+          }
+        ]
+      },
+      "v2_grouping_ambiguity": null,
+      "legacy_rendered_v3_draft": {
+        "result": "pass",
+        "caption_ref": "pilot30-rendered.jsonl:11",
+        "raw_receipt_ref": "pilot30-annotations-v3.jsonl:11",
+        "facts_ref": "pilot30-facts-v2.jsonl:11",
+        "sentence_count_abbreviation_safe": 5,
+        "word_count_whitespace": 92,
+        "findings": [],
+        "nonblocking_notes": []
+      },
+      "final_rendered_v3": {
+        "result": "pass",
+        "caption_ref": "pilot30-rendered-final.jsonl:11",
+        "raw_receipt_ref": "pilot30-annotations-v3.jsonl:11",
+        "facts_ref": "pilot30-facts-v2.jsonl:11",
+        "sentence_count_abbreviation_safe": 5,
+        "word_count_whitespace": 92,
+        "findings": [],
+        "nonblocking_notes": [],
+        "same_as_legacy_caption": true
+      }
+    },
+    {
+      "material_id": "mp-1218454",
+      "line_number": 12,
+      "fact_anchor": {
+        "cell_formula": "Sr1 Ca3 Hf4 O12",
+        "reduced_formula": "SrCa3Hf4O12",
+        "space_group": "Pm",
+        "crystal_system": "monoclinic",
+        "cell_atom_count": 20,
+        "independent_orbit_count": 14,
+        "representative_local_environment": {
+          "center_element": "Hf",
+          "coordination_number": 6,
+          "neighbor_element_counts": {
+            "O": 6
+          },
+          "recognized_motif": "octahedral",
+          "distance_range_A": [
+            2.0818,
+            2.1038
+          ],
+          "orbit_multiplicity": 2
+        },
+        "network_maximum_periodic_dimension": 3,
+        "network_component_site_counts": [
+          20
+        ],
+        "energy_above_hull": 0.007486108750002001,
+        "energy_unit": "eV/atom"
+      },
+      "v2": {
+        "result": "fail",
+        "caption_ref": "pilot30-annotations-v2.jsonl:12",
+        "facts_ref": "pilot30-facts-v2.jsonl:12",
+        "findings": [
+          {
+            "type": "supplied_property_value_changed",
+            "severity": "fail",
+            "caption_claim": "energy above hull 0.007486 eV/atom",
+            "fact_value": "0.007486108750002001 eV/atom",
+            "evidence_refs": [
+              "pilot30-annotations-v2.jsonl:12",
+              "pilot30-facts-v2.jsonl:12"
+            ]
+          }
+        ]
+      },
+      "v2_grouping_ambiguity": null,
+      "legacy_rendered_v3_draft": {
+        "result": "pass",
+        "caption_ref": "pilot30-rendered.jsonl:12",
+        "raw_receipt_ref": "pilot30-annotations-v3.jsonl:12",
+        "facts_ref": "pilot30-facts-v2.jsonl:12",
+        "sentence_count_abbreviation_safe": 5,
+        "word_count_whitespace": 96,
+        "findings": [],
+        "nonblocking_notes": []
+      },
+      "final_rendered_v3": {
+        "result": "pass",
+        "caption_ref": "pilot30-rendered-final.jsonl:12",
+        "raw_receipt_ref": "pilot30-annotations-v3.jsonl:12",
+        "facts_ref": "pilot30-facts-v2.jsonl:12",
+        "sentence_count_abbreviation_safe": 5,
+        "word_count_whitespace": 96,
+        "findings": [],
+        "nonblocking_notes": [],
+        "same_as_legacy_caption": true
+      }
+    },
+    {
+      "material_id": "mp-1215264",
+      "line_number": 13,
+      "fact_anchor": {
+        "cell_formula": "Zr3 Sc3 V3 Ni9",
+        "reduced_formula": "ZrScVNi3",
+        "space_group": "R3m",
+        "crystal_system": "trigonal",
+        "cell_atom_count": 18,
+        "independent_orbit_count": 4,
+        "representative_local_environment": {
+          "center_element": "Ni",
+          "coordination_number": 12,
+          "neighbor_element_counts": {
+            "Ni": 4,
+            "Sc": 3,
+            "V": 2,
+            "Zr": 3
+          },
+          "recognized_motif": "cp",
+          "distance_range_A": [
+            2.4398,
+            2.9714
+          ],
+          "orbit_multiplicity": 9
+        },
+        "network_maximum_periodic_dimension": 3,
+        "network_component_site_counts": [
+          18
+        ],
+        "energy_above_hull": 0.080530239166668,
+        "energy_unit": "eV/atom"
+      },
+      "v2": {
+        "result": "fail",
+        "caption_ref": "pilot30-annotations-v2.jsonl:13",
+        "facts_ref": "pilot30-facts-v2.jsonl:13",
+        "findings": [
+          {
+            "type": "supplied_property_value_changed",
+            "severity": "fail",
+            "caption_claim": "energy above hull 0.0805 eV/atom",
+            "fact_value": "0.080530239166668 eV/atom",
+            "evidence_refs": [
+              "pilot30-annotations-v2.jsonl:13",
+              "pilot30-facts-v2.jsonl:13"
+            ]
+          },
+          {
+            "type": "unsupported_cp_subtype",
+            "severity": "fail",
+            "caption_claim": "cubic-close-packed motif",
+            "fact_value": "recognized_motif=\"cp\" at CN=12; the supplied classification supports close-packed-like only",
+            "evidence_refs": [
+              "pilot30-annotations-v2.jsonl:13",
+              "pilot30-facts-v2.jsonl:13",
+              "research/crystal_preannotation_20261012/feature-method.md:19",
+              "research/crystal_preannotation_20261012/feature-method.json:75",
+              "research/crystal_preannotation_20261012/annotation.py:32-35"
+            ]
+          }
+        ]
+      },
+      "v2_grouping_ambiguity": null,
+      "legacy_rendered_v3_draft": {
+        "result": "pass",
+        "caption_ref": "pilot30-rendered.jsonl:13",
+        "raw_receipt_ref": "pilot30-annotations-v3.jsonl:13",
+        "facts_ref": "pilot30-facts-v2.jsonl:13",
+        "sentence_count_abbreviation_safe": 4,
+        "word_count_whitespace": 87,
+        "findings": [],
+        "nonblocking_notes": []
+      },
+      "final_rendered_v3": {
+        "result": "pass",
+        "caption_ref": "pilot30-rendered-final.jsonl:13",
+        "raw_receipt_ref": "pilot30-annotations-v3.jsonl:13",
+        "facts_ref": "pilot30-facts-v2.jsonl:13",
+        "sentence_count_abbreviation_safe": 4,
+        "word_count_whitespace": 87,
+        "findings": [],
+        "nonblocking_notes": [],
+        "same_as_legacy_caption": true
+      }
+    },
+    {
+      "material_id": "mp-1221465",
+      "line_number": 14,
+      "fact_anchor": {
+        "cell_formula": "Mo6 Ir1 Ru1",
+        "reduced_formula": "Mo6IrRu",
+        "space_group": "Pm-3",
+        "crystal_system": "cubic",
+        "cell_atom_count": 8,
+        "independent_orbit_count": 3,
+        "representative_local_environment": {
+          "center_element": "Ir",
+          "coordination_number": 12,
+          "neighbor_element_counts": {
+            "Mo": 12
+          },
+          "recognized_motif": "cp",
+          "distance_range_A": [
+            2.7973,
+            2.7973
+          ],
+          "orbit_multiplicity": 1
+        },
+        "network_maximum_periodic_dimension": 3,
+        "network_component_site_counts": [
+          8
+        ],
+        "energy_above_hull": 0.066922944166666,
+        "energy_unit": "eV/atom"
+      },
+      "v2": {
+        "result": "fail",
+        "caption_ref": "pilot30-annotations-v2.jsonl:14",
+        "facts_ref": "pilot30-facts-v2.jsonl:14",
+        "findings": [
+          {
+            "type": "supplied_property_value_changed",
+            "severity": "fail",
+            "caption_claim": "energy above hull 0.0669 eV/atom",
+            "fact_value": "0.066922944166666 eV/atom",
+            "evidence_refs": [
+              "pilot30-annotations-v2.jsonl:14",
+              "pilot30-facts-v2.jsonl:14"
+            ]
+          },
+          {
+            "type": "unsupported_cp_subtype",
+            "severity": "fail",
+            "caption_claim": "cubic-close-packed-like environments",
+            "fact_value": "recognized_motif=\"cp\" at CN=12; the supplied classification supports close-packed-like only",
+            "evidence_refs": [
+              "pilot30-annotations-v2.jsonl:14",
+              "pilot30-facts-v2.jsonl:14",
+              "research/crystal_preannotation_20261012/feature-method.md:19",
+              "research/crystal_preannotation_20261012/feature-method.json:75",
+              "research/crystal_preannotation_20261012/annotation.py:32-35"
+            ]
+          }
+        ]
+      },
+      "v2_grouping_ambiguity": null,
+      "legacy_rendered_v3_draft": {
+        "result": "fail",
+        "caption_ref": "pilot30-rendered.jsonl:14",
+        "raw_receipt_ref": "pilot30-annotations-v3.jsonl:14",
+        "facts_ref": "pilot30-facts-v2.jsonl:14",
+        "sentence_count_abbreviation_safe": 5,
+        "word_count_whitespace": 86,
+        "findings": [
+          {
+            "type": "internal_property_label_contradiction",
+            "severity": "fail",
+            "caption_claim": "No polyhedra-sharing analysis or property labels were supplied for this structure",
+            "fact_value": "energy_above_hull=0.066922944166666 eV/atom; the same legacy caption appends this original archived MP value",
+            "evidence_refs": [
+              "pilot30-rendered.jsonl:14",
+              "pilot30-annotations-v3.jsonl:14",
+              "pilot30-facts-v2.jsonl:14"
+            ]
+          }
+        ],
+        "nonblocking_notes": [
+          "Legacy caption also contained a true but redundant polyhedra-sharing not-computed status clause; the final renderer removes it."
+        ]
+      },
+      "final_rendered_v3": {
+        "result": "pass",
+        "caption_ref": "pilot30-rendered-final.jsonl:14",
+        "raw_receipt_ref": "pilot30-annotations-v3.jsonl:14",
+        "facts_ref": "pilot30-facts-v2.jsonl:14",
+        "sentence_count_abbreviation_safe": 4,
+        "word_count_whitespace": 75,
+        "findings": [],
+        "nonblocking_notes": [],
+        "same_as_legacy_caption": false
+      }
+    },
+    {
+      "material_id": "mp-10179",
+      "line_number": 15,
+      "fact_anchor": {
+        "cell_formula": "Li4 Mg4 Sb4 Pd4",
+        "reduced_formula": "LiMgSbPd",
+        "space_group": "F-43m",
+        "crystal_system": "cubic",
+        "cell_atom_count": 16,
+        "independent_orbit_count": 4,
+        "representative_local_environment": {
+          "center_element": "Li",
+          "coordination_number": 8,
+          "neighbor_element_counts": {
+            "Mg": 4,
+            "Sb": 4
+          },
+          "recognized_motif": "bcc",
+          "distance_range_A": [
+            2.8406,
+            2.8406
+          ],
+          "orbit_multiplicity": 4
+        },
+        "network_maximum_periodic_dimension": 3,
+        "network_component_site_counts": [
+          16
+        ],
+        "energy_above_hull": 0.09047993083333401,
+        "energy_unit": "eV/atom"
+      },
+      "v2": {
+        "result": "pass",
+        "caption_ref": "pilot30-annotations-v2.jsonl:15",
+        "facts_ref": "pilot30-facts-v2.jsonl:15",
+        "findings": []
+      },
+      "v2_grouping_ambiguity": null,
+      "legacy_rendered_v3_draft": {
+        "result": "pass",
+        "caption_ref": "pilot30-rendered.jsonl:15",
+        "raw_receipt_ref": "pilot30-annotations-v3.jsonl:15",
+        "facts_ref": "pilot30-facts-v2.jsonl:15",
+        "sentence_count_abbreviation_safe": 4,
+        "word_count_whitespace": 100,
+        "findings": [],
+        "nonblocking_notes": []
+      },
+      "final_rendered_v3": {
+        "result": "pass",
+        "caption_ref": "pilot30-rendered-final.jsonl:15",
+        "raw_receipt_ref": "pilot30-annotations-v3.jsonl:15",
+        "facts_ref": "pilot30-facts-v2.jsonl:15",
+        "sentence_count_abbreviation_safe": 4,
+        "word_count_whitespace": 100,
+        "findings": [],
+        "nonblocking_notes": [],
+        "same_as_legacy_caption": true
+      }
+    },
+    {
+      "material_id": "mp-1042231",
+      "line_number": 16,
+      "fact_anchor": {
+        "cell_formula": "Y1 Bi1 W2 O8",
+        "reduced_formula": "YBi(WO4)2",
+        "space_group": "P1",
+        "crystal_system": "triclinic",
+        "cell_atom_count": 12,
+        "independent_orbit_count": 12,
+        "representative_local_environment": {
+          "center_element": "Bi",
+          "coordination_number": 8,
+          "neighbor_element_counts": {
+            "O": 8
+          },
+          "recognized_motif": "bcc",
+          "distance_range_A": [
+            2.264,
+            2.7311
+          ],
+          "orbit_multiplicity": 1
+        },
+        "network_maximum_periodic_dimension": 3,
+        "network_component_site_counts": [
+          12
+        ],
+        "energy_above_hull": 0.073393089062495,
+        "energy_unit": "eV/atom"
+      },
+      "v2": {
+        "result": "pass",
+        "caption_ref": "pilot30-annotations-v2.jsonl:16",
+        "facts_ref": "pilot30-facts-v2.jsonl:16",
+        "findings": []
+      },
+      "v2_grouping_ambiguity": null,
+      "legacy_rendered_v3_draft": {
+        "result": "pass",
+        "caption_ref": "pilot30-rendered.jsonl:16",
+        "raw_receipt_ref": "pilot30-annotations-v3.jsonl:16",
+        "facts_ref": "pilot30-facts-v2.jsonl:16",
+        "sentence_count_abbreviation_safe": 5,
+        "word_count_whitespace": 95,
+        "findings": [],
+        "nonblocking_notes": []
+      },
+      "final_rendered_v3": {
+        "result": "pass",
+        "caption_ref": "pilot30-rendered-final.jsonl:16",
+        "raw_receipt_ref": "pilot30-annotations-v3.jsonl:16",
+        "facts_ref": "pilot30-facts-v2.jsonl:16",
+        "sentence_count_abbreviation_safe": 5,
+        "word_count_whitespace": 95,
+        "findings": [],
+        "nonblocking_notes": [],
+        "same_as_legacy_caption": true
+      }
+    },
+    {
+      "material_id": "mp-639347",
+      "line_number": 17,
+      "fact_anchor": {
+        "cell_formula": "Ba1 Eu1 Fe2 O5",
+        "reduced_formula": "BaEuFe2O5",
+        "space_group": "P1",
+        "crystal_system": "triclinic",
+        "cell_atom_count": 9,
+        "independent_orbit_count": 9,
+        "representative_local_environment": {
+          "center_element": "Ba",
+          "coordination_number": 12,
+          "neighbor_element_counts": {
+            "O": 12
+          },
+          "recognized_motif": "cp",
+          "distance_range_A": [
+            2.8095,
+            3.1575
+          ],
+          "orbit_multiplicity": 1
+        },
+        "network_maximum_periodic_dimension": 3,
+        "network_component_site_counts": [
+          9
+        ],
+        "energy_above_hull": 0.073697481150791,
+        "energy_unit": "eV/atom"
+      },
+      "v2": {
+        "result": "pass",
+        "caption_ref": "pilot30-annotations-v2.jsonl:17",
+        "facts_ref": "pilot30-facts-v2.jsonl:17",
+        "findings": []
+      },
+      "v2_grouping_ambiguity": null,
+      "legacy_rendered_v3_draft": {
+        "result": "pass",
+        "caption_ref": "pilot30-rendered.jsonl:17",
+        "raw_receipt_ref": "pilot30-annotations-v3.jsonl:17",
+        "facts_ref": "pilot30-facts-v2.jsonl:17",
+        "sentence_count_abbreviation_safe": 4,
+        "word_count_whitespace": 93,
+        "findings": [],
+        "nonblocking_notes": []
+      },
+      "final_rendered_v3": {
+        "result": "pass",
+        "caption_ref": "pilot30-rendered-final.jsonl:17",
+        "raw_receipt_ref": "pilot30-annotations-v3.jsonl:17",
+        "facts_ref": "pilot30-facts-v2.jsonl:17",
+        "sentence_count_abbreviation_safe": 4,
+        "word_count_whitespace": 93,
+        "findings": [],
+        "nonblocking_notes": [],
+        "same_as_legacy_caption": true
+      }
+    },
+    {
+      "material_id": "mp-1215537",
+      "line_number": 18,
+      "fact_anchor": {
+        "cell_formula": "Yb2 Zn2 Ga6",
+        "reduced_formula": "YbZnGa3",
+        "space_group": "I4mm",
+        "crystal_system": "tetragonal",
+        "cell_atom_count": 10,
+        "independent_orbit_count": 4,
+        "representative_local_environment": {
+          "center_element": "Ga",
+          "coordination_number": 12,
+          "neighbor_element_counts": {
+            "Ga": 6,
+            "Yb": 4,
+            "Zn": 2
+          },
+          "recognized_motif": "cp",
+          "distance_range_A": [
+            2.5003,
+            3.3521
+          ],
+          "orbit_multiplicity": 4
+        },
+        "network_maximum_periodic_dimension": 3,
+        "network_component_site_counts": [
+          10
+        ],
+        "energy_above_hull": 0.06797284950000901,
+        "energy_unit": "eV/atom"
+      },
+      "v2": {
+        "result": "fail",
+        "caption_ref": "pilot30-annotations-v2.jsonl:18",
+        "facts_ref": "pilot30-facts-v2.jsonl:18",
+        "findings": [
+          {
+            "type": "supplied_property_value_changed",
+            "severity": "fail",
+            "caption_claim": "energy above hull 0.0680 eV/atom",
+            "fact_value": "0.06797284950000901 eV/atom",
+            "evidence_refs": [
+              "pilot30-annotations-v2.jsonl:18",
+              "pilot30-facts-v2.jsonl:18"
+            ]
+          }
+        ]
+      },
+      "v2_grouping_ambiguity": null,
+      "legacy_rendered_v3_draft": {
+        "result": "pass",
+        "caption_ref": "pilot30-rendered.jsonl:18",
+        "raw_receipt_ref": "pilot30-annotations-v3.jsonl:18",
+        "facts_ref": "pilot30-facts-v2.jsonl:18",
+        "sentence_count_abbreviation_safe": 4,
+        "word_count_whitespace": 79,
+        "findings": [],
+        "nonblocking_notes": []
+      },
+      "final_rendered_v3": {
+        "result": "pass",
+        "caption_ref": "pilot30-rendered-final.jsonl:18",
+        "raw_receipt_ref": "pilot30-annotations-v3.jsonl:18",
+        "facts_ref": "pilot30-facts-v2.jsonl:18",
+        "sentence_count_abbreviation_safe": 4,
+        "word_count_whitespace": 79,
+        "findings": [],
+        "nonblocking_notes": [],
+        "same_as_legacy_caption": true
+      }
+    },
+    {
+      "material_id": "mp-11535",
+      "line_number": 19,
+      "fact_anchor": {
+        "cell_formula": "Np8 Os16",
+        "reduced_formula": "NpOs2",
+        "space_group": "Fd-3m",
+        "crystal_system": "cubic",
+        "cell_atom_count": 24,
+        "independent_orbit_count": 2,
+        "representative_local_environment": {
+          "center_element": "Os",
+          "coordination_number": 12,
+          "neighbor_element_counts": {
+            "Np": 6,
+            "Os": 6
+          },
+          "recognized_motif": "cp",
+          "distance_range_A": [
+            2.6446,
+            3.101
+          ],
+          "orbit_multiplicity": 16
+        },
+        "network_maximum_periodic_dimension": 3,
+        "network_component_site_counts": [
+          24
+        ],
+        "energy_above_hull": 0.194786163750009,
+        "energy_unit": "eV/atom"
+      },
+      "v2": {
+        "result": "fail",
+        "caption_ref": "pilot30-annotations-v2.jsonl:19",
+        "facts_ref": "pilot30-facts-v2.jsonl:19",
+        "findings": [
+          {
+            "type": "supplied_property_value_changed",
+            "severity": "fail",
+            "caption_claim": "energy above hull 0.194786 eV/atom",
+            "fact_value": "0.194786163750009 eV/atom",
+            "evidence_refs": [
+              "pilot30-annotations-v2.jsonl:19",
+              "pilot30-facts-v2.jsonl:19"
+            ]
+          }
+        ]
+      },
+      "v2_grouping_ambiguity": null,
+      "legacy_rendered_v3_draft": {
+        "result": "pass",
+        "caption_ref": "pilot30-rendered.jsonl:19",
+        "raw_receipt_ref": "pilot30-annotations-v3.jsonl:19",
+        "facts_ref": "pilot30-facts-v2.jsonl:19",
+        "sentence_count_abbreviation_safe": 4,
+        "word_count_whitespace": 91,
+        "findings": [],
+        "nonblocking_notes": []
+      },
+      "final_rendered_v3": {
+        "result": "pass",
+        "caption_ref": "pilot30-rendered-final.jsonl:19",
+        "raw_receipt_ref": "pilot30-annotations-v3.jsonl:19",
+        "facts_ref": "pilot30-facts-v2.jsonl:19",
+        "sentence_count_abbreviation_safe": 4,
+        "word_count_whitespace": 91,
+        "findings": [],
+        "nonblocking_notes": [],
+        "same_as_legacy_caption": true
+      }
+    },
+    {
+      "material_id": "mp-867843",
+      "line_number": 20,
+      "fact_anchor": {
+        "cell_formula": "Rb4 U4 Te12 Au4",
+        "reduced_formula": "RbUTe3Au",
+        "space_group": "Cmcm",
+        "crystal_system": "orthorhombic",
+        "cell_atom_count": 24,
+        "independent_orbit_count": 5,
+        "representative_local_environment": {
+          "center_element": "Au",
+          "coordination_number": 4,
+          "neighbor_element_counts": {
+            "Te": 4
+          },
+          "recognized_motif": "tetrahedral",
+          "distance_range_A": [
+            2.7688,
+            2.8282
+          ],
+          "orbit_multiplicity": 4
+        },
+        "network_maximum_periodic_dimension": 3,
+        "network_component_site_counts": [
+          24
+        ],
+        "energy_above_hull": 0.132030976250002,
+        "energy_unit": "eV/atom"
+      },
+      "v2": {
+        "result": "pass",
+        "caption_ref": "pilot30-annotations-v2.jsonl:20",
+        "facts_ref": "pilot30-facts-v2.jsonl:20",
+        "findings": []
+      },
+      "v2_grouping_ambiguity": null,
+      "legacy_rendered_v3_draft": {
+        "result": "pass",
+        "caption_ref": "pilot30-rendered.jsonl:20",
+        "raw_receipt_ref": "pilot30-annotations-v3.jsonl:20",
+        "facts_ref": "pilot30-facts-v2.jsonl:20",
+        "sentence_count_abbreviation_safe": 5,
+        "word_count_whitespace": 91,
+        "findings": [],
+        "nonblocking_notes": []
+      },
+      "final_rendered_v3": {
+        "result": "pass",
+        "caption_ref": "pilot30-rendered-final.jsonl:20",
+        "raw_receipt_ref": "pilot30-annotations-v3.jsonl:20",
+        "facts_ref": "pilot30-facts-v2.jsonl:20",
+        "sentence_count_abbreviation_safe": 5,
+        "word_count_whitespace": 91,
+        "findings": [],
+        "nonblocking_notes": [],
+        "same_as_legacy_caption": true
+      }
+    },
+    {
+      "material_id": "mp-1220730",
+      "line_number": 21,
+      "fact_anchor": {
+        "cell_formula": "Nd3 Pu1",
+        "reduced_formula": "Nd3Pu",
+        "space_group": "P-6m2",
+        "crystal_system": "hexagonal",
+        "cell_atom_count": 4,
+        "independent_orbit_count": 3,
+        "representative_local_environment": {
+          "center_element": "Nd",
+          "coordination_number": 12,
+          "neighbor_element_counts": {
+            "Nd": 12
+          },
+          "recognized_motif": "cp",
+          "distance_range_A": [
+            3.46,
+            3.674
+          ],
+          "orbit_multiplicity": 1
+        },
+        "network_maximum_periodic_dimension": 3,
+        "network_component_site_counts": [
+          4
+        ],
+        "energy_above_hull": 0.138651051875001,
+        "energy_unit": "eV/atom"
+      },
+      "v2": {
+        "result": "fail",
+        "caption_ref": "pilot30-annotations-v2.jsonl:21",
+        "facts_ref": "pilot30-facts-v2.jsonl:21",
+        "findings": [
+          {
+            "type": "unsupported_cp_subtype",
+            "severity": "fail",
+            "caption_claim": "cuboctahedron-like (cp) environments",
+            "fact_value": "recognized_motif=\"cp\" at CN=12; the supplied classification supports close-packed-like only",
+            "evidence_refs": [
+              "pilot30-annotations-v2.jsonl:21",
+              "pilot30-facts-v2.jsonl:21",
+              "research/crystal_preannotation_20261012/feature-method.md:19",
+              "research/crystal_preannotation_20261012/feature-method.json:75",
+              "research/crystal_preannotation_20261012/annotation.py:32-35"
+            ]
+          }
+        ]
+      },
+      "v2_grouping_ambiguity": null,
+      "legacy_rendered_v3_draft": {
+        "result": "pass",
+        "caption_ref": "pilot30-rendered.jsonl:21",
+        "raw_receipt_ref": "pilot30-annotations-v3.jsonl:21",
+        "facts_ref": "pilot30-facts-v2.jsonl:21",
+        "sentence_count_abbreviation_safe": 4,
+        "word_count_whitespace": 104,
+        "findings": [],
+        "nonblocking_notes": []
+      },
+      "final_rendered_v3": {
+        "result": "pass",
+        "caption_ref": "pilot30-rendered-final.jsonl:21",
+        "raw_receipt_ref": "pilot30-annotations-v3.jsonl:21",
+        "facts_ref": "pilot30-facts-v2.jsonl:21",
+        "sentence_count_abbreviation_safe": 4,
+        "word_count_whitespace": 104,
+        "findings": [],
+        "nonblocking_notes": [],
+        "same_as_legacy_caption": true
+      }
+    },
+    {
+      "material_id": "mp-675545",
+      "line_number": 22,
+      "fact_anchor": {
+        "cell_formula": "Ta4 Hg8 F24",
+        "reduced_formula": "TaHg2F6",
+        "space_group": "C2/c",
+        "crystal_system": "monoclinic",
+        "cell_atom_count": 36,
+        "independent_orbit_count": 7,
+        "representative_local_environment": {
+          "center_element": "Hg",
+          "coordination_number": 12,
+          "neighbor_element_counts": {
+            "F": 6,
+            "Hg": 6
+          },
+          "recognized_motif": "cp",
+          "distance_range_A": [
+            2.9212,
+            4.068
+          ],
+          "orbit_multiplicity": 4
+        },
+        "network_maximum_periodic_dimension": 3,
+        "network_component_site_counts": [
+          36
+        ],
+        "energy_above_hull": 0.12121771212965601,
+        "energy_unit": "eV/atom"
+      },
+      "v2": {
+        "result": "fail",
+        "caption_ref": "pilot30-annotations-v2.jsonl:22",
+        "facts_ref": "pilot30-facts-v2.jsonl:22",
+        "findings": [
+          {
+            "type": "supplied_property_value_changed",
+            "severity": "fail",
+            "caption_claim": "energy above hull 0.1212 eV/atom",
+            "fact_value": "0.12121771212965601 eV/atom",
+            "evidence_refs": [
+              "pilot30-annotations-v2.jsonl:22",
+              "pilot30-facts-v2.jsonl:22"
+            ]
+          },
+          {
+            "type": "unsupported_cp_subtype",
+            "severity": "fail",
+            "caption_claim": "cubic-close-packed motif",
+            "fact_value": "recognized_motif=\"cp\" at CN=12; the supplied classification supports close-packed-like only",
+            "evidence_refs": [
+              "pilot30-annotations-v2.jsonl:22",
+              "pilot30-facts-v2.jsonl:22",
+              "research/crystal_preannotation_20261012/feature-method.md:19",
+              "research/crystal_preannotation_20261012/feature-method.json:75",
+              "research/crystal_preannotation_20261012/annotation.py:32-35"
+            ]
+          }
+        ]
+      },
+      "v2_grouping_ambiguity": null,
+      "legacy_rendered_v3_draft": {
+        "result": "pass",
+        "caption_ref": "pilot30-rendered.jsonl:22",
+        "raw_receipt_ref": "pilot30-annotations-v3.jsonl:22",
+        "facts_ref": "pilot30-facts-v2.jsonl:22",
+        "sentence_count_abbreviation_safe": 4,
+        "word_count_whitespace": 93,
+        "findings": [],
+        "nonblocking_notes": []
+      },
+      "final_rendered_v3": {
+        "result": "pass",
+        "caption_ref": "pilot30-rendered-final.jsonl:22",
+        "raw_receipt_ref": "pilot30-annotations-v3.jsonl:22",
+        "facts_ref": "pilot30-facts-v2.jsonl:22",
+        "sentence_count_abbreviation_safe": 4,
+        "word_count_whitespace": 93,
+        "findings": [],
+        "nonblocking_notes": [],
+        "same_as_legacy_caption": true
+      }
+    },
+    {
+      "material_id": "mp-2220009",
+      "line_number": 23,
+      "fact_anchor": {
+        "cell_formula": "Tb4 Mg2 V4 O16",
+        "reduced_formula": "Tb2MgV2O8",
+        "space_group": "C2",
+        "crystal_system": "monoclinic",
+        "cell_atom_count": 26,
+        "independent_orbit_count": 7,
+        "representative_local_environment": {
+          "center_element": "Mg",
+          "coordination_number": 6,
+          "neighbor_element_counts": {
+            "O": 6
+          },
+          "recognized_motif": null,
+          "distance_range_A": [
+            1.9718,
+            2.4006
+          ],
+          "orbit_multiplicity": 2
+        },
+        "network_maximum_periodic_dimension": 3,
+        "network_component_site_counts": [
+          26
+        ],
+        "energy_above_hull": 0.135767494615389,
+        "energy_unit": "eV/atom"
+      },
+      "v2": {
+        "result": "pass",
+        "caption_ref": "pilot30-annotations-v2.jsonl:23",
+        "facts_ref": "pilot30-facts-v2.jsonl:23",
+        "findings": []
+      },
+      "v2_grouping_ambiguity": null,
+      "legacy_rendered_v3_draft": {
+        "result": "pass",
+        "caption_ref": "pilot30-rendered.jsonl:23",
+        "raw_receipt_ref": "pilot30-annotations-v3.jsonl:23",
+        "facts_ref": "pilot30-facts-v2.jsonl:23",
+        "sentence_count_abbreviation_safe": 5,
+        "word_count_whitespace": 88,
+        "findings": [],
+        "nonblocking_notes": []
+      },
+      "final_rendered_v3": {
+        "result": "pass",
+        "caption_ref": "pilot30-rendered-final.jsonl:23",
+        "raw_receipt_ref": "pilot30-annotations-v3.jsonl:23",
+        "facts_ref": "pilot30-facts-v2.jsonl:23",
+        "sentence_count_abbreviation_safe": 5,
+        "word_count_whitespace": 88,
+        "findings": [],
+        "nonblocking_notes": [],
+        "same_as_legacy_caption": true
+      }
+    },
+    {
+      "material_id": "mp-973911",
+      "line_number": 24,
+      "fact_anchor": {
+        "cell_formula": "Pa6 Re2",
+        "reduced_formula": "Pa3Re",
+        "space_group": "P6_3/mmc",
+        "crystal_system": "hexagonal",
+        "cell_atom_count": 8,
+        "independent_orbit_count": 2,
+        "representative_local_environment": {
+          "center_element": "Pa",
+          "coordination_number": 12,
+          "neighbor_element_counts": {
+            "Pa": 8,
+            "Re": 4
+          },
+          "recognized_motif": "cp",
+          "distance_range_A": [
+            2.9264,
+            3.2958
+          ],
+          "orbit_multiplicity": 6
+        },
+        "network_maximum_periodic_dimension": 3,
+        "network_component_site_counts": [
+          8
+        ],
+        "energy_above_hull": 0.182091980000009,
+        "energy_unit": "eV/atom"
+      },
+      "v2": {
+        "result": "pass",
+        "caption_ref": "pilot30-annotations-v2.jsonl:24",
+        "facts_ref": "pilot30-facts-v2.jsonl:24",
+        "findings": []
+      },
+      "v2_grouping_ambiguity": null,
+      "legacy_rendered_v3_draft": {
+        "result": "pass",
+        "caption_ref": "pilot30-rendered.jsonl:24",
+        "raw_receipt_ref": "pilot30-annotations-v3.jsonl:24",
+        "facts_ref": "pilot30-facts-v2.jsonl:24",
+        "sentence_count_abbreviation_safe": 4,
+        "word_count_whitespace": 98,
+        "findings": [],
+        "nonblocking_notes": []
+      },
+      "final_rendered_v3": {
+        "result": "pass",
+        "caption_ref": "pilot30-rendered-final.jsonl:24",
+        "raw_receipt_ref": "pilot30-annotations-v3.jsonl:24",
+        "facts_ref": "pilot30-facts-v2.jsonl:24",
+        "sentence_count_abbreviation_safe": 4,
+        "word_count_whitespace": 98,
+        "findings": [],
+        "nonblocking_notes": [],
+        "same_as_legacy_caption": true
+      }
+    },
+    {
+      "material_id": "mp-605060",
+      "line_number": 25,
+      "fact_anchor": {
+        "cell_formula": "Ce2 Fe2 As2 O2",
+        "reduced_formula": "CeFeAsO",
+        "space_group": "P4mm",
+        "crystal_system": "tetragonal",
+        "cell_atom_count": 8,
+        "independent_orbit_count": 6,
+        "representative_local_environment": {
+          "center_element": "O",
+          "coordination_number": 4,
+          "neighbor_element_counts": {
+            "Ce": 4
+          },
+          "recognized_motif": "tetrahedral",
+          "distance_range_A": [
+            2.3387,
+            2.3577
+          ],
+          "orbit_multiplicity": 2
+        },
+        "network_maximum_periodic_dimension": 3,
+        "network_component_site_counts": [
+          8
+        ],
+        "energy_above_hull": 0.21242749736111002,
+        "energy_unit": "eV/atom"
+      },
+      "v2": {
+        "result": "fail",
+        "caption_ref": "pilot30-annotations-v2.jsonl:25",
+        "facts_ref": "pilot30-facts-v2.jsonl:25",
+        "findings": [
+          {
+            "type": "supplied_property_value_changed",
+            "severity": "fail",
+            "caption_claim": "energy above hull 0.2124 eV/atom",
+            "fact_value": "0.21242749736111002 eV/atom",
+            "evidence_refs": [
+              "pilot30-annotations-v2.jsonl:25",
+              "pilot30-facts-v2.jsonl:25"
+            ]
+          }
+        ]
+      },
+      "v2_grouping_ambiguity": null,
+      "legacy_rendered_v3_draft": {
+        "result": "fail",
+        "caption_ref": "pilot30-rendered.jsonl:25",
+        "raw_receipt_ref": "pilot30-annotations-v3.jsonl:25",
+        "facts_ref": "pilot30-facts-v2.jsonl:25",
+        "sentence_count_abbreviation_safe": 5,
+        "word_count_whitespace": 90,
+        "findings": [
+          {
+            "type": "internal_property_label_contradiction",
+            "severity": "fail",
+            "caption_claim": "No property labels were supplied for this structure",
+            "fact_value": "energy_above_hull=0.21242749736111002 eV/atom; the same legacy caption appends this original archived MP value",
+            "evidence_refs": [
+              "pilot30-rendered.jsonl:25",
+              "pilot30-annotations-v3.jsonl:25",
+              "pilot30-facts-v2.jsonl:25"
+            ]
+          }
+        ],
+        "nonblocking_notes": []
+      },
+      "final_rendered_v3": {
+        "result": "pass",
+        "caption_ref": "pilot30-rendered-final.jsonl:25",
+        "raw_receipt_ref": "pilot30-annotations-v3.jsonl:25",
+        "facts_ref": "pilot30-facts-v2.jsonl:25",
+        "sentence_count_abbreviation_safe": 4,
+        "word_count_whitespace": 82,
+        "findings": [],
+        "nonblocking_notes": [],
+        "same_as_legacy_caption": false
+      }
+    },
+    {
+      "material_id": "mp-1186533",
+      "line_number": 26,
+      "fact_anchor": {
+        "cell_formula": "Pm1 Be1 O3",
+        "reduced_formula": "PmBeO3",
+        "space_group": "Pm-3m",
+        "crystal_system": "cubic",
+        "cell_atom_count": 5,
+        "independent_orbit_count": 3,
+        "representative_local_environment": {
+          "center_element": "Be",
+          "coordination_number": 6,
+          "neighbor_element_counts": {
+            "O": 6
+          },
+          "recognized_motif": "octahedral",
+          "distance_range_A": [
+            1.82,
+            1.82
+          ],
+          "orbit_multiplicity": 1
+        },
+        "network_maximum_periodic_dimension": 3,
+        "network_component_site_counts": [
+          5
+        ],
+        "energy_above_hull": 0.273470728249999,
+        "energy_unit": "eV/atom"
+      },
+      "v2": {
+        "result": "pass",
+        "caption_ref": "pilot30-annotations-v2.jsonl:26",
+        "facts_ref": "pilot30-facts-v2.jsonl:26",
+        "findings": []
+      },
+      "v2_grouping_ambiguity": null,
+      "legacy_rendered_v3_draft": {
+        "result": "pass",
+        "caption_ref": "pilot30-rendered.jsonl:26",
+        "raw_receipt_ref": "pilot30-annotations-v3.jsonl:26",
+        "facts_ref": "pilot30-facts-v2.jsonl:26",
+        "sentence_count_abbreviation_safe": 4,
+        "word_count_whitespace": 93,
+        "findings": [],
+        "nonblocking_notes": []
+      },
+      "final_rendered_v3": {
+        "result": "pass",
+        "caption_ref": "pilot30-rendered-final.jsonl:26",
+        "raw_receipt_ref": "pilot30-annotations-v3.jsonl:26",
+        "facts_ref": "pilot30-facts-v2.jsonl:26",
+        "sentence_count_abbreviation_safe": 4,
+        "word_count_whitespace": 93,
+        "findings": [],
+        "nonblocking_notes": [],
+        "same_as_legacy_caption": true
+      }
+    },
+    {
+      "material_id": "mp-1223904",
+      "line_number": 27,
+      "fact_anchor": {
+        "cell_formula": "Ho2 O3",
+        "reduced_formula": "Ho2O3",
+        "space_group": "P-4m2",
+        "crystal_system": "tetragonal",
+        "cell_atom_count": 5,
+        "independent_orbit_count": 4,
+        "representative_local_environment": {
+          "center_element": "O",
+          "coordination_number": 4,
+          "neighbor_element_counts": {
+            "Ho": 4
+          },
+          "recognized_motif": "tetrahedral",
+          "distance_range_A": [
+            2.2158,
+            2.2158
+          ],
+          "orbit_multiplicity": 1
+        },
+        "network_maximum_periodic_dimension": 3,
+        "network_component_site_counts": [
+          5
+        ],
+        "energy_above_hull": 0.26297882575000003,
+        "energy_unit": "eV/atom"
+      },
+      "v2": {
+        "result": "fail",
+        "caption_ref": "pilot30-annotations-v2.jsonl:27",
+        "facts_ref": "pilot30-facts-v2.jsonl:27",
+        "findings": [
+          {
+            "type": "supplied_property_value_changed",
+            "severity": "fail",
+            "caption_claim": "energy above hull 0.263 eV/atom",
+            "fact_value": "0.26297882575000003 eV/atom",
+            "evidence_refs": [
+              "pilot30-annotations-v2.jsonl:27",
+              "pilot30-facts-v2.jsonl:27"
+            ]
+          }
+        ]
+      },
+      "v2_grouping_ambiguity": null,
+      "legacy_rendered_v3_draft": {
+        "result": "pass",
+        "caption_ref": "pilot30-rendered.jsonl:27",
+        "raw_receipt_ref": "pilot30-annotations-v3.jsonl:27",
+        "facts_ref": "pilot30-facts-v2.jsonl:27",
+        "sentence_count_abbreviation_safe": 5,
+        "word_count_whitespace": 100,
+        "findings": [],
+        "nonblocking_notes": []
+      },
+      "final_rendered_v3": {
+        "result": "pass",
+        "caption_ref": "pilot30-rendered-final.jsonl:27",
+        "raw_receipt_ref": "pilot30-annotations-v3.jsonl:27",
+        "facts_ref": "pilot30-facts-v2.jsonl:27",
+        "sentence_count_abbreviation_safe": 5,
+        "word_count_whitespace": 100,
+        "findings": [],
+        "nonblocking_notes": [],
+        "same_as_legacy_caption": true
+      }
+    },
+    {
+      "material_id": "mp-1216538",
+      "line_number": 28,
+      "fact_anchor": {
+        "cell_formula": "U2 Nb2",
+        "reduced_formula": "UNb",
+        "space_group": "Cmmm",
+        "crystal_system": "orthorhombic",
+        "cell_atom_count": 4,
+        "independent_orbit_count": 2,
+        "representative_local_environment": {
+          "center_element": "Nb",
+          "coordination_number": 8,
+          "neighbor_element_counts": {
+            "Nb": 4,
+            "U": 4
+          },
+          "recognized_motif": "bcc",
+          "distance_range_A": [
+            2.9178,
+            2.9594
+          ],
+          "orbit_multiplicity": 2
+        },
+        "network_maximum_periodic_dimension": 3,
+        "network_component_site_counts": [
+          4
+        ],
+        "energy_above_hull": 0.204178600000005,
+        "energy_unit": "eV/atom"
+      },
+      "v2": {
+        "result": "pass",
+        "caption_ref": "pilot30-annotations-v2.jsonl:28",
+        "facts_ref": "pilot30-facts-v2.jsonl:28",
+        "findings": []
+      },
+      "v2_grouping_ambiguity": null,
+      "legacy_rendered_v3_draft": {
+        "result": "pass",
+        "caption_ref": "pilot30-rendered.jsonl:28",
+        "raw_receipt_ref": "pilot30-annotations-v3.jsonl:28",
+        "facts_ref": "pilot30-facts-v2.jsonl:28",
+        "sentence_count_abbreviation_safe": 3,
+        "word_count_whitespace": 97,
+        "findings": [],
+        "nonblocking_notes": []
+      },
+      "final_rendered_v3": {
+        "result": "pass",
+        "caption_ref": "pilot30-rendered-final.jsonl:28",
+        "raw_receipt_ref": "pilot30-annotations-v3.jsonl:28",
+        "facts_ref": "pilot30-facts-v2.jsonl:28",
+        "sentence_count_abbreviation_safe": 3,
+        "word_count_whitespace": 97,
+        "findings": [],
+        "nonblocking_notes": [],
+        "same_as_legacy_caption": true
+      }
+    },
+    {
+      "material_id": "mp-1217376",
+      "line_number": 29,
+      "fact_anchor": {
+        "cell_formula": "Tc2 W4 C2",
+        "reduced_formula": "TcW2C",
+        "space_group": "P3m1",
+        "crystal_system": "trigonal",
+        "cell_atom_count": 8,
+        "independent_orbit_count": 8,
+        "representative_local_environment": {
+          "center_element": "C",
+          "coordination_number": 6,
+          "neighbor_element_counts": {
+            "Tc": 3,
+            "W": 3
+          },
+          "recognized_motif": "octahedral",
+          "distance_range_A": [
+            2.0817,
+            2.1374
+          ],
+          "orbit_multiplicity": 1
+        },
+        "network_maximum_periodic_dimension": 3,
+        "network_component_site_counts": [
+          8
+        ],
+        "energy_above_hull": 0.22881035874999603,
+        "energy_unit": "eV/atom"
+      },
+      "v2": {
+        "result": "pass",
+        "caption_ref": "pilot30-annotations-v2.jsonl:29",
+        "facts_ref": "pilot30-facts-v2.jsonl:29",
+        "findings": []
+      },
+      "v2_grouping_ambiguity": "The v2 clause places 3 C neighbors next to the Tc/W 12-neighbor cp clause; facts encode separate CN=3 C-neighbor environments and CN=12 cp environments. This is ambiguous wording, not counted as a contradiction; v3 omits the detail.",
+      "legacy_rendered_v3_draft": {
+        "result": "pass",
+        "caption_ref": "pilot30-rendered.jsonl:29",
+        "raw_receipt_ref": "pilot30-annotations-v3.jsonl:29",
+        "facts_ref": "pilot30-facts-v2.jsonl:29",
+        "sentence_count_abbreviation_safe": 5,
+        "word_count_whitespace": 104,
+        "findings": [],
+        "nonblocking_notes": []
+      },
+      "final_rendered_v3": {
+        "result": "pass",
+        "caption_ref": "pilot30-rendered-final.jsonl:29",
+        "raw_receipt_ref": "pilot30-annotations-v3.jsonl:29",
+        "facts_ref": "pilot30-facts-v2.jsonl:29",
+        "sentence_count_abbreviation_safe": 5,
+        "word_count_whitespace": 104,
+        "findings": [],
+        "nonblocking_notes": [],
+        "same_as_legacy_caption": true
+      }
+    },
+    {
+      "material_id": "mp-1181470",
+      "line_number": 30,
+      "fact_anchor": {
+        "cell_formula": "Gd2 Zn6 Ge3",
+        "reduced_formula": "Gd2(Zn2Ge)3",
+        "space_group": "P-62m",
+        "crystal_system": "hexagonal",
+        "cell_atom_count": 11,
+        "independent_orbit_count": 4,
+        "representative_local_environment": {
+          "center_element": "Gd",
+          "coordination_number": 17,
+          "neighbor_element_counts": {
+            "Gd": 2,
+            "Ge": 6,
+            "Zn": 9
+          },
+          "recognized_motif": null,
+          "distance_range_A": [
+            3.0459,
+            3.7311
+          ],
+          "orbit_multiplicity": 2
+        },
+        "network_maximum_periodic_dimension": 3,
+        "network_component_site_counts": [
+          11
+        ],
+        "energy_above_hull": 0.203085521818182,
+        "energy_unit": "eV/atom"
+      },
+      "v2": {
+        "result": "pass",
+        "caption_ref": "pilot30-annotations-v2.jsonl:30",
+        "facts_ref": "pilot30-facts-v2.jsonl:30",
+        "findings": []
+      },
+      "v2_grouping_ambiguity": null,
+      "legacy_rendered_v3_draft": {
+        "result": "pass",
+        "caption_ref": "pilot30-rendered.jsonl:30",
+        "raw_receipt_ref": "pilot30-annotations-v3.jsonl:30",
+        "facts_ref": "pilot30-facts-v2.jsonl:30",
+        "sentence_count_abbreviation_safe": 4,
+        "word_count_whitespace": 99,
+        "findings": [],
+        "nonblocking_notes": [
+          "Legacy caption also contained a true but redundant polyhedra-sharing not-computed status clause; the final renderer removes it."
+        ]
+      },
+      "final_rendered_v3": {
+        "result": "pass",
+        "caption_ref": "pilot30-rendered-final.jsonl:30",
+        "raw_receipt_ref": "pilot30-annotations-v3.jsonl:30",
+        "facts_ref": "pilot30-facts-v2.jsonl:30",
+        "sentence_count_abbreviation_safe": 4,
+        "word_count_whitespace": 94,
+        "findings": [],
+        "nonblocking_notes": [],
+        "same_as_legacy_caption": false
+      }
+    }
+  ]
+}

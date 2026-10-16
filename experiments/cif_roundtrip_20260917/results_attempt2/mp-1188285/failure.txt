@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "/gpfs1/scratch/chenggui2/CrystalDLM/cif_roundtrip_20260917/test_roundtrip.py", line 90, in main
+    cli('encode', src, encoded)
+  File "/gpfs1/scratch/chenggui2/CrystalDLM/cif_roundtrip_20260917/test_roundtrip.py", line 50, in cli
+    assert r.returncode == 0, r.stderr
+AssertionError: Traceback (most recent call last):
+  File "/gpfs1/scratch/chenggui2/CrystalDLM/cif_roundtrip_20260917/cif_codec.py", line 77, in <module>
+    main()
+  File "/gpfs1/scratch/chenggui2/CrystalDLM/cif_roundtrip_20260917/cif_codec.py", line 67, in main
+    bundle=encode_cif(args.input,args.radius,args.symprec)
+  File "/gpfs1/scratch/chenggui2/CrystalDLM/cif_roundtrip_20260917/cif_codec.py", line 33, in encode_cif
+    encoded,_ = encode(crystal.frac_coords, np.array(crystal.atomic_numbers),
+  File "/gpfs1/scratch/chenggui2/CrystalDLM/cif_roundtrip_20260917/symmetry_graph_codec.py", line 53, in encode
+    permutations, offsets = action_tables(positions, species, rotations, translations)
+  File "/gpfs1/scratch/chenggui2/CrystalDLM/cif_roundtrip_20260917/symmetry_graph_codec.py", line 35, in action_tables
+    ids, shifts = match_sites(positions @ r.T + t, species, positions, species)
+  File "/gpfs1/scratch/chenggui2/CrystalDLM/cif_roundtrip_20260917/symmetry_graph_codec.py", line 26, in match_sites
+    assert np.all(matching.sum(-1) == 1), 'site matching is not unique'
+AssertionError: site matching is not unique
+

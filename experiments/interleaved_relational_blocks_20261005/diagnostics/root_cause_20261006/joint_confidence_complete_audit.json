@@ -1,0 +1,282 @@
+{
+  "status": "read_only_joint_confidence_seen8_audit_complete",
+  "policy": "confidence_one",
+  "token_selection": "greedy_argmax",
+  "scope": {
+    "slurm_job": "607872",
+    "model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "training_arm": "joint_ar_diffusion_b32",
+    "clean_crystal_ar_weight": 1.0,
+    "block_size": 32,
+    "prediction_offset": 0,
+    "split": "train_seen8_only",
+    "records": 8,
+    "unique_ids_match_frozen_train_ids_in_order": true,
+    "heldout_evaluated": false
+  },
+  "strict_raw_K_END_PAD_audit": {
+    "raw_token_field": "generation.value.tokens",
+    "K": 2560,
+    "END_token_id": 151666,
+    "PAD_token_id": 151668,
+    "all_8_valid": true,
+    "rule": "Exactly K IDs, one END, no PAD before END, then PAD-only suffix.",
+    "END_positions_zero_based": {
+      "anchor_Tb8Mg4": 405,
+      "anchor_Li8V4Ni4O16": 593,
+      "mp-4047": 692,
+      "mp-1205515": 785,
+      "mp-30009": 442,
+      "mp-1188285": 489,
+      "mp-1207068": 763,
+      "mp-1205902": 525
+    }
+  },
+  "summary_reconciliation": {
+    "summary_seen8_equals_evaluation_summary": true,
+    "counts_recomputed_from_raw_match_summary": true,
+    "failure_classes_recomputed_from_raw_match_summary": true,
+    "counts": {
+      "G": "4/8",
+      "Q_reference": "8/8",
+      "E_reference": "5/8",
+      "closed_loop": "2/8",
+      "flow_complete": "3/8",
+      "Q_swap": "0/8",
+      "Q_no_crystal": "0/8"
+    },
+    "failure_classes": {
+      "G:generation_audit": 4,
+      "closed_loop:skipped_invalid_generated_c1": 4,
+      "E_reference:edit_mismatch": 3,
+      "E_actual:edit_mismatch": 2,
+      "E_actual:generated_edit_audit": 1,
+      "Q_swap:answer_mismatch": 8
+    }
+  },
+  "generation_and_physical_audit": {
+    "valid_G_cases": ["anchor_Tb8Mg4", "mp-4047", "mp-30009", "mp-1188285"],
+    "valid_G_physical_and_requested_condition_checks": "4/4 pass; each passes finite lattice, positive volume, minimum distance, redetected space group, requested composition, atom count, and space group.",
+    "decode_failures": {
+      "Orbit multiplicity and representative relations do not select one public definition": ["mp-1205515", "mp-1205902"],
+      "Unrecognized representative coordinate sentence": ["anchor_Li8V4Ni4O16"],
+      "Unknown element name in relational document: Dyspros": ["mp-1207068"]
+    },
+    "geometry_reached": 4,
+    "geometry_not_reached_due_to_decode": 4
+  },
+  "generated_C1_identity_to_training_reference": {
+    "comparison": "Exact generated text and decoded plan compared with the matching frozen training record.",
+    "valid_cases": {
+      "anchor_Tb8Mg4": {"raw_text_equal": true, "decoded_plan_equal": true},
+      "mp-4047": {"raw_text_equal": false, "decoded_plan_equal": false},
+      "mp-30009": {"raw_text_equal": true, "decoded_plan_equal": true},
+      "mp-1188285": {"raw_text_equal": false, "decoded_plan_equal": false}
+    },
+    "interpretation": "Two valid seen8 outputs reproduce the training reference exactly; two are plan-distinct within seen8. Plan-distinct here does not mean heldout novelty."
+  },
+  "reference_edit_audit": {
+    "successful": 5,
+    "decode_failure": {
+      "cases": 1,
+      "id": "mp-30009",
+      "reason": "GateError: Input cell sentence is missing or malformed",
+      "geometry_reached": false
+    },
+    "decoded_and_executed": 7,
+    "other_plan_fields_exact": "7/7 decoded outputs",
+    "physical_audit": "7/7 decoded outputs pass; no decoded reference edit fails physical validation",
+    "exact_lattice_lengths": "5/7 decoded outputs",
+    "whole_geometry_scale": "6/7 decoded outputs",
+    "numeric_failures": {
+      "mp-1188285": {
+        "length_max_abs_error_A": 5.000000413701855e-10,
+        "lengths_exact": false,
+        "other_plan_fields_exact": true,
+        "whole_geometry_scale": true,
+        "physical_audit": true
+      },
+      "mp-1205902": {
+        "length_max_abs_error_A": 4.000000000559112e-6,
+        "lengths_exact": false,
+        "other_plan_fields_exact": true,
+        "whole_geometry_scale": false,
+        "physical_audit": true
+      }
+    }
+  },
+  "actual_generated_crystal_loop": {
+    "valid_C1_cases": 4,
+    "actual_C1_read": "4/4 pass; all seven fact fields correct in every case",
+    "actual_E": {
+      "exact_successes": 2,
+      "decode_failures": 1,
+      "numeric_edit_mismatches": 1,
+      "decoded_edit_physical_audit": "3/3 pass"
+    },
+    "actual_Q2": "3/3 attempted reads pass all seven fact fields; the decode-failed edit does not reach Q2",
+    "case_results": {
+      "anchor_Tb8Mg4": {
+        "training_reference_C1": true,
+        "Q1": true,
+        "E": true,
+        "Q2": true,
+        "closed_loop": true
+      },
+      "mp-4047": {
+        "training_reference_C1": false,
+        "Q1": true,
+        "E": true,
+        "Q2": true,
+        "closed_loop": true
+      },
+      "mp-30009": {
+        "training_reference_C1": true,
+        "Q1": true,
+        "E": false,
+        "E_failure": "Input cell sentence is missing or malformed",
+        "Q2": "not reached",
+        "closed_loop": false
+      },
+      "mp-1188285": {
+        "training_reference_C1": false,
+        "Q1": true,
+        "E": false,
+        "E_failure": "length_max_abs_error_A=2.849500000401406e-6; other plan fields and physical audit pass",
+        "Q2": true,
+        "closed_loop": false
+      }
+    }
+  },
+  "grounding_controls": {
+    "Q_reference": "8/8; space group, formula, atom count, orbit count, and a/b/c lengths are all correct",
+    "Q_swap": "0/8",
+    "Q_swap_fieldwise_correct": {
+      "space_group": "0/8",
+      "formula": "0/8",
+      "atom_count": "8/8",
+      "orbit_count": "5/8",
+      "a_length": "8/8",
+      "b_length": "8/8",
+      "c_length": "8/8"
+    },
+    "Q_no_crystal": "0/8 exact target-fact matches; this is not an abstention score"
+  },
+  "matched_comparisons": {
+    "original_stochastic_B32_no_anchor": {
+      "scope": "same frozen seen8 cohort",
+      "G": "0/8",
+      "E_reference": "0/8",
+      "closed_loop": "0/8"
+    },
+    "confidence_one_B32_no_anchor": {
+      "scope": "same eight IDs in the same order",
+      "policy": "confidence_one",
+      "token_selection": "greedy_argmax",
+      "K": 2560,
+      "block_size": 32,
+      "G": "1/8",
+      "E_reference": "0/8",
+      "closed_loop": "0/8",
+      "frozen_checkpoint_sha256": "79359e4c1936782f925b35a9fbd9b9545add49e29dff8398057aa9868c14d4e0",
+      "frozen_checkpoint_fingerprint": "474810720624206b4623a586f7ffc9d099ae84ff0faabf579b259d7d09249350",
+      "checkpoint_matches_original_stochastic_B32": true
+    },
+    "joint_confidence_one": {
+      "G": "4/8",
+      "E_reference": "5/8",
+      "closed_loop": "2/8"
+    },
+    "interpretation": "Stochastic-to-confidence-one changes both candidate selection to greedy argmax and the commit count/order on the old no-anchor checkpoint; it does not isolate commit order alone. No-anchor-confidence-to-joint-confidence keeps confidence-one fixed and changes clean_crystal_ar_weight from 0 to 1. The two matched comparisons separate sampler and training changes on the same seen8 cohort."
+  },
+  "source_noise_and_dose_matching": {
+    "joint_training": {
+      "updates": 512,
+      "seed": 17,
+      "effective_batch": 4,
+      "K": 2560,
+      "MAXLEN": 8192,
+      "actual_task_counts": {"G": 1024, "E": 512, "Q1": 256, "Q2": 256},
+      "actual_G_E_noise_events": 1536,
+      "summary_noise_events_sha256": "490f2ea519119b70c1e831c2c3ceb6cc81972dc2989eb987ae6a308fa4839907"
+    },
+    "old_B32_training_control": {
+      "updates": 512,
+      "seed": 17,
+      "effective_batch": 4,
+      "task_exposure_sha256": "d9c1f0576a30c62d81a9e00bdcf84cd13412057012b85da34d8c154f8424f560",
+      "actual_task_counts": {"G": 1024, "E": 512, "Q1": 256, "Q2": 256},
+      "clean_crystal_ar_weight": 0.0
+    },
+    "joint_clean_AR_weight": 1.0,
+    "curve_k_sequence_check": {
+      "joint_B32_curve_and_B16_control_curve_equal": true,
+      "events": 1536,
+      "k_sequence_sha256": "0cf8a3d6c9f004d25ee2a2dbeb8d8f3bd946fb39c9fced56432c0c16d1cc8bf9",
+      "matches_old_B32_native_replay_per_existing_audit": true
+    },
+    "source_and_data": {
+      "before_and_after_snapshots_equal": true,
+      "local_manifest_sha256_matches_summary": true,
+      "local_records_sha256_matches_summary": true,
+      "codec_runtime_hashes_stable": true,
+      "reused_sampler_sha256": "081ad3a97090651bba4b146e77fcd47807e0942d3ab4f7da450274a1e594b8d3",
+      "data_manifest_sha256": "b8c290dd64f210dd469b83cbf41ad321ae4d7c5c40303c70e8cda0e4335cd0c3",
+      "data_records_sha256": "ef2ec2dcdee1d73c62e48987a9cec86a4db3076f9c48d9ab17b8745b9eca785f"
+    }
+  },
+  "checkpoint_and_evaluation_integrity": {
+    "checkpoint_sha256": "6a3052775a85e5a75c17e269b897b14ea4975ca77b5baf02736815b6da3a1ce5",
+    "fingerprint_before": "ea511f138dde1598328f5d019a7b5b1701470302196c39aaba666a821f2ae009",
+    "fingerprint_after": "ea511f138dde1598328f5d019a7b5b1701470302196c39aaba666a821f2ae009",
+    "optimization_gate_fingerprint_matches": true,
+    "optimization_gate_status": "passed",
+    "optimizer_updates_during_evaluation": 0,
+    "attempts_retried": 0,
+    "AR_fallback": false,
+    "repair_applied": false,
+    "heldout_evaluated": false
+  },
+  "source_hashes": {
+    "summary_json": "6188797a536206c4e258fd5dda47bf5fa29bfc3b10411025697493fec39076f2",
+    "optimization_gate_json": "aea892c1572f40931c293ac8cd96e9831dea96969ebdd0134b03659ee9dc861c",
+    "evaluation_summary_json": "cc655f00657d8e2fef704f5cdd7a7150d65b6c32bc419876e5cfc9ee28c98914",
+    "evaluation_jsonl": "38b465a27d5a05e4a555125140662b48c648152ccfed0c2d092f5e5b3ef45717",
+    "joint_confidence_eval_py": "1c739713672ed7530f0b1921cf58d85192c36647faa3b3225718d7d808b974f3",
+    "commit_probe_py": "081ad3a97090651bba4b146e77fcd47807e0942d3ab4f7da450274a1e594b8d3",
+    "full_commit_fast_eval_py": "444e6d1fca8bf7f1de00dca951d64961cec5b3b64e3461034174140742b4bb36",
+    "relational_codec_py": "365f122905399a73477b92a7af97c05b78483ea5af12347f9a6050b1a3506813",
+    "joint_curve_jsonl": "ece2f4b63d0063efedab2485d89c74e8a05176d09b93482014f208abda8bfa9d",
+    "b16_control_curve_jsonl": "733bdf60e180b6c2d2c223aaabb19bf68c9177cb6d1ffd344f3d1c5b8de16d5e",
+    "noise_exposure_audit_json": "af0d6a3f5bd24af7b77f7e6a8ccf32290f0b53da929191a302a918001d34ad43",
+    "old_B32_training_exposure_json": "1a73e0aa6c81062e32400627c4a0acbfcabb38fa633e3b5d16f1185ddb7c8bee",
+    "old_confidence_evaluation_jsonl": "fce5f3fa6d8e27c86992bd1625f8e086acd6137b8c7a041cc0a54aa098b60ed4",
+    "old_confidence_evaluation_summary_json": "e246a1feb1894b6c0cac9f9fcac03523e826acf3b1710c3763855ac50183f40e",
+    "old_stochastic_B32_evaluation_summary_json": "6f2c1139574cb45076d7e241f600a9f5061fc74b08191c65c4d776c103f66a44",
+    "old_B32_training_summary_json": "a02ebf75f6ffc47df901c684d78f4b713bb3240c0f39bfb121ce92d922bc5c2b",
+    "old_B32_training_status_json": "515c98fd05ef91b29c2cc9f1d40977a69625753f8135a0398f1341842a4c2db8"
+  },
+  "sources": [
+    "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/joint_confidence_001/summary.json",
+    "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/joint_confidence_001/optimization_gate.json",
+    "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/joint_confidence_001/seen8/evaluation.jsonl",
+    "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/joint_confidence_001/seen8/evaluation_summary.json",
+    "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/joint_confidence_eval.py",
+    "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/commit_probe.py",
+    "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/full_commit_fast_eval.py",
+    "experiments/interleaved_relational_blocks_20261005/pilot_001/diffusion_b32/seen8/evaluation_summary.json",
+    "experiments/interleaved_relational_blocks_20261005/pilot_001/summary.json",
+    "experiments/interleaved_relational_blocks_20261005/pilot_001/diffusion_b32/status.json",
+    "experiments/interleaved_relational_blocks_20261005/pilot_001/training_exposure.json",
+    "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/full_commit_fast_001/confidence_one/seen8/evaluation.jsonl",
+    "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/full_commit_fast_001/confidence_one/seen8/evaluation_summary.json",
+    "experiments/interleaved_relational_joint_20261006/PROTOCOL.md",
+    "experiments/interleaved_relational_joint_20261006/curve.jsonl",
+    "experiments/interleaved_relational_b16_20261006/curve.jsonl",
+    "experiments/interleaved_relational_blocks_20261005/diagnostics/root_cause_20261006/joint_noise_exposure_audit.json",
+    "experiments/interleaved_relational_20261004/data_pilot_001/manifest.json",
+    "experiments/interleaved_relational_20261004/data_pilot_001/records.jsonl",
+    "experiments/interleaved_ar_diffusion_20261002/data_002/tokenizer/tokenizer.json"
+  ]
+}

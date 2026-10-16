@@ -1,0 +1,128 @@
+Source: /Volumes/Extention/Users/guicheng/Code/CodeX-tmp/2026-09-01/bang-w/outputs/group_meeting_draft.pptx
+
+ppt/slides/slide1.xml
+组会汇报｜文献调研 + 新 idea
+Wyckoff DLM：从已有结果到可验证的新 idea
+DynaCrys · MaskGXT · WyFormer-based proposal
+结论：DLM
+ 
+本身不新，结构化
+ tokenization + legal set diffusion 
+才是主线
+DynaCrys (Jin et al., 2026) · MaskGXT (Seong et al., 2026) · DynaCrys / MaskGXT title pages · paper page 1
+
+ppt/slides/slide2.xml
+02
+研究问题
+瓶颈不是扩散，而是如何保留晶体对称性
+晶体生成同时面对离散对称、可变轨道集合和连续几何；空间群决定合法 Wyckoff vocabulary。
+把空间群都当作 P1 会扩大搜索空间并弱化对称性先验
+Wyckoff 表示压缩 orbit，但不同方法保留的信息不同
+本次问题：DLM 的新增价值究竟来自哪里？
+DynaCrys (Jin et al., 2026) · MaskGXT (Seong et al., 2026) · DynaCrys Introduction · paper pages 1–4; SymmCD Representation · paper pages 1, 4–6; WyFormer Tokenization · paper pages 4–5
+
+ppt/slides/slide3.xml
+03
+表示基础
+WyFormer 把晶体压成无序 Wyckoff token set
+Figure 4 · paper page 5
+本文证据
+每个 orbit token = element + site symmetry + enumeration
+不使用位置编码，编码器对输入置换不变
+生成仍按 element → symmetry → enumeration 级联 autoregressive
+平均每个晶体约 3 个 Wyckoff positions；压缩收益需实验证明。
+DynaCrys (Jin et al., 2026) · MaskGXT (Seong et al., 2026) · WyFormer Figure 4 · paper page 5; Tokenization · paper pages 4–5
+
+ppt/slides/slide4.xml
+04
+DynaCrys
+DynaCrys 把空间群放进 symbolic diffusion state
+Figure 1 · paper page 2
+本文证据
+联合更新 space group、orbit count、Wyckoff rows 与 elements
+group–subgroup graph 让 G 可沿晶体学关系演化
+legal sample 再接 symmetry-constrained geometry diffusion
+贡献重点是动态 G + 合法采样，不是普通 masked LM。
+DynaCrys (Jin et al., 2026) · MaskGXT (Seong et al., 2026) · DynaCrys Figure 1 · paper page 2; Method · paper pages 4–6
+
+ppt/slides/slide5.xml
+05
+MaskGXT
+MaskGXT 用 masked decoding 覆盖完整晶体
+Figure 3 · paper page 6
+本文证据
+一组 tokens
+ 
+同时表示
+ 
+space 
+group
+、晶格、坐标、
+Wyckoff position、元素
+全 mask → 空间群分支 → confidence-ranked greedy unmask
+周期 label smoothing + sub-bin offset 保住坐标精度
+论文报告的结果来自 composition-conditioned crystal structure prediction；不是本 idea 的实验。
+DynaCrys (Jin et al., 2026) · MaskGXT (Seong et al., 2026) · MaskGXT Figure 3 · paper page 6; Sampling · paper page 9
+
+ppt/slides/slide6.xml
+06
+结果定位
+最新结果把 DLM 可行性推到了高起点
+不同 benchmark / metric 不可直接横比；这里只用来定位各自的设计收益。
+DynaCrys：CHGNet 下，稳定-唯一-新颖率 / 稳定-对称-唯一-新颖率为 9.39% / 9.31%
+MaskGXT：MP-20 polymorph split 的 match-every-reference accuracy 为 79.06%（baseline 70.87%）
+去掉 symmetry tokens 后，polymorph split 的 match-every-reference accuracy 为 74.98%
+DynaCrys (Jin et al., 2026) · MaskGXT (Seong et al., 2026) · DynaCrys Table 1 · paper page 8; MaskGXT Tables 2, 4 · paper pages 11–12
+
+ppt/slides/slide7.xml
+07
+相关工作
+“Wyckoff + diffusion”已经不是空白
+重叠关系决定了新 idea 的创新门槛。
+autoregressive / Wyckoff：CrystalFormer、WyFormer、Matra-Genoa 已建立可压缩 representation
+Diffusion / symmetry：WyckoffDiff、SymmCD、DynaCrys 已覆盖不同粒度
+Masked full crystal：MaskGXT 已把 space group + Wyckoff position + coordinates 联合解码
+DynaCrys (Jin et al., 2026) · MaskGXT (Seong et al., 2026) · CrystalFormer Method · paper pages 3–5; Matra-Genoa · paper pages 2–4; WyckoffDiff · paper pages 3–6; SymmCD · paper pages 4–7; DynaCrys / MaskGXT related work · paper pages 2–6
+
+ppt/slides/slide8.xml
+08
+新 idea
+新 idea：set-level byte-pair encoding + Wyckoff DLM
+核心：按合法共现的 orbit motif 合并，不按伪邻接合并
+训练：随机 mask motif 与 leaf，双向联合恢复
+解码：space-group legality + 可逆展开回原始 set
+DynaCrys (Jin et al., 2026) · MaskGXT (Seong et al., 2026) · WyFormer Tokenization · paper pages 4–5; DynaCrys Method · paper pages 4–6; MaskGXT Method · paper pages 5–9
+拟议流水线
+1 统计合法共现
+orbit motif
+→
+2 
+set-level merge
+可逆展开
+→
+3 Mask / denoise
+双向恢复
+→
+4 Legal expand
+→ geometry
+
+ppt/slides/slide9.xml
+09
+后续工作
+先证明它解决什么，再证明它更强
+三阶段实验，先把 representation gain 与 generator gain 拆开。
+复现：WyFormer / DynaCrys / MaskGXT 的同口径基线
+消融：比较 sequence-level 与 set-level byte-pair encoding；加入 prototype-disjoint split
+指标：合法性、对称保持、novelty、diversity、速度与低数据效率
+DynaCrys (Jin et al., 2026) · MaskGXT (Seong et al., 2026) · DynaCrys Evaluation · paper pages 7–10; MaskGXT Experiments · paper pages 9–12; WyFormer Experiments · paper pages 6–9
+
+ppt/slides/slide10.xml
+10
+讨论
+结论：保留方向，改成 Wyckoff grammar
+当前判断：generic Wyckoff DLM = incremental；structured set-DLM + symmetry-aware vocabulary = viable hypothesis。
+可以做：先复现，再做 
+legal set-level byte-pair encoding prototype
+不能先宣称：首次 DLM / 首次 Wyckoff diffusion
+需要拍板：先做 full crystal，还是先做 protostructure
+DynaCrys (Jin et al., 2026) · MaskGXT (Seong et al., 2026) · DynaCrys Conclusion · paper page 10; MaskGXT Conclusion / Limitations · paper pages 11–12; bounded related-work scan

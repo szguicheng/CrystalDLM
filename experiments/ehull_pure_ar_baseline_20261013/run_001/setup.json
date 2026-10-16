@@ -1,0 +1,70 @@
+{
+  "status": "training_started",
+  "seed": 42,
+  "mode": "pure_ar",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+  "prediction_offset": 0,
+  "train_materials": 7272,
+  "val_materials": 900,
+  "microbatch_tasks": 2,
+  "accumulation_steps": 8,
+  "effective_material_pairs": 8,
+  "effective_task_examples": 16,
+  "updates": 909,
+  "warmup_updates": 46,
+  "learning_rate": 2e-05,
+  "weight_decay": 0.01,
+  "precision": "fp32 weights with bf16 autocast",
+  "noise": "none; all text and crystal targets causal",
+  "training_generator_seed": 1042,
+  "evaluation_generator_seed_base": 2042,
+  "initial_weights_sha256": "31877513dce5b9784be7fbc9802f23306e91257317cb5abcb174796329115355",
+  "initial_route_gradient_check": {
+    "loss": 2.56542706489563,
+    "text_loss": 1.982015073299408,
+    "crystal_loss": 1.166824221611023,
+    "finite_gradients": true
+  },
+  "data": {
+    "manifest_sha256": "aa21f3fbb4e9a19a676d1012405575932134675c3684d336d2c41283a281e741",
+    "train_sha256": "b74afafbca5a52eb1a63c9a7502c9fe1f5055cfef0c25f122de6d140c137080b",
+    "val_sha256": "4e97dbe73aa2c4903aa11c4438f3c7c4da05a87eb1028632f121db4e8cd97f12",
+    "manifest_sources": {
+      "subset_manifest_sha256": "c646a8f4257f194828222e414c2a9269739c2a9087ee995b720395eebbb915ac",
+      "request_manifest_sha256": "b518db8d8a85584f86fbe8acda27f52c74daa86aed15b5a2242a23891bf61017",
+      "successes_sha256": "4c77cb33815337b89e77418fe55c81183177e48562ae26be7afc0a4353ae72df",
+      "annotation_helper_sha256": "5f58c724790f32ac45ba8bd102385e54518e08c30897e03d0d8d51346c960984",
+      "caption_repairs_sha256": "c4b573f09e006159b6ee9399e162e76897f076fb0f6f95a0a71cb4856d30ad09"
+    }
+  },
+  "source_sha256": {
+    "baseline.py": "64cc700c34e4452d4c0d3b53d4cb858e3ec83e8d593acc928791ded7135ac9ae",
+    "model.py": "e70ba581e4ca5fad17a180533f37e19067de89dda2ed7117335f1cb8d73e6ff2",
+    "prepare.py": "b1da4043aaff7f96fbfe5b43b1179ea22cb174a1e43623842debdf3465a2dbd1",
+    "shared_model.py": "558ee52de4bb9e2ab32a7fc02b2473e8b7b2017655666674393777da0c733a1b",
+    "shared_prepare.py": "4253e495ff2c642a6bcc0ff2ba958e4cca2154a3f34cf15961f9a318d383d3ae",
+    "strict_plaid_parser.py": "c1dfe1b87715b5b650b7152e02fed567bd5f7f0fd9109295ec87208f23165c6b",
+    "plaid_utils.py": "bfe832994108cb49d6d56d4e86d6f894c538c85bd9cc94fb8ff86ed1ca263af5"
+  },
+  "sample_order_sha256": "7abf514e32c5d5aa109049c09e2a3b9d6a3ede86ffa01c17e78aac0167423247",
+  "exposure": {
+    "unique_materials": 7272,
+    "epoch_materials": 7272,
+    "each_material_once": true
+  },
+  "evaluation_ids_sha256": "d3cad1379df8d17089e5bc196fc6abedc09ca1f11f204370839df2471aceaa8c",
+  "evaluation_ids_saved_before_training": true,
+  "lengths": {
+    "rows_checked": 8172,
+    "generation_max_tokens": 804,
+    "crystal_max_tokens_including_end": 531,
+    "reading_max_tokens": 814,
+    "truncation": false
+  },
+  "software": {
+    "python": "3.10.18",
+    "torch": "2.2.0+cu121",
+    "transformers": "4.57.6"
+  }
+}

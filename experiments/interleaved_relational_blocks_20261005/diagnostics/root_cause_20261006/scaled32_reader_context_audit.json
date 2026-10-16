@@ -1,0 +1,64 @@
+{
+  "scope": "Read-only reader-context comparison for scaled32 grounded training and the frozen final2048 raw evaluation; no model run or causal claim.",
+  "finding": {
+    "answer": "The grounded training run does not train on full same-case actual-history Q2. It trains Q2 only with simplified neutral or cyclic-partner conflict contexts; the frozen nominal Q2 template is full teacher-forced same-case G-Q1-E history.",
+    "actual_evaluation_history": "joint/run.py builds actual Q2 prefix as generation prompt + generated G lead/C1 + actual Q1 answer + edit instruction + generated E lead/C2 + Q2 question. The raw anchor_Tb8Mg4 receipt reports valid generated G/edit and Q1, but Q2 reads old unscaled lengths 7.11/5.33/9.75 rather than target 6.7545/5.0635/9.2625; Q2 answer mismatch. Swap read emits a generic generation lead rather than facts.",
+    "training_contexts": {
+      "neutral": "Instruction says no earlier answer applies; then latest current crystal block and the original Q1 or Q2 question. For Q2 this omits the same-case Q1 answer, edit instruction, and preceding generated/source history.",
+      "conflict": "Earlier crystal from a cyclic partner, partner's Q1 target for Q1 or Q2 target for Q2, explicit latest-block-authoritative instruction, then current case crystal and query. This is a two-block synthetic history, not the same-case G-Q1-E trajectory.",
+      "latest_block": "Q2 latest block is row[reader_direction] (or source direction on the parent schedule); the Q2 suffix is retained from the nominal task. Actual evaluation's latest block is the model-generated edited crystal C2."
+    },
+    "exposure": {
+      "updates": 2048,
+      "epochs_per_train_case": 64,
+      "total_task_counts": {
+        "G": 4096,
+        "E": 2048,
+        "Q1": 1024,
+        "Q2": 1024
+      },
+      "per_training_case_q2": 32,
+      "per_case_q2_direction": {
+        "minus": 16,
+        "plus": 16
+      },
+      "trained_case_count": 32,
+      "per_case_per_direction_context": {
+        "neutral": 8,
+        "conflict": 8
+      }
+    },
+    "nominal_template": "prepare.py tasks() forms Q2 prefix in order: source generation prompt/lead/C1, Q1 question and target, edit instruction and edit lead/C2, then read question. The scaled32 grounded wrapper replaces the reader prefix on every selected Q1/Q2 example.",
+    "evaluation_scope": "This evidence explains a concrete training/evaluation history coverage mismatch. The first case and swap outcomes do not establish that it caused the error or that the pattern holds across all eight cases; preserve the reported partial2 case-2 boundary failure as a separate failure class.",
+    "training_schedule": "Each update orders tasks G, G, E, reader; reader alternates Q1 on even epochs and Q2 on odd epochs. The grounded Q2 sample keeps the nominal Q2 question suffix but replaces its full prefix. The plain mode would retain the base prefix, but the receipt is reader_mode=grounded.",
+    "swap_inference_history": "The swap control uses original G condition prompt + generic \"I generated a crystal.\" lead + replacement other-case C1 block + replacement-read question. It contains neither same-case Q1 answer nor edit chain, and does not use the conflict recipe’s earlier-record answer followed by an explicit latest-block-authoritative instruction."
+  },
+  "evidence": [
+    {
+      "path": "experiments/interleaved_relational_scaled32_20261006/train.py",
+      "lines": "25-32,78-140",
+      "supports": "Grounded recipe, synthetic neutral/conflict context construction, task/direction schedule and latest block selection."
+    },
+    {
+      "path": "experiments/interleaved_relational_scaled32_20261006/training_grounded_001/training_exposure.json",
+      "supports": "Completed 2048-update exposure receipt; aggregate counts and per-case Q2 context/direction counts."
+    },
+    {
+      "path": "experiments/interleaved_relational_joint_20261006/prepare.py",
+      "lines": "124-140",
+      "supports": "Frozen nominal G, Q1, E, Q2 task-prefix order and teacher-forced targets."
+    },
+    {
+      "path": "experiments/interleaved_relational_joint_20261006/run.py",
+      "lines": "529-568,578-596",
+      "supports": "Actual inference Q1/edit/Q2 prefix assembly and distinct replacement-crystal swap control."
+    },
+    {
+      "path": "experiments/interleaved_relational_scaled32_20261006/eval_grounded_final2048_001/seen8/evaluation.jsonl",
+      "record": "anchor_Tb8Mg4; first raw evaluation record",
+      "supports": "Observed Q2 stale lengths and generic swap lead from the supplied evaluation receipt."
+    }
+  ],
+  "bounded_followup_if_cohort_confirms": "Run one separately-controlled, same-seed/same-budget reader-context ablation against the existing grounded recipe. Change only Q2 prefix construction to same-case full teacher-forced G-Q1-E order (C1, Q1 target, edit instruction, target C2, Q2 query); keep data, Q2 direction counts, total updates, G/E/Q1 scheduling and evaluation pipeline fixed. Compare across the complete frozen cohort. This tests exposure to full-history context; it does not claim to reproduce model-generated intermediate outputs during training.",
+  "interpretation_limit": "Prompt-distribution mismatch is directly established; architectural failure and causal attribution from the single observed case are not established."
+}

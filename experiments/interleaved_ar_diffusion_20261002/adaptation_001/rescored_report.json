@@ -1,0 +1,183 @@
+{
+  "status": "complete",
+  "scorer": "explicit named-axis prose v2",
+  "scorer_sha256": "b2308884559e13bd113285004c31e0eefcb976a9faa120a053cff348710796d6",
+  "original_scorer_sha256": "645184cc388bad2554b4615e63135f27e90e150407335067577375dc41525c0a",
+  "raw_output_hashes": {
+    "ar/consistent/evaluation.jsonl": "12f94c5d5ff64fea27eb1266e09dc058fc73d584c1fedec50dc3aa418b7e348d",
+    "ar/consistent/conflict_evaluation.jsonl": "56945fc9dd6e74ff4deee616a8466c0860aa7c644a49b49af315940fa7f68634",
+    "ar/feedback/evaluation.jsonl": "ca13ed0bbf3aa13d396050f9e1f8ee018db623c346adcc7b5d08772224d93e8e",
+    "ar/feedback/conflict_evaluation.jsonl": "e20e195e446bfef3f7db74f90849063aa20ed73f2eca4c5a0cd6fbe986ec2b0e",
+    "hybrid/consistent/evaluation.jsonl": "091ce97e8cad0830d0ec53dfe815242acc1b074088e4402c9dcd389264b5c54b",
+    "hybrid/consistent/conflict_evaluation.jsonl": "58adb4644310a6a86da17b05ababfcb9f8a2b271b2f6a36b559fd1a430c64a19",
+    "hybrid/feedback/evaluation.jsonl": "99fc83b58c7df1ee03df1bfd537604037f51f1be418182f7336ea8c54954c1e9",
+    "hybrid/feedback/conflict_evaluation.jsonl": "715d0dee6cb89b7792ac18f134429b8fcadd7cfdc7755dcaaedc0c74d5e29e61"
+  },
+  "results": {
+    "ar": {
+      "consistent": {
+        "n": 8,
+        "counts": {
+          "G": 8,
+          "Q_reference": 8,
+          "E_reference": 8,
+          "closed_loop": 8,
+          "flow_complete": 8,
+          "Q_swap": 1,
+          "Q_no_crystal": 0
+        },
+        "conflicts": {
+          "1": {
+            "n": 32,
+            "success": 2,
+            "correct_by_field": {
+              "sg": 2,
+              "formula": 24,
+              "atoms": 32,
+              "orbits": 30,
+              "a": 32,
+              "b": 32,
+              "c": 32
+            }
+          },
+          "1.03": {
+            "n": 32,
+            "success": 2,
+            "correct_by_field": {
+              "sg": 2,
+              "formula": 24,
+              "atoms": 32,
+              "orbits": 30,
+              "a": 32,
+              "b": 32,
+              "c": 32
+            }
+          }
+        }
+      },
+      "feedback": {
+        "n": 8,
+        "counts": {
+          "G": 8,
+          "Q_reference": 8,
+          "E_reference": 8,
+          "closed_loop": 8,
+          "flow_complete": 8,
+          "Q_swap": 8,
+          "Q_no_crystal": 0
+        },
+        "conflicts": {
+          "1": {
+            "n": 32,
+            "success": 28,
+            "correct_by_field": {
+              "sg": 28,
+              "formula": 32,
+              "atoms": 32,
+              "orbits": 32,
+              "a": 32,
+              "b": 32,
+              "c": 32
+            }
+          },
+          "1.03": {
+            "n": 32,
+            "success": 30,
+            "correct_by_field": {
+              "sg": 30,
+              "formula": 32,
+              "atoms": 32,
+              "orbits": 32,
+              "a": 32,
+              "b": 32,
+              "c": 32
+            }
+          }
+        }
+      }
+    },
+    "hybrid": {
+      "consistent": {
+        "n": 8,
+        "counts": {
+          "G": 8,
+          "Q_reference": 8,
+          "E_reference": 8,
+          "closed_loop": 4,
+          "flow_complete": 4,
+          "Q_swap": 0,
+          "Q_no_crystal": 0
+        },
+        "conflicts": {
+          "1": {
+            "n": 32,
+            "success": 0,
+            "correct_by_field": {
+              "sg": 1,
+              "formula": 0,
+              "atoms": 4,
+              "orbits": 3,
+              "a": 25,
+              "b": 25,
+              "c": 26
+            }
+          },
+          "1.03": {
+            "n": 32,
+            "success": 0,
+            "correct_by_field": {
+              "sg": 1,
+              "formula": 0,
+              "atoms": 4,
+              "orbits": 3,
+              "a": 26,
+              "b": 26,
+              "c": 26
+            }
+          }
+        }
+      },
+      "feedback": {
+        "n": 8,
+        "counts": {
+          "G": 7,
+          "Q_reference": 8,
+          "E_reference": 8,
+          "closed_loop": 3,
+          "flow_complete": 4,
+          "Q_swap": 1,
+          "Q_no_crystal": 0
+        },
+        "conflicts": {
+          "1": {
+            "n": 32,
+            "success": 0,
+            "correct_by_field": {
+              "sg": 2,
+              "formula": 29,
+              "atoms": 29,
+              "orbits": 27,
+              "a": 0,
+              "b": 0,
+              "c": 0
+            }
+          },
+          "1.03": {
+            "n": 32,
+            "success": 0,
+            "correct_by_field": {
+              "sg": 2,
+              "formula": 28,
+              "atoms": 28,
+              "orbits": 25,
+              "a": 0,
+              "b": 0,
+              "c": 0
+            }
+          }
+        }
+      }
+    }
+  },
+  "note": "All branches rescored uniformly. Only a,b,c phrase recognition added; raw generations, old scores and numerical tolerances unchanged."
+}

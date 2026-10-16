@@ -1,0 +1,130 @@
+[
+  {
+    "representation": "explicit",
+    "mode": "confidence",
+    "n": 512,
+    "seed": 29,
+    "nonpad_token_accuracy": 0.30428090772424654,
+    "counts": {
+      "decoded": 0,
+      "composition_match": 0,
+      "usable": 0,
+      "reference_match": 0
+    },
+    "errors": [
+      [
+        "ValueError: invalid literal for int() with base 10: '<PAD>'",
+        297
+      ],
+      [
+        "ValueError: could not convert string to float: '<PAD>'",
+        215
+      ]
+    ]
+  },
+  {
+    "representation": "explicit",
+    "mode": "one_step",
+    "n": 512,
+    "seed": 29,
+    "nonpad_token_accuracy": 0.4602691674421934,
+    "counts": {
+      "decoded": 27,
+      "composition_match": 0,
+      "usable": 0,
+      "reference_match": 0
+    },
+    "errors": [
+      [
+        "ValueError: Invalid literal for Fraction: 'G'",
+        250
+      ],
+      [
+        "ValueError: Generator must preserve the integer lattice invertibly",
+        166
+      ],
+      [
+        "ValueError: Expected G, got z",
+        17
+      ],
+      [
+        "ValueError: Invalid literal for Fraction: 'FAMILY'",
+        9
+      ],
+      [
+        "ValueError: Expected G, got y",
+        6
+      ]
+    ]
+  },
+  {
+    "representation": "wyckoff",
+    "mode": "confidence",
+    "n": 512,
+    "seed": 29,
+    "nonpad_token_accuracy": 0.3668818837827573,
+    "counts": {
+      "decoded": 0,
+      "composition_match": 0,
+      "usable": 0,
+      "reference_match": 0
+    },
+    "errors": [
+      [
+        "ValueError: Expected SG",
+        94
+      ],
+      [
+        "ValueError: Unknown baseline format",
+        81
+      ],
+      [
+        "ValueError: invalid literal for int() with base 10: '6.125742661882'",
+        16
+      ],
+      [
+        "ValueError: invalid literal for int() with base 10: '6.0780717542854'",
+        15
+      ],
+      [
+        "ValueError: invalid literal for int() with base 10: '6.6754558894563'",
+        14
+      ]
+    ]
+  },
+  {
+    "representation": "wyckoff",
+    "mode": "one_step",
+    "n": 512,
+    "seed": 29,
+    "nonpad_token_accuracy": 0.6288770730472212,
+    "counts": {
+      "decoded": 28,
+      "composition_match": 2,
+      "usable": 2,
+      "reference_match": 1
+    },
+    "errors": [
+      [
+        "ValueError: Wyckoff table setting mismatch",
+        158
+      ],
+      [
+        "KeyError: '2a'",
+        51
+      ],
+      [
+        "KeyError: '1a'",
+        45
+      ],
+      [
+        "KeyError: '4c'",
+        14
+      ],
+      [
+        "ValueError: Expected END",
+        5
+      ]
+    ]
+  }
+]

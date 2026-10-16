@@ -1,0 +1,33 @@
+{
+  "id": "a3f3c839-748e-4b6e-a022-93284bf798b9",
+  "object": "chat.completion",
+  "created": 1791054533,
+  "model": "tokenhub/kimi-k3",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "The input structure is a five-atom cubic cell [[param:input.atom_count]] with edge lengths reported separately as [[param:cell.a]], [[param:cell.b]], and [[param:cell.c]], and with interaxial angles [[param:cell.alpha]], [[param:cell.beta]], and [[param:cell.gamma]]; together these describe the primitive cubic input lattice rather than any later idealization. Its composition is given by fluorine [[param:composition.F]], mercury [[param:composition.Hg]], and potassium [[param:composition.K]] in the same input frame.\n\nThe symmetry is the full cubic primitive space group Pm-3m, identified by space-group number [[param:space_group.number]] and Hall symbol [[param:space_group.hall]]. In this setting the independent Wyckoff content reduces to three orbits. Potassium occupies the single fixed orbit [[param:orbit.o000.id]], with element assignment [[param:orbit.o000.element]] and Wyckoff label [[param:orbit.o000.wyckoff]], corresponding to the body-center-related fixed position of the cubic cell. Mercury occupies [[param:orbit.o001.id]], assigned to element [[param:orbit.o001.element]] on Wyckoff site [[param:orbit.o001.wyckoff]], the corner-related fixed position. Fluorine occupies [[param:orbit.o002.id]], assigned to element [[param:orbit.o002.element]] on the threefold Wyckoff orbit [[param:orbit.o002.wyckoff]], whose symmetry-equivalent points lie on the cubic axial/edge-midpoint type positions characteristic of 3d in Pm-3m. These three independent orbits account for the 1:1:3 cation–cation–anion count implied by the input composition, without invoking any bonding or coordination claim.\n\nThe standard and input coordinate descriptions coincide: the basis transformation is [[param:frame.matrix]] and the origin displacement is [[param:frame.origin_shift]], so no reorientation or origin choice separates the supplied cell from the conventional cubic frame. Input fractional coordinates are reported under a one-decimal rounding convention [[param:round_digits]]. No precision-correction entries are supplied; therefore there are no measured displacements, occupancies, or metric relaxations to describe as deviations from an idealized backbone, and the structure is presented as the fixed-site cubic arrangement defined above."
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "reasoning_stream": {
+    "chunks": 388,
+    "characters": 3714
+  },
+  "usage": {
+    "completion_tokens": 1336,
+    "prompt_tokens": 1998,
+    "total_tokens": 3334,
+    "completion_tokens_details": {
+      "reasoning_tokens": 838
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "cache_creation_input_tokens": 0
+    }
+  }
+}

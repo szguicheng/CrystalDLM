@@ -1,0 +1,33 @@
+{
+  "id": "b6cee84e-818f-427f-974b-b8382df85dc2",
+  "created": 1791046971,
+  "model": "tokenhub/kimi-k3",
+  "object": "chat.completion",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "The crystal is described in space group Fm-3m, number [[param:space_group.number]], with Hall symbol [[param:space_group.hall]]. The original input cell is rhombohedral in shape: all three edges have length [[param:cell.a]] Å for a, [[param:cell.b]] Å for b, and [[param:cell.c]] Å for c, while the interaxial angles are [[param:cell.alpha]]° for α, [[param:cell.beta]]° for β, and [[param:cell.gamma]]° for γ. These values are not exactly 60°, but slightly below that ideal by a tiny amount. This primitive-looking input cell contains [[param:input.atom_count]] atoms in total, with composition [[param:composition.Cs]], [[param:composition.F]], and [[param:composition.Si]].\n\nTo place the structure in the conventional cubic setting of Fm-3m, a frame transformation is applied from the input cell to the standard cell. The transformation matrix is [[param:frame.matrix]], and the origin shift is [[param:frame.origin_shift]]. In words, this is the change of coordinate frame that converts the supplied rhombohedral description into the standard face-centered cubic description used for the Wyckoff orbits. No additional origin translation is needed beyond the zero shift given.\n\nWithin the standard frame, the structure is organized into three independent Wyckoff orbits. The cesium orbit [[param:orbit.o000.id]] has element [[param:orbit.o000.element]] and Wyckoff label [[param:orbit.o000.wyckoff]]. The silicon orbit [[param:orbit.o001.id]] has element [[param:orbit.o001.element]] and Wyckoff label [[param:orbit.o001.wyckoff]]. The fluorine orbit [[param:orbit.o002.id]] has element [[param:orbit.o002.element]] and Wyckoff label [[param:orbit.o002.wyckoff]], with one free positional parameter [[param:orbit.o002.parameters]] in fractional coordinates.\n\nThe public crystallographic context makes the spatial meaning of these orbits explicit. The Cs orbit has multiplicity 8 and coordinate relation 1/4, 1/4, 1/4, with no free axes. The Si orbit has multiplicity 4 and coordinate relation 0, 0, 0, also with no free axes. The F orbit has multiplicity 24 and coordinate relation x, 0, 0, with x as the only free axis. Thus the Cs and Si positions are fixed by symmetry, while the F atoms lie on a one-parameter family of positions along the cubic axes.\n\nNo precision corrections are present in the supplied facts. The fractional-coordinate rounding precision for the input description is [[param:round_digits]] decimal places.",
+        "role": "assistant",
+        "provider_specific_fields": {
+          "refusal": null
+        }
+      },
+      "provider_specific_fields": {}
+    }
+  ],
+  "usage": {
+    "completion_tokens": 582,
+    "prompt_tokens": 2139,
+    "total_tokens": 2721,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "cache_creation_input_tokens": 0
+    }
+  }
+}

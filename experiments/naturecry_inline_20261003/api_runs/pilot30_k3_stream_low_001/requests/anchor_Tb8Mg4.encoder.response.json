@@ -1,0 +1,33 @@
+{
+  "id": "a288e0e2-704c-408d-9829-fd05e4138c04",
+  "object": "chat.completion",
+  "created": 1791053009,
+  "model": "tokenhub/kimi-k3",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "The original input cell is orthorhombic in the input frame, with lattice parameters carried by [[param:cell.a]], [[param:cell.b]], [[param:cell.c]], [[param:cell.alpha]], [[param:cell.beta]], and [[param:cell.gamma]]. Its contents are given as [[param:composition.Mg]] together with [[param:composition.Tb]], for a total atom count of [[param:input.atom_count]]. The symmetry is referenced to space-group number [[param:space_group.number]] and Hall symbol [[param:space_group.hall]]; under the public crystallographic setting for this orthorhombic group, the independent sites listed here are all 4c-type mirror-plane orbits with two free fractional coordinates rather than fully general positions.\n\nThe standard coordinate frame is coincident with the input frame: the basis transformation is the identity in [[param:frame.matrix]] and there is no origin displacement in [[param:frame.origin_shift]]. Input fractional coordinates are reported to the precision indicated by [[param:round_digits]]. Three independent Wyckoff orbits define the structure. Orbit [[param:orbit.o000.id]] is assigned to element [[param:orbit.o000.element]] on Wyckoff label [[param:orbit.o000.wyckoff]], with free standard fractional parameters [[param:orbit.o000.parameters]]. A second independent orbit, [[param:orbit.o001.id]], is also assigned to element [[param:orbit.o001.element]] on Wyckoff label [[param:orbit.o001.wyckoff]], with parameters [[param:orbit.o001.parameters]]; although the same Wyckoff label is used, it is a distinct independent orbit rather than a duplicate of the first. The third independent orbit, [[param:orbit.o002.id]], is assigned to element [[param:orbit.o002.element]] on Wyckoff label [[param:orbit.o002.wyckoff]], with parameters [[param:orbit.o002.parameters]]. No precision corrections are supplied, so there are no recorded real deviations from the idealized backbone beyond the stated coordinate values and rounding convention."
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "reasoning_stream": {
+    "chunks": 525,
+    "characters": 5143
+  },
+  "usage": {
+    "completion_tokens": 1543,
+    "prompt_tokens": 2200,
+    "total_tokens": 3743,
+    "completion_tokens_details": {
+      "reasoning_tokens": 1102
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "cache_creation_input_tokens": 0
+    }
+  }
+}

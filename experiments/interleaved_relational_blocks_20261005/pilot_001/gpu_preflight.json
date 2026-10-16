@@ -1,0 +1,145 @@
+{
+  "status": "passed",
+  "device": "NVIDIA A100-SXM4-80GB",
+  "device_total_GiB": 79.249755859375,
+  "reserved_limit_GiB": 70.0,
+  "optimizer_step_counted_in_pilot": false,
+  "effective_batch": 4,
+  "microbatch": 1,
+  "accumulation": 4,
+  "reader_schedule": "alternating_q1_q2",
+  "preflight_noise_step": 32,
+  "worst_train_examples": [
+    {
+      "task": "G",
+      "id": "anchor_Li8V4Ni4O16",
+      "direction": "minus",
+      "variant": 0,
+      "sequence_kind": "dual_stream",
+      "worst_actual_packed_tokens": 5158,
+      "actual_sequence_tokens_by_arm": {
+        "ar": 2598,
+        "diffusion_full": 5158,
+        "diffusion_b32": 5158,
+        "diffusion_b64": 5158
+      }
+    },
+    {
+      "task": "E",
+      "id": "mp-1205515",
+      "direction": "minus",
+      "variant": 0,
+      "sequence_kind": "dual_stream",
+      "worst_actual_packed_tokens": 6185,
+      "actual_sequence_tokens_by_arm": {
+        "ar": 3625,
+        "diffusion_full": 6185,
+        "diffusion_b32": 6185,
+        "diffusion_b64": 6185
+      }
+    },
+    {
+      "task": "Q2",
+      "id": "mp-1205515",
+      "direction": "minus",
+      "variant": 0,
+      "sequence_kind": "text",
+      "worst_actual_packed_tokens": 2039,
+      "actual_sequence_tokens_by_arm": {
+        "ar": 2039,
+        "diffusion_full": 2039,
+        "diffusion_b32": 2039,
+        "diffusion_b64": 2039
+      }
+    }
+  ],
+  "worst_actual_dual_stream_tokens": 6185,
+  "arms": {
+    "ar": {
+      "core_mode": "ar",
+      "prediction_offset": 0,
+      "block_size": 2560,
+      "gradient_checkpointing": true,
+      "preflight_noise_step": 32,
+      "initial_fingerprint": "e97aed646b7289c06f10be376b37d67cd7aa6a42ad6214b61da008cd85b8404b",
+      "initial_parameters": "FP32, zero time embedding",
+      "one_effective_batch_optimizer_step": true,
+      "forward_calls": 4,
+      "actual_sequence_tokens": [
+        2598,
+        2598,
+        3625,
+        2039
+      ],
+      "max_dual_stream_tokens": 3625,
+      "seconds": 3.481812587939203,
+      "peak_allocated_GiB": 28.823634147644043,
+      "peak_reserved_GiB": 31.4140625
+    },
+    "diffusion_full": {
+      "core_mode": "hybrid",
+      "prediction_offset": 0,
+      "block_size": 2560,
+      "gradient_checkpointing": true,
+      "preflight_noise_step": 32,
+      "initial_fingerprint": "e97aed646b7289c06f10be376b37d67cd7aa6a42ad6214b61da008cd85b8404b",
+      "initial_parameters": "FP32, zero time embedding",
+      "one_effective_batch_optimizer_step": true,
+      "forward_calls": 4,
+      "actual_sequence_tokens": [
+        5158,
+        5158,
+        6185,
+        2039
+      ],
+      "max_dual_stream_tokens": 6185,
+      "seconds": 3.0665158620104194,
+      "peak_allocated_GiB": 28.8047456741333,
+      "peak_reserved_GiB": 29.62890625
+    },
+    "diffusion_b32": {
+      "core_mode": "hybrid",
+      "prediction_offset": 0,
+      "block_size": 32,
+      "gradient_checkpointing": true,
+      "preflight_noise_step": 32,
+      "initial_fingerprint": "e97aed646b7289c06f10be376b37d67cd7aa6a42ad6214b61da008cd85b8404b",
+      "initial_parameters": "FP32, zero time embedding",
+      "one_effective_batch_optimizer_step": true,
+      "forward_calls": 4,
+      "actual_sequence_tokens": [
+        5158,
+        5158,
+        6185,
+        2039
+      ],
+      "max_dual_stream_tokens": 6185,
+      "seconds": 3.066094954032451,
+      "peak_allocated_GiB": 28.8047456741333,
+      "peak_reserved_GiB": 29.62890625
+    },
+    "diffusion_b64": {
+      "core_mode": "hybrid",
+      "prediction_offset": 0,
+      "block_size": 64,
+      "gradient_checkpointing": true,
+      "preflight_noise_step": 32,
+      "initial_fingerprint": "e97aed646b7289c06f10be376b37d67cd7aa6a42ad6214b61da008cd85b8404b",
+      "initial_parameters": "FP32, zero time embedding",
+      "one_effective_batch_optimizer_step": true,
+      "forward_calls": 4,
+      "actual_sequence_tokens": [
+        5158,
+        5158,
+        6185,
+        2039
+      ],
+      "max_dual_stream_tokens": 6185,
+      "seconds": 3.068748630117625,
+      "peak_allocated_GiB": 28.8047456741333,
+      "peak_reserved_GiB": 29.62890625
+    }
+  },
+  "shared_initial_fingerprint": "e97aed646b7289c06f10be376b37d67cd7aa6a42ad6214b61da008cd85b8404b",
+  "initial_fingerprints_equal": true
+}

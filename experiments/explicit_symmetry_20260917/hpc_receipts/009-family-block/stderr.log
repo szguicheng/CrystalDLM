@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/gpfs1/scratch/chenggui2/CrystalDLM/explicit_symmetry_20260917/test_family_blocks.py", line 9, in <module>
+    result=codec.decode(program)
+  File "/gpfs1/scratch/chenggui2/CrystalDLM/explicit_symmetry_20260917/program_codec.py", line 178, in decode
+    e,cursor=read_expression(tokens,cursor);exprs.append(e)
+  File "/gpfs1/scratch/chenggui2/CrystalDLM/explicit_symmetry_20260917/program_codec.py", line 47, in read_expression
+    return Fraction(token),cursor
+  File "/home/chenggui2/scratch/anaconda3/envs/matgl/lib/python3.10/fractions.py", line 115, in __new__
+    raise ValueError('Invalid literal for Fraction: %r' %
+ValueError: Invalid literal for Fraction: 'PARAM'

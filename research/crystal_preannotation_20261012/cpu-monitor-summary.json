@@ -1,0 +1,53 @@
+{
+  "timestamp": "2026-10-12T19:31:00+08:00",
+  "job_id": "624103",
+  "state": null,
+  "elapsed": null,
+  "time_limit": null,
+  "node_or_reason": null,
+  "squeue_raw": "Last update in 0 seconds ago",
+  "sstat_raw": "JobID|MaxRSS|AveRSS|AveCPU|MaxVMSize",
+  "progress": {
+    "completed_shards": 32,
+    "temp_streams": 0,
+    "complete_rows_approx": 45629,
+    "stream_bytes": 499835256,
+    "logs": 32,
+    "root_log_bytes": 3181
+  },
+  "failure_lines": [],
+  "terminal": true,
+  "sacct_final": "JobID|State|Elapsed|AllocCPUS|TotalCPU|MaxRSS|ExitCode\n624103|COMPLETED|00:17:44|32|07:02:51||0:0\n624103.batch|COMPLETED|00:17:44|32|07:02:51|6088652K|0:0\n624103.extern|COMPLETED|00:17:44|32|00:00.001|0|0:0\n624103.0|COMPLETED|00:00:01|1|00:00.052|516K|0:0\n624103.1|COMPLETED|00:00:00|1|00:00.014|172K|0:0\n624103.2|COMPLETED|00:00:00|1|00:00.012|252K|0:0\n624103.3|COMPLETED|00:00:01|1|00:00.066|188K|0:0",
+  "failure_matches": 0,
+  "failure_scan": {
+    "unhandled_signature_matches": 0,
+    "checked": [
+      "Traceback",
+      "Segmentation fault",
+      "Aborted",
+      "Killed"
+    ],
+    "note": "Earlier broad matches were nonfatal chemistry warnings and per-record status summaries."
+  },
+  "prior_broad_pattern_matches_captured": 16,
+  "record_status_counts": {
+    "ok": 44047,
+    "error": 1582
+  },
+  "shard_receipts": {
+    "completed_shards": 32,
+    "selected_rows": 45629,
+    "root_completion_lines": 32,
+    "root_exit_codes": {
+      "0": 32
+    }
+  },
+  "final_sacct": {
+    "state": "COMPLETED",
+    "elapsed": "00:17:44",
+    "allocated_cpus": 32,
+    "total_cpu": "07:02:51",
+    "max_rss": "6088652K",
+    "exit_code": "0:0"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "endpoint": "https://llm.sciencepal.ai/v1/chat/completions",
+  "credential_reference": "SCIENCEPAL_API_KEY from existing .env; value omitted",
+  "payload": {
+    "model": "deepseek-v4-pro",
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are an annotation assistant for crystal structure datasets.\nWrite a concise, natural description of the supplied crystal in English,\nusing 3–5 sentences.\n\nInputs:\n- structure_version: the specific structure version being described.\n- core_facts: composition, symmetry, unit-cell information, and independent\n  Wyckoff orbits.\n- local_structure_facts: optional coordination environments, polyhedra,\n  and connectivity, together with their analysis sources.\n- property_labels: optional supplied property values, units, and provenance.\n\nInstructions:\n1. Use only the supplied facts. Omit missing information.\n2. Start with the composition and symmetry. When local structural facts are\n   available, emphasize the main coordination environments and connectivity.\n   Add unit-cell parameters, counts, or theoretical density when useful.\n3. Preserve chemical formulas, element identities, space-group identifiers,\n   counts, and units. Distinguish the number of atoms in the unit cell from\n   the number of independent Wyckoff orbits.\n4. Describe density calculated from composition and unit-cell volume as\n   \"theoretical density\". Follow the supplied symmetry analysis rather than\n   assigning a different space group or crystal system.\n5. If a property label is included, state its source. A label attached to the\n   original MP structure must not be presented as a property recalculated\n   for the PLaID-decoded structure. Preserve supplied property-label values.\n6. State structural facts and property labels separately. Do not invent\n   oxidation states, bonding, morphology, material performance, or causal\n   claims about why a structure improves a property.\n7. Output only an English paragraph. Do not output a CIF, a complete\n   coordinate table, a new structure encoding, or additional commentary.\n\nStructure version:\nPLaID-decoded structure, material mp-624928\n\nCore facts:\n{\"cell_formula\": \"K1 Eu1 Cu2 Te4\", \"reduced_formula\": \"KEu(CuTe2)2\", \"elements\": [\"Cu\", \"Eu\", \"K\", \"Te\"], \"element_count\": 4, \"cell_atom_count\": 8, \"a_A\": 4.44, \"b_A\": 4.44, \"c_A\": 11.37, \"angles_deg\": [90.0, 90.0, 90.0], \"cell_volume_A3\": 224.14363200000003, \"theoretical_density_g_cm3\": 6.13823722581448, \"space_group_number\": 99, \"space_group_symbol\": \"P4mm\", \"crystal_system\": \"tetragonal\", \"independent_orbit_count\": 6, \"wyckoff_labels\": [\"1b\", \"1a\", \"2c\", \"1a\", \"2c\", \"1b\"]}\n\nLocal structural facts:\nNot supplied.\n\nProvided property labels:\n{\"energy_above_hull\": {\"value\": 0.017097575234372, \"unit\": \"eV/atom\", \"source\": \"original archived MP structure; not recalculated for the PLaID-decoded structure\"}}"
+      }
+    ],
+    "thinking": {
+      "type": "enabled"
+    },
+    "reasoning_effort": "max",
+    "max_tokens": 16384,
+    "stream": true,
+    "stream_options": {
+      "include_usage": true
+    }
+  },
+  "material_id": "mp-624928",
+  "prompt_template_sha256": "6a5c3a7d0a8ab121ee7a4323535b189c5a7915b547aa5436b12925562583ede3",
+  "facts_sha256": "2a61ae0badb1b77115aff415ae47ff1035fc13a37c67f6700d5ece12a06a2fff"
+}

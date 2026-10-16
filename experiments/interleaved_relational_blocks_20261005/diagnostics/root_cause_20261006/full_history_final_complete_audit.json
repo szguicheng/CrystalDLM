@@ -1,0 +1,444 @@
+{
+  "audit_status": "passed",
+  "evaluation_job": "608444",
+  "evaluation_path": "experiments/interleaved_relational_scaled32_20261006/eval_full_history_final2048_001",
+  "training_job": 608363,
+  "pin_path": "experiments/interleaved_relational_scaled32_20261006/eval_full_history_input_pin.json",
+  "checkpoint_sha256_from_existing_receipt_pin": "ac300333d36b076269adae7448a9eddb61a2cddcaa1ba19689d78542a9e05d93",
+  "checkpoint_bytes_rehashed_by_this_audit": false,
+  "cohort_integrity": {
+    "trained_cases": 32,
+    "heldout_cases": 16,
+    "seen8_case_ids": [
+      "anchor_Tb8Mg4",
+      "anchor_Li8V4Ni4O16",
+      "mp-4047",
+      "mp-1205515",
+      "mp-30009",
+      "mp-1188285",
+      "mp-1207068",
+      "mp-1205902"
+    ],
+    "heldout16_case_ids": [
+      "mp-1229077",
+      "mp-1019259",
+      "mp-1079976",
+      "mp-1095422",
+      "mp-1173947",
+      "mp-21371",
+      "mp-5456",
+      "mp-19419",
+      "mp-1219591",
+      "mp-1225818",
+      "mp-757163",
+      "mp-1178612",
+      "mp-1101160",
+      "mp-31460",
+      "mp-646926",
+      "mp-1217967"
+    ],
+    "trained_but_not_free_evaluated_train_cases": 24
+  },
+  "per_split": {
+    "seen8": {
+      "n": 8,
+      "ids": [
+        "anchor_Tb8Mg4",
+        "anchor_Li8V4Ni4O16",
+        "mp-4047",
+        "mp-1205515",
+        "mp-30009",
+        "mp-1188285",
+        "mp-1207068",
+        "mp-1205902"
+      ],
+      "counts": {
+        "G": 5,
+        "Q_reference": 8,
+        "E_reference": 7,
+        "closed_loop": 5,
+        "flow_complete": 5,
+        "Q_swap": 8,
+        "Q_no_crystal": 0
+      },
+      "rates": {
+        "G": 0.625,
+        "Q_reference": 1.0,
+        "E_reference": 0.875,
+        "closed_loop": 0.625,
+        "flow_complete": 0.625,
+        "Q_swap": 1.0,
+        "Q_no_crystal": 0.0
+      },
+      "failure_classes": {
+        "G:generation_audit": 3,
+        "closed_loop:skipped_invalid_generated_c1": 3,
+        "E_reference:edit_mismatch": 1
+      },
+      "generation_audit_reason_counts": {
+        "GateError: Input cell sentence is missing or malformed": 1,
+        "GateError: Standard-frame coordinate relation is missing or malformed": 1,
+        "GateError: Public symmetry sentence is missing or malformed": 1
+      },
+      "actual_loop": {
+        "valid_G": 5,
+        "Q1_attempted": 5,
+        "Q1_response_ok": 5,
+        "Q1_all_7_fields_exact": 5,
+        "E_actual_attempted": 5,
+        "E_actual_response_ok": 5,
+        "E_actual_all_strict_grade_fields_exact": 5,
+        "E_actual_grade_field_names": [
+          "lengths_exact",
+          "other_plan_fields_exact",
+          "whole_geometry_scale",
+          "exact_target_plan",
+          "whole_geometry_scale_defined",
+          "edited_physical_audit"
+        ],
+        "Q2_attempted": 5,
+        "Q2_response_ok": 5,
+        "Q2_all_7_fields_exact": 5,
+        "flow_complete": 5,
+        "closed_loop_strict": 5,
+        "strict_G_Q1_E_Q2_chain": 5
+      },
+      "replacement_targets": {
+        "ids": {
+          "anchor_Li8V4Ni4O16": 1,
+          "anchor_Tb8Mg4": 7
+        },
+        "distinct_count": 2,
+        "strict_successes_by_target": {
+          "anchor_Li8V4Ni4O16": 1,
+          "anchor_Tb8Mg4": 7
+        }
+      },
+      "checks": {
+        "raw_count": true,
+        "unique_ids": true,
+        "exact_expected_id_order": true,
+        "raw_split_labels": true,
+        "top_summary_count_rate_match": true,
+        "top_summary_failure_hist_match": true,
+        "per_split_summary_match": true,
+        "closed_loop_matches_strict_chain": true,
+        "flow_complete_matches_Q2_attempt": true,
+        "swap_ids_within_cohort": true
+      }
+    },
+    "heldout16": {
+      "n": 16,
+      "ids": [
+        "mp-1229077",
+        "mp-1019259",
+        "mp-1079976",
+        "mp-1095422",
+        "mp-1173947",
+        "mp-21371",
+        "mp-5456",
+        "mp-19419",
+        "mp-1219591",
+        "mp-1225818",
+        "mp-757163",
+        "mp-1178612",
+        "mp-1101160",
+        "mp-31460",
+        "mp-646926",
+        "mp-1217967"
+      ],
+      "counts": {
+        "G": 0,
+        "Q_reference": 13,
+        "E_reference": 0,
+        "closed_loop": 0,
+        "flow_complete": 0,
+        "Q_swap": 0,
+        "Q_no_crystal": 0
+      },
+      "rates": {
+        "G": 0.0,
+        "Q_reference": 0.8125,
+        "E_reference": 0.0,
+        "closed_loop": 0.0,
+        "flow_complete": 0.0,
+        "Q_swap": 0.0,
+        "Q_no_crystal": 0.0
+      },
+      "failure_classes": {
+        "G:generation_audit": 16,
+        "E_reference:edit_mismatch": 15,
+        "closed_loop:skipped_invalid_generated_c1": 16,
+        "Q_swap:answer_mismatch": 16,
+        "Q_reference:answer_mismatch": 3,
+        "E_reference:edit_error": 1
+      },
+      "generation_audit_reason_counts": {
+        "GateError: Unknown element name in relational document: Silulfur": 1,
+        "GateError: Orbit multiplicity and representative relations do not select one public definition": 5,
+        "GateError: Unknown element name in relational document: Germaniumium": 1,
+        "GateError: Input cell sentence is missing or malformed": 2,
+        "GateError: Standard-frame coordinate relation is missing or malformed": 2,
+        "GateError: Input atom-count sentence is missing or malformed": 2,
+        "GateError: Unrecognized representative coordinate sentence: Along b, its representative shares the offset a.": 1,
+        "GateError: Unknown element name in relational document: Netrium": 1,
+        "GateError: Unknown element name in relational document: Pallium": 1
+      },
+      "actual_loop": {
+        "valid_G": 0,
+        "Q1_attempted": 0,
+        "Q1_response_ok": 0,
+        "Q1_all_7_fields_exact": 0,
+        "E_actual_attempted": 0,
+        "E_actual_response_ok": 0,
+        "E_actual_all_strict_grade_fields_exact": 0,
+        "E_actual_grade_field_names": [],
+        "Q2_attempted": 0,
+        "Q2_response_ok": 0,
+        "Q2_all_7_fields_exact": 0,
+        "flow_complete": 0,
+        "closed_loop_strict": 0,
+        "strict_G_Q1_E_Q2_chain": 0
+      },
+      "replacement_targets": {
+        "ids": {
+          "mp-1019259": 1,
+          "mp-1229077": 15
+        },
+        "distinct_count": 2,
+        "strict_successes_by_target": {}
+      },
+      "checks": {
+        "raw_count": true,
+        "unique_ids": true,
+        "exact_expected_id_order": true,
+        "raw_split_labels": true,
+        "top_summary_count_rate_match": true,
+        "top_summary_failure_hist_match": true,
+        "per_split_summary_match": true,
+        "closed_loop_matches_strict_chain": true,
+        "flow_complete_matches_Q2_attempt": true,
+        "swap_ids_within_cohort": true
+      }
+    }
+  },
+  "replacement_control_limit": {
+    "targets_seen8": {
+      "ids": {
+        "anchor_Li8V4Ni4O16": 1,
+        "anchor_Tb8Mg4": 7
+      },
+      "distinct_count": 2,
+      "strict_successes_by_target": {
+        "anchor_Li8V4Ni4O16": 1,
+        "anchor_Tb8Mg4": 7
+      }
+    },
+    "targets_heldout16": {
+      "ids": {
+        "mp-1019259": 1,
+        "mp-1229077": 15
+      },
+      "distinct_count": 2,
+      "strict_successes_by_target": {}
+    },
+    "unique_target_ids_overall": [
+      "anchor_Li8V4Ni4O16",
+      "anchor_Tb8Mg4",
+      "mp-1019259",
+      "mp-1229077"
+    ],
+    "unique_target_count_overall": 4,
+    "interpretation": "Only two distinct replacement targets occur within each split; Q_swap is a narrow control."
+  },
+  "seen8_valid_C1_training_identity": {
+    "valid_G_count": 5,
+    "cases": [
+      {
+        "case_id": "anchor_Tb8Mg4",
+        "is_seen_train_case": true,
+        "exact_training_C1_text_ids": [
+          "anchor_Tb8Mg4"
+        ],
+        "exact_training_decoded_plan_hash_ids": [
+          "anchor_Tb8Mg4"
+        ],
+        "same_coarse_signature_training_ids": [
+          "anchor_Tb8Mg4"
+        ]
+      },
+      {
+        "case_id": "anchor_Li8V4Ni4O16",
+        "is_seen_train_case": true,
+        "exact_training_C1_text_ids": [
+          "anchor_Li8V4Ni4O16"
+        ],
+        "exact_training_decoded_plan_hash_ids": [
+          "anchor_Li8V4Ni4O16"
+        ],
+        "same_coarse_signature_training_ids": [
+          "anchor_Li8V4Ni4O16"
+        ]
+      },
+      {
+        "case_id": "mp-30009",
+        "is_seen_train_case": true,
+        "exact_training_C1_text_ids": [
+          "mp-30009"
+        ],
+        "exact_training_decoded_plan_hash_ids": [
+          "mp-30009"
+        ],
+        "same_coarse_signature_training_ids": [
+          "mp-30009"
+        ]
+      },
+      {
+        "case_id": "mp-1207068",
+        "is_seen_train_case": true,
+        "exact_training_C1_text_ids": [
+          "mp-1207068"
+        ],
+        "exact_training_decoded_plan_hash_ids": [
+          "mp-1207068"
+        ],
+        "same_coarse_signature_training_ids": [
+          "mp-1207068"
+        ]
+      },
+      {
+        "case_id": "mp-1205902",
+        "is_seen_train_case": true,
+        "exact_training_C1_text_ids": [],
+        "exact_training_decoded_plan_hash_ids": [],
+        "same_coarse_signature_training_ids": [
+          "mp-1205902"
+        ]
+      }
+    ],
+    "exact_same_case_source_text": 4,
+    "exact_same_case_decoded_plan_hash": 4,
+    "same_case_coarse_plan_signature": 5,
+    "coarse_signature_fields": [
+      "composition",
+      "space_group_number",
+      "input_atom_count",
+      "orbit_count",
+      "lattice_lengths_a_b_c"
+    ],
+    "interpretation": "The five valid G cases are in-sample seen8 rows. Four exactly match their same-case source C1 text and decoded-plan hash; the fifth shares its same-case coarse plan signature but not exact text or plan hash."
+  },
+  "raw_token_boundary_audit": {
+    "K": 2560,
+    "attempts": {
+      "G": {
+        "success_with_raw": 24,
+        "valid_K_END_PAD": 24,
+        "unavailable": 0
+      },
+      "E_reference": {
+        "success_with_raw": 23,
+        "valid_K_END_PAD": 23,
+        "unavailable": 1
+      },
+      "E_actual": {
+        "success_with_raw": 5,
+        "valid_K_END_PAD": 5,
+        "unavailable": 0
+      }
+    },
+    "violations": [],
+    "unavailable": [
+      {
+        "split": "heldout16",
+        "id": "mp-1217967",
+        "attempt": "reference_edit",
+        "reason": "error states invalid crystal PAD boundary; raw token IDs not stored"
+      }
+    ],
+    "end_token_id": 151666,
+    "pad_token_id": 151668,
+    "successful_raw_arrays_checked": 52,
+    "valid_arrays": 52,
+    "weight_bytes_rehashed": false
+  },
+  "summary_and_pin_checks": {
+    "eval_complete_and_heldout_evaluated": true,
+    "cohort_ids_match_frozen_manifest": true,
+    "all_raw_summary_cohort_checks": true,
+    "snapshot_before_after_equal": true,
+    "optimization_gate_snapshot_equals_summary": true,
+    "pin_terminal_2048": true,
+    "terminal_training_status_and_receipt": true,
+    "checkpoint_sha_matches_pin_and_snapshot": true,
+    "fingerprints_match_pin_and_snapshots": true,
+    "small_metadata_pin_hashes_match_snapshots": true,
+    "model_recipe": true,
+    "no_optimizer_repair_or_fallback": true,
+    "optimization_gates_passed": true,
+    "eval_slurm_job_is_608444": true,
+    "all_successful_raw_sequences_pass_K_END_PAD": true
+  },
+  "failure_class_counts_all_24": {
+    "G:generation_audit": 19,
+    "closed_loop:skipped_invalid_generated_c1": 19,
+    "E_reference:edit_mismatch": 16,
+    "Q_swap:answer_mismatch": 16,
+    "Q_reference:answer_mismatch": 3,
+    "E_reference:edit_error": 1
+  },
+  "generation_audit_reason_counts_all_24": {
+    "GateError: Input cell sentence is missing or malformed": 3,
+    "GateError: Standard-frame coordinate relation is missing or malformed": 3,
+    "GateError: Public symmetry sentence is missing or malformed": 1,
+    "GateError: Unknown element name in relational document: Silulfur": 1,
+    "GateError: Orbit multiplicity and representative relations do not select one public definition": 5,
+    "GateError: Unknown element name in relational document: Germaniumium": 1,
+    "GateError: Input atom-count sentence is missing or malformed": 2,
+    "GateError: Unrecognized representative coordinate sentence: Along b, its representative shares the offset a.": 1,
+    "GateError: Unknown element name in relational document: Netrium": 1,
+    "GateError: Unknown element name in relational document: Pallium": 1
+  },
+  "failed_checks": [],
+  "evidence_limitations": [
+    "Heldout16 has zero valid G, so actual-history Q1/E/Q2 were not reached on heldout cases.",
+    "An E_reference failure explicitly reports an invalid PAD boundary, but the failed attempt did not persist a raw token array; its exact K/END/PAD sequence is not independently counted.",
+    "The train-reference C1 check is exact CNL/decoded-plan identity plus a coarse signature screen; no symmetry-aware nearest-neighbor geometry claim is made."
+  ],
+  "per_split_evaluation_summaries": {
+    "seen8": {
+      "path": "experiments/interleaved_relational_scaled32_20261006/eval_full_history_final2048_001/seen8/evaluation_summary.json",
+      "sha256": "a5b6cde4606126b352849b90542a67b09f4a5074072e052d13c4faa3e9e059a3",
+      "n": 8,
+      "counts": {
+        "G": 5,
+        "Q_reference": 8,
+        "E_reference": 7,
+        "closed_loop": 5,
+        "flow_complete": 5,
+        "Q_swap": 8,
+        "Q_no_crystal": 0
+      },
+      "rates_match_raw": true,
+      "failure_histogram_match_raw": true,
+      "matches_raw": true
+    },
+    "heldout16": {
+      "path": "experiments/interleaved_relational_scaled32_20261006/eval_full_history_final2048_001/heldout16/evaluation_summary.json",
+      "sha256": "8d0468958e6b37f025b2e432536ab765daad27380608215f31ce1751706902f2",
+      "n": 16,
+      "counts": {
+        "G": 0,
+        "Q_reference": 13,
+        "E_reference": 0,
+        "closed_loop": 0,
+        "flow_complete": 0,
+        "Q_swap": 0,
+        "Q_no_crystal": 0
+      },
+      "rates_match_raw": true,
+      "failure_histogram_match_raw": true,
+      "matches_raw": true
+    }
+  }
+}

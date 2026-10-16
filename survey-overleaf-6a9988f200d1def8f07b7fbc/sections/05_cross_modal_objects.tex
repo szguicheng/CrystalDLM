@@ -1,0 +1,30 @@
+\section{Tokenization for Complex Systems}
+\label{sec:joint-systems}
+
+\draftsuggestion{Treat Sections~\ref{sec:ai} and~\ref{sec:science} as the component library for this section. Include a system here only when its tokenizer combines components across modalities, domain objects, biological scales, or temporally coupled observations and actions. Multiple representation labels alone are insufficient. Do not repeat the construction of each component tokenizer. Study instead how components are aligned, kept separate, assigned token rates, related across scales or time, decoded jointly, and tested as one system.}
+
+% The preceding sections study tokenization within one representation form or for one scientific object. Many foundation models instead combine several token streams, relate several objects, or encode observations and actions over time. These settings introduce design choices that cannot be assessed by reviewing each component tokenizer alone.
+
+\subsection{Multimodal Language Models}
+
+\draftsuggestion{Representative work: \citet{lu2024unifiedio2}. This subsection builds directly on the modality-specific tokenizers in Section~\ref{sec:ai}. Compare separate, aligned, and shared token spaces through cross-modal correspondence, token-rate balance, attention allocation, and decoding support. Focus on models that combine language with images, video, audio, or other represented inputs and outputs. Distinguish this setting from biomolecular complexes, cellular perturbation systems, and world models, whose system structure follows scientific components or temporal transitions.}
+
+% Multimodal systems can preserve separate token spaces or map several modalities into a common space. Separate tokenizers retain modality-specific precision and decoding rules, but their token rates can differ greatly. A shared space simplifies common prediction objectives, although token identity may no longer have the same interpretation across modalities. Evaluation should distinguish token-level alignment from sample-level pairing and should report how each modality contributes to context length and computation.
+
+\subsection{Biomolecular Complexes}
+
+\draftsuggestion{Representative work: \citet{abramson2024alphafold3}. Build on the nucleic-acid, protein, peptide, and small-molecule tokenizers in Section~\ref{sec:science}. Study how one system preserves component identity while representing cross-component contacts, stoichiometry, geometry, ions, ligands, and missing structures. Do not repeat each component tokenizer. Compare instead how the system aligns, relates, and jointly decodes several biomolecular objects.}
+
+% A biomolecular complex may retain the native units of each component or define a common rule across the assembly. Proteins, nucleic acids, small molecules, ions, and modified residues interact within one system, so the representation must distinguish component type while preserving contacts, geometry, stoichiometry, and chemical constraints. Multiscale biological models raise a related question: how should gene, protein, cell, tissue, and experimental-condition tokens be connected without treating one scale as a substitute for another?
+
+\subsection{Cellular Perturbation Systems}
+
+\draftsuggestion{Representative starting point: \citet{cui2024scgpt}. Build on gene expression profiles and cell morphology in Section~\ref{sec:science}. Study how a tokenizer relates molecular interventions, cell state, time, dose, morphology, and measured response. Distinguish this subsection from biomolecular complexes, which model interacting components within an assembly, and from world models, which center on action-conditioned transitions in an environment. Compare how systems represent perturbations, preserve cell identity, align assays, and decode predicted responses.}
+
+\subsection{World Models}
+
+\draftsuggestion{Representative work: \citet{bruce2024genie}. Study systems that jointly tokenize observations, latent states, actions, and transitions. Distinguish them from Section~\ref{sec:science}, which treats scenes and robot actions as separate domain objects, and from multimodal language models, which need not model action-conditioned change. Include action-only methods such as FAST in the domain-object section and cite them here only when comparing the action component of a complete world model. Evaluate temporal identity, rollout stability, controllability, and closed-loop behavior at the system level.}
+
+\subsection{User Behavior Systems}
+
+% Dynamic systems require token identities and relations that remain meaningful over time. World models may encode images or video into latent states and relate those states to actions and transitions. The key comparison is how token formation divides work among observation compression, state abstraction, action representation, and temporal prediction. Action-only tokenizers remain in Section~\ref{sec:science}; this subsection requires joint representation of system components.

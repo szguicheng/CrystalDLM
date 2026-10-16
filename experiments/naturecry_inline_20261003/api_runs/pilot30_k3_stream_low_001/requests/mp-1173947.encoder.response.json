@@ -1,0 +1,33 @@
+{
+  "id": "96eb0b64-d51f-4c25-ac8f-d8ea934b86be",
+  "object": "chat.completion",
+  "created": 1791053703,
+  "model": "tokenhub/kimi-k3",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "The crystal is described in a primitive triclinic cell with lattice parameters a = [[param:cell.a]], b = [[param:cell.b]], c = [[param:cell.c]] angstroms and interaxial angles α = [[param:cell.alpha]], β = [[param:cell.beta]], γ = [[param:cell.gamma]] degrees, expressed in the original input frame. The structure crystallizes in space group number [[param:space_group.number]], P-1, with Hall symbol [[param:space_group.hall]]; this centrosymmetric triclinic setting provides only the identity and the inversion operation, so each general position generates a pair of symmetry-related sites through the inversion center. The input cell contains [[param:input.atom_count]] atoms in total, comprising [[param:composition.Li]], [[param:composition.Mn]], and [[param:composition.O]].\n\nUnder this symmetry the atomic content resolves into eleven independent Wyckoff orbits. Two lithium ions occupy fixed inversion centers and therefore have no free positional parameters: orbit [[param:orbit.o000.id]] is Li on Wyckoff site [[param:orbit.o000.wyckoff]], and orbit [[param:orbit.o001.id]] is Li on site [[param:orbit.o001.wyckoff]]. The remaining lithium content lies on general positions: orbit [[param:orbit.o002.id]] is Li on [[param:orbit.o002.wyckoff]] with fractional parameters [[param:orbit.o002.parameters]], and orbit [[param:orbit.o003.id]] is Li on [[param:orbit.o003.wyckoff]] with parameters [[param:orbit.o003.parameters]]. The manganese sublattice consists of two general-position orbits, [[param:orbit.o004.id]] on [[param:orbit.o004.wyckoff]] at [[param:orbit.o004.parameters]] and [[param:orbit.o005.id]] on [[param:orbit.o005.wyckoff]] at [[param:orbit.o005.parameters]]. Oxygen occupies five symmetry-independent general orbits: [[param:orbit.o006.id]] on [[param:orbit.o006.wyckoff]] at [[param:orbit.o006.parameters]], [[param:orbit.o007.id]] on [[param:orbit.o007.wyckoff]] at [[param:orbit.o007.parameters]], [[param:orbit.o008.id]] on [[param:orbit.o008.wyckoff]] at [[param:orbit.o008.parameters]], [[param:orbit.o009.id]] on [[param:orbit.o009.wyckoff]] at [[param:orbit.o009.parameters]], and [[param:orbit.o010.id]] on [[param:orbit.o010.wyckoff]] at [[param:orbit.o010.parameters]]. Each 2i orbit contributes an inversion-related partner site, while the 1h and 1c orbits each contribute a single atom, accounting for the full cell contents. These orbit parameters are given in the standard frame, and the original input fractional coordinates were rounded to [[param:round_digits]] decimal places.\n\nThe mapping from the input frame to the standard setting is essentially the identity rotation, with frame matrix [[param:frame.matrix]] deviating from unity only at the level of numerical noise, together with a fractional origin shift of [[param:frame.origin_shift]]. Thus the standard description corresponds to the same lattice viewed from an origin displaced by nearly one full lattice translation along a and large fractional offsets along b and c, which by periodicity place the new origin near (0, 0.9, 0.8) of the input cell.\n\nFinally, a set of small precision corrections records genuine deviations of the measured sites from the idealized orbit backbone; these are real displacements in the input cell, not features of the ideal symmetry model. The lithium site [[param:correction.c000.site_id]] is displaced by [[param:correction.c000.delta]], lithium site [[param:correction.c001.site_id]] by [[param:correction.c001.delta]], lithium site [[param:correction.c002.site_id]] by [[param:correction.c002.delta]], and lithium site [[param:correction.c003.site_id]] by [[param:correction.c003.delta]]. The manganese site [[param:correction.c004.site_id]] carries a deviation of [[param:correction.c004.delta]]. Among the oxygen sites, [[param:correction.c005.site_id]] is shifted by [[param:correction.c005.delta]], [[param:correction.c006.site_id]] by [[param:correction.c006.delta]], [[param:correction.c007.site_id]] by [[param:correction.c007.delta]], [[param:correction.c008.site_id]] by [[param:correction.c008.delta]], and [[param:correction.c009.site_id]] by [[param:correction.c009.delta]]. All of these offsets are of order 10⁻⁵ in fractional units, indicating that the refined structure sits very close to, but measurably off, the idealized symmetric positions."
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "reasoning_stream": {
+    "chunks": 20,
+    "characters": 184
+  },
+  "usage": {
+    "completion_tokens": 1095,
+    "prompt_tokens": 7414,
+    "total_tokens": 8509,
+    "completion_tokens_details": {
+      "reasoning_tokens": 36
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "cache_creation_input_tokens": 0
+    }
+  }
+}

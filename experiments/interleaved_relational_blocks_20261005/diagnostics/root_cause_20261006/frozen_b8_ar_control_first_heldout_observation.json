@@ -1,0 +1,74 @@
+{
+  "scope": "firstheldout only; all16 unfinished",
+  "id": "mp-1229077",
+  "AR": {
+    "G": false,
+    "E_reference": false,
+    "Q_reference": true,
+    "closed_loop": false,
+    "Q_swap": false
+  },
+  "CF": {
+    "G": false,
+    "E_reference": false,
+    "Q_reference": true,
+    "closed_loop": false,
+    "Q_swap": false
+  },
+  "AR_failures": [
+    {
+      "stage": "G",
+      "kind": "generation_audit",
+      "reasons": [
+        "GateError: Orbit multiplicity and representative relations do not select one public definition"
+      ]
+    },
+    {
+      "stage": "E_reference",
+      "kind": "edit_mismatch"
+    },
+    {
+      "stage": "closed_loop",
+      "kind": "skipped_invalid_generated_c1"
+    },
+    {
+      "stage": "Q_swap",
+      "kind": "answer_mismatch"
+    }
+  ],
+  "AR_reference_edit_fields": {
+    "lengths_exact": false,
+    "other_plan_fields_exact": true,
+    "whole_geometry_scale": false,
+    "exact_target_plan": false,
+    "whole_geometry_scale_defined": true,
+    "edited_physical_audit": false
+  },
+  "AR_reference_edit_diagnostics": {
+    "length_max_abs_error_A": 0.10300499999999957,
+    "length_max_relative_error": 0.017919745842838092,
+    "whole_geometry_scale_errors_A": {
+      "lattice_matrix_max_abs": 0.09390614844012912,
+      "coordinate_max": 0.0,
+      "defined": true,
+      "undefined_reason": null
+    }
+  },
+  "AR_reference_edit_error": null,
+  "raw": [
+    {
+      "attempt": "generation",
+      "ok": true,
+      "END_count": 1,
+      "PAD_count": 1970,
+      "valid_boundary": true
+    },
+    {
+      "attempt": "reference_edit",
+      "ok": true,
+      "END_count": 1,
+      "PAD_count": 1671,
+      "valid_boundary": true
+    }
+  ]
+}

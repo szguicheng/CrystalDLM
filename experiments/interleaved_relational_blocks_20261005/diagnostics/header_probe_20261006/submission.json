@@ -1,0 +1,38 @@
+{
+  "job_id": "607106",
+  "recorded_at_utc": "2026-10-06T06:24:03.030279+00:00",
+  "slurm_script": "probe.slurm",
+  "source_sha256": {
+    "probe.py": "41afdd7c9425592388adc79f2a403c17215830222bb60f0a58aea5981d36d004",
+    "test_probe.py": "7bec6a28b6e8f36e7afd3f07c5384add25d63ed789f2346357b6c090a1b5decb",
+    "PROTOCOL.md": "fea94ab1db16f1c36ed99aca004ca1cd666f2471a105cc76330032fefd61d772",
+    "probe.slurm": "24e1824807105e066d32fe88f95daea1d2a6e829bab856f1decd3bdc0db95e5c"
+  },
+  "trained_block_size": 32,
+  "inference_block_sizes": [
+    32,
+    16,
+    8
+  ],
+  "selection_policies": [
+    "multinomial",
+    "greedy"
+  ],
+  "prefix_tokens": 128,
+  "cases": 8,
+  "attempts": 48,
+  "optimizer_updates": 0,
+  "output_directory": "probe_001",
+  "purpose": "prefix-only diagnosis; not a B16-trained or full-crystal result",
+  "effective_partition": "stingy",
+  "requested_node": "gpu-a100-06",
+  "predecessor_pending_job_cancelled": "607095",
+  "scheduler_override": "sbatch --partition=stingy --nodelist=gpu-a100-06",
+  "terminal_state": "COMPLETED",
+  "exit_code": "0:0",
+  "elapsed": "00:08:34",
+  "verified_at_utc": "2026-10-06T06:39:21.376731+00:00",
+  "raw_attempts_verified": 48,
+  "model_fingerprints_unchanged": true,
+  "paired_release_verified": true
+}

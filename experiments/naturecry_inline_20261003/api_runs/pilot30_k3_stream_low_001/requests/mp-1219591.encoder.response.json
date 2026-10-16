@@ -1,0 +1,33 @@
+{
+  "id": "d9ff4cf5-f4e4-457c-84a0-42185c727ac9",
+  "object": "chat.completion",
+  "created": 1791053883,
+  "model": "tokenhub/kimi-k3",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "The input cell is metrically almost isotropic: the three edge lengths are reported with the same value for a, b, and c [[param:cell.a]] [[param:cell.b]] [[param:cell.c]], while the interaxial angles are close to a cubic-like arrangement but remain distinct, with α, β, and γ given separately and not treated as identical [[param:cell.alpha]] [[param:cell.beta]] [[param:cell.gamma]]. In the conventional public description the structure is assigned to orthorhombic Imma, space-group number 74 [[param:space_group.number]], with Hall symbol “-I 2b 2” [[param:space_group.hall]]. The input contents contain 18 atoms in all [[param:input.atom_count]], distributed as two Co [[param:composition.Co]], twelve F [[param:composition.F]], two Ni [[param:composition.Ni]], and two Rb [[param:composition.Rb]] atoms; these counts are consistent with the stated total.\n\nThe standard crystallographic frame is reached from the original input cell by the supplied basis transformation [[param:frame.matrix]], with an origin shift that is effectively zero within the reported numerical noise [[param:frame.origin_shift]]. Fractional input coordinates are quoted to six decimal places [[param:round_digits]]. No precision-correction entries are supplied, so there are no additional real deviations from the idealized backbone to describe beyond the reported coordinate values themselves.\n\nWithin the Imma setting, six independent Wyckoff orbits account for the atoms. Orbit o000 [[param:orbit.o000.id]] is Rb [[param:orbit.o000.element]] on Wyckoff site 4e [[param:orbit.o000.wyckoff]], with one free positional coordinate along z given by its parameter [[param:orbit.o000.parameters]]. Cobalt occupies o001 [[param:orbit.o001.id]] as element Co [[param:orbit.o001.element]] on the fixed 4a site [[param:orbit.o001.wyckoff]], while nickel occupies o002 [[param:orbit.o002.id]] as Ni [[param:orbit.o002.element]] on the fixed 4d site [[param:orbit.o002.wyckoff]]; these two transition-metal orbits have no free parameters in the supplied orbit list.\n\nFluorine is split among three independent orbits rather than a single set. One fluorine orbit, o003 [[param:orbit.o003.id]], is F [[param:orbit.o003.element]] on 4e [[param:orbit.o003.wyckoff]] with its own z parameter [[param:orbit.o003.parameters]]. A second distinct fluorine 4e orbit, o004 [[param:orbit.o004.id]], also contains F [[param:orbit.o004.element]] on 4e [[param:orbit.o004.wyckoff]] but has a different z parameter [[param:orbit.o004.parameters]], so it must not be merged with the first fluorine 4e set. The remaining fluorine orbit, o005 [[param:orbit.o005.id]], is F [[param:orbit.o005.element]] on the higher-multiplicity general site 16j [[param:orbit.o005.wyckoff]] with three independent fractional coordinates [[param:orbit.o005.parameters]]. Thus the idealized description places Rb and two F sets on related 4e lines with separate z values, Co and Ni on fixed special positions, and one fully general F orbit completing the supplied structural model."
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "reasoning_stream": {
+    "chunks": 460,
+    "characters": 4552
+  },
+  "usage": {
+    "completion_tokens": 1726,
+    "prompt_tokens": 3082,
+    "total_tokens": 4808,
+    "completion_tokens_details": {
+      "reasoning_tokens": 990
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "cache_creation_input_tokens": 0
+    }
+  }
+}

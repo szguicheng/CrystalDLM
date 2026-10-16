@@ -1,0 +1,33 @@
+{
+  "id": "0f087765-199c-48ec-8c04-7170231d2aee",
+  "object": "chat.completion",
+  "created": 1791053854,
+  "model": "tokenhub/kimi-k3",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "The crystal is described by space group R-3m, number [[param:space_group.number]], with Hall symbol [[param:space_group.hall]], a rhombohedral setting in which the primitive input cell has lattice parameters a = [[param:cell.a]] Å, b = [[param:cell.b]] Å, and c = [[param:cell.c]] Å, with interaxial angles α = [[param:cell.alpha]]°, β = [[param:cell.beta]]°, and γ = [[param:cell.gamma]]°. The a and b edges are equal to the reported precision, and c differs only very slightly, while α and β are likewise equal and γ departs marginally, so the input cell is essentially rhombohedral with an extremely small numeric skew. This primitive cell contains [[param:input.atom_count]] atoms in total, comprising [[param:composition.Li]], [[param:composition.Fe]], and [[param:composition.O]], consistent with the formula LiFeO2.\n\nBecause the orbit data are expressed in the conventional standard (hexagonal) setting of R-3m, a change of coordinate frame is applied from the primitive rhombohedral input to the standard setting. The transformation uses the matrix [[param:frame.matrix]] together with the origin shift [[param:frame.origin_shift]]; the zero shift means no translational component accompanies the basis change. Input fractional coordinates were handled with a rounding precision of [[param:round_digits]] decimal places.\n\nIn the standard setting the structure resolves into three independent Wyckoff orbits. Lithium occupies orbit [[param:orbit.o000.id]], the [[param:orbit.o000.wyckoff]] site at the fixed coordinate relation 0, 0, 0 with multiplicity 3 and no free parameters. Iron occupies orbit [[param:orbit.o001.id]], the [[param:orbit.o001.wyckoff]] site at 0, 0, 1/2, also with multiplicity 3 and no free parameters. Oxygen occupies orbit [[param:orbit.o002.id]], the [[param:orbit.o002.wyckoff]] site at 0, 0, z with multiplicity 6, whose single free positional parameter along z is [[param:orbit.o002.parameters]]. Thus both cation species sit on fixed special positions on the threefold axis, while the anion sublattice carries the only adjustable coordinate, and the multiplicities 3, 3, and 6 account for the Li:Fe:2O stoichiometry within the conventional cell.\n\nNo precision corrections were required: the supplied coordinates and cell metrics match the idealized symmetry backbone within the reported precision, so the description above reflects the structure as input without any deviation corrections applied."
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "reasoning_stream": {
+    "chunks": 23,
+    "characters": 197
+  },
+  "usage": {
+    "completion_tokens": 617,
+    "prompt_tokens": 2185,
+    "total_tokens": 2802,
+    "completion_tokens_details": {
+      "reasoning_tokens": 46
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "cache_creation_input_tokens": 0
+    }
+  }
+}

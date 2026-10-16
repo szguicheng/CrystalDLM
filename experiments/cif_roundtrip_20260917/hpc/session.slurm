@@ -1,0 +1,19 @@
+#!/bin/bash
+#SBATCH --job-name=crystal-cif10
+#SBATCH --partition=tiny
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=2
+#SBATCH --mem=4G
+#SBATCH --time=00:45:00
+#SBATCH --output=logs/session-%j.out
+#SBATCH --error=logs/session-%j.err
+set -euo pipefail
+cd "$SLURM_SUBMIT_DIR"
+export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
+CRYSTAL_SESSION_DIR="$PWD/compute_allocations/$SLURM_JOB_ID"
+CRYSTAL_SOCKET="crystaldlm-$SLURM_JOB_ID"
+mkdir -p "$CRYSTAL_SESSION_DIR"
+trap 'tmux -L "$CRYSTAL_SOCKET" kill-server 2>/dev/null || true' EXIT TERM INT
+tmux -L "$CRYSTAL_SOCKET" -f /dev/null new-session -d -s work -c "$PWD" "/home/chenggui2/scratch/anaconda3/envs/matgl/bin/python hpc/queue_worker.py $CRYSTAL_SESSION_DIR"
+while tmux -L "$CRYSTAL_SOCKET" has-session -t work 2>/dev/null; do sleep 2; done

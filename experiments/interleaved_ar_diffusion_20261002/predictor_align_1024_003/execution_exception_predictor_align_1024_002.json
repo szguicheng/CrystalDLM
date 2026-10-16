@@ -1,0 +1,53 @@
+{
+  "experiment": "predictor_align_1024_002",
+  "slurm_job": "601858",
+  "terminal_state": "FAILED",
+  "elapsed": "01:11:15",
+  "exit_code": "1:0",
+  "type": "ValueError",
+  "message": "could not convert string to float: '7.02.'",
+  "stack_path": [
+    "predictor_align.py:164",
+    "recover.py:69",
+    "run.py:182",
+    "score.py:182"
+  ],
+  "failure_context": {
+    "arm": "hybrid_same",
+    "phase": "validation_128",
+    "validation_rows_written": 66,
+    "next_current_row_written": false,
+    "raw_failed_response_recovered": false,
+    "scorer_exception": "grade_answer parsed a lattice-length token as '7.02.' then raised from float conversion",
+    "summary_status": "partial",
+    "hybrid_shift_started": false
+  },
+  "verified_partial_results": {
+    "ar_control_status": "validated",
+    "ar_control_updates": 1024,
+    "ar_control_validation_n": 128,
+    "ar_control_reading_n": 128,
+    "ar_control_old8_n": 8,
+    "hybrid_same_status": "trained",
+    "hybrid_same_updates": 1024,
+    "hybrid_same_prediction_offset": 0,
+    "hybrid_same_validation_rows_written": 66,
+    "hybrid_shift_directory_exists": false
+  },
+  "preservation": {
+    "remote_raw_output_preserved": true,
+    "local_output_synced_excluding_checkpoint_pt": true,
+    "logs_preserved": true,
+    "summary_preserved_without_edit": true,
+    "source_snapshot_sha_verified": true,
+    "exposure_rows": 16384,
+    "exposure_sha256": "d53173eb40675ef28a48f90fc27c0890bd9cb4bf4b8553a350386553bfc24f6f"
+  },
+  "fix": {
+    "source": "score.py",
+    "behavior": "On numeric conversion ValueError, mark that axis field false and continue; raw response and tolerance are unchanged.",
+    "score_sha256": "c1dfe1b87715b5b650b7152e02fed567bd5f7f0fd9109295ec87208f23165c6b",
+    "test_checks_sha256": "ca0bf491c40ed5fe0a119919e652cd9ad93a004f7d32388356e501e94c12d102",
+    "existing_test_checks": "20 PASS"
+  }
+}

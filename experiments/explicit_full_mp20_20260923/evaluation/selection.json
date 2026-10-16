@@ -1,0 +1,29 @@
+{
+  "mode": "remask",
+  "ranking": [
+    {
+      "mode": "remask",
+      "projected_valid": 257,
+      "raw_usable": 256,
+      "raw_decoded": 615
+    },
+    {
+      "mode": "one_step",
+      "projected_valid": 137,
+      "raw_usable": 137,
+      "raw_decoded": 277
+    },
+    {
+      "mode": "confidence",
+      "projected_valid": 2,
+      "raw_usable": 2,
+      "raw_decoded": 66
+    }
+  ],
+  "selection": "same sampler for both representations, selected on first 512 hash-ordered validation structures",
+  "checkpoint_selection": "lowest full-validation fixed-mask reconstruction loss within the fixed epoch budget",
+  "checkpoint_sha256": {
+    "explicit": "825db17b5f05b934fff0693a03d284fe917aa80346ec8f17358c78d6212384c0",
+    "wyckoff": "8e81769a8ad924e272df693b7bc08f4f246c62f3bb6d18f91211c2a51556b4e2"
+  }
+}
