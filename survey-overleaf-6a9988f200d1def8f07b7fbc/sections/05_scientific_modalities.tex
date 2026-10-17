@@ -7,6 +7,8 @@
 
 \subsection{Language and Formal Objects}
 
+[zhenyu]
+
 \draftsuggestion{Use this family to compare tokenization for natural language, source code, and mathematical expressions without treating them as one representation. The sequence methods in Section~\ref{sec:ai} provide the shared background. Focus here on the linguistic, syntactic, and formal constraints that determine valid boundaries and decoding.}
 
 \subsubsection{Natural Language}
@@ -16,6 +18,10 @@
 \subsubsection{Code and Mathematics}
 
 \draftsuggestion{Compare lexical tokens, learned subwords, syntax-tree units, and serialized mathematical expressions. Ask how a tokenizer handles identifiers, whitespace, formal grammar, variable names, and equivalent expressions. Use sequence and graph tokenization from Section~\ref{sec:ai} as background, then focus on syntactic validity and executable or symbolic equivalence.}
+
+\begin{enumerate}
+    \item grammarvae, DIGGED
+\end{enumerate}
 
 \subsection{Music and Sound Events}
 
@@ -33,11 +39,24 @@
 
 % DNA and RNA can be represented by bases, fixed $k$-mers, learned subwords, genes, functional regions, or structural units. Single bases preserve mutation-level detail, while larger units shorten sequences and may match codons, motifs, or repeated elements. Biological function does not follow one fixed partition because reading frames, regulatory regions, and three dimensional contacts can overlap.
 
+Representative works:
+\begin{enumerate}
+    \item dna language models (hyena, evo, alphagenome, etc.)
+    \item Taehyun Oh's works (inspired from h-net)
+    \item cite his related works
+    \item vq-vae works
+\end{enumerate}
+
 \subsubsection{Proteins and Peptides}
 
 \draftsuggestion{Representative work: \citet{rives2021esm}. This object overlaps with sequences, graphs, 3D geometry, and time series in Section~\ref{sec:ai}. Focus on residues, motifs, domains, structural units, conformational states, noncanonical residues, and biological function. Include peptides when residue sequence, conformation, or biological function defines the problem. Discuss protein complexes and multiscale biology in Section~\ref{sec:joint-systems}.}
 
 % Protein language models commonly treat amino acids as tokens, and residue-level inputs support structural and functional prediction \citep{rives2021esm}. Structure-aware systems may add coordinates, contacts, local frames, secondary structures, or discrete structure codes. Larger units can match motifs, domains, and binding sites, but they may hide mutations or depend on one conformation. Peptide studies also tokenize mass spectra through bins, ordered peaks, or peak sets. Noncanonical residues, cyclic structures, and design constraints require separate checks.
+
+\begin{enumerate}
+    \item esm family (sequence)
+    \item vq-vae, geobpe (structure)
+\end{enumerate}
 
 \subsubsection{Small Molecules and Reactions}
 
@@ -47,17 +66,56 @@
 
 % Chemical reactions add changing bonds, reagents, conditions, and sometimes time. Frequent fragments need not match reaction centers. Evaluation should therefore separate sequence reconstruction, graph equivalence, stereochemistry, geometric fidelity, chemical validity, and reaction consistency.
 
+\begin{enumerate}
+    \item tokenize molecules procedurally as reactions (synnet, chemprojector, synformer, synthesisnet)
+    \item tokenize molecules using rules that align with reactions and generate synthesizable molecules (randomwalk, FMG, alphagrammar, mclm)
+\end{enumerate}
+
+\clearpage
 \subsubsection{Synthetic Polymers}
+\label{sec:synthetic-polymers}
 
-\draftsuggestion{Representative work: \citet{zhu2025grin}. Discuss monomers, repeat units, chains, branches, conformations, and learned motifs. Check whether the tokenizer treats repeat-unit equivalence, sequence disorder, molecular-weight distribution, chain architecture, and processing history as part of the representation or as external conditions.}
+Many synthetic polymer samples comprise chains with different lengths, sequences, or branching patterns. A repeat unit specifies local chemistry, but it does not fully specify such a sample. Polymer tokenization therefore depends on whether the input describes an ideal repeating structure, an individual chain, or an ensemble of chains~\citep{lin2019bigsmiles,aldeghi2022ensemble}. Here, 1D refers to string representations and 2D to chemical connectivity graphs, following the sequence and graph methods in Section~\ref{sec:ai}. In both cases, the choice of units determines how repeat chemistry, connections between units, and sample-level information enter the model. Table~\ref{tab:polymer-tokenization} summarizes representative approaches.
 
-% Polymers add repeat structure, sequence disorder, architecture, molecular-weight distribution, conformation, and processing history. Monomers and repeat units provide intermediate scales, but several strings can describe the same repeated material. Tests should cover equivalent repeat descriptions and controlled changes in composition, chain length, architecture, and conformation.
+\textbf{1D representations.}
+For linear polymers, polymer SMILES (PSMILES) describes a repeat unit with two wildcard connection sites, often written as \texttt{[*]}. The wildcards mark backbone continuation rather than the chemical end groups of a finite chain. One difficulty is that the same ideal polymer admits several descriptions: \texttt{[*]CO[*]} and \texttt{[*]COCO[*]}, for example, encode the same periodic connectivity using different repeat lengths. polyBERT addresses this redundancy through polymer-specific canonicalization, including repeat reduction and normalization of the repeat boundary, before applying a 265-token SentencePiece vocabulary~\citep{kuenneth2023polybert}. The resulting sequence represents the canonical PSMILES string. The fingerprint subsequently obtained by averaging token embeddings cannot be uniquely mapped back to that string. Thus, the information retained by the string tokenizer must be distinguished from that retained by the learned fingerprint.
 
-\subsubsection{Crystals}
+TransPolymer extends the input beyond repeat chemistry by combining SMILES with available descriptors, including component ratios, chain arrangement, molecular weight, and degree of polymerization~\citep{xu2023transpolymer}. Its chemically informed tokenization keeps multi-character elements such as \texttt{Si} together, assigns tokens to discretized numerical values, and uses descriptor-specific markers for missing values. This allows samples with the same repeat chemistry to be distinguished when the relevant descriptors are available. The numerical precision and completeness of the representation depend on how those descriptors are recorded and discretized.
 
-\draftsuggestion{Compare atom-level, graph-based, geometric, and sequence representations of periodic structures. Focus on unit-cell choice, periodic boundary conditions, atom permutation, symmetry, defects, composition, and reconstruction of an equivalent crystal. Keep diffraction as a measurement linked to the crystal rather than as a separate domain object.}
+Generative models also need a representation that can be decoded into a polymer structure. polyBART uses pseudo-polymer SELFIES (PSELFIES), obtained by closing and canonicalizing a repeat-unit graph, reopening it, and introducing astatine atoms as proxies for the two connection sites~\citep{savit2025polybart}. SELFIES symbols then provide input units compatible with a pretrained molecular language model. The proxy atoms carry a polymer-specific meaning: polyBART checks that a decoded structure contains exactly two singly bonded At termini. This check is separate from molecular validity, and neither criterion alone establishes that a proposed polymer can be synthesized.
 
-% Crystals require element identity, geometry, and periodic symmetry. Atom order and unit-cell choice can change while the infinite structure remains the same. Token systems should remain invariant or measurably consistent under equivalent cells, translations, and atom permutations.
+These repeat-unit strings describe deterministic connectivity. BigSMILES instead describes ensembles through stochastic objects containing repeat-unit alternatives and bonding descriptors that specify permitted connections~\citep{lin2019bigsmiles}. Its syntax accommodates statistical copolymers and branched structures without enumerating individual chains. The order of units in a stochastic list does not specify their order along a chain. For tokenization, the meaningful boundaries include repeat units, stochastic objects, and labeled bonding sites; losing the labels or object boundaries changes the permitted connectivity. BigSMILES supplies this representation language, rather than a particular token vocabulary. Its original formulation specifies possible structures without assigning a probability to each realization, so additional statistics are needed to describe a quantitative ensemble.
+
+\textbf{2D representations.}
+Chemical graphs expose connectivity directly, with atom or bond attributes as local units and adjacency as explicit relation data. Polymer graphs must also describe connections across repeat boundaries. Aldeghi and Coley represent molecular ensembles using directed edges weighted by connection probabilities, together with the relative abundances of the constituent units~\citep{aldeghi2022ensemble}. Their weighted directed message-passing neural network (wD-MPNN) uses these quantities to distinguish copolymer composition and architecture; average degree of polymerization is additionally supplied in their phase-prediction task. This representation retains an ensemble average, but not its full heterogeneity. The authors identify specific ambiguities: gradient and block copolymers can share the same average connectivity, while samples with the same average chain length can have different dispersities.
+
+GRIN examines a related problem: the embedding of a polymer can change when its graph is constructed with a different number of repeats~\citep{zhu2025grin}. It combines repeat-unit augmentation with max-aggregation graph learning inspired by maximum spanning trees. The augmented graphs share the same property label, so each repeat-count variant is trained against the same target. Its invariance applies to these graph variants; physical chain length remains a separate sample variable. The reported copolymer experiments cover block and alternating architectures; they do not establish generality to arbitrary stochastic sequences. Both GRIN and wD-MPNN learn features over prescribed atom and bond graphs, rather than a discrete vocabulary of polymer motifs.
+
+\textbf{Implications for token design.}
+Repeat units or larger motifs offer possible coarser tokens, provided their attachment sites and inter-unit bonds remain specified. A useful polymer representation must be stable under equivalent choices of repeat boundary while retaining differences in composition, sequence statistics, and chain architecture. Molecular-weight distribution and processing or measurement conditions require additional fields when they matter to the task. Reconstructing a repeat-unit string is therefore a narrower objective than reconstructing a sample specification. Comparisons should assess both: whether equivalent descriptions yield consistent representations, and whether chemically or statistically different samples remain distinguishable. Alternative descriptions of the same polymer must also remain within one dataset split, as in the augmentation protocol used by TransPolymer~\citep{xu2023transpolymer}.
+
+\begin{table}[H]
+\centering
+\caption{Representative polymer representations. The table distinguishes input units from the information retained by the representation.}
+\label{tab:polymer-tokenization}
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{tabularx}{\textwidth}{@{}L{0.20\textwidth}YY@{}}
+\toprule
+Representation / example & Input units and relations & Polymer information and limitations \\
+\midrule
+PSMILES / polyBERT~\citep{kuenneth2023polybert} & SentencePiece tokens over canonical PSMILES, including connection-site and syntax symbols. & Canonical repeat chemistry; the pooled fingerprint is not uniquely decodable. \\
+Descriptor strings / TransPolymer~\citep{xu2023transpolymer} & Chemical symbols, discretized descriptor values, separators, and missing-value markers. & Repeat chemistry and supplied sample descriptors; numerical resolution and missing data limit detail. \\
+PSELFIES / polyBART~\citep{savit2025polybart} & SELFIES symbols, with At proxies for repeat-unit connection sites. & Repeat-unit candidates; valid molecular outputs may still have invalid polymer endpoints. \\
+BigSMILES~\citep{lin2019bigsmiles} & Repeat-unit alternatives, stochastic objects, and labeled bonding descriptors. & Permitted ensemble connectivity; realization probabilities need further specification. \\
+Ensemble graph / wD-MPNN~\citep{aldeghi2022ensemble} & Atom and directed-bond attributes, connection weights, and unit fractions. & Average composition and architecture; full dispersity is not represented. \\
+Augmented graphs / GRIN~\citep{zhu2025grin} & Atom/bond graphs joined across repeat boundaries; repeat count varies during training. & Embeddings stable across repeat-count variants with shared labels; physical chain-length dependence is not modeled by this invariance. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\input{sections/4_3_5_crystals}
 
 \subsection{Biomedical Observations}
 

@@ -7,6 +7,7 @@
 
 \subsection{Multimodal Language Models}
 
+
 \draftsuggestion{Representative work: \citet{lu2024unifiedio2}. This subsection builds directly on the modality-specific tokenizers in Section~\ref{sec:ai}. Compare separate, aligned, and shared token spaces through cross-modal correspondence, token-rate balance, attention allocation, and decoding support. Focus on models that combine language with images, video, audio, or other represented inputs and outputs. Distinguish this setting from biomolecular complexes, cellular perturbation systems, and world models, whose system structure follows scientific components or temporal transitions.}
 
 % Multimodal systems can preserve separate token spaces or map several modalities into a common space. Separate tokenizers retain modality-specific precision and decoding rules, but their token rates can differ greatly. A shared space simplifies common prediction objectives, although token identity may no longer have the same interpretation across modalities. Evaluation should distinguish token-level alignment from sample-level pairing and should report how each modality contributes to context length and computation.
@@ -22,6 +23,17 @@
 \draftsuggestion{Representative starting point: \citet{cui2024scgpt}. Build on gene expression profiles and cell morphology in Section~\ref{sec:science}. Study how a tokenizer relates molecular interventions, cell state, time, dose, morphology, and measured response. Distinguish this subsection from biomolecular complexes, which model interacting components within an assembly, and from world models, which center on action-conditioned transitions in an environment. Compare how systems represent perturbations, preserve cell identity, align assays, and decode predicted responses.}
 
 \subsection{World Models}
+
+[mengzhao]
+
+\textbf{Kickoff outline}
+\begin{itemize}
+    \item Scope: explain how world models jointly represent observations, latent states, actions, and transitions; connect component tokenizers to temporal prediction and interaction.
+    \item Representation choices: compare discrete, continuous, and hybrid visual-latent, state, and action representations, focusing on token units, temporal grouping, and decoding targets.
+    \item Literature organization: start from Genie~\citep{bruce2024genie} and group further references by representation and conditioning strategy after checking their tokenizer details.
+    \item Comparison and evaluation: examine sequence compression, temporal consistency, action conditioning, rollout fidelity, and controllability; separate tokenizer-level evidence from whole-system results.
+    \item Planned synthesis: summarize trade-offs among compression, reconstruction, prediction, and control, then identify open questions about temporal abstraction and transfer. Keep action-only methods in the domain-object section.
+\end{itemize}
 
 \draftsuggestion{Representative work: \citet{bruce2024genie}. Study systems that jointly tokenize observations, latent states, actions, and transitions. Distinguish them from Section~\ref{sec:science}, which treats scenes and robot actions as separate domain objects, and from multimodal language models, which need not model action-conditioned change. Include action-only methods such as FAST in the domain-object section and cite them here only when comparing the action component of a complete world model. Evaluate temporal identity, rollout stability, controllability, and closed-loop behavior at the system level.}
 

@@ -1,0 +1,59 @@
+\subsubsection{Crystals}
+\label{sec:crystals}
+
+A crystal representation must describe an infinite periodic arrangement using finite units. An ordered structure can be specified by a lattice $L$, elements $A=(a_i)_{i=1}^{n}$, and fractional coordinates $F=(f_i)_{i=1}^{n}$; its sites are $L(f_i+k)$ for $k\in\mathbb{Z}^{3}$. Atom permutations, origin shifts, and equivalent cell choices can change this record without changing the crystal. Tokenization must specify both retained information and the equivalence under which decoding is judged. Table~\ref{tab:crystal-tokenization} compares atoms, periodic edges, numerical fields, symmetry orbits, and learned latents as representation units.
+
+\textbf{Atom, graph, and geometric units.}
+Atom-level representations retain element identity and associate each site with geometric or relational information. CGCNN constructs a periodic multigraph with atoms as nodes and bonds to neighboring periodic images as edges~\citep{xie2018cgcnn}. Its message passing and pooling support property prediction, but the prescribed graph units do not constitute a learned discrete vocabulary, and the method does not specify a structure decoder. In particular, a graph-level embedding that is invariant to node order need not retain enough information to recover the lattice and all sites.
+
+Continuous geometric representations instead keep the lattice and fractional coordinates as explicit variables. DiffCSP jointly diffuses these variables, using periodic treatment of coordinates and an equivariant model for crystal structure prediction~\citep{jiao2023diffcsp}. The atomwise state supplies addressable units without requiring a discrete structural alphabet; learning the denoising distribution belongs to the generative model. CDVAE introduces a different boundary: a graph encoder maps a crystal to a continuous latent representation, and a learned decoder predicts global attributes and reconstructs atom types and coordinates through denoising~\citep{xie2022cdvae}. Under the three-module definition, this is a learned, lossy encoding--decoding system. Its reconstruction quality depends on the encoder and decoder jointly, whereas the explicit geometric state used by DiffCSP already contains the structure being represented.
+
+\textbf{Structure and topology as sequences.}
+CrystaLLM tokenizes standardized crystallographic information files (CIFs) using element and space-group symbols, CIF tags, numerical digits, and punctuation~\citep{antunes2024crystallm}. Lattice parameters and fractional coordinates remain explicit, so decoding a valid token sequence recovers a structural record at its stored precision. The lexical rules determine token identities; the subsequently trained language model learns distributions over those tokens. Recovering a CIF record and identifying equivalent crystals are different tasks, because alternative origins, cells, and site orders can produce different strings.
+
+Mat2Seq places equivalence handling inside the encoding procedure~\citep{yan2024mat2seq}. It combines Niggli cell reduction with origin selection and site ordering, then serializes lattice parameters, space-group information, and an irreducible set of atomic sites. Symmetry operations expand these sites during reconstruction. The paper establishes invariance under its specified rigid and periodic transformations, making the choice of representative part of token formation. Numerical serialization remains a separate design choice: its implementation rounds real-valued quantities to four decimal places. Thus, the mathematical completeness of the representation and the precision of the token sequence should be reported separately.
+
+SLICES serializes a labeled quotient graph instead of explicit coordinates~\citep{xiao2023slices}. Element symbols identify nodes, while each edge records two node indices and an integer translation identifying the connected periodic image. These labels preserve periodic connectivity in a finite string. Its SLI2Cry decoder constructs an initial geometric embedding, optimizes it with chemically informed constraints, and refines it with an interatomic potential. Reconstruction consequently depends on geometric inference: the string does not preserve every original bond length or lattice parameter. Likewise, equivalent graph descriptions need not have identical node and edge orderings in their strings. The original decoder targets connected three-dimensional networks, with additional restrictions from its geometry model; its coverage must be distinguished from the coverage of the string syntax.
+
+\textbf{Symmetry orbits as units.}
+Space-group symmetry allows several atoms to be represented by one orbit. A Wyckoff position specifies a symmetry-related set of sites, whose multiplicity determines its contribution to the cell composition. CrystalFormer represents a crystal through its space group, Wyckoff positions, element identities, independent fractional coordinates, and lattice parameters~\citep{cao2025crystalformer}. Expanding the independent sites recovers the full cell. These units make symmetry explicit and reduce repeated site information, while retaining the continuous degrees of freedom needed to distinguish structures within the same symmetry class.
+
+WyFormer uses a coarser target: a coordinate-free, element-decorated Wyckoff description, or \emph{protostructure}~\citep{kazeev2025wyformer}. A global space-group token accompanies site tokens combining an element, site symmetry, and an enumeration distinguishing positions with the same site symmetry. The model omits positional encoding for its input set and augments site order and equivalent Wyckoff descriptions during training. The representation does not fix the lattice metric or free positional parameters, so recovering an atomic structure requires a subsequent geometry determination step.
+
+PLaID++ connects orbit-based descriptions to a pretrained language model~\citep{xu2026plaidpp}. It serializes composition, space group, lattice parameters, and representative Wyckoff-site coordinates as text processed by the model's existing tokenizer. The crystal-level unit and the language-model token are therefore different levels of description: one site can span several text tokens. Its specified precision is two decimal places for lattice parameters and three for fractional coordinates. This approach retains explicit geometry while reusing a language vocabulary; the token rate depends on both the crystallographic serialization and the underlying text tokenizer.
+
+\begin{table}
+\centering
+\caption{Features of representative crystal representations and encoding systems. Rows identify the representation used by each method, rather than attributing all model properties to its tokenizer.}
+\label{tab:crystal-tokenization}
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.16}
+\begin{tabularx}{\textwidth}{@{}L{0.16\textwidth}YccccL{0.18\textwidth}L{0.19\textwidth}@{}}
+\toprule
+Method & Represented units & D & N & G & S & Equivalence handling & Reconstruction path \\
+\midrule
+CGCNN~\citep{xie2018cgcnn} & Atoms and periodic neighbor edges & -- & -- & -- & -- & Graph relabeling; invariant pooling & Not specified \\
+DiffCSP~\citep{jiao2023diffcsp} & Atom types, fractional coordinates, lattice & -- & -- & $\checkmark$ & -- & Periodic and equivariant model & Explicit geometric state \\
+CDVAE~\citep{xie2022cdvae} & Continuous crystal latent & -- & $\checkmark$ & -- & -- & Periodic graph; invariant encoder & Learned, approximate \\
+CrystaLLM~\citep{antunes2024crystallm} & CIF symbols and digits & $\checkmark$ & -- & $\checkmark$ & $\checkmark$ & File standardization & CIF parsing \\
+Mat2Seq~\citep{yan2024mat2seq} & Cell and irreducible-site fields & $\checkmark$ & -- & $\checkmark$ & $\checkmark$ & Cell, origin, and ordering rules & Symmetry expansion \\
+SLICES~\citep{xiao2023slices} & Elements and translation-labeled edges & $\checkmark$ & -- & -- & -- & Periodic graph equivalence & Embedding and optimization \\
+CrystalFormer~\citep{cao2025crystalformer} & Wyckoff sites and geometric variables & -- & -- & $\checkmark$ & $\checkmark$ & Wyckoff and coordinate ordering & Symmetry expansion \\
+WyFormer~\citep{kazeev2025wyformer} & Space group and decorated site tuples & $\checkmark$ & -- & -- & $\checkmark$ & Set input; equivalent-setting augmentation & Protostructure; geometry required \\
+PLaID++~\citep{xu2026plaidpp} & Text tokens over Wyckoff fields & $\checkmark$ & -- & $\checkmark$ & $\checkmark$ & Refined cell and symmetry-site extraction & Parsing and symmetry expansion \\
+\bottomrule
+\end{tabularx}
+
+\vspace{0.5em}
+\begin{minipage}{\textwidth}
+\footnotesize
+\textbf{D}: entirely discrete symbolic representation. \textbf{N}: neural latent encoding, excluding downstream embeddings. \textbf{G}: explicit lattice metric and sufficient positional variables. \textbf{S}: explicit space-group or Wyckoff information. Checkmarks denote presence; dashes denote absence. CGCNN uses the \href{https://github.com/txie-93/cgcnn/blob/master/cgcnn/data.py}{released Gaussian-distance features}. CGCNN and DiffCSP describe prescribed inputs; CDVAE describes its latent. Equivalence handling can occur in preprocessing or the model. Reconstruction depends on stored precision and the stated decoder.
+\end{minipage}
+\end{table}
+
+\textbf{Coverage and evaluation.}
+Defects change what the representation must preserve. A vacancy or substitution can be specified in a periodic supercell, but the supercell size then fixes a defect concentration and repeats the defect periodically. Relaxation can lower symmetry and increase the number of independent sites, reducing the compression offered by orbit-based units. Partial occupancies introduce another distinction: an average disordered structure is not a single ordered arrangement. For example, CrystaLLM's training data exclude site-occupancy disorder, although the CIF format can express it~\citep{antunes2024crystallm}. Element coverage, occupancy conventions, cell size, and symmetry tolerance should therefore accompany claims of generality.
+
+Evaluation should test both equivalence and retained distinctions. Atom reordering, origin shifts, and equivalent cells should preserve crystal identity; changes in composition, defects, or free geometric parameters should remain detectable when they belong to the reconstruction target. Report token count, relation storage, numeric precision, decoding cost, and reconstruction under stated structural matching tolerances. Diffraction provides a linked measurement for evaluating the reconstructed crystal, with its own resolution and experimental conditions.
+\clearpage
