@@ -1,0 +1,73 @@
+{
+  "status": "passed",
+  "cases": [
+    {
+      "name": "pure_ar_training_contracts",
+      "command": [
+        "/data1/users/liugang/crystalDLM/envs/crystaldlm/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "experiments/ehull_pure_ar_qwen3_8b_20261015",
+        "-p",
+        "test_train.py",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "/data1/users/liugang/crystalDLM/envs/crystaldlm/lib/python3.11/site-packages/transformers/utils/hub.py:110: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.\n  warnings.warn(\ntest_causal_mask_and_control_token_gradients (test_train.Qwen3PureARTests.test_causal_mask_and_control_token_gradients) ... ok\ntest_checkpoint_reload_restores_adapter_control_rows_optimizer_and_logits (test_train.Qwen3PureARTests.test_checkpoint_reload_restores_adapter_control_rows_optimizer_and_logits) ... ok\ntest_future_tokens_do_not_change_prior_causal_logits (test_train.Qwen3PureARTests.test_future_tokens_do_not_change_prior_causal_logits) ... ok\ntest_rank_zero_creates_shared_output_once (test_train.Qwen3PureARTests.test_rank_zero_creates_shared_output_once) ... ok\ntest_state_fingerprint_accepts_bfloat16_rows (test_train.Qwen3PureARTests.test_state_fingerprint_accepts_bfloat16_rows) ... ok\ntest_two_rank_accumulation_preserves_global_eight_material_update (test_train.Qwen3PureARTests.test_two_rank_accumulation_preserves_global_eight_material_update) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.469s\n\nOK\n"
+    },
+    {
+      "name": "flare_visibility_contracts",
+      "command": [
+        "/data1/users/liugang/crystalDLM/envs/crystaldlm/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "experiments/flare_crystal_qwen3_8b_20261019",
+        "-p",
+        "test_model.py",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_complementary_views_supervise_every_crystal_token_once (test_model.VisibilityTests.test_complementary_views_supervise_every_crystal_token_once) ... ok\ntest_noisy_targets_are_masked_and_cannot_read_clean_answers (test_model.VisibilityTests.test_noisy_targets_are_masked_and_cannot_read_clean_answers) ... ok\n\n----------------------------------------------------------------------\nRan 2 tests in 0.000s\n\nOK\n"
+    },
+    {
+      "name": "flare_numerical_visibility",
+      "command": [
+        "/data1/users/liugang/crystalDLM/envs/crystaldlm/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "experiments/flare_crystal_qwen3_8b_20261019",
+        "-p",
+        "test_numerical.py",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "/data1/users/liugang/crystalDLM/envs/crystaldlm/lib/python3.11/site-packages/transformers/utils/hub.py:110: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.\n  warnings.warn(\ntest_packed_clean_stream_matches_causal_and_noisy_matches_inference (test_numerical.NumericalContract.test_packed_clean_stream_matches_causal_and_noisy_matches_inference) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.011s\n\nOK\n"
+    },
+    {
+      "name": "full_objective_weighting",
+      "command": [
+        "/data1/users/liugang/crystalDLM/envs/crystaldlm/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "experiments/flare_crystal_full_20261019",
+        "-p",
+        "test_model.py",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_generation_and_reading_both_contribute_with_matched_weight (test_model.ObjectivePair.test_generation_and_reading_both_contribute_with_matched_weight) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.949s\n\nOK\n"
+    }
+  ]
+}

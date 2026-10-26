@@ -1,0 +1,145 @@
+{
+  "status": "complete",
+  "scheduled_attempts": 7,
+  "completed_attempts": 7,
+  "pending_attempts": 0,
+  "strict_valid_structures": 0,
+  "requested_space_group_matches": 0,
+  "valid_and_requested_space_group_matches": 0,
+  "lead_failures": 0,
+  "crystal_failures": 3,
+  "invalid_structure_attempts": 7,
+  "ehull_evaluation_status": "not_run",
+  "raw_attempt_denominator": 7,
+  "mode": "hybrid",
+  "diffusion_steps": 32,
+  "prediction_offset": 0,
+  "random_seed_parameters": {
+    "attempt_plan_seed": 42,
+    "per_attempt_seeds": "fixed matched-AR plan"
+  },
+  "strict_valid_denominator": 7,
+  "forward_step_counts": {
+    "text": 1096,
+    "crystal": 224,
+    "crystal_schedule": 224
+  },
+  "mean_timing_seconds": {
+    "text_generation": 7.717189385555685,
+    "crystal_generation": 4.675627349476729,
+    "parse": 0.005639497589852128,
+    "total": 12.399281762939479
+  },
+  "timing_attempt_counts": {
+    "text_generation": 7,
+    "crystal_generation": 7,
+    "parse": 7,
+    "total": 7
+  },
+  "run_manifest_sha256": "879710e27bc6b49afd9b6ddbc5e7608b4a744737ddcde5bafb02942437bdbce4",
+  "shard": {
+    "shard_index": 0,
+    "num_shards": 1,
+    "attempt_plan_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "prefix_cache_parity_passed": true,
+    "run_manifest_sha256": "879710e27bc6b49afd9b6ddbc5e7608b4a744737ddcde5bafb02942437bdbce4"
+  },
+  "prefix_cache_parity": {
+    "passed": true,
+    "mode": "prefix-only AR cache parity",
+    "interpretation": "The comparison ends at START, before any current-crystal token; hybrid denoising logits are checked by the diffusion sampler contract.",
+    "acceptance": {
+      "top1_same": true,
+      "kl_reference_to_cached_max": 0.01,
+      "max_abs_max": 0.5,
+      "mean_abs_max": 0.1
+    },
+    "contexts": [
+      {
+        "context": "prompt",
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "rms_abs": 0.0,
+        "kl_reference_to_cached": 0.0,
+        "cosine_similarity": 0.9999998807907104,
+        "top1_reference": 576,
+        "top1_cached": 576,
+        "top1_same": true,
+        "strict_close_fraction": 1.0,
+        "strict_close_rtol": 0.002,
+        "strict_close_atol": 0.002,
+        "distribution_criteria_passed": true
+      },
+      {
+        "context": "text_prefix_token_0",
+        "max_abs": 0.25,
+        "mean_abs": 0.01760389283299446,
+        "rms_abs": 0.03216703608632088,
+        "kl_reference_to_cached": 0.00028941419441252947,
+        "cosine_similarity": 0.999992847442627,
+        "top1_reference": 5944,
+        "top1_cached": 5944,
+        "top1_same": true,
+        "strict_close_fraction": 0.6451444625854492,
+        "strict_close_rtol": 0.002,
+        "strict_close_atol": 0.002,
+        "distribution_criteria_passed": true
+      },
+      {
+        "context": "text_prefix_token_1",
+        "max_abs": 0.25,
+        "mean_abs": 0.015031657181680202,
+        "rms_abs": 0.02814718708395958,
+        "kl_reference_to_cached": 0.00018691655714064837,
+        "cosine_similarity": 0.9999935626983643,
+        "top1_reference": 5944,
+        "top1_cached": 5944,
+        "top1_same": true,
+        "strict_close_fraction": 0.6469444036483765,
+        "strict_close_rtol": 0.002,
+        "strict_close_atol": 0.002,
+        "distribution_criteria_passed": true
+      },
+      {
+        "context": "text_prefix_token_2",
+        "max_abs": 0.1875,
+        "mean_abs": 0.018278690055012703,
+        "rms_abs": 0.02725505456328392,
+        "kl_reference_to_cached": 0.0012063576141372323,
+        "cosine_similarity": 0.9999910593032837,
+        "top1_reference": 50080,
+        "top1_cached": 50080,
+        "top1_same": true,
+        "strict_close_fraction": 0.4595676362514496,
+        "strict_close_rtol": 0.002,
+        "strict_close_atol": 0.002,
+        "distribution_criteria_passed": true
+      },
+      {
+        "context": "clean_prefix_ending_at_start",
+        "max_abs": 0.25,
+        "mean_abs": 0.03175019472837448,
+        "rms_abs": 0.04200442507863045,
+        "kl_reference_to_cached": 0.0016719361301511526,
+        "cosine_similarity": 0.9999829530715942,
+        "top1_reference": 47,
+        "top1_cached": 47,
+        "top1_same": true,
+        "strict_close_fraction": 0.3242238163948059,
+        "strict_close_rtol": 0.002,
+        "strict_close_atol": 0.002,
+        "distribution_criteria_passed": true
+      }
+    ]
+  },
+  "temperature": 0.8,
+  "top_p": 0.95
+}

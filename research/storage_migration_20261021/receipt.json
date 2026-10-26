@@ -1,0 +1,36 @@
+{
+  "completed_at": "2026-10-21T17:13:16.709337+08:00",
+  "workspace": "/home/liugang/src/crystalDLM",
+  "physical_root": "/data1/users/liugang/crystalDLM",
+  "copy": "rsync -aH",
+  "verification": "rsync -aHnc --delete --itemize-changes: exit0, no differences before switch",
+  "entries": 170450,
+  "regular_files": 152951,
+  "transferred_bytes": 67803203271,
+  "rollback_removed": true,
+  "system_free_before_cleanup_bytes": 30875262976,
+  "system_free_after_cleanup_bytes": 153006096384,
+  "checks": {
+    "mamba_environment": true,
+    "tokenizer": true,
+    "train_rows": 7272,
+    "val_rows": 900,
+    "checkpoint_updates": 1212,
+    "paired_summary_new_valid": 27,
+    "unit_tests_passed": 20,
+    "loader_tests_passed": 16,
+    "full_model_load": {
+      "parent_loader": "passed",
+      "parent_state_sha256": "19f7e0b5e3bc1e1c73b6e550c59d8c50819ee4ec90fc560079af55b53851b379",
+      "repair_loader": "passed",
+      "repair_state_sha256": "4775e389f53ef972fccbd4c8c86ad80a3c0cc7e93306ad33eb734d74a419160a",
+      "historical_identity_preserved": true,
+      "physical_gpu": 3,
+      "training_started": false
+    }
+  },
+  "gpu_training_run": false,
+  "observed_system_free_change_bytes": 122130833408,
+  "space_note": "Observed filesystem-wide free-space change includes concurrent server activity; project migration size is approximately64GiB, not the entire observed delta.",
+  "sync_completed": true
+}

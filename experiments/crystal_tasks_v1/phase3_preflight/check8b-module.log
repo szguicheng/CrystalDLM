@@ -1,0 +1,195 @@
+/data1/users/liugang/crystalDLM/envs/crystaldlm/lib/python3.11/site-packages/transformers/utils/hub.py:110: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+[WARNING|2026-10-26 13:05:13] llamafactory.hparams.parser:149 >> Remember to add embedding layers to `additional_target` to make the added tokens trainable.
+[INFO|2026-10-26 13:05:13] llamafactory.hparams.parser:523 >> Process rank: 0, world size: 1, device: cuda:0, distributed training: False, compute dtype: torch.bfloat16
+[INFO|tokenization_utils_base.py:2109] 2026-10-26 13:05:13,155 >> loading file vocab.json
+[INFO|tokenization_utils_base.py:2109] 2026-10-26 13:05:13,155 >> loading file merges.txt
+[INFO|tokenization_utils_base.py:2109] 2026-10-26 13:05:13,155 >> loading file tokenizer.json
+[INFO|tokenization_utils_base.py:2109] 2026-10-26 13:05:13,155 >> loading file added_tokens.json
+[INFO|tokenization_utils_base.py:2109] 2026-10-26 13:05:13,155 >> loading file special_tokens_map.json
+[INFO|tokenization_utils_base.py:2109] 2026-10-26 13:05:13,155 >> loading file tokenizer_config.json
+[INFO|tokenization_utils_base.py:2109] 2026-10-26 13:05:13,155 >> loading file chat_template.jinja
+[INFO|tokenization_utils_base.py:2380] 2026-10-26 13:05:13,428 >> Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[INFO|2026-10-26 13:05:13] llamafactory.model.patcher:144 >> Add special tokens <CRYSTAL_START>,<CRYSTAL_END>,<CRYSTAL_MASK>,<CRYSTAL_PAD> to tokenizer's vocabulary.
+[INFO|configuration_utils.py:763] 2026-10-26 13:05:13,428 >> loading configuration file /home/liugang/src/crystalDLM/models/Qwen3-8B-b968826d9c46/config.json
+[INFO|configuration_utils.py:839] 2026-10-26 13:05:13,430 >> Model config Qwen3Config {
+  "architectures": [
+    "Qwen3ForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": 151643,
+  "dtype": "bfloat16",
+  "eos_token_id": 151645,
+  "head_dim": 128,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "initializer_range": 0.02,
+  "intermediate_size": 12288,
+  "layer_types": [
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention"
+  ],
+  "max_position_embeddings": 40960,
+  "max_window_layers": 36,
+  "model_type": "qwen3",
+  "num_attention_heads": 32,
+  "num_hidden_layers": 36,
+  "num_key_value_heads": 8,
+  "rms_norm_eps": 1e-06,
+  "rope_scaling": null,
+  "rope_theta": 1000000,
+  "sliding_window": null,
+  "tie_word_embeddings": false,
+  "transformers_version": "4.57.6",
+  "use_cache": true,
+  "use_sliding_window": false,
+  "vocab_size": 151936
+}
+
+[INFO|tokenization_utils_base.py:2109] 2026-10-26 13:05:13,430 >> loading file vocab.json
+[INFO|tokenization_utils_base.py:2109] 2026-10-26 13:05:13,430 >> loading file merges.txt
+[INFO|tokenization_utils_base.py:2109] 2026-10-26 13:05:13,430 >> loading file tokenizer.json
+[INFO|tokenization_utils_base.py:2109] 2026-10-26 13:05:13,430 >> loading file added_tokens.json
+[INFO|tokenization_utils_base.py:2109] 2026-10-26 13:05:13,430 >> loading file special_tokens_map.json
+[INFO|tokenization_utils_base.py:2109] 2026-10-26 13:05:13,430 >> loading file tokenizer_config.json
+[INFO|tokenization_utils_base.py:2109] 2026-10-26 13:05:13,430 >> loading file chat_template.jinja
+[INFO|tokenization_utils_base.py:2380] 2026-10-26 13:05:13,704 >> Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[WARNING|2026-10-26 13:05:13] llamafactory.data.template:149 >> You are using reasoning template, please add `_nothink` suffix if the model is not a reasoning model. e.g., qwen3_vl_nothink
+[INFO|configuration_utils.py:763] 2026-10-26 13:05:13,731 >> loading configuration file /home/liugang/src/crystalDLM/models/Qwen3-8B-b968826d9c46/config.json
+[INFO|configuration_utils.py:839] 2026-10-26 13:05:13,731 >> Model config Qwen3Config {
+  "architectures": [
+    "Qwen3ForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": 151643,
+  "dtype": "bfloat16",
+  "eos_token_id": 151645,
+  "head_dim": 128,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "initializer_range": 0.02,
+  "intermediate_size": 12288,
+  "layer_types": [
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention"
+  ],
+  "max_position_embeddings": 40960,
+  "max_window_layers": 36,
+  "model_type": "qwen3",
+  "num_attention_heads": 32,
+  "num_hidden_layers": 36,
+  "num_key_value_heads": 8,
+  "rms_norm_eps": 1e-06,
+  "rope_scaling": null,
+  "rope_theta": 1000000,
+  "sliding_window": null,
+  "tie_word_embeddings": false,
+  "transformers_version": "4.57.6",
+  "use_cache": true,
+  "use_sliding_window": false,
+  "vocab_size": 151936
+}
+
+[INFO|2026-10-26 13:05:13] llamafactory.model.model_utils.kv_cache:144 >> KV cache is disabled during training.
+[WARNING|logging.py:328] 2026-10-26 13:05:13,826 >> `torch_dtype` is deprecated! Use `dtype` instead!
+[INFO|modeling_utils.py:1169] 2026-10-26 13:05:13,826 >> loading weights file /home/liugang/src/crystalDLM/models/Qwen3-8B-b968826d9c46/model.safetensors.index.json
+[INFO|modeling_utils.py:1243] 2026-10-26 13:05:13,826 >> Will use dtype=torch.bfloat16 as defined in model's config object
+[INFO|modeling_utils.py:2341] 2026-10-26 13:05:13,826 >> Instantiating Qwen3ForCausalLM model under default dtype torch.bfloat16.
+[INFO|configuration_utils.py:986] 2026-10-26 13:05:13,827 >> Generate config GenerationConfig {
+  "bos_token_id": 151643,
+  "eos_token_id": 151645,
+  "use_cache": false
+}
+
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards:  20%|██        | 1/5 [00:00<00:01,  2.57it/s]Loading checkpoint shards:  40%|████      | 2/5 [00:00<00:01,  2.53it/s]Loading checkpoint shards:  60%|██████    | 3/5 [00:01<00:00,  2.55it/s]Loading checkpoint shards:  80%|████████  | 4/5 [00:01<00:00,  2.77it/s]Loading checkpoint shards: 100%|██████████| 5/5 [00:01<00:00,  3.65it/s]Loading checkpoint shards: 100%|██████████| 5/5 [00:01<00:00,  3.11it/s]
+[INFO|configuration_utils.py:939] 2026-10-26 13:05:15,723 >> loading configuration file /home/liugang/src/crystalDLM/models/Qwen3-8B-b968826d9c46/generation_config.json
+[INFO|configuration_utils.py:986] 2026-10-26 13:05:15,723 >> Generate config GenerationConfig {
+  "bos_token_id": 151643,
+  "do_sample": true,
+  "eos_token_id": [
+    151645,
+    151643
+  ],
+  "pad_token_id": 151643,
+  "temperature": 0.6,
+  "top_k": 20,
+  "top_p": 0.95
+}
+
+[INFO|dynamic_module_utils.py:423] 2026-10-26 13:05:15,723 >> Could not locate the custom_generate/generate.py inside /home/liugang/src/crystalDLM/models/Qwen3-8B-b968826d9c46.
+[INFO|2026-10-26 13:05:15] llamafactory.model.model_utils.checkpointing:144 >> Gradient checkpointing enabled.
+[INFO|2026-10-26 13:05:15] llamafactory.model.model_utils.attention:144 >> Using torch SDPA for faster training and inference.
+[INFO|2026-10-26 13:05:15] llamafactory.model.adapter:144 >> Upcasting trainable params to float32.
+[INFO|2026-10-26 13:05:15] llamafactory.model.adapter:144 >> Fine-tuning method: LoRA
+[INFO|2026-10-26 13:05:16] llamafactory.model.loader:144 >> trainable params: 92,303,360 || all params: 8,283,038,720 || trainable%: 1.1144
+CHECK8B {"status": "passed", "scope": "single-GPU original8B forward/backward only;no optimizer step", "model_name": "Qwen/Qwen3-8B", "tokens": 269, "loss": 3.234259843826294, "trainable_parameters": 92303360, "gpu": 0, "peak_allocated_gib": 17.217605113983154, "seconds": 4.4013503016904}

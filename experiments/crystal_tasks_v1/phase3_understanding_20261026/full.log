@@ -1,0 +1,293 @@
+/data1/users/liugang/crystalDLM/envs/crystaldlm/lib/python3.11/site-packages/transformers/utils/hub.py:110: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+/data1/users/liugang/crystalDLM/envs/crystaldlm/lib/python3.11/site-packages/transformers/utils/hub.py:110: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+/data1/users/liugang/crystalDLM/envs/crystaldlm/lib/python3.11/site-packages/transformers/utils/hub.py:110: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+[WARNING|2026-10-26 13:18:38] llamafactory.hparams.parser:149 >> Remember to add embedding layers to `additional_target` to make the added tokens trainable.
+[INFO|2026-10-26 13:18:38] llamafactory.hparams.parser:523 >> Process rank: 0, world size: 3, device: cuda:0, distributed training: True, compute dtype: torch.bfloat16
+[rank0]:[W1026 13:18:39.885242548 ProcessGroupNCCL.cpp:4561] [PG ID 0 PG GUID 0 Rank 0]  using GPU 0 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. Specify device_ids in barrier() to force use of a particular device, or call init_process_group() with a device_id.
+[INFO|2026-10-26 13:18:39] llamafactory.hparams.parser:523 >> Process rank: 1, world size: 3, device: cuda:1, distributed training: True, compute dtype: torch.bfloat16
+[rank1]:[W1026 13:18:39.907129021 ProcessGroupNCCL.cpp:4561] [PG ID 0 PG GUID 0 Rank 1]  using GPU 1 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. Specify device_ids in barrier() to force use of a particular device, or call init_process_group() with a device_id.
+[INFO|2026-10-26 13:18:39] llamafactory.hparams.parser:523 >> Process rank: 2, world size: 3, device: cuda:2, distributed training: True, compute dtype: torch.bfloat16
+[rank2]:[W1026 13:18:39.912086926 ProcessGroupNCCL.cpp:4561] [PG ID 0 PG GUID 0 Rank 2]  using GPU 2 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. Specify device_ids in barrier() to force use of a particular device, or call init_process_group() with a device_id.
+[INFO|tokenization_utils_base.py:2109] 2026-10-26 13:18:39,951 >> loading file vocab.json
+[INFO|tokenization_utils_base.py:2109] 2026-10-26 13:18:39,951 >> loading file merges.txt
+[INFO|tokenization_utils_base.py:2109] 2026-10-26 13:18:39,951 >> loading file tokenizer.json
+[INFO|tokenization_utils_base.py:2109] 2026-10-26 13:18:39,951 >> loading file added_tokens.json
+[INFO|tokenization_utils_base.py:2109] 2026-10-26 13:18:39,951 >> loading file special_tokens_map.json
+[INFO|tokenization_utils_base.py:2109] 2026-10-26 13:18:39,952 >> loading file tokenizer_config.json
+[INFO|tokenization_utils_base.py:2109] 2026-10-26 13:18:39,952 >> loading file chat_template.jinja
+[INFO|tokenization_utils_base.py:2380] 2026-10-26 13:18:40,204 >> Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[INFO|2026-10-26 13:18:40] llamafactory.model.patcher:144 >> Add special tokens <CRYSTAL_START>,<CRYSTAL_END>,<CRYSTAL_MASK>,<CRYSTAL_PAD> to tokenizer's vocabulary.
+[INFO|configuration_utils.py:763] 2026-10-26 13:18:40,205 >> loading configuration file /home/liugang/src/crystalDLM/models/Qwen3-8B-b968826d9c46/config.json
+[INFO|configuration_utils.py:839] 2026-10-26 13:18:40,206 >> Model config Qwen3Config {
+  "architectures": [
+    "Qwen3ForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": 151643,
+  "dtype": "bfloat16",
+  "eos_token_id": 151645,
+  "head_dim": 128,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "initializer_range": 0.02,
+  "intermediate_size": 12288,
+  "layer_types": [
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention"
+  ],
+  "max_position_embeddings": 40960,
+  "max_window_layers": 36,
+  "model_type": "qwen3",
+  "num_attention_heads": 32,
+  "num_hidden_layers": 36,
+  "num_key_value_heads": 8,
+  "rms_norm_eps": 1e-06,
+  "rope_scaling": null,
+  "rope_theta": 1000000,
+  "sliding_window": null,
+  "tie_word_embeddings": false,
+  "transformers_version": "4.57.6",
+  "use_cache": true,
+  "use_sliding_window": false,
+  "vocab_size": 151936
+}
+
+[INFO|tokenization_utils_base.py:2109] 2026-10-26 13:18:40,206 >> loading file vocab.json
+[INFO|tokenization_utils_base.py:2109] 2026-10-26 13:18:40,206 >> loading file merges.txt
+[INFO|tokenization_utils_base.py:2109] 2026-10-26 13:18:40,206 >> loading file tokenizer.json
+[INFO|tokenization_utils_base.py:2109] 2026-10-26 13:18:40,206 >> loading file added_tokens.json
+[INFO|tokenization_utils_base.py:2109] 2026-10-26 13:18:40,206 >> loading file special_tokens_map.json
+[INFO|tokenization_utils_base.py:2109] 2026-10-26 13:18:40,206 >> loading file tokenizer_config.json
+[INFO|tokenization_utils_base.py:2109] 2026-10-26 13:18:40,206 >> loading file chat_template.jinja
+[INFO|tokenization_utils_base.py:2380] 2026-10-26 13:18:40,469 >> Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[WARNING|2026-10-26 13:18:40] llamafactory.data.template:149 >> You are using reasoning template, please add `_nothink` suffix if the model is not a reasoning model. e.g., qwen3_vl_nothink
+[INFO|2026-10-26 13:18:40] llamafactory.data.loader:144 >> Loading dataset understanding/training.jsonl...
+[INFO|2026-10-26 13:18:41] llamafactory.data.loader:144 >> Loading dataset understanding/validation.jsonl...
+training example:
+input_ids:
+[151644, 872, 198, 4418, 279, 1482, 25055, 323, 1895, 1181, 14806, 11, 3550, 1874, 1372, 11, 2779, 19124, 1760, 11, 323, 9489, 26507, 1760, 624, 151669, 42, 16, 54118, 16, 44819, 17, 6639, 19, 198, 9914, 4074, 25, 393, 19, 3821, 198, 13683, 25, 220, 19, 13, 19, 19, 220, 19, 13, 19, 19, 220, 16, 16, 13, 18, 22, 198, 17248, 25, 220, 24, 15, 13, 15, 15, 220, 24, 15, 13, 15, 15, 220, 24, 15, 13, 15, 15, 198, 93690, 320, 23, 340, 42, 220, 15, 13, 20, 15, 15, 220, 15, 13, 20, 15, 15, 220, 15, 13, 20, 15, 22, 220, 16, 65, 198, 54118, 220, 15, 13, 15, 15, 15, 220, 15, 13, 15, 15, 15, 220, 15, 13, 24, 24, 21, 220, 16, 64, 198, 44819, 220, 15, 13, 20, 15, 15, 220, 15, 13, 15, 15, 15, 220, 15, 13, 17, 18, 23, 220, 17, 66, 198, 6639, 220, 15, 13, 15, 15, 15, 220, 15, 13, 15, 15, 15, 220, 15, 13, 18, 21, 21, 220, 16, 64, 198, 6639, 220, 15, 13, 20, 15, 15, 220, 15, 13, 15, 15, 15, 220, 15, 13, 22, 22, 15, 220, 17, 66, 198, 6639, 220, 15, 13, 20, 15, 15, 220, 15, 13, 20, 15, 15, 220, 15, 13, 15, 24, 17, 220, 16, 65, 151670, 151645, 198, 151644, 77091, 198, 151667, 271, 151668, 271, 785, 14806, 374, 730, 16, 21963, 16, 26462, 17, 2655, 19, 13, 576, 3550, 1874, 1372, 374, 220, 24, 24, 13, 576, 4982, 2779, 5610, 220, 23, 32199, 323, 220, 21, 9489, 85128, 13, 151645, 198]
+inputs:
+<|im_start|>user
+Read the current crystal and report its formula, space group number, cell atom count, and independent orbit count.
+<CRYSTAL_START>K1Eu1Cu2Te4
+Spacegroup: P4mm
+abc: 4.44 4.44 11.37
+angles: 90.00 90.00 90.00
+Sites (8)
+K 0.500 0.500 0.507 1b
+Eu 0.000 0.000 0.996 1a
+Cu 0.500 0.000 0.238 2c
+Te 0.000 0.000 0.366 1a
+Te 0.500 0.000 0.770 2c
+Te 0.500 0.500 0.092 1b<CRYSTAL_END><|im_end|>
+<|im_start|>assistant
+<think>
+
+</think>
+
+The formula is K1 Eu1 Cu2 Te4. The space group number is 99. The unit cell contains 8 atoms and 6 independent orbits.<|im_end|>
+
+label_ids:
+[-100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, 785, 14806, 374, 730, 16, 21963, 16, 26462, 17, 2655, 19, 13, 576, 3550, 1874, 1372, 374, 220, 24, 24, 13, 576, 4982, 2779, 5610, 220, 23, 32199, 323, 220, 21, 9489, 85128, 13, 151645, 198]
+labels:
+The formula is K1 Eu1 Cu2 Te4. The space group number is 99. The unit cell contains 8 atoms and 6 independent orbits.<|im_end|>
+
+eval example:
+input_ids:
+[151644, 872, 198, 4418, 279, 1482, 25055, 323, 1895, 1181, 14806, 11, 3550, 1874, 1372, 11, 2779, 19124, 1760, 11, 323, 9489, 26507, 1760, 624, 151669, 8747, 16, 38, 67, 16, 5066, 17, 46, 17, 198, 9914, 4074, 25, 393, 19, 3821, 198, 13683, 25, 220, 19, 13, 15, 20, 220, 19, 13, 15, 20, 220, 21, 13, 24, 17, 198, 17248, 25, 220, 24, 15, 13, 15, 15, 220, 24, 15, 13, 15, 15, 220, 24, 15, 13, 15, 15, 198, 93690, 320, 21, 340, 8747, 220, 15, 13, 15, 15, 15, 220, 15, 13, 15, 15, 15, 220, 15, 13, 16, 22, 20, 220, 16, 64, 198, 38, 67, 220, 15, 13, 20, 15, 15, 220, 15, 13, 20, 15, 15, 220, 15, 13, 23, 18, 18, 220, 16, 65, 198, 5066, 220, 15, 13, 15, 15, 15, 220, 15, 13, 15, 15, 15, 220, 15, 13, 21, 18, 17, 220, 16, 64, 198, 5066, 220, 15, 13, 20, 15, 15, 220, 15, 13, 20, 15, 15, 220, 15, 13, 18, 22, 16, 220, 16, 65, 198, 46, 220, 15, 13, 20, 15, 15, 220, 15, 13, 15, 15, 15, 220, 15, 13, 24, 24, 19, 220, 17, 66, 151670, 151645, 198, 151644, 77091, 198, 151667, 271, 151668, 271, 785, 14806, 374, 4929, 16, 479, 67, 16, 2435, 17, 506, 17, 13, 576, 3550, 1874, 1372, 374, 220, 24, 24, 13, 576, 4982, 2779, 5610, 220, 21, 32199, 323, 220, 20, 9489, 85128, 13, 151645, 198]
+inputs:
+<|im_start|>user
+Read the current crystal and report its formula, space group number, cell atom count, and independent orbit count.
+<CRYSTAL_START>La1Gd1Cl2O2
+Spacegroup: P4mm
+abc: 4.05 4.05 6.92
+angles: 90.00 90.00 90.00
+Sites (6)
+La 0.000 0.000 0.175 1a
+Gd 0.500 0.500 0.833 1b
+Cl 0.000 0.000 0.632 1a
+Cl 0.500 0.500 0.371 1b
+O 0.500 0.000 0.994 2c<CRYSTAL_END><|im_end|>
+<|im_start|>assistant
+<think>
+
+</think>
+
+The formula is La1 Gd1 Cl2 O2. The space group number is 99. The unit cell contains 6 atoms and 5 independent orbits.<|im_end|>
+
+label_ids:
+[-100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, 785, 14806, 374, 4929, 16, 479, 67, 16, 2435, 17, 506, 17, 13, 576, 3550, 1874, 1372, 374, 220, 24, 24, 13, 576, 4982, 2779, 5610, 220, 21, 32199, 323, 220, 20, 9489, 85128, 13, 151645, 198]
+labels:
+The formula is La1 Gd1 Cl2 O2. The space group number is 99. The unit cell contains 6 atoms and 5 independent orbits.<|im_end|>
+
+[INFO|configuration_utils.py:763] 2026-10-26 13:18:44,088 >> loading configuration file /home/liugang/src/crystalDLM/models/Qwen3-8B-b968826d9c46/config.json
+[INFO|configuration_utils.py:839] 2026-10-26 13:18:44,089 >> Model config Qwen3Config {
+  "architectures": [
+    "Qwen3ForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": 151643,
+  "dtype": "bfloat16",
+  "eos_token_id": 151645,
+  "head_dim": 128,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "initializer_range": 0.02,
+  "intermediate_size": 12288,
+  "layer_types": [
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention"
+  ],
+  "max_position_embeddings": 40960,
+  "max_window_layers": 36,
+  "model_type": "qwen3",
+  "num_attention_heads": 32,
+  "num_hidden_layers": 36,
+  "num_key_value_heads": 8,
+  "rms_norm_eps": 1e-06,
+  "rope_scaling": null,
+  "rope_theta": 1000000,
+  "sliding_window": null,
+  "tie_word_embeddings": false,
+  "transformers_version": "4.57.6",
+  "use_cache": true,
+  "use_sliding_window": false,
+  "vocab_size": 151936
+}
+
+[INFO|2026-10-26 13:18:44] llamafactory.model.model_utils.kv_cache:144 >> KV cache is disabled during training.
+[WARNING|logging.py:328] 2026-10-26 13:18:44,183 >> `torch_dtype` is deprecated! Use `dtype` instead!
+[INFO|modeling_utils.py:1169] 2026-10-26 13:18:44,183 >> loading weights file /home/liugang/src/crystalDLM/models/Qwen3-8B-b968826d9c46/model.safetensors.index.json
+[INFO|modeling_utils.py:1243] 2026-10-26 13:18:44,183 >> Will use dtype=torch.bfloat16 as defined in model's config object
+[INFO|modeling_utils.py:2341] 2026-10-26 13:18:44,183 >> Instantiating Qwen3ForCausalLM model under default dtype torch.bfloat16.
+[INFO|configuration_utils.py:986] 2026-10-26 13:18:44,185 >> Generate config GenerationConfig {
+  "bos_token_id": 151643,
+  "eos_token_id": 151645,
+  "use_cache": false
+}
+
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]`torch_dtype` is deprecated! Use `dtype` instead!
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards:  20%|██        | 1/5 [00:00<00:01,  2.61it/s]Loading checkpoint shards:  20%|██        | 1/5 [00:00<00:01,  2.74it/s]Loading checkpoint shards:  20%|██        | 1/5 [00:00<00:01,  2.54it/s]Loading checkpoint shards:  40%|████      | 2/5 [00:00<00:01,  2.49it/s]Loading checkpoint shards:  40%|████      | 2/5 [00:00<00:01,  2.65it/s]Loading checkpoint shards:  40%|████      | 2/5 [00:00<00:01,  2.50it/s]Loading checkpoint shards:  60%|██████    | 3/5 [00:01<00:00,  2.47it/s]Loading checkpoint shards:  60%|██████    | 3/5 [00:01<00:00,  2.62it/s]Loading checkpoint shards:  60%|██████    | 3/5 [00:01<00:00,  2.50it/s]Loading checkpoint shards:  80%|████████  | 4/5 [00:01<00:00,  2.68it/s]Loading checkpoint shards:  80%|████████  | 4/5 [00:01<00:00,  2.83it/s]Loading checkpoint shards: 100%|██████████| 5/5 [00:01<00:00,  3.55it/s]Loading checkpoint shards: 100%|██████████| 5/5 [00:01<00:00,  3.03it/s]
+[INFO|configuration_utils.py:939] 2026-10-26 13:18:45,870 >> loading configuration file /home/liugang/src/crystalDLM/models/Qwen3-8B-b968826d9c46/generation_config.json
+[INFO|configuration_utils.py:986] 2026-10-26 13:18:45,870 >> Generate config GenerationConfig {
+  "bos_token_id": 151643,
+  "do_sample": true,
+  "eos_token_id": [
+    151645,
+    151643
+  ],
+  "pad_token_id": 151643,
+  "temperature": 0.6,
+  "top_k": 20,
+  "top_p": 0.95
+}
+
+[INFO|dynamic_module_utils.py:423] 2026-10-26 13:18:45,870 >> Could not locate the custom_generate/generate.py inside /home/liugang/src/crystalDLM/models/Qwen3-8B-b968826d9c46.
+Loading checkpoint shards:  80%|████████  | 4/5 [00:01<00:00,  2.72it/s][INFO|2026-10-26 13:18:45] llamafactory.model.model_utils.checkpointing:144 >> Gradient checkpointing enabled.
+[INFO|2026-10-26 13:18:45] llamafactory.model.model_utils.attention:144 >> Using torch SDPA for faster training and inference.
+[INFO|2026-10-26 13:18:45] llamafactory.model.adapter:144 >> Upcasting trainable params to float32.
+[INFO|2026-10-26 13:18:45] llamafactory.model.adapter:144 >> Fine-tuning method: LoRA
+Loading checkpoint shards: 100%|██████████| 5/5 [00:01<00:00,  3.71it/s]Loading checkpoint shards: 100%|██████████| 5/5 [00:01<00:00,  3.19it/s]
+Loading checkpoint shards: 100%|██████████| 5/5 [00:01<00:00,  3.60it/s]Loading checkpoint shards: 100%|██████████| 5/5 [00:01<00:00,  3.06it/s]
+[INFO|2026-10-26 13:18:46] llamafactory.model.loader:144 >> trainable params: 92,303,360 || all params: 8,283,038,720 || trainable%: 1.1144
+The model is already on multiple devices. Skipping the move to device specified in `args`.
+The model is already on multiple devices. Skipping the move to device specified in `args`.
+[WARNING|trainer.py:906] 2026-10-26 13:18:47,227 >> The model is already on multiple devices. Skipping the move to device specified in `args`.
+[INFO|trainer.py:749] 2026-10-26 13:18:47,258 >> Using auto half precision backend
+The tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'bos_token_id': None, 'pad_token_id': 151643}.
+The tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'bos_token_id': None, 'pad_token_id': 151643}.
+[WARNING|trainer.py:982] 2026-10-26 13:18:47,259 >> The tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'bos_token_id': None, 'pad_token_id': 151643}.
+[INFO|trainer.py:2519] 2026-10-26 13:18:47,853 >> ***** Running training *****
+[INFO|trainer.py:2520] 2026-10-26 13:18:47,853 >>   Num examples = 36,362
+[INFO|trainer.py:2521] 2026-10-26 13:18:47,853 >>   Num Epochs = 3
+[INFO|trainer.py:2522] 2026-10-26 13:18:47,853 >>   Instantaneous batch size per device = 1
+[INFO|trainer.py:2525] 2026-10-26 13:18:47,853 >>   Total train batch size (w. parallel, distributed & accumulation) = 12
+[INFO|trainer.py:2526] 2026-10-26 13:18:47,853 >>   Gradient Accumulation steps = 4
+[INFO|trainer.py:2527] 2026-10-26 13:18:47,853 >>   Total optimization steps = 9,093
+[INFO|trainer.py:2528] 2026-10-26 13:18:47,856 >>   Number of trainable parameters = 92,303,360
+  0%|          | 0/9093 [00:00<?, ?it/s]  0%|          | 1/9093 [00:01<3:54:50,  1.55s/it]  0%|          | 2/9093 [00:02<3:22:43,  1.34s/it]  0%|          | 3/9093 [00:03<3:06:53,  1.23s/it]  0%|          | 4/9093 [00:04<2:59:07,  1.18s/it]  0%|          | 5/9093 [00:06<2:55:34,  1.16s/it]  0%|          | 6/9093 [00:07<2:58:32,  1.18s/it]  0%|          | 7/9093 [00:08<3:13:48,  1.28s/it]  0%|          | 8/9093 [00:09<3:02:43,  1.21s/it]  0%|          | 9/9093 [00:10<2:57:57,  1.18s/it]  0%|          | 10/9093 [00:12<2:54:24,  1.15s/it]                                                   {'loss': 3.1952, 'grad_norm': 9.84779167175293, 'learning_rate': 3.9560439560439565e-06, 'train_description_tokens': 0, 'train_crystal_tokens': 0, 'train_answer_ce': 3.1940834831689044, 'train_answer_tokens': 4342, 'epoch': 0.0}
+  0%|          | 10/9093 [00:12<2:54:24,  1.15s/it]  0%|          | 11/9093 [00:13<2:50:05,  1.12s/it]  0%|          | 12/9093 [00:14<2:52:42,  1.14s/it]  0%|          | 13/9093 [00:15<2:53:40,  1.15s/it]  0%|          | 14/9093 [00:16<2:51:11,  1.13s/it]  0%|          | 15/9093 [00:17<2:49:24,  1.12s/it]  0%|          | 16/9093 [00:18<2:56:10,  1.16s/it]  0%|          | 17/9093 [00:20<2:58:24,  1.18s/it]  0%|          | 18/9093 [00:21<2:56:31,  1.17s/it]  0%|          | 19/9093 [00:22<2:57:06,  1.17s/it]  0%|          | 20/9093 [00:23<2:55:16,  1.16s/it]                                                   {'loss': 2.8618, 'grad_norm': 11.426616668701172, 'learning_rate': 8.351648351648352e-06, 'train_description_tokens': 0, 'train_crystal_tokens': 0, 'train_answer_ce': 2.8582392773798344, 'train_answer_tokens': 4370, 'epoch': 0.01}
+  0%|          | 20/9093 [00:23<2:55:16,  1.16s/it]  0%|          | 21/9093 [00:24<2:54:44,  1.16s/it]  0%|          | 22/9093 [00:25<2:55:19,  1.16s/it]  0%|          | 23/9093 [00:26<2:50:50,  1.13s/it]  0%|          | 24/9093 [00:28<2:48:17,  1.11s/it]  0%|          | 25/9093 [00:29<2:51:06,  1.13s/it]  0%|          | 26/9093 [00:30<2:52:42,  1.14s/it]  0%|          | 27/9093 [00:31<2:48:29,  1.12s/it]  0%|          | 28/9093 [00:32<2:46:49,  1.10s/it]  0%|          | 29/9093 [00:33<2:46:55,  1.10s/it]  0%|          | 30/9093 [00:34<2:45:45,  1.10s/it]                                                   {'loss': 1.4694, 'grad_norm': 6.047597885131836, 'learning_rate': 1.2747252747252747e-05, 'train_description_tokens': 0, 'train_crystal_tokens': 0, 'train_answer_ce': 1.47608484070451, 'train_answer_tokens': 4350, 'epoch': 0.01}
+  0%|          | 30/9093 [00:34<2:45:45,  1.10s/it]  0%|          | 31/9093 [00:35<2:45:28,  1.10s/it]  0%|          | 32/9093 [00:36<2:47:05,  1.11s/it]  0%|          | 33/9093 [00:38<2:47:21,  1.11s/it]  0%|          | 34/9093 [00:39<2:55:33,  1.16s/it]  0%|          | 35/9093 [00:40<3:00:01,  1.19s/it]  0%|          | 36/9093 [00:41<2:59:18,  1.19s/it]  0%|          | 37/9093 [00:42<2:55:48,  1.16s/it]  0%|          | 38/9093 [00:43<2:52:13,  1.14s/it]  0%|          | 39/9093 [00:45<2:55:48,  1.17s/it]  0%|          | 40/9093 [00:46<2:53:13,  1.15s/it]                                                   {'loss': 0.3039, 'grad_norm': 2.2409815788269043, 'learning_rate': 1.7142857142857145e-05, 'train_description_tokens': 0, 'train_crystal_tokens': 0, 'train_answer_ce': 0.30415460731376964, 'train_answer_tokens': 4397, 'epoch': 0.01}
+  0%|          | 40/9093 [00:46<2:53:13,  1.15s/it]  0%|          | 41/9093 [00:47<2:54:04,  1.15s/it]  0%|          | 42/9093 [00:48<2:51:20,  1.14s/it]  0%|          | 43/9093 [00:49<2:48:37,  1.12s/it]  0%|          | 44/9093 [00:50<2:51:40,  1.14s/it]  0%|          | 45/9093 [00:51<2:50:15,  1.13s/it]  1%|          | 46/9093 [00:52<2:49:04,  1.12s/it]  1%|          | 47/9093 [00:54<2:55:12,  1.16s/it]  1%|          | 48/9093 [00:55<2:50:38,  1.13s/it]  1%|          | 49/9093 [00:56<2:52:31,  1.14s/it]  1%|          | 50/9093 [00:57<2:54:30,  1.16s/it]                                                   {'loss': 0.0541, 'grad_norm': 1.0614229440689087, 'learning_rate': 2.1538461538461542e-05, 'train_description_tokens': 0, 'train_crystal_tokens': 0, 'train_answer_ce': 0.05399038555530807, 'train_answer_tokens': 4360, 'epoch': 0.02}
+  1%|          | 50/9093 [00:57<2:54:30,  1.16s/it]  1%|          | 51/9093 [00:58<2:58:04,  1.18s/it]  1%|          | 52/9093 [01:00<3:02:05,  1.21s/it]  1%|          | 53/9093 [01:01<2:58:42,  1.19s/it]  1%|          | 54/9093 [01:02<2:55:01,  1.16s/it]  1%|          | 55/9093 [01:03<2:54:58,  1.16s/it]  1%|          | 56/9093 [01:04<2:53:55,  1.15s/it]  1%|          | 57/9093 [01:05<2:55:30,  1.17s/it]  1%|          | 58/9093 [01:07<2:54:58,  1.16s/it]  1%|          | 59/9093 [01:08<2:53:53,  1.15s/it]  1%|          | 60/9093 [01:09<2:50:37,  1.13s/it]                                                   {'loss': 0.0294, 'grad_norm': 1.1305980682373047, 'learning_rate': 2.593406593406594e-05, 'train_description_tokens': 0, 'train_crystal_tokens': 0, 'train_answer_ce': 0.029297544114604692, 'train_answer_tokens': 4360, 'epoch': 0.02}
+  1%|          | 60/9093 [01:09<2:50:37,  1.13s/it]  1%|          | 61/9093 [01:10<2:46:56,  1.11s/it]  1%|          | 62/9093 [01:11<2:46:08,  1.10s/it]  1%|          | 63/9093 [01:12<2:43:47,  1.09s/it]  1%|          | 64/9093 [01:13<2:44:04,  1.09s/it]  1%|          | 65/9093 [01:14<2:49:30,  1.13s/it]  1%|          | 66/9093 [01:15<2:46:39,  1.11s/it]  1%|          | 67/9093 [01:17<2:54:17,  1.16s/it]  1%|          | 68/9093 [01:18<2:52:25,  1.15s/it]  1%|          | 69/9093 [01:19<2:50:21,  1.13s/it]  1%|          | 70/9093 [01:20<2:48:00,  1.12s/it]                                                   {'loss': 0.0114, 'grad_norm': 0.4568789005279541, 'learning_rate': 3.032967032967033e-05, 'train_description_tokens': 0, 'train_crystal_tokens': 0, 'train_answer_ce': 0.011433275940569794, 'train_answer_tokens': 4332, 'epoch': 0.02}
+  1%|          | 70/9093 [01:20<2:48:00,  1.12s/it]  1%|          | 71/9093 [01:21<2:51:20,  1.14s/it]  1%|          | 72/9093 [01:22<2:50:32,  1.13s/it]  1%|          | 73/9093 [01:23<2:50:50,  1.14s/it]  1%|          | 74/9093 [01:25<2:52:38,  1.15s/it]  1%|          | 75/9093 [01:26<2:51:09,  1.14s/it]  1%|          | 76/9093 [01:27<2:47:34,  1.12s/it]  1%|          | 77/9093 [01:28<2:51:57,  1.14s/it]  1%|          | 78/9093 [01:29<2:49:04,  1.13s/it]  1%|          | 79/9093 [01:30<2:45:57,  1.10s/it]  1%|          | 80/9093 [01:31<2:43:54,  1.09s/it]                                                   {'loss': 0.0117, 'grad_norm': 0.7186516523361206, 'learning_rate': 3.4725274725274726e-05, 'train_description_tokens': 0, 'train_crystal_tokens': 0, 'train_answer_ce': 0.011618681083053499, 'train_answer_tokens': 4349, 'epoch': 0.03}
+  1%|          | 80/9093 [01:31<2:43:54,  1.09s/it]  1%|          | 81/9093 [01:32<2:49:04,  1.13s/it]  1%|          | 82/9093 [01:33<2:48:06,  1.12s/it]  1%|          | 83/9093 [01:35<2:45:31,  1.10s/it]  1%|          | 84/9093 [01:36<2:45:03,  1.10s/it]  1%|          | 85/9093 [01:37<2:47:34,  1.12s/it]  1%|          | 86/9093 [01:38<2:46:43,  1.11s/it]  1%|          | 87/9093 [01:39<2:48:08,  1.12s/it]  1%|          | 88/9093 [01:40<2:46:49,  1.11s/it]  1%|          | 89/9093 [01:41<2:53:21,  1.16s/it]  1%|          | 90/9093 [01:42<2:50:16,  1.13s/it]                                                   {'loss': 0.0133, 'grad_norm': 0.3384396731853485, 'learning_rate': 3.912087912087912e-05, 'train_description_tokens': 0, 'train_crystal_tokens': 0, 'train_answer_ce': 0.013241035654199082, 'train_answer_tokens': 4329, 'epoch': 0.03}
+  1%|          | 90/9093 [01:42<2:50:16,  1.13s/it]  1%|          | 91/9093 [01:44<2:56:04,  1.17s/it]  1%|          | 92/9093 [01:45<2:52:55,  1.15s/it]  1%|          | 93/9093 [01:46<2:49:48,  1.13s/it]  1%|          | 94/9093 [01:47<2:49:08,  1.13s/it]  1%|          | 95/9093 [01:48<2:46:33,  1.11s/it]  1%|          | 96/9093 [01:49<2:44:07,  1.09s/it]  1%|          | 97/9093 [01:50<2:44:51,  1.10s/it]  1%|          | 98/9093 [01:51<2:43:30,  1.09s/it]  1%|          | 99/9093 [01:52<2:45:42,  1.11s/it]  1%|          | 100/9093 [01:54<2:43:06,  1.09s/it]                                                    {'loss': 0.0061, 'grad_norm': 0.48015403747558594, 'learning_rate': 4.351648351648352e-05, 'train_description_tokens': 0, 'train_crystal_tokens': 0, 'train_answer_ce': 0.006142359798157342, 'train_answer_tokens': 4331, 'epoch': 0.03}
+  1%|          | 100/9093 [01:54<2:43:06,  1.09s/it]  1%|          | 101/9093 [01:55<2:43:19,  1.09s/it]  1%|          | 102/9093 [01:56<2:44:22,  1.10s/it]  1%|          | 103/9093 [01:57<2:43:46,  1.09s/it]  1%|          | 104/9093 [01:58<2:47:56,  1.12s/it]  1%|          | 105/9093 [01:59<2:49:15,  1.13s/it]  1%|          | 106/9093 [02:00<2:47:05,  1.12s/it]  1%|          | 107/9093 [02:01<2:45:46,  1.11s/it]  1%|          | 108/9093 [02:03<2:55:05,  1.17s/it]  1%|          | 109/9093 [02:04<2:49:51,  1.13s/it]  1%|          | 110/9093 [02:05<2:50:02,  1.14s/it]                                                    {'loss': 0.007, 'grad_norm': 0.15354177355766296, 'learning_rate': 4.791208791208792e-05, 'train_description_tokens': 0, 'train_crystal_tokens': 0, 'train_answer_ce': 0.006995158859256453, 'train_answer_tokens': 4350, 'epoch': 0.04}
+  1%|          | 110/9093 [02:05<2:50:02,  1.14s/it]  1%|          | 111/9093 [02:06<2:48:03,  1.12s/it]  1%|          | 112/9093 [02:07<2:47:18,  1.12s/it]  1%|          | 113/9093 [02:08<2:44:12,  1.10s/it]  1%|▏         | 114/9093 [02:09<2:47:36,  1.12s/it]  1%|▏         | 115/9093 [02:10<2:44:41,  1.10s/it]  1%|▏         | 116/9093 [02:12<2:49:43,  1.13s/it]

@@ -1,0 +1,128 @@
+{
+  "scope": "Latest matched AR / AR+Diffusion in flare_crystal_full_20261019 only",
+  "versions": {
+    "torch": "2.6.0+cu124",
+    "transformers": "4.57.6",
+    "peft": "0.18.0",
+    "device": "cpu"
+  },
+  "ar_loss_gradient_checks": {
+    "continued_ar_task_weighted": {
+      "custom_loss": 2.975966453552246,
+      "hf_oracle_loss": 2.975966453552246,
+      "absolute_loss_error": 0.0,
+      "maximum_absolute_gradient_error": 0.0
+    },
+    "peft_continued_ar_task_weighted": {
+      "custom_loss": 2.987791061401367,
+      "hf_oracle_loss": 2.987791061401367,
+      "absolute_loss_error": 0.0,
+      "maximum_absolute_gradient_error": 0.0
+    }
+  },
+  "joint_contract_processes": [
+    {
+      "name": "flare_visibility_contracts",
+      "command": [
+        "/data1/users/liugang/crystalDLM/envs/crystaldlm/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "experiments/flare_crystal_qwen3_8b_20261019",
+        "-p",
+        "test_model.py",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_complementary_views_supervise_every_crystal_token_once (test_model.VisibilityTests.test_complementary_views_supervise_every_crystal_token_once) ... ok\ntest_noisy_targets_are_masked_and_cannot_read_clean_answers (test_model.VisibilityTests.test_noisy_targets_are_masked_and_cannot_read_clean_answers) ... ok\n\n----------------------------------------------------------------------\nRan 2 tests in 0.000s\n\nOK\n"
+    },
+    {
+      "name": "flare_numerical_visibility",
+      "command": [
+        "/data1/users/liugang/crystalDLM/envs/crystaldlm/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "experiments/flare_crystal_qwen3_8b_20261019",
+        "-p",
+        "test_numerical.py",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "/data1/users/liugang/crystalDLM/envs/crystaldlm/lib/python3.11/site-packages/transformers/utils/hub.py:110: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.\n  warnings.warn(\ntest_packed_clean_stream_matches_causal_and_noisy_matches_inference (test_numerical.NumericalContract.test_packed_clean_stream_matches_causal_and_noisy_matches_inference) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.011s\n\nOK\n"
+    },
+    {
+      "name": "full_objective_weighting",
+      "command": [
+        "/data1/users/liugang/crystalDLM/envs/crystaldlm/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "experiments/flare_crystal_full_20261019",
+        "-p",
+        "test_model.py",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_generation_and_reading_both_contribute_with_matched_weight (test_model.ObjectivePair.test_generation_and_reading_both_contribute_with_matched_weight) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.949s\n\nOK\n"
+    }
+  ],
+  "joint_boundary_observation": {
+    "states_before_each_forward": [
+      [
+        2,
+        2,
+        2,
+        2
+      ],
+      [
+        2,
+        1,
+        2,
+        2
+      ],
+      [
+        2,
+        1,
+        2,
+        7
+      ],
+      [
+        2,
+        1,
+        6,
+        7
+      ]
+    ],
+    "completed_block": [
+      5,
+      1,
+      6,
+      7
+    ],
+    "retained_tokens": [
+      5,
+      1
+    ],
+    "discarded_suffix_can_change_retained_position_logits": true,
+    "tiny_qwen_max_logit_change": 0.07518728077411652,
+    "scope": "Confirmed boundary mismatch; real-run effect is not quantified."
+  },
+  "joint_receipt_boundary_counts": {
+    "records": 700,
+    "end_terminated": 682,
+    "end_position_modulo_4_counts": {
+      "3": 175,
+      "0": 163,
+      "2": 164,
+      "1": 180
+    },
+    "scope": "Lengths expose possible suffix slots, not internal commit order or a measured effect."
+  }
+}

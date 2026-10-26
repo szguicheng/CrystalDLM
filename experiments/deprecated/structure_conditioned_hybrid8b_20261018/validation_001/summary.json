@@ -1,0 +1,205 @@
+{
+  "scope": "fixed-prefix 28-candidate diagnostic; no property scoring",
+  "conditions": {
+    "source-original": {
+      "identity": {
+        "arm": "source",
+        "sampler": "original",
+        "state_sha256": "3ed133cddd49d8054530f10d7af1225f29d65f2044f31813ae922c26c17e5649",
+        "plan_sha256": "9f2906041750f748a362b4a63cd394cf5c581b60a861040c1aee74e43e3a950b",
+        "source_hashes": {
+          "evaluate.py": "434b8f6ff8634afaa73620794031cfc4bb65c07149e68465eda8ff39a0f7e61b",
+          "sampling.py": "2f1070146aa03734a47a67113b46e797aac8c280d78b1f09079cfae911c9e545"
+        }
+      },
+      "completed": 28,
+      "valid": 0,
+      "boundary_pass": 16,
+      "valid_requested_sg": 0,
+      "generation_seconds": 130.7652716189623,
+      "property_scoring": "not_run",
+      "scope": "fixed frozen original-model text prefixes; diagnostic, not end-to-end",
+      "failure_reasons": {
+        "crystal block requires exactly one END": 11,
+        "ValueError: (P) not found in space_group ": 1,
+        "ValueError: invalid spacegroup header": 5,
+        "ValueError: invalid Sites header": 3,
+        "ValueError: not enough values to unpack (expected 5, got 4)": 1,
+        "ValueError: invalid orbit species or label": 2,
+        "ValueError: (I-4m2abc: 7.57 7.57 13.63) not found in space_group ": 1,
+        "ValueError: invalid lattice values": 1,
+        "invalid crystal PAD boundary": 1,
+        "ValueError: invalid lattice header": 1,
+        "ValueError: invalid cell formula": 1
+      }
+    },
+    "source-confidence": {
+      "identity": {
+        "arm": "source",
+        "sampler": "confidence",
+        "state_sha256": "3ed133cddd49d8054530f10d7af1225f29d65f2044f31813ae922c26c17e5649",
+        "plan_sha256": "9f2906041750f748a362b4a63cd394cf5c581b60a861040c1aee74e43e3a950b",
+        "source_hashes": {
+          "evaluate.py": "434b8f6ff8634afaa73620794031cfc4bb65c07149e68465eda8ff39a0f7e61b",
+          "sampling.py": "2f1070146aa03734a47a67113b46e797aac8c280d78b1f09079cfae911c9e545"
+        }
+      },
+      "completed": 28,
+      "valid": 0,
+      "boundary_pass": 15,
+      "valid_requested_sg": 0,
+      "generation_seconds": 130.74516768474132,
+      "property_scoring": "not_run",
+      "scope": "fixed frozen original-model text prefixes; diagnostic, not end-to-end",
+      "failure_reasons": {
+        "crystal block requires exactly one END": 13,
+        "formula_header_mismatch": 1,
+        "sites_header_mismatch": 2,
+        "ValueError: invalid cell formula": 2,
+        "ValueError: invalid Sites header": 1,
+        "ValueError: invalid lattice header": 1,
+        "ValueError: invalid orbit species or label": 1,
+        "ValueError: could not convert string to float: '90.00090.00090.00'": 1,
+        "ValueError: Wyckoff multiplicity does not match label": 3,
+        "ValueError: invalid spacegroup header": 1,
+        "ValueError: not enough values to unpack (expected 5, got 4)": 1,
+        "ValueError: could not convert string to float: '90.001120.00'": 2,
+        "lattice_symmetry_mismatch": 1,
+        "wyckoff_coordinate_constraint": 1
+      }
+    },
+    "source-remask": {
+      "identity": {
+        "arm": "source",
+        "sampler": "remask",
+        "state_sha256": "3ed133cddd49d8054530f10d7af1225f29d65f2044f31813ae922c26c17e5649",
+        "plan_sha256": "9f2906041750f748a362b4a63cd394cf5c581b60a861040c1aee74e43e3a950b",
+        "source_hashes": {
+          "evaluate.py": "434b8f6ff8634afaa73620794031cfc4bb65c07149e68465eda8ff39a0f7e61b",
+          "sampling.py": "2f1070146aa03734a47a67113b46e797aac8c280d78b1f09079cfae911c9e545"
+        }
+      },
+      "completed": 28,
+      "valid": 0,
+      "boundary_pass": 21,
+      "valid_requested_sg": 0,
+      "generation_seconds": 132.13294598739594,
+      "property_scoring": "not_run",
+      "scope": "fixed frozen original-model text prefixes; diagnostic, not end-to-end",
+      "failure_reasons": {
+        "crystal block requires exactly one END": 7,
+        "ValueError: not enough values to unpack (expected 5, got 1)": 1,
+        "ValueError: not enough values to unpack (expected 5, got 4)": 6,
+        "ValueError: could not convert string to float: '90.00Sites'": 1,
+        "ValueError: could not convert string to float: '5..79'": 1,
+        "ValueError: Wyckoff multiplicity does not match label": 5,
+        "ValueError: (I-42) not found in space_group ": 1,
+        "ValueError: invalid cell formula": 1,
+        "ValueError: invalid orbit species or label": 1,
+        "ValueError: (P42/cm) not found in space_group ": 1,
+        "ValueError: could not convert string to float: '120.00Sites'": 2,
+        "ValueError: invalid Sites header": 1
+      }
+    },
+    "control-original": {
+      "identity": {
+        "arm": "control",
+        "sampler": "original",
+        "state_sha256": "76bb9d39af108cf10a4002900d974742f93465c89078d8f68120cc6c62a72817",
+        "plan_sha256": "9f2906041750f748a362b4a63cd394cf5c581b60a861040c1aee74e43e3a950b",
+        "source_hashes": {
+          "evaluate.py": "517ebdc2a734278da0b300d6d79a1fb4f193d693fee5ba39404ef4b8caad52ec",
+          "sampling.py": "2f1070146aa03734a47a67113b46e797aac8c280d78b1f09079cfae911c9e545",
+          "continuation.py": "70efbf1999df58962d8589224ff439fb2b6c5e97e2a3665a16646fd749f1adfd",
+          "parent/evaluate.py": "02399214e027da90a6df4f1e513a74a1d9ca5e106d78a2f6b4cc66e39a638449",
+          "parent/matched_ar_evaluate.py": "29bae2782365708a6c8b4b05590c34538a64ce2984ccb3a9fe133edee4036cfe",
+          "parent/reference_runner.py": "4bd89a820e27b893a080294c82892d9fd14d33461bb8f7efd751ced78b5a3ff5",
+          "parent/reference_runner_pre_edit.py": "a715d7fd30b9d72a43beb4000ea8bdec7292fba08175b57024c7f8a221e61036",
+          "strict_score.py": "c1dfe1b87715b5b650b7152e02fed567bd5f7f0fd9109295ec87208f23165c6b"
+        }
+      },
+      "completed": 28,
+      "valid": 0,
+      "boundary_pass": 12,
+      "valid_requested_sg": 0,
+      "generation_seconds": 130.9680262329057,
+      "property_scoring": "not_run",
+      "scope": "fixed frozen original-model text prefixes; diagnostic, not end-to-end",
+      "failure_reasons": {
+        "crystal block requires exactly one END": 14,
+        "ValueError: (C22/c8) not found in space_group ": 1,
+        "ValueError: invalid orbit species or label": 1,
+        "ValueError: not enough values to unpack (expected 5, got 1)": 1,
+        "ValueError: invalid spacegroup header": 7,
+        "invalid crystal PAD boundary": 2,
+        "ValueError: invalid lattice header": 2
+      }
+    },
+    "highmask-original": {
+      "identity": {
+        "arm": "highmask",
+        "sampler": "original",
+        "state_sha256": "4cdaa805af061990c74888e9ad8eb5528f9f0ee01ca91eb836209062c13d9bc8",
+        "plan_sha256": "9f2906041750f748a362b4a63cd394cf5c581b60a861040c1aee74e43e3a950b",
+        "source_hashes": {
+          "evaluate.py": "517ebdc2a734278da0b300d6d79a1fb4f193d693fee5ba39404ef4b8caad52ec",
+          "sampling.py": "2f1070146aa03734a47a67113b46e797aac8c280d78b1f09079cfae911c9e545",
+          "continuation.py": "70efbf1999df58962d8589224ff439fb2b6c5e97e2a3665a16646fd749f1adfd",
+          "parent/evaluate.py": "02399214e027da90a6df4f1e513a74a1d9ca5e106d78a2f6b4cc66e39a638449",
+          "parent/matched_ar_evaluate.py": "29bae2782365708a6c8b4b05590c34538a64ce2984ccb3a9fe133edee4036cfe",
+          "parent/reference_runner.py": "4bd89a820e27b893a080294c82892d9fd14d33461bb8f7efd751ced78b5a3ff5",
+          "parent/reference_runner_pre_edit.py": "a715d7fd30b9d72a43beb4000ea8bdec7292fba08175b57024c7f8a221e61036",
+          "strict_score.py": "c1dfe1b87715b5b650b7152e02fed567bd5f7f0fd9109295ec87208f23165c6b"
+        }
+      },
+      "completed": 28,
+      "valid": 0,
+      "boundary_pass": 18,
+      "valid_requested_sg": 0,
+      "generation_seconds": 130.2846970371902,
+      "property_scoring": "not_run",
+      "scope": "fixed frozen original-model text prefixes; diagnostic, not end-to-end",
+      "failure_reasons": {
+        "crystal block requires exactly one END": 9,
+        "ValueError: not enough values to unpack (expected 5, got 1)": 2,
+        "ValueError: invalid lattice header": 3,
+        "ValueError: invalid Sites header": 1,
+        "ValueError: not enough values to unpack (expected 5, got 4)": 2,
+        "invalid crystal PAD boundary": 1,
+        "ValueError: too many values to unpack (expected 5)": 1,
+        "ValueError: invalid orbit species or label": 1,
+        "ValueError: Wyckoff multiplicity does not match label": 2,
+        "ValueError: invalid spacegroup header": 4,
+        "ValueError: invalid cell formula": 1,
+        "ValueError: (F-443mabc: 9.12 9.02 9.02) not found in space_group ": 1
+      }
+    }
+  },
+  "training_pair": {
+    "updates_each": 128,
+    "materials_each": 1024,
+    "matched": true,
+    "full_mask_draws": {
+      "control": 34,
+      "highmask": 539
+    }
+  },
+  "paired_validity": {
+    "source-confidence vs source-original": {
+      "gains": 0,
+      "losses": 0
+    },
+    "source-remask vs source-confidence": {
+      "gains": 0,
+      "losses": 0
+    },
+    "control-original vs source-original": {
+      "gains": 0,
+      "losses": 0
+    },
+    "highmask-original vs control-original": {
+      "gains": 0,
+      "losses": 0
+    }
+  }
+}

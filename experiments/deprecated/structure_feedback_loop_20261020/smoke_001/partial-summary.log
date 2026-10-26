@@ -1,0 +1,93 @@
+{
+  "status": "incomplete",
+  "scheduled_groups": 7,
+  "completed_groups": 4,
+  "arms": {
+    "independent": {
+      "success_within_attempts": {
+        "1": 1,
+        "2": 1,
+        "3": 1
+      },
+      "success_rate_within_3": 0.14285714285714285,
+      "logical_candidate_attempts": 10,
+      "mean_attempts_completed_groups": 2.5,
+      "mean_seconds_completed_groups": 77.67392743122764,
+      "logical_total_seconds": 310.69570972491056,
+      "retry_transitions": 6,
+      "repeated_error_transitions": 5,
+      "failure_categories": {
+        "strict_invalid": 8,
+        "RuntimeError: long time to generate structure, check inputs": 2,
+        "no_end": 1,
+        "ValueError: Wyckoff multiplicity does not match label": 6
+      },
+      "per_request": {
+        "sg-001": {
+          "completed_groups": 1,
+          "successful_groups": 0
+        },
+        "sg-015": {
+          "completed_groups": 1,
+          "successful_groups": 0
+        },
+        "sg-119": {
+          "completed_groups": 1,
+          "successful_groups": 0
+        },
+        "sg-194": {
+          "completed_groups": 1,
+          "successful_groups": 1
+        }
+      }
+    },
+    "feedback": {
+      "success_within_attempts": {
+        "1": 1,
+        "2": 1,
+        "3": 1
+      },
+      "success_rate_within_3": 0.14285714285714285,
+      "logical_candidate_attempts": 10,
+      "mean_attempts_completed_groups": 2.5,
+      "mean_seconds_completed_groups": 46.698069132398814,
+      "logical_total_seconds": 186.79227652959526,
+      "retry_transitions": 6,
+      "repeated_error_transitions": 3,
+      "failure_categories": {
+        "strict_invalid": 3,
+        "RuntimeError: long time to generate structure, check inputs": 1,
+        "no_start": 6,
+        "ValueError: Wyckoff multiplicity does not match label": 2
+      },
+      "per_request": {
+        "sg-001": {
+          "completed_groups": 1,
+          "successful_groups": 0
+        },
+        "sg-015": {
+          "completed_groups": 1,
+          "successful_groups": 0
+        },
+        "sg-119": {
+          "completed_groups": 1,
+          "successful_groups": 0
+        },
+        "sg-194": {
+          "completed_groups": 1,
+          "successful_groups": 1
+        }
+      }
+    }
+  },
+  "paired": {
+    "both_success": 1,
+    "independent_only": 0,
+    "feedback_only": 0,
+    "neither": 3
+  },
+  "actual_candidate_generations": 16,
+  "scope": "Structural validity and original requested space group only; ehull is an input condition, unevaluated.",
+  "manifest": "run_manifest.json",
+  "running_groups": 1
+}

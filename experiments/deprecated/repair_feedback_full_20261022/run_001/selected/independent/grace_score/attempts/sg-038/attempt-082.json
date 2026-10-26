@@ -1,0 +1,296 @@
+{
+  "request_id": "sg-038",
+  "attempt_id": 82,
+  "seed": 1180694233,
+  "space_group_number_requested": 38,
+  "structural_valid": true,
+  "requested_sg_match": true,
+  "actual_space_group_number_pre_relax": 38,
+  "generation_receipt": {
+    "path": "/data1/users/liugang/crystalDLM/experiments/repair_feedback_full_20261022/run_001/selected/independent/shard-00-of-01/attempts/sg-038/attempt-082.json",
+    "sha256": "ae1937d2c5fe1bbeb5fac7eabaaf173d2c339b074aca1861fb246dfa5502ba1e"
+  },
+  "score_status": "scored",
+  "ehull_proxy_raw_eV_per_atom": 0.4156794282031857,
+  "ehull_proxy_corrected_eV_per_atom": 0.4156794282031857,
+  "novel_vs_own_train": true,
+  "source_cif": {
+    "path": "/data1/users/liugang/crystalDLM/experiments/repair_feedback_full_20261022/run_001/shard-00-of-03/cifs/sg-038/group-082/round-02-independent.cif",
+    "sha256": "b595a617df2fe9c7c297d09f53cd0f99ef645c9505f294f141dce6215e978d5d"
+  },
+  "reduced_formula": "Pr(CuSn)2",
+  "score_label": "GRACE energy minus fixed MP 2023 hull proxy; not DFT ehull",
+  "energy_units": {
+    "total_energy": "eV",
+    "force": "eV/angstrom",
+    "ehull": "eV/atom"
+  },
+  "initial_grace_energy_eV": -39.2867956161499,
+  "relaxed_grace_energy_eV": -42.09795355796814,
+  "relaxed_mp2020_corrected_grace_energy_eV": -42.09795355796814,
+  "mp2020_correction_eV": 0.0,
+  "mp2020_correction_error": null,
+  "reference_hull_energy_eV_per_atom": -4.625474784,
+  "converged": true,
+  "relax_steps": 49,
+  "max_atomic_force_eV_per_A": 0.03872077785270153,
+  "actual_space_group_number_post_relax": 38,
+  "post_relax_valid": true,
+  "post_relax_validation_errors": [],
+  "pre_relax_valid": true,
+  "pre_relax_validation_errors": [],
+  "minimum_periodic_distance_pre_relax_A": 2.2150531180086857,
+  "minimum_periodic_distance_A": 2.3791520938294033,
+  "relaxation_seconds": 0.7499006502330303,
+  "timing_seconds": {
+    "initial_singlepoint": 0.012937056832015514,
+    "relaxation": 0.7499006502330303,
+    "final_singlepoint_and_force": 0.00012116041034460068,
+    "total": 0.7701240926980972
+  },
+  "relaxed_structure": {
+    "@module": "pymatgen.core.structure",
+    "@class": "Structure",
+    "charge": 0.0,
+    "lattice": {
+      "matrix": [
+        [
+          4.459786482100729,
+          -7.32631095459451e-12,
+          -1.6636433622481664e-09
+        ],
+        [
+          5.082797922556611e-11,
+          4.318331793183249,
+          3.3040787380607716e-09
+        ],
+        [
+          -6.99694052413456e-09,
+          1.3049921218975969e-08,
+          13.3500906507354
+        ]
+      ],
+      "pbc": [
+        true,
+        true,
+        true
+      ],
+      "a": 4.459786482100729,
+      "b": 4.318331793183249,
+      "c": 13.3500906507354,
+      "alpha": 89.99999990015385,
+      "beta": 90.00000005140257,
+      "gamma": 89.99999999941973,
+      "volume": 257.107229876606
+    },
+    "properties": {},
+    "sites": [
+      {
+        "species": [
+          {
+            "element": "Pr",
+            "occu": 1
+          }
+        ],
+        "abc": [
+          -3.7393117514067306e-10,
+          1.0347389129674211e-10,
+          0.015511623476752893
+        ],
+        "properties": {},
+        "label": "Pr",
+        "xyz": [
+          -1.7761871070227638e-09,
+          6.492600589038919e-10,
+          0.20708157955472653
+        ]
+      },
+      {
+        "species": [
+          {
+            "element": "Pr",
+            "occu": 1
+          }
+        ],
+        "abc": [
+          -3.3341087444313297e-10,
+          0.4999999992085065,
+          0.5155116242640595
+        ],
+        "properties": {},
+        "label": "Pr",
+        "xyz": [
+          -5.068531495729942e-09,
+          2.159165899901079,
+          6.88212691708508
+        ]
+      },
+      {
+        "species": [
+          {
+            "element": "Cu",
+            "occu": 1
+          }
+        ],
+        "abc": [
+          0.5000000000378766,
+          -3.3964963130179498e-09,
+          0.8535275251458865
+        ],
+        "properties": {},
+        "label": "Cu",
+        "xyz": [
+          2.2298932352472045,
+          -3.5323942080313217e-09,
+          11.3946698327636
+        ]
+      },
+      {
+        "species": [
+          {
+            "element": "Cu",
+            "occu": 1
+          }
+        ],
+        "abc": [
+          0.49999999901522113,
+          0.5000000008878888,
+          0.35352752508234586
+        ],
+        "properties": {},
+        "label": "Cu",
+        "xyz": [
+          2.229893234210264,
+          2.1591659050356657,
+          4.719624508199668
+        ]
+      },
+      {
+        "species": [
+          {
+            "element": "Cu",
+            "occu": 1
+          }
+        ],
+        "abc": [
+          0.4999999994457067,
+          2.61318059644107e-09,
+          0.42837221265036385
+        ],
+        "properties": {},
+        "label": "Cu",
+        "xyz": [
+          2.22989323558104,
+          1.687114132295347e-08,
+          5.718807870306637
+        ]
+      },
+      {
+        "species": [
+          {
+            "element": "Cu",
+            "occu": 1
+          }
+        ],
+        "abc": [
+          0.4999999984823493,
+          0.5000000000002589,
+          0.9283722124521786
+        ],
+        "properties": {},
+        "label": "Cu",
+        "xyz": [
+          2.229893227811615,
+          2.1591659087042636,
+          12.393853194680585
+        ]
+      },
+      {
+        "species": [
+          {
+            "element": "Sn",
+            "occu": 1
+          }
+        ],
+        "abc": [
+          2.0630828554744446e-09,
+          6.072662872768561e-09,
+          0.7613495677059567
+        ],
+        "properties": {},
+        "label": "Sn",
+        "xyz": [
+          3.873791387293224e-09,
+          3.615932503140903e-08,
+          10.16408574577273
+        ]
+      },
+      {
+        "species": [
+          {
+            "element": "Sn",
+            "occu": 1
+          }
+        ],
+        "abc": [
+          1.9422069520142012e-09,
+          0.49999999619268226,
+          0.2613495694411618
+        ],
+        "properties": {},
+        "label": "Sn",
+        "xyz": [
+          6.858594906066275e-09,
+          2.1591658835609544,
+          3.4890404452222152
+        ]
+      },
+      {
+        "species": [
+          {
+            "element": "Sn",
+            "occu": 1
+          }
+        ],
+        "abc": [
+          0.4999999997822375,
+          -1.445507581162154e-09,
+          0.6202390693980492
+        ],
+        "properties": {},
+        "label": "Sn",
+        "xyz": [
+          2.2298932357394143,
+          1.8482264920798638e-09,
+          8.280247800759899
+        ]
+      },
+      {
+        "species": [
+          {
+            "element": "Sn",
+            "occu": 1
+          }
+        ],
+        "abc": [
+          0.4999999999386701,
+          0.4999999997633413,
+          0.12023907038323886
+        ],
+        "properties": {},
+        "label": "Sn",
+        "xyz": [
+          2.229893239960955,
+          2.1591658971351007,
+          1.6052024901966104
+        ]
+      }
+    ]
+  },
+  "post_relax_sg_match": true,
+  "relaxed_cif": "/data1/users/liugang/crystalDLM/experiments/repair_feedback_full_20261022/run_001/selected/independent/grace_score/relaxed/sg-038/attempt-082.cif",
+  "relaxed_cif_sha256": "9fdcb5a5d343cb8ca88a1be4005388df92e9c1939b0cbc0e81434de79f8f15ef",
+  "novelty_status": "checked_against_formula_matched_training_structures",
+  "unique_novel_thresholds_eV_per_atom": [],
+  "global_unique_novel_thresholds_eV_per_atom": []
+}

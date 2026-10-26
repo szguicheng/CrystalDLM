@@ -1,0 +1,194 @@
+{
+  "schema_version": 1,
+  "source": {
+    "directory": "research/crystal_training_preflight_20261013/data_001",
+    "manifest_sha256": "aa21f3fbb4e9a19a676d1012405575932134675c3684d336d2c41283a281e741",
+    "train_sha256": "b74afafbca5a52eb1a63c9a7502c9fe1f5055cfef0c25f122de6d140c137080b",
+    "val_sha256": "4e97dbe73aa2c4903aa11c4438f3c7c4da05a87eb1028632f121db4e8cd97f12",
+    "immutable_manifest_sha256": "aa21f3fbb4e9a19a676d1012405575932134675c3684d336d2c41283a281e741",
+    "counts": {
+      "train": 7272,
+      "val": 900
+    }
+  },
+  "audit_identity": {
+    "source_hashes": {
+      "manifest_sha256": "aa21f3fbb4e9a19a676d1012405575932134675c3684d336d2c41283a281e741",
+      "train_sha256": "b74afafbca5a52eb1a63c9a7502c9fe1f5055cfef0c25f122de6d140c137080b",
+      "val_sha256": "4e97dbe73aa2c4903aa11c4438f3c7c4da05a87eb1028632f121db4e8cd97f12"
+    },
+    "score_sha256": "c1dfe1b87715b5b650b7152e02fed567bd5f7f0fd9109295ec87208f23165c6b",
+    "plaid_utils_sha256": "bfe832994108cb49d6d56d4e86d6f894c538c85bd9cc94fb8ff86ed1ca263af5",
+    "prepare_sha256": "7c5f2ac0e2a2c252ae66e0b8ecb614e95a3c04bc668edf66b1c2bce42962e76d",
+    "task_prepare_sha256": "a1ab33159ad81056bc860e702e77f3b396cc19043ade78d2041b700ce825be25",
+    "seed": 42,
+    "types": [
+      "formula_count",
+      "sites_count",
+      "wyckoff_multiplicity",
+      "coordinate_constraint"
+    ],
+    "pyxtal": "1.0.8",
+    "pymatgen": "2025.10.7"
+  },
+  "corruption_seed": 42,
+  "corruption_types": [
+    "formula_count",
+    "sites_count",
+    "wyckoff_multiplicity",
+    "coordinate_constraint"
+  ],
+  "counts": {
+    "input": {
+      "train": 7272,
+      "val": 900
+    },
+    "eligible": {
+      "train": 7272,
+      "val": 900
+    },
+    "invalid_target": {
+      "train": 0,
+      "val": 0
+    },
+    "output": {
+      "train": 7272,
+      "val": 900
+    }
+  },
+  "eligibility": "only source targets with frozen score.audit(valid=True) receive repair labels; invalid targets are recorded and excluded",
+  "corruption_counts": {
+    "requested": {
+      "sites_count": 2043,
+      "wyckoff_multiplicity": 2043,
+      "coordinate_constraint": 2043,
+      "formula_count": 2043
+    },
+    "actual": {
+      "sites_count": 2043,
+      "wyckoff_multiplicity": 2043,
+      "coordinate_constraint": 1859,
+      "formula_count": 2227
+    },
+    "fallback": {
+      "coordinate_constraint->formula_count": 184
+    }
+  },
+  "row_schema": {
+    "material_id": "frozen source identifier",
+    "taskR": [
+      "prefix",
+      "lead",
+      "crystal"
+    ],
+    "original_tasks": [
+      "G",
+      "Q"
+    ],
+    "corruption": [
+      "case_id",
+      "seed",
+      "requested_type",
+      "type",
+      "edit",
+      "explanation",
+      "source_row_sha256",
+      "target_crystal_sha256",
+      "corrupted_crystal_sha256"
+    ],
+    "audits": [
+      "targetaudit",
+      "corrupted_audit"
+    ],
+    "tokenlengths": "exact Qwen3 token counts; full sequences include CRYSTAL_END"
+  },
+  "tokenizer": {
+    "model_path": "models/Qwen3-8B-b968826d9c46",
+    "files_sha256": {
+      "tokenizer.json": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+      "tokenizer_config.json": "d5d09f07b48c3086c508b30d1c9114bd1189145b74e982a265350c923acd8101",
+      "config.json": "f7c4eadfbbf522470667b797a3c89be2524832d2d599797248dc304fff447c30"
+    },
+    "eos_token": "<|im_end|>",
+    "special_tokens": {
+      "<CRYSTAL_START>": 151669,
+      "<CRYSTAL_END>": 151670,
+      "<CRYSTAL_MASK>": 151671,
+      "<CRYSTAL_PAD>": 151672
+    }
+  },
+  "token_lengths": {
+    "source_g_full": {
+      "count": 8172,
+      "p50": 345,
+      "p95": 556,
+      "max": 742
+    },
+    "source_q_full": {
+      "count": 8172,
+      "p50": 407,
+      "p95": 618,
+      "max": 805
+    },
+    "repair_prefix": {
+      "count": 8172,
+      "p50": 311,
+      "p95": 531,
+      "max": 686
+    },
+    "repair_input_crystal": {
+      "count": 8172,
+      "p50": 157,
+      "p95": 384,
+      "max": 530
+    },
+    "repair_lead": {
+      "count": 8172,
+      "p50": 16,
+      "p95": 28,
+      "max": 30
+    },
+    "repair_target_crystal_end": {
+      "count": 8172,
+      "p50": 158,
+      "p95": 384,
+      "max": 531
+    },
+    "repair_full_exact": {
+      "count": 8172,
+      "p50": 488,
+      "p95": 931,
+      "max": 1236
+    }
+  },
+  "context_limits": {
+    "source_GQ_review_threshold": 2048,
+    "repair_full_max": 4096,
+    "source_G_over_2048": 0,
+    "source_Q_over_2048": 0,
+    "source_GQ_materials_over_2048": 0,
+    "repair_over_4096": 0
+  },
+  "excluded_benchmark_sources": [
+    "70 benchmark groups",
+    "122 retries"
+  ],
+  "artifacts": {
+    "train.jsonl": {
+      "sha256": "6bb029ca583e2343b8c2fce708ced382fd571652714f9ecc3bf5db3878b3f8c9",
+      "bytes": 40460153
+    },
+    "val.jsonl": {
+      "sha256": "50ed8a28bc467cb4324f46b8f36ed20d02c634fb6958098c065f48e959065c59",
+      "bytes": 5020272
+    },
+    "eligibility.jsonl": {
+      "sha256": "4c717a503856f808ac827e4f4d6176c4d0eeb0288b1af449dbfc5db3e4a52582",
+      "bytes": 6634820
+    },
+    "invalid-targets.jsonl": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  }
+}

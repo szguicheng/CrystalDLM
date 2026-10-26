@@ -1,0 +1,224 @@
+{
+  "request_id": "sg-194",
+  "attempt_id": 76,
+  "seed": 909622042,
+  "space_group_number_requested": 194,
+  "structural_valid": true,
+  "requested_sg_match": true,
+  "actual_space_group_number_pre_relax": 194,
+  "generation_receipt": {
+    "path": "/data1/users/liugang/crystalDLM/experiments/repair_feedback_full_20261022/run_001/selected/independent/shard-00-of-01/attempts/sg-194/attempt-076.json",
+    "sha256": "ce851762f83c5374ac6b8aae57e7883321b9213ca49d56fca26388984183d5eb"
+  },
+  "score_status": "scored",
+  "ehull_proxy_raw_eV_per_atom": -0.03931871412094079,
+  "ehull_proxy_corrected_eV_per_atom": -0.03931871412094079,
+  "novel_vs_own_train": true,
+  "source_cif": {
+    "path": "/data1/users/liugang/crystalDLM/experiments/repair_feedback_full_20261022/run_001/shard-00-of-03/cifs/sg-194/group-076/round-00-shared_initial.cif",
+    "sha256": "7c5ca9bb007dd3d40f9a1eeee8b609f3778629082ad5bca4f5165c7891f61239"
+  },
+  "reduced_formula": "PmMgPd",
+  "score_label": "GRACE energy minus fixed MP 2023 hull proxy; not DFT ehull",
+  "energy_units": {
+    "total_energy": "eV",
+    "force": "eV/angstrom",
+    "ehull": "eV/atom"
+  },
+  "initial_grace_energy_eV": -25.186640858650208,
+  "relaxed_grace_energy_eV": -26.264712929725647,
+  "relaxed_mp2020_corrected_grace_energy_eV": -26.264712929725647,
+  "mp2020_correction_eV": 0.0,
+  "mp2020_correction_error": null,
+  "reference_hull_energy_eV_per_atom": -4.338133440833333,
+  "converged": true,
+  "relax_steps": 37,
+  "max_atomic_force_eV_per_A": 1.5332533790607682e-07,
+  "actual_space_group_number_post_relax": 194,
+  "post_relax_valid": true,
+  "post_relax_validation_errors": [],
+  "pre_relax_valid": true,
+  "pre_relax_validation_errors": [],
+  "minimum_periodic_distance_pre_relax_A": 2.430644633288324,
+  "minimum_periodic_distance_A": 2.7560555697327964,
+  "relaxation_seconds": 0.5747733442112803,
+  "timing_seconds": {
+    "initial_singlepoint": 0.010080235078930855,
+    "relaxation": 0.5747733442112803,
+    "final_singlepoint_and_force": 0.00011887028813362122,
+    "total": 0.6047086752951145
+  },
+  "relaxed_structure": {
+    "@module": "pymatgen.core.structure",
+    "@class": "Structure",
+    "charge": 0.0,
+    "lattice": {
+      "matrix": [
+        [
+          4.773628280171198,
+          -4.399015287674539e-09,
+          -3.506492525517449e-09
+        ],
+        [
+          -2.3868141438952457,
+          4.134083378133799,
+          3.875984106005814e-09
+        ],
+        [
+          -7.463202222355281e-09,
+          5.079298726131566e-09,
+          6.877091753996118
+        ]
+      ],
+      "pbc": [
+        true,
+        true,
+        true
+      ],
+      "a": 4.773628280171198,
+      "b": 4.773628298774483,
+      "c": 6.877091753996118,
+      "alpha": 89.99999988574065,
+      "beta": 90.00000010426581,
+      "gamma": 119.99999997668388,
+      "volume": 135.716498928088
+    },
+    "properties": {},
+    "sites": [
+      {
+        "species": [
+          {
+            "element": "Pm",
+            "occu": 1
+          }
+        ],
+        "abc": [
+          -1.6623779721880193e-09,
+          -1.7485471102465363e-10,
+          -6.247308634764502e-10
+        ],
+        "properties": {},
+        "label": "Pm",
+        "xyz": [
+          -7.518228798307526e-09,
+          -7.22863950295778e-10,
+          -4.2963314645293884e-09
+        ]
+      },
+      {
+        "species": [
+          {
+            "element": "Pm",
+            "occu": 1
+          }
+        ],
+        "abc": [
+          6.199451765834006e-10,
+          -2.354585519819355e-10,
+          0.5000000011948806
+        ],
+        "properties": {},
+        "label": "Pm",
+        "xyz": [
+          -2.1021749082945048e-10,
+          1.5662440804198177e-09,
+          3.4385458852153628
+        ]
+      },
+      {
+        "species": [
+          {
+            "element": "Mg",
+            "occu": 1
+          }
+        ],
+        "abc": [
+          0.33333333205111715,
+          0.6666666675090059,
+          0.2499999976264769
+        ],
+        "properties": {},
+        "label": "Mg",
+        "xyz": [
+          -1.2536895925741568e-08,
+          2.75605558870832,
+          1.7192729235912518
+        ]
+      },
+      {
+        "species": [
+          {
+            "element": "Mg",
+            "occu": 1
+          }
+        ],
+        "abc": [
+          0.6666666687780556,
+          0.33333333347881133,
+          0.7500000031264105
+        ],
+        "properties": {},
+        "label": "Mg",
+        "xyz": [
+          2.386814142950072,
+          1.3780277941894818,
+          5.157818835952034
+        ]
+      },
+      {
+        "species": [
+          {
+            "element": "Pd",
+            "occu": 1
+          }
+        ],
+        "abc": [
+          0.33333333460226544,
+          0.6666666681500302,
+          0.7500000013036411
+        ],
+        "properties": {},
+        "label": "Pd",
+        "xyz": [
+          -5.620269017156089e-09,
+          2.756055593898017,
+          5.157818825877507
+        ]
+      },
+      {
+        "species": [
+          {
+            "element": "Pd",
+            "occu": 1
+          }
+        ],
+        "abc": [
+          0.6666666656109874,
+          0.333333331272459,
+          0.2499999973733222
+        ],
+        "properties": {},
+        "label": "Pd",
+        "xyz": [
+          2.38681413682942,
+          1.378027782528588,
+          1.7192729193894583
+        ]
+      }
+    ]
+  },
+  "post_relax_sg_match": true,
+  "relaxed_cif": "/data1/users/liugang/crystalDLM/experiments/repair_feedback_full_20261022/run_001/selected/independent/grace_score/relaxed/sg-194/attempt-076.cif",
+  "relaxed_cif_sha256": "46bfd1e87b6a82e32c478dcff08b28f4dd03d08aafac44774dd6ddf9e65ae3f2",
+  "novelty_status": "checked_against_formula_matched_training_structures",
+  "unique_novel_thresholds_eV_per_atom": [
+    0.0,
+    0.08,
+    0.1
+  ],
+  "global_unique_novel_thresholds_eV_per_atom": [
+    0.0,
+    0.08,
+    0.1
+  ]
+}

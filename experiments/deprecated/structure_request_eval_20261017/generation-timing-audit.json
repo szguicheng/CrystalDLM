@@ -1,0 +1,117 @@
+{
+  "snapshot_utc": "2026-10-17T10:24:06.987053+00:00",
+  "n": 63,
+  "cumulative_sample_seconds": 1319.875422783196,
+  "mean_seconds": 20.950403536241208,
+  "phases": {
+    "lead_generation": {
+      "sum_s": 432.90429974813014,
+      "mean_s_per_attempt": 6.871496821398891,
+      "share_pct": 32.798875732928884,
+      "p50_s": 6.778737313114107,
+      "p95_s": 8.061153999529779,
+      "max_s": 8.913772003725171
+    },
+    "crystal_generation": {
+      "sum_s": 747.0963060222566,
+      "mean_s_per_attempt": 11.858671524162803,
+      "share_pct": 56.60354705649939,
+      "p50_s": 9.36697297822684,
+      "p95_s": 24.820681610144675,
+      "max_s": 26.44980281405151
+    },
+    "structure_audit_and_decode": {
+      "sum_s": 136.49408098962158,
+      "mean_s_per_attempt": 2.1665727141209774,
+      "share_pct": 10.341436671485187,
+      "p50_s": 0.14122858736664057,
+      "p95_s": 9.763009787537158,
+      "max_s": 19.419806342571974
+    }
+  },
+  "tokens": {
+    "lead_generation": {
+      "sampled_tokens": 8954,
+      "mean_sampled_tokens": 142.12698412698413,
+      "tokens_per_phase_second": 20.68355524583508
+    },
+    "crystal_generation": {
+      "sampled_tokens": 15504,
+      "mean_sampled_tokens": 246.0952380952381,
+      "tokens_per_phase_second": 20.752344610760428
+    }
+  },
+  "shards": [
+    {
+      "name": "shard-00-of-02",
+      "completed": 35,
+      "scheduled": 350,
+      "status": "incomplete"
+    },
+    {
+      "name": "shard-01-of-02",
+      "completed": 28,
+      "scheduled": 350,
+      "status": "incomplete"
+    }
+  ],
+  "unattributed_s": 3.3807360231876373,
+  "slowest": [
+    {
+      "request": "sg-001",
+      "attempt": 37,
+      "timing": {
+        "lead_generation": 7.32275128364563,
+        "crystal_generation": 24.820681610144675,
+        "structure_audit_and_decode": 19.419806342571974,
+        "total": 51.61695340368897
+      },
+      "valid": false
+    },
+    {
+      "request": "sg-001",
+      "attempt": 17,
+      "timing": {
+        "lead_generation": 5.927081705071032,
+        "crystal_generation": 22.22507562302053,
+        "structure_audit_and_decode": 14.102629545144737,
+        "total": 42.30925575271249
+      },
+      "valid": false
+    },
+    {
+      "request": "sg-001",
+      "attempt": 28,
+      "timing": {
+        "lead_generation": 5.734485229477286,
+        "crystal_generation": 22.84272931702435,
+        "structure_audit_and_decode": 12.889290990307927,
+        "total": 41.52046751230955
+      },
+      "valid": false
+    },
+    {
+      "request": "sg-001",
+      "attempt": 33,
+      "timing": {
+        "lead_generation": 7.094646541401744,
+        "crystal_generation": 20.565711088478565,
+        "structure_audit_and_decode": 9.763009787537158,
+        "total": 37.47694386728108
+      },
+      "valid": false
+    },
+    {
+      "request": "sg-001",
+      "attempt": 53,
+      "timing": {
+        "lead_generation": 6.109690863639116,
+        "crystal_generation": 24.166564573533833,
+        "structure_audit_and_decode": 6.844888987019658,
+        "total": 37.17556650750339
+      },
+      "valid": false
+    }
+  ],
+  "population_note": "63 completed receipts at snapshot, all requests currently SG1; not all seven groups yet"
+}

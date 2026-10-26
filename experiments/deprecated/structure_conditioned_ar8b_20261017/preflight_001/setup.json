@@ -1,0 +1,87 @@
+{
+  "status": "preflight_started",
+  "mode": "preflight",
+  "model": "Qwen/Qwen3-8B",
+  "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+  "model_path": "/home/liugang/src/crystalDLM/models/Qwen3-8B-b968826d9c46",
+  "model_identity_sha256": "821a1e336817f0e45ba099e2ca2d2da39f55a61cfe43cb3bc4e0979dfd8c988e",
+  "initial_trainable_state_sha256": "649672e3ab189712903572eacaea646b33153b655835409b9d8ec8f7c0c15862",
+  "auxiliary_trainable_parameters": {
+    "time.weight": {
+      "shape": [
+        33,
+        4096
+      ],
+      "dtype": "torch.float32",
+      "initialization": "zeros"
+    }
+  },
+  "base_config_sha256": "75b1e52ff00229ab79afe14eac28bdbf2508be26697de0e7f7e9e2b83ca583b2",
+  "data": {
+    "manifest_sha256": "aa21f3fbb4e9a19a676d1012405575932134675c3684d336d2c41283a281e741",
+    "train_sha256": "b74afafbca5a52eb1a63c9a7502c9fe1f5055cfef0c25f122de6d140c137080b",
+    "val_sha256": "4e97dbe73aa2c4903aa11c4438f3c7c4da05a87eb1028632f121db4e8cd97f12",
+    "manifest_sources": {
+      "subset_manifest_sha256": "c646a8f4257f194828222e414c2a9269739c2a9087ee995b720395eebbb915ac",
+      "request_manifest_sha256": "b518db8d8a85584f86fbe8acda27f52c74daa86aed15b5a2242a23891bf61017",
+      "successes_sha256": "4c77cb33815337b89e77418fe55c81183177e48562ae26be7afc0a4353ae72df",
+      "annotation_helper_sha256": "5f58c724790f32ac45ba8bd102385e54518e08c30897e03d0d8d51346c960984",
+      "caption_repairs_sha256": "c4b573f09e006159b6ee9399e162e76897f076fb0f6f95a0a71cb4856d30ad09"
+    },
+    "config_sha256": "83a8676722794a3fb48fb06e04e100d4058a128f63141ad16da456ec81aba8f9",
+    "data_contract_audit_sha256": "db817965bdb57df98d7acc02bd2fe187e4daa82f8488975cb21aec8d48a6f1f7"
+  },
+  "source_sha256": {
+    "train.py": "2d1b7a08ac198c9594b8fe8b4c9d48bae9733199a64e8c9f0620ebab4a46666f",
+    "model.py": "5b39f15ae1be29d566418d2d863b82b52de45d97ea658df4a480cbf9f3094ccb",
+    "prepare.py": "a1ab33159ad81056bc860e702e77f3b396cc19043ade78d2041b700ce825be25",
+    "config.json": "83a8676722794a3fb48fb06e04e100d4058a128f63141ad16da456ec81aba8f9",
+    "data-contract-audit.json": "db817965bdb57df98d7acc02bd2fe187e4daa82f8488975cb21aec8d48a6f1f7",
+    "reference_train.py": "d192f095e6e51ff44898d885cb989794313d8a62f632e561e390be98faeea834",
+    "reference_model.py": "87235ff32b0bd277be1d55d8b43f2cf767f6973f3d52883a3f17d527f93e7e93",
+    "reference_prepare.py": "c742004379e2542c7b21d87ec6f3fb564c6fed44d4ca7f0fa1675fc24b5bfd8e",
+    "baseline.py": "64cc700c34e4452d4c0d3b53d4cb858e3ec83e8d593acc928791ded7135ac9ae",
+    "baseline_model.py": "e70ba581e4ca5fad17a180533f37e19067de89dda2ed7117335f1cb8d73e6ff2",
+    "baseline_prepare.py": "b1da4043aaff7f96fbfe5b43b1179ea22cb174a1e43623842debdf3465a2dbd1",
+    "shared_model.py": "558ee52de4bb9e2ab32a7fc02b2473e8b7b2017655666674393777da0c733a1b",
+    "shared_prepare.py": "4253e495ff2c642a6bcc0ff2ba958e4cca2154a3f34cf15961f9a318d383d3ae",
+    "strict_plaid_parser.py": "c1dfe1b87715b5b650b7152e02fed567bd5f7f0fd9109295ec87208f23165c6b",
+    "plaid_utils.py": "bfe832994108cb49d6d56d4e86d6f894c538c85bd9cc94fb8ff86ed1ca263af5"
+  },
+  "fingerprint_sha256": "03d3316dbf85a4ce888a4fe28e61e21b1f20a3dda977bb8afa871b21067c1686",
+  "seed": 42,
+  "training_generator_seed": 1042,
+  "evaluation_generator_seed_base": 2042,
+  "train_materials": 7272,
+  "val_materials": 900,
+  "microbatch_tasks": 2,
+  "accumulation_steps": 8,
+  "effective_task_examples": 16,
+  "updates": 909,
+  "warmup_updates": 46,
+  "learning_rate": 0.0002,
+  "weight_decay": 0.01,
+  "precision": "BF16 frozen base; FP32 LoRA and trainable tokens",
+  "gradient_checkpointing": true,
+  "world_size": 2,
+  "checkpoint_interval_updates": 50,
+  "checkpoint_retention": 1,
+  "training_stream": "custom User:/Assistant: plain text; no HF chat template or think filtering",
+  "lengths": {
+    "rows_checked": 8172,
+    "generation_max_tokens": 802,
+    "crystal_max_tokens_including_end": 531,
+    "reading_max_tokens": 805,
+    "truncation": false
+  },
+  "longest_preflight_material_id": "mp-1174808",
+  "longest_preflight_length": 805,
+  "software": {
+    "python": "3.11.17",
+    "torch": "2.6.0+cu124",
+    "cuda": "12.4",
+    "transformers": "4.57.6",
+    "peft": "0.18.0",
+    "accelerate": "1.15.0"
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "experiment": "structure_conditioned_hybrid8b_20261018",
+  "mode": "hybrid",
+  "model": "Qwen/Qwen3-8B",
+  "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+  "base_dtype": "bfloat16",
+  "adapter_dtype": "float32",
+  "adapter": {
+    "method": "LoRA",
+    "rank": 32,
+    "alpha": 64,
+    "dropout": 0.0,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj",
+      "lm_head"
+    ],
+    "trainable_token_indices": "four added PLaID control-token rows in input embeddings"
+  },
+  "data": {
+    "directory": "research/crystal_training_preflight_20261013/data_001",
+    "train_materials": 7272,
+    "validation_materials": 900,
+    "seed": 42,
+    "manifest_sha256": "aa21f3fbb4e9a19a676d1012405575932134675c3684d336d2c41283a281e741",
+    "train_sha256": "b74afafbca5a52eb1a63c9a7502c9fe1f5055cfef0c25f122de6d140c137080b",
+    "validation_sha256": "4e97dbe73aa2c4903aa11c4438f3c7c4da05a87eb1028632f121db4e8cd97f12",
+    "evaluation_ids_sha256": "d3cad1379df8d17089e5bc196fc6abedc09ca1f11f204370839df2471aceaa8c",
+    "sample_order_sha256": "7abf514e32c5d5aa109049c09e2a3b9d6a3ede86ffa01c17e78aac0167423247"
+  },
+  "training": {
+    "epochs": 1,
+    "updates": 909,
+    "effective_task_examples": 16,
+    "microbatch_tasks_per_material": 2,
+    "materials_per_optimizer_update": 8,
+    "learning_rate": 0.0002,
+    "weight_decay": 0.01,
+    "warmup_fraction": 0.05,
+    "schedule": "linear warmup then cosine decay",
+    "gradient_clip_norm": 1.0,
+    "gradient_checkpointing": true,
+    "auxiliary_trainable_parameters": [
+      {
+        "name": "time.weight",
+        "shape": "[STEPS + 1, hidden_size]",
+        "dtype": "float32",
+        "initialization": "zeros"
+      }
+    ],
+    "distributed_world_size": 2,
+    "checkpoint_interval_updates": 50,
+    "checkpoint_retention": 1
+  },
+  "initialization": "fresh pinned Qwen3-8B base and newly initialized adapters, matched to pure-AR initialization",
+  "input_contract": {
+    "structure": "actual space group number",
+    "property": "upper bound in eV/atom",
+    "upper_bounds": [
+      0.08,
+      0.1,
+      0.2,
+      0.3
+    ],
+    "assignment": "smallest bound that contains the unchanged source ehull label",
+    "training_scope": "all 7272 frozen rows; no relabeling or filtering",
+    "output_targets": "unchanged lead, PLaID crystal, and factual reading targets"
+  },
+  "evaluation": {
+    "space_groups": [
+      1,
+      15,
+      38,
+      119,
+      143,
+      194,
+      216
+    ],
+    "attempts_per_request": 100,
+    "ehull_upper_bound_eV_per_atom": 0.08,
+    "seed": 42,
+    "temperature": 0.8,
+    "top_p": 0.95,
+    "parser_and_grace": "reuse structure_request_eval_20261017 protocol",
+    "comparison": "matched structure_conditioned_ar8b_20261017 pure-AR model",
+    "crystal_generation": "32-step absorbing-mask diffusion"
+  },
+  "diffusion": {
+    "type": "discrete absorbing MASK diffusion",
+    "steps": 32,
+    "crystal_capacity": 544,
+    "prediction_offset": 0,
+    "noise_probability": "k/32 with k uniform in 1..32",
+    "release_probability": "1/k on remaining MASK tokens",
+    "attention": "causal text; bidirectional within current crystal; no future text",
+    "loss": "masked token CE, inverse mask probability 32/k, PAD weight 0.1, same-position prediction",
+    "boundary": "END and PAD are learned; no output repair"
+  }
+}

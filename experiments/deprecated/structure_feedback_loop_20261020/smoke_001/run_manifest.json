@@ -1,0 +1,164 @@
+{
+  "schema": 1,
+  "experiment": "structure_feedback_loop_20261020",
+  "arm_checkpoint": "flare",
+  "model": "Qwen/Qwen3-8B",
+  "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+  "checkpoint_fingerprint_sha256": "6dcce421b41a8a6d4cd1fe96fe474933901fd521662f2be8028b00be802b1487",
+  "trainable_state_sha256": "19f7e0b5e3bc1e1c73b6e550c59d8c50819ee4ec90fc560079af55b53851b379",
+  "source_checkpoint_identity_sha256": "03d3316dbf85a4ce888a4fe28e61e21b1f20a3dda977bb8afa871b21067c1686",
+  "evaluation_source_sha256": {
+    "evaluate.py": "9d4c645f04a67e5815979e1e3761d77f52115fbf9134a76c983fe50d73340ccc",
+    "trainer_run.py": "627e6c1d88623c8aa48d4ce158cbd21a2fdb0313d436e05eda2e950e4b03bbe2",
+    "flare_model.py": "e289355c146db632a65aa618afd203ba5702e9a90e10cb6ecaea395a7244fe82",
+    "verified_pilot_model.py": "8bde8817d493c981abfd8210ed797becd0c319b88be2167eb3d21836833b2bde",
+    "matched_ar_evaluate.py": "29bae2782365708a6c8b4b05590c34538a64ce2984ccb3a9fe133edee4036cfe",
+    "reference_runner.py": "4bd89a820e27b893a080294c82892d9fd14d33461bb8f7efd751ced78b5a3ff5",
+    "structure_score.py": "c1dfe1b87715b5b650b7152e02fed567bd5f7f0fd9109295ec87208f23165c6b",
+    "readback_grader.py": "bb983581f1050a5a82688c7929306b3173096b9494887620754fcd22e063e81a",
+    "feedback_runner.py": "3dc2df467d59897708a1a309595dc4ec1c6a06319ccecb883b64dd9fab4f9278"
+  },
+  "group_plan_sha256": "20370fc0a8e282903d0dd7ed0ec16bc0b20aa90b2f1be39aadecc4ad8e139079",
+  "run_identity_sha256": "a536d504c13edba9635886e1ff39713f529dd25fbf565f6d4830c88694e63710",
+  "checkpoint_path": "experiments/flare_crystal_full_20261019/flare/checkpoint.pt",
+  "source_trainable_state_sha256": "343c4da6c1af19d75b2d785c8784ebda81be5a881fb08a0a7343e8ea401f76cb",
+  "software": {
+    "python": "3.11.17",
+    "torch": "2.6.0+cu124",
+    "cuda": "12.4",
+    "transformers": "4.57.6",
+    "peft": "0.18.0",
+    "accelerate": "1.15.0"
+  },
+  "group_plan": [
+    {
+      "request_id": "sg-001",
+      "space_group_number": 1,
+      "prompt": "User: Generate a crystal with space group number 1 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 0,
+      "flat_index": 0,
+      "plan_index": 0,
+      "seed": 1373158607
+    },
+    {
+      "request_id": "sg-015",
+      "space_group_number": 15,
+      "prompt": "User: Generate a crystal with space group number 15 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 0,
+      "flat_index": 100,
+      "plan_index": 1,
+      "seed": 794957573
+    },
+    {
+      "request_id": "sg-038",
+      "space_group_number": 38,
+      "prompt": "User: Generate a crystal with space group number 38 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 0,
+      "flat_index": 200,
+      "plan_index": 2,
+      "seed": 24655305
+    },
+    {
+      "request_id": "sg-119",
+      "space_group_number": 119,
+      "prompt": "User: Generate a crystal with space group number 119 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 0,
+      "flat_index": 300,
+      "plan_index": 3,
+      "seed": 2137066976
+    },
+    {
+      "request_id": "sg-143",
+      "space_group_number": 143,
+      "prompt": "User: Generate a crystal with space group number 143 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 0,
+      "flat_index": 400,
+      "plan_index": 4,
+      "seed": 2080903618
+    },
+    {
+      "request_id": "sg-194",
+      "space_group_number": 194,
+      "prompt": "User: Generate a crystal with space group number 194 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 0,
+      "flat_index": 500,
+      "plan_index": 5,
+      "seed": 678985350
+    },
+    {
+      "request_id": "sg-216",
+      "space_group_number": 216,
+      "prompt": "User: Generate a crystal with space group number 216 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 0,
+      "flat_index": 600,
+      "plan_index": 6,
+      "seed": 1941171830
+    }
+  ],
+  "groups_per_sg": 1,
+  "seed_manifest": [
+    {
+      "shared_initial": 1373158607,
+      "paired_retry_seeds": {
+        "1": 569439207,
+        "2": 759148033
+      }
+    },
+    {
+      "shared_initial": 794957573,
+      "paired_retry_seeds": {
+        "1": 95242553,
+        "2": 476700359
+      }
+    },
+    {
+      "shared_initial": 24655305,
+      "paired_retry_seeds": {
+        "1": 2046070496,
+        "2": 65087282
+      }
+    },
+    {
+      "shared_initial": 2137066976,
+      "paired_retry_seeds": {
+        "1": 1179693910,
+        "2": 129803303
+      }
+    },
+    {
+      "shared_initial": 2080903618,
+      "paired_retry_seeds": {
+        "1": 2061160058,
+        "2": 913276319
+      }
+    },
+    {
+      "shared_initial": 678985350,
+      "paired_retry_seeds": {
+        "1": 1797667893,
+        "2": 257513623
+      }
+    },
+    {
+      "shared_initial": 1941171830,
+      "paired_retry_seeds": {
+        "1": 504266080,
+        "2": 285603636
+      }
+    }
+  ],
+  "num_shards": 2,
+  "context_budget": 4096,
+  "sampling": {
+    "lead_temperature": 0.8,
+    "lead_top_p": 0.95,
+    "crystal_temperature": 0.8,
+    "crystal_top_p": 0.95,
+    "max_lead_tokens": 256,
+    "crystal_capacity_including_END": 544,
+    "max_attempts_per_policy": 3
+  },
+  "ehull_target": "<=0.08 eV/atom (input condition only; not evaluated)",
+  "property_evaluation_status": "not_evaluated",
+  "evaluation_scope": "paired independent versus checker-feedback retries; strict structure and requested SG only"
+}

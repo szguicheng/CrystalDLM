@@ -1,0 +1,21 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 5/5 [00:00<00:00, 168.57it/s]
+Traceback (most recent call last):
+  File "/home/liugang/src/crystalDLM/experiments/structure_feedback_loop_20261020/run.py", line 547, in <module>
+    main()
+  File "/home/liugang/src/crystalDLM/experiments/structure_feedback_loop_20261020/run.py", line 543, in main
+    run(parser.parse_args(argv))
+  File "/home/liugang/src/crystalDLM/experiments/structure_feedback_loop_20261020/run.py", line 519, in run
+    RUNNER._ensure_manifest(out / "run_manifest.json", manifest, args.resume, shared=True)
+  File "/home/liugang/src/crystalDLM/experiments/structure_request_eval_20261017/run.py", line 534, in _ensure_manifest
+    raise FileNotFoundError(f"cannot resume without {path}")
+FileNotFoundError: cannot resume without /home/liugang/src/crystalDLM/experiments/structure_feedback_loop_20261020/smoke_001/run_manifest.json
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 5/5 [00:00<00:00, 163.44it/s]
+{"sampler_parity": {"status": "passed", "max_absolute_difference": 0.0, "mean_absolute_difference": 0.0, "argmax_mismatches": 0, "atol": 0.002, "rtol": 0.002, "checkpoint_fingerprint_sha256": "6dcce421b41a8a6d4cd1fe96fe474933901fd521662f2be8028b00be802b1487", "trainable_state_sha256": "19f7e0b5e3bc1e1c73b6e550c59d8c50819ee4ec90fc560079af55b53851b379", "source_checkpoint_identity_sha256": "03d3316dbf85a4ce888a4fe28e61e21b1f20a3dda977bb8afa871b21067c1686"}, "shard": 1}
+{"group": "sg-015", "index": 0, "status": "neither_success", "independent_attempts": 3, "feedback_attempts": 3}
+{"group": "sg-119", "index": 0, "status": "neither_success", "independent_attempts": 3, "feedback_attempts": 3}
+/home/liugang/src/crystalDLM/envs/crystaldlm/lib/python3.11/site-packages/pymatgen/core/composition.py:1373: FutureWarning: gcd is deprecated, and will be removed on 2028-01-01
+Use math.gcd instead.
+  factor = abs(gcd(*(int(i) for i in sym_amt.values())))
+{"group": "sg-194", "index": 0, "status": "both_success", "independent_attempts": 1, "feedback_attempts": 1}

@@ -1,0 +1,114 @@
+{
+  "manifest_sha256": "dce98892174a02a113a2de13200472d5997054f2b6a4306212be2fd9189c2d6c",
+  "scope": "native LLaMA-Factory CPU preprocessing; no training",
+  "splits": {
+    "training": {
+      "rows": 36362,
+      "min": 140,
+      "median": 230.0,
+      "max": 612,
+      "sha256": "c166a9e8ae7b4b5a18dae3d0c0c114b39defde8cae7fe2d739a3a286d4354fd1",
+      "non_ignored_labels_decoded": "The formula is K1 Eu1 Cu2 Te4. The space group number is 99. The unit cell contains 8 atoms and 6 independent orbits.<|im_end|>\n",
+      "prompt_and_padding_masked": true
+    },
+    "validation": {
+      "rows": 4501,
+      "min": 141,
+      "median": 232,
+      "max": 604,
+      "sha256": "4c4136e1f55bd9009abc8adbcedc73a120706809c4f63a890fb8f89013dd7983",
+      "non_ignored_labels_decoded": "The formula is La1 Gd1 Cl2 O2. The space group number is 99. The unit cell contains 6 atoms and 5 independent orbits.<|im_end|>\n",
+      "prompt_and_padding_masked": true
+    },
+    "test": {
+      "rows": 4602,
+      "min": 141,
+      "median": 230.0,
+      "max": 605,
+      "sha256": "48c4029a4ec6cac1cc8d8ee04558c5a3fa56b68c5d6c200a5e93dc31a9377505",
+      "non_ignored_labels_decoded": "The formula is Na2 Sm2 Cu4 F16. The space group number is 97. The unit cell contains 24 atoms and 4 independent orbits.<|im_end|>\n",
+      "prompt_and_padding_masked": true
+    }
+  },
+  "design_example": {
+    "tokens": 366,
+    "description_and_boundary_tokens": 127,
+    "crystal_body_and_end_tokens": 200,
+    "full_design_data_audited": false
+  },
+  "adapter_check": {
+    "tiny_model_only": true,
+    "four_input_rows_and_lora_only": true,
+    "trainable_parameters": {
+      "base_model.model.model.embed_tokens.token_adapter.trainable_tokens_delta.default": [
+        4,
+        32
+      ],
+      "base_model.model.model.layers.0.self_attn.q_proj.lora_A.default.weight": [
+        4,
+        32
+      ],
+      "base_model.model.model.layers.0.self_attn.q_proj.lora_B.default.weight": [
+        32,
+        4
+      ],
+      "base_model.model.model.layers.0.self_attn.k_proj.lora_A.default.weight": [
+        4,
+        32
+      ],
+      "base_model.model.model.layers.0.self_attn.k_proj.lora_B.default.weight": [
+        16,
+        4
+      ],
+      "base_model.model.model.layers.0.self_attn.v_proj.lora_A.default.weight": [
+        4,
+        32
+      ],
+      "base_model.model.model.layers.0.self_attn.v_proj.lora_B.default.weight": [
+        16,
+        4
+      ],
+      "base_model.model.model.layers.0.self_attn.o_proj.lora_A.default.weight": [
+        4,
+        32
+      ],
+      "base_model.model.model.layers.0.self_attn.o_proj.lora_B.default.weight": [
+        32,
+        4
+      ],
+      "base_model.model.model.layers.0.mlp.gate_proj.lora_A.default.weight": [
+        4,
+        32
+      ],
+      "base_model.model.model.layers.0.mlp.gate_proj.lora_B.default.weight": [
+        64,
+        4
+      ],
+      "base_model.model.model.layers.0.mlp.up_proj.lora_A.default.weight": [
+        4,
+        32
+      ],
+      "base_model.model.model.layers.0.mlp.up_proj.lora_B.default.weight": [
+        64,
+        4
+      ],
+      "base_model.model.model.layers.0.mlp.down_proj.lora_A.default.weight": [
+        4,
+        64
+      ],
+      "base_model.model.model.layers.0.mlp.down_proj.lora_B.default.weight": [
+        32,
+        4
+      ],
+      "base_model.model.lm_head.lora_A.default.weight": [
+        4,
+        32
+      ],
+      "base_model.model.lm_head.lora_B.default.weight": [
+        32,
+        4
+      ]
+    },
+    "backward_verified": true
+  }
+}

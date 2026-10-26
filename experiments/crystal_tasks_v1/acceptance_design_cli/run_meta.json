@@ -1,0 +1,107 @@
+{
+  "schema": 1,
+  "command": [
+    "/data1/users/liugang/crystalDLM/experiments/crystal_tasks_v1/evaluation/cli.py",
+    "design",
+    "--dataset-dir",
+    "experiments/crystal_tasks_v1/acceptance_fixture",
+    "--attempt-plan",
+    "experiments/crystal_tasks_v1/acceptance_fixture/attempt-plan.jsonl",
+    "--attempts",
+    "experiments/crystal_tasks_v1/acceptance_fixture/attempts.jsonl",
+    "--property-receipts",
+    "experiments/crystal_tasks_v1/acceptance_fixture/properties.jsonl",
+    "--model",
+    "oracle",
+    "--checkpoint",
+    "synthetic-property-fixture",
+    "--output",
+    "experiments/crystal_tasks_v1/acceptance_design_cli"
+  ],
+  "config": {
+    "task": "design",
+    "dataset_dir": "experiments/crystal_tasks_v1/acceptance_fixture",
+    "output": "experiments/crystal_tasks_v1/acceptance_design_cli",
+    "model": "oracle",
+    "checkpoint": "synthetic-property-fixture",
+    "parameter_count": null,
+    "attempt_plan": "experiments/crystal_tasks_v1/acceptance_fixture/attempt-plan.jsonl",
+    "attempts": "experiments/crystal_tasks_v1/acceptance_fixture/attempts.jsonl",
+    "property_receipts": "experiments/crystal_tasks_v1/acceptance_fixture/properties.jsonl",
+    "extra_training_references": null
+  },
+  "git": {
+    "branch": "codex/crystal-tasks-v1-phase12",
+    "git_commit": "0bf04e1158fcedeca8472221a544bdd90c230f85",
+    "working_tree": "dirty",
+    "source_manifest": "/data1/users/liugang/crystalDLM/experiments/crystal_tasks_v1/source_manifest.json",
+    "source_manifest_sha256": "bbaf0f21987e441a7496085d8b52a835dcddbe4ee8b781084d3332e1a6879ed0",
+    "source_manifest_files_sha256": {
+      "configuration.py": "80ade6782265bcbecad14c46d6ba1ca57b308a65b65de12c9033b446bcf57415",
+      "python.sh": "a4a17a731746174fdbf677c16f7b715c2f90674feaa43e09674d82a6b79c21d5",
+      "00_recon_receipt.json": "c6f2248f2c581504673c38c1750364e7791bc558272f8c2699f83b19e5224ca7",
+      "__init__.py": "b7d5c03e57d3c0c8da442b710473033b9c1a49c45bccb78b2682961033ecd920",
+      "tokenization.py": "70dce4dd430f0e0d3d5b8092ceeb2b1a12bd85dc3d9e58e14d6fb9324bceb98a",
+      "preflight.py": "772f0f86bb3e0b622a83f1cb9b7338be97cfb0b8636ee8f7b2cfd58dbdb4ccb6",
+      "tests/test_understanding.py": "bdc4a390119b2f3a8a3f88f168457fb4a21fb9ffb6fa66e3dcd17273a3e8a3fa",
+      "tests/test_plan.py": "117655cf72b4aaf99e31a7e6e9c72040c4f699ba89065b29302d0a32b9d32143",
+      "tests/test_configuration.py": "993d846d5f2b9eb518b947d5894493d3f1b95065e51ed1fd9239d5c57d4dff39",
+      "tests/test_losses.py": "6d690e812be500b73ee8adb9d14b692d28ab824ba0fa8300b247429dd795adc1",
+      "tests/__init__.py": "d620ef21e2cf53d1ca8d1c6fd5c62754b3453ef7f141f2028762ec41eac7e2a4",
+      "tests/test_io.py": "6cd7816d1f948f605e18545bfdab27f3f2430eeeeebcd4b1293b67fac1c13f92",
+      "tests/test_design.py": "4096c1a1cc6f3259511898d5ec29c1c6c08f8175832ee9544085b808ae579433",
+      "configs/ar_design.json": "3b874a28c4912a869fc0aaf263685758159ce25952ee38162334b45552dc3116",
+      "configs/ar_understanding.json": "4594f90a1a08d9165f34de400331a8905c25011e2f9f9dcc92975cfba6272e9e",
+      "configs/shared.json": "ffcfbeac914995ff1cd72243b980baac84b041e08b14a44c4146ba9a560e3b21",
+      "evaluation/plan.py": "695217ff572df581b63d12a4622b7a98cda6f5650521ae75bf2b189535c039f0",
+      "evaluation/legacy.py": "fb154919c5cb3ee198949833c3be4abf8c37844f029b28275f57ef8d88a7a160",
+      "evaluation/understanding.py": "87bcf31eb5f5920910d832ce91efac8eaf5b37445666d9c047c3dda2aa203dd8",
+      "evaluation/references.py": "21fca515dc7d8e8096a421ce3652a1f92dbae30402f1b43c6519d7089256caf7",
+      "evaluation/design.py": "e701e88bae2c9d9b5b54941ff586d06cb3863eed5fa2508a010d60382cb08a16",
+      "evaluation/__init__.py": "3eba1c6a49ebae76d63dec99182c513059cd144e0ae2f2b95aa94779bedb811a",
+      "evaluation/nll.py": "5c38f028a3efca8734d84d34347b221a842e4939109120ad632046593402fd75",
+      "evaluation/cli.py": "2f632ac01871b5d97f94e34785e2c00421bd3f8c200e69e42376d496fa9bac95",
+      "evaluation/losses.py": "55d323be68672d9e04486d63bf7bb6dd843f28d409644d8d4afff1ed94749813",
+      "evaluation/grace.py": "da0aae2e23137fef5a52ff26fefaba208b148d0e2808be5b35bfeba2379b99a9"
+    }
+  },
+  "base_model": "oracle",
+  "checkpoint": "synthetic-property-fixture",
+  "parameter_count": null,
+  "dataset_manifest_sha256": "30cb1613bb0a7de1538b2c2c0bc733433a710e85e5cd368862ccdbafddbc61f3",
+  "input_sha256": {
+    "experiments/crystal_tasks_v1/acceptance_fixture/attempts.jsonl": "8a468946ea81fd9542ccd360664c8e7dc59cdc74e9bc5915d9d0723743ab6394",
+    "experiments/crystal_tasks_v1/acceptance_fixture/attempt-plan.jsonl": "06fbddb7d552299c19f12a2172134bb6e0c2555af97cf1b191d2c2f8fd82cc39",
+    "experiments/crystal_tasks_v1/acceptance_fixture/properties.jsonl": "5370613fcc2e930f6e6721f167dca2191f469e81445df827d2c2490fd11daf56"
+  },
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "environment": {
+    "python": "3.11.17",
+    "platform": "Linux-6.8.0-124-generic-x86_64-with-glibc2.39",
+    "cuda_visible_devices": "",
+    "packages": {
+      "pymatgen": "2025.10.7",
+      "numpy": "2.2.6",
+      "torch": "2.6.0+cu124",
+      "transformers": "4.57.6",
+      "tensorflow": null,
+      "tensorpotential": null,
+      "ase": "3.29.0"
+    }
+  },
+  "code_sha256": {
+    "experiments/crystal_tasks_v1/evaluation/cli.py": "5a27f768f971965b8779df261645c736f49a8173b4cd49c2d3083e974a8766ba",
+    "experiments/crystal_tasks_v1/evaluation/references.py": "21fca515dc7d8e8096a421ce3652a1f92dbae30402f1b43c6519d7089256caf7",
+    "experiments/crystal_tasks_v1/evaluation/legacy.py": "fb154919c5cb3ee198949833c3be4abf8c37844f029b28275f57ef8d88a7a160",
+    "experiments/crystal_tasks_v1/evaluation/design.py": "2b5cdc93babc88ddb723a9bec3c3b065822062f2c7166d61653a90100577c832"
+  },
+  "started_at": "2026-10-26T04:38:12.478677+00:00",
+  "ended_at": "2026-10-26T04:38:13.183131+00:00",
+  "training_reference_count": 1,
+  "test_reference_count": 1,
+  "attempt_count": 3
+}

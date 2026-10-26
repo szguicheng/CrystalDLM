@@ -1,0 +1,88 @@
+{
+  "passed": true,
+  "mode": "prefix-only AR cache parity",
+  "interpretation": "The comparison ends at START, before any current-crystal token; hybrid denoising logits are checked by the diffusion sampler contract.",
+  "acceptance": {
+    "top1_same": true,
+    "kl_reference_to_cached_max": 0.01,
+    "max_abs_max": 0.5,
+    "mean_abs_max": 0.1
+  },
+  "contexts": [
+    {
+      "context": "prompt",
+      "max_abs": 0.0,
+      "mean_abs": 0.0,
+      "rms_abs": 0.0,
+      "kl_reference_to_cached": 0.0,
+      "cosine_similarity": 0.9999998807907104,
+      "top1_reference": 576,
+      "top1_cached": 576,
+      "top1_same": true,
+      "strict_close_fraction": 1.0,
+      "strict_close_rtol": 0.002,
+      "strict_close_atol": 0.002,
+      "distribution_criteria_passed": true
+    },
+    {
+      "context": "text_prefix_token_0",
+      "max_abs": 0.25,
+      "mean_abs": 0.01760389283299446,
+      "rms_abs": 0.03216703608632088,
+      "kl_reference_to_cached": 0.00028941419441252947,
+      "cosine_similarity": 0.999992847442627,
+      "top1_reference": 5944,
+      "top1_cached": 5944,
+      "top1_same": true,
+      "strict_close_fraction": 0.6451444625854492,
+      "strict_close_rtol": 0.002,
+      "strict_close_atol": 0.002,
+      "distribution_criteria_passed": true
+    },
+    {
+      "context": "text_prefix_token_1",
+      "max_abs": 0.25,
+      "mean_abs": 0.015031657181680202,
+      "rms_abs": 0.02814718708395958,
+      "kl_reference_to_cached": 0.00018691655714064837,
+      "cosine_similarity": 0.9999935626983643,
+      "top1_reference": 5944,
+      "top1_cached": 5944,
+      "top1_same": true,
+      "strict_close_fraction": 0.6469444036483765,
+      "strict_close_rtol": 0.002,
+      "strict_close_atol": 0.002,
+      "distribution_criteria_passed": true
+    },
+    {
+      "context": "text_prefix_token_2",
+      "max_abs": 0.1875,
+      "mean_abs": 0.018278690055012703,
+      "rms_abs": 0.02725505456328392,
+      "kl_reference_to_cached": 0.0012063576141372323,
+      "cosine_similarity": 0.9999910593032837,
+      "top1_reference": 50080,
+      "top1_cached": 50080,
+      "top1_same": true,
+      "strict_close_fraction": 0.4595676362514496,
+      "strict_close_rtol": 0.002,
+      "strict_close_atol": 0.002,
+      "distribution_criteria_passed": true
+    },
+    {
+      "context": "clean_prefix_ending_at_start",
+      "max_abs": 0.25,
+      "mean_abs": 0.03175019472837448,
+      "rms_abs": 0.04200442507863045,
+      "kl_reference_to_cached": 0.0016719361301511526,
+      "cosine_similarity": 0.9999829530715942,
+      "top1_reference": 47,
+      "top1_cached": 47,
+      "top1_same": true,
+      "strict_close_fraction": 0.3242238163948059,
+      "strict_close_rtol": 0.002,
+      "strict_close_atol": 0.002,
+      "distribution_criteria_passed": true
+    }
+  ]
+}

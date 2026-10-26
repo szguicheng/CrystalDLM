@@ -12,6 +12,38 @@ Created: 2026-10-11
 
 ## Notes
 
+- 2026-10-26 AR-understanding 正式基线完成：固定3epoch/9093updates，validation4501、test4602，流程exit0/GPU释放。按validation NLL选出的step7200与final均完成独立评价；final test四字段全对4600/4602（99.9565%），best4597/4602（99.8914%）。18,206条评价回执重算一致；详见[正式结果](../../experiments/crystal_tasks_v1/phase3_understanding_20261026/RESULTS.md)。这是四字段读取基线，AR-design和Hybrid对照尚未完成。
+
+- 2026-10-25 PDT / 10-26 UTC，负责人通过交接闸门 2 并恢复 Design 补标。AR-understanding 32 条过拟合检查通过（全四字段及完整复现32/32，NLL4.78e-6），已从原始Qwen3-8B重新初始化开始三卡/global12全量3epoch；后台后接validation/test。Design按原模型/提示词/8并发在本机新活动目录续跑，冻结数据未变。运行记录见[Phase3](../../experiments/crystal_tasks_v1/03_phase3_run.md)；正式结果尚未产生。
+
+- 2026-10-25 用户授权准备两个独立任务的全量 JSONL：Design 保留空间群＋Ehull→英文描述＋PLaID；Understanding 改为仅 PLaID→四字段回答。原划分36,362/4,501/4,602；Understanding已在服务器完成全量校验，Design另37,293条描述正在补齐。只准备数据，不训练。见[数据准备票](issues/24-full-design-understanding-data.md)。
+
+- 2026-10-23 完整700组循环评价复核完成：直接重生成/反馈策略结构成功337/224，80meV最终达标55/28，唯一新颖达标49/26；700组和两臂评分均完成，exit0、GPU释放。相同修正模型下反馈策略较差；见[正式结果](../../experiments/repair_feedback_full_20261022/RESULTS.md)。
+
+- 2026-10-22 用户授权修正模型的700组循环生成及完整ehull评价：七空间群各100组，同新模型比较直接重生成与结构反馈，最多3次、首轮共享；GRACE后置评分，不进入反馈。见[执行票](issues/23-repair-full-feedback-evaluation.md)与[协议](../../experiments/repair_feedback_full_20261022/PROTOCOL.md)。9项测试和7组完整smoke通过，正式700组已启动三卡生成，后接两卡评分；尚无正式成绩。
+
+- 2026-10-21 修正训练完成：1212更新覆盖7272材料，900验证完成，32条合成错误修正配对生成旧模型8/32、新模型27/32有效且满足空间群；自然START均32/32，照抄错误输入12→0。exit0、GPU释放；见[结果](../../experiments/crystal_repair_training_20261021/evaluation_001/RESULTS.md)。尚未验证真实生成错误的多轮循环收益或原生成能力保留。
+
+- 2026-10-21 用户授权新模型训练，空闲时用三卡。新增“错误晶体＋程序反馈→修正说明＋正确晶体”任务，保留生成/读取；固定7272/900划分，三张H20（1/2/3）、1212updates。数据v2及三卡断点恢复/验证试跑已通过，正式任务已提交，后接900验证和32条新旧模型自由生成对比；见[修正训练票](issues/22-crystal-repair-training.md)。GRACE不参与，本轮结果尚未产生。
+
+- 2026-10-20 用户授权诊断和修复反馈切换。14例回放中纯AR/FLARE均0/14切换；新请求中以失败结构作为输入数据恢复14/14自然START。只修复上下文组织，未训练或强制切换。完整70组复验已结束：122/122次自然切换，但新增有效晶体0，反馈仍9/70（直接重试19/70），67次完全重复上一轮晶体；见[修复票](issues/21-feedback-switch-fix.md)。
+
+- 2026-10-20 用户授权结构反馈循环试验：冻结现有FLARE权重，7空间群×10组配对种子，每组最多3次生成，对照独立重采样与结构反馈重试。GRACE不进入反馈，本轮不训练、不做性质评分。正式70组已于20:27完成：独立重采样19/70成功，反馈9/70；122次反馈重试中117次未进入晶体段，其余5次结构无效，GPU已释放。后续诊断未启动；见[新票](issues/20-structure-feedback-loop.md)。
+
+- 2026-10-20完整FLARE式对照复核完成：AR169/700有效、25/700最终80meV新颖达标；FLARE121/700、24/700。900验证完成，exit0/GPU释放。生成后读取由共享评分器`experiments/evaluation_common/readback.py`统一核算；历史回执和正式汇总已重算，化学式正确为169/169与121/121、四字段全对为162/169与115/121。结构有效和性质结果不变。见[结果](../../experiments/flare_crystal_full_20261019/RESULTS.md)。未显示优于匹配AR；后续授权范围见结构反馈循环试验票。
+
+- 2026-10-19 用户授权完整固定7272/900子集训练验证：匹配AR/FLARE各909updates，900验证＋各700端到端设计请求＋GRACE评分，详见[新票](issues/19-flare-full-training.md)。全量原始四万条不在本轮范围。
+
+- 2026-10-19 FLARE式小样本迁移完成：8train/8val、64updates；diffusion有效train8/8、val4/8，源模型对应均0/8；三组保留样本AR均5/8。仅固定参考lead机制检查，80输出、exit0、GPU释放，未跑全子集或性质评分。见[结果](../../experiments/flare_crystal_qwen3_8b_20261019/RESULTS.md)。
+- 2026-10-19 用户授权采用FLARE配方基于Qwen预训练能力。准备以现有晶体纯AR检查点为起点，干净AR＋晶体互补去噪，先固定8train/8val、64步和同预算AR控制；见[新票](issues/18-flare-crystal-pilot.md)。原论文与当前官方代码存在shift/mask细节差异，采用显式无泄漏目标契约并记录迁移差异。
+- 2026-10-18 小规模控制验证完成：五组各28次均严格有效0，允许重新预测和高遮盖训练只在边界通过数上出现改善；两分支各128步完成，GPU释放。见 [验证结果](../../experiments/structure_conditioned_hybrid8b_20261018/validation_001/RESULTS.md)。未扩展到700或性质评分。
+- 2026-10-18 用户已授权根据根因报告开展小规模验证：固定28次、源检查点三种采样、两个各128updates的匹配继续训练分支；不自动跑700或GRACE。见 [验证票](issues/17-hybrid-generation-validation.md) 和 [冻结协议](../../experiments/structure_conditioned_hybrid8b_20261018/validation_001/PROTOCOL.md)。
+- 2026-10-18 17:05复核：共享AR＋diffusion首轮已结束，700次严格有效0（边界失败292、格式/一致性失败408），无候选进入GRACE计算；运行exit 0且GPU释放。详见 [混合结果](../../experiments/structure_conditioned_hybrid8b_20261018/RESULTS.md)。目前需诊断结构序列生成失败，未启动新训练。
+- 2026-10-18 最新执行授权：用户要求开展共享AR＋diffusion训练，保持新的结构条件＋ehull输入。见 [混合8B实验](issues/16-structure-conditioned-hybrid8b.md)。沿用同基座初始化、固定数据和微调设置，晶体改为掩码扩散，训练后用同700次与GRACE口径对照；当前为代码/预检准备阶段。
+- 2026-10-18 复核：结构条件Qwen3-8B纯AR重训及700次评分已完成，exit 0，GPU释放。最终新颖达标12/700（旧模型1/700），但严格有效95/700（旧140/700）；见 [结果](../../experiments/structure_conditioned_ar8b_20261017/RESULTS.md)。下一步需分析结构无效原因，尚未授权后续训练或diffusion。
+- 2026-10-17 最新执行授权：用户要求使用“结构要求＋ehull”新输入重新训练Qwen3-8B并评价，仍先纯AR。见 [结构条件8B训练](issues/15-structure-conditioned-ar8b.md)。先以空间群＋真实上限条件修正训练输入，保留冻结子集和旧结果；训练后按相同700请求及GRACE口径评价，不启动diffusion或外部对照。
+- 2026-10-17 评价方式已重新设计，当前依据为 [生成评价v1](../../research/wayfinder_crystal_20261011/generation-evaluation-design-v1-20261017.md)：独立固定请求、每请求100次、80meV主门槛、统一结构与性质评分；先7空间群共同基准，再组合条件扩展。来源结构不必从双方未见材料中抽取，新颖性针对实际生成结果。设计阶段不启动模型。
+- 2026-10-17 当前研究优先级：确定结构请求来源及与 PLaID++ v4 的共同评价协议。用户确认逐项评价和固定低 ehull 方向，提出80 meV/atom、每请求100次作为具体候选；先核对阈值、分母、训练重合及公开权重，不启动新训练。见 [验收契约](issues/06-acceptance-contract.md) 和 [对照建议](../../research/wayfinder_crystal_20261011/prompt-source-and-plaid-comparison-20261017.md)。
 - 2026-10-15 当前执行优先级：用户已授权在 LiuGangGPU 的现有 `/home/liugang/src/crystalDLM` 上启动 Qwen3-8B、BF16＋LoRA 纯 AR 基线，先预检后训练；沿用固定 7,272/900 数据和 32 个验证 ID。默认两张 H20、全部项目任务同时最多三张；旧单 A100 的规划由此次服务器和时间安排更新。见 [8B 纯 AR 实验](issues/14-qwen3-8b-pure-ar.md)。本次不启动新的联合训练。
 - 当前执行优先级见 [先运行匹配纯 AR 基线](issues/13-pure-ar-baseline.md)：用户纯AR作业627890已完成首轮学习试验，严格有效率7/32；性质评分及结构依赖未验证，先分析该基线再决定联合训练。
 - 2026-10-13 用户纠正实验顺序：性质/数据准备 → 同数据与基座的匹配纯 AR 基线 → 分析基线 → 共享 AR＋diffusion 联合训练。当前新 ehull 子集尚未运行匹配纯 AR 基线。既有20步 hybrid 作业仅保留为提前执行的工程诊断，不视为基线或正式联合实验，也不作为跳过纯 AR 的依据。当前优先准备纯 AR 配置，完整运行规模尚待确认。

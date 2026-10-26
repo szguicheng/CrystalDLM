@@ -1,0 +1,149 @@
+{
+  "status": "complete",
+  "scheduled_groups": 70,
+  "completed_groups": 70,
+  "arms": {
+    "independent": {
+      "success_within_attempts": {
+        "1": 9,
+        "2": 15,
+        "3": 19
+      },
+      "success_rate_within_3": 0.2714285714285714,
+      "logical_candidate_attempts": 186,
+      "mean_attempts_completed_groups": 2.657142857142857,
+      "mean_seconds_completed_groups": 69.69347778047835,
+      "logical_total_seconds": 4878.543444633484,
+      "retry_transitions": 116,
+      "repeated_error_transitions": 96,
+      "failure_categories": {
+        "strict_invalid": 158,
+        "RuntimeError: long time to generate structure, check inputs": 16,
+        "no_end": 7,
+        "IndexError: list index out of range": 1,
+        "ValueError: Wyckoff multiplicity does not match label": 65,
+        "wyckoff_coordinate_constraint": 22,
+        "formula_header_mismatch": 45,
+        "sites_header_mismatch": 42,
+        "ValueError: invalid cell formula": 1,
+        "ValueError: could not convert string to float: '1..90'": 1,
+        "ValueError: not enough values to unpack (expected 5, got 4)": 2,
+        "duplicate_fixed_orbit": 4,
+        "decoded_space_group_mismatch": 5,
+        "wrong_requested_sg": 10,
+        "ValueError: Error: invalid cell parameters for lattice.": 1,
+        "ValueError: could not convert string to float: '10..27'": 1,
+        "ValueError: could not convert string to float: '1..50'": 1,
+        "ValueError: could not convert string to float: '92..98'": 1,
+        "ValueError: could not convert string to float: '90..23'": 1,
+        "ValueError: invalid lattice header": 1,
+        "ValueError: invalid orbit species or label": 1,
+        "ValueError: (I42m) not found in space_group ": 1,
+        "ValueError: could not convert string to float: '1..18'": 1
+      },
+      "per_request": {
+        "sg-001": {
+          "completed_groups": 10,
+          "successful_groups": 2
+        },
+        "sg-015": {
+          "completed_groups": 10,
+          "successful_groups": 0
+        },
+        "sg-038": {
+          "completed_groups": 10,
+          "successful_groups": 2
+        },
+        "sg-119": {
+          "completed_groups": 10,
+          "successful_groups": 2
+        },
+        "sg-143": {
+          "completed_groups": 10,
+          "successful_groups": 0
+        },
+        "sg-194": {
+          "completed_groups": 10,
+          "successful_groups": 8
+        },
+        "sg-216": {
+          "completed_groups": 10,
+          "successful_groups": 5
+        }
+      }
+    },
+    "feedback": {
+      "success_within_attempts": {
+        "1": 9,
+        "2": 9,
+        "3": 9
+      },
+      "success_rate_within_3": 0.12857142857142856,
+      "logical_candidate_attempts": 192,
+      "mean_attempts_completed_groups": 2.742857142857143,
+      "mean_seconds_completed_groups": 46.8647407614759,
+      "logical_total_seconds": 3280.5318533033133,
+      "retry_transitions": 122,
+      "repeated_error_transitions": 58,
+      "failure_categories": {
+        "strict_invalid": 65,
+        "RuntimeError: long time to generate structure, check inputs": 4,
+        "no_start": 117,
+        "IndexError: list index out of range": 1,
+        "ValueError: Wyckoff multiplicity does not match label": 25,
+        "wyckoff_coordinate_constraint": 13,
+        "formula_header_mismatch": 19,
+        "sites_header_mismatch": 15,
+        "ValueError: could not convert string to float: '1..90'": 1,
+        "wrong_requested_sg": 4,
+        "ValueError: could not convert string to float: '10..27'": 1,
+        "decoded_space_group_mismatch": 1,
+        "ValueError: could not convert string to float: '1..50'": 1,
+        "ValueError: could not convert string to float: '90..23'": 1,
+        "ValueError: invalid orbit species or label": 1,
+        "duplicate_fixed_orbit": 2,
+        "ValueError: (I42m) not found in space_group ": 1
+      },
+      "per_request": {
+        "sg-001": {
+          "completed_groups": 10,
+          "successful_groups": 0
+        },
+        "sg-015": {
+          "completed_groups": 10,
+          "successful_groups": 0
+        },
+        "sg-038": {
+          "completed_groups": 10,
+          "successful_groups": 1
+        },
+        "sg-119": {
+          "completed_groups": 10,
+          "successful_groups": 0
+        },
+        "sg-143": {
+          "completed_groups": 10,
+          "successful_groups": 0
+        },
+        "sg-194": {
+          "completed_groups": 10,
+          "successful_groups": 4
+        },
+        "sg-216": {
+          "completed_groups": 10,
+          "successful_groups": 4
+        }
+      }
+    }
+  },
+  "paired": {
+    "both_success": 9,
+    "independent_only": 10,
+    "feedback_only": 0,
+    "neither": 51
+  },
+  "actual_candidate_generations": 308,
+  "scope": "Structural validity and original requested space group only; ehull is an input condition, unevaluated.",
+  "manifest": "run_manifest.json",
+  "running_groups": 0
+}

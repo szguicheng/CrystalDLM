@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "gate1_approved": true,
+  "model_name": "Qwen/Qwen3-8B",
+  "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+  "model_path": "/home/liugang/src/crystalDLM/models/Qwen3-8B-b968826d9c46",
+  "dataset_dir": "/home/liugang/src/crystalDLM/datasets/crystal_tasks_v1",
+  "manifest_sha256": "dce98892174a02a113a2de13200472d5997054f2b6a4306212be2fd9189c2d6c",
+  "training": {
+    "num_train_epochs": 3,
+    "seed": 42,
+    "data_seed": 42,
+    "world_size": 3,
+    "per_device_train_batch_size": 1,
+    "gradient_accumulation_steps": 4,
+    "global_batch_size": 12,
+    "bf16": true,
+    "learning_rate": 0.0002,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.05,
+    "lr_scheduler_type": "cosine",
+    "optim": "adamw_torch",
+    "max_grad_norm": 1,
+    "gradient_checkpointing": true
+  },
+  "lora": {
+    "rank": 32,
+    "alpha": 64,
+    "dropout": 0,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj",
+      "lm_head"
+    ],
+    "trainable_token_indices": [
+      151669,
+      151670,
+      151671,
+      151672
+    ]
+  },
+  "tokens": [
+    "<CRYSTAL_START>",
+    "<CRYSTAL_END>",
+    "<CRYSTAL_MASK>",
+    "<CRYSTAL_PAD>"
+  ],
+  "template": "qwen3",
+  "enable_thinking": false,
+  "train_on_prompt": false,
+  "monitoring": {
+    "eval_strategy": "steps",
+    "eval_steps": 600,
+    "save_steps": 600,
+    "save_each_epoch": true,
+    "save_final": true,
+    "keep_best_validation": true,
+    "early_stopping": false,
+    "validation": "full",
+    "train_logging_steps": 10,
+    "report_to": "tensorboard"
+  },
+  "tasks": {
+    "ar_understanding": {
+      "dataset": "crystal_understanding_training",
+      "eval_dataset": "crystal_understanding_validation",
+      "cutoff_len": 1024,
+      "max_new_tokens": 128,
+      "decoding": "greedy",
+      "ready": true
+    },
+    "ar_design": {
+      "dataset": "crystal_design_training",
+      "eval_dataset": "crystal_design_validation",
+      "cutoff_len": 2048,
+      "ready": false,
+      "readiness_reason": "Design JSONL absent; full token audit must pass without truncation before launch."
+    },
+    "hybrid_design": {
+      "dataset": "crystal_design_training",
+      "eval_dataset": "crystal_design_validation",
+      "cutoff_len": 2048,
+      "ready": false,
+      "readiness_reason": "Same design audit plus END gate4 and native-reference parity required.",
+      "objective": {
+        "clean_ar_weight": 1,
+        "denoise_current_weight": 1
+      }
+    }
+  },
+  "evaluation": {
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "attempts_per_condition_per_seed": 10,
+    "conditions": "distinct (space_group,ehull_upper) from published design test",
+    "estimated_condition_count": 359,
+    "ehull_upper_bounds": [
+      0.08,
+      0.1,
+      0.2,
+      0.3
+    ],
+    "structure_matcher": {
+      "ltol": 0.3,
+      "stol": 0.5,
+      "angle_tol": 10,
+      "primitive_cell": true,
+      "scale": true,
+      "attempt_supercell": false
+    },
+    "cov_reference": "all 4602 test raw structures",
+    "cov_precision_denominator": "all strict-valid raw generated structures",
+    "sun_denominator": "all generation attempts",
+    "novelty_reference": "full 36362 train; add verified PLaID train union for external comparison",
+    "denoising_validation_seed": 420025,
+    "denoising_masks": "fixed complementary crystal masks",
+    "extra_distribution_metrics": false
+  }
+}

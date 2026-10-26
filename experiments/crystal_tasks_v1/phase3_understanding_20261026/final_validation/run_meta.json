@@ -1,0 +1,90 @@
+{
+  "status": "complete",
+  "command": [
+    "/data1/users/liugang/crystalDLM/experiments/crystal_tasks_v1/evaluate_ar.py",
+    "--checkpoint",
+    "/home/liugang/src/crystalDLM/experiments/crystal_tasks_v1/phase3_understanding_20261026/full/final",
+    "--split",
+    "validation",
+    "--output",
+    "/home/liugang/src/crystalDLM/experiments/crystal_tasks_v1/phase3_understanding_20261026/final_validation"
+  ],
+  "configuration": {
+    "checkpoint": "/home/liugang/src/crystalDLM/experiments/crystal_tasks_v1/phase3_understanding_20261026/full/final",
+    "split": "validation",
+    "overfit32": false,
+    "output": "/home/liugang/src/crystalDLM/experiments/crystal_tasks_v1/phase3_understanding_20261026/final_validation",
+    "batch_size": 16
+  },
+  "git": {
+    "branch": "codex/crystal-tasks-v1-phase12",
+    "git_commit": "0bf04e1158fcedeca8472221a544bdd90c230f85",
+    "working_tree": "dirty",
+    "source_manifest": "/data1/users/liugang/crystalDLM/experiments/crystal_tasks_v1/source_manifest.json",
+    "source_manifest_sha256": "9ba288371370a7250ace0311faa486fcaa170a49b7f59d0f03b0a855a5df5741",
+    "source_manifest_files_sha256": {
+      "configuration.py": "80ade6782265bcbecad14c46d6ba1ca57b308a65b65de12c9033b446bcf57415",
+      "evaluate_ar.py": "9c97b8e7d8e010cdbed753f40bbc07f1310198d63f84916f5f025d344af657b7",
+      "python.sh": "a4a17a731746174fdbf677c16f7b715c2f90674feaa43e09674d82a6b79c21d5",
+      "training_metrics.py": "3d93a457cd5fb3c035624182af3009bbbfcbf9814d6f6cf876562b29de0ddf3a",
+      "reference_acceptance.py": "37608b6bbda1aa00cd2bd708241f8fa479f6e49e1793141da4307a2a3c56debe",
+      "__init__.py": "b7d5c03e57d3c0c8da442b710473033b9c1a49c45bccb78b2682961033ecd920",
+      "tokenization.py": "70dce4dd430f0e0d3d5b8092ceeb2b1a12bd85dc3d9e58e14d6fb9324bceb98a",
+      "train_ar.py": "ba486bdc1ea8cb8b5b5955fd973ffe4d1e5cfbc18166d0fd89a635aaf0d8e91a",
+      "launch_understanding.sh": "13bf9f485b2eac102fa168deaad30fbfbd39c20591ef9f1b3cc5e1a212c48160",
+      "preflight.py": "772f0f86bb3e0b622a83f1cb9b7338be97cfb0b8636ee8f7b2cfd58dbdb4ccb6",
+      "tests/test_understanding.py": "bdc4a390119b2f3a8a3f88f168457fb4a21fb9ffb6fa66e3dcd17273a3e8a3fa",
+      "tests/test_plan.py": "117655cf72b4aaf99e31a7e6e9c72040c4f699ba89065b29302d0a32b9d32143",
+      "tests/test_configuration.py": "993d846d5f2b9eb518b947d5894493d3f1b95065e51ed1fd9239d5c57d4dff39",
+      "tests/test_losses.py": "6d690e812be500b73ee8adb9d14b692d28ab824ba0fa8300b247429dd795adc1",
+      "tests/__init__.py": "d620ef21e2cf53d1ca8d1c6fd5c62754b3453ef7f141f2028762ec41eac7e2a4",
+      "tests/test_io.py": "b9120e46b24e146c5527c14a8098f012215702ea79aadf094ef8156543a09ec0",
+      "tests/test_training_metrics.py": "79a2a551402546a2895ef2e22f7a5b7730134196422b501f1f03b97ef77619b2",
+      "tests/test_design.py": "cd45f782e377340fa02f9ad652c3ec3fcceeda7d58e0c85295c294ba5e74393a",
+      "tests/test_train_ar.py": "773c6ad2e326df478ab507cb6d8e64adc26be5738a518c7bbe9f77dad12e799c",
+      "configs/ar_design.json": "3b874a28c4912a869fc0aaf263685758159ce25952ee38162334b45552dc3116",
+      "configs/ar_understanding.json": "4594f90a1a08d9165f34de400331a8905c25011e2f9f9dcc92975cfba6272e9e",
+      "configs/shared.json": "56763deb17a1833e145d206641c5036f132239ba80564c3e4bd0700369ea867b",
+      "evaluation/plan.py": "695217ff572df581b63d12a4622b7a98cda6f5650521ae75bf2b189535c039f0",
+      "evaluation/legacy.py": "fb154919c5cb3ee198949833c3be4abf8c37844f029b28275f57ef8d88a7a160",
+      "evaluation/understanding.py": "87bcf31eb5f5920910d832ce91efac8eaf5b37445666d9c047c3dda2aa203dd8",
+      "evaluation/references.py": "21fca515dc7d8e8096a421ce3652a1f92dbae30402f1b43c6519d7089256caf7",
+      "evaluation/design.py": "2b5cdc93babc88ddb723a9bec3c3b065822062f2c7166d61653a90100577c832",
+      "evaluation/__init__.py": "3eba1c6a49ebae76d63dec99182c513059cd144e0ae2f2b95aa94779bedb811a",
+      "evaluation/nll.py": "52eef796e7351b0222743b702f1e425cafa028a2c00af4a51fcdd4e3c431b628",
+      "evaluation/cli.py": "5a27f768f971965b8779df261645c736f49a8173b4cd49c2d3083e974a8766ba",
+      "evaluation/losses.py": "55d323be68672d9e04486d63bf7bb6dd843f28d409644d8d4afff1ed94749813",
+      "evaluation/grace.py": "269a08673361d8b04812aa17e3dd4fe5251c8e3e68e7f56828d19c67ec90851f",
+      "setup_20261026/install.sh": "88987d72c9eec01239533f844dd79e147d89a602389887f1a8d72bb78eb9a3c4",
+      "setup_20261026/llamafactory-control-tokens.patch": "9a8f287b1ec58404bfee0a1d83a095a85fa4c336306faf20be0d891519fb7f6a",
+      "setup_20261026/install_offline.py": "5d9e5a17294ce666d12f0f8e30691806125db918d0c854c4b45ee2f91361d28a",
+      "setup_20261026/fetch_resolved.py": "2cf16176b81a341ad89eace305ec91ed205a34571838bfbe9cfd59481cc0ab4f"
+    }
+  },
+  "base_model": "Qwen/Qwen3-8B",
+  "base_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+  "checkpoint": "/home/liugang/src/crystalDLM/experiments/crystal_tasks_v1/phase3_understanding_20261026/full/final",
+  "dataset_manifest_sha256": "dce98892174a02a113a2de13200472d5997054f2b6a4306212be2fd9189c2d6c",
+  "seed": 42,
+  "environment": {
+    "python": "3.11.17",
+    "platform": "Linux-6.8.0-124-generic-x86_64-with-glibc2.39",
+    "cuda_visible_devices": "0",
+    "packages": {
+      "pymatgen": "2025.10.7",
+      "numpy": "2.2.6",
+      "torch": "2.6.0+cu124",
+      "transformers": "4.57.6",
+      "tensorflow": null,
+      "tensorpotential": null,
+      "ase": "3.29.0"
+    }
+  },
+  "started_at": "2026-10-26T08:49:24.240772+00:00",
+  "rows": 4501,
+  "source_sha256": {
+    "/data1/users/liugang/crystalDLM/experiments/crystal_tasks_v1/evaluate_ar.py": "9c97b8e7d8e010cdbed753f40bbc07f1310198d63f84916f5f025d344af657b7",
+    "/data1/users/liugang/crystalDLM/experiments/crystal_tasks_v1/tokenization.py": "70dce4dd430f0e0d3d5b8092ceeb2b1a12bd85dc3d9e58e14d6fb9324bceb98a"
+  },
+  "ended_at": "2026-10-26T09:08:56.704920+00:00"
+}

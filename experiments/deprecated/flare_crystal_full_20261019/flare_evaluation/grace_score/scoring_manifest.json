@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "purpose": "score",
+  "scorer_sha256": "bfd38871ff3ff83606de2c42b78e0a631c9bb8a0e62693b245fa241230d60cba",
+  "model": "GRACE-3L-OMAT-large-ft-AM",
+  "model_manifest": {
+    "model": "GRACE-3L-OMAT-large-ft-AM",
+    "repository": "AMS-ICAMS-RUB/grace-foundation-models",
+    "revision": "46ead61dc8a7f90c11b1e59b8489e8e9bf97b888",
+    "file": "models/GRACE-3L-OMAT-large-ft-AM-model.tar.gz",
+    "sha256": "0d7ebce7d3ddbd168d086fbd43c583a4c34fb55b7509f78be3dc89db67651e52",
+    "bytes": 191371901
+  },
+  "model_manifest_sha256": "1ca90cdf6977257c947e717c125176feda1a9348176d8ed55d30243819e73495",
+  "model_dir": "/home/liugang/src/crystalDLM/experiments/structure_request_eval_20261017/assets/grace-model/GRACE-3L-OMAT-large-ft-AM",
+  "hull_path": "/home/liugang/src/crystalDLM/experiments/structure_request_eval_20261017/assets/2023-02-07-ppd-mp.pkl.gz",
+  "hull_sha256": "f7fc992230e88dcf26bab2e85fa1ed4fdf6b047c06479bfd8b7a1e003f242d1e",
+  "hull_snapshot": "Matbench Discovery 2023-02-07 MP PPD",
+  "relaxation": {
+    "optimizer": "ASE FIRE + FrechetCellFilter",
+    "fmax_eV_per_A": 0.05,
+    "max_steps": 300,
+    "min_distance_A": 0.5,
+    "symprec_A": 0.01,
+    "angle_tolerance_deg": 5
+  },
+  "thresholds_eV_per_atom": [
+    0.0,
+    0.08,
+    0.1
+  ],
+  "software": {
+    "tensorpotential": "0.6.2",
+    "tensorflow": "2.20.0",
+    "ase": "3.29.0",
+    "pymatgen": "2025.10.7",
+    "pyxtal": "1.0.8",
+    "scipy": "1.17.1"
+  },
+  "cuda_visible_devices": "0",
+  "run_manifest_sha256": "5a9111e97cc7410d1e02f0e7d5e486185e6a7f2ac21c3353db6e738b900c217b",
+  "training_triples_sha256": "b74afafbca5a52eb1a63c9a7502c9fe1f5055cfef0c25f122de6d140c137080b",
+  "calibration_summary_sha256": "a80dcaf9ac561344044cb33f6430a2761355f00ff37283356a32d957d902372a",
+  "generation_attempt_plan_sha256": "8acfff65cea781091651d07585e0bbb770632c7dcb64ec0525b28b1277e45ddd"
+}

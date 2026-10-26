@@ -1,0 +1,30 @@
+test_answer_only_and_original_base (experiments.crystal_tasks_v1.tests.test_configuration.ConfigurationTests.test_answer_only_and_original_base) ... ok
+test_three_gpu_effective_batch_and_design_matching (experiments.crystal_tasks_v1.tests.test_configuration.ConfigurationTests.test_three_gpu_effective_batch_and_design_matching) ... ok
+test_decimal_and_negative_numbers_are_not_truncated_to_integers (experiments.crystal_tasks_v1.tests.test_understanding.UnderstandingTests.test_decimal_and_negative_numbers_are_not_truncated_to_integers) ... /data1/users/liugang/crystalDLM/envs/crystaldlm/lib/python3.11/site-packages/pymatgen/core/composition.py:1373: FutureWarning: gcd is deprecated, and will be removed on 2028-01-01
+Use math.gcd instead.
+  factor = abs(gcd(*(int(i) for i in sym_amt.values())))
+ok
+test_each_single_wrong_fact_only_loses_its_field (experiments.crystal_tasks_v1.tests.test_understanding.UnderstandingTests.test_each_single_wrong_fact_only_loses_its_field) ... ok
+test_formula_order_and_reduced_composition_are_equivalent (experiments.crystal_tasks_v1.tests.test_understanding.UnderstandingTests.test_formula_order_and_reduced_composition_are_equivalent) ... ok
+test_gold_response_gets_all_four_facts (experiments.crystal_tasks_v1.tests.test_understanding.UnderstandingTests.test_gold_response_gets_all_four_facts) ... ok
+test_malformed_or_contradictory_facts_are_false (experiments.crystal_tasks_v1.tests.test_understanding.UnderstandingTests.test_malformed_or_contradictory_facts_are_false) ... ok
+test_summary_reports_per_field_and_all_four_rates_with_row_grades (experiments.crystal_tasks_v1.tests.test_understanding.UnderstandingTests.test_summary_reports_per_field_and_all_four_rates_with_row_grades) ... ok
+test_aggregate_causal_nll_is_token_weighted_across_batches (experiments.crystal_tasks_v1.tests.test_losses.LossMetricTests.test_aggregate_causal_nll_is_token_weighted_across_batches) ... ok
+test_causal_nll_ignores_prompt_labels_masked_with_minus_100 (experiments.crystal_tasks_v1.tests.test_losses.LossMetricTests.test_causal_nll_ignores_prompt_labels_masked_with_minus_100) ... ok
+test_causal_nll_reports_undefined_means_for_empty_targets (experiments.crystal_tasks_v1.tests.test_losses.LossMetricTests.test_causal_nll_reports_undefined_means_for_empty_targets) ... ok
+test_causal_nll_shifts_logits_and_attributes_targets_to_their_segments (experiments.crystal_tasks_v1.tests.test_losses.LossMetricTests.test_causal_nll_shifts_logits_and_attributes_targets_to_their_segments) ... FAIL
+test_denoising_metrics_report_both_named_normalizations (experiments.crystal_tasks_v1.tests.test_losses.LossMetricTests.test_denoising_metrics_report_both_named_normalizations) ... ok
+test_denoising_metrics_use_none_for_zero_denominators (experiments.crystal_tasks_v1.tests.test_losses.LossMetricTests.test_denoising_metrics_use_none_for_zero_denominators) ... ok
+
+======================================================================
+FAIL: test_causal_nll_shifts_logits_and_attributes_targets_to_their_segments (experiments.crystal_tasks_v1.tests.test_losses.LossMetricTests.test_causal_nll_shifts_logits_and_attributes_targets_to_their_segments)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data1/users/liugang/crystalDLM/experiments/crystal_tasks_v1/tests/test_losses.py", line 25, in test_causal_nll_shifts_logits_and_attributes_targets_to_their_segments
+    self.assertAlmostEqual(result["nll_sum"], 2 * first + last)
+AssertionError: 2.380784273147583 != 2.3807840331289176 within 7 places (2.400186653872538e-07 difference)
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.006s
+
+FAILED (failures=1)

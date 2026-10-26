@@ -1,0 +1,69 @@
+{
+  "schema": 1,
+  "command": [
+    "/data1/users/liugang/crystalDLM/experiments/crystal_tasks_v1/evaluation/cli.py",
+    "understanding",
+    "--predictions",
+    "experiments/crystal_tasks_v1/acceptance_inputs/understanding-test-gold.jsonl",
+    "--dataset-dir",
+    "datasets/crystal_tasks_v1",
+    "--split",
+    "test",
+    "--model",
+    "oracle",
+    "--checkpoint",
+    "reference-answers-no-model",
+    "--output",
+    "experiments/crystal_tasks_v1/acceptance_understanding_cli"
+  ],
+  "config": {
+    "task": "understanding",
+    "dataset_dir": "datasets/crystal_tasks_v1",
+    "output": "experiments/crystal_tasks_v1/acceptance_understanding_cli",
+    "model": "oracle",
+    "checkpoint": "reference-answers-no-model",
+    "parameter_count": null,
+    "predictions": "experiments/crystal_tasks_v1/acceptance_inputs/understanding-test-gold.jsonl",
+    "split": "test"
+  },
+  "git": {
+    "branch": "codex/crystal-tasks-v1-phase12",
+    "git_commit": "0bf04e1158fcedeca8472221a544bdd90c230f85",
+    "working_tree": "dirty",
+    "source_manifest": "/data1/users/liugang/crystalDLM/experiments/crystal_tasks_v1/source_manifest.json",
+    "source_manifest_sha256": "bbaf0f21987e441a7496085d8b52a835dcddbe4ee8b781084d3332e1a6879ed0"
+  },
+  "base_model": "oracle",
+  "checkpoint": "reference-answers-no-model",
+  "parameter_count": null,
+  "dataset_manifest_sha256": "dce98892174a02a113a2de13200472d5997054f2b6a4306212be2fd9189c2d6c",
+  "input_sha256": {
+    "experiments/crystal_tasks_v1/acceptance_inputs/understanding-test-gold.jsonl": "61837af03e708d431e18862b04db904fcca870bef61293d5e1fab12d650fe4a0"
+  },
+  "seeds": [
+    42
+  ],
+  "environment": {
+    "python": "3.11.17",
+    "platform": "Linux-6.8.0-124-generic-x86_64-with-glibc2.39",
+    "cuda_visible_devices": "",
+    "packages": {
+      "pymatgen": "2025.10.7",
+      "numpy": "2.2.6",
+      "torch": "2.6.0+cu124",
+      "transformers": "4.57.6",
+      "tensorflow": null,
+      "tensorpotential": null,
+      "ase": "3.29.0"
+    }
+  },
+  "code_sha256": {
+    "experiments/crystal_tasks_v1/evaluation/cli.py": "2f632ac01871b5d97f94e34785e2c00421bd3f8c200e69e42376d496fa9bac95",
+    "experiments/crystal_tasks_v1/evaluation/references.py": "21fca515dc7d8e8096a421ce3652a1f92dbae30402f1b43c6519d7089256caf7",
+    "experiments/crystal_tasks_v1/evaluation/understanding.py": "87bcf31eb5f5920910d832ce91efac8eaf5b37445666d9c047c3dda2aa203dd8"
+  },
+  "started_at": "2026-10-26T04:30:32.172716+00:00",
+  "ended_at": "2026-10-26T04:30:32.890398+00:00",
+  "split": "test",
+  "evaluated_rows": 4602
+}

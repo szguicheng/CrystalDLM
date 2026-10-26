@@ -1,0 +1,29 @@
+test_condition_uses_decoded_space_group_number (test_run.RequestEvaluationTests.test_condition_uses_decoded_space_group_number) ... ok
+test_failed_slots_remain_in_raw_attempt_denominator (test_run.RequestEvaluationTests.test_failed_slots_remain_in_raw_attempt_denominator) ... ok
+test_fixed_plan_is_reproducible_and_preflight_limit_covers_all_groups (test_run.RequestEvaluationTests.test_fixed_plan_is_reproducible_and_preflight_limit_covers_all_groups) ... ok
+test_resume_rejects_changed_checkpoint_or_sampling_identity (test_run.RequestEvaluationTests.test_resume_rejects_changed_checkpoint_or_sampling_identity) ... ok
+test_time_embeddings_match_the_ar_crystal_region_boundary (test_run.RequestEvaluationTests.test_time_embeddings_match_the_ar_crystal_region_boundary) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.001s
+
+OK
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 5/5 [00:00<00:00, 172.05it/s]
+Traceback (most recent call last):
+  File "/home/liugang/src/crystalDLM/experiments/structure_request_eval_20261017/run.py", line 599, in <module>
+    main()
+  File "/home/liugang/src/crystalDLM/experiments/structure_request_eval_20261017/run.py", line 595, in main
+    run(parser.parse_args())
+  File "/home/liugang/src/crystalDLM/experiments/structure_request_eval_20261017/run.py", line 527, in run
+    parity = _assert_parity(model, tok, REQUESTS[0]["prompt"])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/liugang/src/crystalDLM/experiments/structure_request_eval_20261017/run.py", line 322, in _assert_parity
+    torch.testing.assert_close(cached, expected, rtol=2e-3, atol=2e-3)
+  File "/home/liugang/src/crystalDLM/envs/crystaldlm/lib/python3.11/site-packages/torch/testing/_comparison.py", line 1530, in assert_close
+    raise error_metas[0].to_error(msg)
+AssertionError: Tensor-likes are not close!
+
+Mismatched elements: 71093 / 151673 (46.9%)
+Greatest absolute difference: 0.125 at index (33,) (up to 0.002 allowed)
+Greatest relative difference: inf at index (16849,) (up to 0.002 allowed)

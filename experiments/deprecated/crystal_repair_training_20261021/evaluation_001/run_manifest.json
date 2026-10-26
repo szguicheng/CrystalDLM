@@ -1,0 +1,131 @@
+{
+  "schema": 1,
+  "experiment": "crystal_repair_training_20261021",
+  "data_directory": "experiments/crystal_repair_training_20261021/data_002",
+  "run_directory": "experiments/crystal_repair_training_20261021/run_001",
+  "selection_manifest_sha256": "f1f4621e720e2984c6f08d7b12bf103d487a07b60dbcfc02a3a52011855686dd",
+  "data_hashes": {
+    "train_sha256": "8099cca74c6b2bac2c0f51c3e1c267803028a09a76abc422f5273eb9c6349fef",
+    "val_sha256": "8f0c15fc48920b6851026c6afb9456b3884a9afed6394bf5de9c2f5beeaee5c0",
+    "manifest_sha256": "4a56f39cd5cc474d80642e34c0b075b8890a4225580fc74c592f173c6e51228a",
+    "source_manifest_sha256": "aa21f3fbb4e9a19a676d1012405575932134675c3684d336d2c41283a281e741"
+  },
+  "source_checkpoint_identity_sha256": "03d3316dbf85a4ce888a4fe28e61e21b1f20a3dda977bb8afa871b21067c1686",
+  "num_shards": 3,
+  "seed": 42,
+  "evaluation_source_sha256": {
+    "evaluate.py": "08fed5af22f37f29ebdc9458203ec7f8a37b8e0035d9bb8fa4760933b417eca8",
+    "repair_trainer_run.py": "4579c4080584060533a5e63405c65a4a362318b13f431541ae56c9ad8dc3c05f",
+    "repair_trainer_model.py": "56dff066a865c438168fbf7546a5cb039a192c1327973f80733fc8ae3da14b1c",
+    "repair_prepare.py": "a7827f84cfc76ba8d8555483fd061def588bdaf8e0e337ff170141bc2a83e3b5",
+    "parent_trainer_run.py": "627e6c1d88623c8aa48d4ce158cbd21a2fdb0313d436e05eda2e950e4b03bbe2",
+    "parent_trainer_model.py": "e289355c146db632a65aa618afd203ba5702e9a90e10cb6ecaea395a7244fe82",
+    "feedback_loop_run.py": "3dc2df467d59897708a1a309595dc4ec1c6a06319ccecb883b64dd9fab4f9278",
+    "legacy_evaluate.py": "9d4c645f04a67e5815979e1e3761d77f52115fbf9134a76c983fe50d73340ccc",
+    "structure_conditioned_evaluate.py": "29bae2782365708a6c8b4b05590c34538a64ce2984ccb3a9fe133edee4036cfe",
+    "structure_request_runner.py": "4bd89a820e27b893a080294c82892d9fd14d33461bb8f7efd751ced78b5a3ff5",
+    "strict_structure_score.py": "c1dfe1b87715b5b650b7152e02fed567bd5f7f0fd9109295ec87208f23165c6b"
+  },
+  "arms": {
+    "parent": {
+      "schema": 1,
+      "arm": "parent",
+      "checkpoint_path": "experiments/flare_crystal_full_20261019/flare/checkpoint.pt",
+      "checkpoint_fingerprint_sha256": "6dcce421b41a8a6d4cd1fe96fe474933901fd521662f2be8028b00be802b1487",
+      "source_checkpoint_identity_sha256": "03d3316dbf85a4ce888a4fe28e61e21b1f20a3dda977bb8afa871b21067c1686",
+      "source_trainable_state_sha256": "19f7e0b5e3bc1e1c73b6e550c59d8c50819ee4ec90fc560079af55b53851b379",
+      "trainable_state_sha256": "19f7e0b5e3bc1e1c73b6e550c59d8c50819ee4ec90fc560079af55b53851b379",
+      "evaluation_source_sha256": {
+        "evaluate.py": "08fed5af22f37f29ebdc9458203ec7f8a37b8e0035d9bb8fa4760933b417eca8",
+        "repair_trainer_run.py": "4579c4080584060533a5e63405c65a4a362318b13f431541ae56c9ad8dc3c05f",
+        "repair_trainer_model.py": "56dff066a865c438168fbf7546a5cb039a192c1327973f80733fc8ae3da14b1c",
+        "repair_prepare.py": "a7827f84cfc76ba8d8555483fd061def588bdaf8e0e337ff170141bc2a83e3b5",
+        "parent_trainer_run.py": "627e6c1d88623c8aa48d4ce158cbd21a2fdb0313d436e05eda2e950e4b03bbe2",
+        "parent_trainer_model.py": "e289355c146db632a65aa618afd203ba5702e9a90e10cb6ecaea395a7244fe82",
+        "feedback_loop_run.py": "3dc2df467d59897708a1a309595dc4ec1c6a06319ccecb883b64dd9fab4f9278",
+        "legacy_evaluate.py": "9d4c645f04a67e5815979e1e3761d77f52115fbf9134a76c983fe50d73340ccc",
+        "structure_conditioned_evaluate.py": "29bae2782365708a6c8b4b05590c34538a64ce2984ccb3a9fe133edee4036cfe",
+        "structure_request_runner.py": "4bd89a820e27b893a080294c82892d9fd14d33461bb8f7efd751ced78b5a3ff5",
+        "strict_structure_score.py": "c1dfe1b87715b5b650b7152e02fed567bd5f7f0fd9109295ec87208f23165c6b"
+      },
+      "selection_manifest_sha256": "f1f4621e720e2984c6f08d7b12bf103d487a07b60dbcfc02a3a52011855686dd",
+      "data_hashes": {
+        "train_sha256": "8099cca74c6b2bac2c0f51c3e1c267803028a09a76abc422f5273eb9c6349fef",
+        "val_sha256": "8f0c15fc48920b6851026c6afb9456b3884a9afed6394bf5de9c2f5beeaee5c0",
+        "manifest_sha256": "4a56f39cd5cc474d80642e34c0b075b8890a4225580fc74c592f173c6e51228a",
+        "source_manifest_sha256": "aa21f3fbb4e9a19a676d1012405575932134675c3684d336d2c41283a281e741"
+      },
+      "seed": 42,
+      "num_shards": 3,
+      "sampling": {
+        "lead": "natural stochastic top-p AR; START is not forced",
+        "crystal": "B=4 FLARE shifted-block denoising",
+        "temperature": 0.8,
+        "top_p": 0.95,
+        "max_lead_tokens": 256,
+        "crystal_capacity_including_END": 544,
+        "max_context": 4096
+      },
+      "software": {
+        "python": "3.11.17",
+        "torch": "2.6.0+cu124",
+        "cuda": "12.4",
+        "transformers": "4.57.6",
+        "peft": "0.18.0",
+        "accelerate": "1.15.0"
+      },
+      "property_evaluation_status": "not_evaluated",
+      "readback_status": "not_run"
+    },
+    "new": {
+      "schema": 1,
+      "arm": "new",
+      "checkpoint_path": "experiments/crystal_repair_training_20261021/run_001/checkpoint.pt",
+      "checkpoint_fingerprint_sha256": "ca31b64b3920a4b9badced8c678659d880e1a3e7ecb3ffffe989057d4d21105b",
+      "source_checkpoint_identity_sha256": "03d3316dbf85a4ce888a4fe28e61e21b1f20a3dda977bb8afa871b21067c1686",
+      "source_trainable_state_sha256": "19f7e0b5e3bc1e1c73b6e550c59d8c50819ee4ec90fc560079af55b53851b379",
+      "trainable_state_sha256": "4775e389f53ef972fccbd4c8c86ad80a3c0cc7e93306ad33eb734d74a419160a",
+      "evaluation_source_sha256": {
+        "evaluate.py": "08fed5af22f37f29ebdc9458203ec7f8a37b8e0035d9bb8fa4760933b417eca8",
+        "repair_trainer_run.py": "4579c4080584060533a5e63405c65a4a362318b13f431541ae56c9ad8dc3c05f",
+        "repair_trainer_model.py": "56dff066a865c438168fbf7546a5cb039a192c1327973f80733fc8ae3da14b1c",
+        "repair_prepare.py": "a7827f84cfc76ba8d8555483fd061def588bdaf8e0e337ff170141bc2a83e3b5",
+        "parent_trainer_run.py": "627e6c1d88623c8aa48d4ce158cbd21a2fdb0313d436e05eda2e950e4b03bbe2",
+        "parent_trainer_model.py": "e289355c146db632a65aa618afd203ba5702e9a90e10cb6ecaea395a7244fe82",
+        "feedback_loop_run.py": "3dc2df467d59897708a1a309595dc4ec1c6a06319ccecb883b64dd9fab4f9278",
+        "legacy_evaluate.py": "9d4c645f04a67e5815979e1e3761d77f52115fbf9134a76c983fe50d73340ccc",
+        "structure_conditioned_evaluate.py": "29bae2782365708a6c8b4b05590c34538a64ce2984ccb3a9fe133edee4036cfe",
+        "structure_request_runner.py": "4bd89a820e27b893a080294c82892d9fd14d33461bb8f7efd751ced78b5a3ff5",
+        "strict_structure_score.py": "c1dfe1b87715b5b650b7152e02fed567bd5f7f0fd9109295ec87208f23165c6b"
+      },
+      "selection_manifest_sha256": "f1f4621e720e2984c6f08d7b12bf103d487a07b60dbcfc02a3a52011855686dd",
+      "data_hashes": {
+        "train_sha256": "8099cca74c6b2bac2c0f51c3e1c267803028a09a76abc422f5273eb9c6349fef",
+        "val_sha256": "8f0c15fc48920b6851026c6afb9456b3884a9afed6394bf5de9c2f5beeaee5c0",
+        "manifest_sha256": "4a56f39cd5cc474d80642e34c0b075b8890a4225580fc74c592f173c6e51228a",
+        "source_manifest_sha256": "aa21f3fbb4e9a19a676d1012405575932134675c3684d336d2c41283a281e741"
+      },
+      "seed": 42,
+      "num_shards": 3,
+      "sampling": {
+        "lead": "natural stochastic top-p AR; START is not forced",
+        "crystal": "B=4 FLARE shifted-block denoising",
+        "temperature": 0.8,
+        "top_p": 0.95,
+        "max_lead_tokens": 256,
+        "crystal_capacity_including_END": 544,
+        "max_context": 4096
+      },
+      "software": {
+        "python": "3.11.17",
+        "torch": "2.6.0+cu124",
+        "cuda": "12.4",
+        "transformers": "4.57.6",
+        "peft": "0.18.0",
+        "accelerate": "1.15.0"
+      },
+      "property_evaluation_status": "not_evaluated",
+      "readback_status": "not_run"
+    }
+  }
+}

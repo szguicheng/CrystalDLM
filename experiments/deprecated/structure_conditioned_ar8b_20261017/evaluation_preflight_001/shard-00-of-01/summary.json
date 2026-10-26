@@ -1,0 +1,130 @@
+{
+  "status": "complete",
+  "scheduled_attempts": 7,
+  "completed_attempts": 7,
+  "pending_attempts": 0,
+  "strict_valid_structures": 1,
+  "requested_space_group_matches": 2,
+  "valid_and_requested_space_group_matches": 1,
+  "lead_failures": 0,
+  "crystal_failures": 0,
+  "invalid_structure_attempts": 6,
+  "ehull_evaluation_status": "not_run",
+  "raw_attempt_denominator": 7,
+  "run_manifest_sha256": "fb5e341a16aa4fa625813c2c4e22db2e72a227e9f76d5cb712fee7278f7a3b12",
+  "shard": {
+    "shard_index": 0,
+    "num_shards": 1,
+    "attempt_plan_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "cached_logits_parity_passed": true,
+    "run_manifest_sha256": "fb5e341a16aa4fa625813c2c4e22db2e72a227e9f76d5cb712fee7278f7a3b12"
+  },
+  "cached_logits_parity": {
+    "passed": true,
+    "interpretation": "BF16 cached and full forwards may differ elementwise from rounding; FP32 tiny-model route coverage is checked separately.",
+    "acceptance": {
+      "top1_same": true,
+      "kl_reference_to_cached_max": 0.01,
+      "max_abs_max": 0.5,
+      "mean_abs_max": 0.1
+    },
+    "strict_elementwise_tolerance": {
+      "rtol": 0.002,
+      "atol": 0.002
+    },
+    "aggregate": {
+      "max_abs": 0.25,
+      "max_mean_abs": 0.061100248247385025,
+      "max_kl_reference_to_cached": 0.0017862075474113226,
+      "all_top1_same": true,
+      "all_distribution_criteria_passed": true
+    },
+    "contexts": [
+      {
+        "context": "prompt_before_start",
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "rms_abs": 0.0,
+        "kl_reference_to_cached": 0.0,
+        "cosine_similarity": 1.0,
+        "top1_reference": 576,
+        "top1_cached": 576,
+        "top1_same": true,
+        "strict_close_fraction": 1.0,
+        "strict_close_rtol": 0.002,
+        "strict_close_atol": 0.002,
+        "distribution_criteria_passed": true
+      },
+      {
+        "context": "after_start",
+        "max_abs": 0.125,
+        "mean_abs": 0.013553611002862453,
+        "rms_abs": 0.021692581474781036,
+        "kl_reference_to_cached": 0.0012627390678972006,
+        "cosine_similarity": 0.9999905228614807,
+        "top1_reference": 44,
+        "top1_cached": 44,
+        "top1_same": true,
+        "strict_close_fraction": 0.5205870270729065,
+        "strict_close_rtol": 0.002,
+        "strict_close_atol": 0.002,
+        "distribution_criteria_passed": true
+      },
+      {
+        "context": "inside_crystal_token_0",
+        "max_abs": 0.25,
+        "mean_abs": 0.022605594247579575,
+        "rms_abs": 0.03763142600655556,
+        "kl_reference_to_cached": 0.0017862075474113226,
+        "cosine_similarity": 0.9999872446060181,
+        "top1_reference": 44,
+        "top1_cached": 44,
+        "top1_same": true,
+        "strict_close_fraction": 0.5851535797119141,
+        "strict_close_rtol": 0.002,
+        "strict_close_atol": 0.002,
+        "distribution_criteria_passed": true
+      },
+      {
+        "context": "at_crystal_end",
+        "max_abs": 0.25,
+        "mean_abs": 0.061100248247385025,
+        "rms_abs": 0.07375161349773407,
+        "kl_reference_to_cached": 0.00153264869004488,
+        "cosine_similarity": 0.9999852180480957,
+        "top1_reference": 52,
+        "top1_cached": 52,
+        "top1_same": true,
+        "strict_close_fraction": 0.16445906460285187,
+        "strict_close_rtol": 0.002,
+        "strict_close_atol": 0.002,
+        "distribution_criteria_passed": true
+      },
+      {
+        "context": "after_crystal_end",
+        "max_abs": 0.1875,
+        "mean_abs": 0.02317732945084572,
+        "rms_abs": 0.038822174072265625,
+        "kl_reference_to_cached": 0.00067576311994344,
+        "cosine_similarity": 0.9999865889549255,
+        "top1_reference": 44,
+        "top1_cached": 44,
+        "top1_same": true,
+        "strict_close_fraction": 0.5899797677993774,
+        "strict_close_rtol": 0.002,
+        "strict_close_atol": 0.002,
+        "distribution_criteria_passed": true
+      }
+    ]
+  },
+  "temperature": 0.8,
+  "top_p": 0.95
+}

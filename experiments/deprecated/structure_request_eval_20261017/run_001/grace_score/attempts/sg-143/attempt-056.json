@@ -1,0 +1,416 @@
+{
+  "request_id": "sg-143",
+  "attempt_id": 56,
+  "seed": 338084211,
+  "space_group_number_requested": 143,
+  "structural_valid": true,
+  "requested_sg_match": false,
+  "actual_space_group_number_pre_relax": 62,
+  "generation_receipt": {
+    "path": "/home/liugang/src/crystalDLM/experiments/structure_request_eval_20261017/run_001/shard-00-of-02/attempts/sg-143/attempt-056.json",
+    "sha256": "a0bbdc467f357b1da4d7734fd696617efe3dc2828608a2cc1661b7a988ff31d8"
+  },
+  "score_status": "scored",
+  "ehull_proxy_raw_eV_per_atom": 0.038559274258423315,
+  "ehull_proxy_corrected_eV_per_atom": 0.038559274258423315,
+  "novel_vs_own_train": true,
+  "source_cif": {
+    "path": "/home/liugang/src/crystalDLM/experiments/structure_request_eval_20261017/run_001/shard-00-of-02/attempts/sg-143/attempt-056.cif",
+    "sha256": "70c91b7da6e76ae1262babeef5be1b5cc952ec889d06d3cd40b4b1e7c38d8631"
+  },
+  "reduced_formula": "Fe2NiW",
+  "score_label": "GRACE energy minus fixed MP 2023 hull proxy; not DFT ehull",
+  "energy_units": {
+    "total_energy": "eV",
+    "force": "eV/angstrom",
+    "ehull": "eV/atom"
+  },
+  "initial_grace_energy_eV": -96.4654107093811,
+  "relaxed_grace_energy_eV": -142.86779403686523,
+  "relaxed_mp2020_corrected_grace_energy_eV": -142.86779403686523,
+  "mp2020_correction_eV": 0.0,
+  "mp2020_correction_error": null,
+  "reference_hull_energy_eV_per_atom": -8.9677964015625,
+  "converged": true,
+  "relax_steps": 82,
+  "max_atomic_force_eV_per_A": 0.04293730691011544,
+  "actual_space_group_number_post_relax": 62,
+  "post_relax_valid": true,
+  "post_relax_validation_errors": [],
+  "pre_relax_valid": true,
+  "pre_relax_validation_errors": [],
+  "minimum_periodic_distance_pre_relax_A": 1.7331496943137938,
+  "minimum_periodic_distance_A": 2.4737041379707874,
+  "relaxation_seconds": 1.6770256226882339,
+  "timing_seconds": {
+    "initial_singlepoint": 0.015128560364246368,
+    "relaxation": 1.6770256226882339,
+    "final_singlepoint_and_force": 0.00012201815843582153,
+    "total": 1.6978827165439725
+  },
+  "relaxed_structure": {
+    "@module": "pymatgen.core.structure",
+    "@class": "Structure",
+    "charge": 0.0,
+    "lattice": {
+      "matrix": [
+        [
+          8.98815684553143,
+          -1.219784866091558e-09,
+          4.298248741766013e-08
+        ],
+        [
+          9.371681603761564e-11,
+          4.103954570466007,
+          -1.6304818872309962e-09
+        ],
+        [
+          -4.304251529855919e-08,
+          -2.802163697802463e-09,
+          5.108677951724823
+        ]
+      ],
+      "pbc": [
+        true,
+        true,
+        true
+      ],
+      "a": 8.98815684553143,
+      "b": 4.103954570466007,
+      "c": 5.108677951724823,
+      "alpha": 90.00000005419069,
+      "beta": 90.00000020874273,
+      "gamma": 90.00000000646725,
+      "volume": 188.44373906368736
+    },
+    "properties": {},
+    "sites": [
+      {
+        "species": [
+          {
+            "element": "Fe",
+            "occu": 1
+          }
+        ],
+        "abc": [
+          0.41871977891543927,
+          0.25000000125364874,
+          0.7574484713477226
+        ],
+        "properties": {},
+        "label": "Fe",
+        "xyz": [
+          3.7635190146391544,
+          1.0259886451281766,
+          3.869560322731779
+        ]
+      },
+      {
+        "species": [
+          {
+            "element": "Fe",
+            "occu": 1
+          }
+        ],
+        "abc": [
+          0.08128021412380584,
+          0.7499999965880317,
+          0.25744847089246353
+        ],
+        "properties": {},
+        "label": "Fe",
+        "xyz": [
+          0.7305593019722039,
+          3.0779659130263854,
+          1.3152213292243626
+        ]
+      },
+      {
+        "species": [
+          {
+            "element": "Fe",
+            "occu": 1
+          }
+        ],
+        "abc": [
+          0.581280216603644,
+          0.7500000018017122,
+          0.24255153186752515
+        ],
+        "properties": {},
+        "label": "Fe",
+        "xyz": [
+          5.224637747668295,
+          3.0779659338549443,
+          1.2391176867707145
+        ]
+      },
+      {
+        "species": [
+          {
+            "element": "Fe",
+            "occu": 1
+          }
+        ],
+        "abc": [
+          0.9187197828132708,
+          0.24999999783685475,
+          0.7425515316853029
+        ],
+        "properties": {},
+        "label": "Fe",
+        "xyz": [
+          8.257597473080391,
+          1.0259886305376604,
+          3.7934566770214437
+        ]
+      },
+      {
+        "species": [
+          {
+            "element": "Fe",
+            "occu": 1
+          }
+        ],
+        "abc": [
+          0.6610099618140958,
+          0.2500000009420624,
+          0.001374799961501433
+        ],
+        "properties": {},
+        "label": "Fe",
+        "xyz": [
+          5.941261213208088,
+          1.0259886456725404,
+          0.007023438255586399
+        ]
+      },
+      {
+        "species": [
+          {
+            "element": "Fe",
+            "occu": 1
+          }
+        ],
+        "abc": [
+          0.8389900373786429,
+          0.7499999978388548,
+          0.5013748014449023
+        ],
+        "properties": {},
+        "label": "Fe",
+        "xyz": [
+          7.540974026287374,
+          3.0779659165519417,
+          2.5613624285310004
+        ]
+      },
+      {
+        "species": [
+          {
+            "element": "Fe",
+            "occu": 1
+          }
+        ],
+        "abc": [
+          0.3389900360130004,
+          0.7499999992075466,
+          0.9986252021688522
+        ],
+        "properties": {},
+        "label": "Fe",
+        "xyz": [
+          3.0468955698441427,
+          3.077965921385506,
+          5.101654565704532
+        ]
+      },
+      {
+        "species": [
+          {
+            "element": "Fe",
+            "occu": 1
+          }
+        ],
+        "abc": [
+          0.16100996507143908,
+          0.25000000305600073,
+          0.4986251911718951
+        ],
+        "properties": {},
+        "label": "Fe",
+        "xyz": [
+          1.4471827983169785,
+          1.0259886535645628,
+          2.5473155268274232
+        ]
+      },
+      {
+        "species": [
+          {
+            "element": "Ni",
+            "occu": 1
+          }
+        ],
+        "abc": [
+          -0.07916588112875256,
+          0.25000000032259684,
+          0.258349712793155
+        ],
+        "properties": {},
+        "label": "Ni",
+        "xyz": [
+          -0.7115553674965169,
+          1.0259886433130516,
+          1.3198254777704643
+        ]
+      },
+      {
+        "species": [
+          {
+            "element": "Ni",
+            "occu": 1
+          }
+        ],
+        "abc": [
+          0.5791658695280396,
+          0.7499999978017202,
+          0.7583497109192792
+        ],
+        "properties": {},
+        "label": "Ni",
+        "xyz": [
+          5.205633642325621,
+          3.0779659159963866,
+          3.874164471541343
+        ]
+      },
+      {
+        "species": [
+          {
+            "element": "Ni",
+            "occu": 1
+          }
+        ],
+        "abc": [
+          1.079165872498821,
+          0.7500000016232021,
+          0.7416502899026849
+        ],
+        "properties": {},
+        "label": "Ni",
+        "xyz": [
+          9.69971209251197,
+          3.077965931116477,
+          3.7888525290785413
+        ]
+      },
+      {
+        "species": [
+          {
+            "element": "Ni",
+            "occu": 1
+          }
+        ],
+        "abc": [
+          0.42083412354251576,
+          0.24999999982047239,
+          0.24165028669887373
+        ],
+        "properties": {},
+        "label": "Ni",
+        "xyz": [
+          3.7825230979740754,
+          1.0259886406892578,
+          1.2345135093673953
+        ]
+      },
+      {
+        "species": [
+          {
+            "element": "W",
+            "occu": 1
+          }
+        ],
+        "abc": [
+          0.6700572632810579,
+          0.2500000005609748,
+          0.49868875267477314
+        ],
+        "properties": {},
+        "label": "W",
+        "xyz": [
+          6.022579756416307,
+          1.0259886427039837,
+          2.547640263955874
+        ]
+      },
+      {
+        "species": [
+          {
+            "element": "W",
+            "occu": 1
+          }
+        ],
+        "abc": [
+          0.8299427477275328,
+          0.7499999999573359,
+          -0.0013112520205200617
+        ],
+        "properties": {},
+        "label": "W",
+        "xyz": [
+          7.459655589513116,
+          3.0779659266657364,
+          -0.006698729836243168
+        ]
+      },
+      {
+        "species": [
+          {
+            "element": "W",
+            "occu": 1
+          }
+        ],
+        "abc": [
+          0.3299427493544009,
+          0.7499999964451772,
+          0.5013112462263138
+        ],
+        "properties": {},
+        "label": "W",
+        "xyz": [
+          2.9655771597358096,
+          3.0779659114534583,
+          2.5610377235069617
+        ]
+      },
+      {
+        "species": [
+          {
+            "element": "W",
+            "occu": 1
+          }
+        ],
+        "abc": [
+          0.17005726246305952,
+          0.25000000494378494,
+          1.0013112522652434
+        ],
+        "properties": {},
+        "label": "W",
+        "xyz": [
+          1.528501304664158,
+          1.0259886598922991,
+          5.115376724163284
+        ]
+      }
+    ]
+  },
+  "post_relax_sg_match": false,
+  "relaxed_cif": "/home/liugang/src/crystalDLM/experiments/structure_request_eval_20261017/run_001/grace_score/relaxed/sg-143/attempt-056.cif",
+  "relaxed_cif_sha256": "0c46fadab1faa0ac679fe1e119fe0b65d85b51e59feb43f90e1e3be0b77cbe39",
+  "novelty_status": "checked_against_formula_matched_training_structures",
+  "unique_novel_thresholds_eV_per_atom": [],
+  "global_unique_novel_thresholds_eV_per_atom": []
+}

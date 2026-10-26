@@ -1,0 +1,273 @@
+{
+  "status": "complete",
+  "scheduled_attempts": 700,
+  "completed_attempts": 700,
+  "pending_attempts": 0,
+  "strict_valid_structures": 0,
+  "requested_space_group_matches": 0,
+  "valid_and_requested_space_group_matches": 0,
+  "lead_failures": 0,
+  "crystal_failures": 292,
+  "invalid_structure_attempts": 700,
+  "ehull_evaluation_status": "not_run",
+  "raw_attempt_denominator": 700,
+  "run_manifest_sha256": "42c41a8a323078c0ebebdf33890bd5de02454b4a55e0923374c17adf0fb71a84",
+  "requests": [
+    {
+      "request_id": "sg-001",
+      "space_group_number": 1,
+      "prompt": "User: Generate a crystal with space group number 1 and energy above hull no greater than 0.08 eV/atom.\nAssistant:"
+    },
+    {
+      "request_id": "sg-015",
+      "space_group_number": 15,
+      "prompt": "User: Generate a crystal with space group number 15 and energy above hull no greater than 0.08 eV/atom.\nAssistant:"
+    },
+    {
+      "request_id": "sg-038",
+      "space_group_number": 38,
+      "prompt": "User: Generate a crystal with space group number 38 and energy above hull no greater than 0.08 eV/atom.\nAssistant:"
+    },
+    {
+      "request_id": "sg-119",
+      "space_group_number": 119,
+      "prompt": "User: Generate a crystal with space group number 119 and energy above hull no greater than 0.08 eV/atom.\nAssistant:"
+    },
+    {
+      "request_id": "sg-143",
+      "space_group_number": 143,
+      "prompt": "User: Generate a crystal with space group number 143 and energy above hull no greater than 0.08 eV/atom.\nAssistant:"
+    },
+    {
+      "request_id": "sg-194",
+      "space_group_number": 194,
+      "prompt": "User: Generate a crystal with space group number 194 and energy above hull no greater than 0.08 eV/atom.\nAssistant:"
+    },
+    {
+      "request_id": "sg-216",
+      "space_group_number": 216,
+      "prompt": "User: Generate a crystal with space group number 216 and energy above hull no greater than 0.08 eV/atom.\nAssistant:"
+    }
+  ],
+  "attempt_plan_sha256": "8acfff65cea781091651d07585e0bbb770632c7dcb64ec0525b28b1277e45ddd",
+  "sampling": {
+    "lead": "stochastic top-p",
+    "crystal": "absorbing-MASK diffusion",
+    "seed": 42,
+    "temperature": 0.8,
+    "top_p": 0.95,
+    "max_lead_tokens": 256,
+    "crystal_capacity": 544,
+    "diffusion_steps": 32,
+    "prediction_offset": 0,
+    "step_schedule": "32 down to 1",
+    "release_probability": "1/k for each still-masked position",
+    "raw_tokens": "no END/PAD boundary repair"
+  },
+  "checkpoint_fingerprint_sha256": "eca033742209e59a8f8780562d5d3b43f59da573e99d4a935bdc9d21485e00cd",
+  "trainable_state_sha256": "3ed133cddd49d8054530f10d7af1225f29d65f2044f31813ae922c26c17e5649",
+  "cached_logits_parity_by_shard": [],
+  "mode": "hybrid",
+  "diffusion_steps": 32,
+  "prediction_offset": 0,
+  "random_seed_parameters": {
+    "attempt_plan_seed": 42,
+    "per_attempt_seeds": "fixed matched-AR plan"
+  },
+  "strict_valid_denominator": 700,
+  "forward_step_counts": {
+    "text": 107223,
+    "crystal": 22400,
+    "crystal_schedule": 22400
+  },
+  "mean_timing_seconds": {
+    "text_generation": 7.422478252592097,
+    "crystal_generation": 4.684494281628036,
+    "parse": 0.09661368271202914,
+    "total": 12.204407182621903
+  },
+  "timing_attempt_counts": {
+    "text_generation": 700,
+    "crystal_generation": 700,
+    "parse": 700,
+    "total": 700
+  },
+  "prefix_cache_parity_by_shard": [
+    {
+      "passed": true,
+      "mode": "prefix-only AR cache parity",
+      "interpretation": "The comparison ends at START, before any current-crystal token; hybrid denoising logits are checked by the diffusion sampler contract.",
+      "acceptance": {
+        "top1_same": true,
+        "kl_reference_to_cached_max": 0.01,
+        "max_abs_max": 0.5,
+        "mean_abs_max": 0.1
+      },
+      "contexts": [
+        {
+          "context": "prompt",
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "rms_abs": 0.0,
+          "kl_reference_to_cached": 0.0,
+          "cosine_similarity": 0.9999998807907104,
+          "top1_reference": 576,
+          "top1_cached": 576,
+          "top1_same": true,
+          "strict_close_fraction": 1.0,
+          "strict_close_rtol": 0.002,
+          "strict_close_atol": 0.002,
+          "distribution_criteria_passed": true
+        },
+        {
+          "context": "text_prefix_token_0",
+          "max_abs": 0.25,
+          "mean_abs": 0.01760389283299446,
+          "rms_abs": 0.03216703608632088,
+          "kl_reference_to_cached": 0.00028941419441252947,
+          "cosine_similarity": 0.999992847442627,
+          "top1_reference": 5944,
+          "top1_cached": 5944,
+          "top1_same": true,
+          "strict_close_fraction": 0.6451444625854492,
+          "strict_close_rtol": 0.002,
+          "strict_close_atol": 0.002,
+          "distribution_criteria_passed": true
+        },
+        {
+          "context": "text_prefix_token_1",
+          "max_abs": 0.25,
+          "mean_abs": 0.015031657181680202,
+          "rms_abs": 0.02814718708395958,
+          "kl_reference_to_cached": 0.00018691655714064837,
+          "cosine_similarity": 0.9999935626983643,
+          "top1_reference": 5944,
+          "top1_cached": 5944,
+          "top1_same": true,
+          "strict_close_fraction": 0.6469444036483765,
+          "strict_close_rtol": 0.002,
+          "strict_close_atol": 0.002,
+          "distribution_criteria_passed": true
+        },
+        {
+          "context": "text_prefix_token_2",
+          "max_abs": 0.1875,
+          "mean_abs": 0.018278690055012703,
+          "rms_abs": 0.02725505456328392,
+          "kl_reference_to_cached": 0.0012063576141372323,
+          "cosine_similarity": 0.9999910593032837,
+          "top1_reference": 50080,
+          "top1_cached": 50080,
+          "top1_same": true,
+          "strict_close_fraction": 0.4595676362514496,
+          "strict_close_rtol": 0.002,
+          "strict_close_atol": 0.002,
+          "distribution_criteria_passed": true
+        },
+        {
+          "context": "clean_prefix_ending_at_start",
+          "max_abs": 0.25,
+          "mean_abs": 0.03175019472837448,
+          "rms_abs": 0.04200442507863045,
+          "kl_reference_to_cached": 0.0016719361301511526,
+          "cosine_similarity": 0.9999829530715942,
+          "top1_reference": 47,
+          "top1_cached": 47,
+          "top1_same": true,
+          "strict_close_fraction": 0.3242238163948059,
+          "strict_close_rtol": 0.002,
+          "strict_close_atol": 0.002,
+          "distribution_criteria_passed": true
+        }
+      ]
+    },
+    {
+      "passed": true,
+      "mode": "prefix-only AR cache parity",
+      "interpretation": "The comparison ends at START, before any current-crystal token; hybrid denoising logits are checked by the diffusion sampler contract.",
+      "acceptance": {
+        "top1_same": true,
+        "kl_reference_to_cached_max": 0.01,
+        "max_abs_max": 0.5,
+        "mean_abs_max": 0.1
+      },
+      "contexts": [
+        {
+          "context": "prompt",
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "rms_abs": 0.0,
+          "kl_reference_to_cached": 0.0,
+          "cosine_similarity": 0.9999998807907104,
+          "top1_reference": 576,
+          "top1_cached": 576,
+          "top1_same": true,
+          "strict_close_fraction": 1.0,
+          "strict_close_rtol": 0.002,
+          "strict_close_atol": 0.002,
+          "distribution_criteria_passed": true
+        },
+        {
+          "context": "text_prefix_token_0",
+          "max_abs": 0.25,
+          "mean_abs": 0.01760389283299446,
+          "rms_abs": 0.03216703608632088,
+          "kl_reference_to_cached": 0.00028941419441252947,
+          "cosine_similarity": 0.999992847442627,
+          "top1_reference": 5944,
+          "top1_cached": 5944,
+          "top1_same": true,
+          "strict_close_fraction": 0.6451444625854492,
+          "strict_close_rtol": 0.002,
+          "strict_close_atol": 0.002,
+          "distribution_criteria_passed": true
+        },
+        {
+          "context": "text_prefix_token_1",
+          "max_abs": 0.25,
+          "mean_abs": 0.015031657181680202,
+          "rms_abs": 0.02814718708395958,
+          "kl_reference_to_cached": 0.00018691655714064837,
+          "cosine_similarity": 0.9999935626983643,
+          "top1_reference": 5944,
+          "top1_cached": 5944,
+          "top1_same": true,
+          "strict_close_fraction": 0.6469444036483765,
+          "strict_close_rtol": 0.002,
+          "strict_close_atol": 0.002,
+          "distribution_criteria_passed": true
+        },
+        {
+          "context": "text_prefix_token_2",
+          "max_abs": 0.1875,
+          "mean_abs": 0.018278690055012703,
+          "rms_abs": 0.02725505456328392,
+          "kl_reference_to_cached": 0.0012063576141372323,
+          "cosine_similarity": 0.9999910593032837,
+          "top1_reference": 50080,
+          "top1_cached": 50080,
+          "top1_same": true,
+          "strict_close_fraction": 0.4595676362514496,
+          "strict_close_rtol": 0.002,
+          "strict_close_atol": 0.002,
+          "distribution_criteria_passed": true
+        },
+        {
+          "context": "clean_prefix_ending_at_start",
+          "max_abs": 0.25,
+          "mean_abs": 0.03175019472837448,
+          "rms_abs": 0.04200442507863045,
+          "kl_reference_to_cached": 0.0016719361301511526,
+          "cosine_similarity": 0.9999829530715942,
+          "top1_reference": 47,
+          "top1_cached": 47,
+          "top1_same": true,
+          "strict_close_fraction": 0.3242238163948059,
+          "strict_close_rtol": 0.002,
+          "strict_close_atol": 0.002,
+          "distribution_criteria_passed": true
+        }
+      ]
+    }
+  ]
+}

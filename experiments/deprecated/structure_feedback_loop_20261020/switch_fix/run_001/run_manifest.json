@@ -1,0 +1,760 @@
+{
+  "schema": 1,
+  "experiment": "structure_feedback_loop_switch_fix_20261020",
+  "model": "Qwen/Qwen3-8B",
+  "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+  "parent_run_manifest_sha256": "d869172899fb62c4a9e19ff9146b66c220fd9983cf5d3ba6268f7e8fd8ba4a94",
+  "source_group_hashes": {
+    "experiments/structure_feedback_loop_20261020/run_001/shard-00-of-02/groups/sg-001/group-000.json": "39c46a1a0b3f5575050dbc2b51732dc714c83366693b28a4b27d38b49acdf13b",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-00-of-02/groups/sg-001/group-002.json": "e09cb60defa75386c40785090b5b5a370d2d383ba11c79108f3fc099ced0d261",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-00-of-02/groups/sg-001/group-004.json": "834cd8100ce72d36c9eaf308e0539be8d07135af1f5c7fab38ea3942760e8b15",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-00-of-02/groups/sg-001/group-006.json": "b7096aaebddce67c49c562ec715df784aefae764db22bcfa70fe5d499b466cbc",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-00-of-02/groups/sg-001/group-008.json": "dcba4bc03091647a8ecbf41fd303fb914e603a89d9e7927b75965d8c341c9e02",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-00-of-02/groups/sg-015/group-000.json": "68e85a33b8950db74714219d86ca464f846e0081c4d0936a3e8186ca1a99c5ed",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-00-of-02/groups/sg-015/group-002.json": "2f4f10b6f9dbc4ae431c8e177c8149c95d2fc713b8c7e34a3620c4cf34f5b7e2",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-00-of-02/groups/sg-015/group-004.json": "873acf311dd267ad6acc769e39beec3f27b4375bc77c85c7fa82e7189f10c89c",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-00-of-02/groups/sg-015/group-006.json": "d1d031d5ba3c822535fa0a39a53769c749f127c7abca9c5a89f10eb35b69b2b7",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-00-of-02/groups/sg-015/group-008.json": "acba49b82d2391dff73e86b56f73f3a0a9661d1f48b7fca65444f4f358ad4f8a",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-00-of-02/groups/sg-038/group-000.json": "ef4cce5ddeb87f2331c6403b6da28591c8de8ecd8c7c8106fdfdb261d5714bbe",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-00-of-02/groups/sg-038/group-002.json": "d0b02d15ed11979c48890cb0b7530d3497dadec3b54a19672a9a009d7e1e81b9",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-00-of-02/groups/sg-038/group-004.json": "d270946659a9e4be85bf42fffbe4fcaa60aa27bb603ce8f82950e8b81839d406",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-00-of-02/groups/sg-038/group-006.json": "01e9391d87feb988d794d88099820fc41a73ae1c35687616a1eb977a46328ba7",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-00-of-02/groups/sg-038/group-008.json": "8bee1a1e45e8b930380b32b9bdfa4b8348eeaf546bb21ac65612dc40fa184be5",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-00-of-02/groups/sg-119/group-000.json": "9ac149d15d06449a768533c50473916ee1c31431dd7e8e1d8f2c643e55a0922e",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-00-of-02/groups/sg-119/group-002.json": "8e808b4b02d1ac9a22dfa901ad474cef5c8ad29e93d38993ee359f8b1ff1ef57",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-00-of-02/groups/sg-119/group-004.json": "3d0fce05013fd33a8ea6882109685657d3aafb870bd71c5fc91dedd9b65d9a07",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-00-of-02/groups/sg-119/group-006.json": "3c0a69840e2a5d9ca238a27f8fb0c54958595fb15b54e8d3f7312a2a979318c3",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-00-of-02/groups/sg-119/group-008.json": "7339e5a7be5bfb696e5c33eb0ef95a76dbbae3a4e1a810eef91aa1418cf5775e",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-00-of-02/groups/sg-143/group-000.json": "061753c8c325c650cb3f9f7b0275f03f80065d538d7931fbc5c8bfd3188c543d",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-00-of-02/groups/sg-143/group-002.json": "db2442ed56b72660040e5d5d75b97fb55b853113c7de202c13c23ae4bf378b4d",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-00-of-02/groups/sg-143/group-004.json": "9a6ec8e57367c7587bf9328f33d97ef127e921eec533d797cacf47945721f98a",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-00-of-02/groups/sg-143/group-006.json": "4b528c09d998e259ac971b42feafaf47df0758bf2808c71812c86aba2bed4f82",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-00-of-02/groups/sg-143/group-008.json": "0ce2c274f9ca63fd435e4bc88d35023f23002f9732ab1c4d05773f14175051ab",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-00-of-02/groups/sg-194/group-000.json": "d96f56a140fd3cb7bc42971aa19d561ea405d264a1c09c7fe6071266d2310fd4",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-00-of-02/groups/sg-194/group-002.json": "43dcea6c78f98244acb4c8f573c0b086af273617e9596eddb8d91d11da896436",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-00-of-02/groups/sg-194/group-004.json": "dc5407f5f4a80bb05bd4630229e0bbb3d572e6056f3f4c6b44760bda4d373175",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-00-of-02/groups/sg-194/group-006.json": "83653b076cd41b9ab315c4c1ff8c48bbb63320f61c297a24b177d457ff3db560",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-00-of-02/groups/sg-194/group-008.json": "f89af5b6ecbe255f3a5b5a6c20d6c44b934e410e9fddafeeb9e5a182c375945b",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-00-of-02/groups/sg-216/group-000.json": "c719b051c46bc4d36c373b0c3c41f3cb6b68ae1ddc343b256ed7d43ced58191a",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-00-of-02/groups/sg-216/group-002.json": "98b6ef306461fd28f7022ac833f2bbe5e0c41c4a323f9ca2e9b5337fbbfd1c5d",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-00-of-02/groups/sg-216/group-004.json": "f0100f411d46ea85e94fa840534507c720cf11380fdfdf57c7a9b699a6d25204",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-00-of-02/groups/sg-216/group-006.json": "5cbb3916000a1eed02e5bf241ed57cd978afaac3cfba4f72d5957f4598bb9ad2",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-00-of-02/groups/sg-216/group-008.json": "2505b83798240ae00f1f89f6822922752dc12328e7fbe1a72395da3bb99eca67",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-01-of-02/groups/sg-001/group-001.json": "8befbdfaa8d85bfc4791bd5192336e72f702743edd671951ba273636aefd9d1e",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-01-of-02/groups/sg-001/group-003.json": "ab60a4a1db3c26abc9f39b3760cbf2c1cdf0d47cb3eb5c46f6442b48afe05dd7",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-01-of-02/groups/sg-001/group-005.json": "3d879789fba9b0ed669b396d1165e5776fd449d3a131c251de43a35ff002913e",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-01-of-02/groups/sg-001/group-007.json": "8cb5887b2f22d5712dec80b33fc1430ba9b37dc5bf63b342d08e09c019f140fa",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-01-of-02/groups/sg-001/group-009.json": "6bd3fa4e01d854edf93f872d267bc34396b981fd306a1644e08b29e17a89d67d",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-01-of-02/groups/sg-015/group-001.json": "1a01710fce954b1b791317e13930550752e146a54f012fefd499f0460274add3",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-01-of-02/groups/sg-015/group-003.json": "3013a42c2adc9cd5904edfecd0b86715bf1677431984326d12946ac37feb003a",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-01-of-02/groups/sg-015/group-005.json": "5abf5b071943a2581b2efbf28f4b09cca497b3d8bca9f9657881f90bdf9cd461",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-01-of-02/groups/sg-015/group-007.json": "42f2cb24ece3de6a43d21c861850a00178962b83fa195c1e85b7d1606e8946d6",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-01-of-02/groups/sg-015/group-009.json": "73505986f1c64720e623339b05a312b757956ae1a56bfd37347c671a874dd325",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-01-of-02/groups/sg-038/group-001.json": "20ceb2b1f3fa05f7bc848e54268e38050203f4eb3f65180950a7129a37fd8d7e",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-01-of-02/groups/sg-038/group-003.json": "8d4f1d7c37f68e33e6055ffd78410533ee41fb5e789235b16d04459ff5507982",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-01-of-02/groups/sg-038/group-005.json": "c84eb8f2d5ed7d6abba55b6036c06664194cf5d245b6eaeeb2dc0b2fda711910",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-01-of-02/groups/sg-038/group-007.json": "8e68076a7f0f063e45479e31a213558cc50353c7551927b704c2fff56b3bd119",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-01-of-02/groups/sg-038/group-009.json": "bb31e9ddbefb2086aed8000c8bab0fee6ff000ce60af37c3fe6e09c63f4fa6d5",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-01-of-02/groups/sg-119/group-001.json": "985ab0ef7cc8953cde4a50ec0b018105a34a1d9152aa9aa7dc9f266758cd1027",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-01-of-02/groups/sg-119/group-003.json": "c0b9c5e49d2b5e12e35f0ade967689ca20883517ef4425fa8077af9d6b21421d",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-01-of-02/groups/sg-119/group-005.json": "61fd95438d279856701c106ece9571f7ceaf64358e797231879660c3511137b3",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-01-of-02/groups/sg-119/group-007.json": "174a730d2d970b324df254541a7dfb52456cfe12447eb5e87b1ac64f1331ac46",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-01-of-02/groups/sg-119/group-009.json": "bceae2798b4b4e295c3493c80e4ea216383bd1577c37cfb0eee73e435cc935cc",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-01-of-02/groups/sg-143/group-001.json": "1ec296cc9faef4f7cc2a00cb925a2639a6b6190c8a90e342aa78c69fa8e86d06",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-01-of-02/groups/sg-143/group-003.json": "47aa0145dfd0f405348ef54d1df81f392ce75d67dcc0416a4e1c2629fdb61916",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-01-of-02/groups/sg-143/group-005.json": "ea0aeb4164ea764816fdc023810c1638f2b083950017f0b8411a154c28091d27",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-01-of-02/groups/sg-143/group-007.json": "00ed8ce5f8feba69e93a6069441996030208a12179e34465fa9f75f82cf55f18",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-01-of-02/groups/sg-143/group-009.json": "7c2dacd459cff5632b6fa00dad756727c72722d8ce5915f8c40c516b739ac98d",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-01-of-02/groups/sg-194/group-001.json": "60ae51c4f13ff7512d74c18f88167c808e4d72b66ad8f293c5544ac9ec53c388",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-01-of-02/groups/sg-194/group-003.json": "115a5a70dbbc3fd0fa954a4de1bc2d2550630d3d035fce0ba6dd2a18228bbe26",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-01-of-02/groups/sg-194/group-005.json": "3fef4cd57e1a6a3623d7c9686b6adc58304707e0574afd5538b8f5afa02270e3",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-01-of-02/groups/sg-194/group-007.json": "e0e79cb2763c50266c619a2d6c1f338bed38a1dfbbb7fc5773bcca8de196caa0",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-01-of-02/groups/sg-194/group-009.json": "7d478da35bb5c44daafc3a0e46c3d276601de251266befc4e5ab77bfe35a811a",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-01-of-02/groups/sg-216/group-001.json": "6e9931a018c21e16b51d4f6f152c7f3752fc99da115df98e7b4d9617fe6d2883",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-01-of-02/groups/sg-216/group-003.json": "f433be72d793a5db031390b3ba96339ed02edafb54389583864e27abf09b7f8f",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-01-of-02/groups/sg-216/group-005.json": "f7a25fe8482632050a0f93922c0da2396a771a8635e9a639eb4d8eee82ccc4d7",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-01-of-02/groups/sg-216/group-007.json": "de87e14872462daa6079cbc6cb9bfb9e76b1366d76039177880dc715212004f3",
+    "experiments/structure_feedback_loop_20261020/run_001/shard-01-of-02/groups/sg-216/group-009.json": "2caea62a3165422e3767d544527c627a0a44fc31cc742b8f0c09eee904a70590"
+  },
+  "diagnosis_manifest_sha256": "45cd0c87578a99c857d5a70079170bae7308ea91dd2599dfa02d05040cf72874",
+  "diagnostic_case_ids": [
+    "sg-001-000",
+    "sg-001-001",
+    "sg-015-000",
+    "sg-015-001",
+    "sg-038-000",
+    "sg-038-001",
+    "sg-119-000",
+    "sg-119-001",
+    "sg-143-000",
+    "sg-143-001",
+    "sg-194-002",
+    "sg-194-003",
+    "sg-216-002",
+    "sg-216-003"
+  ],
+  "group_plan_sha256": "6d86f9f045f5673ae8a4339c421db8b2ce30781f62cd15531438bdbd2925df05",
+  "checkpoint_fingerprint_sha256": "6dcce421b41a8a6d4cd1fe96fe474933901fd521662f2be8028b00be802b1487",
+  "trainable_state_sha256": "19f7e0b5e3bc1e1c73b6e550c59d8c50819ee4ec90fc560079af55b53851b379",
+  "source_checkpoint_identity_sha256": "03d3316dbf85a4ce888a4fe28e61e21b1f20a3dda977bb8afa871b21067c1686",
+  "evaluation_source_sha256": {
+    "evaluate.py": "9d4c645f04a67e5815979e1e3761d77f52115fbf9134a76c983fe50d73340ccc",
+    "trainer_run.py": "627e6c1d88623c8aa48d4ce158cbd21a2fdb0313d436e05eda2e950e4b03bbe2",
+    "flare_model.py": "e289355c146db632a65aa618afd203ba5702e9a90e10cb6ecaea395a7244fe82",
+    "verified_pilot_model.py": "8bde8817d493c981abfd8210ed797becd0c319b88be2167eb3d21836833b2bde",
+    "matched_ar_evaluate.py": "29bae2782365708a6c8b4b05590c34538a64ce2984ccb3a9fe133edee4036cfe",
+    "reference_runner.py": "4bd89a820e27b893a080294c82892d9fd14d33461bb8f7efd751ced78b5a3ff5",
+    "structure_score.py": "c1dfe1b87715b5b650b7152e02fed567bd5f7f0fd9109295ec87208f23165c6b",
+    "readback_grader.py": "bb983581f1050a5a82688c7929306b3173096b9494887620754fcd22e063e81a",
+    "legacy_loop.py": "3dc2df467d59897708a1a309595dc4ec1c6a06319ccecb883b64dd9fab4f9278",
+    "switch_fix/run.py": "9dea44110c0287545f3872144f1c55e5362475d275838a1931b2b134ebb396d1",
+    "switch_fix/context.py": "ff1abe59c33596fa24ef68e813292762d9675b3ac2eab18a3ff5c86d51a48ec7"
+  },
+  "num_shards": 2,
+  "run_identity_sha256": "c0d4d4c7b8ef1d8b4997dd285e886de101a0f3fd4a4ce8aef6656057103b6395",
+  "checkpoint_path": "experiments/flare_crystal_full_20261019/flare/checkpoint.pt",
+  "source_trainable_state_sha256": "343c4da6c1af19d75b2d785c8784ebda81be5a881fb08a0a7343e8ea401f76cb",
+  "software": {
+    "python": "3.11.17",
+    "torch": "2.6.0+cu124",
+    "cuda": "12.4",
+    "transformers": "4.57.6",
+    "peft": "0.18.0",
+    "accelerate": "1.15.0"
+  },
+  "group_plan": [
+    {
+      "request_id": "sg-001",
+      "space_group_number": 1,
+      "prompt": "User: Generate a crystal with space group number 1 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 0,
+      "flat_index": 0,
+      "plan_index": 0,
+      "seed": 1373158607
+    },
+    {
+      "request_id": "sg-001",
+      "space_group_number": 1,
+      "prompt": "User: Generate a crystal with space group number 1 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 1,
+      "flat_index": 1,
+      "plan_index": 1,
+      "seed": 239081664
+    },
+    {
+      "request_id": "sg-001",
+      "space_group_number": 1,
+      "prompt": "User: Generate a crystal with space group number 1 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 2,
+      "flat_index": 2,
+      "plan_index": 2,
+      "seed": 53710185
+    },
+    {
+      "request_id": "sg-001",
+      "space_group_number": 1,
+      "prompt": "User: Generate a crystal with space group number 1 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 3,
+      "flat_index": 3,
+      "plan_index": 3,
+      "seed": 1592467582
+    },
+    {
+      "request_id": "sg-001",
+      "space_group_number": 1,
+      "prompt": "User: Generate a crystal with space group number 1 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 4,
+      "flat_index": 4,
+      "plan_index": 4,
+      "seed": 590620972
+    },
+    {
+      "request_id": "sg-001",
+      "space_group_number": 1,
+      "prompt": "User: Generate a crystal with space group number 1 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 5,
+      "flat_index": 5,
+      "plan_index": 5,
+      "seed": 525901257
+    },
+    {
+      "request_id": "sg-001",
+      "space_group_number": 1,
+      "prompt": "User: Generate a crystal with space group number 1 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 6,
+      "flat_index": 6,
+      "plan_index": 6,
+      "seed": 479341424
+    },
+    {
+      "request_id": "sg-001",
+      "space_group_number": 1,
+      "prompt": "User: Generate a crystal with space group number 1 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 7,
+      "flat_index": 7,
+      "plan_index": 7,
+      "seed": 299655413
+    },
+    {
+      "request_id": "sg-001",
+      "space_group_number": 1,
+      "prompt": "User: Generate a crystal with space group number 1 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 8,
+      "flat_index": 8,
+      "plan_index": 8,
+      "seed": 1581559893
+    },
+    {
+      "request_id": "sg-001",
+      "space_group_number": 1,
+      "prompt": "User: Generate a crystal with space group number 1 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 9,
+      "flat_index": 9,
+      "plan_index": 9,
+      "seed": 220106708
+    },
+    {
+      "request_id": "sg-015",
+      "space_group_number": 15,
+      "prompt": "User: Generate a crystal with space group number 15 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 0,
+      "flat_index": 100,
+      "plan_index": 10,
+      "seed": 794957573
+    },
+    {
+      "request_id": "sg-015",
+      "space_group_number": 15,
+      "prompt": "User: Generate a crystal with space group number 15 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 1,
+      "flat_index": 101,
+      "plan_index": 11,
+      "seed": 762938026
+    },
+    {
+      "request_id": "sg-015",
+      "space_group_number": 15,
+      "prompt": "User: Generate a crystal with space group number 15 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 2,
+      "flat_index": 102,
+      "plan_index": 12,
+      "seed": 449912920
+    },
+    {
+      "request_id": "sg-015",
+      "space_group_number": 15,
+      "prompt": "User: Generate a crystal with space group number 15 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 3,
+      "flat_index": 103,
+      "plan_index": 13,
+      "seed": 1439190227
+    },
+    {
+      "request_id": "sg-015",
+      "space_group_number": 15,
+      "prompt": "User: Generate a crystal with space group number 15 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 4,
+      "flat_index": 104,
+      "plan_index": 14,
+      "seed": 573330499
+    },
+    {
+      "request_id": "sg-015",
+      "space_group_number": 15,
+      "prompt": "User: Generate a crystal with space group number 15 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 5,
+      "flat_index": 105,
+      "plan_index": 15,
+      "seed": 1507147648
+    },
+    {
+      "request_id": "sg-015",
+      "space_group_number": 15,
+      "prompt": "User: Generate a crystal with space group number 15 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 6,
+      "flat_index": 106,
+      "plan_index": 16,
+      "seed": 2011450405
+    },
+    {
+      "request_id": "sg-015",
+      "space_group_number": 15,
+      "prompt": "User: Generate a crystal with space group number 15 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 7,
+      "flat_index": 107,
+      "plan_index": 17,
+      "seed": 1467907437
+    },
+    {
+      "request_id": "sg-015",
+      "space_group_number": 15,
+      "prompt": "User: Generate a crystal with space group number 15 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 8,
+      "flat_index": 108,
+      "plan_index": 18,
+      "seed": 1391645398
+    },
+    {
+      "request_id": "sg-015",
+      "space_group_number": 15,
+      "prompt": "User: Generate a crystal with space group number 15 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 9,
+      "flat_index": 109,
+      "plan_index": 19,
+      "seed": 153335724
+    },
+    {
+      "request_id": "sg-038",
+      "space_group_number": 38,
+      "prompt": "User: Generate a crystal with space group number 38 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 0,
+      "flat_index": 200,
+      "plan_index": 20,
+      "seed": 24655305
+    },
+    {
+      "request_id": "sg-038",
+      "space_group_number": 38,
+      "prompt": "User: Generate a crystal with space group number 38 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 1,
+      "flat_index": 201,
+      "plan_index": 21,
+      "seed": 1460897492
+    },
+    {
+      "request_id": "sg-038",
+      "space_group_number": 38,
+      "prompt": "User: Generate a crystal with space group number 38 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 2,
+      "flat_index": 202,
+      "plan_index": 22,
+      "seed": 1547738333
+    },
+    {
+      "request_id": "sg-038",
+      "space_group_number": 38,
+      "prompt": "User: Generate a crystal with space group number 38 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 3,
+      "flat_index": 203,
+      "plan_index": 23,
+      "seed": 245997990
+    },
+    {
+      "request_id": "sg-038",
+      "space_group_number": 38,
+      "prompt": "User: Generate a crystal with space group number 38 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 4,
+      "flat_index": 204,
+      "plan_index": 24,
+      "seed": 1463961868
+    },
+    {
+      "request_id": "sg-038",
+      "space_group_number": 38,
+      "prompt": "User: Generate a crystal with space group number 38 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 5,
+      "flat_index": 205,
+      "plan_index": 25,
+      "seed": 1900068735
+    },
+    {
+      "request_id": "sg-038",
+      "space_group_number": 38,
+      "prompt": "User: Generate a crystal with space group number 38 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 6,
+      "flat_index": 206,
+      "plan_index": 26,
+      "seed": 1153135003
+    },
+    {
+      "request_id": "sg-038",
+      "space_group_number": 38,
+      "prompt": "User: Generate a crystal with space group number 38 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 7,
+      "flat_index": 207,
+      "plan_index": 27,
+      "seed": 1612497801
+    },
+    {
+      "request_id": "sg-038",
+      "space_group_number": 38,
+      "prompt": "User: Generate a crystal with space group number 38 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 8,
+      "flat_index": 208,
+      "plan_index": 28,
+      "seed": 573002725
+    },
+    {
+      "request_id": "sg-038",
+      "space_group_number": 38,
+      "prompt": "User: Generate a crystal with space group number 38 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 9,
+      "flat_index": 209,
+      "plan_index": 29,
+      "seed": 1650553202
+    },
+    {
+      "request_id": "sg-119",
+      "space_group_number": 119,
+      "prompt": "User: Generate a crystal with space group number 119 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 0,
+      "flat_index": 300,
+      "plan_index": 30,
+      "seed": 2137066976
+    },
+    {
+      "request_id": "sg-119",
+      "space_group_number": 119,
+      "prompt": "User: Generate a crystal with space group number 119 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 1,
+      "flat_index": 301,
+      "plan_index": 31,
+      "seed": 1442436765
+    },
+    {
+      "request_id": "sg-119",
+      "space_group_number": 119,
+      "prompt": "User: Generate a crystal with space group number 119 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 2,
+      "flat_index": 302,
+      "plan_index": 32,
+      "seed": 1395602504
+    },
+    {
+      "request_id": "sg-119",
+      "space_group_number": 119,
+      "prompt": "User: Generate a crystal with space group number 119 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 3,
+      "flat_index": 303,
+      "plan_index": 33,
+      "seed": 801914425
+    },
+    {
+      "request_id": "sg-119",
+      "space_group_number": 119,
+      "prompt": "User: Generate a crystal with space group number 119 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 4,
+      "flat_index": 304,
+      "plan_index": 34,
+      "seed": 940812753
+    },
+    {
+      "request_id": "sg-119",
+      "space_group_number": 119,
+      "prompt": "User: Generate a crystal with space group number 119 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 5,
+      "flat_index": 305,
+      "plan_index": 35,
+      "seed": 1931906534
+    },
+    {
+      "request_id": "sg-119",
+      "space_group_number": 119,
+      "prompt": "User: Generate a crystal with space group number 119 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 6,
+      "flat_index": 306,
+      "plan_index": 36,
+      "seed": 1111485659
+    },
+    {
+      "request_id": "sg-119",
+      "space_group_number": 119,
+      "prompt": "User: Generate a crystal with space group number 119 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 7,
+      "flat_index": 307,
+      "plan_index": 37,
+      "seed": 969559112
+    },
+    {
+      "request_id": "sg-119",
+      "space_group_number": 119,
+      "prompt": "User: Generate a crystal with space group number 119 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 8,
+      "flat_index": 308,
+      "plan_index": 38,
+      "seed": 259854540
+    },
+    {
+      "request_id": "sg-119",
+      "space_group_number": 119,
+      "prompt": "User: Generate a crystal with space group number 119 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 9,
+      "flat_index": 309,
+      "plan_index": 39,
+      "seed": 532373263
+    },
+    {
+      "request_id": "sg-143",
+      "space_group_number": 143,
+      "prompt": "User: Generate a crystal with space group number 143 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 0,
+      "flat_index": 400,
+      "plan_index": 40,
+      "seed": 2080903618
+    },
+    {
+      "request_id": "sg-143",
+      "space_group_number": 143,
+      "prompt": "User: Generate a crystal with space group number 143 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 1,
+      "flat_index": 401,
+      "plan_index": 41,
+      "seed": 200280284
+    },
+    {
+      "request_id": "sg-143",
+      "space_group_number": 143,
+      "prompt": "User: Generate a crystal with space group number 143 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 2,
+      "flat_index": 402,
+      "plan_index": 42,
+      "seed": 1989357941
+    },
+    {
+      "request_id": "sg-143",
+      "space_group_number": 143,
+      "prompt": "User: Generate a crystal with space group number 143 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 3,
+      "flat_index": 403,
+      "plan_index": 43,
+      "seed": 1618269593
+    },
+    {
+      "request_id": "sg-143",
+      "space_group_number": 143,
+      "prompt": "User: Generate a crystal with space group number 143 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 4,
+      "flat_index": 404,
+      "plan_index": 44,
+      "seed": 1822560211
+    },
+    {
+      "request_id": "sg-143",
+      "space_group_number": 143,
+      "prompt": "User: Generate a crystal with space group number 143 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 5,
+      "flat_index": 405,
+      "plan_index": 45,
+      "seed": 507621089
+    },
+    {
+      "request_id": "sg-143",
+      "space_group_number": 143,
+      "prompt": "User: Generate a crystal with space group number 143 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 6,
+      "flat_index": 406,
+      "plan_index": 46,
+      "seed": 357150386
+    },
+    {
+      "request_id": "sg-143",
+      "space_group_number": 143,
+      "prompt": "User: Generate a crystal with space group number 143 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 7,
+      "flat_index": 407,
+      "plan_index": 47,
+      "seed": 872767550
+    },
+    {
+      "request_id": "sg-143",
+      "space_group_number": 143,
+      "prompt": "User: Generate a crystal with space group number 143 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 8,
+      "flat_index": 408,
+      "plan_index": 48,
+      "seed": 1042906380
+    },
+    {
+      "request_id": "sg-143",
+      "space_group_number": 143,
+      "prompt": "User: Generate a crystal with space group number 143 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 9,
+      "flat_index": 409,
+      "plan_index": 49,
+      "seed": 1033709344
+    },
+    {
+      "request_id": "sg-194",
+      "space_group_number": 194,
+      "prompt": "User: Generate a crystal with space group number 194 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 0,
+      "flat_index": 500,
+      "plan_index": 50,
+      "seed": 678985350
+    },
+    {
+      "request_id": "sg-194",
+      "space_group_number": 194,
+      "prompt": "User: Generate a crystal with space group number 194 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 1,
+      "flat_index": 501,
+      "plan_index": 51,
+      "seed": 1995051678
+    },
+    {
+      "request_id": "sg-194",
+      "space_group_number": 194,
+      "prompt": "User: Generate a crystal with space group number 194 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 2,
+      "flat_index": 502,
+      "plan_index": 52,
+      "seed": 1614616698
+    },
+    {
+      "request_id": "sg-194",
+      "space_group_number": 194,
+      "prompt": "User: Generate a crystal with space group number 194 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 3,
+      "flat_index": 503,
+      "plan_index": 53,
+      "seed": 2009474094
+    },
+    {
+      "request_id": "sg-194",
+      "space_group_number": 194,
+      "prompt": "User: Generate a crystal with space group number 194 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 4,
+      "flat_index": 504,
+      "plan_index": 54,
+      "seed": 155785154
+    },
+    {
+      "request_id": "sg-194",
+      "space_group_number": 194,
+      "prompt": "User: Generate a crystal with space group number 194 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 5,
+      "flat_index": 505,
+      "plan_index": 55,
+      "seed": 20004794
+    },
+    {
+      "request_id": "sg-194",
+      "space_group_number": 194,
+      "prompt": "User: Generate a crystal with space group number 194 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 6,
+      "flat_index": 506,
+      "plan_index": 56,
+      "seed": 984160660
+    },
+    {
+      "request_id": "sg-194",
+      "space_group_number": 194,
+      "prompt": "User: Generate a crystal with space group number 194 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 7,
+      "flat_index": 507,
+      "plan_index": 57,
+      "seed": 1333929335
+    },
+    {
+      "request_id": "sg-194",
+      "space_group_number": 194,
+      "prompt": "User: Generate a crystal with space group number 194 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 8,
+      "flat_index": 508,
+      "plan_index": 58,
+      "seed": 2144164578
+    },
+    {
+      "request_id": "sg-194",
+      "space_group_number": 194,
+      "prompt": "User: Generate a crystal with space group number 194 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 9,
+      "flat_index": 509,
+      "plan_index": 59,
+      "seed": 1209019635
+    },
+    {
+      "request_id": "sg-216",
+      "space_group_number": 216,
+      "prompt": "User: Generate a crystal with space group number 216 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 0,
+      "flat_index": 600,
+      "plan_index": 60,
+      "seed": 1941171830
+    },
+    {
+      "request_id": "sg-216",
+      "space_group_number": 216,
+      "prompt": "User: Generate a crystal with space group number 216 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 1,
+      "flat_index": 601,
+      "plan_index": 61,
+      "seed": 320091646
+    },
+    {
+      "request_id": "sg-216",
+      "space_group_number": 216,
+      "prompt": "User: Generate a crystal with space group number 216 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 2,
+      "flat_index": 602,
+      "plan_index": 62,
+      "seed": 1171646238
+    },
+    {
+      "request_id": "sg-216",
+      "space_group_number": 216,
+      "prompt": "User: Generate a crystal with space group number 216 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 3,
+      "flat_index": 603,
+      "plan_index": 63,
+      "seed": 77369840
+    },
+    {
+      "request_id": "sg-216",
+      "space_group_number": 216,
+      "prompt": "User: Generate a crystal with space group number 216 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 4,
+      "flat_index": 604,
+      "plan_index": 64,
+      "seed": 1792279158
+    },
+    {
+      "request_id": "sg-216",
+      "space_group_number": 216,
+      "prompt": "User: Generate a crystal with space group number 216 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 5,
+      "flat_index": 605,
+      "plan_index": 65,
+      "seed": 792885293
+    },
+    {
+      "request_id": "sg-216",
+      "space_group_number": 216,
+      "prompt": "User: Generate a crystal with space group number 216 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 6,
+      "flat_index": 606,
+      "plan_index": 66,
+      "seed": 1250929769
+    },
+    {
+      "request_id": "sg-216",
+      "space_group_number": 216,
+      "prompt": "User: Generate a crystal with space group number 216 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 7,
+      "flat_index": 607,
+      "plan_index": 67,
+      "seed": 1186538610
+    },
+    {
+      "request_id": "sg-216",
+      "space_group_number": 216,
+      "prompt": "User: Generate a crystal with space group number 216 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 8,
+      "flat_index": 608,
+      "plan_index": 68,
+      "seed": 318028988
+    },
+    {
+      "request_id": "sg-216",
+      "space_group_number": 216,
+      "prompt": "User: Generate a crystal with space group number 216 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 9,
+      "flat_index": 609,
+      "plan_index": 69,
+      "seed": 922959948
+    }
+  ],
+  "heldout_group_count": 56,
+  "context_policy": "original request plus latest failed crystal as plain input data and checker feedback",
+  "property_evaluation_status": "not_evaluated"
+}

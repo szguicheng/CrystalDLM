@@ -1,0 +1,90 @@
+{
+  "status": "evaluation_complete",
+  "property_evaluation_status": "not_run",
+  "model": "Qwen/Qwen3-8B",
+  "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+  "checkpoint": "/home/liugang/src/crystalDLM/experiments/ehull_pure_ar_qwen3_8b_20261015/run_001/checkpoint.pt",
+  "fingerprint_sha256": "f30b8fbf3f5607ac207353bfab283c6cb0d77788cf01c455690819282fe6b30b",
+  "data": {
+    "manifest_sha256": "aa21f3fbb4e9a19a676d1012405575932134675c3684d336d2c41283a281e741",
+    "train_sha256": "b74afafbca5a52eb1a63c9a7502c9fe1f5055cfef0c25f122de6d140c137080b",
+    "val_sha256": "4e97dbe73aa2c4903aa11c4438f3c7c4da05a87eb1028632f121db4e8cd97f12",
+    "manifest_sources": {
+      "subset_manifest_sha256": "c646a8f4257f194828222e414c2a9269739c2a9087ee995b720395eebbb915ac",
+      "request_manifest_sha256": "b518db8d8a85584f86fbe8acda27f52c74daa86aed15b5a2242a23891bf61017",
+      "successes_sha256": "4c77cb33815337b89e77418fe55c81183177e48562ae26be7afc0a4353ae72df",
+      "annotation_helper_sha256": "5f58c724790f32ac45ba8bd102385e54518e08c30897e03d0d8d51346c960984",
+      "caption_repairs_sha256": "c4b573f09e006159b6ee9399e162e76897f076fb0f6f95a0a71cb4856d30ad09"
+    }
+  },
+  "evaluation_ids": [
+    "mp-2647",
+    "mp-1079881",
+    "mp-1023945",
+    "mp-636232",
+    "mp-1190006",
+    "mp-1185113",
+    "mp-1183394",
+    "mp-1100467",
+    "mp-625548",
+    "mp-1079159",
+    "mp-4047",
+    "mp-632694",
+    "mp-1523148",
+    "mp-1072598",
+    "mp-2218792",
+    "mp-1225870",
+    "mp-1026471",
+    "mp-1025359",
+    "mp-1076055",
+    "mp-1183099",
+    "mp-1184140",
+    "mp-1273567",
+    "mp-2228498",
+    "mp-1024044",
+    "mp-19240",
+    "mp-1113917",
+    "mp-569207",
+    "mp-28317",
+    "mp-557825",
+    "mp-1225811",
+    "mp-1183233",
+    "mp-1227923"
+  ],
+  "evaluation_ids_sha256": "d3cad1379df8d17089e5bc196fc6abedc09ca1f11f204370839df2471aceaa8c",
+  "evaluation_seconds": 748.2826234791428,
+  "val": {
+    "val_generation_attempts": 32,
+    "lead_start_failures": 0,
+    "lead_eos_before_start": 0,
+    "lead_limit_failures": 0,
+    "crystal_attempts": 32,
+    "crystal_block_failures": 0,
+    "crystal_end_failures": 0,
+    "crystal_pad_boundary_failures": 0,
+    "parse_valid_crystals": 21,
+    "parse_invalid_crystals": 11,
+    "tail_read_attempts": 21,
+    "tail_read_completed": 21,
+    "tail_read_eos_failures": 0
+  },
+  "software": {
+    "python": "3.11.17",
+    "torch": "2.6.0+cu124",
+    "cuda": "12.4",
+    "transformers": "4.57.6",
+    "peft": "0.18.0",
+    "accelerate": "1.15.0"
+  },
+  "readback_evaluation": {
+    "attempted": 21,
+    "all_four_correct": 21,
+    "per_field": {
+      "formula": 21,
+      "space_group": 21,
+      "cell_atom_count": 21,
+      "independent_orbit_count": 21
+    },
+    "evaluator_version": "four-facts-v2-20261020"
+  }
+}

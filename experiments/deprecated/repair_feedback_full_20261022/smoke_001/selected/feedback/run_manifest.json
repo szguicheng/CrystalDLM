@@ -1,0 +1,136 @@
+{
+  "schema": 1,
+  "experiment": "repair_feedback_full_20261022",
+  "arm": "feedback",
+  "source_run": "experiments/repair_feedback_full_20261022/smoke_001",
+  "source_run_manifest_sha256": "5ce497c46bb1b0a9bbbf38e4c00248b3072a9650fad4ca0e1cb14f04b739b11a",
+  "source_run_identity_sha256": "e11f267a7013350b4f306fc5d8c41ffac6df8bfc83d297a79ac8000e89ad782e",
+  "checkpoint_fingerprint_sha256": "ca31b64b3920a4b9badced8c678659d880e1a3e7ecb3ffffe989057d4d21105b",
+  "selection_policy": "first strict-valid requested-space-group match; otherwise terminal attempt",
+  "raw_attempt_denominator": 7,
+  "attempt_plan": [
+    {
+      "request_id": "sg-001",
+      "space_group_number": 1,
+      "prompt": "User: Generate a crystal with space group number 1 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 0,
+      "flat_index": 0,
+      "plan_index": 0,
+      "seed": 1373158607
+    },
+    {
+      "request_id": "sg-015",
+      "space_group_number": 15,
+      "prompt": "User: Generate a crystal with space group number 15 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 0,
+      "flat_index": 100,
+      "plan_index": 1,
+      "seed": 794957573
+    },
+    {
+      "request_id": "sg-038",
+      "space_group_number": 38,
+      "prompt": "User: Generate a crystal with space group number 38 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 0,
+      "flat_index": 200,
+      "plan_index": 2,
+      "seed": 24655305
+    },
+    {
+      "request_id": "sg-119",
+      "space_group_number": 119,
+      "prompt": "User: Generate a crystal with space group number 119 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 0,
+      "flat_index": 300,
+      "plan_index": 3,
+      "seed": 2137066976
+    },
+    {
+      "request_id": "sg-143",
+      "space_group_number": 143,
+      "prompt": "User: Generate a crystal with space group number 143 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 0,
+      "flat_index": 400,
+      "plan_index": 4,
+      "seed": 2080903618
+    },
+    {
+      "request_id": "sg-194",
+      "space_group_number": 194,
+      "prompt": "User: Generate a crystal with space group number 194 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 0,
+      "flat_index": 500,
+      "plan_index": 5,
+      "seed": 678985350
+    },
+    {
+      "request_id": "sg-216",
+      "space_group_number": 216,
+      "prompt": "User: Generate a crystal with space group number 216 and energy above hull no greater than 0.08 eV/atom.\nAssistant:",
+      "attempt_id": 0,
+      "flat_index": 600,
+      "plan_index": 6,
+      "seed": 1941171830
+    }
+  ],
+  "attempt_plan_sha256": "20370fc0a8e282903d0dd7ed0ec16bc0b20aa90b2f1be39aadecc4ad8e139079",
+  "selected_identity_sha256": "e26ee102449681c1fd8c6ccba743a8314b1eb1ce04f9ced478ac23c8b5cd7f71",
+  "selected_identity": [
+    {
+      "request_id": "sg-001",
+      "group_index": 0,
+      "source_group": "shard-00-of-03/groups/sg-001/group-000.json",
+      "source_group_sha256": "e8eb244f903ac77c4055ad5cced9576c9f13375b3ded9b55fee3757b3b13faa6",
+      "selected_round": 0,
+      "selected_seed": 1373158607
+    },
+    {
+      "request_id": "sg-015",
+      "group_index": 0,
+      "source_group": "shard-01-of-03/groups/sg-015/group-000.json",
+      "source_group_sha256": "5b64e51935c3f70354980cff768dd1313ad6797fac978aec7e23c9304d7e8f57",
+      "selected_round": 2,
+      "selected_seed": 476700359
+    },
+    {
+      "request_id": "sg-038",
+      "group_index": 0,
+      "source_group": "shard-02-of-03/groups/sg-038/group-000.json",
+      "source_group_sha256": "868980f06c36edcb21480ccc9c121ce496138db9646d9c69b187ee6114fc110c",
+      "selected_round": 2,
+      "selected_seed": 65087282
+    },
+    {
+      "request_id": "sg-119",
+      "group_index": 0,
+      "source_group": "shard-00-of-03/groups/sg-119/group-000.json",
+      "source_group_sha256": "b207c193aceeb2f38d0609dd2faaef6a0d7c010cfd0d8db9e99974617aff3c27",
+      "selected_round": 2,
+      "selected_seed": 129803303
+    },
+    {
+      "request_id": "sg-143",
+      "group_index": 0,
+      "source_group": "shard-01-of-03/groups/sg-143/group-000.json",
+      "source_group_sha256": "d9007aaa06da33c21232d0b562b9c2bc453362f55a351863f6be6f542894fd06",
+      "selected_round": 2,
+      "selected_seed": 913276319
+    },
+    {
+      "request_id": "sg-194",
+      "group_index": 0,
+      "source_group": "shard-02-of-03/groups/sg-194/group-000.json",
+      "source_group_sha256": "54907616a7ac86a287be2bde6abc81a5e51eaeff077d9295be9ee61f9d4e32f6",
+      "selected_round": 0,
+      "selected_seed": 678985350
+    },
+    {
+      "request_id": "sg-216",
+      "group_index": 0,
+      "source_group": "shard-00-of-03/groups/sg-216/group-000.json",
+      "source_group_sha256": "5374207c186984dd68153aa2d27bfe1471adbbc0b809a7efafbef209ff88f8d2",
+      "selected_round": 2,
+      "selected_seed": 285603636
+    }
+  ]
+}

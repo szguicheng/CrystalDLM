@@ -1,0 +1,20 @@
+{
+  "source": "full/trainer_state.json",
+  "source_sha256": "6436383fca1ec565fa184b964349ad822a8f96c7ce517710312c7ddfbac5e7ec",
+  "training_points": 909,
+  "validation_points": 18,
+  "metric_fields": [
+    "train_answer_ce",
+    "eval_answer_ce"
+  ],
+  "normalization": "sum CE / supervised answer-token count",
+  "training_scope": "logged 10-update windows",
+  "validation_scope": "all 4501 validation examples",
+  "smoothing": false,
+  "main_y_scale": "log",
+  "best_validation_step": 7200,
+  "best_validation_ce": 0.00012284966782447412,
+  "final_validation_ce": 0.00012782947222838743,
+  "last_training_step": 9090,
+  "last_training_ce": 1.6840881542439162e-06
+}

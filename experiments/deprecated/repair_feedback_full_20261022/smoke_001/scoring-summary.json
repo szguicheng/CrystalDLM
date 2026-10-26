@@ -1,0 +1,824 @@
+{
+  "status": "complete",
+  "experiment": "repair_feedback_full_20261022",
+  "checkpoint_fingerprint_sha256": "ca31b64b3920a4b9badced8c678659d880e1a3e7ecb3ffffe989057d4d21105b",
+  "scheduled_groups_per_arm": 7,
+  "loop_summary": {
+    "status": "complete",
+    "scheduled_groups": 7,
+    "completed_groups": 7,
+    "arms": {
+      "independent": {
+        "success_within_attempts": {
+          "1": 2,
+          "2": 2,
+          "3": 2
+        },
+        "success_rate_within_3": 0.2857142857142857,
+        "logical_candidate_attempts": 17,
+        "mean_attempts_completed_groups": 2.4285714285714284,
+        "mean_seconds_completed_groups": 57.76516133107777,
+        "logical_total_seconds": 404.3561293175444,
+        "retry_transitions": 10,
+        "repeated_error_transitions": 10,
+        "failure_categories": {
+          "strict_invalid": 15,
+          "ValueError: Wyckoff multiplicity does not match label": 10,
+          "ValueError: not enough values to unpack (expected 5, got 4)": 1,
+          "formula_header_mismatch": 1,
+          "sites_header_mismatch": 1,
+          "ValueError: could not convert string to float: '8..52'": 1,
+          "decoded_space_group_mismatch": 1,
+          "wrong_requested_sg": 1,
+          "ValueError: invalid orbit species or label": 1
+        },
+        "per_request": {
+          "sg-001": {
+            "completed_groups": 1,
+            "successful_groups": 1
+          },
+          "sg-015": {
+            "completed_groups": 1,
+            "successful_groups": 0
+          },
+          "sg-038": {
+            "completed_groups": 1,
+            "successful_groups": 0
+          },
+          "sg-119": {
+            "completed_groups": 1,
+            "successful_groups": 0
+          },
+          "sg-143": {
+            "completed_groups": 1,
+            "successful_groups": 0
+          },
+          "sg-194": {
+            "completed_groups": 1,
+            "successful_groups": 1
+          },
+          "sg-216": {
+            "completed_groups": 1,
+            "successful_groups": 0
+          }
+        }
+      },
+      "feedback": {
+        "success_within_attempts": {
+          "1": 2,
+          "2": 2,
+          "3": 2
+        },
+        "success_rate_within_3": 0.2857142857142857,
+        "logical_candidate_attempts": 17,
+        "mean_attempts_completed_groups": 2.4285714285714284,
+        "mean_seconds_completed_groups": 78.95176850631833,
+        "logical_total_seconds": 552.6623795442283,
+        "retry_transitions": 10,
+        "repeated_error_transitions": 10,
+        "failure_categories": {
+          "strict_invalid": 15,
+          "ValueError: Wyckoff multiplicity does not match label": 9,
+          "ValueError: not enough values to unpack (expected 5, got 4)": 1,
+          "formula_header_mismatch": 3,
+          "sites_header_mismatch": 3,
+          "ValueError: could not convert string to float: '8..52'": 1,
+          "ValueError: invalid orbit species or label": 1,
+          "wyckoff_coordinate_constraint": 1,
+          "wrong_requested_sg": 1
+        },
+        "per_request": {
+          "sg-001": {
+            "completed_groups": 1,
+            "successful_groups": 1
+          },
+          "sg-015": {
+            "completed_groups": 1,
+            "successful_groups": 0
+          },
+          "sg-038": {
+            "completed_groups": 1,
+            "successful_groups": 0
+          },
+          "sg-119": {
+            "completed_groups": 1,
+            "successful_groups": 0
+          },
+          "sg-143": {
+            "completed_groups": 1,
+            "successful_groups": 0
+          },
+          "sg-194": {
+            "completed_groups": 1,
+            "successful_groups": 1
+          },
+          "sg-216": {
+            "completed_groups": 1,
+            "successful_groups": 0
+          }
+        }
+      }
+    },
+    "paired": {
+      "both_success": 2,
+      "independent_only": 0,
+      "feedback_only": 0,
+      "neither": 5
+    },
+    "actual_candidate_generations": 27,
+    "scope": "Structural validity and original requested space group only; ehull is an input condition, unevaluated."
+  },
+  "property_evaluation": {
+    "status": "complete",
+    "scorer": "GRACE-3L-OAM-L with fixed MP 2023 hull and MP2020 corrections",
+    "property_scores_used_in_feedback_or_selection": false,
+    "main_success_definition": "loop-selected strict-valid requested-SG output AND converged GRACE result that is post-relax valid, preserves requested SG, and has corrected proxy ehull <=0.08 eV/atom",
+    "score_label": "MP2020-corrected GRACE energy minus fixed MP 2023 hull proxy; not DFT ehull",
+    "gated_main_metrics": {
+      "independent": {
+        "generated_strict_successes": 2,
+        "final_post_relax_successes_leq_0_08": 1,
+        "unique_novel_final_successes_leq_0_08": 1,
+        "global_unique_novel_final_successes_leq_0_08": 1,
+        "unique_novel_successes_by_threshold": {
+          "0": {
+            "within_request": 0,
+            "global": 0,
+            "per_request": {
+              "sg-001": {
+                "within_request": 0,
+                "global": 0
+              },
+              "sg-194": {
+                "within_request": 0,
+                "global": 0
+              }
+            }
+          },
+          "0.08": {
+            "within_request": 1,
+            "global": 1,
+            "per_request": {
+              "sg-001": {
+                "within_request": 0,
+                "global": 0
+              },
+              "sg-194": {
+                "within_request": 1,
+                "global": 1
+              }
+            }
+          },
+          "0.1": {
+            "within_request": 1,
+            "global": 1,
+            "per_request": {
+              "sg-001": {
+                "within_request": 0,
+                "global": 0
+              },
+              "sg-194": {
+                "within_request": 1,
+                "global": 1
+              }
+            }
+          }
+        },
+        "raw_group_denominator": 7
+      },
+      "feedback": {
+        "generated_strict_successes": 2,
+        "final_post_relax_successes_leq_0_08": 1,
+        "unique_novel_final_successes_leq_0_08": 1,
+        "global_unique_novel_final_successes_leq_0_08": 1,
+        "unique_novel_successes_by_threshold": {
+          "0": {
+            "within_request": 0,
+            "global": 0,
+            "per_request": {
+              "sg-001": {
+                "within_request": 0,
+                "global": 0
+              },
+              "sg-194": {
+                "within_request": 0,
+                "global": 0
+              }
+            }
+          },
+          "0.08": {
+            "within_request": 1,
+            "global": 1,
+            "per_request": {
+              "sg-001": {
+                "within_request": 0,
+                "global": 0
+              },
+              "sg-194": {
+                "within_request": 1,
+                "global": 1
+              }
+            }
+          },
+          "0.1": {
+            "within_request": 1,
+            "global": 1,
+            "per_request": {
+              "sg-001": {
+                "within_request": 0,
+                "global": 0
+              },
+              "sg-194": {
+                "within_request": 1,
+                "global": 1
+              }
+            }
+          }
+        },
+        "raw_group_denominator": 7
+      }
+    },
+    "frozen_grace_reports_supplementary": {
+      "independent": {
+        "status": "complete",
+        "scheduled_attempts": 7,
+        "completed_attempts": 7,
+        "pending_attempts": 0,
+        "raw_attempt_denominator": 7,
+        "structural_valid_attempts": 2,
+        "pre_relax_condition_matches": 2,
+        "post_relax_valid_attempts": 2,
+        "post_relax_condition_matches": 2,
+        "converged_relaxations": 2,
+        "scored_attempts": 2,
+        "threshold_counts": {
+          "0": {
+            "endpoint_proxy_leq_diagnostic": 0,
+            "converged_proxy_leq": 0,
+            "valid_converged_proxy_leq": 0,
+            "valid_conditioned_converged_proxy_leq": 0,
+            "unique_novel_conditioned_converged_leq": 0,
+            "global_unique_novel_conditioned_converged_leq": 0,
+            "raw_attempt_denominator": 7
+          },
+          "0.08": {
+            "endpoint_proxy_leq_diagnostic": 1,
+            "converged_proxy_leq": 1,
+            "valid_converged_proxy_leq": 1,
+            "valid_conditioned_converged_proxy_leq": 1,
+            "unique_novel_conditioned_converged_leq": 1,
+            "global_unique_novel_conditioned_converged_leq": 1,
+            "raw_attempt_denominator": 7
+          },
+          "0.1": {
+            "endpoint_proxy_leq_diagnostic": 1,
+            "converged_proxy_leq": 1,
+            "valid_converged_proxy_leq": 1,
+            "valid_conditioned_converged_proxy_leq": 1,
+            "unique_novel_conditioned_converged_leq": 1,
+            "global_unique_novel_conditioned_converged_leq": 1,
+            "raw_attempt_denominator": 7
+          }
+        },
+        "per_request": {
+          "sg-001": {
+            "scheduled_attempts": 1,
+            "completed_attempts": 1,
+            "strict_valid": 1,
+            "post_relax_valid": 1,
+            "post_relax_condition_matches": 1,
+            "thresholds": {
+              "0": {
+                "endpoint_proxy_leq_diagnostic": 0,
+                "unique_novel_conditioned_converged_leq": 0,
+                "raw_attempt_denominator": 1
+              },
+              "0.08": {
+                "endpoint_proxy_leq_diagnostic": 0,
+                "unique_novel_conditioned_converged_leq": 0,
+                "raw_attempt_denominator": 1
+              },
+              "0.1": {
+                "endpoint_proxy_leq_diagnostic": 0,
+                "unique_novel_conditioned_converged_leq": 0,
+                "raw_attempt_denominator": 1
+              }
+            }
+          },
+          "sg-015": {
+            "scheduled_attempts": 1,
+            "completed_attempts": 1,
+            "strict_valid": 0,
+            "post_relax_valid": 0,
+            "post_relax_condition_matches": 0,
+            "thresholds": {
+              "0": {
+                "endpoint_proxy_leq_diagnostic": 0,
+                "unique_novel_conditioned_converged_leq": 0,
+                "raw_attempt_denominator": 1
+              },
+              "0.08": {
+                "endpoint_proxy_leq_diagnostic": 0,
+                "unique_novel_conditioned_converged_leq": 0,
+                "raw_attempt_denominator": 1
+              },
+              "0.1": {
+                "endpoint_proxy_leq_diagnostic": 0,
+                "unique_novel_conditioned_converged_leq": 0,
+                "raw_attempt_denominator": 1
+              }
+            }
+          },
+          "sg-038": {
+            "scheduled_attempts": 1,
+            "completed_attempts": 1,
+            "strict_valid": 0,
+            "post_relax_valid": 0,
+            "post_relax_condition_matches": 0,
+            "thresholds": {
+              "0": {
+                "endpoint_proxy_leq_diagnostic": 0,
+                "unique_novel_conditioned_converged_leq": 0,
+                "raw_attempt_denominator": 1
+              },
+              "0.08": {
+                "endpoint_proxy_leq_diagnostic": 0,
+                "unique_novel_conditioned_converged_leq": 0,
+                "raw_attempt_denominator": 1
+              },
+              "0.1": {
+                "endpoint_proxy_leq_diagnostic": 0,
+                "unique_novel_conditioned_converged_leq": 0,
+                "raw_attempt_denominator": 1
+              }
+            }
+          },
+          "sg-119": {
+            "scheduled_attempts": 1,
+            "completed_attempts": 1,
+            "strict_valid": 0,
+            "post_relax_valid": 0,
+            "post_relax_condition_matches": 0,
+            "thresholds": {
+              "0": {
+                "endpoint_proxy_leq_diagnostic": 0,
+                "unique_novel_conditioned_converged_leq": 0,
+                "raw_attempt_denominator": 1
+              },
+              "0.08": {
+                "endpoint_proxy_leq_diagnostic": 0,
+                "unique_novel_conditioned_converged_leq": 0,
+                "raw_attempt_denominator": 1
+              },
+              "0.1": {
+                "endpoint_proxy_leq_diagnostic": 0,
+                "unique_novel_conditioned_converged_leq": 0,
+                "raw_attempt_denominator": 1
+              }
+            }
+          },
+          "sg-143": {
+            "scheduled_attempts": 1,
+            "completed_attempts": 1,
+            "strict_valid": 0,
+            "post_relax_valid": 0,
+            "post_relax_condition_matches": 0,
+            "thresholds": {
+              "0": {
+                "endpoint_proxy_leq_diagnostic": 0,
+                "unique_novel_conditioned_converged_leq": 0,
+                "raw_attempt_denominator": 1
+              },
+              "0.08": {
+                "endpoint_proxy_leq_diagnostic": 0,
+                "unique_novel_conditioned_converged_leq": 0,
+                "raw_attempt_denominator": 1
+              },
+              "0.1": {
+                "endpoint_proxy_leq_diagnostic": 0,
+                "unique_novel_conditioned_converged_leq": 0,
+                "raw_attempt_denominator": 1
+              }
+            }
+          },
+          "sg-194": {
+            "scheduled_attempts": 1,
+            "completed_attempts": 1,
+            "strict_valid": 1,
+            "post_relax_valid": 1,
+            "post_relax_condition_matches": 1,
+            "thresholds": {
+              "0": {
+                "endpoint_proxy_leq_diagnostic": 0,
+                "unique_novel_conditioned_converged_leq": 0,
+                "raw_attempt_denominator": 1
+              },
+              "0.08": {
+                "endpoint_proxy_leq_diagnostic": 1,
+                "unique_novel_conditioned_converged_leq": 1,
+                "raw_attempt_denominator": 1
+              },
+              "0.1": {
+                "endpoint_proxy_leq_diagnostic": 1,
+                "unique_novel_conditioned_converged_leq": 1,
+                "raw_attempt_denominator": 1
+              }
+            }
+          },
+          "sg-216": {
+            "scheduled_attempts": 1,
+            "completed_attempts": 1,
+            "strict_valid": 0,
+            "post_relax_valid": 0,
+            "post_relax_condition_matches": 0,
+            "thresholds": {
+              "0": {
+                "endpoint_proxy_leq_diagnostic": 0,
+                "unique_novel_conditioned_converged_leq": 0,
+                "raw_attempt_denominator": 1
+              },
+              "0.08": {
+                "endpoint_proxy_leq_diagnostic": 0,
+                "unique_novel_conditioned_converged_leq": 0,
+                "raw_attempt_denominator": 1
+              },
+              "0.1": {
+                "endpoint_proxy_leq_diagnostic": 0,
+                "unique_novel_conditioned_converged_leq": 0,
+                "raw_attempt_denominator": 1
+              }
+            }
+          }
+        },
+        "score_label": "MP2020-corrected GRACE energy minus fixed MP 2023 hull proxy; not DFT ehull",
+        "property_evaluation_status": "proxy_scored",
+        "novelty_reference": {
+          "dataset": "/data1/users/liugang/crystalDLM/research/crystal_training_preflight_20261013/data_001/train-triples.jsonl.gz",
+          "sha256": "b74afafbca5a52eb1a63c9a7502c9fe1f5055cfef0c25f122de6d140c137080b",
+          "training_records": 7272,
+          "formula_matched_reference_counts": {
+            "Cd3Sn": 0,
+            "LiVF3": 0
+          },
+          "formula_matched_parse_failures": {
+            "Cd3Sn": 0,
+            "LiVF3": 0
+          }
+        },
+        "calibration_summary": {
+          "n_reference_structures": 12,
+          "reference_source": "fixed Matbench Discovery 2023-02-07 MP phase diagram entries",
+          "source_2025_energy_above_hull_used": false,
+          "raw_grace_proxy": {
+            "n": 12,
+            "mean_error_eV_per_atom": 0.17419430060068056,
+            "mae_eV_per_atom": 0.17625692414295757,
+            "rmse_eV_per_atom": 0.29314738316693456,
+            "spearman_rho": 0.20423041640915962
+          },
+          "mp2020_corrected_grace_proxy": {
+            "n": 12,
+            "mean_error_eV_per_atom": 0.002427237108617105,
+            "mae_eV_per_atom": 0.004806362253696424,
+            "rmse_eV_per_atom": 0.005955313546833735,
+            "spearman_rho": 0.9788975131335582
+          },
+          "threshold_classification": {
+            "0": {
+              "n": 12,
+              "true_positive": 2,
+              "false_positive": 0,
+              "false_negative": 2,
+              "true_negative": 8
+            },
+            "0.08": {
+              "n": 12,
+              "true_positive": 8,
+              "false_positive": 0,
+              "false_negative": 1,
+              "true_negative": 3
+            },
+            "0.1": {
+              "n": 12,
+              "true_positive": 9,
+              "false_positive": 0,
+              "false_negative": 0,
+              "true_negative": 3
+            }
+          },
+          "status": "complete",
+          "source_val_snapshot": "local MP 2025.06.09 validation structures; original labels were not used",
+          "reference_hull_snapshot": "Matbench Discovery 2023-02-07 MP PPD",
+          "n_selected": 12,
+          "selected_material_ids": [
+            "mp-1023298",
+            "mp-1026902",
+            "mp-22442",
+            "mp-1186468",
+            "mp-1174849",
+            "mp-22769",
+            "mp-12746",
+            "mp-1245663",
+            "mp-755117",
+            "mp-19808",
+            "mp-1217699",
+            "mp-1209881"
+          ],
+          "result_interpretation": "12-structure calibration check, not a fitted correction model",
+          "scoring_manifest_sha256": "a14f68628e9a33f4c37e0a860d3576466568bd5c7d79cca85d3446a3baceb500"
+        },
+        "scoring_manifest_sha256": "9e89bb638bca991263a503bd83baf3b53c285f26fbcea18744bdcffb7c7192d6"
+      },
+      "feedback": {
+        "status": "complete",
+        "scheduled_attempts": 7,
+        "completed_attempts": 7,
+        "pending_attempts": 0,
+        "raw_attempt_denominator": 7,
+        "structural_valid_attempts": 2,
+        "pre_relax_condition_matches": 2,
+        "post_relax_valid_attempts": 2,
+        "post_relax_condition_matches": 2,
+        "converged_relaxations": 2,
+        "scored_attempts": 2,
+        "threshold_counts": {
+          "0": {
+            "endpoint_proxy_leq_diagnostic": 0,
+            "converged_proxy_leq": 0,
+            "valid_converged_proxy_leq": 0,
+            "valid_conditioned_converged_proxy_leq": 0,
+            "unique_novel_conditioned_converged_leq": 0,
+            "global_unique_novel_conditioned_converged_leq": 0,
+            "raw_attempt_denominator": 7
+          },
+          "0.08": {
+            "endpoint_proxy_leq_diagnostic": 1,
+            "converged_proxy_leq": 1,
+            "valid_converged_proxy_leq": 1,
+            "valid_conditioned_converged_proxy_leq": 1,
+            "unique_novel_conditioned_converged_leq": 1,
+            "global_unique_novel_conditioned_converged_leq": 1,
+            "raw_attempt_denominator": 7
+          },
+          "0.1": {
+            "endpoint_proxy_leq_diagnostic": 1,
+            "converged_proxy_leq": 1,
+            "valid_converged_proxy_leq": 1,
+            "valid_conditioned_converged_proxy_leq": 1,
+            "unique_novel_conditioned_converged_leq": 1,
+            "global_unique_novel_conditioned_converged_leq": 1,
+            "raw_attempt_denominator": 7
+          }
+        },
+        "per_request": {
+          "sg-001": {
+            "scheduled_attempts": 1,
+            "completed_attempts": 1,
+            "strict_valid": 1,
+            "post_relax_valid": 1,
+            "post_relax_condition_matches": 1,
+            "thresholds": {
+              "0": {
+                "endpoint_proxy_leq_diagnostic": 0,
+                "unique_novel_conditioned_converged_leq": 0,
+                "raw_attempt_denominator": 1
+              },
+              "0.08": {
+                "endpoint_proxy_leq_diagnostic": 0,
+                "unique_novel_conditioned_converged_leq": 0,
+                "raw_attempt_denominator": 1
+              },
+              "0.1": {
+                "endpoint_proxy_leq_diagnostic": 0,
+                "unique_novel_conditioned_converged_leq": 0,
+                "raw_attempt_denominator": 1
+              }
+            }
+          },
+          "sg-015": {
+            "scheduled_attempts": 1,
+            "completed_attempts": 1,
+            "strict_valid": 0,
+            "post_relax_valid": 0,
+            "post_relax_condition_matches": 0,
+            "thresholds": {
+              "0": {
+                "endpoint_proxy_leq_diagnostic": 0,
+                "unique_novel_conditioned_converged_leq": 0,
+                "raw_attempt_denominator": 1
+              },
+              "0.08": {
+                "endpoint_proxy_leq_diagnostic": 0,
+                "unique_novel_conditioned_converged_leq": 0,
+                "raw_attempt_denominator": 1
+              },
+              "0.1": {
+                "endpoint_proxy_leq_diagnostic": 0,
+                "unique_novel_conditioned_converged_leq": 0,
+                "raw_attempt_denominator": 1
+              }
+            }
+          },
+          "sg-038": {
+            "scheduled_attempts": 1,
+            "completed_attempts": 1,
+            "strict_valid": 0,
+            "post_relax_valid": 0,
+            "post_relax_condition_matches": 0,
+            "thresholds": {
+              "0": {
+                "endpoint_proxy_leq_diagnostic": 0,
+                "unique_novel_conditioned_converged_leq": 0,
+                "raw_attempt_denominator": 1
+              },
+              "0.08": {
+                "endpoint_proxy_leq_diagnostic": 0,
+                "unique_novel_conditioned_converged_leq": 0,
+                "raw_attempt_denominator": 1
+              },
+              "0.1": {
+                "endpoint_proxy_leq_diagnostic": 0,
+                "unique_novel_conditioned_converged_leq": 0,
+                "raw_attempt_denominator": 1
+              }
+            }
+          },
+          "sg-119": {
+            "scheduled_attempts": 1,
+            "completed_attempts": 1,
+            "strict_valid": 0,
+            "post_relax_valid": 0,
+            "post_relax_condition_matches": 0,
+            "thresholds": {
+              "0": {
+                "endpoint_proxy_leq_diagnostic": 0,
+                "unique_novel_conditioned_converged_leq": 0,
+                "raw_attempt_denominator": 1
+              },
+              "0.08": {
+                "endpoint_proxy_leq_diagnostic": 0,
+                "unique_novel_conditioned_converged_leq": 0,
+                "raw_attempt_denominator": 1
+              },
+              "0.1": {
+                "endpoint_proxy_leq_diagnostic": 0,
+                "unique_novel_conditioned_converged_leq": 0,
+                "raw_attempt_denominator": 1
+              }
+            }
+          },
+          "sg-143": {
+            "scheduled_attempts": 1,
+            "completed_attempts": 1,
+            "strict_valid": 0,
+            "post_relax_valid": 0,
+            "post_relax_condition_matches": 0,
+            "thresholds": {
+              "0": {
+                "endpoint_proxy_leq_diagnostic": 0,
+                "unique_novel_conditioned_converged_leq": 0,
+                "raw_attempt_denominator": 1
+              },
+              "0.08": {
+                "endpoint_proxy_leq_diagnostic": 0,
+                "unique_novel_conditioned_converged_leq": 0,
+                "raw_attempt_denominator": 1
+              },
+              "0.1": {
+                "endpoint_proxy_leq_diagnostic": 0,
+                "unique_novel_conditioned_converged_leq": 0,
+                "raw_attempt_denominator": 1
+              }
+            }
+          },
+          "sg-194": {
+            "scheduled_attempts": 1,
+            "completed_attempts": 1,
+            "strict_valid": 1,
+            "post_relax_valid": 1,
+            "post_relax_condition_matches": 1,
+            "thresholds": {
+              "0": {
+                "endpoint_proxy_leq_diagnostic": 0,
+                "unique_novel_conditioned_converged_leq": 0,
+                "raw_attempt_denominator": 1
+              },
+              "0.08": {
+                "endpoint_proxy_leq_diagnostic": 1,
+                "unique_novel_conditioned_converged_leq": 1,
+                "raw_attempt_denominator": 1
+              },
+              "0.1": {
+                "endpoint_proxy_leq_diagnostic": 1,
+                "unique_novel_conditioned_converged_leq": 1,
+                "raw_attempt_denominator": 1
+              }
+            }
+          },
+          "sg-216": {
+            "scheduled_attempts": 1,
+            "completed_attempts": 1,
+            "strict_valid": 0,
+            "post_relax_valid": 0,
+            "post_relax_condition_matches": 0,
+            "thresholds": {
+              "0": {
+                "endpoint_proxy_leq_diagnostic": 0,
+                "unique_novel_conditioned_converged_leq": 0,
+                "raw_attempt_denominator": 1
+              },
+              "0.08": {
+                "endpoint_proxy_leq_diagnostic": 0,
+                "unique_novel_conditioned_converged_leq": 0,
+                "raw_attempt_denominator": 1
+              },
+              "0.1": {
+                "endpoint_proxy_leq_diagnostic": 0,
+                "unique_novel_conditioned_converged_leq": 0,
+                "raw_attempt_denominator": 1
+              }
+            }
+          }
+        },
+        "score_label": "MP2020-corrected GRACE energy minus fixed MP 2023 hull proxy; not DFT ehull",
+        "property_evaluation_status": "proxy_scored",
+        "novelty_reference": {
+          "dataset": "/data1/users/liugang/crystalDLM/research/crystal_training_preflight_20261013/data_001/train-triples.jsonl.gz",
+          "sha256": "b74afafbca5a52eb1a63c9a7502c9fe1f5055cfef0c25f122de6d140c137080b",
+          "training_records": 7272,
+          "formula_matched_reference_counts": {
+            "Cd3Sn": 0,
+            "LiVF3": 0
+          },
+          "formula_matched_parse_failures": {
+            "Cd3Sn": 0,
+            "LiVF3": 0
+          }
+        },
+        "calibration_summary": {
+          "n_reference_structures": 12,
+          "reference_source": "fixed Matbench Discovery 2023-02-07 MP phase diagram entries",
+          "source_2025_energy_above_hull_used": false,
+          "raw_grace_proxy": {
+            "n": 12,
+            "mean_error_eV_per_atom": 0.17419430060068056,
+            "mae_eV_per_atom": 0.17625692414295757,
+            "rmse_eV_per_atom": 0.29314738316693456,
+            "spearman_rho": 0.20423041640915962
+          },
+          "mp2020_corrected_grace_proxy": {
+            "n": 12,
+            "mean_error_eV_per_atom": 0.002427237108617105,
+            "mae_eV_per_atom": 0.004806362253696424,
+            "rmse_eV_per_atom": 0.005955313546833735,
+            "spearman_rho": 0.9788975131335582
+          },
+          "threshold_classification": {
+            "0": {
+              "n": 12,
+              "true_positive": 2,
+              "false_positive": 0,
+              "false_negative": 2,
+              "true_negative": 8
+            },
+            "0.08": {
+              "n": 12,
+              "true_positive": 8,
+              "false_positive": 0,
+              "false_negative": 1,
+              "true_negative": 3
+            },
+            "0.1": {
+              "n": 12,
+              "true_positive": 9,
+              "false_positive": 0,
+              "false_negative": 0,
+              "true_negative": 3
+            }
+          },
+          "status": "complete",
+          "source_val_snapshot": "local MP 2025.06.09 validation structures; original labels were not used",
+          "reference_hull_snapshot": "Matbench Discovery 2023-02-07 MP PPD",
+          "n_selected": 12,
+          "selected_material_ids": [
+            "mp-1023298",
+            "mp-1026902",
+            "mp-22442",
+            "mp-1186468",
+            "mp-1174849",
+            "mp-22769",
+            "mp-12746",
+            "mp-1245663",
+            "mp-755117",
+            "mp-19808",
+            "mp-1217699",
+            "mp-1209881"
+          ],
+          "result_interpretation": "12-structure calibration check, not a fitted correction model",
+          "scoring_manifest_sha256": "a14f68628e9a33f4c37e0a860d3576466568bd5c7d79cca85d3446a3baceb500"
+        },
+        "scoring_manifest_sha256": "8c50b2468291016cfef3e949b43a2ff5b199d4e9507d43c970f33f8fe66ac387"
+      }
+    }
+  }
+}

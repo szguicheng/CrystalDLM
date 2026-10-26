@@ -1,0 +1,36 @@
+diff --git a/src/llamafactory/hparams/finetuning_args.py b/src/llamafactory/hparams/finetuning_args.py
+index 2a1ecc9..36a97fe 100644
+--- a/src/llamafactory/hparams/finetuning_args.py
++++ b/src/llamafactory/hparams/finetuning_args.py
+@@ -56,6 +56,10 @@ class FreezeArguments:
+ class LoraArguments:
+     r"""Arguments pertaining to the LoRA training."""
+ 
++    trainable_token_indices: list[int] | None = field(
++        default=None, metadata={"help": "Input token rows to train alongside LoRA."}
++    )
++
+     additional_target: str | None = field(
+         default=None,
+         metadata={
+diff --git a/src/llamafactory/model/adapter.py b/src/llamafactory/model/adapter.py
+index b8c3900..ba0ce73 100644
+--- a/src/llamafactory/model/adapter.py
++++ b/src/llamafactory/model/adapter.py
+@@ -219,7 +219,7 @@ def _setup_lora_tuning(
+         ):
+             raise ValueError("DoRA is not compatible with PTQ-quantized models.")
+ 
+-        if model_args.resize_vocab and finetuning_args.additional_target is None:
++        if model_args.resize_vocab and finetuning_args.additional_target is None and finetuning_args.trainable_token_indices is None:
+             input_embeddings = model.get_input_embeddings()
+             output_embeddings = model.get_output_embeddings()
+             module_names = set()
+@@ -239,6 +239,7 @@ def _setup_lora_tuning(
+                 "use_rslora": finetuning_args.use_rslora,
+                 "use_dora": finetuning_args.use_dora,
+                 "modules_to_save": finetuning_args.additional_target,
++                "trainable_token_indices": finetuning_args.trainable_token_indices,
+             }
+         elif finetuning_args.finetuning_type == "oft":
+             peft_kwargs = {

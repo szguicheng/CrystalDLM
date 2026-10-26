@@ -1,0 +1,81 @@
+{
+  "created_at_utc": "2026-10-26T05:06:13+00:00",
+  "authority": "/data1/users/liugang/crystalDLM/data_preparation/crystal_tasks_v1/annotation_run/annotation.sqlite3",
+  "sqlite_backup_snapshot": "/data1/users/liugang/crystalDLM/data_preparation/crystal_tasks_v1/resume_artifacts/annotation_snapshot_20261026T0500Z.sqlite3",
+  "source_snapshot_sha256": "f582a305d7eac5d313f9f6aed07dd8a0f99fdb98414fee3ed30ad7a3f3e13008",
+  "local_archive_journal": "/Volumes/Extention/Users/guicheng/Code/helloWorld/CrystalDLM/experiments/deprecated/design_understanding_full_20261025/annotation_run/annotation.sqlite3",
+  "local_archive_and_remote_snapshot_rows_equal": {
+    "attempts": {
+      "rows": 1332,
+      "sha256": "9918eeeddedbd9aef10f9e7cb576e56f2fe9c0c68b90b7a1391880d8362a204c"
+    },
+    "successes": {
+      "rows": 1312,
+      "sha256": "4b9bce6f78e31cc613823ba1cb28de50bcf8d45f12bef14d059ff31e772d5cfa"
+    }
+  },
+  "metadata_rebind": [
+    {
+      "old_path": "/data1/users/liugang/crystalDLM/data_preparation/crystal_tasks_v1/annotation_inputs/train-facts.jsonl.gz",
+      "new_path": "/Volumes/Extention/Users/guicheng/Code/helloWorld/CrystalDLM/data_preparation/crystal_tasks_v1/active_resume_20261025/annotation_inputs/train-facts.jsonl.gz"
+    },
+    {
+      "old_path": "/data1/users/liugang/crystalDLM/data_preparation/crystal_tasks_v1/annotation_inputs/val-facts.jsonl.gz",
+      "new_path": "/Volumes/Extention/Users/guicheng/Code/helloWorld/CrystalDLM/data_preparation/crystal_tasks_v1/active_resume_20261025/annotation_inputs/val-facts.jsonl.gz"
+    },
+    {
+      "old_path": "/data1/users/liugang/crystalDLM/data_preparation/crystal_tasks_v1/annotation_inputs/test-facts.jsonl.gz",
+      "new_path": "/Volumes/Extention/Users/guicheng/Code/helloWorld/CrystalDLM/data_preparation/crystal_tasks_v1/active_resume_20261025/annotation_inputs/test-facts.jsonl.gz"
+    }
+  ],
+  "input_files": [
+    {
+      "path": "/Volumes/Extention/Users/guicheng/Code/helloWorld/CrystalDLM/data_preparation/crystal_tasks_v1/active_resume_20261025/annotation_inputs/train-facts.jsonl.gz",
+      "sha256": "f175f0e6c1bdeacb3f647e7abe87479f3f8dcefc32353671834b60826706a1a5",
+      "rows": 29090
+    },
+    {
+      "path": "/Volumes/Extention/Users/guicheng/Code/helloWorld/CrystalDLM/data_preparation/crystal_tasks_v1/active_resume_20261025/annotation_inputs/val-facts.jsonl.gz",
+      "sha256": "6a2ce20252589d513a9508ad7db9660d47ae2665454c5f5b00ea6e6d602cc067",
+      "rows": 3601
+    },
+    {
+      "path": "/Volumes/Extention/Users/guicheng/Code/helloWorld/CrystalDLM/data_preparation/crystal_tasks_v1/active_resume_20261025/annotation_inputs/test-facts.jsonl.gz",
+      "sha256": "d9180b9787b95c6b3a0e1fa8f4a230a28d27127abc28ff5281c8f109af68b66c",
+      "rows": 4602
+    }
+  ],
+  "input_rows": 37293,
+  "reused_previous_captions": 8172,
+  "saved_new_captions_at_resume": 1312,
+  "remaining_at_resume": 35981,
+  "success_ids_file": "success_ids_at_resume.txt",
+  "success_ids_sha256": "757234ff9af3c388d998ac324e8de1c23cfc97a33483cd94dc443acce80b83d5",
+  "attempts": 1332,
+  "latest_unresolved_failures": {
+    "interrupted": 8
+  },
+  "settings": {
+    "base_url": "https://llm.sciencepal.ai/v1",
+    "model": "deepseek-v4-flash",
+    "thinking": {
+      "type": "enabled"
+    },
+    "reasoning_effort": "max",
+    "max_tokens": 16384,
+    "stream": true
+  },
+  "workers": 8,
+  "max_attempts": 4,
+  "config_sha256": "a1843c24da015249545d4dd5e52b65e7e9a358c7be8bfe08a52b9fec2de393ec",
+  "prompt_sha256": "11941791632b26426150d128fb230607552c48e47574d1dd0dbc55d351806ad2",
+  "helper_sha256": "5f58c724790f32ac45ba8bd102385e54518e08c30897e03d0d8d51346c960984",
+  "runner_sha256": "5960252cf587267241026486946aed37486685ab347e177eb79b749ab86edea9",
+  "launcher_sha256": "8b9409efdedfdc9b75c52030e8a03c1d19ea4ec6e79eeee2dd22428ebf10f5f9",
+  "verifier_sha256": "5357ccb3be6a6454b3987d2634aaa3a313d853fbdd0bdd1d2bb6e9a81839a55a",
+  "request_manifest_file": "request-manifest.jsonl",
+  "request_manifest_rows": 37293,
+  "request_manifest_sha256": "4fc3f7d93e23f3d13d5ec38ee928483bf1d188750765c705d020bec88231872d",
+  "credential_source": "local .env variable SCIENCEPAL_API_KEY; present, value not recorded",
+  "dataset_finalization_run": false
+}

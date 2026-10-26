@@ -1,0 +1,43 @@
+{
+  "status": "passed",
+  "device": "cpu",
+  "torch": "2.6.0+cu124",
+  "transformers": "4.57.6",
+  "checks": {
+    "parent_segment_weighted": {
+      "custom_loss": 4.44137716293335,
+      "hf_oracle_loss": 4.44137716293335,
+      "absolute_loss_error": 0.0,
+      "maximum_absolute_gradient_error": 2.384185791015625e-07
+    },
+    "continued_ar_task_weighted": {
+      "custom_loss": 2.975966453552246,
+      "hf_oracle_loss": 2.975966453552246,
+      "absolute_loss_error": 0.0,
+      "maximum_absolute_gradient_error": 0.0
+    },
+    "peft_parent_segment_weighted": {
+      "custom_loss": 4.459665298461914,
+      "hf_oracle_loss": 4.459665298461914,
+      "absolute_loss_error": 0.0,
+      "maximum_absolute_gradient_error": 1.7881393432617188e-07
+    },
+    "peft_continued_ar_task_weighted": {
+      "custom_loss": 2.987791061401367,
+      "hf_oracle_loss": 2.987791061401367,
+      "absolute_loss_error": 0.0,
+      "maximum_absolute_gradient_error": 0.0
+    },
+    "off_by_one_negative_control": {
+      "correct_shift_loss": 3.0671520233154297,
+      "wrong_same_position_loss": 3.0082008838653564,
+      "different": true
+    }
+  },
+  "source_sha256": {
+    "experiments/ehull_interleaved_smoke_20261013/model.py": "558ee52de4bb9e2ab32a7fc02b2473e8b7b2017655666674393777da0c733a1b",
+    "experiments/ehull_pure_ar_qwen3_8b_20261015/model.py": "87235ff32b0bd277be1d55d8b43f2cf767f6973f3d52883a3f17d527f93e7e93",
+    "experiments/flare_crystal_full_20261019/model.py": "e289355c146db632a65aa618afd203ba5702e9a90e10cb6ecaea395a7244fe82",
+    "experiments/flare_crystal_qwen3_8b_20261019/model.py": "8bde8817d493c981abfd8210ed797becd0c319b88be2167eb3d21836833b2bde"
+  }
+}

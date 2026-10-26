@@ -1,0 +1,60 @@
+{
+  "schema": 1,
+  "purpose": "calibrate",
+  "model": "GRACE-3L-OMAT-large-ft-AM",
+  "model_manifest": {
+    "model": "GRACE-3L-OMAT-large-ft-AM",
+    "repository": "AMS-ICAMS-RUB/grace-foundation-models",
+    "revision": "46ead61dc8a7f90c11b1e59b8489e8e9bf97b888",
+    "file": "models/GRACE-3L-OMAT-large-ft-AM-model.tar.gz",
+    "sha256": "0d7ebce7d3ddbd168d086fbd43c583a4c34fb55b7509f78be3dc89db67651e52",
+    "bytes": 191371901
+  },
+  "model_manifest_sha256": "1ca90cdf6977257c947e717c125176feda1a9348176d8ed55d30243819e73495",
+  "model_dir": "/home/liugang/src/crystalDLM/experiments/structure_request_eval_20261017/assets/grace-model/GRACE-3L-OMAT-large-ft-AM",
+  "hull_path": "/home/liugang/src/crystalDLM/experiments/structure_request_eval_20261017/assets/2023-02-07-ppd-mp.pkl.gz",
+  "hull_sha256": "f7fc992230e88dcf26bab2e85fa1ed4fdf6b047c06479bfd8b7a1e003f242d1e",
+  "hull_snapshot": "Matbench Discovery 2023-02-07 MP PPD",
+  "relaxation": {
+    "optimizer": "ASE FIRE + FrechetCellFilter",
+    "fmax_eV_per_A": 0.05,
+    "max_steps": 300,
+    "min_distance_A": 0.5,
+    "symprec_A": 0.01,
+    "angle_tolerance_deg": 5
+  },
+  "thresholds_eV_per_atom": [
+    0.0,
+    0.08,
+    0.1
+  ],
+  "software": {
+    "tensorpotential": "0.6.2",
+    "tensorflow": "2.20.0",
+    "ase": "3.29.0",
+    "pymatgen": "2025.10.7",
+    "pyxtal": "1.0.8",
+    "scipy": "1.17.1"
+  },
+  "cuda_visible_devices": "2",
+  "source_val_sha256": "1bdd0ba733309abc806ac0e5421fd98d97fdb82ed078448c2658e0c12231e4b8",
+  "excluded_evaluation_ids_sha256": "f853269a673aa52a6b2e115e07109057cf8188fb1ecd4cddda87733342c399e8",
+  "source_val_snapshot": "local MP 2025.06.09 validation structures; labels ignored",
+  "reference_hull_snapshot": "Matbench Discovery MP 2023-02-07",
+  "calibration_count": 12,
+  "selection_seed": 42,
+  "selected_material_ids": [
+    "mp-1023298",
+    "mp-1026902",
+    "mp-22442",
+    "mp-1186468",
+    "mp-1174849",
+    "mp-22769",
+    "mp-12746",
+    "mp-1245663",
+    "mp-755117",
+    "mp-19808",
+    "mp-1217699",
+    "mp-1209881"
+  ]
+}

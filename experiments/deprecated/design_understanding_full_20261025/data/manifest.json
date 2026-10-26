@@ -1,0 +1,82 @@
+{
+  "status": "understanding_ready_design_awaiting_captions",
+  "counts_per_task": {
+    "train": 36362,
+    "val": 4501,
+    "test": 4602
+  },
+  "sampling_fraction": 1.0,
+  "split_policy": "unchanged source structure-hash split; no new random split",
+  "original_records": 45629,
+  "prior_preprocessing_errors": 164,
+  "source_manifest_sha256": "a8e174165ef7e99b2d2e97aeb9ad84999409d90e75c1f8986c5a4c8f4486223f",
+  "source_artifacts": {
+    "base-errors.jsonl.gz": {
+      "sha256": "8f82375d842ae9d364c5d12ada198d82dd0f6994ebeb48575a65ecad2035d55a",
+      "bytes": 153174
+    },
+    "test-facts.jsonl.gz": {
+      "sha256": "b1ad6df3e0c82800c62d5189153aaab100958ea1ae7fa8d8b6a076d1cc2cc177",
+      "bytes": 14870956
+    },
+    "train-facts.jsonl.gz": {
+      "sha256": "5cf0ae53b129804f6749f61cbd77ca364299f9fcd38be92f0a1c794175a0e8b8",
+      "bytes": 115237603
+    },
+    "val-facts.jsonl.gz": {
+      "sha256": "bc2f373672a1d78e3925b11fdbbd3463f0eb1678695a58c625e056971d6955a0",
+      "bytes": 14622655
+    }
+  },
+  "reused_captions": 8172,
+  "missing_captions": {
+    "train": 29090,
+    "val": 3601,
+    "test": 4602
+  },
+  "artifacts": {
+    "data/understanding/training.jsonl": {
+      "sha256": "c166a9e8ae7b4b5a18dae3d0c0c114b39defde8cae7fe2d739a3a286d4354fd1",
+      "bytes": 19006257
+    },
+    "data/metadata/training.jsonl": {
+      "sha256": "6f2bcf82a039d98a442260e15f06fda1ceae05812260915bdcb43fa3176fe1cf",
+      "bytes": 64956782
+    },
+    "annotation_inputs/train-facts.jsonl.gz": {
+      "sha256": "f175f0e6c1bdeacb3f647e7abe87479f3f8dcefc32353671834b60826706a1a5",
+      "bytes": 92263041
+    },
+    "data/understanding/validation.jsonl": {
+      "sha256": "4c4136e1f55bd9009abc8adbcedc73a120706809c4f63a890fb8f89013dd7983",
+      "bytes": 2359828
+    },
+    "data/metadata/validation.jsonl": {
+      "sha256": "6bad153bc75573013bfaa749906fceaeb039001f1ddf4dde02735d28b46d972c",
+      "bytes": 8025215
+    },
+    "annotation_inputs/val-facts.jsonl.gz": {
+      "sha256": "6a2ce20252589d513a9508ad7db9660d47ae2665454c5f5b00ea6e6d602cc067",
+      "bytes": 11632922
+    },
+    "data/understanding/test.jsonl": {
+      "sha256": "48c4029a4ec6cac1cc8d8ee04558c5a3fa56b68c5d6c200a5e93dc31a9377505",
+      "bytes": 2403222
+    },
+    "data/metadata/test.jsonl": {
+      "sha256": "51ccb022f5a74c5ed756f59c7775c630dc2562ecca389f39f5253fec333155e3",
+      "bytes": 8212746
+    },
+    "annotation_inputs/test-facts.jsonl.gz": {
+      "sha256": "d9180b9787b95c6b3a0e1fa8f4a230a28d27127abc28ff5281c8f109af68b66c",
+      "bytes": 14870956
+    }
+  },
+  "understanding_input": "PLaID with crystal boundary markers only; no generation request, caption, energy, or history",
+  "output_eos": "not stored; the selected LLaMA-Factory chat template appends its EOS",
+  "builder_sha256": "f14eede531e5e38b88a4268656e6710a81011d352ce69b962e91ef4736ecef16",
+  "reused_caption_sources": {
+    "train-triples.jsonl.gz": "b74afafbca5a52eb1a63c9a7502c9fe1f5055cfef0c25f122de6d140c137080b",
+    "val-triples.jsonl.gz": "4e97dbe73aa2c4903aa11c4438f3c7c4da05a87eb1028632f121db4e8cd97f12"
+  }
+}

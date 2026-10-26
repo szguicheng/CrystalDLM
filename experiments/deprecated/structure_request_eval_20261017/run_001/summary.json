@@ -1,0 +1,261 @@
+{
+  "status": "complete",
+  "scheduled_attempts": 700,
+  "completed_attempts": 700,
+  "pending_attempts": 0,
+  "strict_valid_structures": 140,
+  "requested_space_group_matches": 21,
+  "valid_and_requested_space_group_matches": 15,
+  "lead_failures": 0,
+  "crystal_failures": 9,
+  "invalid_structure_attempts": 560,
+  "ehull_evaluation_status": "not_run",
+  "raw_attempt_denominator": 700,
+  "run_manifest_sha256": "6cefbe639e33c205c0d80d15bcd76b8962d1082315621bfce4d15c3da1cc3518",
+  "requests": [
+    {
+      "request_id": "sg-001",
+      "space_group_number": 1,
+      "prompt": "User: Generate a crystal with space group number 1 and energy above hull no greater than 0.08 eV/atom.\nAssistant:"
+    },
+    {
+      "request_id": "sg-015",
+      "space_group_number": 15,
+      "prompt": "User: Generate a crystal with space group number 15 and energy above hull no greater than 0.08 eV/atom.\nAssistant:"
+    },
+    {
+      "request_id": "sg-038",
+      "space_group_number": 38,
+      "prompt": "User: Generate a crystal with space group number 38 and energy above hull no greater than 0.08 eV/atom.\nAssistant:"
+    },
+    {
+      "request_id": "sg-119",
+      "space_group_number": 119,
+      "prompt": "User: Generate a crystal with space group number 119 and energy above hull no greater than 0.08 eV/atom.\nAssistant:"
+    },
+    {
+      "request_id": "sg-143",
+      "space_group_number": 143,
+      "prompt": "User: Generate a crystal with space group number 143 and energy above hull no greater than 0.08 eV/atom.\nAssistant:"
+    },
+    {
+      "request_id": "sg-194",
+      "space_group_number": 194,
+      "prompt": "User: Generate a crystal with space group number 194 and energy above hull no greater than 0.08 eV/atom.\nAssistant:"
+    },
+    {
+      "request_id": "sg-216",
+      "space_group_number": 216,
+      "prompt": "User: Generate a crystal with space group number 216 and energy above hull no greater than 0.08 eV/atom.\nAssistant:"
+    }
+  ],
+  "attempt_plan_sha256": "8acfff65cea781091651d07585e0bbb770632c7dcb64ec0525b28b1277e45ddd",
+  "sampling": {
+    "lead": "stochastic top-p",
+    "crystal": "stochastic top-p",
+    "temperature": 0.8,
+    "top_p": 0.95,
+    "max_lead_tokens": 256,
+    "crystal_capacity": 544
+  },
+  "checkpoint_fingerprint_sha256": "f30b8fbf3f5607ac207353bfab283c6cb0d77788cf01c455690819282fe6b30b",
+  "trainable_state_sha256": "14c8bd031e634fe2587e1dc5685254481dc3b717741b3cb6d6c1f1c16102a9e4",
+  "cached_logits_parity_by_shard": [
+    {
+      "passed": true,
+      "interpretation": "BF16 cached and full forwards may differ elementwise from rounding; FP32 tiny-model route coverage is checked separately.",
+      "acceptance": {
+        "top1_same": true,
+        "kl_reference_to_cached_max": 0.01,
+        "max_abs_max": 0.5,
+        "mean_abs_max": 0.1
+      },
+      "strict_elementwise_tolerance": {
+        "rtol": 0.002,
+        "atol": 0.002
+      },
+      "aggregate": {
+        "max_abs": 0.3125,
+        "max_mean_abs": 0.052850622683763504,
+        "max_kl_reference_to_cached": 0.0021589358802884817,
+        "all_top1_same": true,
+        "all_distribution_criteria_passed": true
+      },
+      "contexts": [
+        {
+          "context": "prompt_before_start",
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "rms_abs": 0.0,
+          "kl_reference_to_cached": 0.0,
+          "cosine_similarity": 1.0000001192092896,
+          "top1_reference": 576,
+          "top1_cached": 576,
+          "top1_same": true,
+          "strict_close_fraction": 1.0,
+          "strict_close_rtol": 0.002,
+          "strict_close_atol": 0.002,
+          "distribution_criteria_passed": true
+        },
+        {
+          "context": "after_start",
+          "max_abs": 0.125,
+          "mean_abs": 0.011831316165626049,
+          "rms_abs": 0.01904780976474285,
+          "kl_reference_to_cached": 0.0011449785670265555,
+          "cosine_similarity": 0.9999923706054688,
+          "top1_reference": 44,
+          "top1_cached": 44,
+          "top1_same": true,
+          "strict_close_fraction": 0.5312744975090027,
+          "strict_close_rtol": 0.002,
+          "strict_close_atol": 0.002,
+          "distribution_criteria_passed": true
+        },
+        {
+          "context": "inside_crystal_token_0",
+          "max_abs": 0.3125,
+          "mean_abs": 0.052850622683763504,
+          "rms_abs": 0.062283456325531006,
+          "kl_reference_to_cached": 0.0021589358802884817,
+          "cosine_similarity": 0.9999884366989136,
+          "top1_reference": 44,
+          "top1_cached": 44,
+          "top1_same": true,
+          "strict_close_fraction": 0.15526823699474335,
+          "strict_close_rtol": 0.002,
+          "strict_close_atol": 0.002,
+          "distribution_criteria_passed": true
+        },
+        {
+          "context": "at_crystal_end",
+          "max_abs": 0.25,
+          "mean_abs": 0.030011778697371483,
+          "rms_abs": 0.04580577835440636,
+          "kl_reference_to_cached": 0.0004944746615365148,
+          "cosine_similarity": 0.9999867677688599,
+          "top1_reference": 17,
+          "top1_cached": 17,
+          "top1_same": true,
+          "strict_close_fraction": 0.5003395676612854,
+          "strict_close_rtol": 0.002,
+          "strict_close_atol": 0.002,
+          "distribution_criteria_passed": true
+        },
+        {
+          "context": "after_crystal_end",
+          "max_abs": 0.25,
+          "mean_abs": 0.03813657537102699,
+          "rms_abs": 0.051223475486040115,
+          "kl_reference_to_cached": 0.001212619710713625,
+          "cosine_similarity": 0.9999814033508301,
+          "top1_reference": 9042,
+          "top1_cached": 9042,
+          "top1_same": true,
+          "strict_close_fraction": 0.31891635060310364,
+          "strict_close_rtol": 0.002,
+          "strict_close_atol": 0.002,
+          "distribution_criteria_passed": true
+        }
+      ]
+    },
+    {
+      "passed": true,
+      "interpretation": "BF16 cached and full forwards may differ elementwise from rounding; FP32 tiny-model route coverage is checked separately.",
+      "acceptance": {
+        "top1_same": true,
+        "kl_reference_to_cached_max": 0.01,
+        "max_abs_max": 0.5,
+        "mean_abs_max": 0.1
+      },
+      "strict_elementwise_tolerance": {
+        "rtol": 0.002,
+        "atol": 0.002
+      },
+      "aggregate": {
+        "max_abs": 0.3125,
+        "max_mean_abs": 0.052850622683763504,
+        "max_kl_reference_to_cached": 0.0021589358802884817,
+        "all_top1_same": true,
+        "all_distribution_criteria_passed": true
+      },
+      "contexts": [
+        {
+          "context": "prompt_before_start",
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "rms_abs": 0.0,
+          "kl_reference_to_cached": 0.0,
+          "cosine_similarity": 1.0000001192092896,
+          "top1_reference": 576,
+          "top1_cached": 576,
+          "top1_same": true,
+          "strict_close_fraction": 1.0,
+          "strict_close_rtol": 0.002,
+          "strict_close_atol": 0.002,
+          "distribution_criteria_passed": true
+        },
+        {
+          "context": "after_start",
+          "max_abs": 0.125,
+          "mean_abs": 0.011831316165626049,
+          "rms_abs": 0.01904780976474285,
+          "kl_reference_to_cached": 0.0011449785670265555,
+          "cosine_similarity": 0.9999923706054688,
+          "top1_reference": 44,
+          "top1_cached": 44,
+          "top1_same": true,
+          "strict_close_fraction": 0.5312744975090027,
+          "strict_close_rtol": 0.002,
+          "strict_close_atol": 0.002,
+          "distribution_criteria_passed": true
+        },
+        {
+          "context": "inside_crystal_token_0",
+          "max_abs": 0.3125,
+          "mean_abs": 0.052850622683763504,
+          "rms_abs": 0.062283456325531006,
+          "kl_reference_to_cached": 0.0021589358802884817,
+          "cosine_similarity": 0.9999884366989136,
+          "top1_reference": 44,
+          "top1_cached": 44,
+          "top1_same": true,
+          "strict_close_fraction": 0.15526823699474335,
+          "strict_close_rtol": 0.002,
+          "strict_close_atol": 0.002,
+          "distribution_criteria_passed": true
+        },
+        {
+          "context": "at_crystal_end",
+          "max_abs": 0.25,
+          "mean_abs": 0.030011778697371483,
+          "rms_abs": 0.04580577835440636,
+          "kl_reference_to_cached": 0.0004944746615365148,
+          "cosine_similarity": 0.9999867677688599,
+          "top1_reference": 17,
+          "top1_cached": 17,
+          "top1_same": true,
+          "strict_close_fraction": 0.5003395676612854,
+          "strict_close_rtol": 0.002,
+          "strict_close_atol": 0.002,
+          "distribution_criteria_passed": true
+        },
+        {
+          "context": "after_crystal_end",
+          "max_abs": 0.25,
+          "mean_abs": 0.03813657537102699,
+          "rms_abs": 0.051223475486040115,
+          "kl_reference_to_cached": 0.001212619710713625,
+          "cosine_similarity": 0.9999814033508301,
+          "top1_reference": 9042,
+          "top1_cached": 9042,
+          "top1_same": true,
+          "strict_close_fraction": 0.31891635060310364,
+          "strict_close_rtol": 0.002,
+          "strict_close_atol": 0.002,
+          "distribution_criteria_passed": true
+        }
+      ]
+    }
+  ]
+}

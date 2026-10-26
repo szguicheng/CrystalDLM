@@ -1,0 +1,336 @@
+{
+  "request_id": "sg-216",
+  "attempt_id": 72,
+  "seed": 477672769,
+  "space_group_number_requested": 216,
+  "structural_valid": true,
+  "requested_sg_match": true,
+  "actual_space_group_number_pre_relax": 216,
+  "generation_receipt": {
+    "path": "/data1/users/liugang/crystalDLM/experiments/repair_feedback_full_20261022/run_001/selected/independent/shard-00-of-01/attempts/sg-216/attempt-072.json",
+    "sha256": "9485e86be416801a3a33217a4054ce2a6b7433489240b53410da9bd9459f3920"
+  },
+  "score_status": "scored",
+  "ehull_proxy_raw_eV_per_atom": 0.21058278143025788,
+  "ehull_proxy_corrected_eV_per_atom": 0.21058278143025788,
+  "novel_vs_own_train": true,
+  "source_cif": {
+    "path": "/data1/users/liugang/crystalDLM/experiments/repair_feedback_full_20261022/run_001/shard-00-of-03/cifs/sg-216/group-072/round-00-shared_initial.cif",
+    "sha256": "761bd87af07e42991500789feeaad4ae1c29a6f39b4902cd610a80b7d69dd53c"
+  },
+  "reduced_formula": "EuInSn",
+  "score_label": "GRACE energy minus fixed MP 2023 hull proxy; not DFT ehull",
+  "energy_units": {
+    "total_energy": "eV",
+    "force": "eV/angstrom",
+    "ehull": "eV/atom"
+  },
+  "initial_grace_energy_eV": -71.69511699676514,
+  "relaxed_grace_energy_eV": -71.87934303283691,
+  "relaxed_mp2020_corrected_grace_energy_eV": -71.87934303283691,
+  "mp2020_correction_eV": 0.0,
+  "mp2020_correction_error": null,
+  "reference_hull_energy_eV_per_atom": -6.200528034166667,
+  "converged": true,
+  "relax_steps": 11,
+  "max_atomic_force_eV_per_A": 1.3799575208433797e-07,
+  "actual_space_group_number_post_relax": 216,
+  "post_relax_valid": true,
+  "post_relax_validation_errors": [],
+  "pre_relax_valid": true,
+  "pre_relax_validation_errors": [],
+  "minimum_periodic_distance_pre_relax_A": 3.1047010725672117,
+  "minimum_periodic_distance_A": 3.1769550252662735,
+  "relaxation_seconds": 0.16185197699815035,
+  "timing_seconds": {
+    "initial_singlepoint": 0.009787539951503277,
+    "relaxation": 0.16185197699815035,
+    "final_singlepoint_and_force": 0.00011933036148548126,
+    "total": 0.18118034955114126
+  },
+  "relaxed_structure": {
+    "@module": "pymatgen.core.structure",
+    "@class": "Structure",
+    "charge": 0.0,
+    "lattice": {
+      "matrix": [
+        [
+          7.336863441491683,
+          -1.2524830777131679e-09,
+          -4.18455967152003e-09
+        ],
+        [
+          -1.2524859901609764e-09,
+          7.336863442941808,
+          1.4492580899047431e-09
+        ],
+        [
+          -4.184560403802823e-09,
+          1.4492572520966423e-09,
+          7.336863442836872
+        ]
+      ],
+      "pbc": [
+        true,
+        true,
+        true
+      ],
+      "a": 7.336863441491683,
+      "b": 7.336863442941808,
+      "c": 7.336863442836872,
+      "alpha": 89.99999997736462,
+      "beta": 90.00000006535699,
+      "gamma": 90.00000001956207,
+      "volume": 394.9401688376451
+    },
+    "properties": {},
+    "sites": [
+      {
+        "species": [
+          {
+            "element": "Eu",
+            "occu": 1
+          }
+        ],
+        "abc": [
+          1.9666435570681885e-09,
+          -3.2765448615254113e-12,
+          2.2455119251661502e-09
+        ],
+        "properties": {},
+        "label": "Eu",
+        "xyz": [
+          1.4428995206906379e-08,
+          -2.4039561422547952e-11,
+          1.647501434597149e-08
+        ]
+      },
+      {
+        "species": [
+          {
+            "element": "Eu",
+            "occu": 1
+          }
+        ],
+        "abc": [
+          1.0864882177087235e-10,
+          0.4999999994650184,
+          0.49999999773827675
+        ],
+        "properties": {},
+        "label": "Eu",
+        "xyz": [
+          -1.921381618435666e-09,
+          3.668431718270446,
+          3.6684317055491107
+        ]
+      },
+      {
+        "species": [
+          {
+            "element": "Eu",
+            "occu": 1
+          }
+        ],
+        "abc": [
+          0.49999999899710756,
+          -4.97847742361202e-10,
+          0.49999999857354294
+        ],
+        "properties": {},
+        "label": "Eu",
+        "xyz": [
+          3.6684317112954767,
+          -3.554253814700475e-09,
+          3.6684317088604357
+        ]
+      },
+      {
+        "species": [
+          {
+            "element": "Eu",
+            "occu": 1
+          }
+        ],
+        "abc": [
+          0.49999999960139874,
+          0.5000000006093421,
+          8.309861893987028e-10
+        ],
+        "properties": {},
+        "label": "Eu",
+        "xyz": [
+          3.6684317171951157,
+          3.6684317253153225,
+          4.729181406245081e-09
+        ]
+      },
+      {
+        "species": [
+          {
+            "element": "In",
+            "occu": 1
+          }
+        ],
+        "abc": [
+          0.5000000015338277,
+          0.5000000005157393,
+          0.499999999902139
+        ],
+        "properties": {},
+        "label": "In",
+        "xyz": [
+          3.6684317292808033,
+          3.6684317253532,
+          3.6684317193327924
+        ]
+      },
+      {
+        "species": [
+          {
+            "element": "In",
+            "occu": 1
+          }
+        ],
+        "abc": [
+          0.5000000016546237,
+          -1.2160481689167183e-09,
+          4.914985071228918e-10
+        ],
+        "properties": {},
+        "label": "In",
+        "xyz": [
+          3.6684317328855895,
+          -9.548220895598059e-09,
+          1.5137775846725885e-09
+        ]
+      },
+      {
+        "species": [
+          {
+            "element": "In",
+            "occu": 1
+          }
+        ],
+        "abc": [
+          -3.080918759668117e-09,
+          0.5000000018062765,
+          1.0008146971688402e-09
+        ],
+        "properties": {},
+        "label": "In",
+        "xyz": [
+          -2.3230523215545703e-08,
+          3.6684317347233075,
+          8.067469825174338e-09
+        ]
+      },
+      {
+        "species": [
+          {
+            "element": "In",
+            "occu": 1
+          }
+        ],
+        "abc": [
+          -1.0529667261022336e-09,
+          -1.0333813788840357e-09,
+          0.4999999999325995
+        ],
+        "properties": {},
+        "label": "In",
+        "xyz": [
+          -9.817753278171737e-09,
+          -6.857149434081615e-09,
+          3.668431720923928
+        ]
+      },
+      {
+        "species": [
+          {
+            "element": "Sn",
+            "occu": 1
+          }
+        ],
+        "abc": [
+          0.7500000018707643,
+          0.7499999990150417,
+          0.7500000017771328
+        ],
+        "properties": {},
+        "label": "Sn",
+        "xyz": [
+          5.502647590766521,
+          5.5026475751274315,
+          5.502647593114759
+        ]
+      },
+      {
+        "species": [
+          {
+            "element": "Sn",
+            "occu": 1
+          }
+        ],
+        "abc": [
+          0.7500000016319257,
+          0.25000000249461435,
+          0.2499999980777808
+        ],
+        "properties": {},
+        "label": "Sn",
+        "xyz": [
+          5.502647591732718,
+          1.834215878461049,
+          1.834215843830053
+        ]
+      },
+      {
+        "species": [
+          {
+            "element": "Sn",
+            "occu": 1
+          }
+        ],
+        "abc": [
+          0.24999999751706167,
+          0.7499999987468836,
+          0.24999999814634818
+        ],
+        "properties": {},
+        "label": "Sn",
+        "xyz": [
+          1.8342158401704367,
+          5.502647573061606,
+          1.8342158471500314
+        ]
+      },
+      {
+        "species": [
+          {
+            "element": "Sn",
+            "occu": 1
+          }
+        ],
+        "abc": [
+          0.24999999925188326,
+          0.25000000009763684,
+          0.7500000012833686
+        ],
+        "properties": {},
+        "label": "Sn",
+        "xyz": [
+          1.8342158514325486,
+          1.8342158622256224,
+          5.502647590859729
+        ]
+      }
+    ]
+  },
+  "post_relax_sg_match": true,
+  "relaxed_cif": "/data1/users/liugang/crystalDLM/experiments/repair_feedback_full_20261022/run_001/selected/independent/grace_score/relaxed/sg-216/attempt-072.cif",
+  "relaxed_cif_sha256": "a6591113d46aeaed952b8b9d66bd4fcdcf13d9d0619f9a9dac9c96839fd3d7b1",
+  "novelty_status": "checked_against_formula_matched_training_structures",
+  "unique_novel_thresholds_eV_per_atom": [],
+  "global_unique_novel_thresholds_eV_per_atom": []
+}

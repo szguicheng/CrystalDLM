@@ -1,0 +1,151 @@
+{
+  "status": "complete",
+  "evaluator_version": "four-facts-v2-20261020",
+  "grader_sha256": "bb983581f1050a5a82688c7929306b3173096b9494887620754fcd22e063e81a",
+  "frozen_structure_evaluator_sha256": "c1dfe1b87715b5b650b7152e02fed567bd5f7f0fd9109295ec87208f23165c6b",
+  "runs": [
+    {
+      "run": "experiments/ehull_pure_ar_baseline_20261013/run_001",
+      "attempts": 32,
+      "strict_valid": 7,
+      "readback": {
+        "attempted": 7,
+        "all_four_correct": 7,
+        "per_field": {
+          "formula": 7,
+          "space_group": 7,
+          "cell_atom_count": 7,
+          "independent_orbit_count": 7
+        },
+        "evaluator_version": "four-facts-v2-20261020"
+      }
+    },
+    {
+      "run": "experiments/ehull_pure_ar_qwen3_8b_20261015/evaluation_001",
+      "attempts": 32,
+      "strict_valid": 21,
+      "readback": {
+        "attempted": 21,
+        "all_four_correct": 21,
+        "per_field": {
+          "formula": 21,
+          "space_group": 21,
+          "cell_atom_count": 21,
+          "independent_orbit_count": 21
+        },
+        "evaluator_version": "four-facts-v2-20261020"
+      }
+    },
+    {
+      "run": "experiments/structure_request_eval_20261017/preflight_002",
+      "attempts": 7,
+      "strict_valid": 0,
+      "valid_requested_sg": 0
+    },
+    {
+      "run": "experiments/structure_request_eval_20261017/run_001",
+      "attempts": 700,
+      "strict_valid": 140,
+      "valid_requested_sg": 15,
+      "final_unique_novel_conditioned_80meV": 1
+    },
+    {
+      "run": "experiments/structure_conditioned_ar8b_20261017/evaluation_001",
+      "attempts": 700,
+      "strict_valid": 95,
+      "valid_requested_sg": 94,
+      "final_unique_novel_conditioned_80meV": 12
+    },
+    {
+      "run": "experiments/structure_conditioned_ar8b_20261017/evaluation_preflight_001",
+      "attempts": 7,
+      "strict_valid": 1,
+      "valid_requested_sg": 1
+    },
+    {
+      "run": "experiments/structure_conditioned_hybrid8b_20261018/evaluation_001",
+      "attempts": 700,
+      "strict_valid": 0,
+      "valid_requested_sg": 0,
+      "final_unique_novel_conditioned_80meV": 0
+    },
+    {
+      "run": "experiments/structure_conditioned_hybrid8b_20261018/evaluation_preflight_001",
+      "attempts": 7,
+      "strict_valid": 0,
+      "valid_requested_sg": 0
+    },
+    {
+      "run": "experiments/flare_crystal_full_20261019/ar_evaluation",
+      "attempts": 700,
+      "strict_valid": 169,
+      "valid_requested_sg": 164,
+      "readback": {
+        "attempted": 169,
+        "all_four_correct": 162,
+        "per_field": {
+          "formula": 169,
+          "space_group": 164,
+          "cell_atom_count": 169,
+          "independent_orbit_count": 167
+        },
+        "evaluator_version": "four-facts-v2-20261020"
+      },
+      "final_unique_novel_conditioned_80meV": 25
+    },
+    {
+      "run": "experiments/flare_crystal_full_20261019/ar_preflight",
+      "attempts": 28,
+      "strict_valid": 7,
+      "valid_requested_sg": 7,
+      "readback": {
+        "attempted": 7,
+        "all_four_correct": 7,
+        "per_field": {
+          "formula": 7,
+          "space_group": 7,
+          "cell_atom_count": 7,
+          "independent_orbit_count": 7
+        },
+        "evaluator_version": "four-facts-v2-20261020"
+      }
+    },
+    {
+      "run": "experiments/flare_crystal_full_20261019/flare_evaluation",
+      "attempts": 700,
+      "strict_valid": 121,
+      "valid_requested_sg": 117,
+      "readback": {
+        "attempted": 121,
+        "all_four_correct": 115,
+        "per_field": {
+          "formula": 121,
+          "space_group": 117,
+          "cell_atom_count": 121,
+          "independent_orbit_count": 118
+        },
+        "evaluator_version": "four-facts-v2-20261020"
+      },
+      "final_unique_novel_conditioned_80meV": 24
+    },
+    {
+      "run": "experiments/flare_crystal_full_20261019/flare_preflight",
+      "attempts": 28,
+      "strict_valid": 4,
+      "valid_requested_sg": 4,
+      "readback": {
+        "attempted": 4,
+        "all_four_correct": 4,
+        "per_field": {
+          "formula": 4,
+          "space_group": 4,
+          "cell_atom_count": 4,
+          "independent_orbit_count": 4
+        },
+        "evaluator_version": "four-facts-v2-20261020"
+      }
+    }
+  ],
+  "invariants": "Raw model responses, token IDs, CIFs, structural decisions and per-attempt energy/novelty values unchanged; aggregate counts recomputed.",
+  "scope": "Saved evidence only; no model inference, training, relaxation or DFT."
+}

@@ -1,0 +1,73 @@
+/data1/users/liugang/crystalDLM/envs/crystaldlm/lib/python3.11/site-packages/transformers/utils/hub.py:110: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+[INFO|2026-10-26 13:18:19] llamafactory.model.patcher:144 >> Add special tokens <CRYSTAL_START>,<CRYSTAL_END>,<CRYSTAL_MASK>,<CRYSTAL_PAD> to tokenizer's vocabulary.
+[WARNING|2026-10-26 13:18:20] llamafactory.data.template:149 >> You are using reasoning template, please add `_nothink` suffix if the model is not a reasoning model. e.g., qwen3_vl_nothink
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 5/5 [00:00<00:00, 186.46it/s]
+You're using a Qwen2TokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+GENERATED 16 / 32
+GENERATED 32 / 32
+/data1/users/liugang/crystalDLM/envs/crystaldlm/lib/python3.11/site-packages/pymatgen/core/composition.py:1373: FutureWarning: gcd is deprecated, and will be removed on 2028-01-01
+Use math.gcd instead.
+  factor = abs(gcd(*(int(i) for i in sym_amt.values())))
+{
+  "fields": {
+    "formula": {
+      "k": 32,
+      "n": 32,
+      "rate": 1.0
+    },
+    "space_group": {
+      "k": 32,
+      "n": 32,
+      "rate": 1.0
+    },
+    "cell_atom_count": {
+      "k": 32,
+      "n": 32,
+      "rate": 1.0
+    },
+    "independent_orbit_count": {
+      "k": 32,
+      "n": 32,
+      "rate": 1.0
+    }
+  },
+  "all_four": {
+    "k": 32,
+    "n": 32,
+    "rate": 1.0
+  },
+  "exact_match": {
+    "k": 32,
+    "n": 32
+  },
+  "nll": {
+    "nll_sum": 0.005551300919250934,
+    "token_count": 1161,
+    "nll_mean": 4.781482273256619e-06,
+    "segments": {
+      "input": {
+        "nll_sum": 0.0,
+        "token_count": 0,
+        "nll_mean": null
+      },
+      "description": {
+        "nll_sum": 0.0,
+        "token_count": 0,
+        "nll_mean": null
+      },
+      "crystal": {
+        "nll_sum": 0.0,
+        "token_count": 0,
+        "nll_mean": null
+      },
+      "answer": {
+        "nll_sum": 0.005551300919250934,
+        "token_count": 1161,
+        "nll_mean": 4.781482273256619e-06
+      }
+    }
+  },
+  "overfit_passed": true
+}

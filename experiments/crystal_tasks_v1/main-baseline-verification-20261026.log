@@ -1,0 +1,69 @@
+CrystalDLM main baseline active-code verification
+Date: 2026-10-26
+Source host: LiuGangGPU (/home/liugang/src/crystalDLM -> /data1/users/liugang/crystalDLM)
+Local/remote SHA-256 scope: 27 active Python files + 3 configs; mismatches: none
+GPU visibility: CUDA_VISIBLE_DEVICES empty for both Python commands
+Archived historical suite: NOT RUN
+ 
+COMMAND: CUDA_VISIBLE_DEVICES="" bash experiments/crystal_tasks_v1/python.sh -m unittest discover -s experiments/crystal_tasks_v1/tests -v
+/data1/users/liugang/crystalDLM/envs/crystaldlm/lib/python3.11/site-packages/transformers/utils/hub.py:110: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+test_answer_only_and_original_base (test_configuration.ConfigurationTests.test_answer_only_and_original_base) ... ok
+test_three_gpu_effective_batch_and_design_matching (test_configuration.ConfigurationTests.test_three_gpu_effective_batch_and_design_matching) ... ok
+test_grace_loader_points_to_the_archived_project_assets (test_design.DesignEvaluationTests.test_grace_loader_points_to_the_archived_project_assets) ... ok
+test_marker_failure_cannot_become_strict_valid_from_raw_audit (test_design.DesignEvaluationTests.test_marker_failure_cannot_become_strict_valid_from_raw_audit) ... ok
+test_missing_property_scores_are_not_reported_as_zero_sun (test_design.DesignEvaluationTests.test_missing_property_scores_are_not_reported_as_zero_sun) ... /data1/users/liugang/crystalDLM/envs/crystaldlm/lib/python3.11/site-packages/pymatgen/core/composition.py:1373: FutureWarning: gcd is deprecated, and will be removed on 2028-01-01
+Use math.gcd instead.
+  factor = abs(gcd(*(int(i) for i in sym_amt.values())))
+/data1/users/liugang/crystalDLM/envs/crystaldlm/lib/python3.11/site-packages/spglib/spg.py:437: DeprecationWarning: Set OLD_ERROR_HANDLING to false and catch the errors directly.
+  _set_no_error(_throw)
+/data1/users/liugang/crystalDLM/envs/crystaldlm/lib/python3.11/site-packages/pymatgen/core/composition.py:1373: FutureWarning: gcd is deprecated, and will be removed on 2028-01-01
+Use math.gcd instead.
+  factor = abs(gcd(*(int(i) for i in sym_amt.values())))
+ok
+test_raw_attempt_denominators_duplicate_classes_failures_and_seed_rates (test_design.DesignEvaluationTests.test_raw_attempt_denominators_duplicate_classes_failures_and_seed_rates) ... ok
+test_self_training_is_not_novel_and_test_self_coverage_is_one (test_design.DesignEvaluationTests.test_self_training_is_not_novel_and_test_self_coverage_is_one) ... ok
+test_attempt_plan_is_complete_and_binds_seed_and_request (test_io.EvaluationIOTests.test_attempt_plan_is_complete_and_binds_seed_and_request) ... ok
+test_full_reference_decode_fails_with_identity_instead_of_dropping_row (test_io.EvaluationIOTests.test_full_reference_decode_fails_with_identity_instead_of_dropping_row) ... ok
+test_grace_decode_failure_still_produces_hash_bound_receipt (test_io.EvaluationIOTests.test_grace_decode_failure_still_produces_hash_bound_receipt) ... ok
+test_grace_receipt_append_fsyncs_and_preserves_attempt_identity (test_io.EvaluationIOTests.test_grace_receipt_append_fsyncs_and_preserves_attempt_identity) ... ok
+test_grace_setup_failure_stays_unavailable_and_failed (test_io.EvaluationIOTests.test_grace_setup_failure_stays_unavailable_and_failed) ... ok
+test_manifest_and_order_are_checked_for_both_split_files (test_io.EvaluationIOTests.test_manifest_and_order_are_checked_for_both_split_files) ... ok
+test_predictions_join_by_material_id_and_reject_missing_or_duplicate_ids (test_io.EvaluationIOTests.test_predictions_join_by_material_id_and_reject_missing_or_duplicate_ids) ... ok
+test_property_receipts_join_by_attempt_id_not_position (test_io.EvaluationIOTests.test_property_receipts_join_by_attempt_id_not_position) ... ok
+test_task_row_count_must_match_manifest (test_io.EvaluationIOTests.test_task_row_count_must_match_manifest) ... ok
+test_aggregate_causal_nll_is_token_weighted_across_batches (test_losses.LossMetricTests.test_aggregate_causal_nll_is_token_weighted_across_batches) ... ok
+test_causal_nll_ignores_prompt_labels_masked_with_minus_100 (test_losses.LossMetricTests.test_causal_nll_ignores_prompt_labels_masked_with_minus_100) ... ok
+test_causal_nll_reports_undefined_means_for_empty_targets (test_losses.LossMetricTests.test_causal_nll_reports_undefined_means_for_empty_targets) ... ok
+test_causal_nll_shifts_logits_and_attributes_targets_to_their_segments (test_losses.LossMetricTests.test_causal_nll_shifts_logits_and_attributes_targets_to_their_segments) ... ok
+test_complementary_denoising_ce_matches_independent_per_token_ce (test_losses.LossMetricTests.test_complementary_denoising_ce_matches_independent_per_token_ce) ... ok
+test_complementary_denoising_ce_rejects_overlap_and_missing_coverage (test_losses.LossMetricTests.test_complementary_denoising_ce_rejects_overlap_and_missing_coverage) ... ok
+test_denoising_metrics_report_both_named_normalizations (test_losses.LossMetricTests.test_denoising_metrics_report_both_named_normalizations) ... ok
+test_denoising_metrics_use_none_for_zero_denominators (test_losses.LossMetricTests.test_denoising_metrics_use_none_for_zero_denominators) ... ok
+test_fixed_complementary_masks_repeat_and_partition_each_target (test_losses.LossMetricTests.test_fixed_complementary_masks_repeat_and_partition_each_target) ... ok
+test_requests_are_deduplicated_and_attempt_ids_are_complete (test_plan.PlanTests.test_requests_are_deduplicated_and_attempt_ids_are_complete) ... ok
+test_overfit_selection_is_fixed32_and_full_epochs_stay_three (test_train_ar.TrainingEntryTests.test_overfit_selection_is_fixed32_and_full_epochs_stay_three) ... ok
+test_design_ce_uses_shifted_labels_and_token_segments (test_training_metrics.TrainingMetricTests.test_design_ce_uses_shifted_labels_and_token_segments) ... ok
+test_design_segments_come_from_start_end_and_trailing_eos_labels (test_training_metrics.TrainingMetricTests.test_design_segments_come_from_start_end_and_trailing_eos_labels) ... ok
+test_epoch_callback_requests_save_and_evaluate (test_training_metrics.TrainingMetricTests.test_epoch_callback_requests_save_and_evaluate) ... ok
+test_token_nll_aggregates_sums_and_counts_across_batches (test_training_metrics.TrainingMetricTests.test_token_nll_aggregates_sums_and_counts_across_batches) ... ok
+test_decimal_and_negative_numbers_are_not_truncated_to_integers (test_understanding.UnderstandingTests.test_decimal_and_negative_numbers_are_not_truncated_to_integers) ... ok
+test_each_single_wrong_fact_only_loses_its_field (test_understanding.UnderstandingTests.test_each_single_wrong_fact_only_loses_its_field) ... ok
+test_formula_order_and_reduced_composition_are_equivalent (test_understanding.UnderstandingTests.test_formula_order_and_reduced_composition_are_equivalent) ... ok
+test_gold_response_gets_all_four_facts (test_understanding.UnderstandingTests.test_gold_response_gets_all_four_facts) ... ok
+test_malformed_or_contradictory_facts_are_false (test_understanding.UnderstandingTests.test_malformed_or_contradictory_facts_are_false) ... ok
+test_summary_reports_per_field_and_all_four_rates_with_row_grades (test_understanding.UnderstandingTests.test_summary_reports_per_field_and_all_four_rates_with_row_grades) ... ok
+
+----------------------------------------------------------------------
+Ran 37 tests in 0.421s
+
+OK
+
+UNITTEST_EXIT=0
+
+COMMAND: CUDA_VISIBLE_DEVICES="" bash experiments/crystal_tasks_v1/python.sh -m ruff check --select F821 --no-cache experiments/crystal_tasks_v1/__init__.py experiments/crystal_tasks_v1/configuration.py experiments/crystal_tasks_v1/evaluate_ar.py experiments/crystal_tasks_v1/evaluation/__init__.py experiments/crystal_tasks_v1/evaluation/cli.py experiments/crystal_tasks_v1/evaluation/design.py experiments/crystal_tasks_v1/evaluation/grace.py experiments/crystal_tasks_v1/evaluation/legacy.py experiments/crystal_tasks_v1/evaluation/losses.py experiments/crystal_tasks_v1/evaluation/nll.py experiments/crystal_tasks_v1/evaluation/plan.py experiments/crystal_tasks_v1/evaluation/references.py experiments/crystal_tasks_v1/evaluation/understanding.py experiments/crystal_tasks_v1/preflight.py experiments/crystal_tasks_v1/reference_acceptance.py experiments/crystal_tasks_v1/tests/__init__.py experiments/crystal_tasks_v1/tests/test_configuration.py experiments/crystal_tasks_v1/tests/test_design.py experiments/crystal_tasks_v1/tests/test_io.py experiments/crystal_tasks_v1/tests/test_losses.py experiments/crystal_tasks_v1/tests/test_plan.py experiments/crystal_tasks_v1/tests/test_train_ar.py experiments/crystal_tasks_v1/tests/test_training_metrics.py experiments/crystal_tasks_v1/tests/test_understanding.py experiments/crystal_tasks_v1/tokenization.py experiments/crystal_tasks_v1/train_ar.py experiments/crystal_tasks_v1/training_metrics.py
+All checks passed!
+
+RUFF_F821_EXIT=0
+
+SUMMARY unittest_exit=0 ruff_f821_exit=0

@@ -1,0 +1,207 @@
+{
+  "schema_version": 1,
+  "status": "phase0_reconnaissance_complete_with_gaps",
+  "checked_utc": "2026-10-26T03:35:40Z",
+  "local_git_head": "0bf04e1158fcedeca8472221a544bdd90c230f85",
+  "remote": "LiuGangGPU",
+  "project_logical_path": "/home/liugang/src/crystalDLM",
+  "project_physical_path": "/data1/users/liugang/crystalDLM",
+  "mount": {
+    "target": "/data1",
+    "source": "/dev/vdc",
+    "filesystem": "ext4",
+    "available_human": "1.4T"
+  },
+  "gpu": {
+    "model": "NVIDIA H20",
+    "count": 4,
+    "memory_mib_each": 97871,
+    "used_mib_at_check": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "project_concurrency_cap": 3,
+    "driver": "580.126.20"
+  },
+  "environment": {
+    "prefix": "/home/liugang/src/crystalDLM/envs/crystaldlm",
+    "python": "3.11.17",
+    "torch": "2.6.0+cu124",
+    "torch_cuda": "12.4",
+    "transformers": "4.57.6",
+    "tokenizers": "0.22.2",
+    "accelerate": "1.15.0",
+    "peft": "0.18.0",
+    "pymatgen": "2025.10.7",
+    "pyxtal": "1.0.8",
+    "missing": [
+      "llamafactory",
+      "datasets",
+      "deepspeed",
+      "tensorboard",
+      "wandb"
+    ],
+    "fsdp_import_passed": true,
+    "distributed_api": true,
+    "nccl_api": true,
+    "multi_gpu_run_performed": false,
+    "pip_check": "No broken requirements found."
+  },
+  "grace_environment": {
+    "prefix": "/home/liugang/src/crystalDLM/envs/grace",
+    "python": "3.11.17",
+    "tensorpotential": "0.6.2",
+    "tensorflow": "2.20.0",
+    "pymatgen": "2025.10.7",
+    "ase": "3.29.0",
+    "scoring_run_performed": false
+  },
+  "model": {
+    "name": "Qwen/Qwen3-8B",
+    "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+    "relative_path": "models/Qwen3-8B-b968826d9c46",
+    "model_type": "qwen3",
+    "architecture": "Qwen3ForCausalLM",
+    "hidden_size": 4096,
+    "layers": 36,
+    "vocab_size": 151936,
+    "config_dtype": "bfloat16",
+    "chat_template_has_enable_thinking": true,
+    "weight_hashes_recomputed_this_turn": false,
+    "prior_verified_receipt": {
+      "files": 13,
+      "all_hashes_verified": true
+    }
+  },
+  "data": {
+    "path": "datasets/crystal_tasks_v1",
+    "manifest_sha256": "dce98892174a02a113a2de13200472d5997054f2b6a4306212be2fd9189c2d6c",
+    "status": "understanding_ready_design_awaiting_captions",
+    "format": "alpaca",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    },
+    "unique_material_ids": 45465,
+    "unique_source_structure_hashes": 45465,
+    "source_hash_and_id_splits_disjoint": true,
+    "structure_matcher_dedup_performed": false,
+    "understanding": {
+      "training": {
+        "count": 36362,
+        "sha256": "c166a9e8ae7b4b5a18dae3d0c0c114b39defde8cae7fe2d739a3a286d4354fd1",
+        "metadata_sha256": "6f2bcf82a039d98a442260e15f06fda1ceae05812260915bdcb43fa3176fe1cf",
+        "tokens": {
+          "min": 149,
+          "mean": 268.8331774929872,
+          "p50": 240,
+          "p95": 459,
+          "p99": 584,
+          "max": 622,
+          "above_1024": 0
+        },
+        "answer_tokens": {
+          "min": 27,
+          "max": 42
+        }
+      },
+      "validation": {
+        "count": 4501,
+        "sha256": "4c4136e1f55bd9009abc8adbcedc73a120706809c4f63a890fb8f89013dd7983",
+        "metadata_sha256": "6bad153bc75573013bfaa749906fceaeb039001f1ddf4dde02735d28b46d972c",
+        "tokens": {
+          "min": 150,
+          "mean": 270.3521439680071,
+          "p50": 241,
+          "p95": 444,
+          "p99": 583,
+          "max": 613,
+          "above_1024": 0
+        },
+        "answer_tokens": {
+          "min": 28,
+          "max": 40
+        }
+      },
+      "test": {
+        "count": 4602,
+        "sha256": "48c4029a4ec6cac1cc8d8ee04558c5a3fa56b68c5d6c200a5e93dc31a9377505",
+        "metadata_sha256": "51ccb022f5a74c5ed756f59c7775c630dc2562ecca389f39f5253fec333155e3",
+        "tokens": {
+          "min": 150,
+          "mean": 268.3978704910908,
+          "p50": 240,
+          "p95": 451.89999999999964,
+          "p99": 582.9899999999998,
+          "max": 614,
+          "above_1024": 0
+        },
+        "answer_tokens": {
+          "min": 27,
+          "max": 40
+        }
+      }
+    },
+    "all_six_dataset_metadata_hashes_recomputed": true,
+    "token_scope": "native Qwen tokenizer.apply_chat_template enable_thinking=False; no truncation; not LLaMA-Factory labels",
+    "design": {
+      "full_jsonl_present": false,
+      "reused_captions": 8172,
+      "new_captions_sqlite": 1312,
+      "new_captions_by_split": {
+        "train": 1312
+      },
+      "remaining_by_split": {
+        "train": 27778,
+        "val": 3601,
+        "test": 4602
+      },
+      "remaining_total": 35981,
+      "annotation_state": "paused_by_user",
+      "pipeline_exit": 130,
+      "example_tokens": 376,
+      "test_metadata_inferred_condition_pairs": 359,
+      "test_spacegroups": 135,
+      "test_threshold_source_counts": {
+        "0.08": 2663,
+        "0.1": 348,
+        "0.2": 1017,
+        "0.3": 574
+      }
+    }
+  },
+  "source_hashes_verified_local_remote": {
+    "flare_crystal_full_20261019/run.py": "627e6c1d88623c8aa48d4ce158cbd21a2fdb0313d436e05eda2e950e4b03bbe2",
+    "flare_crystal_qwen3_8b_20261019/run.py": "16304ff859fafa22993b1d8dce6bd454eb403b0678d4fae78e3ae6de5488dd67",
+    "interleaved_ar_diffusion_20261002/score.py": "c1dfe1b87715b5b650b7152e02fed567bd5f7f0fd9109295ec87208f23165c6b",
+    "evaluation_common/readback.py": "bb983581f1050a5a82688c7929306b3173096b9494887620754fcd22e063e81a"
+  },
+  "proposed_llamafactory": {
+    "version": "v0.9.5",
+    "commit": "7af909522a951e3ad9f022ea6f88b6755257eaa5",
+    "accelerate": "1.11.0",
+    "template": "qwen3",
+    "enable_thinking": false,
+    "installed": false,
+    "approved": false
+  },
+  "owner_confirmed": {
+    "phase0_no_installation": true,
+    "cov_requires_owner_decision": true
+  },
+  "not_performed": [
+    "dependency_installation",
+    "annotation_resume",
+    "dataset_changes",
+    "8B_weight_load",
+    "new_training",
+    "generation",
+    "GRACE_scoring",
+    "END_fix",
+    "Phase1_to_Phase8"
+  ],
+  "next_gate": 1
+}

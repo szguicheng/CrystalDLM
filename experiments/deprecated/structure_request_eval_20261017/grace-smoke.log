@@ -1,0 +1,20 @@
+MODEL_PATH /home/liugang/src/crystalDLM/experiments/structure_request_eval_20261017/assets/grace-model/GRACE-3L-OMAT-large-ft-AM
+[tensorpotential] Info: Environment variable TF_USE_LEGACY_KERAS is automatically set to '1'.
+2026-10-17 18:03:41.255762: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-10-17 18:03:41.293457: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI AVX512_BF16 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-10-17 18:03:42.453499: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+WARNING:tensorflow:UserWarning: enabling the new type promotion must happen at the beginning of the program. Please ensure no TF APIs have been used yet.
+[tensorpotential] Info: tf.experimental.numpy behavior enabled.
+[tensorpotential] Info: TensorFloat-32 execution disabled.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1792231424.272008 3396631 gpu_device.cc:2020] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 95229 MB memory:  -> device: 0, name: NVIDIA H20, pci bus id: 0000:33:00.0, compute capability: 9.0
+2026-10-17 18:03:51.250313: I external/local_xla/xla/service/service.cc:163] XLA service 0x6ff7ac009110 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2026-10-17 18:03:51.250351: I external/local_xla/xla/service/service.cc:171]   StreamExecutor device (0): NVIDIA H20, Compute Capability 9.0
+2026-10-17 18:03:51.746580: I tensorflow/compiler/mlir/tensorflow/utils/dump_mlir_util.cc:269] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
+2026-10-17 18:03:52.688950: I external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:473] Loaded cuDNN version 92700
+2026-10-17 18:03:58.209347: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'input_reduce_fusion_7', 8 bytes spill stores, 8 bytes spill loads
+ptxas warning : Registers are spilled to local memory in function 'loop_slice_fusion', 4 bytes spill stores, 4 bytes spill loads
+
+I0000 00:00:1792231438.257297 3396805 device_compiler.h:196] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+GRACE_SMOKE {"model": {"model": "GRACE-3L-OMAT-large-ft-AM", "repository": "AMS-ICAMS-RUB/grace-foundation-models", "revision": "46ead61dc8a7f90c11b1e59b8489e8e9bf97b888", "file": "models/GRACE-3L-OMAT-large-ft-AM-model.tar.gz", "sha256": "0d7ebce7d3ddbd168d086fbd43c583a4c34fb55b7509f78be3dc89db67651e52", "bytes": 191371901}, "energy_eV": -10.83613109588623, "atoms": 2, "max_force": 2.476197610636363e-08, "stress_eV_A3": [-0.010702270233835229, -0.010702270570191902, -0.010702268291453381, -2.2348242699623154e-10, -1.952544719019034e-09, -1.695317598435939e-09], "gpus": ["/physical_device:GPU:0"]}

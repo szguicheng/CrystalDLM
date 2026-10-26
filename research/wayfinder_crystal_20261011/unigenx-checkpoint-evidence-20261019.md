@@ -1,0 +1,21 @@
+# UniGenX checkpoint and backbone evidence (2026-10-19)
+
+Primary-source check of the [UniGenX paper](https://arxiv.org/html/2503.06687v2), [official code](https://github.com/UniGenX-Team/UniGenX), and [official Hugging Face repository](https://huggingface.co/unigenx/UniGenX). Checkpoint presence, reported file sizes, and public download routing were checked without downloading weight contents.
+
+## Crystal representation and model
+
+UniGenX serializes a material as a causal sequence containing symbolic material fields (for example, formula and element tokens) and numeric coordinate slots. The model predicts symbolic tokens with the LM head and uses a conditional diffusion head for numeric values. For crystals, the coordinate slots represent the lattice followed by fractional atom coordinates; the repository says the first three coordinate slots are lattice vectors. This is a continuous-coordinate diffusion head, not a discrete crystal tokenizer or Wyckoff-token diffusion model. See paper §§2.1–2.2 and the [official README](https://github.com/UniGenX-Team/UniGenX#overview).
+
+The released implementation subclasses Hugging Face `LlamaForCausalLM` and adds a coordinate encoder and `DiffLoss` head ([model source](https://github.com/UniGenX-Team/UniGenX/blob/main/unigenx/model/unigenx.py)); its `UniGenXConfig` extends `LlamaConfig` ([config source](https://github.com/UniGenX-Team/UniGenX/blob/main/unigenx/model/config.py)). That identifies the architecture family, not an initialization from pretrained Llama weights. For the main crystal experiments, the paper describes its own 100M/400M decoder models, pretraining on a materials dataset (MP-20, Carbon-24, MPTS-52 training sets plus disjoint NOMAD data), and then benchmark-specific fine-tuning (§3.1, Appendix E.5). The paper separately reports an LLM-integration experiment: loading a pretrained ~1B NatureLM model and fine-tuning it for instruction-style structure prediction (§3.6). Do not conflate that separate LLM experiment with the named crystal checkpoints below.
+
+## Relevant released checkpoints
+
+| Checkpoint | Intended role | Size shown by HF metadata | Inference status / download evidence |
+|---|---|---:|---|
+| [`csp_pretrain.pt`](https://huggingface.co/unigenx/UniGenX/resolve/main/csp_pretrain.pt) | Crystal-structure pretraining backbone; fine-tuning start | 1,887,930,028 bytes (about 1.89 GB) | Public file is listed; unauthenticated metadata/redirect check returned HTTP 200. No saved `args`, so not directly loadable in the released inference entry point; fine-tune first. |
+| [`unified_pretrain.pt`](https://huggingface.co/unigenx/UniGenX/resolve/main/unified_pretrain.pt) | Unified crystal + molecule pretraining backbone; fine-tuning start | 678,451,820 bytes (about 678 MB) | Public file is listed; unauthenticated metadata/redirect check returned HTTP 200. Carries saved `args` and loads through inference, but is a backbone rather than a benchmark result checkpoint. |
+| [`csp_mp20.pt`](https://huggingface.co/unigenx/UniGenX/resolve/main/csp_mp20.pt) | MP-20 crystal-structure-prediction checkpoint | 5,663,830,327 bytes (about 5.66 GB) | Public file is listed; unauthenticated metadata/redirect check returned HTTP 200. Official `scripts/gen_mat.sh` recipe consumes it with `dict_mat.txt`; the paper/reproduction guide reports 67.01% MP-20 match rate. |
+
+The repository also lists `csp_carbon24.pt` and `csp_mpts52.pt` (5.66 GB each), plus `unified_carbon24.pt`, `unified_mp20.pt`, `unified_mpts52.pt`, and `unified_qm9.pt` (about 2.04 GB each). See the [official file listing](https://huggingface.co/unigenx/UniGenX/tree/main), [README checkpoint table](https://github.com/UniGenX-Team/UniGenX#pretrained-checkpoints), and [result-by-result recipe](https://github.com/UniGenX-Team/UniGenX/blob/main/REPRODUCE.md#result-by-result-recipe). A checkpoint must be paired with its exact dictionary: `dict_mat.txt` for `csp_*`, `dict_uni.txt` for `unified_*`; matching vocabulary size alone does not guarantee matching token meanings.
+
+**Access boundary:** HF's public tree/API lists the three named files and their byte sizes. Direct `HEAD` requests followed the public redirects successfully (HTTP 200); no multi-gigabyte content was fetched or checksum-verified. Sizes are decimal byte counts reported by HF metadata.
