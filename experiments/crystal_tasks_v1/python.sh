@@ -8,6 +8,8 @@ exec /home/liugang/software/miniforge3/condabin/mamba run --prefix "$CRYSTAL_PRE
   MAMBA_ROOT_PREFIX="$CRYSTAL_PROJECT/.mamba" CONDA_ENVS_PATH="$CRYSTAL_PROJECT/envs" \
   CONDA_PKGS_DIRS="$CRYSTAL_PROJECT/.cache/mamba/pkgs" CONDA_REGISTER_ENVS=false \
   PIP_CACHE_DIR="$CRYSTAL_PROJECT/.cache/pip" HF_HOME="$CRYSTAL_PROJECT/.cache/huggingface" \
+  HF_DATASETS_CACHE="$CRYSTAL_PROJECT/.cache/huggingface/datasets" \
+  HF_HUB_CACHE="$CRYSTAL_PROJECT/.cache/huggingface/hub" HUGGINGFACE_HUB_CACHE="$CRYSTAL_PROJECT/.cache/huggingface/hub" \
   TORCH_HOME="$CRYSTAL_PROJECT/.cache/torch" XDG_CACHE_HOME="$CRYSTAL_PROJECT/.cache" \
   XDG_DATA_HOME="$CRYSTAL_PROJECT/.local/share" XDG_CONFIG_HOME="$CRYSTAL_PROJECT/.config" \
   TRANSFORMERS_CACHE="$CRYSTAL_PROJECT/.cache/huggingface/hub" \

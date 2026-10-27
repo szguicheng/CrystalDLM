@@ -9,6 +9,12 @@ def protocol():
     return json.loads((ROOT / 'configs/shared.json').read_text())
 
 
+def task_data(task):
+    shared = protocol()
+    selected = shared['tasks'][task]
+    return {key: selected.get(key, shared[key]) for key in ('dataset_dir', 'manifest_sha256')}
+
+
 def training_config(task):
     shared = protocol()
     selected = shared['tasks'][task]
@@ -18,7 +24,7 @@ def training_config(task):
     config.update(
         model_name_or_path=shared['model_path'], model_revision=shared['model_revision'],
         stage='sft', do_train=True, do_eval=True, finetuning_type='lora',
-        dataset_dir=shared['dataset_dir'], dataset=selected['dataset'], eval_dataset=selected['eval_dataset'],
+        dataset_dir=task_data(task)['dataset_dir'], dataset=selected['dataset'], eval_dataset=selected['eval_dataset'],
         template=shared['template'], enable_thinking=False, train_on_prompt=False,
         cutoff_len=selected['cutoff_len'], packing=False, val_size=0.0,
         lora_rank=shared['lora']['rank'], lora_alpha=shared['lora']['alpha'],

@@ -1,7 +1,13 @@
 # 分离 Design / Understanding 并准备全量 JSONL
 
-Status: in-progress
+Status: complete
 Authorized: 2026-10-25
+
+## 2026-10-26 完整数据就绪
+
+完整Design已导出并通过45,465条全量校验，train/validation/test为36,362/4,501/4,602，未重新划分。本地与远程9个任务/metadata JSONL哈希一致；实际模板长度最长799，cutoff2048不截断。当前完整版本位于 `data_preparation/crystal_tasks_v1/exports/design_full_20261026`，manifest SHA为 `360c68297db7e14e9db38815c68a6b18e2f38d61d17063133694c20d2f6e3969`。旧 `datasets/crystal_tasks_v1` 保持不变，AR-design和Hybrid-design配置均引用这个完整版本。
+
+AR-design已通过32条诊断并进入全量训练，见[当前运行](../../../experiments/crystal_tasks_v1/04_design_phase3_run.md)。以下记录保留此前各阶段状态。
 
 ## 2026-10-26 补标完成
 

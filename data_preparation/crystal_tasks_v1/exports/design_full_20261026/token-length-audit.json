@@ -1,0 +1,101 @@
+{
+  "status": "measured_without_truncation",
+  "model": "Qwen/Qwen3-8B",
+  "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+  "tokenizer_path": "/home/liugang/src/crystalDLM/models/Qwen3-8B-b968826d9c46",
+  "template": "qwen3",
+  "enable_thinking": false,
+  "method": "LLaMA-Factory template.encode_oneturn; no cutoff/truncation applied",
+  "control_tokens": {
+    "<CRYSTAL_START>": 151669,
+    "<CRYSTAL_END>": 151670,
+    "<CRYSTAL_MASK>": 151671,
+    "<CRYSTAL_PAD>": 151672
+  },
+  "control_token_ids_atomic": true,
+  "cutoff_under_review": 2048,
+  "cutoff_2048_sufficient_for_all_design_rows": true,
+  "rows_above_2048": [],
+  "component_definition": {
+    "complete": "template.encode_oneturn source plus target, including chat framing",
+    "description": "caption encoded alone without chat framing or separator newline",
+    "crystal": "<CRYSTAL_START> through <CRYSTAL_END> encoded alone"
+  },
+  "lengths": {
+    "complete": {
+      "count": 45465,
+      "min": 216,
+      "median": 371,
+      "p95": 576,
+      "p99": 700,
+      "max": 799,
+      "above_cutoff": 0
+    },
+    "prompt": {
+      "count": 45465,
+      "min": 37,
+      "median": 39,
+      "p95": 40,
+      "p99": 40,
+      "max": 40,
+      "above_cutoff": 0
+    },
+    "response": {
+      "count": 45465,
+      "min": 176,
+      "median": 332,
+      "p95": 538,
+      "p99": 663,
+      "max": 762,
+      "above_cutoff": 0
+    },
+    "description": {
+      "count": 45465,
+      "min": 41,
+      "median": 163,
+      "p95": 206,
+      "p99": 226,
+      "max": 304,
+      "above_cutoff": 0
+    },
+    "crystal": {
+      "count": 45465,
+      "min": 76,
+      "median": 158,
+      "p95": 370,
+      "p99": 502,
+      "max": 540,
+      "above_cutoff": 0
+    }
+  },
+  "by_split_complete": {
+    "train": {
+      "count": 36362,
+      "min": 216,
+      "median": 370.0,
+      "p95": 576,
+      "p99": 700,
+      "max": 799,
+      "above_cutoff": 0
+    },
+    "val": {
+      "count": 4501,
+      "min": 216,
+      "median": 372,
+      "p95": 569,
+      "p99": 696,
+      "max": 773,
+      "above_cutoff": 0
+    },
+    "test": {
+      "count": 4602,
+      "min": 226,
+      "median": 374.0,
+      "p95": 580,
+      "p99": 703,
+      "max": 771,
+      "above_cutoff": 0
+    }
+  },
+  "llamafactory_version": "0.9.5"
+}

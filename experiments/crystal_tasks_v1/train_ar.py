@@ -9,7 +9,7 @@ from pathlib import Path
 import random
 import sys
 
-from .configuration import protocol, training_config
+from .configuration import protocol, training_config, task_data
 from .evaluation.cli import _git_metadata
 
 
@@ -17,13 +17,26 @@ def overfit_indices(count, seed=42):
     return sorted(random.Random(seed).sample(range(count), 32))
 
 
-def run_config(task, mode, run_dir):
+def design_overfit_indices(rows, seed=42):
+    order=list(range(len(rows)))
+    random.Random(seed).shuffle(order)
+    selected=[]; seen=set()
+    for index in order:
+        request=(rows[index]['instruction'],rows[index]['input'])
+        if request not in seen:
+            selected.append(index);seen.add(request)
+        if len(selected)==32:
+            return sorted(selected)
+    raise ValueError('Design overfit check requires32distincttrainingrequests')
+
+
+def run_config(task, mode, run_dir, overfit_epochs=60):
     config = training_config(task)
     config.update(output_dir=str(run_dir), logging_dir=str(run_dir/'tensorboard'),
         metric_for_best_model='eval_token_nll', prediction_loss_only=True,
         plot_loss=True, save_safetensors=True)
     if mode=='overfit':
-        config.update(num_train_epochs=60,eval_steps=30,save_steps=30,logging_steps=3,save_total_limit=3)
+        config.update(num_train_epochs=overfit_epochs,eval_steps=30,save_steps=30,logging_steps=3,save_total_limit=3)
     return config
 
 
@@ -51,6 +64,7 @@ def main():
     parser.add_argument('--task',choices=['ar_understanding','ar_design'],default='ar_understanding')
     parser.add_argument('--mode',choices=['overfit','full'],required=True)
     parser.add_argument('--run-dir',type=Path,required=True)
+    parser.add_argument('--overfit-epochs',type=int,default=60)
     args=parser.parse_args()
     p=protocol();world=int(os.environ.get('WORLD_SIZE','1'));rank=int(os.environ.get('RANK','0'))
     visible=[x for x in os.environ.get('CUDA_VISIBLE_DEVICES','').split(',') if x]
@@ -61,19 +75,27 @@ def main():
     run_dir=args.run_dir.resolve()
     if rank==0:
         run_dir.mkdir(parents=True,exist_ok=False)
-    config=run_config(args.task,args.mode,run_dir)
+    config=run_config(args.task,args.mode,run_dir,args.overfit_epochs)
     model_args,data_args,training_args,finetuning_args,generating_args=get_train_args(config)
     if dist.is_initialized():dist.barrier()
     set_seed(p['training']['seed'])
-    manifest=Path(p['dataset_dir'])/'manifest.json'
-    if hashlib.sha256(manifest.read_bytes()).hexdigest()!=p['manifest_sha256']:
+    data=task_data(args.task)
+    manifest=Path(data['dataset_dir'])/'manifest.json'
+    if hashlib.sha256(manifest.read_bytes()).hexdigest()!=data['manifest_sha256']:
         raise ValueError('Frozen task manifest changed')
+    from .evaluation.references import load_task_rows
+    task_name='design' if args.task=='ar_design' else 'understanding'
+    verified_train=load_task_rows(data['dataset_dir'],task_name,'training')
+    load_task_rows(data['dataset_dir'],task_name,'validation')
     tokenizer_module=load_tokenizer(model_args);tokenizer=tokenizer_module['tokenizer']
     template=get_template_and_fix_tokenizer(tokenizer,data_args)
     datasets=get_dataset(template,model_args,data_args,training_args,stage='sft',**tokenizer_module)
     assert len(datasets['train_dataset'])==36362 and len(datasets['eval_dataset'])==4501
-    metadata=[json.loads(line) for line in (Path(p['dataset_dir'])/'metadata/training.jsonl').read_text().splitlines()]
+    metadata=[json.loads(line) for line in (Path(data['dataset_dir'])/'metadata/training.jsonl').read_text().splitlines()]
     selected=overfit_indices(len(metadata)) if args.mode=='overfit' else list(range(len(metadata)))
+    if args.mode=='overfit' and args.task=='ar_design':
+        selected=design_overfit_indices(verified_train)
+    del verified_train
     if args.mode=='overfit':
         datasets['train_dataset']=datasets['train_dataset'].select(selected)
         datasets['eval_dataset']=datasets['train_dataset']
@@ -89,12 +111,13 @@ def main():
     if dist.is_initialized():
         hashes=[None]*world;dist.all_gather_object(hashes,initial_hash);assert len(set(hashes))==1
     meta={'status':'running','command':sys.argv,'configuration':config,'git':_git_metadata(),
-        'base_model':p['model_name'],'base_revision':p['model_revision'],'manifest_sha256':p['manifest_sha256'],
+        'base_model':p['model_name'],'base_revision':p['model_revision'],'dataset_dir':data['dataset_dir'],'manifest_sha256':data['manifest_sha256'],
         'seed':42,'gpu_ids':visible,'world_size':world,'global_batch_size':12,
         'training_rows':len(datasets['train_dataset']),'validation_rows':len(datasets['eval_dataset']),
         'validation_scope':'same32trainingdiagnostic' if args.mode=='overfit' else 'fullfrozenvalidation',
         'selected_training_indices':selected if args.mode=='overfit' else None,
         'selected_training_ids':[metadata[i]['material_id'] for i in selected] if args.mode=='overfit' else None,
+        'selection_policy':'seed42distinctrequests' if args.mode=='overfit' and args.task=='ar_design' else 'seed42random32' if args.mode=='overfit' else 'fullfrozentraining',
         'initial_trainable_sha256':initial_hash,'trainable_parameters':sum(x.numel() for _,x in trainable),
         'environment':{k:importlib.metadata.version(k) for k in ['torch','transformers','peft','accelerate','llamafactory']},
         'started_at':_now(),'checkpoint':None}

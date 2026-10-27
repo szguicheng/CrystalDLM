@@ -1,0 +1,307 @@
+{
+  "status": "exported_and_cpu_validated_seed32_length_check_complete_full_audit_in_progress",
+  "remote_release_path": "/data1/users/liugang/crystalDLM/data_preparation/crystal_tasks_v1/exports/design_full_20261026",
+  "parent_manifest_sha256": "dce98892174a02a113a2de13200472d5997054f2b6a4306212be2fd9189c2d6c",
+  "annotation_receipt_sha256": "ac3ae158a2a7c013b693695b91494d4ce9756ad33ad6246a9dee676301baa7a0",
+  "source_join": {
+    "source_ids": 45465,
+    "reused_ids": 8172,
+    "new_receipt_ids": 37293,
+    "new_by_split": {
+      "train": 29090,
+      "val": 3601,
+      "test": 4602
+    }
+  },
+  "registry_path": "data_preparation/crystal_tasks_v1/exports/design_full_20261026/dataset_info.json",
+  "registry_sha256": "b949c3bd81ecd22bc59257e9d9ae904def34b2d50c20d6957566324bbaa43ba4",
+  "validation_report_sha256": "9f53f4913378f06dae8273f3f0f86a3be78e3b44524901d5037e56eef97f9448",
+  "condition_audit": {
+    "training_rows": 36362,
+    "unique_space_group_exact_ehull_pairs": 28461,
+    "unique_space_group_ehull_upper_bound_prompts": 542,
+    "unique_training_input_prompts": 542,
+    "seed": 42,
+    "seed42_sample_indices": [
+      425,
+      1639,
+      1739,
+      1952,
+      2082,
+      5697,
+      6140,
+      6698,
+      6717,
+      7296,
+      9144,
+      10189,
+      10463,
+      13031,
+      14110,
+      14328,
+      14446,
+      14628,
+      15247,
+      16049,
+      18024,
+      18210,
+      18231,
+      22059,
+      22298,
+      27493,
+      27651,
+      27696,
+      29439,
+      33118,
+      35713,
+      35741
+    ],
+    "seed42_sample_ids": [
+      "mp-1223510",
+      "mp-978266",
+      "mp-1276248",
+      "mp-1078544",
+      "mp-21416",
+      "mp-2230800",
+      "mp-5246",
+      "mp-1188316",
+      "mp-1224335",
+      "mp-1022472",
+      "mp-1189398",
+      "mp-1071541",
+      "mp-557122",
+      "mp-1110881",
+      "mp-865561",
+      "mp-755889",
+      "mp-542096",
+      "mp-20632",
+      "mp-867756",
+      "mp-1213231",
+      "mp-991",
+      "mp-989568",
+      "mp-1226405",
+      "mp-623134",
+      "mp-1048946",
+      "mp-765375",
+      "mp-1216977",
+      "mp-1206102",
+      "mp-1186226",
+      "mp-1215608",
+      "mp-1022106",
+      "mp-867801"
+    ],
+    "seed42_sample_unique_input_prompts": 25,
+    "seed42_sample_repeated_input_prompts": [
+      {
+        "instruction": "Generate a crystal with space group number 1 and energy above hull no greater than 0.2 eV/atom.",
+        "selected_rows": 2
+      },
+      {
+        "instruction": "Generate a crystal with space group number 225 and energy above hull no greater than 0.08 eV/atom.",
+        "selected_rows": 6
+      },
+      {
+        "instruction": "Generate a crystal with space group number 38 and energy above hull no greater than 0.2 eV/atom.",
+        "selected_rows": 2
+      }
+    ],
+    "recommendation": "Use 32 distinct condition prompts for a separate diagnostic; leave full training data unchanged."
+  },
+  "caption_flags": {
+    "line_break_clean_caption": 22,
+    "line_break_raw_caption": 31,
+    "missing_terminal_punctuation_clean_caption": 9,
+    "missing_terminal_punctuation_raw_caption": 9
+  },
+  "unchanged_parent_artifact_hashes": [
+    {
+      "path": "data_preparation/crystal_tasks_v1/exports/design_full_20261026/understanding/test.jsonl",
+      "sha256": "48c4029a4ec6cac1cc8d8ee04558c5a3fa56b68c5d6c200a5e93dc31a9377505",
+      "bytes": 2403222
+    },
+    {
+      "path": "data_preparation/crystal_tasks_v1/exports/design_full_20261026/understanding/training.jsonl",
+      "sha256": "c166a9e8ae7b4b5a18dae3d0c0c114b39defde8cae7fe2d739a3a286d4354fd1",
+      "bytes": 19006257
+    },
+    {
+      "path": "data_preparation/crystal_tasks_v1/exports/design_full_20261026/understanding/validation.jsonl",
+      "sha256": "4c4136e1f55bd9009abc8adbcedc73a120706809c4f63a890fb8f89013dd7983",
+      "bytes": 2359828
+    },
+    {
+      "path": "data_preparation/crystal_tasks_v1/exports/design_full_20261026/metadata/test.jsonl",
+      "sha256": "51ccb022f5a74c5ed756f59c7775c630dc2562ecca389f39f5253fec333155e3",
+      "bytes": 8212746
+    },
+    {
+      "path": "data_preparation/crystal_tasks_v1/exports/design_full_20261026/metadata/training.jsonl",
+      "sha256": "6f2bcf82a039d98a442260e15f06fda1ceae05812260915bdcb43fa3176fe1cf",
+      "bytes": 64956782
+    },
+    {
+      "path": "data_preparation/crystal_tasks_v1/exports/design_full_20261026/metadata/validation.jsonl",
+      "sha256": "6bad153bc75573013bfaa749906fceaeb039001f1ddf4dde02735d28b46d972c",
+      "bytes": 8025215
+    },
+    {
+      "path": "data_preparation/crystal_tasks_v1/exports/design_full_20261026/examples/design-mp-1210092.json",
+      "sha256": "8a75bdccb18c6660863a68cb9c1867e0070a36c5642eb9cf991731e1ecdda911",
+      "bytes": 901
+    },
+    {
+      "path": "data_preparation/crystal_tasks_v1/exports/design_full_20261026/examples/understanding-mp-1210092.json",
+      "sha256": "b0777f8ca434f39cc1724c982af18979b030bdf196aa90d0ae8f216c95cbbb84",
+      "bytes": 554
+    }
+  ],
+  "jsonl_hashes": {
+    "data_preparation/crystal_tasks_v1/exports/design_full_20261026/design/training.jsonl": "e45547c10b5d897ebc6650bd28fee9e590e86ba058291f7d329ce81cfbfdc959",
+    "data_preparation/crystal_tasks_v1/exports/design_full_20261026/design/validation.jsonl": "9efbc060647a3f3fe36f02906310bd3431cae493016fd0e108649dd10c98631c",
+    "data_preparation/crystal_tasks_v1/exports/design_full_20261026/design/test.jsonl": "b54869781e9ee7662251478c32f74ffd0c43cae0a1c34ed96d5a33e6f601feae",
+    "data_preparation/crystal_tasks_v1/exports/design_full_20261026/understanding/training.jsonl": "c166a9e8ae7b4b5a18dae3d0c0c114b39defde8cae7fe2d739a3a286d4354fd1",
+    "data_preparation/crystal_tasks_v1/exports/design_full_20261026/understanding/validation.jsonl": "4c4136e1f55bd9009abc8adbcedc73a120706809c4f63a890fb8f89013dd7983",
+    "data_preparation/crystal_tasks_v1/exports/design_full_20261026/understanding/test.jsonl": "48c4029a4ec6cac1cc8d8ee04558c5a3fa56b68c5d6c200a5e93dc31a9377505"
+  },
+  "cutoff_2048_full_design_status": "pending full length audit",
+  "seed42_sample_full_template_lengths": [
+    {
+      "material_id": "mp-1223510",
+      "tokens": 348
+    },
+    {
+      "material_id": "mp-978266",
+      "tokens": 311
+    },
+    {
+      "material_id": "mp-1276248",
+      "tokens": 621
+    },
+    {
+      "material_id": "mp-1078544",
+      "tokens": 461
+    },
+    {
+      "material_id": "mp-21416",
+      "tokens": 311
+    },
+    {
+      "material_id": "mp-2230800",
+      "tokens": 614
+    },
+    {
+      "material_id": "mp-5246",
+      "tokens": 338
+    },
+    {
+      "material_id": "mp-1188316",
+      "tokens": 365
+    },
+    {
+      "material_id": "mp-1224335",
+      "tokens": 349
+    },
+    {
+      "material_id": "mp-1022472",
+      "tokens": 421
+    },
+    {
+      "material_id": "mp-1189398",
+      "tokens": 484
+    },
+    {
+      "material_id": "mp-1071541",
+      "tokens": 308
+    },
+    {
+      "material_id": "mp-557122",
+      "tokens": 395
+    },
+    {
+      "material_id": "mp-1110881",
+      "tokens": 345
+    },
+    {
+      "material_id": "mp-865561",
+      "tokens": 345
+    },
+    {
+      "material_id": "mp-755889",
+      "tokens": 384
+    },
+    {
+      "material_id": "mp-542096",
+      "tokens": 334
+    },
+    {
+      "material_id": "mp-20632",
+      "tokens": 307
+    },
+    {
+      "material_id": "mp-867756",
+      "tokens": 313
+    },
+    {
+      "material_id": "mp-1213231",
+      "tokens": 384
+    },
+    {
+      "material_id": "mp-991",
+      "tokens": 295
+    },
+    {
+      "material_id": "mp-989568",
+      "tokens": 339
+    },
+    {
+      "material_id": "mp-1226405",
+      "tokens": 415
+    },
+    {
+      "material_id": "mp-623134",
+      "tokens": 320
+    },
+    {
+      "material_id": "mp-1048946",
+      "tokens": 485
+    },
+    {
+      "material_id": "mp-765375",
+      "tokens": 682
+    },
+    {
+      "material_id": "mp-1216977",
+      "tokens": 378
+    },
+    {
+      "material_id": "mp-1206102",
+      "tokens": 451
+    },
+    {
+      "material_id": "mp-1186226",
+      "tokens": 286
+    },
+    {
+      "material_id": "mp-1215608",
+      "tokens": 499
+    },
+    {
+      "material_id": "mp-1022106",
+      "tokens": 398
+    },
+    {
+      "material_id": "mp-867801",
+      "tokens": 356
+    }
+  ],
+  "seed42_sample_length_summary": {
+    "count": 32,
+    "min": 286,
+    "median": 360.5,
+    "p95": 621,
+    "p99": 682,
+    "max": 682,
+    "above_cutoff": 0
+  },
+  "seed42_sample_fits_cutoff_2048": true
+}

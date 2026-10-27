@@ -78,19 +78,22 @@
       "dataset": "crystal_design_training",
       "eval_dataset": "crystal_design_validation",
       "cutoff_len": 2048,
-      "ready": false,
-      "readiness_reason": "Design JSONL absent; full token audit must pass without truncation before launch."
+      "ready": true,
+      "dataset_dir": "/home/liugang/src/crystalDLM/data_preparation/crystal_tasks_v1/exports/design_full_20261026",
+      "manifest_sha256": "360c68297db7e14e9db38815c68a6b18e2f38d61d17063133694c20d2f6e3969"
     },
     "hybrid_design": {
       "dataset": "crystal_design_training",
       "eval_dataset": "crystal_design_validation",
       "cutoff_len": 2048,
       "ready": false,
-      "readiness_reason": "Same design audit plus END gate4 and native-reference parity required.",
+      "readiness_reason": "Full data ready; END gate4 and native-reference parity still required before Hybrid training.",
       "objective": {
         "clean_ar_weight": 1,
         "denoise_current_weight": 1
-      }
+      },
+      "dataset_dir": "/home/liugang/src/crystalDLM/data_preparation/crystal_tasks_v1/exports/design_full_20261026",
+      "manifest_sha256": "360c68297db7e14e9db38815c68a6b18e2f38d61d17063133694c20d2f6e3969"
     }
   },
   "evaluation": {
@@ -122,6 +125,14 @@
     "novelty_reference": "full 36362 train; add verified PLaID train union for external comparison",
     "denoising_validation_seed": 420025,
     "denoising_masks": "fixed complementary crystal masks",
-    "extra_distribution_metrics": false
+    "extra_distribution_metrics": false,
+    "ar_design_sampling": {
+      "temperature": 0.7,
+      "top_p": 0.8,
+      "top_k": 20,
+      "max_new_tokens": 2048,
+      "selection": "fixed Qwen3 nonthinking defaults; no tuning",
+      "per_attempt_seed": "sha256([seed,condition_id,attempt_index]) first8bytes bigendian"
+    }
   }
 }

@@ -12,6 +12,8 @@ Created: 2026-10-11
 
 ## Notes
 
+- 2026-10-26 完整Design数据已就绪且本地/远程哈希一致。AR-design32条诊断在120epoch后全部复现并严格有效+SG正确32/32；正式训练已从原始Qwen3-8B开始，三卡/global12、固定3epoch，后接10,770次/需评价checkpoint的生成及GRACE共享评价。见[Phase3运行](../../experiments/crystal_tasks_v1/04_design_phase3_run.md)。当前尚无正式Design成绩，Hybrid未启动。
+
 - 2026-10-26 AR-understanding 正式基线完成：固定3epoch/9093updates，validation4501、test4602，流程exit0/GPU释放。按validation NLL选出的step7200与final均完成独立评价；final test四字段全对4600/4602（99.9565%），best4597/4602（99.8914%）。18,206条评价回执重算一致；详见[正式结果](../../experiments/crystal_tasks_v1/phase3_understanding_20261026/RESULTS.md)。这是四字段读取基线，AR-design和Hybrid对照尚未完成。
 
 - 2026-10-25 PDT / 10-26 UTC，负责人通过交接闸门 2 并恢复 Design 补标。AR-understanding 32 条过拟合检查通过（全四字段及完整复现32/32，NLL4.78e-6），已从原始Qwen3-8B重新初始化开始三卡/global12全量3epoch；后台后接validation/test。Design按原模型/提示词/8并发在本机新活动目录续跑，冻结数据未变。运行记录见[Phase3](../../experiments/crystal_tasks_v1/03_phase3_run.md)；正式结果尚未产生。

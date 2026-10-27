@@ -1,0 +1,291 @@
+EXPORT_FINALIZE_START
+{"status": "both_tasks_exported_validation_pending", "counts_per_task": {"train": 36362, "val": 4501, "test": 4602}, "caption_flags": {"line_break_raw_caption": 31, "line_break_clean_caption": 22, "missing_terminal_punctuation_raw_caption": 10, "missing_terminal_punctuation_clean_caption": 10}}
+CPU_SHARED_VALIDATOR_START
+{
+  "status": "passed",
+  "scope": [
+    "design",
+    "understanding"
+  ],
+  "files": {
+    "crystal_design_training": {
+      "rows": 36362,
+      "sha256": "c0f5ec9269b791315b748f98b78406c0b8389f149754244974daa1d2a9f749c2"
+    },
+    "crystal_understanding_training": {
+      "rows": 36362,
+      "sha256": "c166a9e8ae7b4b5a18dae3d0c0c114b39defde8cae7fe2d739a3a286d4354fd1"
+    },
+    "crystal_design_validation": {
+      "rows": 4501,
+      "sha256": "9745c7e9048563fa75fb2bb59e646801fa6dab1561b6bec1057aa6288b097ed8"
+    },
+    "crystal_understanding_validation": {
+      "rows": 4501,
+      "sha256": "4c4136e1f55bd9009abc8adbcedc73a120706809c4f63a890fb8f89013dd7983"
+    },
+    "crystal_design_test": {
+      "rows": 4602,
+      "sha256": "b54869781e9ee7662251478c32f74ffd0c43cae0a1c34ed96d5a33e6f601feae"
+    },
+    "crystal_understanding_test": {
+      "rows": 4602,
+      "sha256": "48c4029a4ec6cac1cc8d8ee04558c5a3fa56b68c5d6c200a5e93dc31a9377505"
+    }
+  },
+  "unique_materials": 45465,
+  "unique_source_structure_hashes": 45465,
+  "no_split_overlap": true,
+  "understanding_context_is_plaid_only": true,
+  "four_answers_match_structure_facts": true,
+  "all_cells_have_matching_formula_multiplicities_atom_and_orbit_counts": true
+}
+CPU_SHARED_VALIDATOR_PASSED
+MINIMUM_RECEIPT_READY {"status": "exported_and_cpu_validated_seed32_check_pending", "remote_release_path": "/data1/users/liugang/crystalDLM/data_preparation/crystal_tasks_v1/exports/design_full_20261026", "parent_manifest_sha256": "dce98892174a02a113a2de13200472d5997054f2b6a4306212be2fd9189c2d6c", "annotation_receipt_sha256": "c7db5f77c83a9e36c80a296c1fcaca7e6705f0c5c209a4f2a36e2e4bf6d1f40e", "source_join": {"source_ids": 45465, "reused_ids": 8172, "new_receipt_ids": 37293, "new_by_split": {"train": 29090, "val": 3601, "test": 4602}}, "registry_path": "data_preparation/crystal_tasks_v1/exports/design_full_20261026/dataset_info.json", "registry_sha256": "b949c3bd81ecd22bc59257e9d9ae904def34b2d50c20d6957566324bbaa43ba4", "validation_report_sha256": "debdb538ffa2f9a815bfb1f586aa877b93b067502654c8b5e8a3aeeafa26740e", "condition_audit": {"training_rows": 36362, "unique_space_group_exact_ehull_pairs": 28461, "unique_space_group_ehull_upper_bound_prompts": 542, "unique_training_input_prompts": 542, "seed": 42, "seed42_sample_indices": [425, 1639, 1739, 1952, 2082, 5697, 6140, 6698, 6717, 7296, 9144, 10189, 10463, 13031, 14110, 14328, 14446, 14628, 15247, 16049, 18024, 18210, 18231, 22059, 22298, 27493, 27651, 27696, 29439, 33118, 35713, 35741], "seed42_sample_ids": ["mp-1223510", "mp-978266", "mp-1276248", "mp-1078544", "mp-21416", "mp-2230800", "mp-5246", "mp-1188316", "mp-1224335", "mp-1022472", "mp-1189398", "mp-1071541", "mp-557122", "mp-1110881", "mp-865561", "mp-755889", "mp-542096", "mp-20632", "mp-867756", "mp-1213231", "mp-991", "mp-989568", "mp-1226405", "mp-623134", "mp-1048946", "mp-765375", "mp-1216977", "mp-1206102", "mp-1186226", "mp-1215608", "mp-1022106", "mp-867801"], "seed42_sample_unique_input_prompts": 25, "seed42_sample_repeated_input_prompts": [{"instruction": "Generate a crystal with space group number 1 and energy above hull no greater than 0.2 eV/atom.", "selected_rows": 2}, {"instruction": "Generate a crystal with space group number 225 and energy above hull no greater than 0.08 eV/atom.", "selected_rows": 6}, {"instruction": "Generate a crystal with space group number 38 and energy above hull no greater than 0.2 eV/atom.", "selected_rows": 2}], "recommendation": "Use 32 distinct condition prompts for a separate diagnostic; leave full training data unchanged."}, "caption_flags": {"line_break_clean_caption": 22, "line_break_raw_caption": 31, "missing_terminal_punctuation_clean_caption": 10, "missing_terminal_punctuation_raw_caption": 10}, "unchanged_parent_artifact_hashes": [{"path": "data_preparation/crystal_tasks_v1/exports/design_full_20261026/understanding/test.jsonl", "sha256": "48c4029a4ec6cac1cc8d8ee04558c5a3fa56b68c5d6c200a5e93dc31a9377505", "bytes": 2403222}, {"path": "data_preparation/crystal_tasks_v1/exports/design_full_20261026/understanding/training.jsonl", "sha256": "c166a9e8ae7b4b5a18dae3d0c0c114b39defde8cae7fe2d739a3a286d4354fd1", "bytes": 19006257}, {"path": "data_preparation/crystal_tasks_v1/exports/design_full_20261026/understanding/validation.jsonl", "sha256": "4c4136e1f55bd9009abc8adbcedc73a120706809c4f63a890fb8f89013dd7983", "bytes": 2359828}, {"path": "data_preparation/crystal_tasks_v1/exports/design_full_20261026/metadata/test.jsonl", "sha256": "51ccb022f5a74c5ed756f59c7775c630dc2562ecca389f39f5253fec333155e3", "bytes": 8212746}, {"path": "data_preparation/crystal_tasks_v1/exports/design_full_20261026/metadata/training.jsonl", "sha256": "6f2bcf82a039d98a442260e15f06fda1ceae05812260915bdcb43fa3176fe1cf", "bytes": 64956782}, {"path": "data_preparation/crystal_tasks_v1/exports/design_full_20261026/metadata/validation.jsonl", "sha256": "6bad153bc75573013bfaa749906fceaeb039001f1ddf4dde02735d28b46d972c", "bytes": 8025215}, {"path": "data_preparation/crystal_tasks_v1/exports/design_full_20261026/examples/design-mp-1210092.json", "sha256": "8a75bdccb18c6660863a68cb9c1867e0070a36c5642eb9cf991731e1ecdda911", "bytes": 901}, {"path": "data_preparation/crystal_tasks_v1/exports/design_full_20261026/examples/understanding-mp-1210092.json", "sha256": "b0777f8ca434f39cc1724c982af18979b030bdf196aa90d0ae8f216c95cbbb84", "bytes": 554}], "jsonl_hashes": {"data_preparation/crystal_tasks_v1/exports/design_full_20261026/design/training.jsonl": "c0f5ec9269b791315b748f98b78406c0b8389f149754244974daa1d2a9f749c2", "data_preparation/crystal_tasks_v1/exports/design_full_20261026/design/validation.jsonl": "9745c7e9048563fa75fb2bb59e646801fa6dab1561b6bec1057aa6288b097ed8", "data_preparation/crystal_tasks_v1/exports/design_full_20261026/design/test.jsonl": "b54869781e9ee7662251478c32f74ffd0c43cae0a1c34ed96d5a33e6f601feae", "data_preparation/crystal_tasks_v1/exports/design_full_20261026/understanding/training.jsonl": "c166a9e8ae7b4b5a18dae3d0c0c114b39defde8cae7fe2d739a3a286d4354fd1", "data_preparation/crystal_tasks_v1/exports/design_full_20261026/understanding/validation.jsonl": "4c4136e1f55bd9009abc8adbcedc73a120706809c4f63a890fb8f89013dd7983", "data_preparation/crystal_tasks_v1/exports/design_full_20261026/understanding/test.jsonl": "48c4029a4ec6cac1cc8d8ee04558c5a3fa56b68c5d6c200a5e93dc31a9377505"}, "cutoff_2048_full_design_status": "pending full length audit"}
+/data1/users/liugang/crystalDLM/envs/crystaldlm/lib/python3.11/site-packages/transformers/utils/hub.py:110: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+[INFO|2026-10-26 23:35:00] llamafactory.model.patcher:144 >> Add special tokens <CRYSTAL_START>,<CRYSTAL_END>,<CRYSTAL_MASK>,<CRYSTAL_PAD> to tokenizer's vocabulary.
+[WARNING|2026-10-26 23:35:00] llamafactory.data.template:149 >> You are using reasoning template, please add `_nothink` suffix if the model is not a reasoning model. e.g., qwen3_vl_nothink
+MINIMUM_RECEIPT_READY {"status": "exported_and_cpu_validated_seed32_length_check_complete_full_audit_in_progress", "remote_release_path": "/data1/users/liugang/crystalDLM/data_preparation/crystal_tasks_v1/exports/design_full_20261026", "parent_manifest_sha256": "dce98892174a02a113a2de13200472d5997054f2b6a4306212be2fd9189c2d6c", "annotation_receipt_sha256": "c7db5f77c83a9e36c80a296c1fcaca7e6705f0c5c209a4f2a36e2e4bf6d1f40e", "source_join": {"source_ids": 45465, "reused_ids": 8172, "new_receipt_ids": 37293, "new_by_split": {"train": 29090, "val": 3601, "test": 4602}}, "registry_path": "data_preparation/crystal_tasks_v1/exports/design_full_20261026/dataset_info.json", "registry_sha256": "b949c3bd81ecd22bc59257e9d9ae904def34b2d50c20d6957566324bbaa43ba4", "validation_report_sha256": "debdb538ffa2f9a815bfb1f586aa877b93b067502654c8b5e8a3aeeafa26740e", "condition_audit": {"training_rows": 36362, "unique_space_group_exact_ehull_pairs": 28461, "unique_space_group_ehull_upper_bound_prompts": 542, "unique_training_input_prompts": 542, "seed": 42, "seed42_sample_indices": [425, 1639, 1739, 1952, 2082, 5697, 6140, 6698, 6717, 7296, 9144, 10189, 10463, 13031, 14110, 14328, 14446, 14628, 15247, 16049, 18024, 18210, 18231, 22059, 22298, 27493, 27651, 27696, 29439, 33118, 35713, 35741], "seed42_sample_ids": ["mp-1223510", "mp-978266", "mp-1276248", "mp-1078544", "mp-21416", "mp-2230800", "mp-5246", "mp-1188316", "mp-1224335", "mp-1022472", "mp-1189398", "mp-1071541", "mp-557122", "mp-1110881", "mp-865561", "mp-755889", "mp-542096", "mp-20632", "mp-867756", "mp-1213231", "mp-991", "mp-989568", "mp-1226405", "mp-623134", "mp-1048946", "mp-765375", "mp-1216977", "mp-1206102", "mp-1186226", "mp-1215608", "mp-1022106", "mp-867801"], "seed42_sample_unique_input_prompts": 25, "seed42_sample_repeated_input_prompts": [{"instruction": "Generate a crystal with space group number 1 and energy above hull no greater than 0.2 eV/atom.", "selected_rows": 2}, {"instruction": "Generate a crystal with space group number 225 and energy above hull no greater than 0.08 eV/atom.", "selected_rows": 6}, {"instruction": "Generate a crystal with space group number 38 and energy above hull no greater than 0.2 eV/atom.", "selected_rows": 2}], "recommendation": "Use 32 distinct condition prompts for a separate diagnostic; leave full training data unchanged."}, "caption_flags": {"line_break_clean_caption": 22, "line_break_raw_caption": 31, "missing_terminal_punctuation_clean_caption": 10, "missing_terminal_punctuation_raw_caption": 10}, "unchanged_parent_artifact_hashes": [{"path": "data_preparation/crystal_tasks_v1/exports/design_full_20261026/understanding/test.jsonl", "sha256": "48c4029a4ec6cac1cc8d8ee04558c5a3fa56b68c5d6c200a5e93dc31a9377505", "bytes": 2403222}, {"path": "data_preparation/crystal_tasks_v1/exports/design_full_20261026/understanding/training.jsonl", "sha256": "c166a9e8ae7b4b5a18dae3d0c0c114b39defde8cae7fe2d739a3a286d4354fd1", "bytes": 19006257}, {"path": "data_preparation/crystal_tasks_v1/exports/design_full_20261026/understanding/validation.jsonl", "sha256": "4c4136e1f55bd9009abc8adbcedc73a120706809c4f63a890fb8f89013dd7983", "bytes": 2359828}, {"path": "data_preparation/crystal_tasks_v1/exports/design_full_20261026/metadata/test.jsonl", "sha256": "51ccb022f5a74c5ed756f59c7775c630dc2562ecca389f39f5253fec333155e3", "bytes": 8212746}, {"path": "data_preparation/crystal_tasks_v1/exports/design_full_20261026/metadata/training.jsonl", "sha256": "6f2bcf82a039d98a442260e15f06fda1ceae05812260915bdcb43fa3176fe1cf", "bytes": 64956782}, {"path": "data_preparation/crystal_tasks_v1/exports/design_full_20261026/metadata/validation.jsonl", "sha256": "6bad153bc75573013bfaa749906fceaeb039001f1ddf4dde02735d28b46d972c", "bytes": 8025215}, {"path": "data_preparation/crystal_tasks_v1/exports/design_full_20261026/examples/design-mp-1210092.json", "sha256": "8a75bdccb18c6660863a68cb9c1867e0070a36c5642eb9cf991731e1ecdda911", "bytes": 901}, {"path": "data_preparation/crystal_tasks_v1/exports/design_full_20261026/examples/understanding-mp-1210092.json", "sha256": "b0777f8ca434f39cc1724c982af18979b030bdf196aa90d0ae8f216c95cbbb84", "bytes": 554}], "jsonl_hashes": {"data_preparation/crystal_tasks_v1/exports/design_full_20261026/design/training.jsonl": "c0f5ec9269b791315b748f98b78406c0b8389f149754244974daa1d2a9f749c2", "data_preparation/crystal_tasks_v1/exports/design_full_20261026/design/validation.jsonl": "9745c7e9048563fa75fb2bb59e646801fa6dab1561b6bec1057aa6288b097ed8", "data_preparation/crystal_tasks_v1/exports/design_full_20261026/design/test.jsonl": "b54869781e9ee7662251478c32f74ffd0c43cae0a1c34ed96d5a33e6f601feae", "data_preparation/crystal_tasks_v1/exports/design_full_20261026/understanding/training.jsonl": "c166a9e8ae7b4b5a18dae3d0c0c114b39defde8cae7fe2d739a3a286d4354fd1", "data_preparation/crystal_tasks_v1/exports/design_full_20261026/understanding/validation.jsonl": "4c4136e1f55bd9009abc8adbcedc73a120706809c4f63a890fb8f89013dd7983", "data_preparation/crystal_tasks_v1/exports/design_full_20261026/understanding/test.jsonl": "48c4029a4ec6cac1cc8d8ee04558c5a3fa56b68c5d6c200a5e93dc31a9377505"}, "cutoff_2048_full_design_status": "pending full length audit", "seed42_sample_full_template_lengths": [{"material_id": "mp-1223510", "tokens": 348}, {"material_id": "mp-978266", "tokens": 311}, {"material_id": "mp-1276248", "tokens": 621}, {"material_id": "mp-1078544", "tokens": 461}, {"material_id": "mp-21416", "tokens": 311}, {"material_id": "mp-2230800", "tokens": 614}, {"material_id": "mp-5246", "tokens": 338}, {"material_id": "mp-1188316", "tokens": 365}, {"material_id": "mp-1224335", "tokens": 349}, {"material_id": "mp-1022472", "tokens": 421}, {"material_id": "mp-1189398", "tokens": 484}, {"material_id": "mp-1071541", "tokens": 308}, {"material_id": "mp-557122", "tokens": 395}, {"material_id": "mp-1110881", "tokens": 345}, {"material_id": "mp-865561", "tokens": 345}, {"material_id": "mp-755889", "tokens": 384}, {"material_id": "mp-542096", "tokens": 334}, {"material_id": "mp-20632", "tokens": 307}, {"material_id": "mp-867756", "tokens": 313}, {"material_id": "mp-1213231", "tokens": 384}, {"material_id": "mp-991", "tokens": 295}, {"material_id": "mp-989568", "tokens": 339}, {"material_id": "mp-1226405", "tokens": 415}, {"material_id": "mp-623134", "tokens": 320}, {"material_id": "mp-1048946", "tokens": 485}, {"material_id": "mp-765375", "tokens": 682}, {"material_id": "mp-1216977", "tokens": 378}, {"material_id": "mp-1206102", "tokens": 451}, {"material_id": "mp-1186226", "tokens": 286}, {"material_id": "mp-1215608", "tokens": 499}, {"material_id": "mp-1022106", "tokens": 398}, {"material_id": "mp-867801", "tokens": 356}], "seed42_sample_length_summary": {"count": 32, "min": 286, "median": 360.5, "p95": 621, "p99": 682, "max": 682, "above_cutoff": 0}, "seed42_sample_fits_cutoff_2048": true}
+TOKEN_AUDIT_PROGRESS 5000/45465
+TOKEN_AUDIT_PROGRESS 10000/45465
+TOKEN_AUDIT_PROGRESS 15000/45465
+TOKEN_AUDIT_PROGRESS 20000/45465
+TOKEN_AUDIT_PROGRESS 25000/45465
+TOKEN_AUDIT_PROGRESS 30000/45465
+TOKEN_AUDIT_PROGRESS 35000/45465
+TOKEN_AUDIT_PROGRESS 40000/45465
+TOKEN_AUDIT_PROGRESS 45000/45465
+{
+  "status": "passed",
+  "remote_release_path": "/data1/users/liugang/crystalDLM/data_preparation/crystal_tasks_v1/exports/design_full_20261026",
+  "parent_manifest_sha256": "dce98892174a02a113a2de13200472d5997054f2b6a4306212be2fd9189c2d6c",
+  "manifest_sha256": "e1e3009aa6e948bdff86781917e7a1a99b38dbf555291ae3bc1e072b8bb2267f",
+  "validation_report_sha256": "debdb538ffa2f9a815bfb1f586aa877b93b067502654c8b5e8a3aeeafa26740e",
+  "token_audit_sha256": "9c8218b19427d3dedc3c461b9cb7e85653654b51d7610848d24fbaefd826d1b5",
+  "condition_audit_sha256": "cf8ad2be98cd697da7889ea9b38c82be9404553b248dc4c8d1ba77e79d7aa774",
+  "caption_flag_report_sha256": "32d35534d3f56b98a77128340591dd5e97e0632692468cca4e4e59dacda815ad",
+  "annotation_receipt_sha256": "c7db5f77c83a9e36c80a296c1fcaca7e6705f0c5c209a4f2a36e2e4bf6d1f40e",
+  "annotation_receipt_rows": 37293,
+  "condition_audit": {
+    "training_rows": 36362,
+    "unique_space_group_exact_ehull_pairs": 28461,
+    "unique_space_group_ehull_upper_bound_prompts": 542,
+    "unique_training_input_prompts": 542,
+    "seed": 42,
+    "seed42_sample_indices": [
+      425,
+      1639,
+      1739,
+      1952,
+      2082,
+      5697,
+      6140,
+      6698,
+      6717,
+      7296,
+      9144,
+      10189,
+      10463,
+      13031,
+      14110,
+      14328,
+      14446,
+      14628,
+      15247,
+      16049,
+      18024,
+      18210,
+      18231,
+      22059,
+      22298,
+      27493,
+      27651,
+      27696,
+      29439,
+      33118,
+      35713,
+      35741
+    ],
+    "seed42_sample_ids": [
+      "mp-1223510",
+      "mp-978266",
+      "mp-1276248",
+      "mp-1078544",
+      "mp-21416",
+      "mp-2230800",
+      "mp-5246",
+      "mp-1188316",
+      "mp-1224335",
+      "mp-1022472",
+      "mp-1189398",
+      "mp-1071541",
+      "mp-557122",
+      "mp-1110881",
+      "mp-865561",
+      "mp-755889",
+      "mp-542096",
+      "mp-20632",
+      "mp-867756",
+      "mp-1213231",
+      "mp-991",
+      "mp-989568",
+      "mp-1226405",
+      "mp-623134",
+      "mp-1048946",
+      "mp-765375",
+      "mp-1216977",
+      "mp-1206102",
+      "mp-1186226",
+      "mp-1215608",
+      "mp-1022106",
+      "mp-867801"
+    ],
+    "seed42_sample_unique_input_prompts": 25,
+    "seed42_sample_repeated_input_prompts": [
+      {
+        "instruction": "Generate a crystal with space group number 1 and energy above hull no greater than 0.2 eV/atom.",
+        "selected_rows": 2
+      },
+      {
+        "instruction": "Generate a crystal with space group number 225 and energy above hull no greater than 0.08 eV/atom.",
+        "selected_rows": 6
+      },
+      {
+        "instruction": "Generate a crystal with space group number 38 and energy above hull no greater than 0.2 eV/atom.",
+        "selected_rows": 2
+      }
+    ],
+    "recommendation": "Use 32 distinct condition prompts for a separate diagnostic; leave full training data unchanged."
+  },
+  "caption_flags": {
+    "line_break_clean_caption": 22,
+    "line_break_raw_caption": 31,
+    "missing_terminal_punctuation_clean_caption": 10,
+    "missing_terminal_punctuation_raw_caption": 10
+  },
+  "token_summary": {
+    "complete": {
+      "count": 45465,
+      "min": 176,
+      "median": 371,
+      "p95": 576,
+      "p99": 700,
+      "max": 799,
+      "above_cutoff": 0
+    },
+    "prompt": {
+      "count": 45465,
+      "min": 37,
+      "median": 39,
+      "p95": 40,
+      "p99": 40,
+      "max": 40,
+      "above_cutoff": 0
+    },
+    "response": {
+      "count": 45465,
+      "min": 136,
+      "median": 332,
+      "p95": 538,
+      "p99": 663,
+      "max": 762,
+      "above_cutoff": 0
+    },
+    "description": {
+      "count": 45465,
+      "min": 1,
+      "median": 163,
+      "p95": 206,
+      "p99": 226,
+      "max": 304,
+      "above_cutoff": 0
+    },
+    "crystal": {
+      "count": 45465,
+      "min": 76,
+      "median": 158,
+      "p95": 370,
+      "p99": 502,
+      "max": 540,
+      "above_cutoff": 0
+    }
+  },
+  "cutoff_2048_sufficient_for_all_design_rows": true,
+  "seed42_32_cutoff_2048_fit": true,
+  "code_sha256": "1d864635bc90e19b4ccf48f342faf0536a8290adaeb477f75482f6d3a5d5d149",
+  "artifact_hashes": {
+    "data_preparation/crystal_tasks_v1/exports/design_full_20261026/design/test.jsonl": {
+      "sha256": "b54869781e9ee7662251478c32f74ffd0c43cae0a1c34ed96d5a33e6f601feae",
+      "bytes": 4976137
+    },
+    "data_preparation/crystal_tasks_v1/exports/design_full_20261026/design/training.jsonl": {
+      "sha256": "c0f5ec9269b791315b748f98b78406c0b8389f149754244974daa1d2a9f749c2",
+      "bytes": 38716343
+    },
+    "data_preparation/crystal_tasks_v1/exports/design_full_20261026/design/validation.jsonl": {
+      "sha256": "9745c7e9048563fa75fb2bb59e646801fa6dab1561b6bec1057aa6288b097ed8",
+      "bytes": 4799729
+    },
+    "data_preparation/crystal_tasks_v1/exports/design_full_20261026/understanding/test.jsonl": {
+      "sha256": "48c4029a4ec6cac1cc8d8ee04558c5a3fa56b68c5d6c200a5e93dc31a9377505",
+      "bytes": 2403222
+    },
+    "data_preparation/crystal_tasks_v1/exports/design_full_20261026/understanding/training.jsonl": {
+      "sha256": "c166a9e8ae7b4b5a18dae3d0c0c114b39defde8cae7fe2d739a3a286d4354fd1",
+      "bytes": 19006257
+    },
+    "data_preparation/crystal_tasks_v1/exports/design_full_20261026/understanding/validation.jsonl": {
+      "sha256": "4c4136e1f55bd9009abc8adbcedc73a120706809c4f63a890fb8f89013dd7983",
+      "bytes": 2359828
+    },
+    "data_preparation/crystal_tasks_v1/exports/design_full_20261026/metadata/test.jsonl": {
+      "sha256": "51ccb022f5a74c5ed756f59c7775c630dc2562ecca389f39f5253fec333155e3",
+      "bytes": 8212746
+    },
+    "data_preparation/crystal_tasks_v1/exports/design_full_20261026/metadata/training.jsonl": {
+      "sha256": "6f2bcf82a039d98a442260e15f06fda1ceae05812260915bdcb43fa3176fe1cf",
+      "bytes": 64956782
+    },
+    "data_preparation/crystal_tasks_v1/exports/design_full_20261026/metadata/validation.jsonl": {
+      "sha256": "6bad153bc75573013bfaa749906fceaeb039001f1ddf4dde02735d28b46d972c",
+      "bytes": 8025215
+    },
+    "data_preparation/crystal_tasks_v1/exports/design_full_20261026/examples/design-mp-1210092.json": {
+      "sha256": "8a75bdccb18c6660863a68cb9c1867e0070a36c5642eb9cf991731e1ecdda911",
+      "bytes": 901
+    },
+    "data_preparation/crystal_tasks_v1/exports/design_full_20261026/examples/understanding-mp-1210092.json": {
+      "sha256": "b0777f8ca434f39cc1724c982af18979b030bdf196aa90d0ae8f216c95cbbb84",
+      "bytes": 554
+    },
+    "data_preparation/crystal_tasks_v1/exports/design_full_20261026/dataset_info.json": {
+      "sha256": "b949c3bd81ecd22bc59257e9d9ae904def34b2d50c20d6957566324bbaa43ba4",
+      "bytes": 1303
+    },
+    "data_preparation/crystal_tasks_v1/exports/design_full_20261026/validation-report.json": {
+      "sha256": "debdb538ffa2f9a815bfb1f586aa877b93b067502654c8b5e8a3aeeafa26740e",
+      "bytes": 2087
+    },
+    "data_preparation/crystal_tasks_v1/exports/design_full_20261026/token-length-audit.json": {
+      "sha256": "9c8218b19427d3dedc3c461b9cb7e85653654b51d7610848d24fbaefd826d1b5",
+      "bytes": 2295
+    },
+    "data_preparation/crystal_tasks_v1/exports/design_full_20261026/condition-audit.json": {
+      "sha256": "cf8ad2be98cd697da7889ea9b38c82be9404553b248dc4c8d1ba77e79d7aa774",
+      "bytes": 1834
+    },
+    "data_preparation/crystal_tasks_v1/exports/design_full_20261026/caption-flags.json": {
+      "sha256": "32d35534d3f56b98a77128340591dd5e97e0632692468cca4e4e59dacda815ad",
+      "bytes": 336
+    },
+    "data_preparation/crystal_tasks_v1/exports/design_full_20261026/caption-flagged-rows.json": {
+      "sha256": "ae520ed25b31f385e1152d8d5cfe4d7cc6e7c9e6655e5b9fd1b2adf273353f91",
+      "bytes": 6173
+    },
+    "data_preparation/crystal_tasks_v1/exports/design_full_20261026/format-validation-failures.json": {
+      "sha256": "808d1ba00643feafb847237a606e8a4e14e005652f7be186c2826f8c4889737b",
+      "bytes": 72
+    }
+  }
+}
